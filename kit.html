@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UI kit · Multi X</title>
+  <meta name="description" content="UI kit del rediseño de Multi X, Propuesta A Corporativo liviano.">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@300;400&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/kit.css">
+  <script src="js/layout.js" defer></script>
+  <script src="js/components.js" defer></script>
+</head>
+<body>
+  <site-header current="inversionistas"></site-header>
+
+  <main id="main" class="container kit">
+
+    <!-- ===================================================================
+         Portada (node 75-3)
+         =================================================================== -->
+    <header class="kit-cover">
+      <p class="t-label c-accent">UI kit · Rediseño 2026</p>
+      <h1 class="t-display">Corporativo liviano</h1>
+      <p class="t-body-l kit-cover__lead">Propuesta A: Sora para títulos y cifras, Manrope para cuerpo e interfaz, Navy como color de marca y coral como acento. Márgenes amplios y movimiento que acompaña sin saturar. Esta página reúne todos los componentes del kit en sus versiones desktop y mobile.</p>
+      <nav aria-label="Secciones del kit">
+        <ul class="kit-index" role="list">
+          <li><a href="#color"><span>01</span> Color</a></li>
+          <li><a href="#tipografia"><span>02</span> Tipografía</a></li>
+          <li><a href="#botones"><span>03</span> Botones</a></li>
+          <li><a href="#formularios"><span>04</span> Formularios</a></li>
+          <li><a href="#navegacion"><span>05</span> Navegación</a></li>
+          <li><a href="#documentacion"><span>06</span> Documentación</a></li>
+          <li><a href="#inversionistas"><span>07</span> Inversionistas</a></li>
+          <li><a href="#sustentabilidad"><span>08</span> Sustentabilidad y Productos</a></li>
+          <li><a href="#hero"><span>09</span> Hero</a></li>
+          <li><a href="#ilustracion"><span>10</span> Composición con ilustración</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ===================================================================
+         01 · Color (node 75-64)
+         =================================================================== -->
+    <section class="kit-section" id="color" aria-labelledby="color-title">
+      <div class="kit-section__head">
+        <p class="t-label c-accent">01</p>
+        <h2 class="t-h2" id="color-title">Color</h2>
+        <p class="t-small kit-section__desc">En componentes se usan solo los tokens semánticos. Coral 600 para todo texto coral sobre fondos claros; Coral 500 solo para rellenos y gráficos sobre claro, y para texto sobre Navy 950.</p>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Fondos</h3>
+        <ul class="swatches" role="list">
+          <li class="swatch"><span class="swatch__chip" style="background: var(--color-bg-page)"></span><span class="swatch__name">Página</span><span class="swatch__token">--color-bg-page</span></li>
+          <li class="swatch"><span class="swatch__chip" style="background: var(--color-bg-subtle)"></span><span class="swatch__name">Suave · Offwhite 50</span><span class="swatch__token">--color-bg-subtle</span></li>
+          <li class="swatch"><span class="swatch__chip" style="background: var(--color-bg-muted)"></span><span class="swatch__name">Atenuado</span><span class="swatch__token">--color-bg-muted</span></li>
+          <li class="swatch"><span class="swatch__chip" style="background: var(--color-bg-inverse)"></span><span class="swatch__name">Oscuro · Navy 950</span><span class="swatch__token">--color-bg-inverse</span></li>
+          <li class="swatch"><span class="swatch__chip" style="background: var(--color-bg-brand)"></span><span class="swatch__name">Marca · Navy 900</span><span class="swatch__token">--color-bg-brand</span></li>
+          <li class="swatch"><span class="swatch__chip" style="background: var(--color-bg-brand-hover)"></span><span class="swatch__name">Marca hover · Navy 600</span><span class="swatch__token">--color-bg-brand-hover</span></li>
+          <li class="swatch"><span class="swatch__chip" style="background: var(--color-bg-brand-soft)"></span><span class="swatch__name">Marca suave · Navy 100</span><span class="swatch__token">--color-bg-brand-soft</span></li>
+          <li class="swatch"><span class="swatch__chip" style="background: var(--color-bg-accent)"></span><span class="swatch__name">Acento · Coral 400</span><span class="swatch__token">--color-bg-accent</span></li>
+          <li class="swatch"><span class="swatch__chip" style="background: var(--color-bg-accent-hover)"></span><span class="swatch__name">Acento hover · Coral 500</span><span class="swatch__token">--color-bg-accent-hover</span></li>
+          <li class="swatch"><span class="swatch__chip" style="background: var(--color-bg-illustration)"></span><span class="swatch__name">Ilustración · Coral 100</span><span class="swatch__token">--color-bg-illustration</span></li>
+        </ul>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Texto y bordes</h3>
+        <ul class="swatches" role="list">
+          <li class="swatch"><span class="swatch__chip" style="background: var(--color-text-primary)"></span><span class="swatch__name">Principal · Ink 900</span><span class="swatch__token">--color-text-primary</span></li>
+          <li class="swatch"><span class="swatch__chip" style="background: var(--color-text-secondary)"></span><span class="swatch__name">Secundario · Ink 600</span><span class="swatch__token">--color-text-secondary</span></li>
+          <li class="swatch"><span class="swatch__chip" style="background: var(--color-text-brand)"></span><span class="swatch__name">Marca y enlaces</span><span class="swatch__token">--color-text-brand</span></li>
+          <li class="swatch"><span class="swatch__chip" style="background: var(--color-text-accent)"></span><span class="swatch__name">Acento · Coral 600</span><span class="swatch__token">--color-text-accent</span></li>
+          <li class="swatch"><span class="swatch__chip" style="background: var(--color-text-success)"></span><span class="swatch__name">Positivo · Verde 600</span><span class="swatch__token">--color-text-success</span></li>
+          <li class="swatch"><span class="swatch__chip" style="background: var(--color-border-default)"></span><span class="swatch__name">Borde y divisor</span><span class="swatch__token">--color-border-default</span></li>
+        </ul>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Contraste verificado (WCAG 2.1 AA)</h3>
+        <ul class="contrast-list" role="list">
+          <li><span class="contrast-sample t-label c-accent">Coral 600 sobre blanco</span><span class="t-small c-secondary">4,9:1 · etiquetas y badges</span></li>
+          <li><span class="contrast-sample t-label c-accent" style="background: var(--color-bg-subtle)">Coral 600 sobre Offwhite</span><span class="t-small c-secondary">4,6:1</span></li>
+          <li><span class="contrast-sample t-ui-button" style="background: var(--color-bg-accent); color: var(--color-text-on-accent); border-color: transparent">Ink 900 sobre Coral 400</span><span class="t-small c-secondary">6,7:1 · botón de acento</span></li>
+          <li><span class="contrast-sample t-label" style="background: var(--color-bg-inverse); color: var(--color-text-accent-on-dark); border-color: transparent">Coral 500 sobre Navy 950</span><span class="t-small c-secondary">5,6:1 · acento sobre oscuro</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         02 · Tipografía (node 75-115)
+         =================================================================== -->
+    <section class="kit-section" id="tipografia" aria-labelledby="tipo-title">
+      <div class="kit-section__head">
+        <p class="t-label c-accent">02</p>
+        <h2 class="t-h2" id="tipo-title">Tipografía</h2>
+        <p class="t-small kit-section__desc">Sora (300 y 400) para títulos y cifras; Manrope (400 a 700) para cuerpo e interfaz. En mobile, display, títulos y cifras bajan de tamaño (propuesta por validar).</p>
+      </div>
+      <ul class="type-list" role="list">
+        <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Display</span><span class="t-small c-secondary">Sora 300 · --text-display</span></div><p class="type-row__sample t-display">Del sur de Chile al mundo</p></li>
+        <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Título 1</span><span class="t-small c-secondary">Sora 300 · --text-h1</span></div><p class="type-row__sample t-h1">Información para inversionistas</p></li>
+        <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Título 2</span><span class="t-small c-secondary">Sora 400 · --text-h2</span></div><p class="type-row__sample t-h2">Resultados trimestrales</p></li>
+        <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Título 3</span><span class="t-small c-secondary">Sora 400 · --text-h3</span></div><p class="type-row__sample t-h3">Publicación de resultados Q3 2026</p></li>
+        <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Cifra L · M · S</span><span class="t-small c-secondary">Sora 300 · --text-figure-*</span></div><p class="type-row__sample"><span class="t-figure-l c-brand">+3.500</span>&nbsp;&nbsp;<span class="t-figure-m c-brand">$ 152,40</span>&nbsp;&nbsp;<span class="t-figure-s c-brand">2026</span></p></li>
+        <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Cuerpo L</span><span class="t-small c-secondary">Manrope 400 · --text-body-l</span></div><p class="type-row__sample t-body-l">Bajadas y textos introductorios de cada página o sección.</p></li>
+        <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Cuerpo</span><span class="t-small c-secondary">Manrope 400 · --text-body</span></div><p class="type-row__sample t-body">Texto corrido. Multi X es una compañía salmonera con integración vertical, desde la ova hasta la venta en más de 30 mercados.</p></li>
+        <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Pequeño</span><span class="t-small c-secondary">Manrope 500 · --text-small</span></div><p class="type-row__sample t-small c-secondary">14 oct 2026 · PDF 320 KB</p></li>
+        <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Etiqueta</span><span class="t-small c-secondary">Manrope 700 · --text-label</span></div><p class="type-row__sample t-label c-accent">Próximo evento</p></li>
+        <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">UI/Destacado · Pequeño destacado</span><span class="t-small c-secondary">Manrope 600 · --text-ui-strong, --text-ui-small-strong</span></div><p class="type-row__sample"><span class="t-ui-strong">Citación a Junta Extraordinaria</span> · <span class="t-ui-small-strong">Correo electrónico</span></p></li>
+        <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">UI/Botón · Botón pequeño · Navegación</span><span class="t-small c-secondary">Manrope 600 · --text-ui-button, --text-ui-nav</span></div><p class="type-row__sample"><span class="t-ui-button">Ver resultados</span> · <span class="t-ui-button-sm">Agregar</span> · <span class="t-ui-nav">Descargar</span></p></li>
+      </ul>
+    </section>
+
+    <!-- ===================================================================
+         03 · Botones (node 75-194)
+         =================================================================== -->
+    <section class="kit-section" id="botones" aria-labelledby="botones-title">
+      <div class="kit-section__head">
+        <p class="t-label c-accent">03</p>
+        <h2 class="t-h2" id="botones-title">Botones</h2>
+        <p class="t-small kit-section__desc">El acento usa Coral 400 con texto Ink 900 (6,7:1) y en hover pasa al Coral 500 original (5,5:1). Sobre fondo oscuro se usa la misma versión rellena o el contorno coral (5,6:1). El texto blanco sobre coral no se usa en botones.</p>
+      </div>
+
+      <div class="kit-variants">
+        <div class="kit-variant"><a class="btn btn--primary" href="#">Ver resultados</a><span class="t-small kit-variant__caption">Primario</span></div>
+        <div class="kit-variant"><a class="btn btn--primary is-hover" href="#">Ver resultados</a><span class="t-small kit-variant__caption">Primario · hover</span></div>
+        <div class="kit-variant"><a class="btn btn--secondary" href="#">Ver calendario</a><span class="t-small kit-variant__caption">Secundario</span></div>
+        <div class="kit-variant"><a class="btn btn--secondary is-hover" href="#">Ver calendario</a><span class="t-small kit-variant__caption">Secundario · hover</span></div>
+        <div class="kit-variant"><a class="btn btn--accent" href="#">Contactar a ventas</a><span class="t-small kit-variant__caption">Acento (conversión)</span></div>
+        <div class="kit-variant"><a class="btn btn--accent is-hover" href="#">Contactar a ventas</a><span class="t-small kit-variant__caption">Acento · hover</span></div>
+        <div class="kit-variant"><button class="btn btn--primary" type="button" disabled>No disponible</button><span class="t-small kit-variant__caption">Deshabilitado</span></div>
+      </div>
+
+      <div class="kit-variants">
+        <div class="kit-variant"><a class="btn btn--tertiary hit" href="#">Ver todos los informes<svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow"></use></svg></a><span class="t-small kit-variant__caption">Terciario / enlace</span></div>
+        <div class="kit-variant"><a class="btn btn--tertiary hit is-hover" href="#">Ver todos los informes<svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow"></use></svg></a><span class="t-small kit-variant__caption">Terciario · hover</span></div>
+        <div class="kit-variant"><a class="btn btn--secondary" href="#" download><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>Descargar memoria</a><span class="t-small kit-variant__caption">Con ícono · descarga</span></div>
+        <div class="kit-variant"><a class="btn btn--secondary" href="#" target="_blank" rel="noopener">Ir al sitio<svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg><span class="visually-hidden">(abre en una pestaña nueva)</span></a><span class="t-small kit-variant__caption">Enlace externo</span></div>
+        <div class="kit-variant"><a class="btn btn--secondary btn--sm hit" href="#"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Agregar</a><span class="t-small kit-variant__caption">Pequeño</span></div>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Sobre fondo oscuro o imagen</h3>
+        <div class="kit-dark on-dark">
+          <a class="btn btn--light" href="#">Conoce nuestra historia</a>
+          <a class="btn btn--accent" href="#">Contactar a ventas</a>
+          <a class="btn btn--accent-outline-dark" href="#">Hablar con ventas</a>
+          <a class="btn btn--ghost-light" href="#">Ver video</a>
+          <a class="btn btn--tertiary-light hit" href="#">Más información<svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+        </div>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Grupo de botones · mobile apilado a ancho completo</h3>
+        <div class="btn-group">
+          <a class="btn btn--primary" href="#">Ver resultados</a>
+          <a class="btn btn--secondary" href="#">Ver calendario</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         04 · Formularios (node 75-244)
+         =================================================================== -->
+    <section class="kit-section" id="formularios" aria-labelledby="form-title">
+      <div class="kit-section__head">
+        <p class="t-label c-accent">04</p>
+        <h2 class="t-h2" id="form-title">Formularios</h2>
+        <p class="t-small kit-section__desc">Campos con etiqueta visible siempre (no solo placeholder) y zona táctil mínima de 44 px. En mobile, una columna y teclado según el tipo de campo.</p>
+      </div>
+
+      <div class="kit-forms">
+        <div class="field">
+          <label class="field__label" for="f-email">Correo electrónico</label>
+          <div class="control"><input class="control__input" id="f-email" type="email" placeholder="nombre@empresa.com" autocomplete="email"></div>
+        </div>
+        <div class="field">
+          <label class="field__label" for="f-email-focus">Correo electrónico</label>
+          <div class="control is-focus"><input class="control__input" id="f-email-focus" type="email" value="felipe@naitus.cl"></div>
+          <span class="field__help">Estado foco</span>
+        </div>
+        <div class="field">
+          <label class="field__label" for="f-year">Año</label>
+          <div class="control control--select">
+            <select class="control__input" id="f-year">
+              <option>2026</option><option>2025</option><option>2024</option>
+            </select>
+            <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+          </div>
+        </div>
+        <div class="field field--search">
+          <label class="visually-hidden" for="f-search">Buscar por palabra clave</label>
+          <div class="control">
+            <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+            <input class="control__input" id="f-search" type="search" placeholder="Buscar por palabra clave">
+          </div>
+        </div>
+      </div>
+
+      <div class="kit-checks">
+        <label class="checkbox">
+          <input class="checkbox__input" type="checkbox" checked>
+          <span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span>
+          Quiero recibir alertas de nuevos documentos
+        </label>
+        <label class="checkbox">
+          <input class="checkbox__input" type="checkbox">
+          <span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span>
+          Hechos esenciales
+        </label>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Composición · suscripción</h3>
+        <form class="subscribe" action="#" onsubmit="return false">
+          <div class="subscribe__text">
+            <h4 class="t-h3">Alertas para inversionistas</h4>
+            <p>Recibe un correo cuando publiquemos resultados o hechos esenciales.</p>
+          </div>
+          <div class="subscribe__form">
+            <div class="field">
+              <label class="field__label" for="f-sub">Correo electrónico</label>
+              <div class="control"><input class="control__input" id="f-sub" type="email" placeholder="nombre@empresa.com" autocomplete="email" required></div>
+            </div>
+            <button class="btn btn--primary" type="submit">Suscribirme</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         05 · Navegación (node 75-353)
+         =================================================================== -->
+    <section class="kit-section" id="navegacion" aria-labelledby="nav-title">
+      <div class="kit-section__head">
+        <p class="t-label c-accent">05</p>
+        <h2 class="t-h2" id="nav-title">Navegación</h2>
+        <p class="t-small kit-section__desc">Barra utilitaria separada del menú principal; cada desplegable parte con un acceso a la portada de su sección.</p>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Header y mega menú</h3>
+        <p class="t-body kit-note">El header de esta página es el componente real (<code>&lt;site-header&gt;</code> en <code>js/layout.js</code>), con Inversionistas como sección actual. En desktop, pasa el cursor o haz clic sobre una sección para abrir su mega menú; al bajar, la barra utilitaria se oculta. En mobile y tablet se usa el botón de menú: panel a pantalla completa con secciones en acordeón. El footer está al final de la página.</p>
+      </div>
+
+      <div class="kit-nav-row">
+        <div class="kit-block">
+          <h3 class="t-label kit-block__title">Pestañas</h3>
+          <div class="tabs" data-tabs>
+            <div class="tabs__list" role="tablist" aria-label="Período">
+              <button class="tab" type="button" role="tab" id="tab-q" aria-selected="true" aria-controls="panel-q">Últimos 4 trimestres</button>
+              <button class="tab" type="button" role="tab" id="tab-26" aria-selected="false" aria-controls="panel-26">2026</button>
+              <button class="tab" type="button" role="tab" id="tab-25" aria-selected="false" aria-controls="panel-25">2025</button>
+              <button class="tab" type="button" role="tab" id="tab-24" aria-selected="false" aria-controls="panel-24">2024</button>
+              <button class="tab" type="button" role="tab" id="tab-23" aria-selected="false" aria-controls="panel-23">2023</button>
+            </div>
+          </div>
+          <div class="tab-panel kit-tab-panel t-small" role="tabpanel" id="panel-q" aria-labelledby="tab-q">Q3 2025 a Q2 2026 · [contenido por definir]</div>
+          <div class="tab-panel kit-tab-panel t-small" role="tabpanel" id="panel-26" aria-labelledby="tab-26" hidden>Documentos 2026 · [contenido por definir]</div>
+          <div class="tab-panel kit-tab-panel t-small" role="tabpanel" id="panel-25" aria-labelledby="tab-25" hidden>Documentos 2025 · [contenido por definir]</div>
+          <div class="tab-panel kit-tab-panel t-small" role="tabpanel" id="panel-24" aria-labelledby="tab-24" hidden>Documentos 2024 · [contenido por definir]</div>
+          <div class="tab-panel kit-tab-panel t-small" role="tabpanel" id="panel-23" aria-labelledby="tab-23" hidden>Documentos 2023 · [contenido por definir]</div>
+        </div>
+
+        <div class="kit-block">
+          <h3 class="t-label kit-block__title">Migas de pan</h3>
+          <nav class="breadcrumb" aria-label="Migas de pan">
+            <ol class="breadcrumb__list">
+              <li class="breadcrumb__item"><a href="#">Inicio</a><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chev-right"></use></svg></li>
+              <li class="breadcrumb__item"><a href="#">Inversionistas</a><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chev-right"></use></svg></li>
+              <li class="breadcrumb__item"><span aria-current="page">Hechos esenciales</span></li>
+            </ol>
+            <a class="breadcrumb__back" href="#"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>Volver a Inversionistas</a>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         06 · Páginas de documentación (node 75-641)
+         =================================================================== -->
+    <section class="kit-section" id="documentacion" aria-labelledby="doc-title">
+      <div class="kit-section__head">
+        <p class="t-label c-accent">06</p>
+        <h2 class="t-h2" id="doc-title">Páginas de documentación</h2>
+        <p class="t-small kit-section__desc">Patrón único para toda la documentación: agrupado por año con el más reciente abierto. No se muestran años ni categorías sin documentos; el estado vacío solo aparece en búsquedas. La etiqueta del enlace (ej. "PDF") es editable.</p>
+      </div>
+
+      <!-- Barra de filtros -->
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Barra de filtros</h3>
+        <div class="filters" data-filters>
+          <div class="filters__bar">
+            <div class="field filters__search">
+              <label class="field__label" for="doc-search">Buscar</label>
+              <div class="control">
+                <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+                <input class="control__input" id="doc-search" type="search" placeholder="Ej: citación junta">
+              </div>
+            </div>
+            <button class="btn btn--secondary filters__toggle" type="button" aria-expanded="false" aria-controls="doc-filters">Filtrar <span data-filter-count></span></button>
+
+            <div class="filters__panel" id="doc-filters" role="group" aria-label="Filtros">
+              <div class="filters__panel-head">
+                <p class="t-h3">Filtros</p>
+                <button class="header__icon-btn" type="button" data-filter-close aria-label="Cerrar filtros"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-close"></use></svg></button>
+              </div>
+              <div class="field field--year">
+                <label class="field__label" for="doc-year">Año</label>
+                <div class="control control--select">
+                  <select class="control__input" id="doc-year">
+                    <option>2026</option><option>2025</option><option>2024</option>
+                  </select>
+                  <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+                </div>
+              </div>
+              <div class="field field--type">
+                <label class="field__label" for="doc-type">Tipo de documento</label>
+                <div class="control control--select">
+                  <select class="control__input" id="doc-type">
+                    <option>Todos los tipos</option><option>Hechos esenciales</option><option>Estados financieros</option><option>Juntas</option>
+                  </select>
+                  <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+                </div>
+              </div>
+              <button class="btn btn--tertiary hit filters__clear" type="button" data-filter-clear><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>Limpiar filtros</button>
+              <div class="filters__panel-actions">
+                <button class="btn btn--secondary" type="button" data-filter-clear>Limpiar</button>
+                <button class="btn btn--primary" type="button" data-filter-close>Aplicar</button>
+              </div>
+            </div>
+            <div class="filters__scrim" aria-hidden="true"></div>
+          </div>
+
+          <div class="filters__active" aria-label="Filtros activos">
+            <span class="t-small c-secondary">Filtros activos:</span>
+            <button class="chip" type="button" aria-pressed="true">2026<svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+            <button class="chip" type="button" aria-pressed="true">Hechos esenciales<svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+            <button class="chip" type="button" aria-pressed="false">Juntas<svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+            <button class="chip" type="button" aria-pressed="false">Estados financieros<svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+            <span class="t-small c-secondary">· 14 documentos</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Listado por año -->
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Listado por año (acordeón)</h3>
+        <div class="doc-years" data-accordion>
+          <div class="doc-year">
+            <button class="doc-year__head" type="button" aria-expanded="true" aria-controls="year-2026">
+              <span class="doc-year__title"><span class="doc-year__year t-figure-s">2026</span><span class="doc-year__count t-small">4 documentos</span></span>
+              <svg class="icon icon--lg acc-icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+            </button>
+            <div class="acc-panel" id="year-2026">
+              <a class="doc-row" href="#" download>
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Citación a Junta Extraordinaria de Accionistas</span><span class="doc-row__meta">14 oct 2026 · PDF 320 KB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Hecho esencial</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download>
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Estados financieros consolidados Q2 2026</span><span class="doc-row__meta">27 ago 2026 · PDF 2,1 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">EEFF</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download>
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Análisis razonado Q2 2026</span><span class="doc-row__meta">27 ago 2026 · PDF 860 KB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Análisis</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download>
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Presentación de resultados Q2 2026</span><span class="doc-row__meta">28 ago 2026 · PDF 4,6 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Presentación</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+            </div>
+          </div>
+          <div class="doc-year">
+            <button class="doc-year__head" type="button" aria-expanded="false" aria-controls="year-2025">
+              <span class="doc-year__title"><span class="doc-year__year t-figure-s">2025</span><span class="doc-year__count t-small">18 documentos</span></span>
+              <svg class="icon icon--lg acc-icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+            </button>
+            <div class="acc-panel" id="year-2025" hidden>
+              <a class="doc-row" href="#" download>
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Memoria anual integrada 2025</span><span class="doc-row__meta">30 abr 2025 · PDF 12,4 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Memoria</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+            </div>
+          </div>
+          <div class="doc-year">
+            <button class="doc-year__head" type="button" aria-expanded="false" aria-controls="year-2024">
+              <span class="doc-year__title"><span class="doc-year__year t-figure-s">2024</span><span class="doc-year__count t-small">21 documentos</span></span>
+              <svg class="icon icon--lg acc-icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+            </button>
+            <div class="acc-panel" id="year-2024" hidden>
+              <a class="doc-row" href="#" download>
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Memoria anual integrada 2024</span><span class="doc-row__meta">29 abr 2024 · PDF 11,8 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Memoria</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Matriz trimestre × tipo -->
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Matriz trimestre × tipo de documento</h3>
+        <div class="matrix" role="region" aria-label="Documentos por trimestre" tabindex="0">
+          <table>
+            <thead>
+              <tr><th scope="col">Período</th><th scope="col">Análisis razonado</th><th scope="col">Estados financieros</th><th scope="col">Presentación</th><th scope="col">EEFF filiales</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><span class="matrix__period">Q2 2026 <span class="badge badge--accent">Último</span></span></th>
+                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
+                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
+                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
+                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
+              </tr>
+              <tr>
+                <th scope="row">Q1 2026</th>
+                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
+                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
+                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
+                <td><span class="matrix__empty" aria-label="Sin documento">—</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Q4 2025</th>
+                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
+                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
+                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
+                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
+              </tr>
+              <tr>
+                <th scope="row">Q3 2025</th>
+                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
+                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
+                <td><span class="matrix__empty" aria-label="Sin documento">—</span></td>
+                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="kit-grid kit-grid--2">
+        <!-- Estado vacío -->
+        <div class="kit-block">
+          <h3 class="t-label kit-block__title">Estado vacío de búsqueda</h3>
+          <div class="empty-state" role="status">
+            <span class="empty-state__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-search"></use></svg></span>
+            <p class="t-h3">Sin resultados para «dividendos 2019»</p>
+            <p>Prueba con otra palabra o revisa el archivo histórico desde 2007.</p>
+            <button class="btn btn--secondary btn--sm hit" type="button">Limpiar filtros</button>
+          </div>
+        </div>
+
+        <!-- Paginación -->
+        <div class="kit-block">
+          <h3 class="t-label kit-block__title">Paginación (colecciones grandes)</h3>
+          <nav class="pagination" aria-label="Paginación">
+            <a class="pagination__arrow" href="#" aria-label="Página anterior" aria-disabled="true"><svg class="icon" aria-hidden="true" style="transform: scaleX(-1)"><use href="#i-chev-right"></use></svg></a>
+            <ol class="pagination__list" role="list">
+              <li><span class="pagination__item" aria-current="page">1</span></li>
+              <li><a class="pagination__item" href="#" aria-label="Página 2">2</a></li>
+              <li><a class="pagination__item" href="#" aria-label="Página 3">3</a></li>
+              <li><span class="pagination__item" aria-hidden="true">…</span></li>
+              <li><a class="pagination__item" href="#" aria-label="Página 8">8</a></li>
+            </ol>
+            <span class="pagination__status">Página 1 de 8</span>
+            <a class="pagination__arrow" href="#" aria-label="Página siguiente"><svg class="icon" aria-hidden="true"><use href="#i-chev-right"></use></svg></a>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         07 · Inversionistas (node 75-764)
+         =================================================================== -->
+    <section class="kit-section" id="inversionistas" aria-labelledby="ir-title">
+      <div class="kit-section__head">
+        <p class="t-label c-accent">07</p>
+        <h2 class="t-h2" id="ir-title">Inversionistas</h2>
+        <p class="t-small kit-section__desc">Componentes de la portada de Inversionistas: resumen, último resultado, próximo evento y contacto. Cifras de ejemplo.</p>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">En una mirada</h3>
+        <ul class="stats" role="list">
+          <li class="stat reveal"><span class="stat__value t-figure-l" data-count="34">34</span><span class="stat__label t-small">años de trayectoria</span></li>
+          <li class="stat reveal"><span class="stat__value t-figure-l" data-count="3500" data-prefix="+">+3.500</span><span class="stat__label t-small">colaboradores</span></li>
+          <li class="stat reveal"><span class="stat__value t-figure-l" data-count="30" data-prefix="+">+30</span><span class="stat__label t-small">países de destino</span></li>
+          <li class="stat reveal"><span class="stat__value t-figure-l" data-count="100" data-suffix="%">100%</span><span class="stat__label t-small">integración vertical</span></li>
+        </ul>
+      </div>
+
+      <div class="ir-pair">
+        <div class="kit-block">
+          <h3 class="t-label kit-block__title">Último resultado</h3>
+          <article class="card card--elevated result-card on-dark">
+            <p class="t-label c-inverse-muted">Último resultado</p>
+            <h4 class="t-h2">Resultados Q2 2026</h4>
+            <p class="t-small c-inverse-muted">Publicado el 27 de agosto de 2026</p>
+            <ul class="result-card__docs" role="list">
+              <li><a class="result-card__doc" href="#" download>Análisis razonado<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></li>
+              <li><a class="result-card__doc" href="#" download>Estados financieros<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></li>
+              <li><a class="result-card__doc" href="#" download>Presentación<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></li>
+              <li><a class="result-card__doc" href="#" download>EEFF filiales<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></li>
+            </ul>
+            <a class="btn btn--tertiary-light hit" href="#" style="align-self: flex-start">Ir al centro de resultados<svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </article>
+        </div>
+
+        <div class="kit-block">
+          <h3 class="t-label kit-block__title">Próximo evento</h3>
+          <article class="card card--elevated">
+            <p class="t-label c-accent">Próximo evento</p>
+            <div class="event">
+              <time class="event__date" datetime="2026-11-12"><span class="t-figure-m">12</span><span class="t-label">Nov 2026</span></time>
+              <div class="event__body">
+                <h4 class="t-h3">Publicación de resultados Q3 2026</h4>
+                <p class="t-small event__detail">Conferencia telefónica 13 nov · 11:00 h (CLT)</p>
+              </div>
+            </div>
+            <div class="add-calendar" data-add-calendar>
+              <button class="btn btn--secondary btn--sm hit add-calendar__toggle" type="button" aria-expanded="false" aria-controls="cal-options"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Agregar al calendario</button>
+              <ul class="add-calendar__options" id="cal-options" role="list" aria-label="Agregar al calendario">
+                <li><a class="btn btn--secondary btn--sm hit" href="#"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Google</a></li>
+                <li><a class="btn btn--secondary btn--sm hit" href="#"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Outlook</a></li>
+                <li><a class="btn btn--secondary btn--sm hit" href="#" download><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>iCal</a></li>
+              </ul>
+            </div>
+            <a class="btn btn--tertiary hit" href="#" style="align-self: flex-start">Ver calendario completo<svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </article>
+        </div>
+      </div>
+
+      <div class="ir-row">
+        <div class="kit-block">
+          <h3 class="t-label kit-block__title">Acción</h3>
+          <article class="card card--elevated" aria-label="Cotización de la acción">
+            <p class="stock__head"><span class="t-label">MULTI X</span><span class="t-small">· Bolsa de Santiago</span></p>
+            <p class="stock__price">
+              <span class="t-figure-m">$ 152,40</span>
+              <span class="stock__change stock__change--up"><svg class="icon" aria-hidden="true"><use href="#i-up"></use></svg>+1,2%<span class="visually-hidden">respecto del cierre anterior</span></span>
+            </p>
+            <svg class="stock__chart" viewBox="0 0 296 56" preserveAspectRatio="none" role="img" aria-label="Evolución de la acción en el último mes, al alza">
+              <path d="M0 44L24 40L48 46L72 34L96 36L120 28L144 32L168 22L192 26L216 18L240 21L264 12L296 8" vector-effect="non-scaling-stroke"/>
+            </svg>
+            <p class="t-small stock__meta">Cierre 16 oct 2026 · 15 min de retraso</p>
+          </article>
+        </div>
+
+        <div class="kit-block">
+          <h3 class="t-label kit-block__title">Contacto IR</h3>
+          <ir-contact name="Nombre Apellido" role-title="Head of Investor Relations" phone="+56 65 248 3700" email="inversionistas@multi-x.cl"></ir-contact>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         08 · Sustentabilidad y Productos (node 75-902)
+         =================================================================== -->
+    <section class="kit-section" id="sustentabilidad" aria-labelledby="sus-title">
+      <div class="kit-section__head">
+        <p class="t-label c-accent">08</p>
+        <h2 class="t-h2" id="sus-title">Sustentabilidad y Productos</h2>
+        <p class="t-small kit-section__desc">Cifras con avance visible, certificaciones explicadas (no solo listadas), marcas como sitios externos y FAQ por página como base del asistente de IA. Cifras de ejemplo.</p>
+      </div>
+
+      <!-- Metas con avance -->
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Cifras y metas</h3>
+        <div class="goals">
+          <div class="goals__head">
+            <h4 class="t-h3">Avance hacia nuestras metas 2030</h4>
+            <div class="tabs" data-tabs>
+              <div class="tabs__list" role="tablist" aria-label="Año de reporte">
+                <button class="tab" type="button" role="tab" id="g-tab-23" aria-selected="false" aria-controls="g-23">2023</button>
+                <button class="tab" type="button" role="tab" id="g-tab-24" aria-selected="false" aria-controls="g-24">2024</button>
+                <button class="tab" type="button" role="tab" id="g-tab-25" aria-selected="true" aria-controls="g-25">2025</button>
+              </div>
+            </div>
+          </div>
+          <ul class="goals__list tab-panel" role="tabpanel" id="g-25" aria-labelledby="g-tab-25">
+            <li class="goal"><div class="goal__text"><span class="t-ui-strong">Reducción de emisiones (alcance 1 y 2)</span><span class="t-small goal__meta">Meta −30% al 2030</span></div><div class="goal__bar"><div class="goal__fill" style="--progress: .6"></div></div><span class="goal__value t-figure-m" data-count="18" data-prefix="−" data-suffix="%">−18%</span></li>
+            <li class="goal"><div class="goal__text"><span class="t-ui-strong">Proveedores locales</span><span class="t-small goal__meta">Meta 80% al 2030</span></div><div class="goal__bar"><div class="goal__fill" style="--progress: .9"></div></div><span class="goal__value t-figure-m" data-count="72" data-suffix="%">72%</span></li>
+            <li class="goal"><div class="goal__text"><span class="t-ui-strong">Energía renovable en plantas</span><span class="t-small goal__meta">Meta 70% al 2030</span></div><div class="goal__bar"><div class="goal__fill" style="--progress: .58"></div></div><span class="goal__value t-figure-m" data-count="41" data-suffix="%">41%</span></li>
+          </ul>
+          <ul class="goals__list tab-panel" role="tabpanel" id="g-24" aria-labelledby="g-tab-24" hidden>
+            <li class="goal"><div class="goal__text"><span class="t-ui-strong">Reducción de emisiones (alcance 1 y 2)</span><span class="t-small goal__meta">Meta −30% al 2030</span></div><div class="goal__bar"><div class="goal__fill" style="--progress: .4"></div></div><span class="goal__value t-figure-m" data-count="12" data-prefix="−" data-suffix="%">−12%</span></li>
+            <li class="goal"><div class="goal__text"><span class="t-ui-strong">Proveedores locales</span><span class="t-small goal__meta">Meta 80% al 2030</span></div><div class="goal__bar"><div class="goal__fill" style="--progress: .85"></div></div><span class="goal__value t-figure-m" data-count="68" data-suffix="%">68%</span></li>
+            <li class="goal"><div class="goal__text"><span class="t-ui-strong">Energía renovable en plantas</span><span class="t-small goal__meta">Meta 70% al 2030</span></div><div class="goal__bar"><div class="goal__fill" style="--progress: .46"></div></div><span class="goal__value t-figure-m" data-count="32" data-suffix="%">32%</span></li>
+          </ul>
+          <ul class="goals__list tab-panel" role="tabpanel" id="g-23" aria-labelledby="g-tab-23" hidden>
+            <li class="goal"><div class="goal__text"><span class="t-ui-strong">Reducción de emisiones (alcance 1 y 2)</span><span class="t-small goal__meta">Meta −30% al 2030</span></div><div class="goal__bar"><div class="goal__fill" style="--progress: .23"></div></div><span class="goal__value t-figure-m" data-count="7" data-prefix="−" data-suffix="%">−7%</span></li>
+            <li class="goal"><div class="goal__text"><span class="t-ui-strong">Proveedores locales</span><span class="t-small goal__meta">Meta 80% al 2030</span></div><div class="goal__bar"><div class="goal__fill" style="--progress: .79"></div></div><span class="goal__value t-figure-m" data-count="63" data-suffix="%">63%</span></li>
+            <li class="goal"><div class="goal__text"><span class="t-ui-strong">Energía renovable en plantas</span><span class="t-small goal__meta">Meta 70% al 2030</span></div><div class="goal__bar"><div class="goal__fill" style="--progress: .37"></div></div><span class="goal__value t-figure-m" data-count="26" data-suffix="%">26%</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="kit-grid kit-grid--2">
+        <!-- Certificaciones y membresías -->
+        <div class="kit-block">
+          <h3 class="t-label kit-block__title">Certificaciones y membresías</h3>
+          <div class="tabs" data-tabs>
+            <div class="tabs__list" role="tablist" aria-label="Tipo">
+              <button class="tab" type="button" role="tab" id="c-tab-cert" aria-selected="true" aria-controls="c-cert">Certificaciones</button>
+              <button class="tab" type="button" role="tab" id="c-tab-mem" aria-selected="false" aria-controls="c-mem">Membresías</button>
+            </div>
+          </div>
+          <div class="tab-panel" role="tabpanel" id="c-cert" aria-labelledby="c-tab-cert">
+            <ul class="cert-list" role="list" data-accordion>
+              <li class="cert">
+                <button class="cert__head" type="button" aria-expanded="true" aria-controls="cert-asc">
+                  <span class="cert__logo" aria-hidden="true">ASC</span>
+                  <span class="cert__name"><strong>ASC</strong><span>Aquaculture Stewardship Council</span></span>
+                  <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
+                </button>
+                <div class="cert__body acc-panel" id="cert-asc">
+                  <p>Estándar internacional de acuicultura responsable. Evalúa impacto ambiental, bienestar animal y relación con comunidades.</p>
+                  <div class="cert__tags"><span class="badge badge--neutral">Cubre: centros de mar</span><span class="badge badge--brand">Vigente</span></div>
+                  <a class="doc-link" href="#" download>Ver certificado<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
+                </div>
+              </li>
+              <li class="cert">
+                <button class="cert__head" type="button" aria-expanded="false" aria-controls="cert-bap">
+                  <span class="cert__logo" aria-hidden="true">BAP</span>
+                  <span class="cert__name"><strong>BAP</strong><span>Best Aquaculture Practices</span></span>
+                  <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
+                </button>
+                <div class="cert__body acc-panel" id="cert-bap" hidden>
+                  <p>Certificación de prácticas responsables en toda la cadena: pisciculturas, centros de engorda y plantas de proceso. [contenido por definir]</p>
+                  <div class="cert__tags"><span class="badge badge--neutral">Cubre: cadena completa</span><span class="badge badge--brand">Vigente</span></div>
+                  <a class="doc-link" href="#" download>Ver certificado<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
+                </div>
+              </li>
+              <li class="cert">
+                <button class="cert__head" type="button" aria-expanded="false" aria-controls="cert-brc">
+                  <span class="cert__logo" aria-hidden="true">BRC</span>
+                  <span class="cert__name"><strong>BRCGS</strong><span>Global Standard for Food Safety</span></span>
+                  <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
+                </button>
+                <div class="cert__body acc-panel" id="cert-brc" hidden>
+                  <p>Estándar de inocuidad alimentaria para plantas de proceso. [contenido por definir]</p>
+                  <div class="cert__tags"><span class="badge badge--neutral">Cubre: plantas de proceso</span><span class="badge badge--brand">Vigente</span></div>
+                  <a class="doc-link" href="#" download>Ver certificado<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="tab-panel" role="tabpanel" id="c-mem" aria-labelledby="c-tab-mem" hidden>
+            <ul class="cert-list" role="list" data-accordion>
+              <li class="cert">
+                <button class="cert__head" type="button" aria-expanded="false" aria-controls="mem-1">
+                  <span class="cert__logo" aria-hidden="true">GSI</span>
+                  <span class="cert__name"><strong>GSI</strong><span>Global Salmon Initiative · [contenido por definir]</span></span>
+                  <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
+                </button>
+                <div class="cert__body acc-panel" id="mem-1" hidden>
+                  <p>Membresía de ejemplo. [contenido por definir]</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Preguntas frecuentes -->
+        <div class="kit-block">
+          <h3 class="t-label kit-block__title">Preguntas frecuentes</h3>
+          <ul class="faq" role="list" data-accordion="single">
+            <li class="faq__item">
+              <button class="faq__question" type="button" aria-expanded="true" aria-controls="faq-1">¿Dónde encuentro los poderes para la Junta de Accionistas?<span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span></button>
+              <div class="faq__answer acc-panel" id="faq-1"><p>En Gobernanza › Junta de accionistas, dentro de los documentos relacionados de cada año.</p></div>
+            </li>
+            <li class="faq__item">
+              <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-2">¿Cuándo se publican los próximos resultados?<span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span></button>
+              <div class="faq__answer acc-panel" id="faq-2" hidden><p>Los resultados del tercer trimestre se publican el 12 de noviembre de 2026. Revisa el calendario completo en Agenda. [contenido por definir]</p></div>
+            </li>
+            <li class="faq__item">
+              <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-3">¿Las políticas están disponibles en inglés?<span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span></button>
+              <div class="faq__answer acc-panel" id="faq-3" hidden><p>Sí, todas las políticas corporativas tienen versión en inglés. [contenido por definir]</p></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nuestras marcas -->
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Nuestras marcas + catálogo propio</h3>
+        <ul class="brands" role="list">
+          <li>
+            <article class="brand-card">
+              <div class="brand-card__logo t-h2">Latitude 45</div>
+              <p class="placeholder-tag">[logo por definir]</p>
+              <a class="btn btn--tertiary hit" href="#" target="_blank" rel="noopener">Ir al sitio<svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg><span class="visually-hidden">de Latitude 45 (abre en una pestaña nueva)</span></a>
+            </article>
+          </li>
+          <li>
+            <article class="brand-card">
+              <div class="brand-card__logo t-h2">Arka Fjord</div>
+              <p class="placeholder-tag">[logo por definir]</p>
+              <a class="btn btn--tertiary hit" href="#" target="_blank" rel="noopener">Ir al sitio<svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg><span class="visually-hidden">de Arka Fjord (abre en una pestaña nueva)</span></a>
+            </article>
+          </li>
+          <li>
+            <article class="brand-card brand-card--catalog">
+              <p class="t-label c-accent">Catálogo Multi X</p>
+              <h4 class="t-h3">Productos frescos, congelados y ahumados</h4>
+              <a class="btn btn--primary btn--sm hit" href="#" download><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>Descargar catálogo</a>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         09 · Hero con franja temporal (node 75-921)
+         =================================================================== -->
+    <section class="kit-section" id="hero" aria-labelledby="hero-title">
+      <div class="kit-section__head">
+        <p class="t-label c-accent">09</p>
+        <h2 class="t-h2" id="hero-title">Hero con franja temporal</h2>
+        <p class="t-small kit-section__desc">Franja inferior administrable para contenidos de temporada (ferias, documentación post feria, encuestas). Se oculta cuando no está activa. La franja es un bloque transversal: <code>&lt;season-strip&gt;</code> en <code>js/layout.js</code>.</p>
+      </div>
+
+      <div class="hero hero--contained on-dark">
+        <div class="hero__media" aria-hidden="true"></div>
+        <span class="hero__placeholder t-small">[foto por definir]</span>
+        <div class="hero__content">
+          <p class="t-label c-inverse-muted">Video / fotografía de fondo</p>
+          <p class="t-display hero__title">Del sur de Chile al mundo</p>
+        </div>
+        <season-strip
+          label="Seafood Expo · Barcelona"
+          text="Conversemos en la feria: agenda una reunión con nuestro equipo comercial."
+          href="#"
+          cta="Agendar"></season-strip>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         10 · Composición con ilustración (pendiente)
+         =================================================================== -->
+    <section class="kit-section" id="ilustracion" aria-labelledby="ilus-title">
+      <div class="kit-section__head">
+        <p class="t-label c-accent">10</p>
+        <h2 class="t-h2" id="ilus-title">Composición con ilustración</h2>
+        <p class="t-small kit-section__desc">Texto (Título 1 con palabra destacada en coral) + ilustración en línea Navy sobre círculo Coral 100, con fila de cifras debajo.</p>
+      </div>
+      <div class="kit-pending">
+        <p class="t-label c-accent">Pendiente de definir con Felipe</p>
+        <p class="t-body">No se construye hasta que exista en Figma y se resuelva:</p>
+        <ul class="t-body">
+          <li>Sora no tiene cursiva: definir si el destacado va solo en color, en otro peso o con otra familia.</li>
+          <li>La palabra destacada va en Coral 600 (regla del coral), no en Coral 500 como en el prototipo de venta.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>

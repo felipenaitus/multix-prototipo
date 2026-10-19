@@ -1,0 +1,326 @@
+/* ==========================================================================
+   Multi X · kit.css
+   Estilos exclusivos de kit.html (documentación del UI kit): encabezados de
+   sección, rótulos de variantes, muestras de color y tipografía.
+   No se usa en las páginas del sitio.
+   ========================================================================== */
+
+.kit {
+  display: flex;
+  flex-direction: column;
+  gap: var(--layout-section-gap);
+  padding-block: var(--space-64) var(--layout-section-gap);
+}
+
+/* Portada */
+.kit-cover {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.kit-cover__lead {
+  max-width: 100%;
+  color: var(--color-text-secondary);
+}
+
+.kit-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.kit-index a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  min-height: var(--touch-target);
+  padding: var(--space-8) var(--space-16);
+  border: var(--border-thin) solid var(--color-border-default);
+  border-radius: var(--radius-full);
+  font-size: var(--text-small-size);
+  line-height: var(--text-small-lh);
+  font-weight: var(--text-small-weight);
+  color: var(--color-text-primary);
+  transition: border-color var(--duration-fast) var(--easing-standard);
+}
+
+.kit-index a:hover {
+  border-color: var(--color-border-brand);
+  color: var(--color-text-brand);
+}
+
+.kit-index span {
+  color: var(--color-text-accent);
+  font-weight: var(--text-label-weight);
+}
+
+/* Sección del kit */
+.kit-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-40);
+  scroll-margin-top: var(--space-96);
+}
+
+.kit-section__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  padding-top: var(--space-24);
+  border-top: var(--border-thin) solid var(--color-border-default);
+}
+
+.kit-section__desc {
+  max-width: 100%;
+  color: var(--color-text-secondary);
+}
+
+.kit-section__figma {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-6);
+  align-self: flex-start;
+  min-height: var(--touch-target);
+}
+
+/* Bloque dentro de una sección (rótulo + contenido) */
+.kit-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  min-width: 0;
+}
+
+.kit-block__title {
+  color: var(--color-text-secondary);
+}
+
+.kit-note {
+  max-width: 100%;
+  color: var(--color-text-secondary);
+}
+
+/* Fila de variantes con rótulo debajo */
+.kit-variants {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-32);
+}
+
+.kit-variant {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-12);
+}
+
+.kit-variant__caption {
+  color: var(--color-text-secondary);
+}
+
+.kit-dark {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-24);
+  padding: var(--space-32) var(--space-24);
+  background: var(--color-bg-inverse);
+  border-radius: var(--radius-xl);
+}
+
+@media (min-width: 768px) {
+  .kit-dark {
+    padding: var(--space-40);
+  }
+}
+
+/* Grillas de apoyo */
+.kit-grid {
+  display: grid;
+  gap: var(--space-32);
+}
+
+.kit-forms {
+  display: grid;
+  gap: var(--space-24);
+}
+
+.kit-checks {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--space-40);
+  row-gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .kit-forms {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-32);
+  }
+}
+
+@media (min-width: 1280px) {
+  .kit-grid--2 {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 3fr);
+    gap: var(--space-40);
+  }
+
+  .kit-forms {
+    grid-template-columns: repeat(2, minmax(0, 2fr)) minmax(0, 1.25fr) minmax(0, 1.75fr);
+  }
+
+  .kit-forms .field--search {
+    grid-column: 1 / -1;
+    max-width: 32%;
+  }
+}
+
+.kit-nav-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-40) var(--space-64);
+}
+
+.kit-tab-panel {
+  padding-top: var(--space-16);
+  color: var(--color-text-secondary);
+}
+
+/* 01 · Color */
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-16);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  min-width: 0;
+}
+
+.swatch__chip {
+  height: var(--space-64);
+  border: var(--border-thin) solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+}
+
+.swatch__name {
+  font-size: var(--text-ui-small-strong-size);
+  line-height: var(--text-ui-small-strong-lh);
+  font-weight: var(--text-ui-small-strong-weight);
+}
+
+.swatch__token {
+  font-size: var(--text-small-size);
+  line-height: var(--text-small-lh);
+  font-weight: var(--text-small-weight);
+  color: var(--color-text-secondary);
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 768px) {
+  .swatches {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .swatches {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+.contrast-list {
+  display: grid;
+  gap: var(--space-12);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contrast-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.contrast-sample {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-8) var(--space-16);
+  border-radius: var(--radius-md);
+  border: var(--border-thin) solid var(--color-border-default);
+}
+
+/* 02 · Tipografía */
+.type-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: var(--border-thin) solid var(--color-border-default);
+}
+
+.type-row {
+  display: grid;
+  gap: var(--space-8);
+  padding-block: var(--space-20);
+  border-bottom: var(--border-thin) solid var(--color-border-default);
+}
+
+.type-row__meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.type-row__sample {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 768px) {
+  .type-row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 4fr);
+    align-items: baseline;
+    gap: var(--space-32);
+  }
+}
+
+/* Composición con ilustración (pendiente) */
+.kit-pending {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  padding: var(--space-32) var(--space-24);
+  border: var(--border-thin) dashed var(--color-border-strong);
+  border-radius: var(--radius-xl);
+}
+
+.kit-pending ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  margin: 0;
+  padding-left: var(--space-20);
+  color: var(--color-text-secondary);
+}
+
+/* Textos descriptivos del kit: dos tercios del contenedor en desktop (760 de 1120 en Figma) */
+@media (min-width: 1280px) {
+  .kit-cover__lead,
+  .kit-section__desc,
+  .kit-note {
+    max-width: 68%;
+  }
+}

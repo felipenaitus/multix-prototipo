@@ -1,0 +1,37 @@
+# Changelog del UI kit
+
+Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entrada indica qué cambió, por qué y si ya está reflejado en Figma y en el código.
+
+Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
+
+## 2026-10-19 · Columnas del mega menú
+- Código ✓ · Las columnas del mega menú dejan el ancho fijo de 17% y toman el ancho de su contenido (`flex: 1 1 0` + `min-width: max-content`); el espacio sobrante se reparte entre ellas. Corrige el corte de "Información financiera" en 1280. Verificado en 1280 y 1440 con textos en español y en inglés de prueba (más largos).
+
+## 2026-10-19 · Token de indicador
+- Figma ✓ Código ✓ · Nuevo token `--border-indicator` (2px, border/indicator en Figma) para el subrayado de la sección activa del menú. `--border-focus` queda solo para el foco. Las pestañas no lo usan: en Figma la activa es una píldora rellena (Navy 900), sin línea indicadora.
+
+## 2026-10-19 · Ajustes tras la revisión del kit
+- Figma ✓ Código ✓ · Nuevos tokens de grosor de borde: `--border-thin` 1px, `--border-medium` 1,5px, `--border-focus` 2px. Todos los bordes, el foco visible y el campo en foco usan estos tokens; el contorno coral sobre oscuro pasa a `--border-medium`. CLAUDE.md 2.1: la excepción "1px para bordes" se reemplaza por "grosores de borde solo con los tokens --border-*".
+- Figma ✓ Código ✓ · Paginación con botones de `--touch-target` (44px).
+- Figma ✓ Código ✓ · Suscripción: etiqueta visible "Correo electrónico" sobre el campo; botón alineado abajo con el input, separado 16px.
+- Figma ✓ Código ✓ · Botón terciario sin subrayado (se corrige ui-kit.md).
+- Código ✓ · Matriz en mobile: divisor junto a la columna "Período" fija en lugar de sombra (responsive.md).
+- Código ✓ · Anchos de columnas y bloques pasan de px fijos a proporciones (`fr`, `minmax()`, porcentajes). Regla agregada a CLAUDE.md 2.1; no se crean tokens de ancho.
+- Código ✓ · Footer queda como borrador hasta definir la home (también la variante del header sobre el hero).
+
+## 2026-10-19 · Construcción del kit en código
+- Figma ✓ Código ✓ · Nuevo token `--shadow-card` (0 10px 30px Navy 950 al 8%), equivalente al estilo de efecto Sombra/Tarjeta. Única sombra del sistema: Último resultado, Próximo evento, Acción y Mega menú.
+- Figma ✓ Código ✓ · Nuevos tokens de tamaño (colección Tamaño): `--icon-sm` 12, `--icon-md` 16, `--icon-lg` 20, `--size-cert-logo` 52, `--size-event-date` 88, `--size-progress` 10. Íconos consolidados en tres tamaños (14→16, 18→20).
+- Código ✓ · Se construyen `kit.html`, `css/base.css`, `css/components.css`, `css/kit.css`, `js/layout.js` y `js/components.js` con todos los componentes de ui-kit.md (desktop y mobile).
+
+## 2026-10-19 · Definición inicial (Propuesta A "Corporativo liviano")
+- Figma ✓ Código ✓ · Se elige la propuesta A: Sora (títulos y cifras) + Manrope (cuerpo e interfaz). Reemplaza a Montserrat del prototipo de venta.
+- Figma ✓ Código ✓ · Botón de acento: Coral 400 (#FF7A7A) con texto Ink 900; hover Coral 500 (#FF5959, original de marca). Se agregan variantes sobre fondo oscuro: acento relleno y contorno coral.
+- Figma ✓ Código ✓ · Coral 600 (#C44545) reemplaza al Coral 700 como coral de texto (etiquetas, badges). Es el más claro que pasa AA sobre blanco y Offwhite.
+- Figma ✓ Código ✓ · Se agrega Coral 100 (#EBE2DC) para figuras detrás de ilustraciones.
+- Figma ✓ Código ✓ · Offwhite 50 (#F7F7F2) reemplaza a Fog 50 como fondo claro. Bordes (#DCD8CD) y fondo atenuado (#ECE9E1) pasan a versiones cálidas.
+- Figma ✓ Código ✓ · La propuesta A se convierte a variables (Primitivos, Color, Espaciado, Radio, Layout, Movimiento y tipografía) y 16 estilos de texto. Espaciados normalizados a la escala (10→12, 14→16, 18→20, 36→40, etc.) y radio de 10 a 12px.
+- Figma pendiente Código ✓ · Escala tipográfica móvil propuesta en tokens.css (display 40, título 1 32, título 2 26, título 3 20): validar en prototipo y llevar a Figma.
+- Figma ✓ Código ✓ · Tokens de movimiento alineados al prototipo de venta: fast 200, slow 350, reveal 800ms; nuevos counter 1100ms, stagger 100ms y distancia de entrada 28px. Catálogo de animaciones en motion.md.
+- Código ✓ · Regla del coral: Coral 600 para todo texto coral sobre claro; Coral 500 solo rellenos y gráficos sobre claro; sobre oscuro, texto y contorno en Coral 500.
+- Figma pendiente · Composición con ilustración (círculo Coral 100 + cifras): agregar al kit. Pendiente definir el destacado del título (Sora no tiene cursiva).

@@ -1,0 +1,17 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Dependencias (el sitio no usa npm; solo herramientas locales de verificación)
+node_modules/
+
+# Capturas y reportes de Playwright
+playwright-report/
+test-results/
+screenshots/
+shots/
+blob-report/
+.playwright/
+
+# Configuración local de Claude Code (no compartida)
+.claude/settings.local.json

@@ -1,0 +1,168 @@
+/* ==========================================================================
+   Multi X · tokens.css
+   ÚNICA fuente de valores del prototipo. Generado desde Figma
+   "Rediseño 2026" › página UI Kit › Propuesta A (variables y estilos de texto).
+   No escribir hex, tamaños, radios ni duraciones fuera de este archivo.
+   Flujo de cambio: Figma → sincronizar aquí → anotar en design-system/changelog.md
+   Última sincronización: 2026-10-19
+   ========================================================================== */
+
+:root {
+  /* ---------- Primitivos (NO usar directo en componentes) ---------- */
+  --color-navy-950: #001C36;
+  --color-navy-900: #003A70;
+  --color-navy-600: #245684;
+  --color-navy-300: #B7C9DB;
+  --color-navy-100: #E6EDF4;
+  --color-coral-100: #EBE2DC;
+  --color-coral-400: #FF7A7A;
+  --color-coral-500: #FF5959;
+  --color-coral-600: #C44545;
+  --color-neutral-0: #FFFFFF;
+  --color-neutral-50: #F7F7F2;
+  --color-neutral-150: #ECE9E1;
+  --color-neutral-200: #DCD8CD;
+  --color-ink-600: #48606B;
+  --color-ink-900: #0B1F2B;
+  --color-green-600: #2E7D5B;
+
+  /* ---------- Color semántico (usar estos en componentes) ---------- */
+  /* Fondos */
+  --color-bg-page: var(--color-neutral-0);
+  --color-bg-subtle: var(--color-neutral-50);
+  --color-bg-muted: var(--color-neutral-150);
+  --color-bg-inverse: var(--color-navy-950);
+  --color-bg-brand: var(--color-navy-900);
+  --color-bg-brand-hover: var(--color-navy-600);
+  --color-bg-brand-soft: var(--color-navy-100);
+  --color-bg-accent: var(--color-coral-400);
+  --color-bg-accent-hover: var(--color-coral-500);
+  --color-bg-illustration: var(--color-coral-100);
+  /* Texto */
+  --color-text-primary: var(--color-ink-900);
+  --color-text-secondary: var(--color-ink-600);
+  --color-text-brand: var(--color-navy-900);
+  --color-text-brand-hover: var(--color-navy-600);
+  --color-text-accent: var(--color-coral-600);
+  --color-text-accent-on-dark: var(--color-coral-500);
+  --color-text-on-accent: var(--color-ink-900);
+  --color-text-inverse: var(--color-neutral-0);
+  --color-text-inverse-muted: var(--color-navy-300);
+  --color-text-success: var(--color-green-600);
+  /* Bordes */
+  --color-border-default: var(--color-neutral-200);
+  --color-border-strong: var(--color-ink-600);
+  --color-border-primary: var(--color-ink-900);
+  --color-border-brand: var(--color-navy-900);
+  --color-border-brand-hover: var(--color-navy-600);
+  --color-border-accent: var(--color-coral-600);
+  --color-border-accent-on-dark: var(--color-coral-500);
+  --color-border-inverse: var(--color-neutral-0);
+  --color-border-inverse-muted: var(--color-navy-300);
+  --color-border-success: var(--color-green-600);
+
+  /* ---------- Tipografía ---------- */
+  --font-display: 'Sora', system-ui, sans-serif;
+  --font-body: 'Manrope', system-ui, sans-serif;
+  /* Si se confirma el chino: agregar 'Noto Sans SC' al final de ambas pilas */
+
+  /* Escala desktop: tamaño / interlineado / tracking / peso.
+     Nombres = estilos de texto de Figma (entre paréntesis). */
+  --text-display-size: 64px;   --text-display-lh: 1.05;  --text-display-ls: -0.02em;  --text-display-weight: 300;  /* Display · Sora */
+  --text-h1-size: 44px;        --text-h1-lh: 1.10;       --text-h1-ls: -0.015em;      --text-h1-weight: 300;       /* Título 1 · Sora */
+  --text-h2-size: 32px;        --text-h2-lh: 1.15;       --text-h2-ls: -0.01em;       --text-h2-weight: 400;       /* Título 2 · Sora */
+  --text-h3-size: 22px;        --text-h3-lh: 1.25;       --text-h3-ls: -0.005em;      --text-h3-weight: 400;       /* Título 3 · Sora */
+  --text-figure-l-size: 52px;  --text-figure-l-lh: 1.00; --text-figure-l-ls: -0.02em; --text-figure-l-weight: 300; /* Cifra L · Sora */
+  --text-figure-m-size: 40px;  --text-figure-m-lh: 1.00; --text-figure-m-ls: -0.02em; --text-figure-m-weight: 300; /* Cifra M · Sora */
+  --text-figure-s-size: 28px;  --text-figure-s-lh: 1.10; --text-figure-s-ls: -0.01em; --text-figure-s-weight: 300; /* Cifra S · Sora */
+  --text-body-l-size: 19px;    --text-body-l-lh: 1.60;   --text-body-l-weight: 400;   /* Cuerpo L · Manrope */
+  --text-body-size: 16px;      --text-body-lh: 1.60;     --text-body-weight: 400;     /* Cuerpo · Manrope */
+  --text-small-size: 13px;     --text-small-lh: 1.50;    --text-small-weight: 500;    /* Pequeño · Manrope */
+  --text-label-size: 11px;     --text-label-lh: 1.40;    --text-label-ls: 0.14em;     --text-label-weight: 700; /* Etiqueta · Manrope · MAYÚSCULAS */
+  --text-ui-strong-size: 16px;       --text-ui-strong-lh: 1.40;       --text-ui-strong-weight: 600;       /* UI/Destacado */
+  --text-ui-button-size: 15px;       --text-ui-button-lh: 1.20;       --text-ui-button-weight: 600;       /* UI/Botón */
+  --text-ui-button-sm-size: 14px;    --text-ui-button-sm-lh: 1.20;    --text-ui-button-sm-weight: 600;    /* UI/Botón pequeño */
+  --text-ui-nav-size: 14px;          --text-ui-nav-lh: 1.40;          --text-ui-nav-weight: 600;          /* UI/Navegación */
+  --text-ui-small-strong-size: 13px; --text-ui-small-strong-lh: 1.40; --text-ui-small-strong-weight: 600; /* UI/Pequeño destacado */
+
+  /* ---------- Espaciado ---------- */
+  --space-2: 2px;   --space-4: 4px;   --space-6: 6px;   --space-8: 8px;
+  --space-12: 12px; --space-16: 16px; --space-20: 20px; --space-24: 24px;
+  --space-32: 32px; --space-40: 40px; --space-48: 48px; --space-64: 64px;
+  --space-80: 80px; --space-96: 96px; --space-128: 128px;
+
+  /* ---------- Radio ---------- */
+  --radius-xs: 4px; --radius-sm: 6px; --radius-md: 8px;
+  --radius-lg: 12px; --radius-xl: 16px; --radius-full: 999px;
+
+  /* ---------- Tamaño (colección Tamaño en Figma) ---------- */
+  --icon-sm: 12px;          /* chevrons del menú y migas de pan */
+  --icon-md: 16px;          /* íconos de botones, campos y enlaces */
+  --icon-lg: 20px;          /* íconos de filas de documento, acordeones y FAQ */
+  --size-cert-logo: 52px;   /* logo circular de certificación */
+  --size-event-date: 88px;  /* bloque de fecha del próximo evento */
+  --size-progress: 10px;    /* alto de la barra de avance de metas */
+
+  /* ---------- Grosor de borde (colección Borde en Figma) ---------- */
+  --border-thin: 1px;     /* bordes, divisores, contornos de botón y campo */
+  --border-medium: 1.5px; /* contorno coral sobre fondo oscuro */
+  --border-focus: 2px;    /* solo foco visible y campo en foco */
+  --border-indicator: 2px; /* subrayado de la sección activa del menú */
+
+  /* ---------- Sombra (estilo de efecto Sombra/Tarjeta en Figma) ---------- */
+  /* Única sombra del sistema: Último resultado, Próximo evento, Acción y Mega menú. */
+  --shadow-card: 0 10px 30px rgba(0, 28, 54, .08);
+
+  /* ---------- Layout ---------- */
+  --layout-max-width: 1240px;
+  --layout-content-width: 1120px;
+  --layout-gutter-desktop: 64px;
+  --layout-gutter-mobile: 20px;
+  --layout-gutter: clamp(var(--layout-gutter-mobile), 4vw, var(--layout-gutter-desktop));
+  --layout-section-gap-desktop: 128px;
+  --layout-section-gap-mobile: 72px;
+  --layout-section-gap: clamp(var(--layout-section-gap-mobile), 9vw, var(--layout-section-gap-desktop));
+  --touch-target: 44px;
+  /* Breakpoints (las media queries no aceptan variables; usar estos literales):
+     mobile 375 · tablet 768 · desktop 1280 · wide 1440 */
+
+  /* ---------- Movimiento (catálogo en design-system/motion.md) ---------- */
+  --duration-fast: 200ms;     /* hover, foco, cambios de color */
+  --duration-base: 250ms;     /* acordeones, tabs, chips */
+  --duration-slow: 350ms;     /* menú, overlays, mega menú, paneles */
+  --duration-reveal: 800ms;   /* entrada de bloques en viewport */
+  --duration-counter: 1100ms; /* contadores de cifras (se usa en JS) */
+  --duration-stagger: 100ms;  /* desfase entre elementos en secuencia */
+  --motion-reveal-distance: 28px;
+  --easing-standard: cubic-bezier(.22,.61,.36,1);
+  --easing-out: cubic-bezier(.16,1,.3,1);
+}
+
+/* Tipografía móvil (< 768px). Propuesta inicial: validar en el prototipo
+   y, si se aprueba, llevarla a Figma. */
+@media (max-width: 767px) {
+  :root {
+    --text-display-size: 40px;
+    --text-h1-size: 32px;
+    --text-h2-size: 26px;
+    --text-h3-size: 20px;
+    --text-figure-l-size: 40px;
+    --text-figure-m-size: 32px;
+    --text-figure-s-size: 24px;
+    --text-body-l-size: 17px;
+  }
+}
+
+/* Movimiento reducido: todo componente animado lo respeta automáticamente
+   si usa las variables de duración. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+    --duration-slow: 0ms;
+    --duration-reveal: 0ms;
+    --duration-counter: 0ms;
+    --duration-stagger: 0ms;
+    --motion-reveal-distance: 0px;
+  }
+}
