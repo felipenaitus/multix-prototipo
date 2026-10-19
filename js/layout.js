@@ -4,12 +4,14 @@
    header, el footer y los bloques que se repiten en más de una página.
    Un cambio aquí se refleja en todas las páginas.
 
-   <site-header current="inversionistas">   Barra utilitaria + menú + mega menú
+   <site-header variant current>             Header de una fila + desplegable + menú hamburguesa
    <site-footer>                             Footer
    <season-strip label text href cta>        Franja temporal del hero
    <ir-contact name role-title phone email>  Contacto IR
 
-   Estilos en css/components.css. Íconos: sprite de Figma (UI Kit).
+   Estilos en css/components.css. Íconos: sprite de Figma (UI Kit), salvo las
+   redes sociales (linkedin, instagram, youtube), dibujadas en el mismo estilo
+   y pendientes de llevar a Figma.
    ========================================================================== */
 (function () {
   'use strict';
@@ -41,7 +43,11 @@
     phone: ['0 0 16 16', '1.75 1.75', 1.5, ['M1.75 0.75H4.25L5.45 3.75L3.85 4.85C4.20185 5.7025 4.71868 6.47706 5.37081 7.12919C6.02294 7.78132 6.7975 8.29815 7.65 8.65L8.75 7.05L11.75 8.25V10.75C11.75 11.0152 11.6446 11.2696 11.4571 11.4571C11.2696 11.6446 11.0152 11.75 10.75 11.75C5.75 11.75 0.75 6.75 0.75 1.75C0.75 1.48478 0.855357 1.23043 1.04289 1.04289C1.23043 0.855357 1.48478 0.75 1.75 0.75Z']],
     minus: ['0 0 18 18', '2.53125 8.15625', 1.6875, ['M0.84375 0.84375H12.0938']],
     plus: ['0 0 18 18', '2.53125 2.53125', 1.6875, ['M6.46875 0.84375V6.46875M6.46875 6.46875V12.0938M6.46875 6.46875H0.84375M6.46875 6.46875H12.0938']],
-    up: ['0 0 14 14', '3.0625 2.1875', 1.75, ['M3.9375 9.1875V0.875M7 3.9375L3.9375 0.875L0.875 3.9375']]
+    up: ['0 0 14 14', '3.0625 2.1875', 1.75, ['M3.9375 9.1875V0.875M7 3.9375L3.9375 0.875L0.875 3.9375']],
+    // Redes sociales: dibujadas en el estilo del kit (no vienen de Figma)
+    linkedin: ['0 0 16 16', '0 0', 1.5, ['M4 2.5H12A1.5 1.5 0 0 1 13.5 4V12A1.5 1.5 0 0 1 12 13.5H4A1.5 1.5 0 0 1 2.5 12V4A1.5 1.5 0 0 1 4 2.5Z', 'M5.5 7V11M5.5 5V5.01M8 11V7M8 9C8 7.9 8.9 7 10 7S11.5 7.6 11.5 8.5V11']],
+    instagram: ['0 0 16 16', '0 0', 1.5, ['M5.5 2.5H10.5A3 3 0 0 1 13.5 5.5V10.5A3 3 0 0 1 10.5 13.5H5.5A3 3 0 0 1 2.5 10.5V5.5A3 3 0 0 1 5.5 2.5Z', 'M10.5 8A2.5 2.5 0 1 1 5.5 8A2.5 2.5 0 0 1 10.5 8Z', 'M11.25 4.75V4.76']],
+    youtube: ['0 0 16 16', '0 0', 1.5, ['M4 3.5H12A2.5 2.5 0 0 1 14.5 6V10A2.5 2.5 0 0 1 12 12.5H4A2.5 2.5 0 0 1 1.5 10V6A2.5 2.5 0 0 1 4 3.5Z', 'M7 6.25V9.75L10 8Z']]
   };
 
   function injectSprite() {
@@ -78,385 +84,469 @@
     return prefix + '-' + uid;
   }
 
-  /* ---------- Arquitectura de navegación ----------
-     Inversionistas: según Figma (node 75-298). Resto: [contenido por definir]. */
-  var NAV = [
-    {
-      id: 'nosotros', label: 'Nosotros', href: '#',
-      intro: 'Historia, propósito y forma de trabajar de la compañía. [contenido por definir]',
-      cols: [
-        { title: 'Compañía', links: ['Historia', 'Propósito y valores', 'Directorio y administración'] },
-        { title: 'Operación', links: ['Cadena de valor', 'Dónde estamos'] }
-      ]
-    },
-    {
-      id: 'productos', label: 'Productos', href: '#',
-      intro: 'Salmón del sur de Chile para más de 30 mercados. [contenido por definir]',
-      cols: [
-        { title: 'Productos', links: ['Frescos', 'Congelados', 'Ahumados'] },
-        { title: 'Marcas', links: ['Latitude 45', 'Arka Fjord', 'Catálogo Multi X'] },
-        { title: 'Calidad', links: ['Certificaciones', 'Inocuidad alimentaria'] }
-      ]
-    },
-    {
-      id: 'sustentabilidad', label: 'Sustentabilidad', href: '#',
-      intro: 'Estrategia, metas y reportes de sustentabilidad. [contenido por definir]',
-      cols: [
-        { title: 'Estrategia', links: ['Estrategia 2030', 'Metas y avances', 'Reportes'] },
-        { title: 'Ámbitos', links: ['Medioambiente', 'Comunidades', 'Bienestar animal'] },
-        { title: 'Gestión', links: ['Certificaciones y membresías', 'Políticas'] }
-      ]
-    },
-    {
-      id: 'inversionistas', label: 'Inversionistas', href: '#',
-      intro: 'Información financiera, gobierno corporativo y agenda para accionistas.',
-      cols: [
-        { title: 'Información financiera', links: ['Centro de resultados', 'Memoria anual', 'Acción y dividendos'] },
-        { title: 'Gobernanza', links: ['Gobierno corporativo', 'Hechos esenciales', 'Junta de accionistas', 'Compliance y políticas'] },
-        { title: 'Agenda', links: ['Calendario y eventos', 'Contacto IR'] }
-      ]
-    },
-    {
-      id: 'personas', label: 'Personas', href: '#',
-      intro: 'Trabajar en Multi X: equipos, cultura y oportunidades. [contenido por definir]',
-      cols: [
-        { title: 'Trabajar en Multi X', links: ['Ofertas laborales', 'Beneficios', 'Desarrollo'] },
-        { title: 'Cultura', links: ['Seguridad', 'Diversidad e inclusión'] }
-      ]
-    },
-    {
-      id: 'noticias', label: 'Noticias', href: '#',
-      intro: 'Prensa, comunicados y presencia en ferias. [contenido por definir]',
-      cols: [
-        { title: 'Prensa', links: ['Noticias', 'Comunicados', 'Kit de prensa'] },
-        { title: 'Agenda', links: ['Eventos y ferias'] }
-      ]
-    }
-  ];
-
-  var UTILITY = [
-    { label: 'Trabaja con nosotros', href: '#' },
-    { label: 'Proveedores', href: '#' },
-    { label: 'Contacto', href: '#' }
-  ];
-
-  var LANGS = [
-    { code: 'ES', label: 'Español', href: '#', current: true },
-    { code: 'EN', label: 'English', href: '#' },
-    { code: '中文', label: '中文', href: '#' }
-  ];
-
-  var CONTACT = {
-    phone: '+56 65 248 3700',
-    email: 'contacto@multi-x.cl',
-    address: '[dirección por definir] · Puerto Montt, Chile'
-  };
+  /* Raíz del sitio, a partir de la ubicación de este script (js/layout.js).
+     Permite usar el header y el footer desde subcarpetas (por ejemplo, pruebas/). */
+  var ROOT = (function () {
+    var s = document.currentScript && document.currentScript.src;
+    return s ? new URL('../', s).href : '';
+  })();
 
   function telHref(phone) {
     return 'tel:' + String(phone).replace(/[^\d+]/g, '');
   }
 
-  function linksList(links, cls) {
-    return '<ul class="' + (cls || 'mega__links') + '" role="list">' + links.map(function (l) {
-      return '<li><a href="#">' + esc(l) + '</a></li>';
-    }).join('') + '</ul>';
+  /* ---------- Arquitectura de navegación (Etapa 1) ----------
+     Páginas aún no construidas apuntan a "#". [contenido por definir] en bajadas. */
+  var INVESTOR_PAGES = [
+    { label: 'Inicio', href: '#' },
+    { label: 'Centro de Resultados', href: '#' },
+    { label: 'Gobernanza', href: '#' },
+    { label: 'Calendario y Eventos', href: '#' },
+    { label: 'Acción', href: '#' },
+    { label: 'Contacto', href: '#' }
+  ];
+
+  // Accesos visibles en el header (desktop)
+  var HEADER_MAIN = [
+    { id: 'productos', label: 'Productos', href: '#' },
+    { id: 'sustentabilidad', label: 'Sustentabilidad', href: '#' },
+    { id: 'inversionistas', label: 'Inversionistas', href: '#', children: INVESTOR_PAGES }
+  ];
+
+  // Columna principal del menú hamburguesa, con la bajada del panel de vista previa
+  var MENU_MAIN = [
+    { id: 'nosotros', label: 'Nosotros', href: '#', lead: 'Historia, propósito y equipo detrás de un salmón del sur de Chile. [contenido por definir]' },
+    { id: 'productos', label: 'Productos', href: '#', lead: 'Salmón fresco, congelado y ahumado para más de 30 mercados. [contenido por definir]' },
+    { id: 'sustentabilidad', label: 'Sustentabilidad', href: '#', lead: 'Metas 2030, certificaciones y reportes de sustentabilidad. [contenido por definir]' },
+    { id: 'inversionistas', label: 'Inversionistas', href: '#', lead: 'Resultados, gobierno corporativo y agenda para accionistas. [contenido por definir]', children: INVESTOR_PAGES },
+    { id: 'trabaja', label: 'Trabaja con Nosotros', href: '#', lead: 'Oportunidades laborales en el sur de Chile y Santiago. [contenido por definir]' },
+    { id: 'noticias', label: 'Noticias', href: '#', lead: 'Prensa, comunicados y presencia en ferias. [contenido por definir]' }
+  ];
+
+  var MENU_SECONDARY = [
+    { label: 'Portal Proveedores', href: '#' },
+    { label: 'Contacto', href: '#' },
+    { label: 'Preguntas Frecuentes', href: '#' },
+    { label: 'Canal de Denuncias', href: '#' }
+  ];
+
+  var HEADER_SECONDARY = [
+    { label: 'Portal Proveedores', href: '#' },
+    { label: 'Contacto', href: '#' }
+  ];
+
+  var LANGS = [
+    { code: 'ES', lang: 'es', label: 'Español', href: '#', current: true },
+    { code: 'EN', lang: 'en', label: 'English', href: '#' }
+  ];
+
+  var CONTACT = {
+    phone: '+56 65 248 3700',
+    email: 'contacto@multi-x.cl'
+  };
+
+  var OFFICES = [
+    { name: 'Casa matriz · Puerto Montt', address: '[dirección por definir], Puerto Montt', phone: '+56 65 248 3700' },
+    { name: 'Oficina Santiago', address: '[dirección por definir], Santiago', phone: '+56 2 2000 0000' }
+  ];
+
+  var SOCIAL = [
+    { id: 'linkedin', label: 'LinkedIn', href: '#' },
+    { id: 'instagram', label: 'Instagram', href: '#' },
+    { id: 'youtube', label: 'YouTube', href: '#' }
+  ];
+
+  function langSwitch(extraCls) {
+    return '<div class="lang-switch' + (extraCls ? ' ' + extraCls : '') + '" role="group" aria-label="Idioma">' +
+      LANGS.map(function (l) {
+        return '<a class="lang-switch__item hit" href="' + l.href + '" lang="' + l.lang + '" hreflang="' + l.lang + '"' +
+          (l.current ? ' aria-current="true"' : '') + ' aria-label="' + esc(l.label) + '">' + esc(l.code) + '</a>';
+      }).join('') +
+      '</div>';
   }
+
+  var desktopMq = window.matchMedia('(min-width: 1280px)');
+  var hoverMq = window.matchMedia('(hover: hover) and (pointer: fine)');
 
   /* ======================================================================
      <site-header>
+       variant="overlay"   Transparente sobre el hero; pasa a sólido al hacer scroll.
+       (sin variant)       Sólido desde el inicio (páginas interiores).
+       current="..."       Acceso activo (productos | sustentabilidad | inversionistas).
+       demo + demo-state   Solo kit.html: muestra un estado fijo (transparent | light |
+                           dark | compact), sin comportamiento de scroll ni overlay propio.
+     Tema oscuro: se activa cuando la sección que queda detrás del header tiene
+     data-header-theme="dark" (el footer lo trae por defecto).
      ====================================================================== */
-  var desktopMq = window.matchMedia('(min-width: 1280px)');
-
   class SiteHeader extends HTMLElement {
     connectedCallback() {
       if (this._ready) return;
       this._ready = true;
       injectSprite();
 
+      var self = this;
+      var demo = this.hasAttribute('demo');
       var current = (this.getAttribute('current') || '').toLowerCase();
+      var ddId = nextId('dd-inversionistas');
+      var menuId = nextId('menu-overlay');
+      var subId = nextId('menu-sub');
+
       this.classList.add('site-header');
-      this.setAttribute('role', 'banner');
+      if (this.getAttribute('variant') === 'overlay') this.classList.add('site-header--overlay');
+      if (demo) this.classList.add('site-header--demo');
+      if (!demo) this.setAttribute('role', 'banner');
 
-      var utility = UTILITY.map(function (u) {
-        return '<li><a href="' + u.href + '">' + esc(u.label) + '</a></li>';
-      }).join('') +
-        '<li><a href="#">' + icon('search') + 'Buscar</a></li>' +
-        '<li class="header__langs">' + icon('globe') +
-        LANGS.map(function (l) {
-          return '<a href="' + l.href + '" lang="' + (l.code === 'ES' ? 'es' : l.code === 'EN' ? 'en' : 'zh') + '"' +
-            (l.current ? ' aria-current="true"' : '') + ' aria-label="' + esc(l.label) + '">' + esc(l.code) + '</a>';
-        }).join('<span aria-hidden="true">·</span>') + '</li>';
-
-      var navItems = NAV.map(function (s) {
-        var id = 'mega-' + s.id;
-        return '<li>' +
-          '<button type="button" class="nav__trigger' + (s.id === current ? ' is-current' : '') + '" aria-expanded="false" aria-controls="' + id + '" data-mega="' + id + '">' +
-          esc(s.label) + icon('chev-down', 'sm') + '</button>' +
-          '</li>';
-      }).join('');
-
-      var megas = NAV.map(function (s) {
-        var id = 'mega-' + s.id;
-        return '<div class="mega" id="' + id + '" data-mega-panel>' +
-          '<div class="container"><div class="mega__panel">' +
-          '<div class="mega__intro"><p class="t-h3 c-primary">' + esc(s.label) + '</p>' +
-          '<p class="t-small">' + esc(s.intro) + '</p>' +
-          '<a class="btn btn--tertiary hit" href="' + s.href + '">Ir a ' + esc(s.label) + icon('arrow') + '</a></div>' +
-          s.cols.map(function (c) {
-            return '<div class="mega__col"><p class="t-label mega__col-title">' + esc(c.title) + '</p>' + linksList(c.links) + '</div>';
-          }).join('') +
-          '</div></div></div>';
-      }).join('');
-
-      var mobileSections = NAV.map(function (s) {
-        var pid = 'mm-' + s.id;
-        return '<li class="mobile-menu__section">' +
-          '<button type="button" class="mobile-menu__trigger t-h3' + (s.id === current ? ' is-current' : '') + '" aria-expanded="false" aria-controls="' + pid + '">' +
-          esc(s.label) + icon('chev-down', 'md', 'acc-icon') + '</button>' +
-          '<div class="mobile-menu__panel acc-panel" id="' + pid + '" hidden>' +
-          '<a class="btn btn--tertiary hit" href="' + s.href + '">Ir a ' + esc(s.label) + icon('arrow') + '</a>' +
-          s.cols.map(function (c) {
-            return '<div class="mobile-menu__group"><p class="t-label c-secondary">' + esc(c.title) + '</p>' + linksList(c.links) + '</div>';
-          }).join('') +
-          '</div></li>';
-      }).join('');
-
-      this.innerHTML =
-        '<a class="skip-link" href="#main">Saltar al contenido</a>' +
-        '<div class="header__utility"><div class="container"><ul class="header__utility-list" role="list">' + utility + '</ul></div></div>' +
-        '<div class="container header__main">' +
-          '<a class="header__logo" href="index.html" aria-label="Multi X, ir al inicio">MULTI X</a>' +
-          '<nav class="header__nav" aria-label="Principal"><ul class="nav__list" role="list">' + navItems + '</ul></nav>' +
-          '<div class="header__actions">' +
-            '<a class="header__icon-btn" href="#" aria-label="Buscar">' + icon('search', 'lg') + '</a>' +
-            '<div class="lang-menu">' +
-              '<button type="button" class="header__icon-btn" aria-expanded="false" aria-controls="lang-mobile" aria-label="Idioma">' + icon('globe', 'lg') + '</button>' +
-              '<ul class="lang-menu__list" id="lang-mobile" role="list" hidden>' +
-                LANGS.map(function (l) {
-                  return '<li><a href="' + l.href + '"' + (l.current ? ' aria-current="true"' : '') + '>' + esc(l.label) + '</a></li>';
-                }).join('') +
-              '</ul>' +
-            '</div>' +
-            '<button type="button" class="header__icon-btn" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">' +
-              '<span class="burger" aria-hidden="true"><span></span><span></span><span></span></span>' +
+      var nav = HEADER_MAIN.map(function (item) {
+        var cur = item.id === current ? ' is-current' : '';
+        if (item.children) {
+          return '<li class="nav__item nav__item--dropdown">' +
+            '<button type="button" class="nav__link' + cur + '" aria-expanded="false" aria-controls="' + ddId + '" aria-haspopup="true">' +
+              esc(item.label) + icon('chev-down', 'sm') +
             '</button>' +
-          '</div>' +
-        '</div>' +
-        megas +
-        '<div class="mobile-menu" id="mobile-menu">' +
-          '<div class="container mobile-menu__inner">' +
-            '<nav aria-label="Principal"><ul class="mobile-menu__sections" role="list">' + mobileSections + '</ul></nav>' +
-            '<ul class="mobile-menu__utility" role="list">' +
-              UTILITY.map(function (u) { return '<li><a href="' + u.href + '">' + esc(u.label) + '</a></li>'; }).join('') +
+            '<ul class="dropdown" id="' + ddId + '" role="list">' +
+              item.children.map(function (c) {
+                return '<li><a class="dropdown__link" href="' + c.href + '">' + esc(c.label) + '</a></li>';
+              }).join('') +
             '</ul>' +
+          '</li>';
+        }
+        return '<li class="nav__item"><a class="nav__link' + cur + '" href="' + item.href + '"' + (cur ? ' aria-current="page"' : '') + '>' + esc(item.label) + '</a></li>';
+      }).join('');
+
+      var bar =
+        '<div class="header__bar">' +
+          '<div class="header__bg" aria-hidden="true"></div>' +
+          '<div class="container header__inner">' +
+            '<a class="header__logo" href="' + ROOT + 'index.html" aria-label="Multi X, ir al inicio">MULTI X</a>' +
+            '<nav class="header__nav" aria-label="Principal"><ul class="nav__list" role="list">' + nav + '</ul></nav>' +
+            '<div class="header__tools">' +
+              '<ul class="header__secondary" role="list">' +
+                HEADER_SECONDARY.map(function (l) { return '<li><a class="hit" href="' + l.href + '">' + esc(l.label) + '</a></li>'; }).join('') +
+              '</ul>' +
+              '<a class="header__icon-btn" href="#" aria-label="Buscar">' + icon('search', 'lg') + '</a>' +
+              langSwitch('header__lang') +
+              '<button type="button" class="header__icon-btn" data-menu-toggle aria-expanded="false"' + (demo ? '' : ' aria-controls="' + menuId + '"') + ' aria-label="Abrir menú">' +
+                '<span class="burger" aria-hidden="true"><span></span><span></span><span></span></span>' +
+              '</button>' +
+            '</div>' +
           '</div>' +
         '</div>';
 
-      this._bind();
+      var menuMain = MENU_MAIN.map(function (item, i) {
+        var cur = item.id === current ? ' is-current' : '';
+        if (item.children) {
+          return '<li class="menu-main__item menu-main__item--group">' +
+            '<a class="menu-main__link menu-main__link--desktop' + cur + '" href="' + item.href + '" data-preview="' + i + '">' + esc(item.label) + '</a>' +
+            '<button type="button" class="menu-main__link menu-main__trigger' + cur + '" aria-expanded="false" aria-controls="' + subId + '" data-preview="' + i + '">' +
+              esc(item.label) + icon('chev-down', 'lg', 'acc-icon') +
+            '</button>' +
+            '<ul class="menu-main__sub" id="' + subId + '" role="list">' +
+              item.children.map(function (c) { return '<li><a href="' + c.href + '">' + esc(c.label) + '</a></li>'; }).join('') +
+            '</ul>' +
+          '</li>';
+        }
+        return '<li class="menu-main__item"><a class="menu-main__link' + cur + '" href="' + item.href + '" data-preview="' + i + '">' + esc(item.label) + '</a></li>';
+      }).join('');
+
+      var overlay = demo ? '' :
+        '<div class="menu-overlay" id="' + menuId + '">' +
+          '<div class="menu-overlay__scrim" data-menu-close aria-hidden="true"></div>' +
+          '<div class="menu-overlay__panel" role="dialog" aria-modal="true" aria-label="Menú">' +
+            '<div class="container menu-overlay__grid">' +
+              '<nav class="menu-main" aria-label="Menú principal"><ul class="menu-main__list" role="list">' + menuMain + '</ul></nav>' +
+              '<div class="menu-secondary">' +
+                '<ul class="menu-secondary__list" role="list">' +
+                  MENU_SECONDARY.map(function (l) { return '<li><a href="' + l.href + '">' + esc(l.label) + '</a></li>'; }).join('') +
+                '</ul>' +
+                '<ul class="menu-secondary__contact" role="list">' +
+                  '<li><a href="' + telHref(CONTACT.phone) + '">' + icon('phone') + esc(CONTACT.phone) + '</a></li>' +
+                  '<li><a href="mailto:' + esc(CONTACT.email) + '">' + icon('mail') + esc(CONTACT.email) + '</a></li>' +
+                '</ul>' +
+                langSwitch('menu-secondary__lang') +
+              '</div>' +
+              '<aside class="menu-preview" aria-hidden="true">' +
+                '<div class="menu-preview__media"><span class="placeholder-tag">[foto por definir]</span></div>' +
+                '<div class="menu-preview__text">' +
+                  '<p class="t-label c-accent menu-preview__title">' + esc(MENU_MAIN[0].label) + '</p>' +
+                  '<p class="t-body c-secondary menu-preview__lead">' + esc(MENU_MAIN[0].lead) + '</p>' +
+                '</div>' +
+              '</aside>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+
+      this.innerHTML = (demo ? '' : '<a class="skip-link" href="#main">Saltar al contenido</a>') + bar + overlay;
+
+      this._bar = this.querySelector('.header__bar');
+      this._bindDropdown();
+
+      if (demo) {
+        var state = this.getAttribute('demo-state') || 'light';
+        this.dataset.state = state === 'transparent' ? 'transparent' : 'solid';
+        this.dataset.tone = state === 'dark' || state === 'transparent' ? 'dark' : 'light';
+        this.classList.toggle('is-compact', state === 'compact');
+        // En el kit, la hamburguesa de los ejemplos abre el overlay real de la página
+        this.querySelector('[data-menu-toggle]').addEventListener('click', function (e) {
+          e.stopPropagation();
+          var main = document.querySelector('site-header:not([demo])');
+          if (main && main._setMenu) main._setMenu(true);
+        });
+        return;
+      }
+
+      this._bindMenu();
+      this._bindScroll();
     }
 
-    _bind() {
+    /* --- Desplegable de Inversionistas: mouse y teclado --- */
+    _bindDropdown() {
       var self = this;
-      var triggers = Array.prototype.slice.call(this.querySelectorAll('[data-mega]'));
-      var closeTimer = null;
+      var item = this.querySelector('.nav__item--dropdown');
+      if (!item) return;
+      var btn = item.querySelector('.nav__link');
+      var list = item.querySelector('.dropdown');
+      var links = Array.prototype.slice.call(list.querySelectorAll('a'));
+      var timer = null;
 
-      /* --- Mega menú (desktop) --- */
-      function openMega(trigger) {
-        clearTimeout(closeTimer);
-        triggers.forEach(function (t) {
-          var panel = document.getElementById(t.getAttribute('aria-controls'));
-          var open = t === trigger;
-          t.setAttribute('aria-expanded', String(open));
-          panel.classList.toggle('is-open', open);
-        });
+      function open(focusIndex) {
+        clearTimeout(timer);
+        btn.setAttribute('aria-expanded', 'true');
+        item.classList.add('is-open');
+        if (typeof focusIndex === 'number') links[(focusIndex + links.length) % links.length].focus();
       }
-
-      function closeMega() {
-        triggers.forEach(function (t) {
-          t.setAttribute('aria-expanded', 'false');
-          document.getElementById(t.getAttribute('aria-controls')).classList.remove('is-open');
-        });
+      function close(returnFocus) {
+        clearTimeout(timer);
+        btn.setAttribute('aria-expanded', 'false');
+        item.classList.remove('is-open');
+        if (returnFocus) btn.focus();
       }
+      this._closeDropdown = close;
 
-      function scheduleClose() {
-        clearTimeout(closeTimer);
-        closeTimer = setTimeout(closeMega, 200);
-      }
-
-      triggers.forEach(function (t) {
-        var panel = document.getElementById(t.getAttribute('aria-controls'));
-        t.addEventListener('click', function () {
-          if (t.getAttribute('aria-expanded') === 'true') closeMega();
-          else openMega(t);
-        });
-        t.addEventListener('mouseenter', function () {
-          if (desktopMq.matches && window.matchMedia('(hover: hover)').matches) openMega(t);
-        });
-        t.addEventListener('mouseleave', scheduleClose);
-        panel.addEventListener('mouseenter', function () { clearTimeout(closeTimer); });
-        panel.addEventListener('mouseleave', scheduleClose);
+      btn.addEventListener('click', function () {
+        if (btn.getAttribute('aria-expanded') === 'true') close();
+        else open();
       });
-
-      this.addEventListener('focusout', function (e) {
-        if (!self.contains(e.relatedTarget)) closeMega();
+      btn.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowDown') { e.preventDefault(); open(0); }
+        if (e.key === 'ArrowUp') { e.preventDefault(); open(-1); }
       });
-
+      list.addEventListener('keydown', function (e) {
+        var i = links.indexOf(document.activeElement);
+        if (e.key === 'ArrowDown') { e.preventDefault(); links[(i + 1) % links.length].focus(); }
+        if (e.key === 'ArrowUp') { e.preventDefault(); links[(i - 1 + links.length) % links.length].focus(); }
+        if (e.key === 'Home') { e.preventDefault(); links[0].focus(); }
+        if (e.key === 'End') { e.preventDefault(); links[links.length - 1].focus(); }
+      });
+      item.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') { e.stopPropagation(); close(true); }
+      });
+      item.addEventListener('focusout', function (e) {
+        if (!item.contains(e.relatedTarget)) close();
+      });
+      item.addEventListener('mouseenter', function () { if (hoverMq.matches) open(); });
+      item.addEventListener('mouseleave', function () {
+        if (!hoverMq.matches) return;
+        clearTimeout(timer);
+        timer = setTimeout(close, 200);
+      });
       document.addEventListener('click', function (e) {
-        if (!self.contains(e.target)) {
-          closeMega();
-          closeLang();
-        }
+        if (!item.contains(e.target)) close();
       });
+    }
 
-      /* --- Idioma (mobile) --- */
-      var langBtn = this.querySelector('.lang-menu > button');
-      var langList = this.querySelector('#lang-mobile');
-      function closeLang() {
-        langBtn.setAttribute('aria-expanded', 'false');
-        langList.hidden = true;
-      }
-      langBtn.addEventListener('click', function () {
-        var open = langBtn.getAttribute('aria-expanded') !== 'true';
-        langBtn.setAttribute('aria-expanded', String(open));
-        langList.hidden = !open;
-      });
-
-      /* --- Menú mobile --- */
-      var menuBtn = this.querySelector('[data-menu-toggle]');
-      var menu = this.querySelector('#mobile-menu');
+    /* --- Menú hamburguesa (overlay) --- */
+    _bindMenu() {
+      var self = this;
+      var btn = this.querySelector('[data-menu-toggle]');
+      var overlay = this.querySelector('.menu-overlay');
+      var title = overlay.querySelector('.menu-preview__title');
+      var lead = overlay.querySelector('.menu-preview__lead');
+      var previewText = overlay.querySelector('.menu-preview__text');
+      var sub = overlay.querySelector('.menu-main__trigger');
 
       function setMenu(open) {
-        self._setHeaderHeight();
-        menuBtn.setAttribute('aria-expanded', String(open));
-        menuBtn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
-        menu.classList.toggle('is-open', open);
-        document.body.classList.toggle('is-locked', open);
+        if (self._closeDropdown) self._closeDropdown();
+        self.classList.toggle('is-menu-open', open);
         self.classList.remove('is-hidden');
+        btn.setAttribute('aria-expanded', String(open));
+        btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+        overlay.classList.toggle('is-open', open);
+        document.body.classList.toggle('is-locked', open);
+        self._update();
         if (open) {
-          var first = menu.querySelector('button, a');
-          if (first) setTimeout(function () { first.focus(); }, 50);
+          setTimeout(function () {
+            var target = Array.prototype.slice.call(overlay.querySelectorAll('.menu-main__link')).filter(function (el) { return el.offsetParent !== null; })[0];
+            if (target) target.focus();
+          }, 60);
         }
       }
       this._setMenu = setMenu;
 
-      menuBtn.addEventListener('click', function () {
-        setMenu(menuBtn.getAttribute('aria-expanded') !== 'true');
+      btn.addEventListener('click', function () {
+        setMenu(btn.getAttribute('aria-expanded') !== 'true');
       });
-
-      // Secciones en acordeón (una abierta a la vez)
-      var mTriggers = Array.prototype.slice.call(menu.querySelectorAll('.mobile-menu__trigger'));
-      mTriggers.forEach(function (t) {
-        t.addEventListener('click', function () {
-          var open = t.getAttribute('aria-expanded') !== 'true';
-          mTriggers.forEach(function (o) {
-            o.setAttribute('aria-expanded', 'false');
-            document.getElementById(o.getAttribute('aria-controls')).hidden = true;
-          });
-          t.setAttribute('aria-expanded', String(open));
-          document.getElementById(t.getAttribute('aria-controls')).hidden = !open;
-        });
+      overlay.querySelector('[data-menu-close]').addEventListener('click', function () {
+        setMenu(false);
+        btn.focus();
       });
-
-      // Escape cierra mega menú, idioma y menú mobile
       document.addEventListener('keydown', function (e) {
-        if (e.key !== 'Escape') return;
-        var openTrigger = triggers.filter(function (t) { return t.getAttribute('aria-expanded') === 'true'; })[0];
-        if (openTrigger) { closeMega(); openTrigger.focus(); }
-        if (langBtn.getAttribute('aria-expanded') === 'true') { closeLang(); langBtn.focus(); }
-        if (menuBtn.getAttribute('aria-expanded') === 'true') { setMenu(false); menuBtn.focus(); }
-      });
-
-      // Al pasar a desktop se cierra el menú mobile
-      desktopMq.addEventListener('change', function (e) {
-        if (e.matches) setMenu(false);
-        else closeMega();
-      });
-
-      /* --- Comportamiento al hacer scroll --- */
-      var lastY = window.scrollY;
-      var ticking = false;
-      function onScroll() {
-        var y = window.scrollY;
-        var menuOpen = menuBtn.getAttribute('aria-expanded') === 'true';
-        if (desktopMq.matches) {
-          self.classList.toggle('is-compact', y > self._utilityH);
-          self.classList.remove('is-hidden');
-        } else if (!menuOpen) {
-          var goingDown = y > lastY;
-          self.classList.toggle('is-hidden', goingDown && y > self.offsetHeight);
+        if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
+          setMenu(false);
+          btn.focus();
         }
-        lastY = y;
-        ticking = false;
+      });
+      // Clic fuera del panel (en desktop el scrim; en mobile el panel ocupa toda la pantalla)
+      document.addEventListener('click', function (e) {
+        if (btn.getAttribute('aria-expanded') === 'true' && !self.contains(e.target)) setMenu(false);
+      });
+
+      // Panel de vista previa: cambia título y bajada al pasar por cada acceso principal
+      function preview(i) {
+        var item = MENU_MAIN[i];
+        if (!item || title.textContent === item.label) return;
+        title.textContent = item.label;
+        lead.textContent = item.lead;
+        previewText.classList.remove('is-changing');
+        void previewText.offsetWidth;
+        previewText.classList.add('is-changing');
       }
-      window.addEventListener('scroll', function () {
-        if (!ticking) {
-          window.requestAnimationFrame(onScroll);
-          ticking = true;
-        }
-      }, { passive: true });
+      overlay.querySelectorAll('[data-preview]').forEach(function (el) {
+        var i = parseInt(el.getAttribute('data-preview'), 10);
+        el.addEventListener('mouseenter', function () { preview(i); });
+        el.addEventListener('focus', function () { preview(i); });
+      });
 
-      this._setHeaderHeight();
-      window.addEventListener('resize', function () { self._setHeaderHeight(); });
+      // Inversionistas en acordeón (mobile y tablet)
+      if (sub) {
+        sub.addEventListener('click', function () {
+          var open = sub.getAttribute('aria-expanded') !== 'true';
+          sub.setAttribute('aria-expanded', String(open));
+          sub.parentElement.classList.toggle('is-open', open);
+        });
+      }
+
+      desktopMq.addEventListener('change', function () { self._update(); });
     }
 
-    _setHeaderHeight() {
-      var utility = this.querySelector('.header__utility');
-      this._utilityH = utility ? utility.offsetHeight : 0;
-      this.style.setProperty('--utility-h', this._utilityH + 'px');
-      this.style.setProperty('--header-h', this.getBoundingClientRect().bottom + 'px');
+    /* --- Scroll: transparente → sólido, compactación, tema y ocultar en mobile --- */
+    _bindScroll() {
+      var self = this;
+      var ticking = false;
+      this._lastY = window.scrollY;
+      window.addEventListener('scroll', function () {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(function () { self._update(); ticking = false; });
+      }, { passive: true });
+      window.addEventListener('resize', function () { self._update(); });
+      this._update();
+    }
+
+    _update() {
+      if (this.hasAttribute('demo')) return;
+      var y = window.scrollY;
+      var css = getComputedStyle(this);
+      var full = parseFloat(css.getPropertyValue('--bar-h')) || 0;
+      var compactH = parseFloat(css.getPropertyValue('--bar-h-compact')) || full;
+      var menuOpen = this.classList.contains('is-menu-open');
+      var desktop = desktopMq.matches;
+      var scrolled = y > compactH;
+
+      var compact = desktop && scrolled && !menuOpen;
+      this.classList.toggle('is-compact', compact);
+
+      var overlayVariant = this.classList.contains('site-header--overlay');
+      this.dataset.state = overlayVariant && !scrolled && !menuOpen ? 'transparent' : 'solid';
+
+      // Tema según la sección que queda detrás del borde inferior del header
+      var line = (compact ? compactH : full) - 1;
+      var dark = false;
+      if (!menuOpen) {
+        document.querySelectorAll('[data-header-theme="dark"]').forEach(function (el) {
+          var r = el.getBoundingClientRect();
+          if (r.top <= line && r.bottom > line) dark = true;
+        });
+      }
+      this.dataset.tone = dark || this.dataset.state === 'transparent' ? 'dark' : 'light';
+
+      // Mobile y tablet: se oculta al bajar y aparece al subir
+      if (!desktop && !menuOpen) {
+        this.classList.toggle('is-hidden', y > this._lastY && y > full);
+      } else {
+        this.classList.remove('is-hidden');
+      }
+      this._lastY = y;
+
+      var overlay = this.querySelector('.menu-overlay');
+      if (overlay) overlay.style.setProperty('--overlay-top', (compact ? compactH : full) + 'px');
     }
   }
 
   /* ======================================================================
-     <site-footer> · BORRADOR: no existe en Figma; se define al armar la home.
+     <site-footer>
+     Mobile: columnas en acordeón; direcciones y canal de denuncias siempre visibles.
      ====================================================================== */
+  var FOOTER_COLS = [
+    { title: 'Información', links: [{ label: 'Preguntas Frecuentes', href: '#' }, { label: 'Legislación', href: '#' }] },
+    { title: 'Personas y proveedores', links: [{ label: 'Trabaja con Nosotros', href: '#' }, { label: 'Portal Proveedores', href: '#' }] }
+  ];
+
   class SiteFooter extends HTMLElement {
     connectedCallback() {
       if (this._ready) return;
       this._ready = true;
       injectSprite();
-      this.classList.add('site-footer');
+      this.classList.add('site-footer', 'on-dark');
       this.setAttribute('role', 'contentinfo');
+      this.setAttribute('data-header-theme', 'dark');
 
-      var cols = NAV.map(function (s) {
-        var pid = nextId('footer-col');
-        return '<li class="footer__col">' +
-          '<button type="button" class="footer__col-trigger" aria-expanded="false" aria-controls="' + pid + '">' +
-            '<span class="t-label">' + esc(s.label) + '</span>' + icon('chev-down', 'md', 'acc-icon') +
-          '</button>' +
-          '<p class="t-label footer__col-title footer__col-title--static">' + esc(s.label) + '</p>' +
-          '<div class="footer__panel" id="' + pid + '">' +
-            linksList(s.cols.reduce(function (all, c) { return all.concat(c.links); }, []).slice(0, 5), 'footer__links') +
-          '</div>' +
+      var offices = OFFICES.map(function (o) {
+        return '<li class="footer__office">' +
+          '<p class="t-ui-small-strong">' + esc(o.name) + '</p>' +
+          '<address class="t-small footer__address">' + esc(o.address) + '</address>' +
+          '<a class="footer__contact-link" href="' + telHref(o.phone) + '">' + icon('phone') + esc(o.phone) + '</a>' +
         '</li>';
+      }).join('');
+
+      var cols = FOOTER_COLS.map(function (c) {
+        var pid = nextId('footer-col');
+        return '<div class="footer__col">' +
+          '<button type="button" class="footer__col-trigger" aria-expanded="false" aria-controls="' + pid + '">' +
+            '<span class="t-label">' + esc(c.title) + '</span>' + icon('chev-down', 'md', 'acc-icon') +
+          '</button>' +
+          '<p class="t-label footer__col-title footer__col-title--static">' + esc(c.title) + '</p>' +
+          '<div class="footer__panel" id="' + pid + '"><ul class="footer__links" role="list">' +
+            c.links.map(function (l) { return '<li><a href="' + l.href + '">' + esc(l.label) + '</a></li>'; }).join('') +
+          '</ul></div>' +
+        '</div>';
       }).join('');
 
       this.innerHTML =
         '<div class="container">' +
           '<div class="footer__top">' +
             '<div class="footer__brand">' +
-              '<a class="footer__logo" href="index.html" aria-label="Multi X, ir al inicio">MULTI X</a>' +
-              '<p class="t-small footer__about">Salmón del sur de Chile al mundo. [contenido por definir]</p>' +
-              '<ul class="footer__contact" role="list">' +
-                '<li><a href="' + telHref(CONTACT.phone) + '">' + icon('phone') + esc(CONTACT.phone) + '</a></li>' +
-                '<li><a href="mailto:' + esc(CONTACT.email) + '">' + icon('mail') + esc(CONTACT.email) + '</a></li>' +
-              '</ul>' +
-              '<address class="t-small footer__address">' + esc(CONTACT.address) + '</address>' +
-              '<a class="footer__whistle" href="#">Canal de denuncias' + icon('arrow', 'md', 'icon--arrow') + '</a>' +
+              '<a class="footer__logo" href="' + ROOT + 'index.html" aria-label="Multi X, ir al inicio">MULTI X</a>' +
+              '<p class="t-label footer__col-title">Direcciones y teléfonos</p>' +
+              '<ul class="footer__offices" role="list">' + offices + '</ul>' +
+              '<a class="footer__contact-link" href="mailto:' + esc(CONTACT.email) + '">' + icon('mail') + esc(CONTACT.email) + '</a>' +
             '</div>' +
-            '<ul class="footer__cols" role="list">' + cols + '</ul>' +
+            '<div class="footer__cols">' + cols + '</div>' +
+            '<div class="footer__whistle">' +
+              '<p class="t-label footer__col-title">Canal de Denuncias</p>' +
+              '<p class="t-small footer__whistle-text">Canal confidencial para informar conductas contrarias a la ley o a nuestro Código de Ética. [contenido por definir]</p>' +
+              '<a class="btn btn--accent-outline-dark btn--sm hit" href="#">Ir al Canal de Denuncias' + icon('arrow', 'md', 'icon--arrow') + '</a>' +
+            '</div>' +
           '</div>' +
           '<div class="footer__bottom">' +
-            '<p>© 2026 Multi X S.A. Todos los derechos reservados.</p>' +
-            '<ul class="footer__legal" role="list">' +
-              '<li><a href="#">Política de privacidad</a></li>' +
-              '<li><a href="#">Términos de uso</a></li>' +
-              '<li><a href="#">Mapa del sitio</a></li>' +
+            '<ul class="footer__social" role="list">' +
+              SOCIAL.map(function (s) {
+                return '<li><a class="footer__social-link" href="' + s.href + '" target="_blank" rel="noopener" aria-label="' + esc(s.label) + ' (abre en una pestaña nueva)">' + icon(s.id, 'lg') + '</a></li>';
+              }).join('') +
             '</ul>' +
+            '<p>© 2026 Multi X S.A. Todos los derechos reservados.</p>' +
           '</div>' +
         '</div>';
 
-      // Columnas en acordeón (solo mobile; en tablet y desktop se muestran siempre)
       this.querySelectorAll('.footer__col-trigger').forEach(function (t) {
         t.addEventListener('click', function () {
           var open = t.getAttribute('aria-expanded') !== 'true';
@@ -525,6 +615,17 @@
         '</ul>';
     }
   }
+
+  /* Cualquier botón con data-open-menu abre el menú del header de la página (usado en kit.html). */
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-open-menu]').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var main = document.querySelector('site-header:not([demo])');
+        if (main && main._setMenu) main._setMenu(true);
+      });
+    });
+  });
 
   customElements.define('site-header', SiteHeader);
   customElements.define('site-footer', SiteFooter);
