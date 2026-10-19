@@ -21,9 +21,10 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 ## Patrones por componente
 | Componente | Desktop | Mobile |
 |---|---|---|
-| Barra utilitaria | Fila superior separada (contacto, buscador, idioma) | Buscador e idioma en el header como íconos; contacto dentro del menú |
-| Menú principal + mega menú | Menú desplegado; mega menú con columnas al hover/clic | Botón hamburguesa → panel a pantalla completa; secciones en acordeón; cada sección parte con el acceso a su portada |
-| Header fijo | Alto completo; se compacta al hacer scroll | Alto reducido; se oculta al bajar y aparece al subir |
+| Header (una fila) | Logo · Productos · Sustentabilidad · Inversionistas (desplegable) · Portal Proveedores y Contacto (pequeño) · buscador · ES/EN · hamburguesa | Mobile y tablet (< 1280): logo, buscador y hamburguesa. Accesos, secundarios e idioma pasan al overlay |
+| Desplegable de Inversionistas | Se abre con hover o clic; navegable con teclado | No aplica: Inversionistas va en acordeón dentro del overlay |
+| Menú hamburguesa (overlay) | Panel bajo el header con scrim: columna principal grande, columna secundaria con contacto y panel de vista previa | Pantalla completa: accesos principales arriba (Inversionistas en acordeón), secundarios y contacto abajo tras un divisor, switch de idioma dentro; sin vista previa |
+| Header fijo | Alto 96 px; se compacta a 64 px al hacer scroll. Transparente sobre el hero → sólido; tema oscuro sobre secciones oscuras | Alto 64 px fijo; se oculta al bajar y aparece al subir. Mismos cambios de transparente/sólido y de tema |
 | Tabs de sección (sub-navegación) | Fila completa | Tira con scroll horizontal, tab activa visible y centrada |
 | Breadcrumb | Ruta completa | Solo "← Volver a [página padre]" |
 | Hero | Display + bajada + botones en fila; franja temporal en una línea | Display móvil; botones apilados a ancho completo; franja temporal en dos líneas (etiqueta arriba, texto + enlace abajo) |
@@ -44,7 +45,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Composición con ilustración | Texto a la izquierda, ilustración a la derecha | Ilustración arriba (más chica), texto debajo; cifras en 2 × 2 |
 | Formularios | Campos en 2-3 columnas cuando son cortos | 1 columna; teclado según el tipo de campo (`type="email"`, `tel`, etc.) |
 | Suscripción (texto + campo + botón) | En una fila | Apilado; botón a ancho completo |
-| Footer | Columnas | Columnas en acordeón; datos de contacto y canal de denuncias siempre visibles |
+| Footer | Desktop: direcciones · columnas · canal de denuncias en una fila. Tablet: direcciones y denuncias arriba, columnas debajo | Mobile: Información y Personas y proveedores en acordeón; direcciones, teléfonos y canal de denuncias siempre visibles; redes y copyright al final |
 | Teléfonos y correos | Enlace | Enlace (marca o abre el correo con un toque) |
 
 ## Componentes sin patrón

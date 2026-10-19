@@ -87,11 +87,30 @@ Alto 50px, padding 16/24, radio full, texto UI/Botón.
 ### Formularios (node 75-244)
 Etiqueta siempre visible (no solo placeholder), alto mínimo 44px, foco con borde Navy 900. Incluye: campo de texto, campo con foco, select, buscador con ícono, checkbox, composición de suscripción (texto + campo con etiqueta visible + botón alineado abajo con el input).
 
-### Navegación (node 75-353)
-- Barra utilitaria separada (contacto, buscador, idioma) sobre el menú principal.
-- Menú principal por audiencias con mega menú: columnas con pocos enlaces, cada desplegable parte con acceso a la portada de su sección.
-- Tabs de sección y breadcrumb.
-- Header y footer viven en `js/layout.js` (ver CLAUDE.md 2.3).
+### Navegación (Etapa 1 · definida por Felipe; el header del Figma node 75-353 queda desactualizado)
+Header, menú hamburguesa y footer viven solo en `js/layout.js` (ver CLAUDE.md 2.3). Tabs de sección y breadcrumb siguen según Figma.
+
+**Header (`<site-header>`, una fila)**
+- Izquierda: logo, enlace a la home.
+- Accesos principales visibles: Productos · Sustentabilidad · Inversionistas. Solo Inversionistas tiene desplegable (no mega menú) con sus subpáginas: Inicio, Centro de Resultados, Gobernanza, Calendario y Eventos, Acción, Contacto. Se abre con hover o clic; con teclado: Enter/Espacio abre, flecha abajo/arriba abre y recorre, Inicio/Fin, Escape cierra y devuelve el foco, Tab fuera cierra.
+- Derecha, con menor jerarquía (texto Pequeño): Portal Proveedores y Contacto; luego buscador (ícono), switch de idioma ES/EN y botón hamburguesa.
+- Sección activa: atributo `current` (productos | sustentabilidad | inversionistas); indicador coral de `--border-indicator`.
+- Variantes: **sólido** (por defecto, páginas interiores) y **transparente sobre el hero** (`variant="overlay"`: logo y textos claros; pasa a sólido al bajar más que el alto compacto del header).
+- **Compacto al hacer scroll** (desktop): de `--space-96` a `--space-64` con transform; logo al 85%.
+- **Tema oscuro**: cuando la sección que queda detrás del header tiene `data-header-theme="dark"` (el footer lo trae por defecto). Fondo Navy 950 y textos blancos.
+- Alto de la barra: `--space-96` en desktop, `--space-64` en mobile y tablet. En páginas interiores el header reserva su alto; en la variante overlay el hero queda debajo.
+
+**Menú hamburguesa (overlay tipo mega menú)**
+- Columna principal en tamaño grande (Título 2): Nosotros · Productos · Sustentabilidad · Inversionistas (con sus subpáginas debajo) · Trabaja con Nosotros · Noticias.
+- Columna secundaria (UI/Navegación): Portal Proveedores · Contacto · Preguntas Frecuentes · Canal de Denuncias, y teléfono y correo clickeables.
+- Panel de vista previa: foto (placeholder `[foto por definir]`) y bajada que cambian al pasar o enfocar cada acceso principal.
+- Se cierra con el mismo botón, con Escape y con clic fuera (scrim). Bloquea el scroll de la página mientras está abierto.
+
+**Footer (`<site-footer>`)**
+- Direcciones y teléfonos (casa matriz y oficina Santiago; teléfonos y correo clickeables) · Información (Preguntas Frecuentes, Legislación) · Personas y proveedores (Trabaja con Nosotros, Portal Proveedores) · Canal de Denuncias (texto + botón contorno coral) · redes sociales (íconos) · copyright.
+- Íconos de redes (LinkedIn, Instagram, YouTube): dibujados en el estilo del kit, pendientes de llevar a Figma.
+
+**Páginas de prueba** (`pruebas/`, fuera de la navegación): `navegacion-hero.html` y `navegacion-interior.html`.
 
 ### Páginas de documentación (node 75-641)
 Patrón único para toda la documentación del sitio (Inversionistas, Gobernanza, Sustentabilidad):

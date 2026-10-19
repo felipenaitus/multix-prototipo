@@ -4,6 +4,15 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-19 · Etapa 1: header, menú y footer definitivos
+- Figma pendiente · Código ✓ · Nueva estructura de navegación definida por Felipe; reemplaza la barra utilitaria y el mega menú del Figma (node 75-353). Header de una fila: Productos · Sustentabilidad · Inversionistas (desplegable con Inicio, Centro de Resultados, Gobernanza, Calendario y Eventos, Acción, Contacto), Portal Proveedores y Contacto, buscador, switch ES/EN y hamburguesa.
+- Figma pendiente · Código ✓ · Variantes del header: sólido (interiores) y transparente sobre el hero (`variant="overlay"`); compacto al hacer scroll (96 → 64 px con transform); tema oscuro sobre secciones con `data-header-theme="dark"`. Mobile y tablet: logo, buscador y hamburguesa; se oculta al bajar y aparece al subir.
+- Figma pendiente · Código ✓ · Menú hamburguesa (overlay tipo mega menú) con columna principal, columna secundaria con contacto y panel de vista previa. En mobile: pantalla completa, Inversionistas en acordeón e idioma dentro. Se elimina el mega menú por sección.
+- Figma pendiente · Código ✓ · Footer definitivo: direcciones y teléfonos, Información, Personas y proveedores, Canal de Denuncias, redes sociales y copyright. Reemplaza el borrador.
+- Figma pendiente · Código ✓ · Íconos de redes sociales (LinkedIn, Instagram, YouTube) dibujados en el estilo del kit.
+- Código ✓ · `--shadow-card` se aplica al desplegable de Inversionistas y al panel del overlay, que reemplazan al mega menú (pendiente de confirmar).
+- Código ✓ · Páginas de prueba `pruebas/navegacion-hero.html` y `pruebas/navegacion-interior.html` (con `css/pruebas.css`), variantes del header en kit.html y `.nojekyll` para GitHub Pages.
+
 ## 2026-10-19 · Columnas del mega menú
 - Código ✓ · Las columnas del mega menú dejan el ancho fijo de 17% y toman el ancho de su contenido (`flex: 1 1 0` + `min-width: max-content`); el espacio sobrante se reparte entre ellas. Corrige el corte de "Información financiera" en 1280. Verificado en 1280 y 1440 con textos en español y en inglés de prueba (más largos).
 
