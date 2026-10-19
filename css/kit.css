@@ -324,3 +324,17 @@
     max-width: 68%;
   }
 }
+
+/* Marcos para las variantes del header (demo) */
+.kit-header-demo {
+  position: relative;
+  padding-bottom: var(--space-64);
+  border: var(--border-thin) solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-subtle);
+}
+
+.kit-header-demo--dark {
+  background: var(--color-bg-inverse);
+  border-color: var(--color-bg-inverse);
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prueba · Navegación con hero · Multi X</title>
+  <meta name="robots" content="noindex">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@300;400&display=swap">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pruebas.css">
+  <script src="../js/layout.js" defer></script>
+  <script src="../js/components.js" defer></script>
+</head>
+<body>
+  <!-- Página de prueba: header transparente sobre el hero, cambio a sólido, compactación y tema oscuro -->
+  <site-header variant="overlay"></site-header>
+
+  <main id="main">
+    <section class="test-hero" data-header-theme="dark" aria-label="Hero">
+      <p class="t-display">Hero</p>
+    </section>
+    <section class="test-block test-block--white" aria-label="Contenido 1"><p class="t-h2">Contenido</p></section>
+    <section class="test-block test-block--subtle" aria-label="Contenido 2"><p class="t-h2">Contenido</p></section>
+    <section class="test-block test-block--dark" data-header-theme="dark" aria-label="Contenido 3"><p class="t-h2">Contenido</p></section>
+    <section class="test-block test-block--white" aria-label="Contenido 4"><p class="t-h2">Contenido</p></section>
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>

@@ -235,18 +235,57 @@
     </section>
 
     <!-- ===================================================================
-         05 · Navegación (node 75-353)
+         05 · Navegación (node 75-353; header y menú según Etapa 1)
          =================================================================== -->
     <section class="kit-section" id="navegacion" aria-labelledby="nav-title">
       <div class="kit-section__head">
         <p class="t-label c-accent">05</p>
         <h2 class="t-h2" id="nav-title">Navegación</h2>
-        <p class="t-small kit-section__desc">Barra utilitaria separada del menú principal; cada desplegable parte con un acceso a la portada de su sección.</p>
+        <p class="t-small kit-section__desc">Header de una fila con tres accesos principales (Inversionistas con desplegable), accesos secundarios de menor jerarquía, buscador, idioma y menú hamburguesa. Header, overlay y footer viven en <code>js/layout.js</code>; el header de esta página es el componente real (variante sólida).</p>
       </div>
 
       <div class="kit-block">
-        <h3 class="t-label kit-block__title">Header y mega menú</h3>
-        <p class="t-body kit-note">El header de esta página es el componente real (<code>&lt;site-header&gt;</code> en <code>js/layout.js</code>), con Inversionistas como sección actual. En desktop, pasa el cursor o haz clic sobre una sección para abrir su mega menú; al bajar, la barra utilitaria se oculta. En mobile y tablet se usa el botón de menú: panel a pantalla completa con secciones en acordeón. El footer está al final de la página.</p>
+        <h3 class="t-label kit-block__title">Páginas de prueba</h3>
+        <p class="t-body kit-note">Para revisar el comportamiento al hacer scroll (transparente → sólido, compactación, tema oscuro y ocultar en mobile):</p>
+        <div class="btn-group">
+          <a class="btn btn--secondary" href="pruebas/navegacion-hero.html">Prueba con hero<svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          <a class="btn btn--secondary" href="pruebas/navegacion-interior.html">Prueba página interior<svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+        </div>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Header · transparente sobre el hero</h3>
+        <div class="kit-header-demo kit-header-demo--dark"><site-header demo demo-state="transparent" variant="overlay"></site-header></div>
+        <p class="t-small kit-variant__caption">variant="overlay" · logo y textos claros; pasa a sólido al hacer scroll.</p>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Header · sólido (páginas interiores)</h3>
+        <div class="kit-header-demo"><site-header demo demo-state="light" current="inversionistas"></site-header></div>
+        <p class="t-small kit-variant__caption">Sólido desde el inicio. Sección activa con indicador coral. Inversionistas abre un desplegable con mouse (hover o clic) y teclado (Enter, flechas, Escape).</p>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Header · tema oscuro</h3>
+        <div class="kit-header-demo kit-header-demo--dark"><site-header demo demo-state="dark"></site-header></div>
+        <p class="t-small kit-variant__caption">Se activa solo cuando la sección que queda detrás tiene data-header-theme="dark".</p>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Header · compacto al hacer scroll</h3>
+        <div class="kit-header-demo"><site-header demo demo-state="compact"></site-header></div>
+        <p class="t-small kit-variant__caption">Desktop: baja de 96 a 64 px de alto con transform (logo al 85%). Mobile y tablet: alto fijo; se oculta al bajar y aparece al subir.</p>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Menú hamburguesa (overlay)</h3>
+        <p class="t-body kit-note">Desktop: columna principal grande (Inversionistas con sus subpáginas), columna secundaria con datos de contacto y panel de vista previa que cambia al pasar por cada acceso. Mobile y tablet: pantalla completa, Inversionistas en acordeón, secundarios bajo un divisor y switch de idioma dentro. Se cierra con el mismo botón, Escape o clic fuera.</p>
+        <button class="btn btn--primary" type="button" data-open-menu style="align-self: flex-start">Abrir el menú</button>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Footer</h3>
+        <p class="t-body kit-note">El footer real está al final de esta página: direcciones y teléfonos, Información, Personas y proveedores, Canal de Denuncias, redes sociales y copyright. En mobile, Información y Personas y proveedores van en acordeón; direcciones y canal de denuncias siempre visibles.</p>
       </div>
 
       <div class="kit-nav-row">

@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Multi X · pruebas.css
+   Solo para las páginas de pruebas/ (no son páginas del sitio).
+   Bloques vacíos para probar el comportamiento del header al hacer scroll.
+   ========================================================================== */
+
+.test-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--color-bg-inverse);
+  color: var(--color-text-inverse);
+}
+
+.test-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  color: var(--color-text-secondary);
+}
+
+.test-block--white  { background: var(--color-bg-page); }
+.test-block--subtle { background: var(--color-bg-subtle); }
+.test-block--dark   { background: var(--color-bg-inverse); color: var(--color-text-inverse-muted); }
+
+.test-page-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  padding-block: var(--space-64) var(--space-48);
+  border-bottom: var(--border-thin) solid var(--color-border-default);
+}
+
+.test-page-head p {
+  color: var(--color-text-secondary);
+}
