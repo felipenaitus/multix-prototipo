@@ -37,8 +37,8 @@ h1, h2, h3, h4, p, ul, ol, dl, dd, figure {
   margin: 0;
 }
 
-ul[role="list"],
-ol[role="list"] {
+/* :where() deja la especificidad en 0 para que los componentes definan su padding */
+:where(ul, ol)[role="list"] {
   list-style: none;
   padding: 0;
 }
