@@ -4,7 +4,7 @@
    header, el footer y los bloques que se repiten en más de una página.
    Un cambio aquí se refleja en todas las páginas.
 
-   <site-header variant current>             Header de una fila + desplegable + menú hamburguesa
+   <site-header variant current>             Header de dos filas + desplegable + menú hamburguesa
    <site-footer>                             Footer
    <season-strip label text href cta>        Franja temporal del hero
    <ir-contact name role-title phone email>  Contacto IR
@@ -44,6 +44,13 @@
     minus: ['0 0 18 18', '2.53125 8.15625', 1.6875, ['M0.84375 0.84375H12.0938']],
     plus: ['0 0 18 18', '2.53125 2.53125', 1.6875, ['M6.46875 0.84375V6.46875M6.46875 6.46875V12.0938M6.46875 6.46875H0.84375M6.46875 6.46875H12.0938']],
     up: ['0 0 14 14', '3.0625 2.1875', 1.75, ['M3.9375 9.1875V0.875M7 3.9375L3.9375 0.875L0.875 3.9375']],
+    // Accesos del menú: trazos del prototipo de venta aprobado (24x24)
+    'm-nosotros': ['0 0 24 24', '0 0', 1.6, ['M14 5A2 2 0 1 1 10 5A2 2 0 0 1 14 5Z', 'M12 7V20M6 14A6 6 0 0 0 18 14']],
+    'm-personas': ['0 0 24 24', '0 0', 1.6, ['M11.7 8A3.2 3.2 0 1 1 5.3 8A3.2 3.2 0 0 1 11.7 8Z', 'M18.6 9A2.6 2.6 0 1 1 13.4 9A2.6 2.6 0 0 1 18.6 9Z', 'M2.5 20C2.5 15.5 5 13 8.5 13C12 13 14.5 15.5 14.5 20', 'M14.7 14C17.3 14.3 19 16.3 19 20']],
+    'm-noticias': ['0 0 24 24', '0 0', 1.6, ['M6 4H18A2 2 0 0 1 20 6V18A2 2 0 0 1 18 20H6A2 2 0 0 1 4 18V6A2 2 0 0 1 6 4Z', 'M8 9H16M8 13H16M8 17H13']],
+    'm-productos': ['0 0 24 24', '0 0', 1.6, ['M3 8L12 3L21 8L12 13L3 8Z', 'M3 8V17L12 22L21 17V8', 'M12 13V22']],
+    'm-sustentabilidad': ['0 0 24 24', '0 0', 1.6, ['M3 13C7 6 11 4 21 4C20 13 17 18 10 19C7 20 3 17 3 13Z', 'M3 21C6 17 9 15.5 12 15']],
+    'm-inversionistas': ['0 0 24 24', '0 0', 1.6, ['M3 20H21', 'M6 16L10 11L14 14L19 7']],
     // Redes sociales: dibujadas en el estilo del kit (no vienen de Figma)
     linkedin: ['0 0 16 16', '0 0', 1.5, ['M4 2.5H12A1.5 1.5 0 0 1 13.5 4V12A1.5 1.5 0 0 1 12 13.5H4A1.5 1.5 0 0 1 2.5 12V4A1.5 1.5 0 0 1 4 2.5Z', 'M5.5 7V11M5.5 5V5.01M8 11V7M8 9C8 7.9 8.9 7 10 7S11.5 7.6 11.5 8.5V11']],
     instagram: ['0 0 16 16', '0 0', 1.5, ['M5.5 2.5H10.5A3 3 0 0 1 13.5 5.5V10.5A3 3 0 0 1 10.5 13.5H5.5A3 3 0 0 1 2.5 10.5V5.5A3 3 0 0 1 5.5 2.5Z', 'M10.5 8A2.5 2.5 0 1 1 5.5 8A2.5 2.5 0 0 1 10.5 8Z', 'M11.25 4.75V4.76']],
@@ -95,8 +102,8 @@
     return 'tel:' + String(phone).replace(/[^\d+]/g, '');
   }
 
-  /* ---------- Arquitectura de navegación (Etapa 1) ----------
-     Páginas aún no construidas apuntan a "#". [contenido por definir] en bajadas. */
+  /* ---------- Arquitectura de navegación (Etapa 1, ajustada) ----------
+     Páginas aún no construidas apuntan a "#". [contenido por definir] en textos. */
   var INVESTOR_PAGES = [
     { label: 'Inicio', href: '#' },
     { label: 'Centro de Resultados', href: '#' },
@@ -106,33 +113,67 @@
     { label: 'Contacto', href: '#' }
   ];
 
-  // Accesos visibles en el header (desktop)
+  // Accesos visibles en la fila principal del header (desktop), centrados
   var HEADER_MAIN = [
     { id: 'productos', label: 'Productos', href: '#' },
     { id: 'sustentabilidad', label: 'Sustentabilidad', href: '#' },
     { id: 'inversionistas', label: 'Inversionistas', href: '#', children: INVESTOR_PAGES }
   ];
 
-  // Columna principal del menú hamburguesa, con la bajada del panel de vista previa
-  var MENU_MAIN = [
-    { id: 'nosotros', label: 'Nosotros', href: '#', lead: 'Historia, propósito y equipo detrás de un salmón del sur de Chile. [contenido por definir]' },
-    { id: 'productos', label: 'Productos', href: '#', lead: 'Salmón fresco, congelado y ahumado para más de 30 mercados. [contenido por definir]' },
-    { id: 'sustentabilidad', label: 'Sustentabilidad', href: '#', lead: 'Metas 2030, certificaciones y reportes de sustentabilidad. [contenido por definir]' },
-    { id: 'inversionistas', label: 'Inversionistas', href: '#', lead: 'Resultados, gobierno corporativo y agenda para accionistas. [contenido por definir]', children: INVESTOR_PAGES },
-    { id: 'trabaja', label: 'Trabaja con Nosotros', href: '#', lead: 'Oportunidades laborales en el sur de Chile y Santiago. [contenido por definir]' },
-    { id: 'noticias', label: 'Noticias', href: '#', lead: 'Prensa, comunicados y presencia en ferias. [contenido por definir]' }
+  // Barra utilitaria (desktop)
+  var UTILITY = [
+    { label: 'Portal Proveedores', href: '#' },
+    { label: 'Contacto', href: '#' }
   ];
 
-  var MENU_SECONDARY = [
-    { label: 'Portal Proveedores', href: '#' },
+  /* Panel del menú hamburguesa (según el prototipo de venta aprobado:
+     .nav-overlay / .mega--preview). Cada acceso alimenta la tarjeta de vista previa. */
+  var MENU_GROUPS = [
+    {
+      title: 'La compañía',
+      items: [
+        { id: 'nosotros', label: 'Nosotros', icon: 'm-nosotros', href: '#',
+          desc: 'Nuestra historia, desde 1987 hasta hoy.',
+          tag: '41°28\'S · Puerto Montt', lead: 'Pioneros de la acuicultura chilena, integrados de la ova a la mesa. [contenido por definir]' },
+        { id: 'trabaja', label: 'Trabaja con Nosotros', icon: 'm-personas', href: '#',
+          desc: 'Equipo, cultura y oportunidades. [contenido por definir]',
+          tag: 'Cultura Multi X', lead: 'Cerca del 40% de nuestra dotación son mujeres, en todos los niveles. [contenido por definir]' },
+        { id: 'noticias', label: 'Noticias', icon: 'm-noticias', href: '#',
+          desc: 'Actualidad e hitos de la compañía.',
+          tag: 'Sala de prensa', lead: 'Las últimas novedades de Multi X, Arka Fjord y Latitude 45. [contenido por definir]' }
+      ]
+    },
+    {
+      title: 'Negocio',
+      items: [
+        { id: 'productos', label: 'Productos', icon: 'm-productos', href: '#',
+          desc: 'Arka Fjord y Latitude 45: nuestro portafolio.',
+          tag: '52°S · Región de Magallanes', lead: 'Ultra premium y ahumados: dos marcas, un mismo origen. [contenido por definir]' },
+        { id: 'sustentabilidad', label: 'Sustentabilidad', icon: 'm-sustentabilidad', href: '#',
+          desc: 'Cómo cuidamos la Patagonia que nos define.',
+          tag: '45°30\'S · Patagonia chilena', lead: 'ASC, BAP y metas 2030: compromiso certificado. [contenido por definir]' },
+        { id: 'inversionistas', label: 'Inversionistas', icon: 'm-inversionistas', href: '#',
+          desc: 'Información para el mercado de capitales.',
+          tag: 'Relación con inversionistas', lead: 'Multiexport Foods S.A., sociedad anónima abierta. [contenido por definir]',
+          children: INVESTOR_PAGES }
+      ]
+    }
+  ];
+
+  // Contenido por defecto de la tarjeta de vista previa: noticia destacada
+  var PREVIEW_DEFAULT = {
+    tag: 'Noticias',
+    label: 'Noticia destacada · [contenido por definir]',
+    lead: '',
+    cta: 'Leer noticia',
+    href: '#'
+  };
+
+  var MENU_PORTALS = [{ label: 'Portal Proveedores', href: '#', external: true }];
+  var MENU_RESOURCES = [
     { label: 'Contacto', href: '#' },
     { label: 'Preguntas Frecuentes', href: '#' },
     { label: 'Canal de Denuncias', href: '#' }
-  ];
-
-  var HEADER_SECONDARY = [
-    { label: 'Portal Proveedores', href: '#' },
-    { label: 'Contacto', href: '#' }
   ];
 
   var LANGS = [
@@ -165,18 +206,27 @@
       '</div>';
   }
 
+  function socialList(extraCls) {
+    return '<ul class="social' + (extraCls ? ' ' + extraCls : '') + '" role="list">' +
+      SOCIAL.map(function (s) {
+        return '<li><a class="social__link" href="' + s.href + '" target="_blank" rel="noopener" aria-label="' + esc(s.label) + ' (abre en una pestaña nueva)">' + icon(s.id, 'md') + '</a></li>';
+      }).join('') +
+      '</ul>';
+  }
+
   var desktopMq = window.matchMedia('(min-width: 1280px)');
   var hoverMq = window.matchMedia('(hover: hover) and (pointer: fine)');
 
   /* ======================================================================
      <site-header>
+       Dos filas en desktop: barra utilitaria (Portal Proveedores · Contacto ·
+       buscador · ES/EN) y fila principal (logo · accesos centrados · hamburguesa).
        variant="overlay"   Transparente sobre el hero; pasa a sólido al hacer scroll.
        (sin variant)       Sólido desde el inicio (páginas interiores).
        current="..."       Acceso activo (productos | sustentabilidad | inversionistas).
-       demo + demo-state   Solo kit.html: muestra un estado fijo (transparent | light |
-                           dark | compact), sin comportamiento de scroll ni overlay propio.
-     Tema oscuro: se activa cuando la sección que queda detrás del header tiene
-     data-header-theme="dark" (el footer lo trae por defecto).
+       demo + demo-state   Solo kit.html: estado fijo (transparent | light | dark | compact).
+     Al hacer scroll la barra utilitaria se oculta y la fila principal se compacta.
+     Tema oscuro cuando la sección detrás tiene data-header-theme="dark".
      ====================================================================== */
   class SiteHeader extends HTMLElement {
     connectedCallback() {
@@ -184,12 +234,12 @@
       this._ready = true;
       injectSprite();
 
-      var self = this;
       var demo = this.hasAttribute('demo');
       var current = (this.getAttribute('current') || '').toLowerCase();
       var ddId = nextId('dd-inversionistas');
       var menuId = nextId('menu-overlay');
       var subId = nextId('menu-sub');
+      var searchId = nextId('menu-search');
 
       this.classList.add('site-header');
       if (this.getAttribute('variant') === 'overlay') this.classList.add('site-header--overlay');
@@ -216,15 +266,20 @@
       var bar =
         '<div class="header__bar">' +
           '<div class="header__bg" aria-hidden="true"></div>' +
+          '<div class="header__utility">' +
+            '<div class="container header__utility-inner">' +
+              '<ul class="header__utility-list" role="list">' +
+                UTILITY.map(function (l) { return '<li><a class="hit" href="' + l.href + '">' + esc(l.label) + '</a></li>'; }).join('') +
+              '</ul>' +
+              '<a class="header__utility-icon hit" href="#" aria-label="Buscar">' + icon('search') + '</a>' +
+              langSwitch('header__lang') +
+            '</div>' +
+          '</div>' +
           '<div class="container header__inner">' +
             '<a class="header__logo" href="' + ROOT + 'index.html" aria-label="Multi X, ir al inicio">MULTI X</a>' +
             '<nav class="header__nav" aria-label="Principal"><ul class="nav__list" role="list">' + nav + '</ul></nav>' +
             '<div class="header__tools">' +
-              '<ul class="header__secondary" role="list">' +
-                HEADER_SECONDARY.map(function (l) { return '<li><a class="hit" href="' + l.href + '">' + esc(l.label) + '</a></li>'; }).join('') +
-              '</ul>' +
-              '<a class="header__icon-btn" href="#" aria-label="Buscar">' + icon('search', 'lg') + '</a>' +
-              langSwitch('header__lang') +
+              '<a class="header__icon-btn header__search-mobile" href="#" aria-label="Buscar">' + icon('search', 'lg') + '</a>' +
               '<button type="button" class="header__icon-btn" data-menu-toggle aria-expanded="false"' + (demo ? '' : ' aria-controls="' + menuId + '"') + ' aria-label="Abrir menú">' +
                 '<span class="burger" aria-hidden="true"><span></span><span></span><span></span></span>' +
               '</button>' +
@@ -232,52 +287,78 @@
           '</div>' +
         '</div>';
 
-      var menuMain = MENU_MAIN.map(function (item, i) {
-        var cur = item.id === current ? ' is-current' : '';
-        if (item.children) {
-          return '<li class="menu-main__item menu-main__item--group">' +
-            '<a class="menu-main__link menu-main__link--desktop' + cur + '" href="' + item.href + '" data-preview="' + i + '">' + esc(item.label) + '</a>' +
-            '<button type="button" class="menu-main__link menu-main__trigger' + cur + '" aria-expanded="false" aria-controls="' + subId + '" data-preview="' + i + '">' +
-              esc(item.label) + icon('chev-down', 'lg', 'acc-icon') +
-            '</button>' +
-            '<ul class="menu-main__sub" id="' + subId + '" role="list">' +
-              item.children.map(function (c) { return '<li><a href="' + c.href + '">' + esc(c.label) + '</a></li>'; }).join('') +
-            '</ul>' +
-          '</li>';
-        }
-        return '<li class="menu-main__item"><a class="menu-main__link' + cur + '" href="' + item.href + '" data-preview="' + i + '">' + esc(item.label) + '</a></li>';
+      var groups = MENU_GROUPS.map(function (g, gi) {
+        return '<div class="menu-group">' +
+          '<p class="t-label c-accent menu-group__title">' + esc(g.title) + '</p>' +
+          '<ul class="menu-group__list" role="list">' +
+            g.items.map(function (item, i) {
+              var cur = item.id === current ? ' is-current' : '';
+              var step = ' style="--step:' + Math.min(i, 3) + '"';
+              var body = icon(item.icon, 'lg', 'menu-link__icon') +
+                '<span class="menu-link__text"><span class="menu-link__name">' + esc(item.label) + '</span>' +
+                '<span class="menu-link__desc">' + esc(item.desc) + '</span></span>';
+              var data = ' data-preview="' + gi + '-' + i + '"';
+              if (item.children) {
+                return '<li class="menu-item menu-item--group"' + step + '>' +
+                  '<a class="menu-link menu-link--desktop' + cur + '" href="' + item.href + '"' + data + '>' + body + '</a>' +
+                  '<button type="button" class="menu-link menu-link--trigger' + cur + '" aria-expanded="false" aria-controls="' + subId + '"' + data + '>' +
+                    body + icon('chev-down', 'md', 'acc-icon') +
+                  '</button>' +
+                  '<ul class="menu-sub" id="' + subId + '" role="list">' +
+                    item.children.map(function (c) { return '<li><a href="' + c.href + '">' + esc(c.label) + '</a></li>'; }).join('') +
+                  '</ul>' +
+                '</li>';
+              }
+              return '<li class="menu-item"' + step + '><a class="menu-link' + cur + '" href="' + item.href + '"' + data + '>' + body + '</a></li>';
+            }).join('') +
+          '</ul>' +
+        '</div>';
       }).join('');
 
       var overlay = demo ? '' :
         '<div class="menu-overlay" id="' + menuId + '">' +
           '<div class="menu-overlay__scrim" data-menu-close aria-hidden="true"></div>' +
-          '<div class="menu-overlay__panel" role="dialog" aria-modal="true" aria-label="Menú">' +
-            '<div class="container menu-overlay__grid">' +
-              '<nav class="menu-main" aria-label="Menú principal"><ul class="menu-main__list" role="list">' + menuMain + '</ul></nav>' +
-              '<div class="menu-secondary">' +
-                '<ul class="menu-secondary__list" role="list">' +
-                  MENU_SECONDARY.map(function (l) { return '<li><a href="' + l.href + '">' + esc(l.label) + '</a></li>'; }).join('') +
-                '</ul>' +
-                '<ul class="menu-secondary__contact" role="list">' +
+          '<div class="container menu-overlay__wrap">' +
+            '<div class="menu-panel" role="dialog" aria-modal="true" aria-label="Menú">' +
+              '<div class="menu-panel__search">' +
+                '<form class="menu-search" role="search" action="#" onsubmit="return false">' +
+                  '<label class="visually-hidden" for="' + searchId + '">Buscar en el sitio</label>' +
+                  icon('search', 'lg') +
+                  '<input class="menu-search__input" id="' + searchId + '" type="search" placeholder="Buscar en el sitio" autocomplete="off">' +
+                '</form>' +
+                socialList('menu-panel__social menu-panel__social--top') +
+              '</div>' +
+              '<div class="menu-panel__body">' +
+                '<a class="menu-preview" href="' + PREVIEW_DEFAULT.href + '" tabindex="-1" aria-hidden="true">' +
+                  '<span class="menu-preview__media"><span class="placeholder-tag menu-preview__ph">[foto por definir]</span></span>' +
+                  '<span class="menu-preview__content">' +
+                    '<span class="t-label menu-preview__tag">' + esc(PREVIEW_DEFAULT.tag) + '</span>' +
+                    '<span class="menu-preview__title">' + esc(PREVIEW_DEFAULT.label) + '</span>' +
+                    '<span class="menu-preview__lead"></span>' +
+                    '<span class="menu-preview__cta">' + esc(PREVIEW_DEFAULT.cta) + icon('arrow', 'md', 'icon--arrow') + '</span>' +
+                  '</span>' +
+                '</a>' +
+                '<div class="menu-panel__groups">' + groups + '</div>' +
+              '</div>' +
+              '<div class="menu-panel__foot">' +
+                '<div class="menu-foot-group"><p class="t-label c-secondary">Portales</p><ul class="menu-foot-group__list" role="list">' +
+                  MENU_PORTALS.map(function (l) { return '<li><a href="' + l.href + '" target="_blank" rel="noopener">' + esc(l.label) + icon('external') + '<span class="visually-hidden"> (abre en una pestaña nueva)</span></a></li>'; }).join('') +
+                '</ul></div>' +
+                '<div class="menu-foot-group"><p class="t-label c-secondary">Recursos</p><ul class="menu-foot-group__list" role="list">' +
+                  MENU_RESOURCES.map(function (l) { return '<li><a href="' + l.href + '">' + esc(l.label) + '</a></li>'; }).join('') +
+                '</ul></div>' +
+                '<div class="menu-foot-group"><p class="t-label c-secondary">Contacto</p><ul class="menu-foot-group__list menu-foot-group__list--contact" role="list">' +
                   '<li><a href="' + telHref(CONTACT.phone) + '">' + icon('phone') + esc(CONTACT.phone) + '</a></li>' +
                   '<li><a href="mailto:' + esc(CONTACT.email) + '">' + icon('mail') + esc(CONTACT.email) + '</a></li>' +
-                '</ul>' +
-                langSwitch('menu-secondary__lang') +
+                '</ul></div>' +
+                '<div class="menu-panel__extras">' + langSwitch('menu-panel__lang') + socialList('menu-panel__social menu-panel__social--bottom') + '</div>' +
               '</div>' +
-              '<aside class="menu-preview" aria-hidden="true">' +
-                '<div class="menu-preview__media"><span class="placeholder-tag">[foto por definir]</span></div>' +
-                '<div class="menu-preview__text">' +
-                  '<p class="t-label c-accent menu-preview__title">' + esc(MENU_MAIN[0].label) + '</p>' +
-                  '<p class="t-body c-secondary menu-preview__lead">' + esc(MENU_MAIN[0].lead) + '</p>' +
-                '</div>' +
-              '</aside>' +
             '</div>' +
           '</div>' +
         '</div>';
 
       this.innerHTML = (demo ? '' : '<a class="skip-link" href="#main">Saltar al contenido</a>') + bar + overlay;
 
-      this._bar = this.querySelector('.header__bar');
       this._bindDropdown();
 
       if (demo) {
@@ -285,7 +366,7 @@
         this.dataset.state = state === 'transparent' ? 'transparent' : 'solid';
         this.dataset.tone = state === 'dark' || state === 'transparent' ? 'dark' : 'light';
         this.classList.toggle('is-compact', state === 'compact');
-        // En el kit, la hamburguesa de los ejemplos abre el overlay real de la página
+        // En el kit, la hamburguesa de los ejemplos abre el menú real de la página
         this.querySelector('[data-menu-toggle]').addEventListener('click', function (e) {
           e.stopPropagation();
           var main = document.querySelector('site-header:not([demo])');
@@ -300,7 +381,6 @@
 
     /* --- Desplegable de Inversionistas: mouse y teclado --- */
     _bindDropdown() {
-      var self = this;
       var item = this.querySelector('.nav__item--dropdown');
       if (!item) return;
       var btn = item.querySelector('.nav__link');
@@ -354,15 +434,31 @@
       });
     }
 
-    /* --- Menú hamburguesa (overlay) --- */
+    /* --- Menú hamburguesa (panel flotante; pantalla completa en mobile) --- */
     _bindMenu() {
       var self = this;
       var btn = this.querySelector('[data-menu-toggle]');
       var overlay = this.querySelector('.menu-overlay');
-      var title = overlay.querySelector('.menu-preview__title');
-      var lead = overlay.querySelector('.menu-preview__lead');
-      var previewText = overlay.querySelector('.menu-preview__text');
-      var sub = overlay.querySelector('.menu-main__trigger');
+      var panel = overlay.querySelector('.menu-panel');
+      var card = overlay.querySelector('.menu-preview');
+      var tag = card.querySelector('.menu-preview__tag');
+      var title = card.querySelector('.menu-preview__title');
+      var lead = card.querySelector('.menu-preview__lead');
+      var cta = card.querySelector('.menu-preview__cta');
+      var ctaText = cta.firstChild;
+      var trigger = overlay.querySelector('.menu-link--trigger');
+
+      function setPreview(data) {
+        if (title.textContent === data.label) return;
+        card.setAttribute('href', data.href || '#');
+        tag.textContent = data.tag;
+        title.textContent = data.label;
+        lead.textContent = data.lead || '';
+        ctaText.textContent = data.cta || 'Conoce más';
+        card.classList.remove('is-changing');
+        void card.offsetWidth;
+        card.classList.add('is-changing');
+      }
 
       function setMenu(open) {
         if (self._closeDropdown) self._closeDropdown();
@@ -372,11 +468,12 @@
         btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
         overlay.classList.toggle('is-open', open);
         document.body.classList.toggle('is-locked', open);
+        if (open) setPreview(PREVIEW_DEFAULT);
         self._update();
         if (open) {
           setTimeout(function () {
-            var target = Array.prototype.slice.call(overlay.querySelectorAll('.menu-main__link')).filter(function (el) { return el.offsetParent !== null; })[0];
-            if (target) target.focus();
+            var input = overlay.querySelector('.menu-search__input');
+            if (input) input.focus();
           }, 60);
         }
       }
@@ -385,50 +482,45 @@
       btn.addEventListener('click', function () {
         setMenu(btn.getAttribute('aria-expanded') !== 'true');
       });
-      overlay.querySelector('[data-menu-close]').addEventListener('click', function () {
-        setMenu(false);
-        btn.focus();
-      });
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
           setMenu(false);
           btn.focus();
         }
       });
-      // Clic fuera del panel (en desktop el scrim; en mobile el panel ocupa toda la pantalla)
+      // Clic fuera del panel: scrim o márgenes del overlay
+      overlay.addEventListener('click', function (e) {
+        if (!panel.contains(e.target)) { setMenu(false); btn.focus(); }
+      });
       document.addEventListener('click', function (e) {
         if (btn.getAttribute('aria-expanded') === 'true' && !self.contains(e.target)) setMenu(false);
       });
 
-      // Panel de vista previa: cambia título y bajada al pasar por cada acceso principal
-      function preview(i) {
-        var item = MENU_MAIN[i];
-        if (!item || title.textContent === item.label) return;
-        title.textContent = item.label;
-        lead.textContent = item.lead;
-        previewText.classList.remove('is-changing');
-        void previewText.offsetWidth;
-        previewText.classList.add('is-changing');
-      }
+      // Tarjeta de vista previa: cambia con el hover o el foco de cada acceso
       overlay.querySelectorAll('[data-preview]').forEach(function (el) {
-        var i = parseInt(el.getAttribute('data-preview'), 10);
-        el.addEventListener('mouseenter', function () { preview(i); });
-        el.addEventListener('focus', function () { preview(i); });
+        var parts = el.getAttribute('data-preview').split('-');
+        var item = MENU_GROUPS[+parts[0]].items[+parts[1]];
+        var data = { tag: item.tag, label: item.label, lead: item.lead, cta: 'Conoce más', href: item.href };
+        el.addEventListener('mouseenter', function () { setPreview(data); });
+        el.addEventListener('focus', function () { setPreview(data); });
+      });
+      panel.querySelector('.menu-panel__groups').addEventListener('mouseleave', function () {
+        setPreview(PREVIEW_DEFAULT);
       });
 
-      // Inversionistas en acordeón (mobile y tablet)
-      if (sub) {
-        sub.addEventListener('click', function () {
-          var open = sub.getAttribute('aria-expanded') !== 'true';
-          sub.setAttribute('aria-expanded', String(open));
-          sub.parentElement.classList.toggle('is-open', open);
+      // Inversionistas en acordeón (mobile)
+      if (trigger) {
+        trigger.addEventListener('click', function () {
+          var open = trigger.getAttribute('aria-expanded') !== 'true';
+          trigger.setAttribute('aria-expanded', String(open));
+          trigger.parentElement.classList.toggle('is-open', open);
         });
       }
 
       desktopMq.addEventListener('change', function () { self._update(); });
     }
 
-    /* --- Scroll: transparente → sólido, compactación, tema y ocultar en mobile --- */
+    /* --- Scroll: transparente → sólido, barra utilitaria, compactación, tema y ocultar en mobile --- */
     _bindScroll() {
       var self = this;
       var ticking = false;
@@ -446,48 +538,51 @@
       if (this.hasAttribute('demo')) return;
       var y = window.scrollY;
       var css = getComputedStyle(this);
-      var full = parseFloat(css.getPropertyValue('--bar-h')) || 0;
-      var compactH = parseFloat(css.getPropertyValue('--bar-h-compact')) || full;
+      var util = parseFloat(css.getPropertyValue('--util-h')) || 0;
+      var main = parseFloat(css.getPropertyValue('--main-h')) || 0;
+      var mainCompact = parseFloat(css.getPropertyValue('--main-h-compact')) || main;
       var menuOpen = this.classList.contains('is-menu-open');
       var desktop = desktopMq.matches;
-      var scrolled = y > compactH;
+      var scrolled = y > Math.max(util, mainCompact / 2);
 
-      var compact = desktop && scrolled && !menuOpen;
+      // Desktop: al bajar se oculta la barra utilitaria y se compacta la fila principal
+      var compact = desktop && scrolled;
       this.classList.toggle('is-compact', compact);
 
       var overlayVariant = this.classList.contains('site-header--overlay');
       this.dataset.state = overlayVariant && !scrolled && !menuOpen ? 'transparent' : 'solid';
 
-      // Tema según la sección que queda detrás del borde inferior del header
-      var line = (compact ? compactH : full) - 1;
+      // Borde inferior visible del header (para el tema y para ubicar el panel del menú)
+      var bottom = compact ? mainCompact : util + main;
+
       var dark = false;
       if (!menuOpen) {
         document.querySelectorAll('[data-header-theme="dark"]').forEach(function (el) {
           var r = el.getBoundingClientRect();
-          if (r.top <= line && r.bottom > line) dark = true;
+          if (r.top <= bottom - 1 && r.bottom > bottom - 1) dark = true;
         });
       }
       this.dataset.tone = dark || this.dataset.state === 'transparent' ? 'dark' : 'light';
 
       // Mobile y tablet: se oculta al bajar y aparece al subir
       if (!desktop && !menuOpen) {
-        this.classList.toggle('is-hidden', y > this._lastY && y > full);
+        this.classList.toggle('is-hidden', y > this._lastY && y > util + main);
       } else {
         this.classList.remove('is-hidden');
       }
       this._lastY = y;
 
       var overlay = this.querySelector('.menu-overlay');
-      if (overlay) overlay.style.setProperty('--overlay-top', (compact ? compactH : full) + 'px');
+      if (overlay) overlay.style.setProperty('--overlay-top', bottom + 'px');
     }
   }
 
   /* ======================================================================
      <site-footer>
-     Mobile: columnas en acordeón; direcciones y canal de denuncias siempre visibles.
+     Mobile: columnas en acordeón; direcciones y teléfonos siempre visibles.
      ====================================================================== */
   var FOOTER_COLS = [
-    { title: 'Información', links: [{ label: 'Preguntas Frecuentes', href: '#' }, { label: 'Legislación', href: '#' }] },
+    { title: 'Información', links: [{ label: 'Preguntas Frecuentes', href: '#' }, { label: 'Legislación', href: '#' }, { label: 'Canal de Denuncias', href: '#' }] },
     { title: 'Personas y proveedores', links: [{ label: 'Trabaja con Nosotros', href: '#' }, { label: 'Portal Proveedores', href: '#' }] }
   ];
 
@@ -531,18 +626,9 @@
               '<a class="footer__contact-link" href="mailto:' + esc(CONTACT.email) + '">' + icon('mail') + esc(CONTACT.email) + '</a>' +
             '</div>' +
             '<div class="footer__cols">' + cols + '</div>' +
-            '<div class="footer__whistle">' +
-              '<p class="t-label footer__col-title">Canal de Denuncias</p>' +
-              '<p class="t-small footer__whistle-text">Canal confidencial para informar conductas contrarias a la ley o a nuestro Código de Ética. [contenido por definir]</p>' +
-              '<a class="btn btn--accent-outline-dark btn--sm hit" href="#">Ir al Canal de Denuncias' + icon('arrow', 'md', 'icon--arrow') + '</a>' +
-            '</div>' +
           '</div>' +
           '<div class="footer__bottom">' +
-            '<ul class="footer__social" role="list">' +
-              SOCIAL.map(function (s) {
-                return '<li><a class="footer__social-link" href="' + s.href + '" target="_blank" rel="noopener" aria-label="' + esc(s.label) + ' (abre en una pestaña nueva)">' + icon(s.id, 'lg') + '</a></li>';
-              }).join('') +
-            '</ul>' +
+            socialList('footer__social') +
             '<p>© 2026 Multi X S.A. Todos los derechos reservados.</p>' +
           '</div>' +
         '</div>';
