@@ -21,10 +21,10 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 ## Patrones por componente
 | Componente | Desktop | Mobile |
 |---|---|---|
-| Header (una fila) | Logo · Productos · Sustentabilidad · Inversionistas (desplegable) · Portal Proveedores y Contacto (pequeño) · buscador · ES/EN · hamburguesa | Mobile y tablet (< 1280): logo, buscador y hamburguesa. Accesos, secundarios e idioma pasan al overlay |
+| Header | Dos filas: barra utilitaria (Portal Proveedores · Contacto · buscador · ES/EN) y fila principal (logo · Productos · Sustentabilidad · Inversionistas centrados · hamburguesa) | Mobile y tablet (< 1280): una fila con logo, buscador y hamburguesa. Utilitaria, accesos e idioma pasan al menú |
 | Desplegable de Inversionistas | Se abre con hover o clic; navegable con teclado | No aplica: Inversionistas va en acordeón dentro del overlay |
-| Menú hamburguesa (overlay) | Panel bajo el header con scrim: columna principal grande, columna secundaria con contacto y panel de vista previa | Pantalla completa: accesos principales arriba (Inversionistas en acordeón), secundarios y contacto abajo tras un divisor, switch de idioma dentro; sin vista previa |
-| Header fijo | Alto 96 px; se compacta a 64 px al hacer scroll. Transparente sobre el hero → sólido; tema oscuro sobre secciones oscuras | Alto 64 px fijo; se oculta al bajar y aparece al subir. Mismos cambios de transparente/sólido y de tema |
+| Menú hamburguesa | Panel flotante bajo el header, ancho del contenedor, sobre el sitio oscurecido y desenfocado: buscador + redes, tarjeta de vista previa, accesos en dos grupos y franja de Portales · Recursos · Contacto | Tablet: mismo panel sin vista previa, idioma dentro. Mobile: pantalla completa, sin vista previa; buscador arriba, "La compañía" y "Negocio" en lista (Inversionistas en acordeón), luego Portales, Recursos, contacto, idioma y redes |
+| Header fijo | Al bajar, la barra utilitaria sale y la fila principal pasa de 80 a 64 px; al volver arriba reaparece. Transparente sobre el hero → sólido; tema oscuro sobre secciones oscuras | Alto 64 px; se oculta al bajar y aparece al subir. Mismos cambios de transparente/sólido y de tema |
 | Tabs de sección (sub-navegación) | Fila completa | Tira con scroll horizontal, tab activa visible y centrada |
 | Breadcrumb | Ruta completa | Solo "← Volver a [página padre]" |
 | Hero | Display + bajada + botones en fila; franja temporal en una línea | Display móvil; botones apilados a ancho completo; franja temporal en dos líneas (etiqueta arriba, texto + enlace abajo) |
@@ -45,7 +45,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Composición con ilustración | Texto a la izquierda, ilustración a la derecha | Ilustración arriba (más chica), texto debajo; cifras en 2 × 2 |
 | Formularios | Campos en 2-3 columnas cuando son cortos | 1 columna; teclado según el tipo de campo (`type="email"`, `tel`, etc.) |
 | Suscripción (texto + campo + botón) | En una fila | Apilado; botón a ancho completo |
-| Footer | Desktop: direcciones · columnas · canal de denuncias en una fila. Tablet: direcciones y denuncias arriba, columnas debajo | Mobile: Información y Personas y proveedores en acordeón; direcciones, teléfonos y canal de denuncias siempre visibles; redes y copyright al final |
+| Footer | Direcciones y teléfonos · Información · Personas y proveedores en columnas; redes y copyright abajo | Mobile: Información y Personas y proveedores en acordeón; direcciones y teléfonos siempre visibles; Canal de Denuncias como enlace dentro de Información |
 | Teléfonos y correos | Enlace | Enlace (marca o abre el correo con un toque) |
 
 ## Componentes sin patrón

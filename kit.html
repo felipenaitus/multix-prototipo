@@ -241,7 +241,7 @@
       <div class="kit-section__head">
         <p class="t-label c-accent">05</p>
         <h2 class="t-h2" id="nav-title">Navegación</h2>
-        <p class="t-small kit-section__desc">Header de una fila con tres accesos principales (Inversionistas con desplegable), accesos secundarios de menor jerarquía, buscador, idioma y menú hamburguesa. Header, overlay y footer viven en <code>js/layout.js</code>; el header de esta página es el componente real (variante sólida).</p>
+        <p class="t-small kit-section__desc">Header de dos filas en desktop: barra utilitaria delgada (Portal Proveedores · Contacto · buscador · ES/EN) y fila principal con el logo, los tres accesos centrados (Inversionistas con desplegable) y el menú hamburguesa. Header, menú y footer viven en <code>js/layout.js</code>; el header de esta página es el componente real (variante sólida).</p>
       </div>
 
       <div class="kit-block">
@@ -256,7 +256,7 @@
       <div class="kit-block">
         <h3 class="t-label kit-block__title">Header · transparente sobre el hero</h3>
         <div class="kit-header-demo kit-header-demo--dark"><site-header demo demo-state="transparent" variant="overlay"></site-header></div>
-        <p class="t-small kit-variant__caption">variant="overlay" · logo y textos claros; pasa a sólido al hacer scroll.</p>
+        <p class="t-small kit-variant__caption">variant="overlay" · barra utilitaria y fila principal transparentes, logo y textos claros; pasa a sólido al hacer scroll.</p>
       </div>
 
       <div class="kit-block">
@@ -274,18 +274,18 @@
       <div class="kit-block">
         <h3 class="t-label kit-block__title">Header · compacto al hacer scroll</h3>
         <div class="kit-header-demo"><site-header demo demo-state="compact"></site-header></div>
-        <p class="t-small kit-variant__caption">Desktop: baja de 96 a 64 px de alto con transform (logo al 85%). Mobile y tablet: alto fijo; se oculta al bajar y aparece al subir.</p>
+        <p class="t-small kit-variant__caption">Desktop: al bajar, la barra utilitaria sale y la fila principal pasa de 80 a 64 px (logo al 85%), con transform; al volver arriba reaparece. Mobile y tablet: una sola fila de 64 px que se oculta al bajar y aparece al subir.</p>
       </div>
 
       <div class="kit-block">
         <h3 class="t-label kit-block__title">Menú hamburguesa (overlay)</h3>
-        <p class="t-body kit-note">Desktop: columna principal grande (Inversionistas con sus subpáginas), columna secundaria con datos de contacto y panel de vista previa que cambia al pasar por cada acceso. Mobile y tablet: pantalla completa, Inversionistas en acordeón, secundarios bajo un divisor y switch de idioma dentro. Se cierra con el mismo botón, Escape o clic fuera.</p>
+        <p class="t-body kit-note">Según el prototipo de venta aprobado. Desktop: panel flotante bajo el header, con el ancho del contenedor, sobre el sitio oscurecido y desenfocado. Arriba, buscador del sitio y redes; al centro, tarjeta de vista previa (noticia destacada por defecto, cambia al pasar por cada acceso) y accesos en dos grupos, "La compañía" y "Negocio", con ícono, nombre y descripción; abajo, Portales, Recursos y contacto. Tablet: mismo panel sin vista previa. Mobile: pantalla completa, Inversionistas en acordeón, idioma y redes al final. Se cierra con el mismo botón (la hamburguesa pasa a X), Escape o clic fuera del panel.</p>
         <button class="btn btn--primary" type="button" data-open-menu style="align-self: flex-start">Abrir el menú</button>
       </div>
 
       <div class="kit-block">
         <h3 class="t-label kit-block__title">Footer</h3>
-        <p class="t-body kit-note">El footer real está al final de esta página: direcciones y teléfonos, Información, Personas y proveedores, Canal de Denuncias, redes sociales y copyright. En mobile, Información y Personas y proveedores van en acordeón; direcciones y canal de denuncias siempre visibles.</p>
+        <p class="t-body kit-note">El footer real está al final de esta página: direcciones y teléfonos, Información (Preguntas Frecuentes, Legislación, Canal de Denuncias), Personas y proveedores, redes sociales y copyright. En mobile, Información y Personas y proveedores van en acordeón; direcciones y teléfonos siempre visibles.</p>
       </div>
 
       <div class="kit-nav-row">

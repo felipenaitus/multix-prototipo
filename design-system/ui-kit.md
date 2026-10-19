@@ -88,26 +88,30 @@ Alto 50px, padding 16/24, radio full, texto UI/Botón.
 Etiqueta siempre visible (no solo placeholder), alto mínimo 44px, foco con borde Navy 900. Incluye: campo de texto, campo con foco, select, buscador con ícono, checkbox, composición de suscripción (texto + campo con etiqueta visible + botón alineado abajo con el input).
 
 ### Navegación (Etapa 1 · definida por Felipe; el header del Figma node 75-353 queda desactualizado)
-Header, menú hamburguesa y footer viven solo en `js/layout.js` (ver CLAUDE.md 2.3). Tabs de sección y breadcrumb siguen según Figma.
+Header, menú hamburguesa y footer viven solo en `js/layout.js` (ver CLAUDE.md 2.3). Tabs de sección y breadcrumb siguen según Figma. El menú hamburguesa toma la estructura y el comportamiento del prototipo de venta aprobado por el cliente (`.nav-overlay`, `.mega--preview`), construido con tokens y componentes del kit.
 
-**Header (`<site-header>`, una fila)**
-- Izquierda: logo, enlace a la home.
-- Accesos principales visibles: Productos · Sustentabilidad · Inversionistas. Solo Inversionistas tiene desplegable (no mega menú) con sus subpáginas: Inicio, Centro de Resultados, Gobernanza, Calendario y Eventos, Acción, Contacto. Se abre con hover o clic; con teclado: Enter/Espacio abre, flecha abajo/arriba abre y recorre, Inicio/Fin, Escape cierra y devuelve el foco, Tab fuera cierra.
-- Derecha, con menor jerarquía (texto Pequeño): Portal Proveedores y Contacto; luego buscador (ícono), switch de idioma ES/EN y botón hamburguesa.
-- Sección activa: atributo `current` (productos | sustentabilidad | inversionistas); indicador coral de `--border-indicator`.
-- Variantes: **sólido** (por defecto, páginas interiores) y **transparente sobre el hero** (`variant="overlay"`: logo y textos claros; pasa a sólido al bajar más que el alto compacto del header).
-- **Compacto al hacer scroll** (desktop): de `--space-96` a `--space-64` con transform; logo al 85%.
-- **Tema oscuro**: cuando la sección que queda detrás del header tiene `data-header-theme="dark"` (el footer lo trae por defecto). Fondo Navy 950 y textos blancos.
-- Alto de la barra: `--space-96` en desktop, `--space-64` en mobile y tablet. En páginas interiores el header reserva su alto; en la variante overlay el hero queda debajo.
+**Header (`<site-header>`), dos filas en desktop**
+- **Barra utilitaria** delgada (`--space-40`), alineada a la derecha: Portal Proveedores · Contacto · buscador (ícono) · switch ES/EN. Texto UI/Pequeño destacado. Transparente sobre el hero.
+- **Fila principal** (`--space-80`): logo a la izquierda, accesos principales **centrados** (Productos · Sustentabilidad · Inversionistas) y botón hamburguesa a la derecha.
+- Inversionistas abre un desplegable (no mega menú) con Inicio, Centro de Resultados, Gobernanza, Calendario y Eventos, Acción, Contacto. Hover o clic; con teclado: Enter/Espacio abre, flechas recorren, Inicio/Fin, Escape cierra y devuelve el foco, Tab fuera cierra.
+- Sección activa: atributo `current` (productos | sustentabilidad | inversionistas), con indicador coral de `--border-indicator`.
+- **Al hacer scroll** (desktop): la barra utilitaria sale (fade + desplazamiento, `--duration-slow`) y la fila principal se compacta a `--space-64` (logo al 85%), solo con transform y opacity. Al volver arriba reaparece.
+- Variantes: **sólido** (por defecto, páginas interiores) y **transparente sobre el hero** (`variant="overlay"`, logo y textos claros; pasa a sólido al hacer scroll).
+- **Tema oscuro** cuando la sección detrás del header tiene `data-header-theme="dark"` (el footer lo trae por defecto).
+- Mobile y tablet: una fila de `--space-64` con logo, buscador y hamburguesa.
 
-**Menú hamburguesa (overlay tipo mega menú)**
-- Columna principal en tamaño grande (Título 2): Nosotros · Productos · Sustentabilidad · Inversionistas (con sus subpáginas debajo) · Trabaja con Nosotros · Noticias.
-- Columna secundaria (UI/Navegación): Portal Proveedores · Contacto · Preguntas Frecuentes · Canal de Denuncias, y teléfono y correo clickeables.
-- Panel de vista previa: foto (placeholder `[foto por definir]`) y bajada que cambian al pasar o enfocar cada acceso principal.
-- Se cierra con el mismo botón, con Escape y con clic fuera (scrim). Bloquea el scroll de la página mientras está abierto.
+**Menú hamburguesa (panel flotante)**
+- El sitio queda visible detrás, oscurecido (Navy 950 al 45%) y desenfocado (backdrop blur).
+- Panel con `--radius-xl`, fondo `--color-bg-page` y `--shadow-card`, alineado bajo el header y con el ancho del contenedor.
+- Arriba: buscador del sitio a lo ancho, con las redes sociales a la derecha.
+- Cuerpo: a la izquierda, **tarjeta de vista previa** (imagen placeholder con degradado navy, etiqueta, título, bajada y enlace). Por defecto muestra una noticia destacada; al pasar el mouse o enfocar cada acceso cambia su etiqueta, título y bajada. A la derecha, **accesos en dos columnas**: "La compañía" (Nosotros · Trabaja con Nosotros · Noticias) y "Negocio" (Productos · Sustentabilidad · Inversionistas). Cada acceso: ícono + nombre (UI/Destacado) + descripción (Pequeño). Bajo Inversionistas, sus subpáginas como enlaces pequeños.
+- Franja inferior, separada por un divisor: Portales (Portal Proveedores) · Recursos (Contacto, Preguntas Frecuentes, Canal de Denuncias) · Contacto (teléfono y correo).
+- La hamburguesa se transforma en X en la misma posición. Cierra con el botón, Escape y clic fuera del panel. Entrada con fade + leve desplazamiento (`--duration-slow`); los accesos entran con desfase (`--duration-stagger`).
+- Íconos de los accesos: trazos del prototipo de venta; pendientes de llevar a Figma.
 
 **Footer (`<site-footer>`)**
-- Direcciones y teléfonos (casa matriz y oficina Santiago; teléfonos y correo clickeables) · Información (Preguntas Frecuentes, Legislación) · Personas y proveedores (Trabaja con Nosotros, Portal Proveedores) · Canal de Denuncias (texto + botón contorno coral) · redes sociales (íconos) · copyright.
+- Direcciones y teléfonos (casa matriz y oficina Santiago; teléfonos y correo clickeables) · Información (Preguntas Frecuentes, Legislación, Canal de Denuncias) · Personas y proveedores (Trabaja con Nosotros, Portal Proveedores) · redes sociales · copyright.
+- Canal de Denuncias es un enlace más, con el mismo estilo que el resto (sin tarjeta ni botón).
 - Íconos de redes (LinkedIn, Instagram, YouTube): dibujados en el estilo del kit, pendientes de llevar a Figma.
 
 **Páginas de prueba** (`pruebas/`, fuera de la navegación): `navegacion-hero.html` y `navegacion-interior.html`.

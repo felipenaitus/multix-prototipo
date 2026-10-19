@@ -4,6 +4,14 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-19 · Ajustes a la Etapa 1 (revisión de Felipe)
+- Figma pendiente · Código ✓ · Header vuelve a dos filas en desktop: barra utilitaria (Portal Proveedores · Contacto · buscador · ES/EN) y fila principal con logo, accesos centrados y hamburguesa. Al hacer scroll la barra utilitaria se oculta y la fila principal se compacta (80 → 64 px); al volver arriba reaparece.
+- Figma pendiente · Código ✓ · Menú hamburguesa rehecho según el prototipo de venta aprobado (`.nav-overlay`, `.mega--preview`): panel flotante con buscador y redes, tarjeta de vista previa dinámica, accesos "La compañía" y "Negocio" con ícono y descripción, franja de Portales · Recursos · Contacto; fondo oscurecido y desenfocado; entrada con desfase. Mobile a pantalla completa.
+- Figma pendiente · Código ✓ · Íconos de los accesos del menú tomados del prototipo de venta.
+- Código ✓ · Footer: Canal de Denuncias pasa a ser un enlace más en "Información"; se quita la tarjeta con borde y el botón coral.
+- Código ✓ · base.css: `ul/ol[role="list"]` pasa a `:where()` (especificidad 0). Antes anulaba el padding de las listas de los componentes (desplegable, subpáginas del menú, slider de marcas, enlaces del footer).
+- Código ✓ · El desenfoque del fondo del menú usa `blur(var(--space-12))` de forma provisoria (falta un token de desenfoque).
+
 ## 2026-10-19 · Etapa 1: header, menú y footer definitivos
 - Figma pendiente · Código ✓ · Nueva estructura de navegación definida por Felipe; reemplaza la barra utilitaria y el mega menú del Figma (node 75-353). Header de una fila: Productos · Sustentabilidad · Inversionistas (desplegable con Inicio, Centro de Resultados, Gobernanza, Calendario y Eventos, Acción, Contacto), Portal Proveedores y Contacto, buscador, switch ES/EN y hamburguesa.
 - Figma pendiente · Código ✓ · Variantes del header: sólido (interiores) y transparente sobre el hero (`variant="overlay"`); compacto al hacer scroll (96 → 64 px con transform); tema oscuro sobre secciones con `data-header-theme="dark"`. Mobile y tablet: logo, buscador y hamburguesa; se oculta al bajar y aparece al subir.
