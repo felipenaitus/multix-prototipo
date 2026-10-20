@@ -46,7 +46,6 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Formularios | Campos en 2-3 columnas cuando son cortos | 1 columna; teclado según el tipo de campo (`type="email"`, `tel`, etc.) |
 | Suscripción (texto + campo + botón) | En una fila | Apilado; botón a ancho completo |
 | Botón flotante del asistente | Fijo abajo a la derecha, 56 px, a `--space-32` del borde | Igual, a `--space-24` del borde |
-| Botón comercial del hero | Abajo a la izquierda del hero | Más arriba (`--space-96` del borde) para no chocar con el botón del asistente |
 | Footer | Direcciones y teléfonos · Información · Personas y proveedores en columnas; redes y copyright abajo | Mobile: Información y Personas y proveedores en acordeón; direcciones y teléfonos siempre visibles; Canal de Denuncias como enlace dentro de Información |
 | Teléfonos y correos | Enlace | Enlace (marca o abre el correo con un toque) |
 

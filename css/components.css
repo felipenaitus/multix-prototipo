@@ -104,11 +104,6 @@
   transform: translateX(var(--space-4));
 }
 
-/* Forma de diálogo: esquina inferior izquierda recta (botón comercial del hero) */
-.btn--speech {
-  border-radius: var(--radius-full) var(--radius-full) var(--radius-full) 0;
-}
-
 /* Pequeño */
 .btn--sm {
   padding: var(--space-8) var(--space-16);
@@ -3155,8 +3150,8 @@ a.pagination__item:hover,
 
 /* ==========================================================================
    Botón flotante del asistente (<chat-launcher>, js/layout.js)
-   Fijo abajo a la derecha en todo el sitio. Navy 900 con ícono blanco sobre
-   fondos claros; blanco con ícono Navy 900 sobre fondos oscuros.
+   Fijo abajo a la derecha en todo el sitio. Contenedor outline (sin relleno)
+   e ícono relleno: Navy 900 sobre fondos claros y blanco sobre fondos oscuros.
    ========================================================================== */
 .chat-launcher {
   position: fixed;
@@ -3176,25 +3171,32 @@ a.pagination__item:hover,
   justify-content: center;
   width: calc(var(--space-48) + var(--space-8));
   height: calc(var(--space-48) + var(--space-8));
+  border: var(--border-thin) solid currentColor;
   border-radius: var(--radius-full);
-  background: var(--color-bg-brand);
-  color: var(--color-text-inverse);
+  background: transparent;
+  color: var(--color-text-brand);
   transition:
     background-color var(--duration-fast) var(--easing-standard),
     color var(--duration-fast) var(--easing-standard);
 }
 
 .chat-launcher__btn:hover {
-  background: var(--color-bg-brand-hover);
+  background: var(--color-bg-brand-soft);
+}
+
+/* Ícono relleno (el resto del sprite es de trazo) */
+.chat-launcher__icon {
+  width: var(--icon-lg);
+  height: var(--icon-lg);
+  fill: currentColor;
 }
 
 .chat-launcher.is-on-dark .chat-launcher__btn {
-  background: var(--color-bg-page);
-  color: var(--color-text-brand);
+  color: var(--color-text-inverse);
 }
 
 .chat-launcher.is-on-dark .chat-launcher__btn:hover {
-  background: var(--color-bg-brand-soft);
+  background: var(--color-bg-brand);
 }
 
 .chat-launcher.is-on-dark .chat-launcher__btn:focus-visible {

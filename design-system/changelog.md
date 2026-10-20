@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Sin botón comercial; asistente en outline
+- Código ✓ · Se elimina el botón "Contactar al equipo comercial" del hero y la variante `.btn--speech`.
+- Código ✓ · Botón del asistente: contenedor outline (sin relleno) e ícono de chat relleno, navy sobre claro y blanco sobre oscuro.
+
 ## 2026-10-20 · Botón del asistente y botón comercial del hero
 - Figma pendiente · Código ✓ · Nuevo componente transversal `<chat-launcher>`: botón flotante del asistente, fijo abajo a la derecha en todo el sitio (se agrega solo desde layout.js). Navy 900 sobre fondos claros y blanco sobre oscuros. No abre nada por ahora. Ícono de chat nuevo, en el estilo del kit.
 - Figma pendiente · Código ✓ · Nueva variante de botón `.btn--speech` (Acento con forma de diálogo, esquina inferior izquierda recta) para "Contactar al equipo comercial", abajo a la izquierda del hero. Usa Coral 400 con texto Ink 900 (la regla prohíbe texto blanco sobre coral).

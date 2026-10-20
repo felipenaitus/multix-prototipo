@@ -81,7 +81,6 @@ Alto 50px, padding 16/24, radio full, texto UI/Botón.
 | Acento | Conversión: contacto comercial, suscripción. Máximo uno por vista. | Coral 400 + Ink 900 → hover Coral 500 |
 | Terciario / enlace | Acciones de lectura ("Ver todos los informes"). Texto sin subrayado + flecha. | hover Navy 600 + flecha en Coral 500 que se desplaza |
 | Con ícono | Descarga (ícono a la izquierda), enlace externo (flecha diagonal a la derecha). | — |
-| Acento · forma de diálogo | Botón comercial del hero ("Contactar al equipo comercial"): mismo color que Acento, con la esquina inferior izquierda recta (`.btn--speech`). | Igual que Acento |
 | Pequeño | Acciones dentro de tarjetas (Agregar al calendario). Texto UI/Botón pequeño. | — |
 | Sobre fondo oscuro | Claro (blanco + texto Navy), acento oscuro (Coral 400 + Ink 900), contorno coral (Coral 500), fantasma blanco, terciario blanco. | — |
 | Deshabilitado | Fondo atenuado, texto secundario. | — |
@@ -124,11 +123,9 @@ Header, menú hamburguesa y footer viven solo en `js/layout.js` (ver CLAUDE.md 2
 
 **Botón flotante del asistente (`<chat-launcher>`)**
 - Transversal: se agrega solo en todas las páginas desde `js/layout.js`. Fijo abajo a la derecha (`--layout-gutter`; `--space-24` del borde inferior en mobile, `--space-32` en desktop), círculo de 56 px con ícono de chat.
-- Navy 900 con ícono blanco sobre fondos claros; blanco con ícono Navy 900 sobre fondos oscuros. Detecta el fondo que tiene detrás al hacer scroll.
+- Contenedor outline (borde `--border-thin`, sin relleno) e ícono de chat relleno. Navy 900 sobre fondos claros y blanco sobre fondos oscuros; en hover toma un fondo suave (Navy 100 sobre claro, Navy 900 sobre oscuro). Detecta el fondo que tiene detrás al hacer scroll.
 - Por ahora no abre nada (asistente por definir). Queda bajo el menú hamburguesa cuando está abierto.
 - Ícono de chat dibujado en el estilo del kit, pendiente de llevar a Figma.
-
-**Hero:** el botón "Contactar al equipo comercial" (Acento · forma de diálogo) va abajo a la izquierda, solo en el hero. En mobile sube para no chocar con el botón del asistente.
 
 **Páginas de prueba** (`pruebas/`, fuera de la navegación): `navegacion-hero.html` y `navegacion-interior.html`.
 

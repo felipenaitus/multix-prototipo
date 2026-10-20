@@ -45,8 +45,6 @@
     minus: ['0 0 18 18', '2.53125 8.15625', 1.6875, ['M0.84375 0.84375H12.0938']],
     plus: ['0 0 18 18', '2.53125 2.53125', 1.6875, ['M6.46875 0.84375V6.46875M6.46875 6.46875V12.0938M6.46875 6.46875H0.84375M6.46875 6.46875H12.0938']],
     up: ['0 0 14 14', '3.0625 2.1875', 1.75, ['M3.9375 9.1875V0.875M7 3.9375L3.9375 0.875L0.875 3.9375']],
-    // Asistente (chat): dibujado en el estilo del kit (no viene de Figma)
-    chat: ['0 0 24 24', '0 0', 1.6, ['M5 4.5H19A1.5 1.5 0 0 1 20.5 6V15A1.5 1.5 0 0 1 19 16.5H10L5.5 20V16.5H5A1.5 1.5 0 0 1 3.5 15V6A1.5 1.5 0 0 1 5 4.5Z', 'M8.5 10.5H8.51M12 10.5H12.01M15.5 10.5H15.51']],
     // Redes sociales: dibujadas en el estilo del kit (no vienen de Figma)
     linkedin: ['0 0 16 16', '0 0', 1.5, ['M4 2.5H12A1.5 1.5 0 0 1 13.5 4V12A1.5 1.5 0 0 1 12 13.5H4A1.5 1.5 0 0 1 2.5 12V4A1.5 1.5 0 0 1 4 2.5Z', 'M5.5 7V11M5.5 5V5.01M8 11V7M8 9C8 7.9 8.9 7 10 7S11.5 7.6 11.5 8.5V11']],
     instagram: ['0 0 16 16', '0 0', 1.5, ['M5.5 2.5H10.5A3 3 0 0 1 13.5 5.5V10.5A3 3 0 0 1 10.5 13.5H5.5A3 3 0 0 1 2.5 10.5V5.5A3 3 0 0 1 5.5 2.5Z', 'M10.5 8A2.5 2.5 0 1 1 5.5 8A2.5 2.5 0 0 1 10.5 8Z', 'M11.25 4.75V4.76']],
@@ -703,7 +701,8 @@
       this.classList.add('chat-launcher');
       this.innerHTML =
         '<button type="button" class="chat-launcher__btn" aria-label="Asistente virtual (próximamente)" title="Asistente virtual · próximamente">' +
-          icon('chat', 'lg') +
+          // Ícono relleno: globo de diálogo con tres puntos calados (no viene de Figma)
+          '<svg class="chat-launcher__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M5 3.5H19A2.5 2.5 0 0 1 21.5 6V15A2.5 2.5 0 0 1 19 17.5H10.5L5.6 21.3A.75.75 0 0 1 4.4 20.7V17.5H5A2.5 2.5 0 0 1 2.5 15V6A2.5 2.5 0 0 1 5 3.5ZM8 9.25A1.25 1.25 0 1 0 8 11.75A1.25 1.25 0 1 0 8 9.25ZM12 9.25A1.25 1.25 0 1 0 12 11.75A1.25 1.25 0 1 0 12 9.25ZM16 9.25A1.25 1.25 0 1 0 16 11.75A1.25 1.25 0 1 0 16 9.25Z"/></svg>' +
         '</button>';
       if (this.hasAttribute('demo')) return;
       var ticking = false;
