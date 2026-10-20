@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Nuevo video del hero de Productos
+- Código ✓ · El hero de Productos usa el nuevo video (Video_Productos_2: 720p H.264 sin audio, 17 s, 22 MB → 1,6 MB) y su poster. Mismo archivo `assets/video/productos.mp4`.
+
 ## 2026-10-20 · Títulos de sección más livianos y switch del catálogo
 - Figma pendiente · Código ✓ · Título 2 (títulos de sección) pasa de Sora 400 a Sora 300 (`--text-h2-weight`). Aplica a todo el sitio.
 - Código ✓ · Se quita la etiqueta "Catálogo Multi X": ninguna sección lleva etiqueta sobre el título.
