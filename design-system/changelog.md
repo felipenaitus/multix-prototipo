@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Nuevo video del hero del home
+- Código ✓ · El hero del home usa el nuevo video (Video_Hero_3: 720p H.264 sin audio, 38 s, 49,5 MB → 4,8 MB) y su poster. Mismo archivo `assets/video/hero.mp4` (también lo usa la página de prueba del hero).
+
 ## 2026-10-20 · Catálogo: imagen predeterminada y más grande
 - Código ✓ · La vista "Imagen" pasa a ser la predeterminada del catálogo (el flipbook sigue disponible en el switch).
 - Código ✓ · Composición de imagen y círculo más grande: ocupa la mitad del ancho desde tablet (antes 2/5 y 85 % de esa columna) y todo el ancho en mobile.
