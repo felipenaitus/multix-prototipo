@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · El ícono de buscar abre el menú
+- Código ✓ · El ícono de buscar de la barra utilitaria (desktop) y del header (mobile y tablet) pasa a ser un botón que abre el menú hamburguesa con el foco en su buscador. Si el menú ya está abierto, solo enfoca el buscador.
+
 ## 2026-10-20 · Etiquetas del menú
 - Figma pendiente · Código ✓ · Nuevo primitivo `--color-ink-500` (#66787F) y semántico `--color-text-tertiary` (4,6:1 sobre blanco, pasa AA). Se usa en las etiquetas "Portales" y "Recursos" del menú, más claras que los enlaces.
 - Código ✓ · **Excepción a la regla del coral (CLAUDE.md 4), aprobada por Felipe:** las etiquetas "La compañía" y "Negocio" del menú usan Coral 500 sobre blanco (3,1:1, no cumple AA para texto chico).

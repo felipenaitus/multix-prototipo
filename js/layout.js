@@ -266,7 +266,7 @@
               '<ul class="header__utility-list" role="list">' +
                 UTILITY.map(function (l) { return '<li><a class="hit" href="' + l.href + '">' + esc(l.label) + '</a></li>'; }).join('') +
               '</ul>' +
-              '<a class="header__utility-icon hit" href="#" aria-label="Buscar">' + icon('search') + '</a>' +
+              '<button type="button" class="header__utility-icon hit" data-open-search aria-haspopup="dialog" aria-label="Buscar en el sitio">' + icon('search') + '</button>' +
               langSwitch('header__lang') +
             '</div>' +
           '</div>' +
@@ -274,7 +274,7 @@
             '<a class="header__logo" href="' + ROOT + 'index.html" aria-label="Multi X, ir al inicio">' + logo() + '</a>' +
             '<nav class="header__nav" aria-label="Principal"><ul class="nav__list" role="list">' + nav + '</ul></nav>' +
             '<div class="header__tools">' +
-              '<a class="header__icon-btn header__search-mobile" href="#" aria-label="Buscar">' + icon('search', 'lg') + '</a>' +
+              '<button type="button" class="header__icon-btn header__search-mobile" data-open-search aria-haspopup="dialog" aria-label="Buscar en el sitio">' + icon('search', 'lg') + '</button>' +
               '<button type="button" class="header__icon-btn" data-menu-toggle aria-expanded="false"' + (demo ? '' : ' aria-controls="' + menuId + '"') + ' aria-label="Abrir menú">' +
                 '<span class="burger" aria-hidden="true"><span></span><span></span><span></span></span>' +
               '</button>' +
@@ -346,11 +346,13 @@
         this.dataset.state = state === 'transparent' ? 'transparent' : 'solid';
         this.dataset.tone = state === 'dark' || state === 'transparent' ? 'dark' : 'light';
         this.classList.toggle('is-compact', state === 'compact');
-        // En el kit, la hamburguesa de los ejemplos abre el menú real de la página
-        this.querySelector('[data-menu-toggle]').addEventListener('click', function (e) {
-          e.stopPropagation();
-          var main = document.querySelector('site-header:not([demo])');
-          if (main && main._setMenu) main._setMenu(true);
+        // En el kit, la hamburguesa y el buscador de los ejemplos abren el menú real de la página
+        this.querySelectorAll('[data-menu-toggle], [data-open-search]').forEach(function (b) {
+          b.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var main = document.querySelector('site-header:not([demo])');
+            if (main && main._setMenu) main._setMenu(true);
+          });
         });
         return;
       }
@@ -440,6 +442,17 @@
 
       btn.addEventListener('click', function () {
         setMenu(btn.getAttribute('aria-expanded') !== 'true');
+      });
+
+      // El ícono de buscar (barra utilitaria y header mobile) abre el menú, donde está el buscador
+      this.querySelectorAll('[data-open-search]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          if (btn.getAttribute('aria-expanded') === 'true') {
+            overlay.querySelector('.menu-search__input').focus();
+          } else {
+            setMenu(true);
+          }
+        });
       });
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
