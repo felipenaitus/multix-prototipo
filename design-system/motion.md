@@ -48,7 +48,7 @@ Estado: **Base** = se aplica en todo el sitio sin preguntar. **Firma** = efecto 
 | Sección pineada con cifras | El círculo y las cifras quedan fijos mientras se hace scroll; el círculo crece y las cifras entran de derecha a izquierda, cada una con su contador. | Composición "Desde el sur de Chile" | Sin pineado: entrada simple + contadores |
 | Scroll-scrubbing | Secuencia de frames controlada por el scroll (tipo Apple). | Sustentabilidad (una por página como máximo) | Imagen fija o video corto en loop sin control por scroll |
 | Parallax del círculo | El círculo detrás del video o la ilustración se desplaza levemente con el scroll; el contenido no se mueve. | Productos y composiciones con ilustración | Desactivado |
-| Cursor punto + onda | Un punto Coral 500 reemplaza al cursor; al pasar por elementos clickeables crece levemente y emite una onda sutil (anillo Coral 500 de `--border-thin` que se expande y desvanece en `--duration-reveal`). | Todo el sitio, solo con mouse | No existe |
+| Cursor punto + anillo | Un punto con un anillo fino alrededor reemplaza al cursor (fusión "diferencia": claro sobre oscuro, oscuro sobre claro). Al pasar por elementos clickeables el punto se desvanece (`--duration-fast`) y queda el anillo. Sin onda. | Todo el sitio, solo con mouse | No existe |
 
 ## Agregar un patrón nuevo
 Si una sección necesita un movimiento que no está en este catálogo: proponerlo a Felipe (qué hace, dónde, versión mobile y versión con movimiento reducido) y, si lo aprueba, agregarlo aquí antes de implementarlo.

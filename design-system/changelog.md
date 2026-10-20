@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Cursor con anillo
+- Código ✓ · El cursor pasa a ser un punto con un anillo fino alrededor (según referencia de Felipe). En hover sobre clickeables desaparece el punto y queda el anillo. Se quita la onda. Color por fusión "diferencia" en blanco (claro sobre oscuro, oscuro sobre claro) en lugar de Coral 500.
+
 ## 2026-10-20 · Ajustes al panel del menú
 - Código ✓ · Redes sociales pasan del costado del buscador a la franja inferior, a la derecha (en mobile, al final).
 - Código ✓ · Enlaces secundarios (Portales y Recursos) en Ink 600 (`--color-text-secondary`) para no competir con los accesos principales.

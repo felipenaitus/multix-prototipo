@@ -3050,9 +3050,10 @@ a.pagination__item:hover,
 
 /* ==========================================================================
    Cursor (js/components.js) · solo con mouse (hover + puntero fino)
-   Un punto reemplaza al cursor nativo; sobre elementos clickeables emite una
-   onda sutil que se expande y se desvanece. En campos de texto vuelve el
-   cursor nativo. Con movimiento reducido queda solo el punto, sin onda.
+   Punto con un anillo fino alrededor. Sobre elementos clickeables el punto se
+   desvanece y queda el anillo. Fusión "diferencia" en blanco: se ve claro sobre
+   fondos oscuros y oscuro sobre fondos claros. En campos de texto vuelve el
+   cursor nativo.
    ========================================================================== */
 .has-cursor,
 .has-cursor * {
@@ -3064,43 +3065,48 @@ a.pagination__item:hover,
   cursor: text !important;
 }
 
-.cursor-dot,
-.cursor-ripple {
+.cursor {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
-  border-radius: var(--radius-full);
+  width: 0;
+  height: 0;
   pointer-events: none;
+  mix-blend-mode: difference;
+  transition: opacity var(--duration-fast) var(--easing-standard);
 }
 
-.cursor-dot {
-  width: var(--space-8);
-  height: var(--space-8);
-  margin: calc(var(--space-8) / -2) 0 0 calc(var(--space-8) / -2);
-  background: var(--color-bg-accent-hover);
+.cursor.is-hidden {
+  opacity: 0;
+}
+
+.cursor__dot,
+.cursor__ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--radius-full);
+  translate: -50% -50%;
+}
+
+.cursor__dot {
+  width: var(--space-6);
+  height: var(--space-6);
+  background: var(--color-bg-page);
   transition:
     opacity var(--duration-fast) var(--easing-standard),
     scale var(--duration-base) var(--easing-out);
 }
 
-.cursor-dot.is-hidden {
+.cursor__ring {
+  width: var(--space-32);
+  height: var(--space-32);
+  border: var(--border-thin) solid var(--color-border-inverse);
+}
+
+/* Hover sobre clickeables: solo queda el anillo */
+.cursor.is-hover .cursor__dot {
   opacity: 0;
-}
-
-.cursor-dot.is-hover {
-  scale: 1.5;
-}
-
-.cursor-ripple {
-  width: var(--space-40);
-  height: var(--space-40);
-  margin: calc(var(--space-40) / -2) 0 0 calc(var(--space-40) / -2);
-  border: var(--border-thin) solid var(--color-border-accent-on-dark);
-  animation: cursor-ripple var(--duration-reveal) var(--easing-out) forwards;
-}
-
-@keyframes cursor-ripple {
-  from { opacity: .6; scale: .2; }
-  to   { opacity: 0;  scale: 1.6; }
+  scale: 0;
 }

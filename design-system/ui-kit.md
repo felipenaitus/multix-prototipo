@@ -115,8 +115,9 @@ Header, menú hamburguesa y footer viven solo en `js/layout.js` (ver CLAUDE.md 2
 - Íconos de redes (LinkedIn, Instagram, YouTube): dibujados en el estilo del kit, pendientes de llevar a Figma.
 
 **Cursor (`js/components.js`)**
-- Solo con mouse (hover + puntero fino): un punto en Coral 500 (`--space-8`) reemplaza al cursor nativo. Sobre elementos clickeables crece un poco y emite una onda sutil (anillo de `--border-thin` en Coral 500 que se expande y desvanece en `--duration-reveal`).
-- En campos de texto vuelve el cursor nativo. En pantallas táctiles no se activa. Con movimiento reducido queda el punto, sin onda.
+- Solo con mouse (hover + puntero fino): un punto (`--space-6`) con un anillo fino alrededor (`--space-32`, `--border-thin`) reemplaza al cursor nativo. Sobre elementos clickeables el punto se desvanece y queda solo el anillo. Sin onda.
+- Color por fusión "diferencia" en blanco: se ve claro sobre fondos oscuros (hero, footer) y oscuro sobre fondos claros.
+- En campos de texto vuelve el cursor nativo. En pantallas táctiles no se activa.
 
 **Páginas de prueba** (`pruebas/`, fuera de la navegación): `navegacion-hero.html` y `navegacion-interior.html`.
 

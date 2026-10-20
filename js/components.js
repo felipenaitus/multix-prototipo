@@ -11,7 +11,7 @@
    [data-filters]                Barra de filtros (panel inferior en mobile)
    [data-add-calendar]           Agregar al calendario (opciones en mobile)
    video[data-hero-video]        Video de fondo: con movimiento reducido queda la imagen (poster)
-   Cursor                        Punto con onda sutil sobre clickeables (solo mouse)
+   Cursor                        Punto con anillo; en clickeables queda solo el anillo (solo mouse)
    ========================================================================== */
 (function () {
   'use strict';
@@ -299,35 +299,25 @@
     });
   }
 
-  /* ---------- Cursor: punto con onda sutil sobre clickeables ----------
-     Solo con mouse (hover + puntero fino). En campos de texto vuelve el cursor
-     nativo. Con movimiento reducido queda el punto, sin onda. */
+  /* ---------- Cursor: punto con anillo ----------
+     Solo con mouse (hover + puntero fino). Sobre elementos clickeables el punto
+     se desvanece y queda el anillo. En campos de texto vuelve el cursor nativo. */
   function initCursor() {
     if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
     var CLICKABLE = 'a[href], button, [role="button"], label, select, summary, input[type="checkbox"], input[type="radio"]';
     var TEXT = 'input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]), textarea';
 
-    var dot = document.createElement('div');
-    dot.className = 'cursor-dot is-hidden';
-    dot.setAttribute('aria-hidden', 'true');
-    document.body.appendChild(dot);
+    var cursor = document.createElement('div');
+    cursor.className = 'cursor is-hidden';
+    cursor.setAttribute('aria-hidden', 'true');
+    cursor.innerHTML = '<span class="cursor__ring"></span><span class="cursor__dot"></span>';
+    document.body.appendChild(cursor);
     root.classList.add('has-cursor');
 
-    var x = 0, y = 0, raf = null, current = null;
+    var x = 0, y = 0, raf = null;
     function place() {
-      // translate (no transform) para que la escala del hover no desplace el punto
-      dot.style.translate = x + 'px ' + y + 'px';
+      cursor.style.translate = x + 'px ' + y + 'px';
       raf = null;
-    }
-    function ripple() {
-      if (reduce.matches) return;
-      var r = document.createElement('div');
-      r.className = 'cursor-ripple';
-      r.setAttribute('aria-hidden', 'true');
-      r.style.translate = x + 'px ' + y + 'px';
-      r.addEventListener('animationend', function () { r.remove(); });
-      document.body.appendChild(r);
     }
 
     document.addEventListener('pointermove', function (e) {
@@ -336,16 +326,11 @@
       y = e.clientY;
       if (!raf) raf = window.requestAnimationFrame(place);
       var onText = e.target.closest && e.target.closest(TEXT);
-      dot.classList.toggle('is-hidden', !!onText);
-      var target = !onText && e.target.closest ? e.target.closest(CLICKABLE) : null;
-      if (target !== current) {
-        current = target;
-        dot.classList.toggle('is-hover', !!target);
-        if (target) ripple();
-      }
+      cursor.classList.toggle('is-hidden', !!onText);
+      cursor.classList.toggle('is-hover', !onText && !!(e.target.closest && e.target.closest(CLICKABLE)));
     }, { passive: true });
 
-    document.documentElement.addEventListener('mouseleave', function () { dot.classList.add('is-hidden'); });
+    document.documentElement.addEventListener('mouseleave', function () { cursor.classList.add('is-hidden'); });
   }
 
   function init() {
