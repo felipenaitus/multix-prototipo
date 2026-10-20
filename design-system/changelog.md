@@ -6,7 +6,7 @@ Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descrip
 
 ## 2026-10-20 · Video en el hero de prueba
 - Código ✓ · `pruebas/navegacion-hero.html` usa el video del hero (`assets/video/hero.mp4`) a pantalla completa, con el velo oscuro de `.hero__media`. Con `prefers-reduced-motion` el video se detiene y queda la imagen `assets/video/hero-poster.jpg` (comportamiento `video[data-hero-video]` en components.js).
-- Pendiente · El video original es 4K (3840×2160, 23 s, 147 MB): supera el límite de GitHub y es muy pesado para web. Queda fuera del repositorio (.gitignore) hasta tener una versión comprimida (1080p, H.264, sin audio). En GitHub Pages se ve solo la imagen fija.
+- Código ✓ · Video comprimido para web con ffmpeg: de 4K 59,94 fps (147 MB) a 1080p 30 fps, H.264 High, sin audio, faststart (6,4 MB). Se versiona en el repositorio y se ve también en GitHub Pages.
 
 ## 2026-10-19 · Ajustes a la Etapa 1 (revisión de Felipe)
 - Figma pendiente · Código ✓ · Header vuelve a dos filas en desktop: barra utilitaria (Portal Proveedores · Contacto · buscador · ES/EN) y fila principal con logo, accesos centrados y hamburguesa. Al hacer scroll la barra utilitaria se oculta y la fila principal se compacta (80 → 64 px); al volver arriba reaparece.
