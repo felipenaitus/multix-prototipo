@@ -11,6 +11,7 @@
    [data-filters]                Barra de filtros (panel inferior en mobile)
    [data-add-calendar]           Agregar al calendario (opciones en mobile)
    video[data-hero-video]        Video de fondo: con movimiento reducido queda la imagen (poster)
+   video[data-hover-video]       Video que se reproduce solo con hover o foco en su enlace (marcas)
    [data-variant-switch]         Switch de vista: botones data-show cambian data-variant del bloque
    [data-scroll-grow]            Avance del scroll (0 a 1) en --scroll-progress (círculo del catálogo)
    [data-globe]                  Globo de puntos con pines (gira, se arrastra; Firma)
@@ -299,6 +300,27 @@
       }
       apply();
       reduce.addEventListener('change', apply);
+    });
+  }
+
+  /* ---------- Video en hover (video[data-hover-video]) ----------
+     El video se reproduce mientras el puntero o el foco están en su enlace o botón
+     contenedor y se pausa al salir. Con movimiento reducido no se reproduce (queda
+     el poster). preload="none": no se descarga hasta el primer hover. */
+  function initHoverVideos() {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    $all('video[data-hover-video]').forEach(function (v) {
+      var trigger = v.closest('a, button') || v.parentElement;
+      function play() {
+        if (reduce.matches) return;
+        var p = v.play();
+        if (p && p.catch) p.catch(function () {});
+      }
+      function stop() { v.pause(); }
+      trigger.addEventListener('pointerenter', play);
+      trigger.addEventListener('focus', play);
+      trigger.addEventListener('pointerleave', stop);
+      trigger.addEventListener('blur', stop);
     });
   }
 
@@ -636,6 +658,7 @@
     initGlobes();
     initScrollGrow();
     initVariantSwitch();
+    initHoverVideos();
     initCursor();
   }
 

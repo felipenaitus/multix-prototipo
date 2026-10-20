@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Video en el hover de las marcas
+- Código ✓ · El hover de Latitude 45 y Arka Fjord muestra un video propio de cada marca en lugar de la foto de prueba. Los GIF entregados (88 MB y 111 MB) se convirtieron a MP4 en loop sin audio (0,4 MB y 0,5 MB). Se reproducen solo durante el hover y no se descargan hasta el primero (`video[data-hover-video]` en components.js).
+
 ## 2026-10-20 · Nuevo video del hero de Productos
 - Código ✓ · El hero de Productos usa el nuevo video (Video_Productos_2: 720p H.264 sin audio, 17 s, 22 MB → 1,6 MB) y su poster. Mismo archivo `assets/video/productos.mp4`.
 
