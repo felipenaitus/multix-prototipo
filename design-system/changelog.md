@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Accesos principales a la derecha
+- Figma pendiente · Código ✓ · En desktop, Productos · Sustentabilidad · Inversionistas dejan de ir centrados y pasan a la derecha, junto al botón hamburguesa. Mobile y tablet sin cambios.
+
 ## 2026-10-20 · Página Productos y home base
 - Código ✓ · Nuevas páginas en la raíz: `index.html` (home base con el hero de video y la frase en prueba; bloques por definir) y `productos.html`. Productos (header y menú) enlaza a `productos.html` y el logo vuelve a `index.html`. Los enlaces internos se resuelven desde la raíz (helper `url()` en layout.js), así funcionan también desde `pruebas/`.
 - Figma pendiente · Código ✓ · Componentes nuevos de página: encabezado de sección, hero de página, tarjetas de solución, mercados y oficinas, cadena de valor.

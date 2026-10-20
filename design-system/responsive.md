@@ -21,7 +21,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 ## Patrones por componente
 | Componente | Desktop | Mobile |
 |---|---|---|
-| Header | Dos filas: barra utilitaria (Portal Proveedores · Diving X · Contacto · buscador · ES/EN) y fila principal (logo · Productos · Sustentabilidad · Inversionistas centrados · hamburguesa) | Mobile y tablet (< 1280): una fila con logo, buscador y hamburguesa. Utilitaria, accesos e idioma pasan al menú |
+| Header | Dos filas: barra utilitaria (Portal Proveedores · Diving X · Contacto · buscador · ES/EN) y fila principal (logo · Productos · Sustentabilidad · Inversionistas a la derecha, junto a la hamburguesa) | Mobile y tablet (< 1280): una fila con logo, buscador y hamburguesa. Utilitaria, accesos e idioma pasan al menú |
 | Desplegable de Inversionistas | Se abre con hover o clic; navegable con teclado | No aplica: Inversionistas va en acordeón dentro del overlay |
 | Menú hamburguesa | Panel flotante bajo el header, ancho del contenedor, sobre el sitio oscurecido y desenfocado: buscador, tarjeta de noticia destacada, accesos en dos grupos y franja de Portales · Recursos con las redes a la derecha | Tablet: mismo panel sin vista previa, idioma dentro. Mobile: pantalla completa, sin vista previa; buscador arriba, "La compañía" y "Negocio" en lista, luego Portales, Recursos, idioma y redes |
 | Header fijo | Al bajar, la barra utilitaria sale y la fila principal pasa de 80 a 64 px; al volver arriba reaparece. Transparente sobre el hero → blanco al hacer scroll, siempre (sin importar el fondo) | Alto 64 px; se oculta al bajar y aparece al subir. Mismo cambio de transparente a blanco |

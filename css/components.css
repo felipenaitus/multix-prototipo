@@ -2413,8 +2413,9 @@ a.pagination__item:hover,
     display: block;
   }
 
+  /* Accesos principales a la derecha, junto a la hamburguesa */
   .header__inner {
-    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) auto auto;
   }
 
   .header__nav {
