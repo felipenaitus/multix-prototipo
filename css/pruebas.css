@@ -42,4 +42,10 @@
 /* Texto del hero por sobre el video y su velo (.hero__media) */
 .test-hero__title {
   position: relative;
+  padding-inline: var(--layout-gutter);
+  text-align: center;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
