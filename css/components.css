@@ -2310,12 +2310,18 @@ a.pagination__item:hover,
 .burger span:nth-child(2) { top: calc(50% - var(--space-2) / 2); }
 .burger span:nth-child(3) { bottom: 0; }
 
+.burger--x span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger--x span:nth-child(1),
 [aria-expanded="true"] .burger span:nth-child(1) {
   transform: translateY(calc(var(--icon-md) / 2 - var(--space-2) / 2)) rotate(45deg);
 }
 [aria-expanded="true"] .burger span:nth-child(2) {
   opacity: 0;
 }
+.burger--x span:nth-child(3),
 [aria-expanded="true"] .burger span:nth-child(3) {
   transform: translateY(calc(var(--icon-md) / -2 + var(--space-2) / 2)) rotate(-45deg);
 }
@@ -2517,6 +2523,31 @@ a.pagination__item:hover,
   outline: none;
 }
 
+.menu-search__input::-webkit-search-cancel-button {
+  display: none;
+  -webkit-appearance: none;
+}
+
+.menu-search__clear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--touch-target);
+  height: var(--touch-target);
+  border-radius: var(--radius-full);
+  color: var(--color-text-primary);
+  transition: background-color var(--duration-fast) var(--easing-standard);
+}
+
+.menu-search__clear:hover {
+  background: var(--color-bg-subtle);
+}
+
+.menu-search__clear[hidden] {
+  display: none;
+}
+
 /* Cuerpo: tarjeta de vista previa + accesos en dos columnas */
 .menu-panel__body {
   display: grid;
@@ -2528,7 +2559,8 @@ a.pagination__item:hover,
   position: relative;
   display: none;
   overflow: hidden;
-  min-height: calc(2 * var(--space-128) + var(--space-64));
+  align-self: start;
+  height: calc(var(--space-128) + var(--space-96));
   border-radius: var(--radius-lg);
   background: var(--color-bg-brand-hover);
   color: var(--color-text-inverse);
@@ -2657,11 +2689,12 @@ a.pagination__item:hover,
   transition-delay: calc(var(--duration-stagger) * (var(--step, 0) + 1));
 }
 
+/* El relleno del hover se compensa para alinear el texto con el título del grupo */
 .menu-link {
   display: flex;
-  align-items: flex-start;
-  gap: var(--space-12);
-  width: 100%;
+  align-items: center;
+  width: calc(100% + 2 * var(--space-12));
+  margin-inline: calc(-1 * var(--space-12));
   padding: var(--space-12);
   border-radius: var(--radius-md);
   text-align: left;
@@ -2675,19 +2708,6 @@ a.pagination__item:hover,
   color: var(--color-text-primary);
 }
 
-.menu-link__icon {
-  margin-top: var(--space-2);
-  color: var(--color-text-brand);
-}
-
-.menu-link__text {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: var(--space-2);
-  min-width: 0;
-}
-
 .menu-link__name {
   font-size: var(--text-ui-strong-size);
   line-height: var(--text-ui-strong-lh);
@@ -2698,47 +2718,7 @@ a.pagination__item:hover,
   color: var(--color-text-brand);
 }
 
-.menu-link__desc {
-  font-size: var(--text-small-size);
-  line-height: var(--text-small-lh);
-  font-weight: var(--text-small-weight);
-  color: var(--color-text-secondary);
-}
-
-.menu-link .acc-icon {
-  align-self: center;
-  color: var(--color-text-primary);
-}
-
-.menu-link--trigger {
-  display: none;
-}
-
-/* Subpáginas de Inversionistas: enlaces pequeños bajo el acceso */
-.menu-sub {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: var(--space-16);
-  margin: 0;
-  padding: 0 0 var(--space-4) calc(var(--space-12) + var(--icon-lg) + var(--space-12));
-  list-style: none;
-}
-
-.menu-sub a {
-  display: inline-flex;
-  align-items: center;
-  min-height: var(--touch-target);
-  font-size: var(--text-small-size);
-  line-height: var(--text-small-lh);
-  font-weight: var(--text-small-weight);
-  color: var(--color-text-secondary);
-}
-
-.menu-sub a:hover {
-  color: var(--color-text-brand);
-}
-
-/* Franja inferior: Portales · Recursos · Contacto */
+/* Franja inferior: Portales · Recursos */
 .menu-panel__foot {
   display: flex;
   flex-wrap: wrap;
@@ -2778,10 +2758,6 @@ a.pagination__item:hover,
   color: var(--color-text-brand);
 }
 
-.menu-foot-group__list--contact a {
-  color: var(--color-text-brand);
-}
-
 .menu-panel__extras {
   display: none;
 }
@@ -2818,7 +2794,7 @@ a.pagination__item:hover,
   }
 }
 
-/* Mobile: pantalla completa, sin vista previa; Inversionistas en acordeón */
+/* Mobile: pantalla completa, sin vista previa */
 @media (max-width: 767px) {
   .menu-overlay__wrap {
     padding: var(--overlay-top, var(--main-h)) 0 0;
@@ -2841,30 +2817,6 @@ a.pagination__item:hover,
 
   .menu-panel__social--top {
     display: none;
-  }
-
-  .menu-link {
-    margin-inline: calc(-1 * var(--space-12));
-    width: calc(100% + 2 * var(--space-12));
-  }
-
-  .menu-link--desktop {
-    display: none;
-  }
-
-  .menu-link--trigger {
-    display: flex;
-  }
-
-  .menu-sub {
-    display: none;
-    flex-direction: column;
-    padding-left: calc(var(--icon-lg) + var(--space-12));
-  }
-
-  .menu-item--group.is-open .menu-sub {
-    display: flex;
-    animation: fade-up var(--duration-base) var(--easing-out);
   }
 
   .menu-panel__foot {

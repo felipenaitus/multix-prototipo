@@ -44,13 +44,6 @@
     minus: ['0 0 18 18', '2.53125 8.15625', 1.6875, ['M0.84375 0.84375H12.0938']],
     plus: ['0 0 18 18', '2.53125 2.53125', 1.6875, ['M6.46875 0.84375V6.46875M6.46875 6.46875V12.0938M6.46875 6.46875H0.84375M6.46875 6.46875H12.0938']],
     up: ['0 0 14 14', '3.0625 2.1875', 1.75, ['M3.9375 9.1875V0.875M7 3.9375L3.9375 0.875L0.875 3.9375']],
-    // Accesos del menú: trazos del prototipo de venta aprobado (24x24)
-    'm-nosotros': ['0 0 24 24', '0 0', 1.6, ['M14 5A2 2 0 1 1 10 5A2 2 0 0 1 14 5Z', 'M12 7V20M6 14A6 6 0 0 0 18 14']],
-    'm-personas': ['0 0 24 24', '0 0', 1.6, ['M11.7 8A3.2 3.2 0 1 1 5.3 8A3.2 3.2 0 0 1 11.7 8Z', 'M18.6 9A2.6 2.6 0 1 1 13.4 9A2.6 2.6 0 0 1 18.6 9Z', 'M2.5 20C2.5 15.5 5 13 8.5 13C12 13 14.5 15.5 14.5 20', 'M14.7 14C17.3 14.3 19 16.3 19 20']],
-    'm-noticias': ['0 0 24 24', '0 0', 1.6, ['M6 4H18A2 2 0 0 1 20 6V18A2 2 0 0 1 18 20H6A2 2 0 0 1 4 18V6A2 2 0 0 1 6 4Z', 'M8 9H16M8 13H16M8 17H13']],
-    'm-productos': ['0 0 24 24', '0 0', 1.6, ['M3 8L12 3L21 8L12 13L3 8Z', 'M3 8V17L12 22L21 17V8', 'M12 13V22']],
-    'm-sustentabilidad': ['0 0 24 24', '0 0', 1.6, ['M3 13C7 6 11 4 21 4C20 13 17 18 10 19C7 20 3 17 3 13Z', 'M3 21C6 17 9 15.5 12 15']],
-    'm-inversionistas': ['0 0 24 24', '0 0', 1.6, ['M3 20H21', 'M6 16L10 11L14 14L19 7']],
     // Redes sociales: dibujadas en el estilo del kit (no vienen de Figma)
     linkedin: ['0 0 16 16', '0 0', 1.5, ['M4 2.5H12A1.5 1.5 0 0 1 13.5 4V12A1.5 1.5 0 0 1 12 13.5H4A1.5 1.5 0 0 1 2.5 12V4A1.5 1.5 0 0 1 4 2.5Z', 'M5.5 7V11M5.5 5V5.01M8 11V7M8 9C8 7.9 8.9 7 10 7S11.5 7.6 11.5 8.5V11']],
     instagram: ['0 0 16 16', '0 0', 1.5, ['M5.5 2.5H10.5A3 3 0 0 1 13.5 5.5V10.5A3 3 0 0 1 10.5 13.5H5.5A3 3 0 0 1 2.5 10.5V5.5A3 3 0 0 1 5.5 2.5Z', 'M10.5 8A2.5 2.5 0 1 1 5.5 8A2.5 2.5 0 0 1 10.5 8Z', 'M11.25 4.75V4.76']],
@@ -130,39 +123,34 @@
   // Barra utilitaria (desktop)
   var UTILITY = [
     { label: 'Portal Proveedores', href: '#' },
+    { label: 'Diving X', href: '#' },
     { label: 'Contacto', href: '#' }
   ];
 
   /* Panel del menú hamburguesa (según el prototipo de venta aprobado:
-     .nav-overlay / .mega--preview). Cada acceso alimenta la tarjeta de vista previa. */
+     .nav-overlay / .mega--preview). Cada acceso muestra solo su nombre y
+     alimenta la tarjeta de vista previa (tag + lead). */
   var MENU_GROUPS = [
     {
       title: 'La compañía',
       items: [
-        { id: 'nosotros', label: 'Nosotros', icon: 'm-nosotros', href: '#',
-          desc: 'Nuestra historia, desde 1987 hasta hoy.',
+        { id: 'nosotros', label: 'Nosotros', href: '#',
           tag: '41°28\'S · Puerto Montt', lead: 'Pioneros de la acuicultura chilena, integrados de la ova a la mesa. [contenido por definir]' },
-        { id: 'trabaja', label: 'Trabaja con Nosotros', icon: 'm-personas', href: '#',
-          desc: 'Equipo, cultura y oportunidades. [contenido por definir]',
+        { id: 'trabaja', label: 'Trabaja con Nosotros', href: '#',
           tag: 'Cultura Multi X', lead: 'Cerca del 40% de nuestra dotación son mujeres, en todos los niveles. [contenido por definir]' },
-        { id: 'noticias', label: 'Noticias', icon: 'm-noticias', href: '#',
-          desc: 'Actualidad e hitos de la compañía.',
+        { id: 'noticias', label: 'Noticias', href: '#',
           tag: 'Sala de prensa', lead: 'Las últimas novedades de Multi X, Arka Fjord y Latitude 45. [contenido por definir]' }
       ]
     },
     {
       title: 'Negocio',
       items: [
-        { id: 'productos', label: 'Productos', icon: 'm-productos', href: '#',
-          desc: 'Arka Fjord y Latitude 45: nuestro portafolio.',
+        { id: 'productos', label: 'Productos', href: '#',
           tag: '52°S · Región de Magallanes', lead: 'Ultra premium y ahumados: dos marcas, un mismo origen. [contenido por definir]' },
-        { id: 'sustentabilidad', label: 'Sustentabilidad', icon: 'm-sustentabilidad', href: '#',
-          desc: 'Cómo cuidamos la Patagonia que nos define.',
+        { id: 'sustentabilidad', label: 'Sustentabilidad', href: '#',
           tag: '45°30\'S · Patagonia chilena', lead: 'ASC, BAP y metas 2030: compromiso certificado. [contenido por definir]' },
-        { id: 'inversionistas', label: 'Inversionistas', icon: 'm-inversionistas', href: '#',
-          desc: 'Información para el mercado de capitales.',
-          tag: 'Relación con inversionistas', lead: 'Multiexport Foods S.A., sociedad anónima abierta. [contenido por definir]',
-          children: INVESTOR_PAGES }
+        { id: 'inversionistas', label: 'Inversionistas', href: '#',
+          tag: 'Relación con inversionistas', lead: 'Multiexport Foods S.A., sociedad anónima abierta. [contenido por definir]' }
       ]
     }
   ];
@@ -176,7 +164,10 @@
     href: '#'
   };
 
-  var MENU_PORTALS = [{ label: 'Portal Proveedores', href: '#', external: true }];
+  var MENU_PORTALS = [
+    { label: 'Portal Proveedores', href: '#' },
+    { label: 'Diving X', href: '#' }
+  ];
   var MENU_RESOURCES = [
     { label: 'Contacto', href: '#' },
     { label: 'Preguntas Frecuentes', href: '#' },
@@ -245,7 +236,6 @@
       var current = (this.getAttribute('current') || '').toLowerCase();
       var ddId = nextId('dd-inversionistas');
       var menuId = nextId('menu-overlay');
-      var subId = nextId('menu-sub');
       var searchId = nextId('menu-search');
 
       this.classList.add('site-header');
@@ -299,24 +289,12 @@
           '<p class="t-label c-accent menu-group__title">' + esc(g.title) + '</p>' +
           '<ul class="menu-group__list" role="list">' +
             g.items.map(function (item, i) {
+              // Solo el nombre: sin ícono, sin descripción y sin subpáginas
               var cur = item.id === current ? ' is-current' : '';
               var step = ' style="--step:' + Math.min(i, 3) + '"';
-              var body = icon(item.icon, 'lg', 'menu-link__icon') +
-                '<span class="menu-link__text"><span class="menu-link__name">' + esc(item.label) + '</span>' +
-                '<span class="menu-link__desc">' + esc(item.desc) + '</span></span>';
               var data = ' data-preview="' + gi + '-' + i + '"';
-              if (item.children) {
-                return '<li class="menu-item menu-item--group"' + step + '>' +
-                  '<a class="menu-link menu-link--desktop' + cur + '" href="' + item.href + '"' + data + '>' + body + '</a>' +
-                  '<button type="button" class="menu-link menu-link--trigger' + cur + '" aria-expanded="false" aria-controls="' + subId + '"' + data + '>' +
-                    body + icon('chev-down', 'md', 'acc-icon') +
-                  '</button>' +
-                  '<ul class="menu-sub" id="' + subId + '" role="list">' +
-                    item.children.map(function (c) { return '<li><a href="' + c.href + '">' + esc(c.label) + '</a></li>'; }).join('') +
-                  '</ul>' +
-                '</li>';
-              }
-              return '<li class="menu-item"' + step + '><a class="menu-link' + cur + '" href="' + item.href + '"' + data + '>' + body + '</a></li>';
+              return '<li class="menu-item"' + step + '><a class="menu-link' + cur + '" href="' + item.href + '"' + data + '>' +
+                '<span class="menu-link__name">' + esc(item.label) + '</span></a></li>';
             }).join('') +
           '</ul>' +
         '</div>';
@@ -332,6 +310,10 @@
                   '<label class="visually-hidden" for="' + searchId + '">Buscar en el sitio</label>' +
                   icon('search', 'lg') +
                   '<input class="menu-search__input" id="' + searchId + '" type="search" placeholder="Buscar en el sitio" autocomplete="off">' +
+                  // Borrar búsqueda: misma X que cierra el menú (hamburguesa abierta)
+                  '<button type="button" class="menu-search__clear" aria-label="Borrar búsqueda" hidden>' +
+                    '<span class="burger burger--x" aria-hidden="true"><span></span><span></span><span></span></span>' +
+                  '</button>' +
                 '</form>' +
                 socialList('menu-panel__social menu-panel__social--top') +
               '</div>' +
@@ -353,10 +335,6 @@
                 '</ul></div>' +
                 '<div class="menu-foot-group"><p class="t-label c-secondary">Recursos</p><ul class="menu-foot-group__list" role="list">' +
                   MENU_RESOURCES.map(function (l) { return '<li><a href="' + l.href + '">' + esc(l.label) + '</a></li>'; }).join('') +
-                '</ul></div>' +
-                '<div class="menu-foot-group"><p class="t-label c-secondary">Contacto</p><ul class="menu-foot-group__list menu-foot-group__list--contact" role="list">' +
-                  '<li><a href="' + telHref(CONTACT.phone) + '">' + icon('phone') + esc(CONTACT.phone) + '</a></li>' +
-                  '<li><a href="mailto:' + esc(CONTACT.email) + '">' + icon('mail') + esc(CONTACT.email) + '</a></li>' +
                 '</ul></div>' +
                 '<div class="menu-panel__extras">' + langSwitch('menu-panel__lang') + socialList('menu-panel__social menu-panel__social--bottom') + '</div>' +
               '</div>' +
@@ -453,7 +431,6 @@
       var lead = card.querySelector('.menu-preview__lead');
       var cta = card.querySelector('.menu-preview__cta');
       var ctaText = cta.firstChild;
-      var trigger = overlay.querySelector('.menu-link--trigger');
 
       function setPreview(data) {
         if (title.textContent === data.label) return;
@@ -515,14 +492,15 @@
         setPreview(PREVIEW_DEFAULT);
       });
 
-      // Inversionistas en acordeón (mobile)
-      if (trigger) {
-        trigger.addEventListener('click', function () {
-          var open = trigger.getAttribute('aria-expanded') !== 'true';
-          trigger.setAttribute('aria-expanded', String(open));
-          trigger.parentElement.classList.toggle('is-open', open);
-        });
-      }
+      // Buscador: la X para borrar aparece solo cuando hay texto
+      var input = overlay.querySelector('.menu-search__input');
+      var clear = overlay.querySelector('.menu-search__clear');
+      input.addEventListener('input', function () { clear.hidden = !input.value; });
+      clear.addEventListener('click', function () {
+        input.value = '';
+        clear.hidden = true;
+        input.focus();
+      });
 
       desktopMq.addEventListener('change', function () { self._update(); });
     }

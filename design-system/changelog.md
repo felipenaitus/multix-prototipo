@@ -4,6 +4,13 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Ajustes al menú hamburguesa
+- Código ✓ · Accesos solo con el nombre: sin ícono, sin descripción y sin las subpáginas de Inversionistas (quedan en el desplegable del header). Se quitan los íconos de accesos del sprite y el acordeón de Inversionistas en mobile.
+- Código ✓ · Buscador del menú: la X nativa del campo se reemplaza por la misma X del botón que cierra el menú; aparece solo cuando hay texto y borra la búsqueda.
+- Código ✓ · Tarjeta de noticia destacada más baja: alto fijo de `--space-128` + `--space-96` (224 px).
+- Código ✓ · Se quitan los datos de contacto de la franja inferior del panel.
+- Código ✓ · Diving X se agrega a Portales (panel) y a la barra utilitaria, a la derecha de Portal Proveedores.
+
 ## 2026-10-20 · Desplegable de Inversionistas
 - Código ✓ · Los ítems del desplegable pasan de Cuerpo (16 px) a UI/Navegación (14 px, semibold), más cerca de los accesos del header (UI/Botón, 15 px).
 
