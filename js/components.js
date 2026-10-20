@@ -11,7 +11,7 @@
    [data-filters]                Barra de filtros (panel inferior en mobile)
    [data-add-calendar]           Agregar al calendario (opciones en mobile)
    video[data-hero-video]        Video de fondo: con movimiento reducido queda la imagen (poster)
-   Cursor                        Punto con anillo; en clickeables queda solo el anillo (solo mouse)
+   Cursor                        Punto con anillo (blanco sobre oscuro); en clickeables el anillo crece
    ========================================================================== */
 (function () {
   'use strict';
@@ -300,8 +300,10 @@
   }
 
   /* ---------- Cursor: punto con anillo ----------
-     Solo con mouse (hover + puntero fino). Sobre elementos clickeables el punto
-     se desvanece y queda el anillo. En campos de texto vuelve el cursor nativo. */
+     Solo con mouse (hover + puntero fino). Navy sobre fondos claros y blanco
+     sobre fondos oscuros (según el fondo real bajo el puntero). Sobre elementos
+     clickeables el punto se desvanece y el anillo se agranda. En campos de texto
+     vuelve el cursor nativo. */
   function initCursor() {
     if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
     var CLICKABLE = 'a[href], button, [role="button"], label, select, summary, input[type="checkbox"], input[type="radio"]';
@@ -314,9 +316,27 @@
     document.body.appendChild(cursor);
     root.classList.add('has-cursor');
 
+    // Fondo visible bajo el puntero: la primera capa (de arriba hacia abajo) con
+    // color de fondo opaco y visible. Así funciona también sobre el header fijo
+    // transparente, que deja ver el hero.
+    function isDark(px, py) {
+      var stack = document.elementsFromPoint(px, py);
+      for (var i = 0; i < stack.length; i++) {
+        var s = getComputedStyle(stack[i]);
+        if (parseFloat(s.opacity) < 0.5 || s.visibility === 'hidden') continue;
+        var m = s.backgroundColor.match(/[\d.]+/g);
+        if (m && (m.length < 4 || parseFloat(m[3]) > 0.5)) {
+          var lum = (0.2126 * m[0] + 0.7152 * m[1] + 0.0722 * m[2]) / 255;
+          return lum < 0.5;
+        }
+      }
+      return false;
+    }
+
     var x = 0, y = 0, raf = null;
     function place() {
       cursor.style.translate = x + 'px ' + y + 'px';
+      cursor.classList.toggle('is-on-dark', isDark(x, y));
       raf = null;
     }
 
@@ -328,6 +348,11 @@
       var onText = e.target.closest && e.target.closest(TEXT);
       cursor.classList.toggle('is-hidden', !!onText);
       cursor.classList.toggle('is-hover', !onText && !!(e.target.closest && e.target.closest(CLICKABLE)));
+    }, { passive: true });
+
+    // Al hacer scroll cambia lo que hay bajo el puntero aunque el mouse no se mueva
+    window.addEventListener('scroll', function () {
+      if (!raf) raf = window.requestAnimationFrame(place);
     }, { passive: true });
 
     document.documentElement.addEventListener('mouseleave', function () { cursor.classList.add('is-hidden'); });

@@ -4,6 +4,11 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Cursor: blanco sobre oscuro y anillo que crece
+- Código ✓ · El cursor es blanco sobre fondos oscuros y Navy 900 sobre claros (se deja la fusión "diferencia", que en el video daba tonos intermedios). Detecta el fondo visible bajo el puntero, incluso sobre el header fijo y al hacer scroll.
+- Código ✓ · En hover sobre clickeables, además de desaparecer el punto, el anillo se agranda ×1,5.
+- Código ✓ · El fondo del header (`.header__bg`) recibe el puntero para que el cursor lo detecte.
+
 ## 2026-10-20 · Cursor con anillo
 - Código ✓ · El cursor pasa a ser un punto con un anillo fino alrededor (según referencia de Felipe). En hover sobre clickeables desaparece el punto y queda el anillo. Se quita la onda. Color por fusión "diferencia" en blanco (claro sobre oscuro, oscuro sobre claro) en lugar de Coral 500.
 

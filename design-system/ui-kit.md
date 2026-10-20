@@ -115,8 +115,8 @@ Header, menú hamburguesa y footer viven solo en `js/layout.js` (ver CLAUDE.md 2
 - Íconos de redes (LinkedIn, Instagram, YouTube): dibujados en el estilo del kit, pendientes de llevar a Figma.
 
 **Cursor (`js/components.js`)**
-- Solo con mouse (hover + puntero fino): un punto (`--space-6`) con un anillo fino alrededor (`--space-32`, `--border-thin`) reemplaza al cursor nativo. Sobre elementos clickeables el punto se desvanece y queda solo el anillo. Sin onda.
-- Color por fusión "diferencia" en blanco: se ve claro sobre fondos oscuros (hero, footer) y oscuro sobre fondos claros.
+- Solo con mouse (hover + puntero fino): un punto (`--space-6`) con un anillo fino alrededor (`--space-32`, `--border-thin`) reemplaza al cursor nativo. Sobre elementos clickeables el punto se desvanece y el anillo se agranda (×1,5, `--duration-base`). Sin onda.
+- Color: blanco (`--color-text-inverse`) sobre fondos oscuros (hero, secciones oscuras, footer) y Navy 900 (`--color-text-brand`) sobre fondos claros. Se detecta el fondo visible bajo el puntero, también al hacer scroll sin mover el mouse y sobre el header fijo.
 - En campos de texto vuelve el cursor nativo. En pantallas táctiles no se activa.
 
 **Páginas de prueba** (`pruebas/`, fuera de la navegación): `navegacion-hero.html` y `navegacion-interior.html`.

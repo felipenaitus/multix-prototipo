@@ -1985,6 +1985,8 @@ a.pagination__item:hover,
 .header__bg {
   position: absolute;
   inset: 0;
+  /* Recibe el puntero para que el cursor detecte el fondo blanco del header */
+  pointer-events: auto;
   background: var(--hdr-bg);
   border-bottom: var(--border-thin) solid var(--hdr-line);
   transition:
@@ -3050,10 +3052,10 @@ a.pagination__item:hover,
 
 /* ==========================================================================
    Cursor (js/components.js) · solo con mouse (hover + puntero fino)
-   Punto con un anillo fino alrededor. Sobre elementos clickeables el punto se
-   desvanece y queda el anillo. Fusión "diferencia" en blanco: se ve claro sobre
-   fondos oscuros y oscuro sobre fondos claros. En campos de texto vuelve el
-   cursor nativo.
+   Punto con un anillo fino alrededor: Navy 900 sobre fondos claros y blanco
+   sobre fondos oscuros (js detecta el fondo real bajo el puntero). Sobre
+   elementos clickeables el punto se desvanece y el anillo se agranda. En campos
+   de texto vuelve el cursor nativo.
    ========================================================================== */
 .has-cursor,
 .has-cursor * {
@@ -3073,8 +3075,14 @@ a.pagination__item:hover,
   width: 0;
   height: 0;
   pointer-events: none;
-  mix-blend-mode: difference;
-  transition: opacity var(--duration-fast) var(--easing-standard);
+  color: var(--color-text-brand);
+  transition:
+    opacity var(--duration-fast) var(--easing-standard),
+    color var(--duration-fast) var(--easing-standard);
+}
+
+.cursor.is-on-dark {
+  color: var(--color-text-inverse);
 }
 
 .cursor.is-hidden {
@@ -3093,7 +3101,7 @@ a.pagination__item:hover,
 .cursor__dot {
   width: var(--space-6);
   height: var(--space-6);
-  background: var(--color-bg-page);
+  background: currentColor;
   transition:
     opacity var(--duration-fast) var(--easing-standard),
     scale var(--duration-base) var(--easing-out);
@@ -3102,11 +3110,16 @@ a.pagination__item:hover,
 .cursor__ring {
   width: var(--space-32);
   height: var(--space-32);
-  border: var(--border-thin) solid var(--color-border-inverse);
+  border: var(--border-thin) solid currentColor;
+  transition: scale var(--duration-base) var(--easing-out);
 }
 
-/* Hover sobre clickeables: solo queda el anillo */
+/* Hover sobre clickeables: el punto se desvanece y el anillo se agranda */
 .cursor.is-hover .cursor__dot {
   opacity: 0;
   scale: 0;
+}
+
+.cursor.is-hover .cursor__ring {
+  scale: 1.5;
 }
