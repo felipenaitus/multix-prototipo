@@ -51,44 +51,85 @@
   white-space: nowrap;
 }
 
-/* Palabra destacada en coral sobre fondo oscuro (Coral 500, CLAUDE.md 4) */
-.test-hero__accent {
-  color: var(--color-text-accent-on-dark);
+/* ==========================================================================
+   PRUEBA · Cambio de palabras del hero (patrón nuevo, aún no está en motion.md)
+   Todo en blanco: la primera palabra en Sora 200 y "el futuro / el mundo" en
+   semibold (Sora 600). Cada espacio apila sus dos palabras en la misma celda
+   para que el cambio no mueva el resto de la frase. Solo opacity y transform.
+   ========================================================================== */
+.word-swap {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* ==========================================================================
-   PRUEBA · Frases del hero en loop (patrón nuevo, aún no está en motion.md)
-   Ciclo de 10 s = 12,5 × --duration-reveal: cada frase entra (8% = 0,8 s),
-   se queda (3,4 s) y sale hacia arriba (0,8 s); la segunda va desfasada
-   medio ciclo. Solo opacity y transform.
-   ========================================================================== */
-.hero-rotator {
-  --rotator-cycle: calc(var(--duration-reveal) * 12.5);
-  display: grid;
+.word-swap__line {
+  display: inline-flex;
+  align-items: center;
+  gap: .3em;
+}
+
+.word-swap__slot {
+  display: inline-grid;
   justify-items: center;
 }
 
-.hero-rotator__phrase {
+.word-swap__slot--b {
+  font-weight: 600; /* PRUEBA: Sora 600 (semibold) */
+}
+
+.word-swap__word {
   grid-area: 1 / 1;
-  animation: hero-phrase var(--rotator-cycle) var(--easing-out) infinite both;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(var(--motion-reveal-distance));
+  transition:
+    opacity var(--duration-reveal) var(--easing-out),
+    transform var(--duration-reveal) var(--easing-out);
 }
 
-.hero-rotator__phrase:nth-child(2) {
-  animation-delay: calc(var(--rotator-cycle) / 2);
+.word-swap__word.is-active {
+  opacity: 1;
+  transform: none;
 }
 
-@keyframes hero-phrase {
-  0%   { opacity: 0; transform: translateY(var(--motion-reveal-distance)); }
-  8%   { opacity: 1; transform: none; }
-  42%  { opacity: 1; transform: none; }
-  50%  { opacity: 0; transform: translateY(calc(-1 * var(--motion-reveal-distance))); }
-  100% { opacity: 0; transform: translateY(calc(-1 * var(--motion-reveal-distance))); }
+.word-swap__word.is-leaving {
+  opacity: 0;
+  transform: translateY(calc(-1 * var(--motion-reveal-distance)));
 }
 
-/* Movimiento reducido: sin animación, las dos frases fijas una bajo la otra */
-@media (prefers-reduced-motion: reduce) {
-  .hero-rotator__phrase {
-    grid-area: auto;
-    animation: none;
+/* Ícono de la marca pegado a "el futuro / el mundo" (assets/brand/icon-chevron.svg) */
+.word-swap__slot--b .word-swap__word {
+  display: inline-flex;
+  align-items: center;
+  gap: .3em;
+}
+
+.word-swap__icon {
+  flex-shrink: 0;
+  width: auto;
+  height: .62em;
+}
+
+/* Una línea solo en desktop: en tablet "Alimentando el mundo" no cabe con aire */
+@media (min-width: 1280px) {
+  .word-swap {
+    flex-direction: row;
+    align-items: baseline;
+    gap: .3em;
+  }
+
+  /* La primera palabra se alinea a la derecha y la segunda a la izquierda:
+     la frase queda unida al centro aunque cambie el largo de las palabras */
+  .word-swap__slot--a {
+    justify-items: end;
+  }
+
+  .word-swap__slot--b {
+    justify-items: start;
+  }
+
+  .word-swap__line {
+    align-self: center;
   }
 }
