@@ -11,7 +11,7 @@
    <chat-launcher>                           Botón flotante del asistente (se agrega solo)
 
    Estilos en css/components.css. Íconos: sprite de Figma (UI Kit), salvo las
-   redes sociales (linkedin, instagram, youtube), dibujadas en el mismo estilo
+   redes sociales (linkedin, x, facebook, instagram), dibujadas en el mismo estilo
    y pendientes de llevar a Figma.
    ========================================================================== */
 (function () {
@@ -48,7 +48,8 @@
     // Redes sociales: dibujadas en el estilo del kit (no vienen de Figma)
     linkedin: ['0 0 16 16', '0 0', 1.5, ['M4 2.5H12A1.5 1.5 0 0 1 13.5 4V12A1.5 1.5 0 0 1 12 13.5H4A1.5 1.5 0 0 1 2.5 12V4A1.5 1.5 0 0 1 4 2.5Z', 'M5.5 7V11M5.5 5V5.01M8 11V7M8 9C8 7.9 8.9 7 10 7S11.5 7.6 11.5 8.5V11']],
     instagram: ['0 0 16 16', '0 0', 1.5, ['M5.5 2.5H10.5A3 3 0 0 1 13.5 5.5V10.5A3 3 0 0 1 10.5 13.5H5.5A3 3 0 0 1 2.5 10.5V5.5A3 3 0 0 1 5.5 2.5Z', 'M10.5 8A2.5 2.5 0 1 1 5.5 8A2.5 2.5 0 0 1 10.5 8Z', 'M11.25 4.75V4.76']],
-    youtube: ['0 0 16 16', '0 0', 1.5, ['M4 3.5H12A2.5 2.5 0 0 1 14.5 6V10A2.5 2.5 0 0 1 12 12.5H4A2.5 2.5 0 0 1 1.5 10V6A2.5 2.5 0 0 1 4 3.5Z', 'M7 6.25V9.75L10 8Z']]
+    x: ['0 0 24 24', '0 0', 2.25, ['M4 4H8.5L20 20H15.5Z', 'M19.5 4.5L13.3 11.4M4.5 19.5L10.7 12.6']],
+    facebook: ['4 3 18 18', '0 0', 1.7, ['M14.5 21V13.5H17L17.5 10.5H14.5V8.5C14.5 7.6 14.9 7 16.1 7H17.6V4.3C17.2 4.2 16.3 4.1 15.3 4.1C12.9 4.1 11.4 5.5 11.4 8.1V10.5H8.8V13.5H11.4V21']]
   };
 
   function injectSprite() {
@@ -197,14 +198,16 @@
   };
 
   var OFFICES = [
-    { name: 'Casa matriz · Puerto Montt', address: '[dirección por definir], Puerto Montt', phone: '+56 65 248 3700' },
-    { name: 'Oficina Santiago', address: '[dirección por definir], Santiago', phone: '+56 2 2000 0000' }
+    { name: 'Puerto Montt, Chile', address: 'Cardonal 2501, Puerto Montt, Región de Los Lagos', phone: '+56 65 2483 700' },
+    { name: 'Santiago, Chile', address: 'Isidora Goyenechea 3621, Piso 17, Las Condes, Región Metropolitana', phone: '+56 2 2430 1200' },
+    { name: 'Miami, Estados Unidos', address: '703 Waterford Way Suite 510, Miami, FL 33126', phone: '+1 305 647 2590' }
   ];
 
   var SOCIAL = [
     { id: 'linkedin', label: 'LinkedIn', href: '#' },
-    { id: 'instagram', label: 'Instagram', href: '#' },
-    { id: 'youtube', label: 'YouTube', href: '#' }
+    { id: 'x', label: 'X', href: '#' },
+    { id: 'facebook', label: 'Facebook', href: '#' },
+    { id: 'instagram', label: 'Instagram', href: '#' }
   ];
 
   // Switch de idioma sintético: "ES | EN", el idioma activo en semibold y color pleno

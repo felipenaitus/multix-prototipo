@@ -113,9 +113,9 @@ Header, menú hamburguesa y footer viven solo en `js/layout.js` (ver CLAUDE.md 2
 - La hamburguesa se transforma en X en la misma posición. Cierra con el botón, Escape y clic fuera del panel. Entrada con fade + leve desplazamiento (`--duration-slow`); los accesos entran con desfase (`--duration-stagger`).
 
 **Footer (`<site-footer>`)**
-- Direcciones y teléfonos (casa matriz y oficina Santiago; teléfonos y correo clickeables) · Información (Preguntas Frecuentes, Legislación, Canal de Denuncias) · Personas y proveedores (Trabaja con Nosotros, Portal Proveedores) · redes sociales · copyright.
+- Direcciones y teléfonos reales: Puerto Montt, Santiago y Miami (teléfonos y correo clickeables; desde tablet en dos columnas, Chile a la izquierda y Miami a la derecha) · Información (Preguntas Frecuentes, Legislación, Canal de Denuncias) · Personas y proveedores (Trabaja con Nosotros, Portal Proveedores) · redes sociales · copyright.
 - Canal de Denuncias es un enlace más, con el mismo estilo que el resto (sin tarjeta ni botón).
-- Íconos de redes (LinkedIn, Instagram, YouTube): dibujados en el estilo del kit, pendientes de llevar a Figma.
+- Redes sociales: LinkedIn, X, Facebook e Instagram. Íconos dibujados en el estilo de línea del kit, pendientes de llevar a Figma.
 
 **Cursor (`js/components.js`)**
 - Solo con mouse (hover + puntero fino): un punto (`--space-6`) con un anillo fino alrededor (`--space-32`, `--border-thin`) reemplaza al cursor nativo. Sobre elementos clickeables el punto se desvanece y el anillo se agranda (×1,5, `--duration-base`). Sin onda.

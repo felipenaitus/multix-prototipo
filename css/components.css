@@ -2941,12 +2941,21 @@ a.pagination__item:hover,
 }
 
 .footer__offices {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-16);
+  display: grid;
+  gap: var(--space-24);
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+/* Desde tablet, las oficinas en dos columnas: Chile a la izquierda, Miami a la derecha */
+@media (min-width: 768px) {
+  .footer__offices {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, auto);
+    grid-auto-flow: column;
+    column-gap: var(--space-32);
+  }
 }
 
 .footer__office {
