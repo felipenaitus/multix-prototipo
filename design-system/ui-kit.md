@@ -93,7 +93,7 @@ Header, menú hamburguesa y footer viven solo en `js/layout.js` (ver CLAUDE.md 2
 **Header (`<site-header>`), dos filas en desktop**
 - **Barra utilitaria** delgada (`--space-40`), alineada a la derecha: Portal Proveedores · Contacto · buscador (ícono) · switch ES/EN. Texto UI/Pequeño destacado. Transparente sobre el hero.
 - **Fila principal** (`--space-80`): logo a la izquierda (SVG oficial en `assets/brand/logo-multix.svg`; letras en el color del tema y X en Coral 500; alto `--space-24` en desktop y `--space-20` en mobile), accesos principales **centrados** (Productos · Sustentabilidad · Inversionistas) y botón hamburguesa a la derecha.
-- Inversionistas abre un desplegable (no mega menú) con Inicio, Centro de Resultados, Gobernanza, Calendario y Eventos, Acción, Contacto. Hover o clic; con teclado: Enter/Espacio abre, flechas recorren, Inicio/Fin, Escape cierra y devuelve el foco, Tab fuera cierra.
+- Inversionistas abre un desplegable (no mega menú) con Inicio, Centro de Resultados, Gobernanza, Calendario y Eventos, Acción, Contacto. Ítems en UI/Navegación (14 px, semibold). Hover o clic; con teclado: Enter/Espacio abre, flechas recorren, Inicio/Fin, Escape cierra y devuelve el foco, Tab fuera cierra.
 - Sección activa: atributo `current` (productos | sustentabilidad | inversionistas), con indicador coral de `--border-indicator`.
 - **Al hacer scroll** (desktop): la barra utilitaria sale (fade + desplazamiento, `--duration-slow`) y la fila principal se compacta a `--space-64` (logo al 85%), solo con transform y opacity. Al volver arriba reaparece.
 - Variantes: **sólido** (por defecto, páginas interiores) y **transparente sobre el hero** (`variant="overlay"`, logo y textos claros; pasa a sólido al hacer scroll).

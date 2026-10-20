@@ -2240,8 +2240,10 @@ a.pagination__item:hover,
   min-height: var(--touch-target);
   padding-inline: var(--space-16);
   border-radius: var(--radius-md);
-  font-size: var(--text-body-size);
-  line-height: var(--text-body-lh);
+  /* UI/Navegación: un punto menos que los accesos del header (UI/Botón) */
+  font-size: var(--text-ui-nav-size);
+  line-height: var(--text-ui-nav-lh);
+  font-weight: var(--text-ui-nav-weight);
   color: var(--color-text-primary);
   white-space: nowrap;
   transition:

@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Desplegable de Inversionistas
+- Código ✓ · Los ítems del desplegable pasan de Cuerpo (16 px) a UI/Navegación (14 px, semibold), más cerca de los accesos del header (UI/Botón, 15 px).
+
 ## 2026-10-20 · Logo en el header
 - Código ✓ · El header usa el logo oficial (`assets/brand/logo-multix.svg`) como SVG en línea: letras en el color del tema (Navy 900 en claro, blanco en oscuro y sobre el hero) y la X en Coral 500 (`--color-bg-accent-hover`). Alto `--space-20` en mobile y tablet, `--space-24` en desktop; al 85% en el header compacto.
 - Código ✓ · El footer usa el mismo logo: letras blancas y X en Coral 500 sobre Navy 950, alto `--space-24`.
