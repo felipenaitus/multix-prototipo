@@ -4000,7 +4000,7 @@ a.pagination__item:hover,
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80%;
+  width: 100%;
   aspect-ratio: 1;
 }
 
@@ -4109,9 +4109,9 @@ a.pagination__item:hover,
     margin-bottom: var(--space-48);
   }
 
-  /* Imagen: texto 3/5 y la imagen a la derecha ya desde tablet */
+  /* Imagen: texto e imagen en mitades iguales ya desde tablet */
   .catalog-cta[data-variant="image"] {
-    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 
   .catalog-cta__cover {
@@ -4142,7 +4142,7 @@ a.pagination__item:hover,
   }
 
   .catalog-cta__cover {
-    width: 85%;
+    width: 100%;
   }
 }
 

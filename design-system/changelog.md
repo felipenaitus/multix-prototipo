@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Catálogo: imagen predeterminada y más grande
+- Código ✓ · La vista "Imagen" pasa a ser la predeterminada del catálogo (el flipbook sigue disponible en el switch).
+- Código ✓ · Composición de imagen y círculo más grande: ocupa la mitad del ancho desde tablet (antes 2/5 y 85 % de esa columna) y todo el ancho en mobile.
+
 ## 2026-10-20 · Video en el hover de las marcas
 - Código ✓ · El hover de Latitude 45 y Arka Fjord muestra un video propio de cada marca en lugar de la foto de prueba. Los GIF entregados (88 MB y 111 MB) se convirtieron a MP4 en loop sin audio (0,4 MB y 0,5 MB). Se reproducen solo durante el hover y no se descargan hasta el primero (`video[data-hover-video]` en components.js).
 
