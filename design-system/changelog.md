@@ -4,6 +4,11 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Títulos de sección más livianos y switch del catálogo
+- Figma pendiente · Código ✓ · Título 2 (títulos de sección) pasa de Sora 400 a Sora 300 (`--text-h2-weight`). Aplica a todo el sitio.
+- Código ✓ · Se quita la etiqueta "Catálogo Multi X": ninguna sección lleva etiqueta sobre el título.
+- Código ✓ · Catálogo con dos vistas, flipbook o imagen con círculo, alternables con un switch discreto ("Flipbook · Imagen") para mostrar ambas opciones. Nuevo comportamiento `[data-variant-switch]` en components.js.
+
 ## 2026-10-20 · Catálogo con flipbook incrustado
 - Código ✓ · La composición de imagen + círculo se reemplaza por el flipbook del catálogo (iframe de Heyzine), sin borde (sin cajas). En desktop el flipbook ocupa 7/12 y el texto 5/12; en tablet y mobile va debajo del texto a ancho completo.
 - Código ✓ · El cursor personalizado se oculta sobre iframes (dentro del flipbook se ve el cursor nativo).

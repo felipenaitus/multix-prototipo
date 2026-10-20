@@ -135,14 +135,21 @@
         </ul>
 
         <!-- Catálogo Multi X: bloque propio, separado de las marcas -->
-        <div class="catalog-cta reveal">
+        <div class="catalog-cta reveal" data-variant="flipbook">
           <div class="catalog-cta__text">
-            <p class="t-label catalog-cta__label">Catálogo Multi X</p>
             <h2 class="t-h2" id="catalog-title">Productos frescos, congelados y ahumados</h2>
             <p class="t-body-l">Formatos, especificaciones y fichas técnicas de toda nuestra línea en un solo documento. [contenido por definir]</p>
             <a class="btn btn--primary hit" href="#" download><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>Descargar catálogo<span class="visually-hidden"> (PDF) [peso por definir]</span></a>
           </div>
-          <div class="catalog-cta__flipbook"><iframe src="https://heyzine.com/flip-book/0dbae772e3.html" title="Catálogo Multi X (flipbook interactivo)" allowfullscreen allow="autoplay; fullscreen; clipboard-write" scrolling="no" loading="lazy"></iframe></div>
+          <div class="catalog-cta__media">
+            <div class="catalog-cta__flipbook"><iframe src="https://heyzine.com/flip-book/0dbae772e3.html" title="Catálogo Multi X (flipbook interactivo)" allowfullscreen allow="autoplay; fullscreen; clipboard-write" scrolling="no" loading="lazy"></iframe></div>
+            <div class="catalog-cta__cover" aria-hidden="true" data-scroll-grow><img src="assets/img/catalogo.png" alt="" width="356" height="287" loading="lazy"></div>
+            <div class="catalog-cta__switch t-small" role="group" aria-label="Vista del catálogo (prototipo)" data-variant-switch>
+              <button type="button" data-show="flipbook" aria-pressed="true">Flipbook</button>
+              <span aria-hidden="true">·</span>
+              <button type="button" data-show="image" aria-pressed="false">Imagen</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -64,4 +64,4 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 
 ## Firma · Entrada del catálogo (solo Productos › Descarga del catálogo)
 - Al entrar en pantalla (IntersectionObserver de `.reveal`): etiqueta, título, bajada y botón aparecen en secuencia (`--duration-reveal`, desfase `--duration-stagger`) y al final el flipbook. Solo opacidad y transform; con movimiento reducido todo aparece en su lugar.
-- `[data-scroll-grow]` (círculo que crecía con el scroll) queda disponible en components.js, pero ya no se usa en Productos.
+- En la vista "Imagen", el círculo crece con el scroll (escala de 0,6 a 1,1, `[data-scroll-grow]`) y la imagen entra desde abajo a la izquierda con un giro de −4° a 0°.

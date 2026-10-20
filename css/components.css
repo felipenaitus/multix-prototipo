@@ -3935,8 +3935,12 @@ a.pagination__item:hover,
 }
 
 /* Descarga del catálogo: fila abierta bajo las marcas (sin caja): texto y botón
-   a la izquierda; a la derecha, el flipbook del catálogo incrustado (Heyzine),
-   sin borde. Entrada al aparecer: textos en secuencia y luego el flipbook. */
+   a la izquierda; a la derecha, una de dos vistas (data-variant):
+   - "flipbook": el flipbook del catálogo incrustado (Heyzine), sin borde.
+   - "image": la imagen del catálogo sobre un círculo Offwhite que crece con el
+     scroll ([data-scroll-grow]).
+   Un switch discreto bajo la vista permite alternarlas (prototipo, para mostrar
+   ambas opciones). Entrada al aparecer: textos en secuencia y luego la vista. */
 .catalog-cta {
   display: grid;
   gap: var(--space-48);
@@ -3955,11 +3959,7 @@ a.pagination__item:hover,
   gap: var(--space-16);
 }
 
-.catalog-cta__label {
-  color: var(--color-text-accent);
-}
-
-.catalog-cta__text p:not(.catalog-cta__label) {
+.catalog-cta__text p:not(.t-h2) {
   color: var(--color-text-secondary);
 }
 
@@ -3967,7 +3967,19 @@ a.pagination__item:hover,
   margin-top: var(--space-8);
 }
 
-/* Flipbook: ocupa el ancho de su columna con proporción de pliego abierto */
+.catalog-cta__media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.catalog-cta[data-variant="flipbook"] .catalog-cta__cover,
+.catalog-cta[data-variant="image"] .catalog-cta__flipbook {
+  display: none;
+}
+
+/* Vista "flipbook": ancho de la columna, proporción de pliego abierto */
 .catalog-cta__flipbook {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -3980,6 +3992,67 @@ a.pagination__item:hover,
   border: 0;
 }
 
+/* Vista "image": imagen del catálogo sobre un círculo centrado con ella */
+.catalog-cta__cover {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  aspect-ratio: 1;
+}
+
+/* Círculo: escala según el avance del scroll (--scroll-progress de 0 a 1: de 0,6
+   a 1,1); sin JS o con movimiento reducido, tamaño normal. */
+.catalog-cta__cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 82%;
+  height: 82%;
+  margin: auto;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-subtle);
+  transform: scale(calc(.6 + .5 * var(--scroll-progress, .8)));
+}
+
+.catalog-cta__cover img {
+  position: relative;
+  z-index: 1;
+  width: 92%;
+  height: auto;
+}
+
+/* Switch de vista: texto pequeño y tenue, para que pase desapercibido */
+.catalog-cta__switch {
+  display: flex;
+  align-self: flex-end;
+  align-items: center;
+  gap: var(--space-4);
+  color: var(--color-text-tertiary);
+}
+
+.catalog-cta__switch button {
+  min-height: var(--touch-target);
+  padding: 0 var(--space-4);
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  transition: color var(--duration-fast) var(--easing-standard);
+}
+
+.catalog-cta__switch button:hover,
+.catalog-cta__switch button[aria-pressed="true"] {
+  color: var(--color-text-secondary);
+}
+
+.catalog-cta__switch button[aria-pressed="true"] {
+  text-decoration: underline;
+  text-underline-offset: var(--space-4);
+}
+
 /* Entrada: el bloque no se mueve como un todo; animan sus partes */
 .js .catalog-cta.reveal {
   opacity: 1;
@@ -3987,7 +4060,8 @@ a.pagination__item:hover,
 }
 
 .js .catalog-cta__text > *,
-.js .catalog-cta__flipbook {
+.js .catalog-cta__flipbook,
+.js .catalog-cta__switch {
   opacity: 0;
   transform: translateY(calc(var(--motion-reveal-distance) / 2));
   transition:
@@ -3997,13 +4071,34 @@ a.pagination__item:hover,
 
 .js .catalog-cta__text > :nth-child(2) { transition-delay: var(--duration-stagger); }
 .js .catalog-cta__text > :nth-child(3) { transition-delay: calc(var(--duration-stagger) * 2); }
-.js .catalog-cta__text > :nth-child(4) { transition-delay: calc(var(--duration-stagger) * 3); }
-.js .catalog-cta__flipbook { transition-delay: calc(var(--duration-stagger) * 4); }
+.js .catalog-cta__flipbook { transition-delay: calc(var(--duration-stagger) * 3); }
+.js .catalog-cta__switch { transition-delay: calc(var(--duration-stagger) * 5); }
+
+.js .catalog-cta__cover::before {
+  opacity: 0;
+  transition: opacity var(--duration-reveal) var(--easing-out);
+  transition-delay: calc(var(--duration-stagger) * 2);
+}
+
+.js .catalog-cta__cover img {
+  opacity: 0;
+  transform: translate(calc(-1 * var(--motion-reveal-distance)), var(--motion-reveal-distance)) rotate(-4deg);
+  transition:
+    opacity var(--duration-reveal) var(--easing-out),
+    transform var(--duration-reveal) var(--easing-out);
+  transition-delay: calc(var(--duration-stagger) * 4);
+}
 
 .js .catalog-cta.is-visible .catalog-cta__text > *,
-.js .catalog-cta.is-visible .catalog-cta__flipbook {
+.js .catalog-cta.is-visible .catalog-cta__flipbook,
+.js .catalog-cta.is-visible .catalog-cta__switch,
+.js .catalog-cta.is-visible .catalog-cta__cover img {
   opacity: 1;
   transform: none;
+}
+
+.js .catalog-cta.is-visible .catalog-cta__cover::before {
+  opacity: 1;
 }
 
 @media (min-width: 768px) {
@@ -4012,24 +4107,40 @@ a.pagination__item:hover,
     margin-bottom: var(--space-48);
   }
 
+  /* Imagen: texto 3/5 y la imagen a la derecha ya desde tablet */
+  .catalog-cta[data-variant="image"] {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  }
+
+  .catalog-cta__cover {
+    width: 100%;
+  }
+
+  /* Flipbook: en tablet va debajo del texto, a ancho completo */
   .catalog-cta__flipbook {
     aspect-ratio: 16 / 9;
   }
 }
 
-/* Desktop: texto a la izquierda y flipbook a la derecha, más ancho que el texto */
 @media (min-width: 1280px) {
   .brands + .catalog-cta {
     margin-top: calc(var(--space-128) + var(--space-32));
   }
 
   .catalog-cta {
-    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
     margin-bottom: var(--space-64);
+  }
+
+  .catalog-cta[data-variant="flipbook"] {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
   }
 
   .catalog-cta__flipbook {
     aspect-ratio: 4 / 3;
+  }
+
+  .catalog-cta__cover {
+    width: 85%;
   }
 }
 

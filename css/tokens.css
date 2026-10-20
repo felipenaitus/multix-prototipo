@@ -73,7 +73,7 @@
   --text-display-size: 64px;   --text-display-lh: 1.05;  --text-display-ls: -0.02em;  --text-display-weight: 300;  /* Display · Sora */
   --text-display-light-weight: 200; --text-display-strong-weight: 600; /* Display destacado: Sora Extra Light + Semibold en la misma frase (pendiente de Figma) */
   --text-h1-size: 44px;        --text-h1-lh: 1.10;       --text-h1-ls: -0.015em;      --text-h1-weight: 300;       /* Título 1 · Sora */
-  --text-h2-size: 32px;        --text-h2-lh: 1.15;       --text-h2-ls: -0.01em;       --text-h2-weight: 400;       /* Título 2 · Sora */
+  --text-h2-size: 32px;        --text-h2-lh: 1.15;       --text-h2-ls: -0.01em;       --text-h2-weight: 300;       /* Título 2 · Sora (antes 400; pendiente de Figma) */
   --text-h3-size: 22px;        --text-h3-lh: 1.25;       --text-h3-ls: -0.005em;      --text-h3-weight: 400;       /* Título 3 · Sora */
   --text-figure-l-size: 52px;  --text-figure-l-lh: 1.00; --text-figure-l-ls: -0.02em; --text-figure-l-weight: 300; /* Cifra L · Sora */
   --text-figure-strong-weight: 600; /* Cifra destacada: variante más pesada de Cifra L/M/S (pendiente de Figma) */

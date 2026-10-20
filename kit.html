@@ -106,7 +106,7 @@
         <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Display</span><span class="t-small c-secondary">Sora 300 · --text-display</span></div><p class="type-row__sample t-display">Del sur de Chile al mundo</p></li>
         <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Display destacado</span><span class="t-small c-secondary">Sora 200 + 600 · --text-display-light-weight / --text-display-strong-weight</span></div><p class="type-row__sample t-display"><span class="hero__title-line t-display-light">Your salmon</span> <span class="hero__title-line t-display-strong">solution partner</span></p></li>
         <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Título 1</span><span class="t-small c-secondary">Sora 300 · --text-h1</span></div><p class="type-row__sample t-h1">Información para inversionistas</p></li>
-        <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Título 2</span><span class="t-small c-secondary">Sora 400 · --text-h2</span></div><p class="type-row__sample t-h2">Resultados trimestrales</p></li>
+        <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Título 2</span><span class="t-small c-secondary">Sora 300 · --text-h2</span></div><p class="type-row__sample t-h2">Resultados trimestrales</p></li>
         <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Título 3</span><span class="t-small c-secondary">Sora 400 · --text-h3</span></div><p class="type-row__sample t-h3">Publicación de resultados Q3 2026</p></li>
         <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Cifra L · M · S</span><span class="t-small c-secondary">Sora 300 · --text-figure-*</span></div><p class="type-row__sample"><span class="t-figure-l c-brand">+3.500</span>&nbsp;&nbsp;<span class="t-figure-m c-brand">$ 152,40</span>&nbsp;&nbsp;<span class="t-figure-s c-brand">2026</span></p></li>
         <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Cifra destacada</span><span class="t-small c-secondary">Sora 600 · --text-figure-strong-weight</span></div><p class="type-row__sample"><span class="t-figure-l t-figure-strong c-brand">30+</span></p></li>
@@ -770,14 +770,21 @@
             </a>
           </li>
         </ul>
-        <div class="catalog-cta reveal">
+        <div class="catalog-cta reveal" data-variant="flipbook">
           <div class="catalog-cta__text">
-            <p class="t-label catalog-cta__label">Catálogo Multi X</p>
             <h4 class="t-h2">Productos frescos, congelados y ahumados</h4>
             <p class="t-body-l">Formatos, especificaciones y fichas técnicas. [contenido por definir]</p>
             <a class="btn btn--primary hit" href="#" download><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>Descargar catálogo</a>
           </div>
-          <div class="catalog-cta__flipbook"><iframe src="https://heyzine.com/flip-book/0dbae772e3.html" title="Catálogo Multi X (flipbook interactivo)" allowfullscreen allow="autoplay; fullscreen; clipboard-write" scrolling="no" loading="lazy"></iframe></div>
+          <div class="catalog-cta__media">
+            <div class="catalog-cta__flipbook"><iframe src="https://heyzine.com/flip-book/0dbae772e3.html" title="Catálogo Multi X (flipbook interactivo)" allowfullscreen allow="autoplay; fullscreen; clipboard-write" scrolling="no" loading="lazy"></iframe></div>
+            <div class="catalog-cta__cover" aria-hidden="true" data-scroll-grow><img src="assets/img/catalogo.png" alt="" width="356" height="287" loading="lazy"></div>
+            <div class="catalog-cta__switch t-small" role="group" aria-label="Vista del catálogo (prototipo)" data-variant-switch>
+              <button type="button" data-show="flipbook" aria-pressed="true">Flipbook</button>
+              <span aria-hidden="true">·</span>
+              <button type="button" data-show="image" aria-pressed="false">Imagen</button>
+            </div>
+          </div>
         </div>
       </div>
 

@@ -11,6 +11,7 @@
    [data-filters]                Barra de filtros (panel inferior en mobile)
    [data-add-calendar]           Agregar al calendario (opciones en mobile)
    video[data-hero-video]        Video de fondo: con movimiento reducido queda la imagen (poster)
+   [data-variant-switch]         Switch de vista: botones data-show cambian data-variant del bloque
    [data-scroll-grow]            Avance del scroll (0 a 1) en --scroll-progress (círculo del catálogo)
    [data-globe]                  Globo de puntos con pines (gira, se arrastra; Firma)
    Cursor                        Punto con anillo (blanco sobre oscuro); en clickeables el anillo crece
@@ -298,6 +299,24 @@
       }
       apply();
       reduce.addEventListener('change', apply);
+    });
+  }
+
+  /* ---------- Switch de vista ([data-variant-switch]) ----------
+     Botones con data-show="x" que cambian data-variant="x" en el bloque contenedor
+     más cercano con data-variant (por ejemplo, flipbook o imagen del catálogo). */
+  function initVariantSwitch() {
+    $all('[data-variant-switch]').forEach(function (group) {
+      var block = group.parentElement.closest('[data-variant]');
+      if (!block) return;
+      var buttons = $all('button[data-show]', group);
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          block.setAttribute('data-variant', btn.getAttribute('data-show'));
+          buttons.forEach(function (o) { o.setAttribute('aria-pressed', String(o === btn)); });
+          window.dispatchEvent(new Event('scroll')); // recalcula el círculo al mostrarse
+        });
+      });
     });
   }
 
@@ -616,6 +635,7 @@
     initHeroVideo();
     initGlobes();
     initScrollGrow();
+    initVariantSwitch();
     initCursor();
   }
 
