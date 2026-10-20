@@ -150,8 +150,10 @@
 
   // Tarjeta fija del menú: noticia destacada (no cambia con el hover de los accesos)
   var FEATURED = {
-    tag: 'Noticias',
-    label: 'Noticia destacada · [contenido por definir]',
+    tag: 'Noticias · Octubre de 2026',
+    label: 'Multi X informa término de contingencia en centros Taraba 7 y 8, en la Región de Magallanes',
+    lead: 'El cierre fue confirmado por Sernapesca tras el retiro de la totalidad de los peces afectados.',
+    image: 'assets/img/noticia-destacada.jpg',
     cta: 'Leer noticia',
     href: '#'
   };
@@ -314,10 +316,11 @@
               '</div>' +
               '<div class="menu-panel__body">' +
                 '<a class="menu-preview" href="' + FEATURED.href + '">' +
-                  '<span class="menu-preview__media"><span class="placeholder-tag menu-preview__ph">[foto por definir]</span></span>' +
+                  '<span class="menu-preview__media"><img src="' + ROOT + FEATURED.image + '" alt="" loading="lazy" decoding="async"></span>' +
                   '<span class="menu-preview__content">' +
                     '<span class="t-label menu-preview__tag">' + esc(FEATURED.tag) + '</span>' +
                     '<span class="menu-preview__title">' + esc(FEATURED.label) + '</span>' +
+                    '<span class="menu-preview__lead">' + esc(FEATURED.lead) + '</span>' +
                     '<span class="menu-preview__cta">' + esc(FEATURED.cta) + icon('arrow', 'md', 'icon--arrow') + '</span>' +
                   '</span>' +
                 '</a>' +

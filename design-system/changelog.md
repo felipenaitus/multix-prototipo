@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Noticia destacada real en el menú
+- Código ✓ · La tarjeta del menú usa una noticia real de ejemplo: "Multi X informa término de contingencia en centros Taraba 7 y 8, en la Región de Magallanes" (octubre de 2026), con su bajada e imagen (`assets/img/noticia-destacada.jpg`, JPG optimizado de 104 KB desde el PNG de 854 KB).
+- Código ✓ · Con el título real el texto no cabía sobre la foto en 224 px: la tarjeta pasa a foto arriba y texto debajo sobre Navy 950, con alto según contenido (≈ 348 px en desktop). El título usa UI/Destacado y la bajada se limita a 2 líneas.
+
 ## 2026-10-20 · Cursor: blanco sobre oscuro y anillo que crece
 - Código ✓ · El cursor es blanco sobre fondos oscuros y Navy 900 sobre claros (se deja la fusión "diferencia", que en el video daba tonos intermedios). Detecta el fondo visible bajo el puntero, incluso sobre el header fijo y al hacer scroll.
 - Código ✓ · En hover sobre clickeables, además de desaparecer el punto, el anillo se agranda ×1,5.

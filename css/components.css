@@ -2577,14 +2577,16 @@ a.pagination__item:hover,
   padding: 0 var(--space-40) var(--space-48);
 }
 
+/* Tarjeta de noticia destacada: foto arriba (sin texto encima) y texto debajo
+   sobre Navy 950 (el coral de la etiqueta cumple contraste solo sobre 950) */
 .menu-preview {
   position: relative;
   display: none;
+  flex-direction: column;
   overflow: hidden;
   align-self: start;
-  height: calc(var(--space-128) + var(--space-96));
   border-radius: var(--radius-lg);
-  background: var(--color-bg-brand-hover);
+  background: var(--color-bg-inverse);
   color: var(--color-text-inverse);
 }
 
@@ -2594,17 +2596,25 @@ a.pagination__item:hover,
 
 /* Imagen placeholder con degradado navy */
 .menu-preview__media {
-  position: absolute;
-  inset: 0;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 945 / 390; /* proporción de la foto */
   background: var(--color-bg-brand-hover);
 }
 
-.menu-preview__media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(195deg, transparent 0%, var(--color-bg-inverse) 85%);
-  opacity: .92;
+.menu-preview__media img {
+  transition: scale var(--duration-slow) var(--easing-out);
+}
+
+.menu-preview:hover .menu-preview__media img {
+  scale: 1.04;
+}
+
+/* Foto de la noticia */
+.menu-preview__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .menu-preview__ph {
@@ -2616,27 +2626,33 @@ a.pagination__item:hover,
 }
 
 .menu-preview__content {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-8);
-  padding: var(--space-24);
+  padding: var(--space-20) var(--space-24) var(--space-24);
 }
 
 .menu-preview__tag {
   color: var(--color-text-accent-on-dark);
 }
 
+/* UI/Destacado: el título real es largo y en Título 3 no cabe en la columna */
 .menu-preview__title {
-  font-family: var(--font-display);
-  font-size: var(--text-h3-size);
-  line-height: var(--text-h3-lh);
-  letter-spacing: var(--text-h3-ls);
-  font-weight: var(--text-h3-weight);
+  font-size: var(--text-ui-strong-size);
+  line-height: var(--text-ui-strong-lh);
+  font-weight: var(--text-ui-strong-weight);
+}
+
+.menu-preview__lead {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: var(--text-small-size);
+  line-height: var(--text-small-lh);
+  font-weight: var(--text-small-weight);
+  color: var(--color-text-inverse-muted);
 }
 
 .menu-preview__cta {
@@ -2794,7 +2810,7 @@ a.pagination__item:hover,
   }
 
   .menu-preview {
-    display: block;
+    display: flex;
   }
 
   .menu-panel__extras .menu-panel__lang {
