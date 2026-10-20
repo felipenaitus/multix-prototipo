@@ -284,7 +284,7 @@
 
       var groups = MENU_GROUPS.map(function (g, gi) {
         return '<div class="menu-group">' +
-          '<p class="t-label c-accent menu-group__title">' + esc(g.title) + '</p>' +
+          '<p class="t-label menu-group__title">' + esc(g.title) + '</p>' +
           '<ul class="menu-group__list" role="list">' +
             g.items.map(function (item, i) {
               // Solo el nombre: sin ícono, sin descripción y sin subpáginas
@@ -325,10 +325,10 @@
                 '<div class="menu-panel__groups">' + groups + '</div>' +
               '</div>' +
               '<div class="menu-panel__foot">' +
-                '<div class="menu-foot-group"><p class="t-label c-secondary">Portales</p><ul class="menu-foot-group__list" role="list">' +
+                '<div class="menu-foot-group"><p class="t-label menu-foot-group__title">Portales</p><ul class="menu-foot-group__list" role="list">' +
                   MENU_PORTALS.map(function (l) { return '<li><a href="' + l.href + '" target="_blank" rel="noopener">' + esc(l.label) + icon('external') + '<span class="visually-hidden"> (abre en una pestaña nueva)</span></a></li>'; }).join('') +
                 '</ul></div>' +
-                '<div class="menu-foot-group"><p class="t-label c-secondary">Recursos</p><ul class="menu-foot-group__list" role="list">' +
+                '<div class="menu-foot-group"><p class="t-label menu-foot-group__title">Recursos</p><ul class="menu-foot-group__list" role="list">' +
                   MENU_RESOURCES.map(function (l) { return '<li><a href="' + l.href + '">' + esc(l.label) + '</a></li>'; }).join('') +
                 '</ul></div>' +
                 '<div class="menu-panel__extras">' + langSwitch('menu-panel__lang') + socialList('menu-panel__social') + '</div>' +

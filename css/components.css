@@ -2748,6 +2748,18 @@ a.pagination__item:hover,
   border-top: var(--border-thin) solid var(--color-border-default);
 }
 
+/* EXCEPCIÓN aprobada por Felipe (2026-10-20): etiquetas "La compañía" y "Negocio"
+   en Coral 500 sobre blanco (3,1:1, no cumple AA para texto chico; ver CLAUDE.md 4).
+   Se usa el token de coral sobre oscuro porque es el único que apunta a Coral 500. */
+.menu-group__title {
+  color: var(--color-text-accent-on-dark);
+}
+
+/* Etiquetas "Portales" y "Recursos": gris más claro que los enlaces (Ink 500, 4,6:1) */
+.menu-foot-group__title {
+  color: var(--color-text-tertiary);
+}
+
 .menu-foot-group {
   display: flex;
   flex-direction: column;

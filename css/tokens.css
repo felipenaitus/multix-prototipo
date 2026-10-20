@@ -22,6 +22,7 @@
   --color-neutral-50: #F7F7F2;
   --color-neutral-150: #ECE9E1;
   --color-neutral-200: #DCD8CD;
+  --color-ink-500: #66787F; /* pendiente de llevar a Figma */
   --color-ink-600: #48606B;
   --color-ink-900: #0B1F2B;
   --color-green-600: #2E7D5B;
@@ -41,6 +42,7 @@
   /* Texto */
   --color-text-primary: var(--color-ink-900);
   --color-text-secondary: var(--color-ink-600);
+  --color-text-tertiary: var(--color-ink-500);   /* 4,6:1 sobre blanco: etiquetas de menor jerarquía */
   --color-text-brand: var(--color-navy-900);
   --color-text-brand-hover: var(--color-navy-600);
   --color-text-accent: var(--color-coral-600);

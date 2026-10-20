@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Etiquetas del menú
+- Figma pendiente · Código ✓ · Nuevo primitivo `--color-ink-500` (#66787F) y semántico `--color-text-tertiary` (4,6:1 sobre blanco, pasa AA). Se usa en las etiquetas "Portales" y "Recursos" del menú, más claras que los enlaces.
+- Código ✓ · **Excepción a la regla del coral (CLAUDE.md 4), aprobada por Felipe:** las etiquetas "La compañía" y "Negocio" del menú usan Coral 500 sobre blanco (3,1:1, no cumple AA para texto chico).
+
 ## 2026-10-20 · Secundarios del menú como la barra utilitaria
 - Código ✓ · Portales y Recursos del panel pasan de UI/Navegación (14 px) a UI/Pequeño destacado (13 px, semibold), el mismo estilo de la barra utilitaria.
 

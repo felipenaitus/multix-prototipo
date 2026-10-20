@@ -21,6 +21,7 @@ Este archivo dice **qué** componentes existen y **cómo se usan**. Las medidas 
 | Botón de acento / hover | `--color-bg-accent` / `--color-bg-accent-hover` | Coral 400 / Coral 500 |
 | Figura detrás de ilustraciones | `--color-bg-illustration` | Coral 100 #EBE2DC |
 | Texto principal / secundario | `--color-text-primary` / `--color-text-secondary` | Ink 900 / Ink 600 |
+| Texto terciario (etiquetas de menor jerarquía) | `--color-text-tertiary` | Ink 500 #66787F (4,6:1 sobre blanco) |
 | Texto de marca y enlaces | `--color-text-brand` | Navy 900 |
 | Etiquetas y badges en coral | `--color-text-accent` | Coral 600 #C44545 |
 | Variación positiva (acción, metas) | `--color-text-success` | Verde 600 |
@@ -105,6 +106,7 @@ Header, menú hamburguesa y footer viven solo en `js/layout.js` (ver CLAUDE.md 2
 - Panel con `--radius-xl`, fondo `--color-bg-page` y `--shadow-card`, alineado bajo el header y con el ancho del contenedor.
 - Arriba: buscador del sitio a lo ancho. Al escribir aparece una X para borrar la búsqueda: es la misma X del botón que cierra el menú (hamburguesa abierta), para estandarizar la iconografía.
 - Cuerpo: a la izquierda, **tarjeta de noticia destacada**: foto arriba (proporción de la imagen, sin texto encima; leve zoom en hover) y debajo, sobre Navy 950, etiqueta con sección y fecha (Coral 500), título (UI/Destacado, máximo 2 líneas con puntos suspensivos si no cabe; sin bajada) y "Leer noticia". Es fija: no cambia con el hover de los accesos. Imagen de ejemplo: `assets/img/noticia-destacada.jpg`. A la derecha, **accesos en dos columnas**: "La compañía" (Nosotros · Trabaja con Nosotros · Noticias) y "Negocio" (Productos · Sustentabilidad · Inversionistas). Cada acceso muestra solo su nombre, en tamaño Título 3 y Sora 300 (más grande y liviano), sin ícono, sin descripción y sin subpáginas (las subpáginas de Inversionistas están en el desplegable del header).
+- Etiquetas de grupo: "La compañía" y "Negocio" en Coral 500 (**excepción a la regla del coral**, aprobada por Felipe: 3,1:1, no cumple AA); "Portales" y "Recursos" en Ink 500 (`--color-text-tertiary`).
 - Franja inferior, separada por un divisor: Portales (Portal Proveedores, Diving X) · Recursos (Contacto, Preguntas Frecuentes, Canal de Denuncias) en UI/Pequeño destacado e Ink 600, igual que la barra utilitaria (más suave, para no competir con los accesos principales), y las redes sociales a la derecha. Sin datos de contacto.
 - Espaciado vertical entre módulos: `--space-40` bajo el buscador, `--space-48` bajo los accesos y `--space-32` sobre los secundarios.
 - La hamburguesa se transforma en X en la misma posición. Cierra con el botón, Escape y clic fuera del panel. Entrada con fade + leve desplazamiento (`--duration-slow`); los accesos entran con desfase (`--duration-stagger`).
