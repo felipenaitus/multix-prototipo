@@ -3935,9 +3935,10 @@ a.pagination__item:hover,
 }
 
 /* Descarga del catálogo: fila abierta bajo las marcas (sin caja): texto y botón
-   a la izquierda; a la derecha, la imagen del catálogo sobre un círculo
-   (--color-bg-illustration, figura detrás de imagen). Entrada al aparecer:
-   textos en secuencia, el círculo crece y luego entra el catálogo. */
+   a la izquierda; a la derecha, la imagen del catálogo sobre un círculo crema
+   (Offwhite, --color-bg-subtle) centrado con ella. Entrada al aparecer: textos en
+   secuencia, aparece el círculo y luego el catálogo. El círculo crece con el
+   scroll ([data-scroll-grow] en components.js). */
 .catalog-cta {
   display: grid;
   gap: var(--space-48);
@@ -3978,17 +3979,19 @@ a.pagination__item:hover,
   aspect-ratio: 1;
 }
 
-/* Círculo detrás, corrido hacia arriba a la derecha como en la referencia */
+/* Círculo detrás, centrado con la imagen. Escala según el avance del scroll
+   (--scroll-progress de 0 a 1: de 0,6 a 1,1); sin JS o con movimiento reducido, 1. */
 .catalog-cta__cover::before {
   content: "";
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 82%;
-  aspect-ratio: 1;
-  border-radius: var(--radius-full);
-  background: var(--color-bg-illustration);
+  inset: 0;
   z-index: 0;
+  width: 82%;
+  height: 82%;
+  margin: auto;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-subtle);
+  transform: scale(calc(.6 + .5 * var(--scroll-progress, .8)));
 }
 
 .catalog-cta__cover img {
@@ -3996,7 +3999,6 @@ a.pagination__item:hover,
   z-index: 1;
   width: 92%;
   height: auto;
-  margin-top: var(--space-24);
 }
 
 /* Entrada: el bloque no se mueve como un todo; animan sus partes */
@@ -4019,10 +4021,7 @@ a.pagination__item:hover,
 
 .js .catalog-cta__cover::before {
   opacity: 0;
-  transform: scale(.6);
-  transition:
-    opacity var(--duration-reveal) var(--easing-out),
-    transform var(--duration-reveal) var(--easing-out);
+  transition: opacity var(--duration-reveal) var(--easing-out);
   transition-delay: calc(var(--duration-stagger) * 2);
 }
 
@@ -4036,10 +4035,13 @@ a.pagination__item:hover,
 }
 
 .js .catalog-cta.is-visible .catalog-cta__text > *,
-.js .catalog-cta.is-visible .catalog-cta__cover::before,
 .js .catalog-cta.is-visible .catalog-cta__cover img {
   opacity: 1;
   transform: none;
+}
+
+.js .catalog-cta.is-visible .catalog-cta__cover::before {
+  opacity: 1;
 }
 
 @media (min-width: 768px) {

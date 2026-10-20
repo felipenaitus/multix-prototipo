@@ -11,6 +11,7 @@
    [data-filters]                Barra de filtros (panel inferior en mobile)
    [data-add-calendar]           Agregar al calendario (opciones en mobile)
    video[data-hero-video]        Video de fondo: con movimiento reducido queda la imagen (poster)
+   [data-scroll-grow]            Avance del scroll (0 a 1) en --scroll-progress (círculo del catálogo)
    [data-globe]                  Globo de puntos con pines (gira, se arrastra; Firma)
    Cursor                        Punto con anillo (blanco sobre oscuro); en clickeables el anillo crece
    ========================================================================== */
@@ -300,6 +301,40 @@
     });
   }
 
+  /* ---------- Avance del scroll ([data-scroll-grow]) ----------
+     Escribe --scroll-progress (0 a 1) en el elemento: 0 cuando su borde superior
+     entra por abajo de la ventana y 1 cuando llega arriba. El CSS decide qué hacer
+     con él (por ejemplo, escalar el círculo del catálogo). Solo calcula mientras
+     el elemento está a la vista; con movimiento reducido no hace nada (queda el
+     valor por defecto del CSS). */
+  function initScrollGrow() {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    $all('[data-scroll-grow]').forEach(function (el) {
+      var visible = !hasIO, raf = null;
+      function update() {
+        raf = null;
+        if (reduce.matches) { el.style.removeProperty('--scroll-progress'); return; }
+        var r = el.getBoundingClientRect();
+        var vh = window.innerHeight;
+        var p = Math.min(1, Math.max(0, (vh - r.top) / vh));
+        el.style.setProperty('--scroll-progress', p.toFixed(3));
+      }
+      function request() {
+        if (visible && !raf) raf = window.requestAnimationFrame(update);
+      }
+      if (hasIO) {
+        new IntersectionObserver(function (entries) {
+          visible = entries[0].isIntersecting;
+          request();
+        }).observe(el);
+      }
+      window.addEventListener('scroll', request, { passive: true });
+      window.addEventListener('resize', request);
+      reduce.addEventListener('change', update);
+      update();
+    });
+  }
+
   /* ---------- Globo de mercados ([data-globe]) ----------
      Globo de puntos en proyección ortográfica (canvas), con los continentes de
      Natural Earth 110m (dominio público) convertidos a una máscara de puntos.
@@ -575,6 +610,7 @@
     initAddCalendar();
     initHeroVideo();
     initGlobes();
+    initScrollGrow();
     initCursor();
   }
 

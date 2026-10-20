@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Catálogo: círculo más claro, centrado y que crece con el scroll
+- Código ✓ · El círculo pasa de Coral 100 a Offwhite (Neutral 50, `--color-bg-subtle`), el crema más claro de la paleta, y queda centrado con la imagen del catálogo.
+- Figma pendiente · Código ✓ · El círculo crece a medida que se hace scroll (de 0,6 a 1,1). Nuevo comportamiento `[data-scroll-grow]` en components.js.
+
 ## 2026-10-20 · Catálogo con imagen, círculo y entrada animada
 - Figma pendiente · Código ✓ · Descarga del catálogo con la imagen del catálogo (`assets/img/catalogo.png`) sobre un círculo Coral 100 (`--color-bg-illustration`). En mobile también se muestra, debajo del texto.
 - Figma pendiente · Código ✓ · Entrada animada del bloque: textos en secuencia, círculo que crece y catálogo que entra con un leve giro. Nuevo patrón Firma en motion.md.

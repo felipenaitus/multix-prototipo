@@ -63,5 +63,6 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 - Con movimiento reducido el cambio es instantáneo (las duraciones quedan en 0).
 
 ## Firma · Entrada del catálogo (solo Productos › Descarga del catálogo)
-- Al entrar en pantalla (IntersectionObserver de `.reveal`): etiqueta, título, bajada y botón aparecen en secuencia (`--duration-reveal`, desfase `--duration-stagger`); el círculo crece de 0,6 a 1 y aparece; al final entra la imagen del catálogo desde abajo a la izquierda con un giro de −4° a 0°.
+- Al entrar en pantalla (IntersectionObserver de `.reveal`): etiqueta, título, bajada y botón aparecen en secuencia (`--duration-reveal`, desfase `--duration-stagger`); aparece el círculo; al final entra la imagen del catálogo desde abajo a la izquierda con un giro de −4° a 0°.
+- El círculo crece con el scroll: escala de 0,6 a 1,1 mientras el bloque sube desde el borde inferior hasta el superior de la ventana (`[data-scroll-grow]` escribe `--scroll-progress`). Va directo al scroll, sin transición. Con movimiento reducido queda fijo en su tamaño normal.
 - Solo opacidad y transform. Con movimiento reducido todo aparece en su lugar, sin desplazamiento.
