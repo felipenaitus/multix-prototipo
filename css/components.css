@@ -2913,13 +2913,21 @@ a.pagination__item:hover,
   gap: var(--space-16);
 }
 
+/* Logo en blanco con la X en Coral 500 (fondo Navy 950) */
 .footer__logo {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch-target);
   margin-bottom: var(--space-8);
-  font-family: var(--font-display);
-  font-size: var(--text-h3-size);
-  line-height: var(--text-h3-lh);
-  letter-spacing: var(--text-h3-ls);
-  font-weight: var(--text-h3-weight);
+  color: var(--color-text-inverse);
+}
+
+.site-footer .footer__logo:hover {
+  color: var(--color-text-inverse);
+}
+
+.footer__logo .logo {
+  height: var(--space-24);
 }
 
 .footer__col-title {

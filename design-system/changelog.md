@@ -6,7 +6,7 @@ Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descrip
 
 ## 2026-10-20 · Logo en el header
 - Código ✓ · El header usa el logo oficial (`assets/brand/logo-multix.svg`) como SVG en línea: letras en el color del tema (Navy 900 en claro, blanco en oscuro y sobre el hero) y la X en Coral 500 (`--color-bg-accent-hover`). Alto `--space-20` en mobile y tablet, `--space-24` en desktop; al 85% en el header compacto.
-- Pendiente · El footer todavía muestra "MULTI X" en texto.
+- Código ✓ · El footer usa el mismo logo: letras blancas y X en Coral 500 sobre Navy 950, alto `--space-24`.
 
 ## 2026-10-20 · Video en el hero de prueba
 - Código ✓ · `pruebas/navegacion-hero.html` usa el video del hero (`assets/video/hero.mp4`) a pantalla completa, con el velo oscuro de `.hero__media`. Con `prefers-reduced-motion` el video se detiene y queda la imagen `assets/video/hero-poster.jpg` (comportamiento `video[data-hero-video]` en components.js).

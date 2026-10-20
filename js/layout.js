@@ -627,7 +627,7 @@
         '<div class="container">' +
           '<div class="footer__top">' +
             '<div class="footer__brand">' +
-              '<a class="footer__logo" href="' + ROOT + 'index.html" aria-label="Multi X, ir al inicio">MULTI X</a>' +
+              '<a class="footer__logo" href="' + ROOT + 'index.html" aria-label="Multi X, ir al inicio">' + logo() + '</a>' +
               '<p class="t-label footer__col-title">Direcciones y teléfonos</p>' +
               '<ul class="footer__offices" role="list">' + offices + '</ul>' +
               '<a class="footer__contact-link" href="mailto:' + esc(CONTACT.email) + '">' + icon('mail') + esc(CONTACT.email) + '</a>' +
