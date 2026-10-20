@@ -4,6 +4,11 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Ajustes al panel del menú
+- Código ✓ · Redes sociales pasan del costado del buscador a la franja inferior, a la derecha (en mobile, al final).
+- Código ✓ · Enlaces secundarios (Portales y Recursos) en Ink 600 (`--color-text-secondary`) para no competir con los accesos principales.
+- Código ✓ · Más aire vertical: `--space-40` bajo el buscador (antes 24), `--space-48` bajo los accesos (antes 32) y `--space-32` sobre los secundarios (antes 24).
+
 ## 2026-10-20 · Idioma, menú, header blanco y cursor
 - Código ✓ · Switch de idioma sintético: "ES | EN" en texto, sin caja ni fondo; el activo en color pleno y semibold.
 - Código ✓ · Menú hamburguesa: accesos en tamaño Título 3 y Sora 300 (más grandes y livianos). La tarjeta de noticia destacada queda fija (sin vista previa dinámica).

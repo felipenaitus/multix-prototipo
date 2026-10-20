@@ -2502,7 +2502,7 @@ a.pagination__item:hover,
   display: flex;
   align-items: center;
   gap: var(--space-24);
-  padding: var(--space-32) var(--space-40) var(--space-24);
+  padding: var(--space-32) var(--space-40) var(--space-40);
 }
 
 .menu-search {
@@ -2572,7 +2572,7 @@ a.pagination__item:hover,
 .menu-panel__body {
   display: grid;
   gap: var(--space-32);
-  padding: 0 var(--space-40) var(--space-32);
+  padding: 0 var(--space-40) var(--space-48);
 }
 
 .menu-preview {
@@ -2732,7 +2732,7 @@ a.pagination__item:hover,
   flex-wrap: wrap;
   gap: var(--space-24) var(--space-48);
   margin: 0 var(--space-40);
-  padding: var(--space-24) 0 var(--space-32);
+  padding: var(--space-32) 0 var(--space-40);
   border-top: var(--border-thin) solid var(--color-border-default);
 }
 
@@ -2759,15 +2759,21 @@ a.pagination__item:hover,
   font-size: var(--text-ui-nav-size);
   line-height: var(--text-ui-nav-lh);
   font-weight: var(--text-ui-nav-weight);
-  color: var(--color-text-primary);
+  /* Ink 600: no compite con los accesos principales */
+  color: var(--color-text-secondary);
 }
 
 .menu-foot-group__list a:hover {
   color: var(--color-text-brand);
 }
 
+/* Redes sociales (y en mobile/tablet, el idioma) abajo, a la derecha de los secundarios */
 .menu-panel__extras {
-  display: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-24);
+  margin-left: auto;
+  align-self: flex-end;
 }
 
 /* Tablet: panel flotante sin tarjeta de vista previa; idioma dentro del panel */
@@ -2775,18 +2781,6 @@ a.pagination__item:hover,
   .menu-panel__groups {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-40);
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1279px) {
-  .menu-panel__extras {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-  }
-
-  .menu-panel__social--bottom {
-    display: none;
   }
 }
 
@@ -2799,6 +2793,10 @@ a.pagination__item:hover,
 
   .menu-preview {
     display: block;
+  }
+
+  .menu-panel__extras .menu-panel__lang {
+    display: none;
   }
 }
 
@@ -2823,10 +2821,6 @@ a.pagination__item:hover,
     padding-top: var(--space-24);
   }
 
-  .menu-panel__social--top {
-    display: none;
-  }
-
   .menu-panel__foot {
     flex-direction: column;
     margin-inline: var(--layout-gutter);
@@ -2834,10 +2828,10 @@ a.pagination__item:hover,
   }
 
   .menu-panel__extras {
-    display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--space-24);
+    align-self: auto;
+    margin-left: 0;
   }
 }
 

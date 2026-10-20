@@ -311,7 +311,6 @@
                     '<span class="burger burger--x" aria-hidden="true"><span></span><span></span><span></span></span>' +
                   '</button>' +
                 '</form>' +
-                socialList('menu-panel__social menu-panel__social--top') +
               '</div>' +
               '<div class="menu-panel__body">' +
                 '<a class="menu-preview" href="' + FEATURED.href + '">' +
@@ -331,7 +330,7 @@
                 '<div class="menu-foot-group"><p class="t-label c-secondary">Recursos</p><ul class="menu-foot-group__list" role="list">' +
                   MENU_RESOURCES.map(function (l) { return '<li><a href="' + l.href + '">' + esc(l.label) + '</a></li>'; }).join('') +
                 '</ul></div>' +
-                '<div class="menu-panel__extras">' + langSwitch('menu-panel__lang') + socialList('menu-panel__social menu-panel__social--bottom') + '</div>' +
+                '<div class="menu-panel__extras">' + langSwitch('menu-panel__lang') + socialList('menu-panel__social') + '</div>' +
               '</div>' +
             '</div>' +
           '</div>' +
