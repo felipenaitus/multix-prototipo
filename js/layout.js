@@ -105,7 +105,7 @@
   /* ---------- Arquitectura de navegación (Etapa 1, ajustada) ----------
      Páginas aún no construidas apuntan a "#". [contenido por definir] en textos. */
   var INVESTOR_PAGES = [
-    { label: 'Inicio', href: '#' },
+    { label: 'Ir a Inversionistas', href: '#', home: true },
     { label: 'Centro de Resultados', href: '#' },
     { label: 'Gobernanza', href: '#' },
     { label: 'Calendario y Eventos', href: '#' },
@@ -252,6 +252,10 @@
             '</button>' +
             '<ul class="dropdown" id="' + ddId + '" role="list">' +
               item.children.map(function (c) {
+                // El acceso a la portada se distingue de las subpáginas y va separado por un divisor
+                if (c.home) {
+                  return '<li class="dropdown__home"><a class="dropdown__link dropdown__link--home" href="' + c.href + '">' + esc(c.label) + '</a></li>';
+                }
                 return '<li><a class="dropdown__link" href="' + c.href + '">' + esc(c.label) + '</a></li>';
               }).join('') +
             '</ul>' +

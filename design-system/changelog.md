@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Línea bajo la barra utilitaria y acceso a la portada en el desplegable
+- Código ✓ · Línea delgada entre la barra utilitaria y la fila principal, con el ancho de los elementos del header (no de borde a borde). Toma el color del tema y se oculta junto con la barra al hacer scroll.
+- Código ✓ · Desplegable de Inversionistas: "Inicio" pasa a "Ir a Inversionistas", en semibold y separado de las subpáginas por un divisor de borde a borde; las subpáginas quedan en peso regular.
+
 ## 2026-10-20 · Ajustes al menú hamburguesa
 - Código ✓ · Accesos solo con el nombre: sin ícono, sin descripción y sin las subpáginas de Inversionistas (quedan en el desplegable del header). Se quitan los íconos de accesos del sprite y el acordeón de Inversionistas en mobile.
 - Código ✓ · Buscador del menú: la X nativa del campo se reemplaza por la misma X del botón que cierra el menú; aparece solo cuando hay texto y borra la búsqueda.

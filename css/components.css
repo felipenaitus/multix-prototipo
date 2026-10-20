@@ -2011,12 +2011,25 @@ a.pagination__item:hover,
 }
 
 .header__utility-inner {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: var(--space-24);
   height: 100%;
   pointer-events: auto;
+}
+
+/* Línea que separa la barra utilitaria del menú: solo el ancho de los elementos del header */
+.header__utility-inner::after {
+  content: "";
+  position: absolute;
+  left: var(--layout-gutter);
+  right: var(--layout-gutter);
+  bottom: 0;
+  height: var(--border-thin);
+  background: var(--hdr-line);
+  transition: background-color var(--duration-slow) var(--easing-standard);
 }
 
 .header__utility-list {
@@ -2240,15 +2253,26 @@ a.pagination__item:hover,
   min-height: var(--touch-target);
   padding-inline: var(--space-16);
   border-radius: var(--radius-md);
-  /* UI/Navegación: un punto menos que los accesos del header (UI/Botón) */
+  /* Subpáginas: tamaño UI/Navegación en peso regular */
   font-size: var(--text-ui-nav-size);
   line-height: var(--text-ui-nav-lh);
-  font-weight: var(--text-ui-nav-weight);
+  font-weight: var(--text-body-weight);
   color: var(--color-text-primary);
   white-space: nowrap;
   transition:
     background-color var(--duration-fast) var(--easing-standard),
     color var(--duration-fast) var(--easing-standard);
+}
+
+/* "Ir a Inversionistas": UI/Navegación en semibold, separado de las subpáginas */
+.dropdown__home {
+  margin: 0 calc(-1 * var(--space-8)) var(--space-8);
+  padding: 0 var(--space-8) var(--space-8);
+  border-bottom: var(--border-thin) solid var(--color-border-default);
+}
+
+.dropdown__link--home {
+  font-weight: var(--text-ui-nav-weight);
 }
 
 .dropdown__link:hover,
