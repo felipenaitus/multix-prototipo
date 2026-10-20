@@ -3369,6 +3369,12 @@ a.pagination__item:hover,
   color: var(--color-text-secondary);
 }
 
+/* Variante centrada: para bloques de composición simétrica (por ejemplo, las marcas) */
+.section-head--center {
+  align-items: center;
+  text-align: center;
+}
+
 @media (min-width: 1280px) {
   .section-head {
     margin-bottom: var(--space-48);

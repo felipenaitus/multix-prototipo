@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Título de Nuestras marcas centrado
+- Código ✓ · Nueva variante `.section-head--center` del encabezado de sección; se usa en Nuestras marcas para alinear el título con los dos círculos.
+
 ## 2026-10-20 · Marcas en círculos
 - Figma pendiente · Código ✓ · Nuestras marcas pasan de celdas rectangulares separadas por líneas a círculos con contorno delgado. Con hover, el video de cada marca rellena el círculo desde el centro y el logo pasa a blanco.
 
