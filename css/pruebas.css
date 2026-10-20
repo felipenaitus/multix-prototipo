@@ -42,10 +42,16 @@
 /* Texto del hero por sobre el video y su velo (.hero__media) */
 .test-hero__title {
   position: relative;
+  font-weight: 200; /* PRUEBA: Sora 200 (Extra Light). Si se aprueba, pasa a token en tokens.css */
   padding-inline: var(--layout-gutter);
   text-align: center;
 }
 
 .nowrap {
   white-space: nowrap;
+}
+
+/* Palabra destacada en coral sobre fondo oscuro (Coral 500, CLAUDE.md 4) */
+.test-hero__accent {
+  color: var(--color-text-accent-on-dark);
 }
