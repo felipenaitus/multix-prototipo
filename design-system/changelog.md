@@ -4,6 +4,11 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Display destacado y contador en todas las cifras
+- Figma pendiente · Código ✓ · Nuevo estilo "Display destacado": Display con la primera parte en Sora 200 (Extra Light) y la segunda en Sora 600 (Semibold), cada una en su línea. Tokens nuevos `--text-display-light-weight` y `--text-display-strong-weight`. Se usa en el hero de Productos ("Your salmon" / "solution partner") y en la frase del home, que deja de ser prueba.
+- Código ✓ · Sora 200 y 600 se cargan en todas las páginas. CLAUDE.md 2.6 actualizado por decisión de Felipe (antes solo 300 y 400).
+- Código ✓ · Regla: toda cifra o métrica destacada cuenta hasta su valor al entrar en pantalla (`data-count`). Se aplica a la cifra de Mercados en Productos.
+
 ## 2026-10-20 · Mercados: título a la derecha y globo más liviano
 - Figma pendiente · Código ✓ · El título de "Mercado y oficinas comerciales" pasa a la columna derecha, junto con la cifra, las regiones y las oficinas. El globo queda a la izquierda.
 - Figma pendiente · Código ✓ · Globo más chico (80 % de su columna en desktop, 60 % en tablet, 90 % en mobile) y sin fondo blanco: la esfera toma el color de su sección y solo conserva el contorno.

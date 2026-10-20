@@ -53,7 +53,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Certificaciones en grilla | 4 columnas de tarjetas con el logo arriba; la descripción se despliega dentro de la tarjeta | Tablet: 2 columnas. Mobile: lista de 1 columna con el logo a la izquierda |
 | Cadena de valor (Del cultivo a la mesa) | 6 pasos en una fila sobre una línea horizontal | Tablet: 3 columnas. Mobile: lista vertical con la línea y los marcadores a la izquierda |
 | Módulo comercial (`<sales-contact>`) | Botón flotante abajo a la izquierda; el formulario se abre como panel sobre el botón | El formulario se abre como panel inferior a lo ancho de la pantalla, por sobre el botón del asistente |
-| Hero con acción a la derecha | Textos a la izquierda y botón a la derecha, alineados abajo | El botón va debajo de los textos |
+| Hero con acción a la derecha | Textos a la izquierda y botón a la derecha, alineados abajo | Tablet y mobile: el botón va debajo de los textos (en tablet no hay ancho para ambos sin cortar el título) |
 | Formulario comercial en modal (`variant="inline"`) | Modal centrado sobre el sitio oscurecido | Panel inferior a lo ancho, sobre el sitio oscurecido |
 | Botón flotante del asistente | Fijo abajo a la derecha, 56 px, a `--space-32` del borde | Igual, a `--space-24` del borde |
 | Footer | Logo arriba; Direcciones · Información · Personas y proveedores en una fila con los títulos alineados; redes y copyright abajo. Tablet: direcciones arriba (en dos columnas) y enlaces debajo | Mobile: Información y Personas y proveedores en acordeón; direcciones y teléfonos siempre visibles; Canal de Denuncias como enlace dentro de Información |

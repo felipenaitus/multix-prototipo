@@ -50,7 +50,7 @@ Si hay conflicto entre el código y el Figma, manda el Figma. Si hay conflicto e
 
 ### 2.6 Stack
 - HTML, CSS y JavaScript vanilla. Sin frameworks, sin paso de build, sin npm para el sitio.
-- Fuentes desde Google Fonts: solo Sora (300, 400) y Manrope (400, 500, 600, 700). No cargar otras familias.
+- Fuentes desde Google Fonts: solo Sora (200, 300, 400, 600) y Manrope (400, 500, 600, 700). No cargar otras familias. Sora 200 y 600 se usan solo en el Display destacado.
 - Animaciones con CSS (transiciones y keyframes) e IntersectionObserver. Librerías externas solo si Felipe las aprueba.
 - El sitio debe funcionar abierto directo desde el archivo y en GitHub Pages (por eso Web Components y no `fetch` de parciales).
 - Estructura: `css/tokens.css` → `css/base.css` → `css/components.css` (+ un CSS por página solo si es necesario). JS: `js/layout.js` (header/footer) y `js/components.js` (comportamientos).

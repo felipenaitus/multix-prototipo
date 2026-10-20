@@ -34,7 +34,7 @@ Estado: **Base** = se aplica en todo el sitio sin preguntar. **Firma** = efecto 
 | Entrada en viewport (`.reveal`) | Fade + subida de `--motion-reveal-distance` con `--duration-reveal`. Se activa con IntersectionObserver (threshold 0.2, rootMargin inferior −40px) y ocurre una sola vez. Elementos hermanos con desfase de `--duration-stagger` (hasta 3). | Igual, distancia reducida a la mitad |
 | Entrada reversible (`.reveal-rev`) | Igual, pero se esconde al volver hacia arriba. Solo para accesos destacados de la home. | Se usa `.reveal` simple |
 | Entrada del hero | Título y bajada con fade + subida al cargar; desfases de 100 y 350ms. | Igual |
-| Contadores | Cifras "en una mirada", metas y métricas cuentan desde 0 al entrar en viewport, con `--duration-counter`. Formato chileno (punto de miles, coma decimal). | Igual |
+| Contadores | Toda cifra o métrica destacada del sitio (cifras "en una mirada", metas, la cifra de Mercados, etc.) cuenta desde 0 al entrar en viewport, con `--duration-counter` y `data-count`. No aplica a fechas, años ni al precio de la acción. Formato chileno (punto de miles, coma decimal). | Igual |
 | Acordeones y desplegables | Rotación del ícono + aparición del contenido con `--duration-base`. | Igual |
 | Header al hacer scroll | Transparente sobre el hero; al bajar pasa a fondo blanco (siempre, sin importar el fondo del contenido), la barra utilitaria sale y la fila principal se compacta con el logo reducido, con `--duration-slow`. | Se oculta al bajar y aparece al subir |
 | Menú hamburguesa / overlay | Overlay a pantalla completa con fade + leve desplazamiento, `--duration-slow`. El mismo botón cierra; también Escape y tocar fuera. | Igual |

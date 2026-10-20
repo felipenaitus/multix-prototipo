@@ -8,7 +8,7 @@
   <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@300;400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@200;300;400;600&display=swap">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
@@ -100,10 +100,11 @@
       <div class="kit-section__head">
         <p class="t-label c-accent">02</p>
         <h2 class="t-h2" id="tipo-title">Tipografía</h2>
-        <p class="t-small kit-section__desc">Sora (300 y 400) para títulos y cifras; Manrope (400 a 700) para cuerpo e interfaz. En mobile, display, títulos y cifras bajan de tamaño (propuesta por validar).</p>
+        <p class="t-small kit-section__desc">Sora (300 y 400; 200 y 600 solo en el Display destacado) para títulos y cifras; Manrope (400 a 700) para cuerpo e interfaz. En mobile, display, títulos y cifras bajan de tamaño (propuesta por validar).</p>
       </div>
       <ul class="type-list" role="list">
         <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Display</span><span class="t-small c-secondary">Sora 300 · --text-display</span></div><p class="type-row__sample t-display">Del sur de Chile al mundo</p></li>
+        <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Display destacado</span><span class="t-small c-secondary">Sora 200 + 600 · --text-display-light-weight / --text-display-strong-weight</span></div><p class="type-row__sample t-display"><span class="hero__title-line t-display-light">Your salmon</span> <span class="hero__title-line t-display-strong">solution partner</span></p></li>
         <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Título 1</span><span class="t-small c-secondary">Sora 300 · --text-h1</span></div><p class="type-row__sample t-h1">Información para inversionistas</p></li>
         <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Título 2</span><span class="t-small c-secondary">Sora 400 · --text-h2</span></div><p class="type-row__sample t-h2">Resultados trimestrales</p></li>
         <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Título 3</span><span class="t-small c-secondary">Sora 400 · --text-h3</span></div><p class="type-row__sample t-h3">Publicación de resultados Q3 2026</p></li>
@@ -828,7 +829,7 @@
               <h4 class="t-h2">Mercado y oficinas comerciales</h4>
             </div>
             <div class="markets__stat">
-              <p class="t-figure-l">30+</p>
+              <p class="t-figure-l" data-count="30" data-suffix="+">30+</p>
               <p class="t-body c-secondary">países de destino [contenido por definir]</p>
             </div>
             <dl class="markets__regions">
@@ -941,7 +942,7 @@
           <div class="hero__content hero__content--split">
             <div class="hero__text">
               <p class="t-label c-inverse-muted">Productos</p>
-              <p class="t-display hero__title">Your salmon solution partner</p>
+              <p class="t-display hero__title"><span class="hero__title-line t-display-light">Your salmon</span> <span class="hero__title-line t-display-strong">solution partner</span></p>
               <p class="t-body-l hero__lead">Bajada del hero. [contenido por definir]</p>
             </div>
             <sales-contact variant="inline"></sales-contact>

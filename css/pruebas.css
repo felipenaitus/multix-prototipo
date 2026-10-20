@@ -42,7 +42,7 @@
 /* Texto del hero por sobre el video y su velo (.hero__media) */
 .test-hero__title {
   position: relative;
-  font-weight: 200; /* PRUEBA: Sora 200 (Extra Light). Si se aprueba, pasa a token en tokens.css */
+  font-weight: var(--text-display-light-weight); /* Display destacado: Extra Light */
   padding-inline: var(--layout-gutter);
   text-align: center;
 }
@@ -75,7 +75,7 @@
 }
 
 .word-swap__slot--b {
-  font-weight: 600; /* PRUEBA: Sora 600 (semibold) */
+  font-weight: var(--text-display-strong-weight); /* Display destacado: Semibold */
 }
 
 .word-swap__word {

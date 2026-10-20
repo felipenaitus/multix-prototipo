@@ -41,15 +41,16 @@ Reglas de contraste verificadas (WCAG 2.1 AA):
 - Coral 100: Navy 900 encima 8,9:1. No lleva texto coral ni bordes visibles contra el fondo (1,2:1).
 
 ### Tipografía (node 75-115)
-Sora (títulos y cifras, pesos 300 y 400) + Manrope (cuerpo e interfaz, 400 a 700).
+Sora (títulos y cifras, pesos 300 y 400; 200 y 600 solo en el Display destacado) + Manrope (cuerpo e interfaz, 400 a 700).
 
 | Estilo Figma | Token | Uso |
 |---|---|---|
 | Display | `--text-display-*` | Título del hero. Uno por página. |
+| Display destacado | `--text-display-*` + `--text-display-light-weight` (200) / `--text-display-strong-weight` (600) | Título del hero con dos pesos: la primera parte en Extra Light y la segunda en Semibold, cada una en su línea (`.t-display-light`, `.t-display-strong`, `.hero__title-line`). Pendiente de llevar a Figma. |
 | Título 1 | `--text-h1-*` | Título de página interior. |
 | Título 2 | `--text-h2-*` | Título de sección. |
 | Título 3 | `--text-h3-*` | Títulos de tarjeta, bloque o evento. |
-| Cifra L / M / S | `--text-figure-*` | Cifras "en una mirada", precio de la acción, metas, años de acordeón. |
+| Cifra L / M / S | `--text-figure-*` | Cifras "en una mirada", precio de la acción, metas, años de acordeón. Toda cifra o métrica destacada cuenta desde 0 hasta su valor al entrar en pantalla (`data-count`, con `data-prefix` / `data-suffix`). No aplica a fechas, años ni al precio de la acción. |
 | Cuerpo L | `--text-body-l-*` | Bajadas y textos introductorios. |
 | Cuerpo | `--text-body-*` | Texto corrido. |
 | Pequeño | `--text-small-*` | Metadatos (fecha, peso del archivo), ayudas de formulario. |

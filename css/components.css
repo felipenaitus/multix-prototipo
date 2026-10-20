@@ -1834,6 +1834,11 @@ a.pagination__item:hover,
   color: var(--color-text-inverse);
 }
 
+/* Título en líneas separadas (por ejemplo, una por peso en el Display destacado) */
+.hero__title-line {
+  display: block;
+}
+
 .hero__lead {
   color: var(--color-text-inverse-muted);
 }
@@ -3715,7 +3720,7 @@ a.pagination__item:hover,
 }
 
 /* Hero con contenido dividido: textos a la izquierda y acción a la derecha,
-   alineados abajo dentro del ancho de contenido. En mobile, la acción va debajo. */
+   alineados abajo dentro del ancho de contenido. En mobile y tablet, la acción va debajo. */
 .hero__content--split {
   display: grid;
   gap: var(--space-32);
@@ -3727,7 +3732,7 @@ a.pagination__item:hover,
   gap: var(--space-20);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
   .hero__content--split {
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: end;
