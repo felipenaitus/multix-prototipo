@@ -109,6 +109,7 @@
         <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Título 2</span><span class="t-small c-secondary">Sora 400 · --text-h2</span></div><p class="type-row__sample t-h2">Resultados trimestrales</p></li>
         <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Título 3</span><span class="t-small c-secondary">Sora 400 · --text-h3</span></div><p class="type-row__sample t-h3">Publicación de resultados Q3 2026</p></li>
         <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Cifra L · M · S</span><span class="t-small c-secondary">Sora 300 · --text-figure-*</span></div><p class="type-row__sample"><span class="t-figure-l c-brand">+3.500</span>&nbsp;&nbsp;<span class="t-figure-m c-brand">$ 152,40</span>&nbsp;&nbsp;<span class="t-figure-s c-brand">2026</span></p></li>
+        <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Cifra destacada</span><span class="t-small c-secondary">Sora 600 · --text-figure-strong-weight</span></div><p class="type-row__sample"><span class="t-figure-l t-figure-strong c-brand">30+</span></p></li>
         <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Cuerpo L</span><span class="t-small c-secondary">Manrope 400 · --text-body-l</span></div><p class="type-row__sample t-body-l">Bajadas y textos introductorios de cada página o sección.</p></li>
         <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Cuerpo</span><span class="t-small c-secondary">Manrope 400 · --text-body</span></div><p class="type-row__sample t-body">Texto corrido. Multi X es una compañía salmonera con integración vertical, desde la ova hasta la venta en más de 30 mercados.</p></li>
         <li class="type-row"><div class="type-row__meta"><span class="t-ui-small-strong">Pequeño</span><span class="t-small c-secondary">Manrope 500 · --text-small</span></div><p class="type-row__sample t-small c-secondary">14 oct 2026 · PDF 320 KB</p></li>
@@ -746,21 +747,27 @@
 
       <!-- Nuestras marcas -->
       <div class="kit-block">
-        <h3 class="t-label kit-block__title">Nuestras marcas + descarga del catálogo (bloque aparte)</h3>
+        <h3 class="t-label kit-block__title">Nuestras marcas (hover: foto de fondo y logo en blanco) + descarga del catálogo</h3>
         <ul class="brands" role="list">
           <li>
-            <article class="brand-card">
-              <div class="brand-card__logo t-h2">Latitude 45</div>
-              <p class="placeholder-tag">[logo por definir]</p>
-              <a class="btn btn--tertiary hit" href="#" target="_blank" rel="noopener">Ir al sitio<svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg><span class="visually-hidden">de Latitude 45 (abre en una pestaña nueva)</span></a>
-            </article>
+            <a class="brand-card" href="#" target="_blank" rel="noopener">
+              <span class="brand-card__media" aria-hidden="true"><img src="assets/img/marca-fondo.jpg" alt="" loading="lazy"></span>
+              <span class="brand-card__logo">
+                <img class="brand-card__logo-color" src="assets/brands/latitude45.png" alt="Latitude 45" width="640" height="173">
+                <img class="brand-card__logo-white" src="assets/brands/latitude45-blanco.png" alt="" aria-hidden="true" width="640" height="173">
+              </span>
+              <span class="brand-card__cta t-ui-button">Ir al sitio<svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg><span class="visually-hidden"> de Latitude 45 (abre en una pestaña nueva)</span></span>
+            </a>
           </li>
           <li>
-            <article class="brand-card">
-              <div class="brand-card__logo t-h2">Arka Fjord</div>
-              <p class="placeholder-tag">[logo por definir]</p>
-              <a class="btn btn--tertiary hit" href="#" target="_blank" rel="noopener">Ir al sitio<svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg><span class="visually-hidden">de Arka Fjord (abre en una pestaña nueva)</span></a>
-            </article>
+            <a class="brand-card" href="#" target="_blank" rel="noopener">
+              <span class="brand-card__media" aria-hidden="true"><img src="assets/img/marca-fondo.jpg" alt="" loading="lazy"></span>
+              <span class="brand-card__logo">
+                <img class="brand-card__logo-color" src="assets/brands/arkafjord.png" alt="Arka Fjord" width="640" height="202">
+                <img class="brand-card__logo-white" src="assets/brands/arkafjord-blanco.png" alt="" aria-hidden="true" width="640" height="202">
+              </span>
+              <span class="brand-card__cta t-ui-button">Ir al sitio<svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg><span class="visually-hidden"> de Arka Fjord (abre en una pestaña nueva)</span></span>
+            </a>
           </li>
         </ul>
         <div class="catalog-cta">
@@ -778,9 +785,8 @@
       <div class="kit-block">
         <h3 class="t-label kit-block__title">Encabezado de sección · nuevo</h3>
         <div class="section-head">
-          <p class="t-label c-accent">Soluciones</p>
           <h2 class="t-h2">Un formato para cada mercado</h2>
-          <p class="t-body-l section-head__lead">Etiqueta + Título 2 + bajada opcional (máx. 68 % del contenedor en desktop). [contenido por definir]</p>
+          <p class="t-body-l section-head__lead">Título 2 + bajada opcional (máx. 68 % del contenedor en desktop). Sin etiqueta. [contenido por definir]</p>
         </div>
       </div>
 
@@ -825,11 +831,10 @@
         <div class="markets">
           <div class="markets__info">
             <div class="section-head">
-              <p class="t-label c-accent">Mercados</p>
               <h4 class="t-h2">Mercado y oficinas comerciales</h4>
             </div>
             <div class="markets__stat">
-              <p class="t-figure-l" data-count="30" data-suffix="+">30+</p>
+              <p class="t-figure-l t-figure-strong" data-count="30" data-suffix="+">30+</p>
               <p class="t-body c-secondary">países de destino [contenido por definir]</p>
             </div>
             <dl class="markets__regions">
@@ -941,7 +946,6 @@
           <span class="hero__placeholder t-small">[video por definir]</span>
           <div class="hero__content hero__content--split">
             <div class="hero__text">
-              <p class="t-label c-inverse-muted">Productos</p>
               <p class="t-display hero__title"><span class="hero__title-line t-display-light">Your salmon</span> <span class="hero__title-line t-display-strong">solution partner</span></p>
               <p class="t-body-l hero__lead">Bajada del hero. [contenido por definir]</p>
             </div>

@@ -57,3 +57,7 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 - Giro continuo muy lento (aprox. una vuelta cada 80 s) solo mientras el globo está a la vista (IntersectionObserver); se detiene con el mouse encima o con un pin seleccionado.
 - Arrastrar gira el globo. Con foco o clic en un pin, el globo gira hasta centrarlo (3 × `--duration-slow`, salida suave) y muestra su nombre (`--duration-fast`).
 - Con `prefers-reduced-motion`: sin giro automático y el centrado es instantáneo.
+
+## Firma · Hover de marcas (solo Productos › Nuestras marcas)
+- Con hover o foco en una marca, la foto de fondo aparece (opacidad, `--duration-slow`) y se acerca levemente (escala 1,06 → 1, `--duration-reveal`); el logo en color cambia al logo en blanco y "Ir al sitio" pasa a blanco (`--duration-slow`).
+- Con movimiento reducido el cambio es instantáneo (las duraciones quedan en 0).

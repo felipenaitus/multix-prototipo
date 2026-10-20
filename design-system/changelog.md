@@ -4,6 +4,12 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Marcas con logos y hover, cifra destacada y sin etiquetas
+- Figma pendiente · Código ✓ · Nuestras marcas con los logos oficiales (Latitude 45 y Arka Fjord, recortados y en versión blanca generada a partir del original). Hover con foto de fondo y logo en blanco: nuevo patrón Firma en motion.md.
+- Figma pendiente · Código ✓ · Nueva variante "Cifra destacada" (`--text-figure-strong-weight`: 600, `.t-figure-strong`), usada en la cifra de Mercados.
+- Código ✓ · Se quitan las etiquetas sobre los títulos de sección y del hero en Productos (el título basta). Quedan las etiquetas dentro de los componentes (catálogo, oficinas comerciales, contacto).
+- Código ✓ · Más aire entre las marcas y la descarga del catálogo (80 px en mobile, 128 px en desktop).
+
 ## 2026-10-20 · Sin cajas en Productos
 - Figma pendiente · Código ✓ · Principio nuevo (pedido del cliente): sin bloques con borde, fondo de color o sombra; separaciones con líneas delgadas y espaciado. Registrado en CLAUDE.md §3 y en ui-kit.md.
 - Código ✓ · Nuestras marcas: columnas abiertas separadas por líneas (antes tarjetas con borde). Mobile: apiladas, sin slider.

@@ -1714,22 +1714,101 @@ a.pagination__item:hover,
   border-top: var(--border-thin) solid var(--color-border-default);
 }
 
+/* Cada marca es un enlace a su sitio. En reposo: logo en su color original.
+   Con hover o foco: aparece una foto de fondo con velo Navy 950 y el logo y el
+   texto pasan a blanco (patrón Firma de Productos, motion.md). */
 .brand-card {
+  position: relative;
   display: flex;
   flex: 1;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--space-20);
-  padding: var(--space-48) var(--space-24);
+  gap: var(--space-24);
+  padding: var(--space-64) var(--space-24);
+  overflow: hidden;
   text-align: center;
+  color: var(--color-text-brand);
+}
+
+.brand-card__media {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity var(--duration-slow) var(--easing-standard);
+}
+
+.brand-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.06);
+  transition: transform var(--duration-reveal) var(--easing-out);
+}
+
+.brand-card__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-bg-inverse);
+  opacity: .5;
 }
 
 .brand-card__logo {
-  display: flex;
+  position: relative;
+  display: grid;
+  place-items: center;
+  max-width: 100%;
+}
+
+.brand-card__logo img {
+  grid-area: 1 / 1;
+  width: auto;
+  height: var(--space-64);
+  max-width: 100%;
+  object-fit: contain;
+  transition: opacity var(--duration-slow) var(--easing-standard);
+}
+
+.brand-card__logo-white {
+  opacity: 0;
+}
+
+.brand-card__cta {
+  position: relative;
+  display: inline-flex;
   align-items: center;
-  min-height: calc(var(--space-64) + var(--space-8));
-  color: var(--color-text-primary);
+  gap: var(--space-8);
+  transition: color var(--duration-slow) var(--easing-standard);
+}
+
+.brand-card:hover .brand-card__media,
+.brand-card:focus-visible .brand-card__media {
+  opacity: 1;
+}
+
+.brand-card:hover .brand-card__media img,
+.brand-card:focus-visible .brand-card__media img {
+  transform: scale(1);
+}
+
+.brand-card:hover .brand-card__logo-color,
+.brand-card:focus-visible .brand-card__logo-color {
+  opacity: 0;
+}
+
+.brand-card:hover .brand-card__logo-white,
+.brand-card:focus-visible .brand-card__logo-white {
+  opacity: 1;
+}
+
+.brand-card:hover .brand-card__cta,
+.brand-card:focus-visible .brand-card__cta {
+  color: var(--color-text-inverse);
+}
+
+.brand-card:focus-visible {
+  outline-offset: calc(-1 * var(--border-focus));
 }
 
 @media (min-width: 768px) {
@@ -1742,7 +1821,11 @@ a.pagination__item:hover,
   }
 
   .brand-card {
-    padding-block: var(--space-64);
+    padding-block: var(--space-96);
+  }
+
+  .brand-card__logo img {
+    height: var(--space-80);
   }
 }
 
@@ -3860,7 +3943,7 @@ a.pagination__item:hover,
 }
 
 .brands + .catalog-cta {
-  margin-top: var(--space-48);
+  margin-top: var(--space-80);
 }
 
 .catalog-cta__text {
@@ -3907,7 +3990,7 @@ a.pagination__item:hover,
 
 @media (min-width: 1280px) {
   .brands + .catalog-cta {
-    margin-top: var(--space-64);
+    margin-top: var(--space-128);
   }
 
   .catalog-cta__cover {

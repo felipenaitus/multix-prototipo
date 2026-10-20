@@ -156,6 +156,9 @@ a:hover {
   font-weight: var(--text-figure-s-weight);
 }
 
+/* Cifra destacada: variante más pesada de Cifra L / M / S (va después para ganar) */
+.t-figure-strong { font-weight: var(--text-figure-strong-weight); }
+
 .t-body-l {
   font-size: var(--text-body-l-size);
   line-height: var(--text-body-l-lh);

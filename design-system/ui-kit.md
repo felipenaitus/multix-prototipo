@@ -50,6 +50,7 @@ Sora (títulos y cifras, pesos 300 y 400; 200 y 600 solo en el Display destacado
 | Título 1 | `--text-h1-*` | Título de página interior. |
 | Título 2 | `--text-h2-*` | Título de sección. |
 | Título 3 | `--text-h3-*` | Títulos de tarjeta, bloque o evento. |
+| Cifra destacada | `--text-figure-*` + `--text-figure-strong-weight` (600) | Variante más pesada de Cifra L / M / S para la cifra principal de un bloque (`.t-figure-strong`), por ejemplo la de Mercados. Pendiente de llevar a Figma. |
 | Cifra L / M / S | `--text-figure-*` | Cifras "en una mirada", precio de la acción, metas, años de acordeón. Toda cifra o métrica destacada cuenta desde 0 hasta su valor al entrar en pantalla (`data-count`, con `data-prefix` / `data-suffix`). No aplica a fechas, años ni al precio de la acción. |
 | Cuerpo L | `--text-body-l-*` | Bajadas y textos introductorios. |
 | Cuerpo | `--text-body-*` | Texto corrido. |
@@ -154,11 +155,11 @@ Patrón único para toda la documentación del sitio (Inversionistas, Gobernanza
 - **Metas con avance:** selector de año (tabs) + filas con meta, barra de progreso y cifra (Cifra M). Las cifras animan al entrar en viewport.
 - **Certificaciones y membresías:** tabs (Certificaciones / Membresías) + tarjetas desplegables con logo, nombre, qué cubre y enlace al certificado. En Productos se repiten solo las certificaciones.
 - **Preguntas frecuentes:** acordeón; una pregunta abierta a la vez.
-- **Nuestras marcas:** columnas abiertas con logo legible y enlace externo a cada sitio (solo Latitude 45 y Arka Fjord), separadas por líneas delgadas arriba, abajo y entre columnas. Sin caja.
+- **Nuestras marcas:** cada marca es un enlace a su sitio, en columnas abiertas separadas por líneas delgadas (sin caja). En reposo, el logo oficial en su color original (`assets/brands/latitude45.png`, `arkafjord.png`) y "Ir al sitio". Con hover o foco aparece una foto de fondo con velo Navy 950 al 50 % y el logo y el texto pasan a blanco (`*-blanco.png`). Foto de prueba: `assets/img/marca-fondo.jpg` (la misma en ambas). Debajo, con más aire, el catálogo.
 - **Descarga del catálogo (`.catalog-cta`):** fila abierta bajo las marcas, sin fondo de color: etiqueta (Coral 600), Título 2, bajada, botón principal "Descargar catálogo" y espacio para la portada a la derecha.
 
 ### Página Productos (nuevos · pendientes de llevar a Figma)
-- **Encabezado de sección (`.section-head`):** etiqueta (Coral 600) + Título 2 + bajada opcional en Cuerpo L secundario (máx. 68 % del contenedor en desktop). Abre cada bloque de página.
+- **Encabezado de sección (`.section-head`):** Título 2 + bajada opcional en Cuerpo L secundario (máx. 68 % del contenedor en desktop). Abre cada bloque de página. Sin etiqueta sobre el título (decisión de Felipe: el título basta); tampoco en el hero.
 - **Hero de página (`.hero--page`):** el mismo hero del kit a casi toda la altura, con foto y header transparente encima. Contenido alineado al contenedor.
 - **Tarjetas de solución (`.solutions` + `.solution-card`):** foto, Título 3, descripción y enlace terciario. Fresco · Congelado · Ahumado.
 - **Mercados y oficinas (`.markets`):** globo interactivo a la izquierda (80 % de su columna, para dejar márgenes amplios) y, a la derecha, el encabezado de la sección junto con la cifra destacada, las regiones con países y las oficinas comerciales con bandera.
