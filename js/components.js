@@ -10,6 +10,7 @@
    [data-tabs]                   Pestañas
    [data-filters]                Barra de filtros (panel inferior en mobile)
    [data-add-calendar]           Agregar al calendario (opciones en mobile)
+   video[data-hero-video]        Video de fondo: con movimiento reducido queda la imagen (poster)
    ========================================================================== */
 (function () {
   'use strict';
@@ -277,6 +278,26 @@
     });
   }
 
+  /* ---------- Video de fondo del hero ----------
+     Con prefers-reduced-motion se detiene y queda el poster (CLAUDE.md 3). */
+  function initHeroVideo() {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    $all('video[data-hero-video]').forEach(function (v) {
+      function apply() {
+        if (reduce.matches) {
+          v.removeAttribute('autoplay');
+          v.pause();
+          v.preload = 'none';
+        } else {
+          var p = v.play();
+          if (p && p.catch) p.catch(function () {});
+        }
+      }
+      apply();
+      reduce.addEventListener('change', apply);
+    });
+  }
+
   function init() {
     initReveal();
     watchCounters(document);
@@ -284,6 +305,7 @@
     initTabs();
     initFilters();
     initAddCalendar();
+    initHeroVideo();
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

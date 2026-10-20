@@ -5,6 +5,8 @@
    ========================================================================== */
 
 .test-hero {
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,4 +37,9 @@
 
 .test-page-head p {
   color: var(--color-text-secondary);
+}
+
+/* Texto del hero por sobre el video y su velo (.hero__media) */
+.test-hero__title {
+  position: relative;
 }

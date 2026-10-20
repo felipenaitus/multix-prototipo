@@ -22,7 +22,12 @@
 
   <main id="main">
     <section class="test-hero" data-header-theme="dark" aria-label="Hero">
-      <p class="t-display">Hero</p>
+      <div class="hero__media" aria-hidden="true">
+        <video data-hero-video autoplay muted loop playsinline preload="metadata" poster="../assets/video/hero-poster.jpg">
+          <source src="../assets/video/hero.mp4" type="video/mp4">
+        </video>
+      </div>
+      <p class="t-display test-hero__title">Hero</p>
     </section>
     <section class="test-block test-block--white" aria-label="Contenido 1"><p class="t-h2">Contenido</p></section>
     <section class="test-block test-block--subtle" aria-label="Contenido 2"><p class="t-h2">Contenido</p></section>

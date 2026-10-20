@@ -15,3 +15,7 @@ blob-report/
 
 # Configuración local de Claude Code (no compartida)
 .claude/settings.local.json
+
+# Video del hero en bruto (4K, 147 MB): supera el límite de GitHub (100 MB).
+# Se versiona cuando exista la versión comprimida para web.
+assets/video/hero.mp4
