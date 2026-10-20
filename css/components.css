@@ -2768,9 +2768,10 @@ a.pagination__item:hover,
   align-items: center;
   gap: var(--space-8);
   min-height: var(--touch-target);
-  font-size: var(--text-ui-nav-size);
-  line-height: var(--text-ui-nav-lh);
-  font-weight: var(--text-ui-nav-weight);
+  /* Mismo estilo que la barra utilitaria: UI/Pequeño destacado */
+  font-size: var(--text-ui-small-strong-size);
+  line-height: var(--text-ui-small-strong-lh);
+  font-weight: var(--text-ui-small-strong-weight);
   /* Ink 600: no compite con los accesos principales */
   color: var(--color-text-secondary);
 }

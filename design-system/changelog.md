@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Secundarios del menú como la barra utilitaria
+- Código ✓ · Portales y Recursos del panel pasan de UI/Navegación (14 px) a UI/Pequeño destacado (13 px, semibold), el mismo estilo de la barra utilitaria.
+
 ## 2026-10-20 · Noticia destacada: solo título
 - Código ✓ · La tarjeta de noticia destacada muestra solo el título (sin bajada), con un máximo de 2 líneas y puntos suspensivos si no cabe. El título completo queda como tooltip.
 
