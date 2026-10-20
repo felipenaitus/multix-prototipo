@@ -152,7 +152,6 @@
   var FEATURED = {
     tag: 'Noticias · Octubre de 2026',
     label: 'Multi X informa término de contingencia en centros Taraba 7 y 8, en la Región de Magallanes',
-    lead: 'El cierre fue confirmado por Sernapesca tras el retiro de la totalidad de los peces afectados.',
     image: 'assets/img/noticia-destacada.jpg',
     cta: 'Leer noticia',
     href: '#'
@@ -319,8 +318,7 @@
                   '<span class="menu-preview__media"><img src="' + ROOT + FEATURED.image + '" alt="" loading="lazy" decoding="async"></span>' +
                   '<span class="menu-preview__content">' +
                     '<span class="t-label menu-preview__tag">' + esc(FEATURED.tag) + '</span>' +
-                    '<span class="menu-preview__title">' + esc(FEATURED.label) + '</span>' +
-                    '<span class="menu-preview__lead">' + esc(FEATURED.lead) + '</span>' +
+                    '<span class="menu-preview__title" title="' + esc(FEATURED.label) + '">' + esc(FEATURED.label) + '</span>' +
                     '<span class="menu-preview__cta">' + esc(FEATURED.cta) + icon('arrow', 'md', 'icon--arrow') + '</span>' +
                   '</span>' +
                 '</a>' +

@@ -2637,22 +2637,16 @@ a.pagination__item:hover,
   color: var(--color-text-accent-on-dark);
 }
 
-/* UI/Destacado: el título real es largo y en Título 3 no cabe en la columna */
+/* UI/Destacado, máximo 2 líneas; si no cabe, termina en puntos suspensivos */
 .menu-preview__title {
-  font-size: var(--text-ui-strong-size);
-  line-height: var(--text-ui-strong-lh);
-  font-weight: var(--text-ui-strong-weight);
-}
-
-.menu-preview__lead {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   overflow: hidden;
-  font-size: var(--text-small-size);
-  line-height: var(--text-small-lh);
-  font-weight: var(--text-small-weight);
-  color: var(--color-text-inverse-muted);
+  font-size: var(--text-ui-strong-size);
+  line-height: var(--text-ui-strong-lh);
+  font-weight: var(--text-ui-strong-weight);
 }
 
 .menu-preview__cta {
