@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Logo en el header
+- Código ✓ · El header usa el logo oficial (`assets/brand/logo-multix.svg`) como SVG en línea: letras en el color del tema (Navy 900 en claro, blanco en oscuro y sobre el hero) y la X en Coral 500 (`--color-bg-accent-hover`). Alto `--space-20` en mobile y tablet, `--space-24` en desktop; al 85% en el header compacto.
+- Pendiente · El footer todavía muestra "MULTI X" en texto.
+
 ## 2026-10-20 · Video en el hero de prueba
 - Código ✓ · `pruebas/navegacion-hero.html` usa el video del hero (`assets/video/hero.mp4`) a pantalla completa, con el velo oscuro de `.hero__media`. Con `prefers-reduced-motion` el video se detiene y queda la imagen `assets/video/hero-poster.jpg` (comportamiento `video[data-hero-video]` en components.js).
 - Código ✓ · Video comprimido para web con ffmpeg: de 4K 59,94 fps (147 MB) a 1080p 30 fps, H.264 High, sin audio, faststart (6,4 MB). Se versiona en el repositorio y se ve también en GitHub Pages.
