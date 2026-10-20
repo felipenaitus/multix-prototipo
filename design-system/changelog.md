@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Botón comercial en el hero de Productos
+- Figma pendiente · Código ✓ · Hero de Productos con los textos a la izquierda y "Contactar al equipo comercial" a la derecha, dentro del ancho de contenido (`.hero__content--split`). En mobile, el botón va debajo.
+- Figma pendiente · Código ✓ · `<sales-contact variant="inline">`: el botón va en la página y el formulario se abre como modal centrado (panel inferior en mobile) sobre el sitio oscurecido. Productos deja de usar el botón flotante.
+
 ## 2026-10-20 · Productos: video, globo, catálogo aparte y 8 certificaciones
 - Código ✓ · Hero de Productos con video de fondo (`assets/video/productos.mp4`, 720p H.264 sin audio, 69 MB → 6,2 MB) y poster.
 - Código ✓ · Se quita la sección Soluciones de Productos por ahora (el componente sigue en el kit).

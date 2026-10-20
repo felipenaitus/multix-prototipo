@@ -27,10 +27,14 @@
           <source src="assets/video/productos.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="container hero__content">
-        <p class="t-label c-inverse-muted">Productos</p>
-        <h1 class="t-display hero__title" id="prod-title">Your salmon solution partner</h1>
-        <p class="t-body-l hero__lead">Salmón Atlántico del sur de Chile, fresco, congelado y ahumado, con una cadena integrada que nos permite responder a cada cliente con la misma calidad. [contenido por definir]</p>
+      <div class="container hero__content hero__content--split">
+        <div class="hero__text">
+          <p class="t-label c-inverse-muted">Productos</p>
+          <h1 class="t-display hero__title" id="prod-title">Your salmon solution partner</h1>
+          <p class="t-body-l hero__lead">Salmón Atlántico del sur de Chile, fresco, congelado y ahumado, con una cadena integrada que nos permite responder a cada cliente con la misma calidad. [contenido por definir]</p>
+        </div>
+        <!-- Acceso al formulario comercial: se abre como modal -->
+        <sales-contact variant="inline"></sales-contact>
       </div>
     </section>
 
@@ -336,7 +340,5 @@
 
   <site-footer></site-footer>
 
-  <!-- Módulo de acceso al formulario comercial (flotante, abajo a la izquierda) -->
-  <sales-contact></sales-contact>
 </body>
 </html>

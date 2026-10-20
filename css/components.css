@@ -3667,6 +3667,65 @@ a.pagination__item:hover,
   }
 }
 
+/* Variante en línea (variant="inline"): el botón va en el flujo de la página
+   (por ejemplo en el hero) y el formulario se abre como modal centrado sobre el
+   sitio oscurecido; en mobile, como panel inferior. Queda sobre el header. */
+.sales-contact--inline {
+  position: static;
+  z-index: auto;
+}
+
+.sales-contact__scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 61;
+  background: var(--color-bg-inverse);
+  opacity: .45;
+}
+
+.sales-contact__panel.sales-contact__panel--modal {
+  z-index: 62;
+  color: var(--color-text-primary);
+}
+
+@media (min-width: 768px) {
+  .sales-contact__panel.sales-contact__panel--modal {
+    position: fixed;
+    top: 50%;
+    bottom: auto;
+    left: 50%;
+    translate: -50% -50%;
+    width: calc(4 * var(--space-128));
+    max-height: calc(100vh - var(--space-128));
+    padding: var(--space-32);
+  }
+}
+
+/* Hero con contenido dividido: textos a la izquierda y acción a la derecha,
+   alineados abajo dentro del ancho de contenido. En mobile, la acción va debajo. */
+.hero__content--split {
+  display: grid;
+  gap: var(--space-32);
+}
+
+.hero__content--split .hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+@media (min-width: 768px) {
+  .hero__content--split {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: var(--space-48);
+  }
+
+  .hero__content--split .hero__lead {
+    max-width: 80%;
+  }
+}
+
 /* Globo de mercados ([data-globe], js/components.js) · patrón Firma de Productos.
    Esfera blanca con continentes en puntos Navy; pines Coral 500 (mercados) y
    Navy (oficinas comerciales). El nombre aparece con hover, foco o clic. */

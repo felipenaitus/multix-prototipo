@@ -704,6 +704,9 @@
      con forma de diálogo) que abre un formulario: panel sobre el botón en
      desktop y panel inferior a lo ancho en mobile. Se cierra con la X, Escape o
      clic fuera. product="fresco|congelado|ahumado" preselecciona el producto.
+     variant="inline": el botón va en el flujo de la página (por ejemplo en el
+     hero) y el formulario se abre como modal centrado sobre el sitio oscurecido
+     (panel inferior en mobile).
      El envío es de prototipo: muestra un mensaje de confirmación.
      ====================================================================== */
   var PRODUCTS = ['Fresco', 'Congelado', 'Ahumado'];
@@ -715,13 +718,16 @@
       injectSprite();
       var self = this;
       var demo = this.hasAttribute('demo');
+      var inline = this.getAttribute('variant') === 'inline';
       var panelId = nextId('sales-panel');
       var f = nextId('sales');
       var preset = (this.getAttribute('product') || '').toLowerCase();
       this.classList.add('sales-contact');
+      if (inline) this.classList.add('sales-contact--inline');
 
       this.innerHTML =
-        '<div class="sales-contact__panel" id="' + panelId + '" role="dialog" aria-modal="false" aria-labelledby="' + f + '-title"' + (demo ? '' : ' hidden') + '>' +
+        (inline && !demo ? '<div class="sales-contact__scrim" aria-hidden="true" hidden></div>' : '') +
+        '<div class="sales-contact__panel' + (inline ? ' sales-contact__panel--modal' : '') + '" id="' + panelId + '" role="dialog" aria-modal="' + inline + '" aria-labelledby="' + f + '-title"' + (demo ? '' : ' hidden') + '>' +
           '<div class="sales-contact__head">' +
             '<p class="t-h3" id="' + f + '-title">Contactar al equipo comercial</p>' +
             '<button type="button" class="header__icon-btn sales-contact__close" aria-label="Cerrar formulario">' +
@@ -749,9 +755,17 @@
       var panel = this.querySelector('.sales-contact__panel');
       var form = this.querySelector('form');
       var done = this.querySelector('.sales-contact__done');
+      var scrim = this.querySelector('.sales-contact__scrim');
+      // Modal: el panel y el fondo pasan al body para quedar fijos a la ventana
+      // (la animación de entrada del hero deja un transform en sus hijos)
+      if (inline) {
+        document.body.appendChild(scrim);
+        document.body.appendChild(panel);
+      }
 
       function setOpen(open) {
         panel.hidden = !open;
+        if (scrim) scrim.hidden = !open;
         toggle.setAttribute('aria-expanded', String(open));
         self.classList.toggle('is-open', open);
         if (open) setTimeout(function () { panel.querySelector('input').focus(); }, 30);
@@ -760,7 +774,7 @@
         e.stopPropagation();
         setOpen(panel.hidden);
       });
-      this.querySelector('.sales-contact__close').addEventListener('click', function () {
+      panel.querySelector('.sales-contact__close').addEventListener('click', function () {
         setOpen(false);
         toggle.focus();
       });
@@ -768,7 +782,7 @@
         if (e.key === 'Escape' && !panel.hidden) { setOpen(false); toggle.focus(); }
       });
       document.addEventListener('click', function (e) {
-        if (!panel.hidden && !self.contains(e.target)) setOpen(false);
+        if (!panel.hidden && ((!self.contains(e.target) && !panel.contains(e.target)) || e.target === scrim)) setOpen(false);
       });
       form.addEventListener('submit', function (e) {
         e.preventDefault();
