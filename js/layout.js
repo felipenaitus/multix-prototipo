@@ -675,7 +675,7 @@
       }
       var label = this.getAttribute('label') || 'Contacto inversionistas';
       var role = this.getAttribute('role-title');
-      this.classList.add('card', 'ir-contact');
+      this.classList.add('ir-contact');
       this.innerHTML =
         '<p class="t-label c-accent">' + esc(label) + '</p>' +
         (name ? '<p class="t-h3">' + esc(name) + '</p>' : '') +

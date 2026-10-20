@@ -73,6 +73,8 @@ En mobile, display, títulos y cifras bajan de tamaño (ver `tokens.css`, propue
 
 ## Componentes
 
+> **Sin cajas** (pedido del cliente): los componentes no se encierran en bloques con borde, relleno de color o sombra. Se separan con líneas delgadas (`--border-thin` en `--color-border-default`) y espaciado. Aplicado en Productos (marcas, catálogo, certificaciones, contacto). Componentes del kit que todavía son cajas y deben revisarse: tarjeta genérica (`.card`), último resultado, próximo evento, acción, documentos, tarjetas de solución, lista de certificaciones con tabs y suscripción.
+
 ### Botones (node 75-194)
 Alto 50px, padding 16/24, radio full, texto UI/Botón.
 | Variante | Uso | Estados |
@@ -152,8 +154,8 @@ Patrón único para toda la documentación del sitio (Inversionistas, Gobernanza
 - **Metas con avance:** selector de año (tabs) + filas con meta, barra de progreso y cifra (Cifra M). Las cifras animan al entrar en viewport.
 - **Certificaciones y membresías:** tabs (Certificaciones / Membresías) + tarjetas desplegables con logo, nombre, qué cubre y enlace al certificado. En Productos se repiten solo las certificaciones.
 - **Preguntas frecuentes:** acordeón; una pregunta abierta a la vez.
-- **Nuestras marcas:** tarjetas con logo legible y enlace externo a cada sitio (solo Latitude 45 y Arka Fjord).
-- **Descarga del catálogo (`.catalog-cta`):** bloque aparte, Navy 950 con etiqueta coral (Coral 500 sobre oscuro), Título 2, bajada, botón Acento "Descargar catálogo" y espacio para la portada. Va debajo de las marcas.
+- **Nuestras marcas:** columnas abiertas con logo legible y enlace externo a cada sitio (solo Latitude 45 y Arka Fjord), separadas por líneas delgadas arriba, abajo y entre columnas. Sin caja.
+- **Descarga del catálogo (`.catalog-cta`):** fila abierta bajo las marcas, sin fondo de color: etiqueta (Coral 600), Título 2, bajada, botón principal "Descargar catálogo" y espacio para la portada a la derecha.
 
 ### Página Productos (nuevos · pendientes de llevar a Figma)
 - **Encabezado de sección (`.section-head`):** etiqueta (Coral 600) + Título 2 + bajada opcional en Cuerpo L secundario (máx. 68 % del contenedor en desktop). Abre cada bloque de página.
@@ -165,7 +167,7 @@ Patrón único para toda la documentación del sitio (Inversionistas, Gobernanza
 - **Módulo comercial (`<sales-contact>` en `js/layout.js`):** botón flotante abajo a la izquierda "Contactar al equipo comercial" (Acento con forma de diálogo, `.btn--speech`) que abre un formulario: nombre, empresa, correo, producto de interés (preseleccionable con `product="fresco|congelado|ahumado"`) y mensaje (`.control--textarea`). Se cierra con la X, Escape o clic fuera. El envío es de prototipo.
   - Variante en línea (`variant="inline"`): el botón va en el flujo de la página y el formulario se abre como modal centrado sobre el sitio oscurecido (Navy 950 al 45 %), por encima del header. Se usa en el hero de Productos, que ya no lleva el botón flotante.
 - **Hero con acción a la derecha (`.hero__content--split`):** textos (etiqueta, Display y bajada) a la izquierda y la acción a la derecha, alineada abajo dentro del ancho de contenido.
-- **Certificaciones en grilla (`.cert-grid` + `.cert-card`):** para 8 o más certificaciones. Cada tarjeta: espacio de logo (por ahora vacío), sigla y nombre completo; al tocarla despliega la descripción, qué cubre, vigencia y el certificado. Reemplaza a la lista de certificaciones en Productos.
+- **Certificaciones en grilla (`.cert-grid` + `.cert-card`):** para 8 o más certificaciones. Cada certificación es una celda abierta con una línea delgada arriba (sin caja): espacio de logo (por ahora vacío, sin relleno), sigla y nombre completo; al tocarla despliega la descripción, qué cubre, vigencia y el certificado. Reemplaza a la lista de certificaciones en Productos.
 - **Contacto comercial:** reutiliza `<ir-contact>` con `label` propio. Una sola persona de contacto.
 
 ### Hero con franja temporal (node 75-921)

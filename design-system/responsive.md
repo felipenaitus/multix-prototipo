@@ -40,7 +40,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Gráfico de la acción | Gráfico con ejes y tooltip al hover | Gráfico simplificado; tooltip al tocar; selector de período en tira con scroll |
 | Metas con avance | Selector de año en fila; barras con meta y cifra a la derecha | Selector con scroll horizontal; meta arriba, barra y cifra debajo |
 | Certificaciones (tabs + desplegables) | Tabs + tarjetas desplegables en grilla | Tabs en tira; tarjetas en lista de 1 columna |
-| Nuestras marcas | Tarjetas en fila | Slider con scroll-snap |
+| Nuestras marcas | Columnas abiertas separadas por una línea vertical, con líneas arriba y abajo | Apiladas, separadas por líneas horizontales |
 | Preguntas frecuentes | Acordeón | Acordeón (igual), zona táctil completa en la pregunta |
 | Composición con ilustración | Texto a la izquierda, ilustración a la derecha | Ilustración arriba (más chica), texto debajo; cifras en 2 × 2 |
 | Formularios | Campos en 2-3 columnas cuando son cortos | 1 columna; teclado según el tipo de campo (`type="email"`, `tel`, etc.) |
@@ -50,7 +50,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Mercados y oficinas | Globo a la izquierda (80 % de su mitad) y título + datos a la derecha, en dos mitades | Título y datos primero, globo debajo (60 % del ancho en tablet, 90 % en mobile); regiones en 2 columnas en tablet y 1 en mobile |
 | Globo de mercados | Gira solo; se detiene con el mouse encima; se arrastra; nombre del pin con hover, foco o clic | Se arrastra en horizontal (el scroll vertical de la página sigue funcionando); nombre del pin al tocarlo |
 | Descarga del catálogo | Texto y botón a la izquierda, portada a la derecha | Sin portada; texto y botón apilados |
-| Certificaciones en grilla | 4 columnas de tarjetas con el logo arriba; la descripción se despliega dentro de la tarjeta | Tablet: 2 columnas. Mobile: lista de 1 columna con el logo a la izquierda |
+| Certificaciones en grilla | 4 columnas de celdas abiertas con una línea arriba; logo arriba; la descripción se despliega dentro de la celda | Tablet: 2 columnas. Mobile: lista de 1 columna separada por líneas, con el logo a la izquierda |
 | Cadena de valor (Del cultivo a la mesa) | 6 pasos en una fila sobre una línea horizontal | Tablet: 3 columnas. Mobile: lista vertical con la línea y los marcadores a la izquierda |
 | Módulo comercial (`<sales-contact>`) | Botón flotante abajo a la izquierda; el formulario se abre como panel sobre el botón | El formulario se abre como panel inferior a lo ancho de la pantalla, por sobre el botón del asistente |
 | Hero con acción a la derecha | Textos a la izquierda y botón a la derecha, alineados abajo | Tablet y mobile: el botón va debajo de los textos (en tablet no hay ancho para ambos sin cortar el título) |

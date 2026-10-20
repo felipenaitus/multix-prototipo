@@ -4,6 +4,14 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Sin cajas en Productos
+- Figma pendiente · Código ✓ · Principio nuevo (pedido del cliente): sin bloques con borde, fondo de color o sombra; separaciones con líneas delgadas y espaciado. Registrado en CLAUDE.md §3 y en ui-kit.md.
+- Código ✓ · Nuestras marcas: columnas abiertas separadas por líneas (antes tarjetas con borde). Mobile: apiladas, sin slider.
+- Código ✓ · Catálogo: fila abierta con fondo blanco y botón principal (antes bloque Navy 950 con botón Acento).
+- Código ✓ · Certificaciones: celdas con una línea arriba y el espacio del logo sin relleno (antes tarjetas con borde).
+- Código ✓ · `<ir-contact>`: sin caja, con línea arriba (deja de usar `.card`; también cambia en Inversionistas).
+- Pendiente · Revisar con Felipe los demás componentes del kit que siguen siendo cajas (ver ui-kit.md).
+
 ## 2026-10-20 · Display destacado y contador en todas las cifras
 - Figma pendiente · Código ✓ · Nuevo estilo "Display destacado": Display con la primera parte en Sora 200 (Extra Light) y la segunda en Sora 600 (Semibold), cada una en su línea. Tokens nuevos `--text-display-light-weight` y `--text-display-strong-weight`. Se usa en el hero de Productos ("Your salmon" / "solution partner") y en la frase del home, que deja de ser prueba.
 - Código ✓ · Sora 200 y 600 se cargan en todas las páginas. CLAUDE.md 2.6 actualizado por decisión de Felipe (antes solo 300 y 400).

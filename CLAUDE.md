@@ -57,6 +57,7 @@ Si hay conflicto entre el código y el Figma, manda el Figma. Si hay conflicto e
 
 ## 3. Enfoque visual aprobado (respetar en toda decisión)
 - Márgenes amplios, liviandad y limpieza. Ante la duda, más aire, no menos.
+- Sin cajas (pedido del cliente): no usar bloques con borde, fondo de color o sombra para agrupar contenido. Las separaciones se hacen con líneas delgadas (`--border-thin`, `--color-border-default`) y espaciado. Los fondos de sección (`section--subtle`) sí se mantienen.
 - Animaciones y transiciones modernas que den interactividad sin saturar. Se usan solo los patrones de `design-system/motion.md`: los "Base" en todo el sitio, los "Firma" solo donde ese archivo indica. Un patrón nuevo se propone a Felipe antes de implementarlo.
 - Fotografía y video curados según su función (hero, fondo con texto, detalle). Mientras no haya material definitivo, usar placeholders neutros marcados como `[foto por definir]`, no imágenes de stock al azar.
 - Respetar `prefers-reduced-motion` (los tokens de duración ya se anulan; los videos de scroll-scrubbing se reemplazan por imagen).
