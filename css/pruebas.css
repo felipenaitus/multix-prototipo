@@ -55,3 +55,40 @@
 .test-hero__accent {
   color: var(--color-text-accent-on-dark);
 }
+
+/* ==========================================================================
+   PRUEBA · Frases del hero en loop (patrón nuevo, aún no está en motion.md)
+   Ciclo de 10 s = 12,5 × --duration-reveal: cada frase entra (8% = 0,8 s),
+   se queda (3,4 s) y sale hacia arriba (0,8 s); la segunda va desfasada
+   medio ciclo. Solo opacity y transform.
+   ========================================================================== */
+.hero-rotator {
+  --rotator-cycle: calc(var(--duration-reveal) * 12.5);
+  display: grid;
+  justify-items: center;
+}
+
+.hero-rotator__phrase {
+  grid-area: 1 / 1;
+  animation: hero-phrase var(--rotator-cycle) var(--easing-out) infinite both;
+}
+
+.hero-rotator__phrase:nth-child(2) {
+  animation-delay: calc(var(--rotator-cycle) / 2);
+}
+
+@keyframes hero-phrase {
+  0%   { opacity: 0; transform: translateY(var(--motion-reveal-distance)); }
+  8%   { opacity: 1; transform: none; }
+  42%  { opacity: 1; transform: none; }
+  50%  { opacity: 0; transform: translateY(calc(-1 * var(--motion-reveal-distance))); }
+  100% { opacity: 0; transform: translateY(calc(-1 * var(--motion-reveal-distance))); }
+}
+
+/* Movimiento reducido: sin animación, las dos frases fijas una bajo la otra */
+@media (prefers-reduced-motion: reduce) {
+  .hero-rotator__phrase {
+    grid-area: auto;
+    animation: none;
+  }
+}
