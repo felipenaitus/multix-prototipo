@@ -599,6 +599,11 @@
     }, { passive: true });
 
     document.documentElement.addEventListener('mouseleave', function () { cursor.classList.add('is-hidden'); });
+
+    // Dentro de un iframe (por ejemplo, el flipbook del catálogo) manda el cursor nativo
+    $all('iframe').forEach(function (f) {
+      f.addEventListener('pointerenter', function () { cursor.classList.add('is-hidden'); });
+    });
   }
 
   function init() {

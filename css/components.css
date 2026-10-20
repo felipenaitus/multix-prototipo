@@ -3935,10 +3935,8 @@ a.pagination__item:hover,
 }
 
 /* Descarga del catálogo: fila abierta bajo las marcas (sin caja): texto y botón
-   a la izquierda; a la derecha, la imagen del catálogo sobre un círculo crema
-   (Offwhite, --color-bg-subtle) centrado con ella. Entrada al aparecer: textos en
-   secuencia, aparece el círculo y luego el catálogo. El círculo crece con el
-   scroll ([data-scroll-grow] en components.js). */
+   a la izquierda; a la derecha, el flipbook del catálogo incrustado (Heyzine),
+   sin borde. Entrada al aparecer: textos en secuencia y luego el flipbook. */
 .catalog-cta {
   display: grid;
   gap: var(--space-48);
@@ -3969,36 +3967,17 @@ a.pagination__item:hover,
   margin-top: var(--space-8);
 }
 
-.catalog-cta__cover {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80%;
-  justify-self: center;
-  aspect-ratio: 1;
+/* Flipbook: ocupa el ancho de su columna con proporción de pliego abierto */
+.catalog-cta__flipbook {
+  width: 100%;
+  aspect-ratio: 4 / 3;
 }
 
-/* Círculo detrás, centrado con la imagen. Escala según el avance del scroll
-   (--scroll-progress de 0 a 1: de 0,6 a 1,1); sin JS o con movimiento reducido, 1. */
-.catalog-cta__cover::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 82%;
-  height: 82%;
-  margin: auto;
-  border-radius: var(--radius-full);
-  background: var(--color-bg-subtle);
-  transform: scale(calc(.6 + .5 * var(--scroll-progress, .8)));
-}
-
-.catalog-cta__cover img {
-  position: relative;
-  z-index: 1;
-  width: 92%;
-  height: auto;
+.catalog-cta__flipbook iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 /* Entrada: el bloque no se mueve como un todo; animan sus partes */
@@ -4007,7 +3986,8 @@ a.pagination__item:hover,
   transform: none;
 }
 
-.js .catalog-cta__text > * {
+.js .catalog-cta__text > *,
+.js .catalog-cta__flipbook {
   opacity: 0;
   transform: translateY(calc(var(--motion-reveal-distance) / 2));
   transition:
@@ -4018,55 +3998,38 @@ a.pagination__item:hover,
 .js .catalog-cta__text > :nth-child(2) { transition-delay: var(--duration-stagger); }
 .js .catalog-cta__text > :nth-child(3) { transition-delay: calc(var(--duration-stagger) * 2); }
 .js .catalog-cta__text > :nth-child(4) { transition-delay: calc(var(--duration-stagger) * 3); }
-
-.js .catalog-cta__cover::before {
-  opacity: 0;
-  transition: opacity var(--duration-reveal) var(--easing-out);
-  transition-delay: calc(var(--duration-stagger) * 2);
-}
-
-.js .catalog-cta__cover img {
-  opacity: 0;
-  transform: translate(calc(-1 * var(--motion-reveal-distance)), var(--motion-reveal-distance)) rotate(-4deg);
-  transition:
-    opacity var(--duration-reveal) var(--easing-out),
-    transform var(--duration-reveal) var(--easing-out);
-  transition-delay: calc(var(--duration-stagger) * 4);
-}
+.js .catalog-cta__flipbook { transition-delay: calc(var(--duration-stagger) * 4); }
 
 .js .catalog-cta.is-visible .catalog-cta__text > *,
-.js .catalog-cta.is-visible .catalog-cta__cover img {
+.js .catalog-cta.is-visible .catalog-cta__flipbook {
   opacity: 1;
   transform: none;
 }
 
-.js .catalog-cta.is-visible .catalog-cta__cover::before {
-  opacity: 1;
-}
-
 @media (min-width: 768px) {
   .catalog-cta {
-    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
     gap: var(--space-64);
     margin-bottom: var(--space-48);
   }
 
-  .catalog-cta__cover {
-    width: 100%;
+  .catalog-cta__flipbook {
+    aspect-ratio: 16 / 9;
   }
 }
 
+/* Desktop: texto a la izquierda y flipbook a la derecha, más ancho que el texto */
 @media (min-width: 1280px) {
   .brands + .catalog-cta {
     margin-top: calc(var(--space-128) + var(--space-32));
   }
 
   .catalog-cta {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
     margin-bottom: var(--space-64);
   }
 
-  .catalog-cta__cover {
-    width: 85%;
+  .catalog-cta__flipbook {
+    aspect-ratio: 4 / 3;
   }
 }
 

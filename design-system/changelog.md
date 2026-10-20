@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Catálogo con flipbook incrustado
+- Código ✓ · La composición de imagen + círculo se reemplaza por el flipbook del catálogo (iframe de Heyzine), sin borde (sin cajas). En desktop el flipbook ocupa 7/12 y el texto 5/12; en tablet y mobile va debajo del texto a ancho completo.
+- Código ✓ · El cursor personalizado se oculta sobre iframes (dentro del flipbook se ve el cursor nativo).
+
 ## 2026-10-20 · Catálogo: círculo más claro, centrado y que crece con el scroll
 - Código ✓ · El círculo pasa de Coral 100 a Offwhite (Neutral 50, `--color-bg-subtle`), el crema más claro de la paleta, y queda centrado con la imagen del catálogo.
 - Figma pendiente · Código ✓ · El círculo crece a medida que se hace scroll (de 0,6 a 1,1). Nuevo comportamiento `[data-scroll-grow]` en components.js.
