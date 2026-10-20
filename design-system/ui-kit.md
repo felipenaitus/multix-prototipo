@@ -91,20 +91,20 @@ Etiqueta siempre visible (no solo placeholder), alto mínimo 44px, foco con bord
 Header, menú hamburguesa y footer viven solo en `js/layout.js` (ver CLAUDE.md 2.3). Tabs de sección y breadcrumb siguen según Figma. El menú hamburguesa toma la estructura y el comportamiento del prototipo de venta aprobado por el cliente (`.nav-overlay`, `.mega--preview`), construido con tokens y componentes del kit.
 
 **Header (`<site-header>`), dos filas en desktop**
-- **Barra utilitaria** delgada (`--space-40`), alineada a la derecha: Portal Proveedores · Diving X · Contacto · buscador (ícono) · switch ES/EN. Texto UI/Pequeño destacado. Transparente sobre el hero. Una línea delgada (`--border-thin`) la separa de la fila principal, solo con el ancho de los elementos del header (del logo a la hamburguesa).
+- **Barra utilitaria** delgada (`--space-40`), alineada a la derecha: Portal Proveedores · Diving X · Contacto · buscador (ícono) · switch de idioma. Texto UI/Pequeño destacado. El switch es sintético: "ES | EN" en texto, sin caja; el idioma activo en color pleno y semibold, el otro atenuado. Transparente sobre el hero. Una línea delgada (`--border-thin`) la separa de la fila principal, solo con el ancho de los elementos del header (del logo a la hamburguesa).
 - **Fila principal** (`--space-80`): logo a la izquierda (SVG oficial en `assets/brand/logo-multix.svg`; letras en el color del tema y X en Coral 500; alto `--space-24` en desktop y `--space-20` en mobile), accesos principales **centrados** (Productos · Sustentabilidad · Inversionistas) y botón hamburguesa a la derecha.
 - Inversionistas abre un desplegable (no mega menú). Arriba, "Ir a Inversionistas" (acceso a la portada, UI/Navegación semibold) separado por un divisor de borde a borde; debajo, las subpáginas en UI/Navegación regular: Centro de Resultados, Gobernanza, Calendario y Eventos, Acción, Contacto. Hover o clic; con teclado: Enter/Espacio abre, flechas recorren, Inicio/Fin, Escape cierra y devuelve el foco, Tab fuera cierra.
 - Sección activa: atributo `current` (productos | sustentabilidad | inversionistas), con indicador coral de `--border-indicator`.
 - **Al hacer scroll** (desktop): la barra utilitaria sale (fade + desplazamiento, `--duration-slow`) y la fila principal se compacta a `--space-64` (logo al 85%), solo con transform y opacity. Al volver arriba reaparece.
 - Variantes: **sólido** (por defecto, páginas interiores) y **transparente sobre el hero** (`variant="overlay"`, logo y textos claros; pasa a sólido al hacer scroll).
-- **Tema oscuro** cuando la sección detrás del header tiene `data-header-theme="dark"` (el footer lo trae por defecto).
+- **Al hacer scroll el header es siempre blanco**, sin importar el fondo del contenido (también sobre secciones oscuras y el footer). Solo es transparente sobre el hero de páginas con foto o video de fondo.
 - Mobile y tablet: una fila de `--space-64` con logo, buscador y hamburguesa.
 
 **Menú hamburguesa (panel flotante)**
 - El sitio queda visible detrás, oscurecido (Navy 950 al 45%) y desenfocado (backdrop blur).
 - Panel con `--radius-xl`, fondo `--color-bg-page` y `--shadow-card`, alineado bajo el header y con el ancho del contenedor.
 - Arriba: buscador del sitio a lo ancho, con las redes sociales a la derecha. Al escribir aparece una X para borrar la búsqueda: es la misma X del botón que cierra el menú (hamburguesa abierta), para estandarizar la iconografía.
-- Cuerpo: a la izquierda, **tarjeta de vista previa** (imagen placeholder con degradado navy, etiqueta, título, bajada y enlace). Por defecto muestra una noticia destacada; al pasar el mouse o enfocar cada acceso cambia su etiqueta, título y bajada. La tarjeta tiene un alto fijo y contenido (`--space-128` + `--space-96`). A la derecha, **accesos en dos columnas**: "La compañía" (Nosotros · Trabaja con Nosotros · Noticias) y "Negocio" (Productos · Sustentabilidad · Inversionistas). Cada acceso muestra solo su nombre (UI/Destacado), sin ícono, sin descripción y sin subpáginas (las subpáginas de Inversionistas están en el desplegable del header).
+- Cuerpo: a la izquierda, **tarjeta de vista previa** (imagen placeholder con degradado navy, etiqueta, título, bajada y enlace). Muestra siempre la noticia destacada: no cambia con el hover de los accesos. La tarjeta tiene un alto fijo y contenido (`--space-128` + `--space-96`). A la derecha, **accesos en dos columnas**: "La compañía" (Nosotros · Trabaja con Nosotros · Noticias) y "Negocio" (Productos · Sustentabilidad · Inversionistas). Cada acceso muestra solo su nombre, en tamaño Título 3 y Sora 300 (más grande y liviano), sin ícono, sin descripción y sin subpáginas (las subpáginas de Inversionistas están en el desplegable del header).
 - Franja inferior, separada por un divisor: Portales (Portal Proveedores, Diving X) · Recursos (Contacto, Preguntas Frecuentes, Canal de Denuncias). Sin datos de contacto.
 - La hamburguesa se transforma en X en la misma posición. Cierra con el botón, Escape y clic fuera del panel. Entrada con fade + leve desplazamiento (`--duration-slow`); los accesos entran con desfase (`--duration-stagger`).
 
@@ -112,6 +112,10 @@ Header, menú hamburguesa y footer viven solo en `js/layout.js` (ver CLAUDE.md 2
 - Direcciones y teléfonos (casa matriz y oficina Santiago; teléfonos y correo clickeables) · Información (Preguntas Frecuentes, Legislación, Canal de Denuncias) · Personas y proveedores (Trabaja con Nosotros, Portal Proveedores) · redes sociales · copyright.
 - Canal de Denuncias es un enlace más, con el mismo estilo que el resto (sin tarjeta ni botón).
 - Íconos de redes (LinkedIn, Instagram, YouTube): dibujados en el estilo del kit, pendientes de llevar a Figma.
+
+**Cursor (`js/components.js`)**
+- Solo con mouse (hover + puntero fino): un punto en Coral 500 (`--space-8`) reemplaza al cursor nativo. Sobre elementos clickeables crece un poco y emite una onda sutil (anillo de `--border-thin` en Coral 500 que se expande y desvanece en `--duration-reveal`).
+- En campos de texto vuelve el cursor nativo. En pantallas táctiles no se activa. Con movimiento reducido queda el punto, sin onda.
 
 **Páginas de prueba** (`pruebas/`, fuera de la navegación): `navegacion-hero.html` y `navegacion-interior.html`.
 

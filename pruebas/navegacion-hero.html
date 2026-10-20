@@ -18,11 +18,11 @@
   <script src="../js/components.js" defer></script>
 </head>
 <body>
-  <!-- Página de prueba: header transparente sobre el hero, cambio a sólido, compactación y tema oscuro -->
+  <!-- Página de prueba: header transparente sobre el hero; al hacer scroll pasa a blanco y se compacta (también sobre el bloque oscuro) -->
   <site-header variant="overlay"></site-header>
 
   <main id="main">
-    <section class="test-hero" data-header-theme="dark" aria-label="Hero">
+    <section class="test-hero" aria-label="Hero">
       <div class="hero__media" aria-hidden="true">
         <video data-hero-video autoplay muted loop playsinline preload="metadata" poster="../assets/video/hero-poster.jpg">
           <source src="../assets/video/hero.mp4" type="video/mp4">
@@ -46,7 +46,7 @@
     </section>
     <section class="test-block test-block--white" aria-label="Contenido 1"><p class="t-h2">Contenido</p></section>
     <section class="test-block test-block--subtle" aria-label="Contenido 2"><p class="t-h2">Contenido</p></section>
-    <section class="test-block test-block--dark" data-header-theme="dark" aria-label="Contenido 3"><p class="t-h2">Contenido</p></section>
+    <section class="test-block test-block--dark" aria-label="Contenido 3"><p class="t-h2">Contenido</p></section>
     <section class="test-block test-block--white" aria-label="Contenido 4"><p class="t-h2">Contenido</p></section>
   </main>
 

@@ -128,38 +128,30 @@
   ];
 
   /* Panel del menú hamburguesa (según el prototipo de venta aprobado:
-     .nav-overlay / .mega--preview). Cada acceso muestra solo su nombre y
-     alimenta la tarjeta de vista previa (tag + lead). */
+     .nav-overlay / .mega--preview). Cada acceso muestra solo su nombre. */
   var MENU_GROUPS = [
     {
       title: 'La compañía',
       items: [
-        { id: 'nosotros', label: 'Nosotros', href: '#',
-          tag: '41°28\'S · Puerto Montt', lead: 'Pioneros de la acuicultura chilena, integrados de la ova a la mesa. [contenido por definir]' },
-        { id: 'trabaja', label: 'Trabaja con Nosotros', href: '#',
-          tag: 'Cultura Multi X', lead: 'Cerca del 40% de nuestra dotación son mujeres, en todos los niveles. [contenido por definir]' },
-        { id: 'noticias', label: 'Noticias', href: '#',
-          tag: 'Sala de prensa', lead: 'Las últimas novedades de Multi X, Arka Fjord y Latitude 45. [contenido por definir]' }
+        { id: 'nosotros', label: 'Nosotros', href: '#' },
+        { id: 'trabaja', label: 'Trabaja con Nosotros', href: '#' },
+        { id: 'noticias', label: 'Noticias', href: '#' }
       ]
     },
     {
       title: 'Negocio',
       items: [
-        { id: 'productos', label: 'Productos', href: '#',
-          tag: '52°S · Región de Magallanes', lead: 'Ultra premium y ahumados: dos marcas, un mismo origen. [contenido por definir]' },
-        { id: 'sustentabilidad', label: 'Sustentabilidad', href: '#',
-          tag: '45°30\'S · Patagonia chilena', lead: 'ASC, BAP y metas 2030: compromiso certificado. [contenido por definir]' },
-        { id: 'inversionistas', label: 'Inversionistas', href: '#',
-          tag: 'Relación con inversionistas', lead: 'Multiexport Foods S.A., sociedad anónima abierta. [contenido por definir]' }
+        { id: 'productos', label: 'Productos', href: '#' },
+        { id: 'sustentabilidad', label: 'Sustentabilidad', href: '#' },
+        { id: 'inversionistas', label: 'Inversionistas', href: '#' }
       ]
     }
   ];
 
-  // Contenido por defecto de la tarjeta de vista previa: noticia destacada
-  var PREVIEW_DEFAULT = {
+  // Tarjeta fija del menú: noticia destacada (no cambia con el hover de los accesos)
+  var FEATURED = {
     tag: 'Noticias',
     label: 'Noticia destacada · [contenido por definir]',
-    lead: '',
     cta: 'Leer noticia',
     href: '#'
   };
@@ -195,12 +187,13 @@
     { id: 'youtube', label: 'YouTube', href: '#' }
   ];
 
+  // Switch de idioma sintético: "ES | EN", el idioma activo en semibold y color pleno
   function langSwitch(extraCls) {
     return '<div class="lang-switch' + (extraCls ? ' ' + extraCls : '') + '" role="group" aria-label="Idioma">' +
       LANGS.map(function (l) {
         return '<a class="lang-switch__item hit" href="' + l.href + '" lang="' + l.lang + '" hreflang="' + l.lang + '"' +
           (l.current ? ' aria-current="true"' : '') + ' aria-label="' + esc(l.label) + '">' + esc(l.code) + '</a>';
-      }).join('') +
+      }).join('<span class="lang-switch__sep" aria-hidden="true"></span>') +
       '</div>';
   }
 
@@ -222,9 +215,9 @@
        variant="overlay"   Transparente sobre el hero; pasa a sólido al hacer scroll.
        (sin variant)       Sólido desde el inicio (páginas interiores).
        current="..."       Acceso activo (productos | sustentabilidad | inversionistas).
-       demo + demo-state   Solo kit.html: estado fijo (transparent | light | dark | compact).
+       demo + demo-state   Solo kit.html: estado fijo (transparent | light | compact).
      Al hacer scroll la barra utilitaria se oculta y la fila principal se compacta.
-     Tema oscuro cuando la sección detrás tiene data-header-theme="dark".
+     Fuera del hero (o en páginas sin hero) el header es siempre blanco.
      ====================================================================== */
   class SiteHeader extends HTMLElement {
     connectedCallback() {
@@ -296,8 +289,7 @@
               // Solo el nombre: sin ícono, sin descripción y sin subpáginas
               var cur = item.id === current ? ' is-current' : '';
               var step = ' style="--step:' + Math.min(i, 3) + '"';
-              var data = ' data-preview="' + gi + '-' + i + '"';
-              return '<li class="menu-item"' + step + '><a class="menu-link' + cur + '" href="' + item.href + '"' + data + '>' +
+              return '<li class="menu-item"' + step + '><a class="menu-link' + cur + '" href="' + item.href + '">' +
                 '<span class="menu-link__name">' + esc(item.label) + '</span></a></li>';
             }).join('') +
           '</ul>' +
@@ -322,13 +314,12 @@
                 socialList('menu-panel__social menu-panel__social--top') +
               '</div>' +
               '<div class="menu-panel__body">' +
-                '<a class="menu-preview" href="' + PREVIEW_DEFAULT.href + '" tabindex="-1" aria-hidden="true">' +
+                '<a class="menu-preview" href="' + FEATURED.href + '">' +
                   '<span class="menu-preview__media"><span class="placeholder-tag menu-preview__ph">[foto por definir]</span></span>' +
                   '<span class="menu-preview__content">' +
-                    '<span class="t-label menu-preview__tag">' + esc(PREVIEW_DEFAULT.tag) + '</span>' +
-                    '<span class="menu-preview__title">' + esc(PREVIEW_DEFAULT.label) + '</span>' +
-                    '<span class="menu-preview__lead"></span>' +
-                    '<span class="menu-preview__cta">' + esc(PREVIEW_DEFAULT.cta) + icon('arrow', 'md', 'icon--arrow') + '</span>' +
+                    '<span class="t-label menu-preview__tag">' + esc(FEATURED.tag) + '</span>' +
+                    '<span class="menu-preview__title">' + esc(FEATURED.label) + '</span>' +
+                    '<span class="menu-preview__cta">' + esc(FEATURED.cta) + icon('arrow', 'md', 'icon--arrow') + '</span>' +
                   '</span>' +
                 '</a>' +
                 '<div class="menu-panel__groups">' + groups + '</div>' +
@@ -429,25 +420,6 @@
       var btn = this.querySelector('[data-menu-toggle]');
       var overlay = this.querySelector('.menu-overlay');
       var panel = overlay.querySelector('.menu-panel');
-      var card = overlay.querySelector('.menu-preview');
-      var tag = card.querySelector('.menu-preview__tag');
-      var title = card.querySelector('.menu-preview__title');
-      var lead = card.querySelector('.menu-preview__lead');
-      var cta = card.querySelector('.menu-preview__cta');
-      var ctaText = cta.firstChild;
-
-      function setPreview(data) {
-        if (title.textContent === data.label) return;
-        card.setAttribute('href', data.href || '#');
-        tag.textContent = data.tag;
-        title.textContent = data.label;
-        lead.textContent = data.lead || '';
-        ctaText.textContent = data.cta || 'Conoce más';
-        card.classList.remove('is-changing');
-        void card.offsetWidth;
-        card.classList.add('is-changing');
-      }
-
       function setMenu(open) {
         if (self._closeDropdown) self._closeDropdown();
         self.classList.toggle('is-menu-open', open);
@@ -456,7 +428,6 @@
         btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
         overlay.classList.toggle('is-open', open);
         document.body.classList.toggle('is-locked', open);
-        if (open) setPreview(PREVIEW_DEFAULT);
         self._update();
         if (open) {
           setTimeout(function () {
@@ -484,18 +455,6 @@
         if (btn.getAttribute('aria-expanded') === 'true' && !self.contains(e.target)) setMenu(false);
       });
 
-      // Tarjeta de vista previa: cambia con el hover o el foco de cada acceso
-      overlay.querySelectorAll('[data-preview]').forEach(function (el) {
-        var parts = el.getAttribute('data-preview').split('-');
-        var item = MENU_GROUPS[+parts[0]].items[+parts[1]];
-        var data = { tag: item.tag, label: item.label, lead: item.lead, cta: 'Conoce más', href: item.href };
-        el.addEventListener('mouseenter', function () { setPreview(data); });
-        el.addEventListener('focus', function () { setPreview(data); });
-      });
-      panel.querySelector('.menu-panel__groups').addEventListener('mouseleave', function () {
-        setPreview(PREVIEW_DEFAULT);
-      });
-
       // Buscador: la X para borrar aparece solo cuando hay texto
       var input = overlay.querySelector('.menu-search__input');
       var clear = overlay.querySelector('.menu-search__clear');
@@ -509,7 +468,7 @@
       desktopMq.addEventListener('change', function () { self._update(); });
     }
 
-    /* --- Scroll: transparente → sólido, barra utilitaria, compactación, tema y ocultar en mobile --- */
+    /* --- Scroll: transparente → sólido, barra utilitaria, compactación y ocultar en mobile --- */
     _bindScroll() {
       var self = this;
       var ticking = false;
@@ -541,17 +500,11 @@
       var overlayVariant = this.classList.contains('site-header--overlay');
       this.dataset.state = overlayVariant && !scrolled && !menuOpen ? 'transparent' : 'solid';
 
-      // Borde inferior visible del header (para el tema y para ubicar el panel del menú)
-      var bottom = compact ? mainCompact : util + main;
+      // Textos claros solo mientras es transparente sobre el hero; si no, siempre blanco
+      this.dataset.tone = this.dataset.state === 'transparent' ? 'dark' : 'light';
 
-      var dark = false;
-      if (!menuOpen) {
-        document.querySelectorAll('[data-header-theme="dark"]').forEach(function (el) {
-          var r = el.getBoundingClientRect();
-          if (r.top <= bottom - 1 && r.bottom > bottom - 1) dark = true;
-        });
-      }
-      this.dataset.tone = dark || this.dataset.state === 'transparent' ? 'dark' : 'light';
+      // Borde inferior visible del header (para ubicar el panel del menú)
+      var bottom = compact ? mainCompact : util + main;
 
       // Mobile y tablet: se oculta al bajar y aparece al subir
       if (!desktop && !menuOpen) {
@@ -582,7 +535,6 @@
       injectSprite();
       this.classList.add('site-footer', 'on-dark');
       this.setAttribute('role', 'contentinfo');
-      this.setAttribute('data-header-theme', 'dark');
 
       var offices = OFFICES.map(function (o) {
         return '<li class="footer__office">' +

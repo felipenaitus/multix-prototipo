@@ -1952,8 +1952,6 @@ a.pagination__item:hover,
   --hdr-bg: var(--color-bg-page);
   --hdr-line: var(--color-border-default);
   --hdr-hover-bg: var(--color-bg-subtle);
-  --hdr-chip-bg: var(--color-bg-brand);
-  --hdr-chip-fg: var(--color-text-inverse);
   position: fixed;
   top: 0;
   left: 0;
@@ -1978,8 +1976,6 @@ a.pagination__item:hover,
   --hdr-bg: var(--color-bg-inverse);
   --hdr-line: var(--color-border-inverse-muted);
   --hdr-hover-bg: var(--color-bg-brand);
-  --hdr-chip-bg: var(--color-bg-page);
-  --hdr-chip-fg: var(--color-text-brand);
 }
 
 .site-header[data-tone="dark"] .header__bar :focus-visible {
@@ -2351,25 +2347,25 @@ a.pagination__item:hover,
 }
 
 /* Switch de idioma ES/EN */
+/* Switch de idioma sintético: "ES | EN", sin caja; el activo en color pleno y semibold */
 .lang-switch {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-2);
-  border: var(--border-thin) solid var(--hdr-line, var(--color-border-default));
-  border-radius: var(--radius-full);
+  gap: var(--space-8);
+}
+
+.lang-switch__sep {
+  width: var(--border-thin);
+  height: var(--space-12);
+  background: var(--hdr-line, var(--color-border-default));
 }
 
 .lang-switch__item {
-  padding: var(--space-2) var(--space-8);
-  border-radius: var(--radius-full);
-  font-size: var(--text-ui-small-strong-size);
-  line-height: var(--text-ui-small-strong-lh);
-  font-weight: var(--text-ui-small-strong-weight);
+  font-size: var(--text-small-size);
+  line-height: var(--text-small-lh);
+  font-weight: var(--text-small-weight);
   color: var(--hdr-muted, var(--color-text-secondary));
-  transition:
-    background-color var(--duration-fast) var(--easing-standard),
-    color var(--duration-fast) var(--easing-standard);
+  transition: color var(--duration-fast) var(--easing-standard);
 }
 
 .lang-switch__item:hover {
@@ -2377,8 +2373,8 @@ a.pagination__item:hover,
 }
 
 .lang-switch__item[aria-current="true"] {
-  background: var(--hdr-chip-bg, var(--color-bg-brand));
-  color: var(--hdr-chip-fg, var(--color-text-inverse));
+  font-weight: var(--text-ui-small-strong-weight);
+  color: var(--hdr-fg, var(--color-text-primary));
 }
 
 @media (min-width: 1280px) {
@@ -2641,17 +2637,6 @@ a.pagination__item:hover,
   font-weight: var(--text-h3-weight);
 }
 
-.menu-preview__lead {
-  font-size: var(--text-small-size);
-  line-height: var(--text-small-lh);
-  font-weight: var(--text-small-weight);
-  color: var(--color-text-inverse-muted);
-}
-
-.menu-preview__lead:empty {
-  display: none;
-}
-
 .menu-preview__cta {
   display: inline-flex;
   align-items: center;
@@ -2669,10 +2654,6 @@ a.pagination__item:hover,
 .menu-preview:hover .menu-preview__cta .icon {
   color: var(--color-text-accent-on-dark);
   transform: translateX(var(--space-4));
-}
-
-.menu-preview.is-changing .menu-preview__content {
-  animation: fade-up var(--duration-base) var(--easing-out);
 }
 
 /* Grupos de accesos */
@@ -2719,7 +2700,7 @@ a.pagination__item:hover,
   align-items: center;
   width: calc(100% + 2 * var(--space-12));
   margin-inline: calc(-1 * var(--space-12));
-  padding: var(--space-12);
+  padding: var(--space-8) var(--space-12);
   border-radius: var(--radius-md);
   text-align: left;
   color: var(--color-text-primary);
@@ -2732,10 +2713,13 @@ a.pagination__item:hover,
   color: var(--color-text-primary);
 }
 
+/* Tamaño Título 3 en Sora 300 (el peso liviano de Título 1) */
 .menu-link__name {
-  font-size: var(--text-ui-strong-size);
-  line-height: var(--text-ui-strong-lh);
-  font-weight: var(--text-ui-strong-weight);
+  font-family: var(--font-display);
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-lh);
+  letter-spacing: var(--text-h3-ls);
+  font-weight: var(--text-h1-weight);
 }
 
 .menu-link.is-current .menu-link__name {
@@ -3067,4 +3051,62 @@ a.pagination__item:hover,
     gap: var(--space-64);
     padding-block: var(--space-80) var(--space-64);
   }
+}
+
+
+/* ==========================================================================
+   Cursor (js/components.js) · solo con mouse (hover + puntero fino)
+   Un punto reemplaza al cursor nativo; sobre elementos clickeables emite una
+   onda sutil que se expande y se desvanece. En campos de texto vuelve el
+   cursor nativo. Con movimiento reducido queda solo el punto, sin onda.
+   ========================================================================== */
+.has-cursor,
+.has-cursor * {
+  cursor: none !important;
+}
+
+.has-cursor input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]),
+.has-cursor textarea {
+  cursor: text !important;
+}
+
+.cursor-dot,
+.cursor-ripple {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  border-radius: var(--radius-full);
+  pointer-events: none;
+}
+
+.cursor-dot {
+  width: var(--space-8);
+  height: var(--space-8);
+  margin: calc(var(--space-8) / -2) 0 0 calc(var(--space-8) / -2);
+  background: var(--color-bg-accent-hover);
+  transition:
+    opacity var(--duration-fast) var(--easing-standard),
+    scale var(--duration-base) var(--easing-out);
+}
+
+.cursor-dot.is-hidden {
+  opacity: 0;
+}
+
+.cursor-dot.is-hover {
+  scale: 1.5;
+}
+
+.cursor-ripple {
+  width: var(--space-40);
+  height: var(--space-40);
+  margin: calc(var(--space-40) / -2) 0 0 calc(var(--space-40) / -2);
+  border: var(--border-thin) solid var(--color-border-accent-on-dark);
+  animation: cursor-ripple var(--duration-reveal) var(--easing-out) forwards;
+}
+
+@keyframes cursor-ripple {
+  from { opacity: .6; scale: .2; }
+  to   { opacity: 0;  scale: 1.6; }
 }

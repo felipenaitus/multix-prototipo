@@ -36,9 +36,9 @@ Estado: **Base** = se aplica en todo el sitio sin preguntar. **Firma** = efecto 
 | Entrada del hero | Título y bajada con fade + subida al cargar; desfases de 100 y 350ms. | Igual |
 | Contadores | Cifras "en una mirada", metas y métricas cuentan desde 0 al entrar en viewport, con `--duration-counter`. Formato chileno (punto de miles, coma decimal). | Igual |
 | Acordeones y desplegables | Rotación del ícono + aparición del contenido con `--duration-base`. | Igual |
-| Header al hacer scroll | Transparente sobre el hero; al bajar aparece un velo translúcido y el logo en tamaño reducido; el header se compacta con `--duration-slow`. Cambia a tema claro cuando la sección detrás es clara. | Se oculta al bajar y aparece al subir |
+| Header al hacer scroll | Transparente sobre el hero; al bajar pasa a fondo blanco (siempre, sin importar el fondo del contenido), la barra utilitaria sale y la fila principal se compacta con el logo reducido, con `--duration-slow`. | Se oculta al bajar y aparece al subir |
 | Menú hamburguesa / overlay | Overlay a pantalla completa con fade + leve desplazamiento, `--duration-slow`. El mismo botón cierra; también Escape y tocar fuera. | Igual |
-| Mega menú | Aparición con fade, `--duration-slow`. Panel de vista previa que cambia foto, título y bajada al pasar por cada acceso. | No aplica (acordeón en el overlay) |
+| Menú hamburguesa (panel) | Panel flotante con fade + leve desplazamiento, `--duration-slow`; accesos con desfase de `--duration-stagger`. La tarjeta de noticia destacada es fija. | Pantalla completa |
 
 ### Firma (usar solo donde se indica)
 | Patrón | Comportamiento | Dónde | Mobile |
@@ -48,7 +48,7 @@ Estado: **Base** = se aplica en todo el sitio sin preguntar. **Firma** = efecto 
 | Sección pineada con cifras | El círculo y las cifras quedan fijos mientras se hace scroll; el círculo crece y las cifras entran de derecha a izquierda, cada una con su contador. | Composición "Desde el sur de Chile" | Sin pineado: entrada simple + contadores |
 | Scroll-scrubbing | Secuencia de frames controlada por el scroll (tipo Apple). | Sustentabilidad (una por página como máximo) | Imagen fija o video corto en loop sin control por scroll |
 | Parallax del círculo | El círculo detrás del video o la ilustración se desplaza levemente con el scroll; el contenido no se mueve. | Productos y composiciones con ilustración | Desactivado |
-| Cursor ripple | Onda coral (Coral 500, borde 1.5px) que se expande al hacer clic en elementos clickeables. | Todo el sitio, solo desktop | No existe |
+| Cursor punto + onda | Un punto Coral 500 reemplaza al cursor; al pasar por elementos clickeables crece levemente y emite una onda sutil (anillo Coral 500 de `--border-thin` que se expande y desvanece en `--duration-reveal`). | Todo el sitio, solo con mouse | No existe |
 
 ## Agregar un patrón nuevo
 Si una sección necesita un movimiento que no está en este catálogo: proponerlo a Felipe (qué hace, dónde, versión mobile y versión con movimiento reducido) y, si lo aprueba, agregarlo aquí antes de implementarlo.

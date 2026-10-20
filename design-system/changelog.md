@@ -4,6 +4,12 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Idioma, menú, header blanco y cursor
+- Código ✓ · Switch de idioma sintético: "ES | EN" en texto, sin caja ni fondo; el activo en color pleno y semibold.
+- Código ✓ · Menú hamburguesa: accesos en tamaño Título 3 y Sora 300 (más grandes y livianos). La tarjeta de noticia destacada queda fija (sin vista previa dinámica).
+- Código ✓ · Header al hacer scroll: siempre fondo blanco, sin importar el fondo del contenido. Solo es transparente sobre el hero con foto o video. Se elimina el tema oscuro por sección (`data-header-theme`) y la variante "tema oscuro" del kit.
+- Código ✓ · Cursor: punto Coral 500 que reemplaza al cursor nativo y onda sutil al pasar por clickeables (reemplaza al "cursor ripple" al clic de motion.md). Solo con mouse; sin onda con movimiento reducido.
+
 ## 2026-10-20 · Línea bajo la barra utilitaria y acceso a la portada en el desplegable
 - Código ✓ · Línea delgada entre la barra utilitaria y la fila principal, con el ancho de los elementos del header (no de borde a borde). Toma el color del tema y se oculta junto con la barra al hacer scroll.
 - Código ✓ · Desplegable de Inversionistas: "Inicio" pasa a "Ir a Inversionistas", en semibold y separado de las subpáginas por un divisor de borde a borde; las subpáginas quedan en peso regular.
