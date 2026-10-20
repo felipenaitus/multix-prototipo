@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Mercados: título a la derecha y globo más liviano
+- Figma pendiente · Código ✓ · El título de "Mercado y oficinas comerciales" pasa a la columna derecha, junto con la cifra, las regiones y las oficinas. El globo queda a la izquierda.
+- Figma pendiente · Código ✓ · Globo más chico (80 % de su columna en desktop, 60 % en tablet, 90 % en mobile) y sin fondo blanco: la esfera toma el color de su sección y solo conserva el contorno.
+
 ## 2026-10-20 · Botón comercial en el hero de Productos
 - Figma pendiente · Código ✓ · Hero de Productos con los textos a la izquierda y "Contactar al equipo comercial" a la derecha, dentro del ancho de contenido (`.hero__content--split`). En mobile, el botón va debajo.
 - Figma pendiente · Código ✓ · `<sales-contact variant="inline">`: el botón va en la página y el formulario se abre como modal centrado (panel inferior en mobile) sobre el sitio oscurecido. Productos deja de usar el botón flotante.

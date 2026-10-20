@@ -3414,6 +3414,14 @@ a.pagination__item:hover,
   gap: var(--space-32);
 }
 
+.markets__info .section-head {
+  margin-bottom: 0;
+}
+
+.markets__globe .globe {
+  width: 90%;
+}
+
 .markets__stat {
   display: flex;
   flex-direction: column;
@@ -3472,7 +3480,7 @@ a.pagination__item:hover,
 
 @media (min-width: 768px) {
   .markets__globe .globe {
-    width: 70%;
+    width: 60%;
   }
 
   .markets__regions {
@@ -3482,13 +3490,18 @@ a.pagination__item:hover,
 
 @media (min-width: 1280px) {
   .markets__globe .globe {
-    width: 100%;
+    width: 80%;
   }
 
+  /* Globo a la izquierda y título + datos a la derecha */
   .markets {
-    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: center;
     gap: var(--space-64);
+  }
+
+  .markets__globe {
+    order: -1;
   }
 }
 
@@ -3727,11 +3740,11 @@ a.pagination__item:hover,
 }
 
 /* Globo de mercados ([data-globe], js/components.js) · patrón Firma de Productos.
-   Esfera blanca con continentes en puntos Navy; pines Coral 500 (mercados) y
+   Esfera del color de fondo de su sección (solo el contorno) con continentes en puntos Navy; pines Coral 500 (mercados) y
    Navy (oficinas comerciales). El nombre aparece con hover, foco o clic. */
 .globe {
   --globe-land: var(--color-text-brand);
-  --globe-sphere: var(--color-bg-page);
+  --globe-sphere: transparent; /* toma el fondo de la sección */
   --globe-edge: var(--color-border-default);
   position: relative;
   width: 100%;
