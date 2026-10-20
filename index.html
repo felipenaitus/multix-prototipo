@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multi X</title>
+  <meta name="description" content="Multi X, salmonera chilena. Del sur de Chile al mundo.">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Prueba: Sora 200 y 600 se cargan solo en el hero del home (frase en evaluación) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@200;300;400;600&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <!-- Home base: el hero y los bloques vacíos usan pruebas.css hasta que se definan sus componentes -->
+  <link rel="stylesheet" href="css/pruebas.css">
+  <script src="js/layout.js" defer></script>
+  <script src="js/components.js" defer></script>
+</head>
+<body>
+  <!-- Home base: header transparente sobre el hero; los bloques de contenido se definen más adelante -->
+  <site-header variant="overlay"></site-header>
+
+  <main id="main">
+    <section class="test-hero" aria-label="Hero">
+      <div class="hero__media" aria-hidden="true">
+        <video data-hero-video autoplay muted loop playsinline preload="metadata" poster="assets/video/hero-poster.jpg">
+          <source src="assets/video/hero.mp4" type="video/mp4">
+        </video>
+      </div>
+      <h1 class="t-display test-hero__title">
+        <span class="visually-hidden">Alimentando el futuro, cuidando el mundo</span>
+        <span class="word-swap" aria-hidden="true" data-word-swap>
+          <span class="word-swap__slot word-swap__slot--a">
+            <span class="word-swap__word is-active">Alimentando</span>
+            <span class="word-swap__word">Cuidando</span>
+          </span>
+          <span class="word-swap__line">
+            <span class="word-swap__slot word-swap__slot--b">
+              <span class="word-swap__word is-active">el futuro<svg class="word-swap__icon" viewBox="0 0 25 44" fill="currentColor" focusable="false" aria-hidden="true"><path d="M3.94671 21.5226C5.96997 21.5226 7.61058 19.9199 7.61058 17.943C7.61058 15.966 5.96997 14.3634 3.94671 14.3634C1.92564 14.3634 0.285034 15.966 0.285034 17.943C0.285034 19.9199 1.92564 21.5226 3.94671 21.5226Z"/><path d="M24.2627 18.8711L14.5114 6.25308C11.4677 2.31554 6.70647 0 1.6593 0C0.880787 0 0.445341 0.872521 0.902775 1.47658L15.2548 20.0232C15.7936 20.7168 15.7936 21.6788 15.2438 22.3723L0.194635 41.5566C-0.275994 42.1607 0.159442 43.0331 0.93796 43.0331H0.984151C5.93895 43.0331 10.621 40.7624 13.6186 36.9033L24.2627 23.1888C25.2458 21.9137 25.2458 20.1575 24.2627 18.8711Z"/></svg></span>
+              <span class="word-swap__word">el mundo<svg class="word-swap__icon" viewBox="0 0 25 44" fill="currentColor" focusable="false" aria-hidden="true"><path d="M3.94671 21.5226C5.96997 21.5226 7.61058 19.9199 7.61058 17.943C7.61058 15.966 5.96997 14.3634 3.94671 14.3634C1.92564 14.3634 0.285034 15.966 0.285034 17.943C0.285034 19.9199 1.92564 21.5226 3.94671 21.5226Z"/><path d="M24.2627 18.8711L14.5114 6.25308C11.4677 2.31554 6.70647 0 1.6593 0C0.880787 0 0.445341 0.872521 0.902775 1.47658L15.2548 20.0232C15.7936 20.7168 15.7936 21.6788 15.2438 22.3723L0.194635 41.5566C-0.275994 42.1607 0.159442 43.0331 0.93796 43.0331H0.984151C5.93895 43.0331 10.621 40.7624 13.6186 36.9033L24.2627 23.1888C25.2458 21.9137 25.2458 20.1575 24.2627 18.8711Z"/></svg></span>
+            </span>
+          </span>
+        </span>
+      </h1>
+    </section>
+    <section class="test-block test-block--white" aria-label="Bloque 1"><p class="t-h2">[contenido por definir]</p></section>
+    <section class="test-block test-block--subtle" aria-label="Bloque 2"><p class="t-h2">[contenido por definir]</p></section>
+    <section class="test-block test-block--dark" aria-label="Bloque 3"><p class="t-h2">[contenido por definir]</p></section>
+  </main>
+
+  <site-footer></site-footer>
+  <!-- PRUEBA · Cambio de palabras del hero (patrón nuevo, aún no está en motion.md).
+       Secuencia: Alimentando el futuro → Cuidando el futuro → Cuidando el mundo →
+       Alimentando el mundo → Alimentando el futuro… Cambia una palabra a la vez,
+       alternando entre la primera y la segunda. Pausa = 4 × --duration-reveal. -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var box = document.querySelector('[data-word-swap]');
+      if (!box) return;
+      var css = getComputedStyle(document.documentElement);
+      var reveal = parseFloat(css.getPropertyValue('--duration-reveal')) || 0;
+      if (!reveal) return; // movimiento reducido: queda "Alimentando el futuro" fijo
+      var slots = [box.querySelector('.word-swap__slot--a'), box.querySelector('.word-swap__slot--b')];
+      var turn = 0;
+      function swap(slot) {
+        var words = slot.querySelectorAll('.word-swap__word');
+        var current = slot.querySelector('.is-active');
+        var next = current === words[0] ? words[1] : words[0];
+        current.classList.remove('is-active');
+        current.classList.add('is-leaving');
+        next.classList.remove('is-leaving');
+        next.classList.add('is-active');
+        setTimeout(function () { current.classList.remove('is-leaving'); }, reveal);
+      }
+      setInterval(function () {
+        swap(slots[turn % 2]);
+        turn += 1;
+      }, reveal * 4 + reveal);
+    });
+  </script>
+</body>
+</html>

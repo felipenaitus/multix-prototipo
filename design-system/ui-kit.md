@@ -153,6 +153,15 @@ Patrón único para toda la documentación del sitio (Inversionistas, Gobernanza
 - **Preguntas frecuentes:** acordeón; una pregunta abierta a la vez.
 - **Nuestras marcas:** tarjetas con logo legible y enlace externo a cada sitio (Latitude 45, Arka Fjord) + tarjeta del catálogo Multi X separada, con botón de descarga.
 
+### Página Productos (nuevos · pendientes de llevar a Figma)
+- **Encabezado de sección (`.section-head`):** etiqueta (Coral 600) + Título 2 + bajada opcional en Cuerpo L secundario (máx. 68 % del contenedor en desktop). Abre cada bloque de página.
+- **Hero de página (`.hero--page`):** el mismo hero del kit a casi toda la altura, con foto y header transparente encima. Contenido alineado al contenedor.
+- **Tarjetas de solución (`.solutions` + `.solution-card`):** foto, Título 3, descripción y enlace terciario. Fresco · Congelado · Ahumado.
+- **Mercados y oficinas (`.markets`):** mapa (por definir) + cifra destacada, regiones con países y oficinas comerciales con bandera.
+- **Cadena de valor (`.value-chain`):** pasos numerados con marcador Coral 500 (elemento gráfico) sobre una línea. Relato "Del cultivo a la mesa".
+- **Módulo comercial (`<sales-contact>` en `js/layout.js`):** botón flotante abajo a la izquierda "Contactar al equipo comercial" (Acento con forma de diálogo, `.btn--speech`) que abre un formulario: nombre, empresa, correo, producto de interés (preseleccionable con `product="fresco|congelado|ahumado"`) y mensaje (`.control--textarea`). Se cierra con la X, Escape o clic fuera. El envío es de prototipo.
+- **Contacto comercial:** reutiliza `<ir-contact>` con `label` propio (oficina de ventas).
+
 ### Hero con franja temporal (node 75-921)
 Hero con video o foto de fondo y overlay oscuro, Display en blanco. Franja inferior administrable para contenidos de temporada (ferias, documentación post feria, encuestas): etiqueta en coral + texto + enlace. Se oculta cuando no está activa. Bloque transversal `<season-strip>` en `js/layout.js`.
 

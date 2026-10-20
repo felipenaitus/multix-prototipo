@@ -4,6 +4,12 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Página Productos y home base
+- Código ✓ · Nuevas páginas en la raíz: `index.html` (home base con el hero de video y la frase en prueba; bloques por definir) y `productos.html`. Productos (header y menú) enlaza a `productos.html` y el logo vuelve a `index.html`. Los enlaces internos se resuelven desde la raíz (helper `url()` en layout.js), así funcionan también desde `pruebas/`.
+- Figma pendiente · Código ✓ · Componentes nuevos de página: encabezado de sección, hero de página, tarjetas de solución, mercados y oficinas, cadena de valor.
+- Figma pendiente · Código ✓ · Nuevo componente transversal `<sales-contact>`: botón flotante "Contactar al equipo comercial" abajo a la izquierda que abre el formulario comercial. Vuelve la variante `.btn--speech` (Coral 400 con texto Ink 900). Nuevo campo de texto largo `.control--textarea`.
+- Código ✓ · La bajada del hero ocupa todo el ancho en mobile (antes 60 %, quedaba muy angosta).
+
 ## 2026-10-20 · Footer: títulos alineados y banderas
 - Código ✓ · El logo del footer pasa a su propia fila: "Direcciones", "Información" y "Personas y proveedores" quedan a la misma altura en desktop. En tablet, direcciones arriba y enlaces debajo.
 - Código ✓ · El título "Direcciones y teléfonos" pasa a "Direcciones". Cada oficina lleva la bandera de su país (SVG con forma de emoji en `assets/flags/cl.svg` y `us.svg`: Windows no dibuja los emojis de bandera y mostraría "CL" / "US"). Los teléfonos no se cortan.

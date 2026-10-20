@@ -45,6 +45,11 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Composición con ilustración | Texto a la izquierda, ilustración a la derecha | Ilustración arriba (más chica), texto debajo; cifras en 2 × 2 |
 | Formularios | Campos en 2-3 columnas cuando son cortos | 1 columna; teclado según el tipo de campo (`type="email"`, `tel`, etc.) |
 | Suscripción (texto + campo + botón) | En una fila | Apilado; botón a ancho completo |
+| Encabezado de sección | Etiqueta + Título 2 + bajada al 68 % del contenedor | Bajada a ancho completo |
+| Tarjetas de solución | 3 columnas | Tablet y mobile: slider con scroll-snap (casi 2 tarjetas visibles en tablet; 1 y parte de la siguiente en mobile) |
+| Mercados y oficinas | Mapa a la izquierda (7/12) y datos a la derecha (5/12) | Mapa arriba (más bajo en tablet) y datos debajo; regiones en 2 columnas en tablet y 1 en mobile |
+| Cadena de valor (Del cultivo a la mesa) | 6 pasos en una fila sobre una línea horizontal | Tablet: 3 columnas. Mobile: lista vertical con la línea y los marcadores a la izquierda |
+| Módulo comercial (`<sales-contact>`) | Botón flotante abajo a la izquierda; el formulario se abre como panel sobre el botón | El formulario se abre como panel inferior a lo ancho de la pantalla, por sobre el botón del asistente |
 | Botón flotante del asistente | Fijo abajo a la derecha, 56 px, a `--space-32` del borde | Igual, a `--space-24` del borde |
 | Footer | Logo arriba; Direcciones · Información · Personas y proveedores en una fila con los títulos alineados; redes y copyright abajo. Tablet: direcciones arriba (en dos columnas) y enlaces debajo | Mobile: Información y Personas y proveedores en acordeón; direcciones y teléfonos siempre visibles; Canal de Denuncias como enlace dentro de Información |
 | Teléfonos y correos | Enlace | Enlace (marca o abre el correo con un toque) |

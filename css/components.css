@@ -1835,8 +1835,13 @@ a.pagination__item:hover,
 }
 
 .hero__lead {
-  max-width: 60%;
   color: var(--color-text-inverse-muted);
+}
+
+@media (min-width: 768px) {
+  .hero__lead {
+    max-width: 60%;
+  }
 }
 
 /* Entrada del hero al cargar: título 100ms, bajada 350ms */
@@ -3263,6 +3268,402 @@ a.pagination__item:hover,
 
 @media (min-width: 1280px) {
   .chat-launcher {
+    bottom: var(--space-32);
+  }
+}
+
+
+/* ==========================================================================
+   Páginas de sección (Productos y siguientes)
+   ========================================================================== */
+
+/* Encabezado de sección: etiqueta + Título 2 + bajada */
+.section-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-12);
+  margin-bottom: var(--space-40);
+}
+
+.section-head__lead {
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 1280px) {
+  .section-head {
+    margin-bottom: var(--space-48);
+  }
+
+  .section-head__lead {
+    max-width: 68%;
+  }
+}
+
+/* Hero de página: mismo componente .hero, a casi toda la altura */
+.hero--page {
+  min-height: 85vh;
+}
+
+.hero--page .hero__media img {
+  object-position: 30% center;
+}
+
+/* La marca de placeholder va abajo para no chocar con el header transparente */
+.hero--page .hero__placeholder {
+  top: auto;
+  bottom: var(--space-20);
+}
+
+/* Soluciones (fresco · congelado · ahumado): slider en mobile, 3 columnas desde tablet */
+.solutions {
+  display: flex;
+  gap: var(--space-16);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  margin: 0 calc(-1 * var(--layout-gutter));
+  padding: 0 var(--layout-gutter);
+  scroll-padding-inline: var(--layout-gutter);
+  list-style: none;
+}
+
+.solutions::-webkit-scrollbar {
+  display: none;
+}
+
+.solutions > li {
+  display: flex;
+  flex: 0 0 85%;
+  scroll-snap-align: start;
+}
+
+.solution-card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--color-bg-page);
+  border: var(--border-thin) solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+}
+
+.solution-card__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  background: var(--color-bg-muted);
+}
+
+.solution-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-12);
+  padding: var(--space-24);
+}
+
+.solution-card__body p {
+  color: var(--color-text-secondary);
+}
+
+.solution-card__body .btn {
+  margin-top: auto;
+}
+
+@media (min-width: 768px) {
+  .solutions > li {
+    flex-basis: 45%;
+  }
+
+  .solution-card__body {
+    padding: var(--space-32);
+  }
+}
+
+@media (min-width: 1280px) {
+  .solutions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-24);
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Mercados y oficinas comerciales: mapa + información */
+.markets {
+  display: grid;
+  gap: var(--space-40);
+}
+
+.markets__map {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 10;
+  background: var(--color-bg-brand-soft);
+  border-radius: var(--radius-xl);
+}
+
+.markets__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.markets__stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-bottom: var(--space-24);
+  border-bottom: var(--border-thin) solid var(--color-border-default);
+}
+
+.markets__stat .t-figure-l {
+  color: var(--color-text-brand);
+}
+
+.markets__regions {
+  display: grid;
+  gap: var(--space-20);
+  margin: 0;
+}
+
+.markets__regions div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.markets__regions dd {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.markets__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.markets__offices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8) var(--space-24);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.markets__offices li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.markets__offices img {
+  width: auto;
+  height: var(--space-12);
+  border-radius: var(--radius-xs);
+}
+
+@media (min-width: 768px) {
+  .markets__map {
+    aspect-ratio: 2 / 1;
+  }
+
+  .markets__regions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .markets__map {
+    aspect-ratio: 16 / 10;
+  }
+
+  .markets {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    align-items: start;
+    gap: var(--space-64);
+  }
+}
+
+/* Del cultivo a la mesa: pasos en fila en desktop, lista vertical en mobile */
+.value-chain {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.value-chain__step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: 0 0 var(--space-32) var(--space-32);
+  border-left: var(--border-thin) solid var(--color-border-default);
+}
+
+.value-chain__step:last-child {
+  padding-bottom: 0;
+}
+
+/* Marcador del paso (Coral 500, elemento gráfico) */
+.value-chain__step::before {
+  content: "";
+  position: absolute;
+  left: calc(-1 * var(--space-6) - var(--border-thin) / 2);
+  top: var(--space-4);
+  width: var(--space-12);
+  height: var(--space-12);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-accent-hover);
+}
+
+.value-chain__num {
+  color: var(--color-text-brand);
+}
+
+.value-chain__step p {
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 768px) {
+  .value-chain {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-48) var(--space-32);
+  }
+
+  .value-chain__step {
+    padding: var(--space-24) 0 0;
+    border-left: 0;
+    border-top: var(--border-thin) solid var(--color-border-default);
+  }
+
+  .value-chain__step::before {
+    left: 0;
+    top: calc(-1 * var(--space-6) - var(--border-thin) / 2);
+  }
+}
+
+@media (min-width: 1280px) {
+  .value-chain {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: var(--space-24);
+  }
+}
+
+/* Campo de texto largo */
+.control--textarea {
+  align-items: flex-start;
+}
+
+.control--textarea .control__input {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Módulo comercial (<sales-contact>, js/layout.js)
+   Botón flotante abajo a la izquierda (Acento con forma de diálogo) que abre
+   el formulario: panel sobre el botón en desktop, panel inferior en mobile.
+   ========================================================================== */
+
+/* Forma de diálogo: esquina inferior izquierda recta */
+.btn--speech {
+  border-radius: var(--radius-full) var(--radius-full) var(--radius-full) 0;
+}
+
+.sales-contact {
+  position: fixed;
+  left: var(--layout-gutter);
+  bottom: var(--space-24);
+  z-index: 57;
+  display: block;
+}
+
+/* Abierto queda sobre el botón del asistente (el panel inferior en mobile lo cubre).
+   Al abrir el menú se cierra solo (clic fuera), así que no compite con él. */
+.sales-contact.is-open {
+  z-index: 58;
+}
+
+.sales-contact[demo] {
+  position: static;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+}
+
+.sales-contact__panel {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: var(--space-24) var(--layout-gutter) var(--space-32);
+  background: var(--color-bg-page);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  box-shadow: var(--shadow-card);
+  animation: fade-up var(--duration-slow) var(--easing-out);
+}
+
+.sales-contact[demo] .sales-contact__panel {
+  position: static;
+  max-height: none;
+  border: var(--border-thin) solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  animation: none;
+}
+
+.sales-contact__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+  margin-bottom: var(--space-16);
+}
+
+.sales-contact__close {
+  color: var(--color-text-primary);
+}
+
+.sales-contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.sales-contact__form .btn {
+  align-self: flex-start;
+}
+
+@media (min-width: 768px) {
+  .sales-contact__panel {
+    position: absolute;
+    left: 0;
+    right: auto;
+    bottom: calc(100% + var(--space-12));
+    width: calc(3 * var(--space-128));
+    max-height: calc(100vh - var(--space-128));
+    padding: var(--space-24);
+    border-radius: var(--radius-xl);
+  }
+
+  .sales-contact[demo] .sales-contact__panel {
+    width: calc(3 * var(--space-128));
+  }
+}
+
+@media (min-width: 1280px) {
+  .sales-contact {
     bottom: var(--space-32);
   }
 }

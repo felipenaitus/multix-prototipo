@@ -9,6 +9,7 @@
    <season-strip label text href cta>        Franja temporal del hero
    <ir-contact name role-title phone email>  Contacto IR
    <chat-launcher>                           Botón flotante del asistente (se agrega solo)
+   <sales-contact product>                   Botón flotante + formulario comercial
 
    Estilos en css/components.css. Íconos: sprite de Figma (UI Kit), salvo las
    redes sociales (linkedin, x, facebook, instagram), dibujadas en el mismo estilo
@@ -118,6 +119,11 @@
     return s ? new URL('../', s).href : '';
   })();
 
+  // Enlaces internos: relativos a la raíz del sitio (funciona también desde pruebas/)
+  function url(href) {
+    return !href || href.charAt(0) === '#' || /^[a-z]+:/i.test(href) ? (href || '#') : ROOT + href;
+  }
+
   function telHref(phone) {
     return 'tel:' + String(phone).replace(/[^\d+]/g, '');
   }
@@ -135,7 +141,7 @@
 
   // Accesos visibles en la fila principal del header (desktop), centrados
   var HEADER_MAIN = [
-    { id: 'productos', label: 'Productos', href: '#' },
+    { id: 'productos', label: 'Productos', href: 'productos.html' },
     { id: 'sustentabilidad', label: 'Sustentabilidad', href: '#' },
     { id: 'inversionistas', label: 'Inversionistas', href: '#', children: INVESTOR_PAGES }
   ];
@@ -161,7 +167,7 @@
     {
       title: 'Negocio',
       items: [
-        { id: 'productos', label: 'Productos', href: '#' },
+        { id: 'productos', label: 'Productos', href: 'productos.html' },
         { id: 'sustentabilidad', label: 'Sustentabilidad', href: '#' },
         { id: 'inversionistas', label: 'Inversionistas', href: '#' }
       ]
@@ -277,7 +283,7 @@
             '</ul>' +
           '</li>';
         }
-        return '<li class="nav__item"><a class="nav__link' + cur + '" href="' + item.href + '"' + (cur ? ' aria-current="page"' : '') + '>' + esc(item.label) + '</a></li>';
+        return '<li class="nav__item"><a class="nav__link' + cur + '" href="' + url(item.href) + '"' + (cur ? ' aria-current="page"' : '') + '>' + esc(item.label) + '</a></li>';
       }).join('');
 
       var bar =
@@ -312,7 +318,7 @@
               // Solo el nombre: sin ícono, sin descripción y sin subpáginas
               var cur = item.id === current ? ' is-current' : '';
               var step = ' style="--step:' + Math.min(i, 3) + '"';
-              return '<li class="menu-item"' + step + '><a class="menu-link' + cur + '" href="' + item.href + '">' +
+              return '<li class="menu-item"' + step + '><a class="menu-link' + cur + '" href="' + url(item.href) + '">' +
                 '<span class="menu-link__name">' + esc(item.label) + '</span></a></li>';
             }).join('') +
           '</ul>' +
@@ -693,6 +699,87 @@
   });
 
   /* ======================================================================
+     <sales-contact> · Módulo de acceso al formulario comercial.
+     Botón flotante abajo a la izquierda ("Contactar al equipo comercial", Acento
+     con forma de diálogo) que abre un formulario: panel sobre el botón en
+     desktop y panel inferior a lo ancho en mobile. Se cierra con la X, Escape o
+     clic fuera. product="fresco|congelado|ahumado" preselecciona el producto.
+     El envío es de prototipo: muestra un mensaje de confirmación.
+     ====================================================================== */
+  var PRODUCTS = ['Fresco', 'Congelado', 'Ahumado'];
+
+  class SalesContact extends HTMLElement {
+    connectedCallback() {
+      if (this._ready) return;
+      this._ready = true;
+      injectSprite();
+      var self = this;
+      var demo = this.hasAttribute('demo');
+      var panelId = nextId('sales-panel');
+      var f = nextId('sales');
+      var preset = (this.getAttribute('product') || '').toLowerCase();
+      this.classList.add('sales-contact');
+
+      this.innerHTML =
+        '<div class="sales-contact__panel" id="' + panelId + '" role="dialog" aria-modal="false" aria-labelledby="' + f + '-title"' + (demo ? '' : ' hidden') + '>' +
+          '<div class="sales-contact__head">' +
+            '<p class="t-h3" id="' + f + '-title">Contactar al equipo comercial</p>' +
+            '<button type="button" class="header__icon-btn sales-contact__close" aria-label="Cerrar formulario">' +
+              '<span class="burger burger--x" aria-hidden="true"><span></span><span></span><span></span></span>' +
+            '</button>' +
+          '</div>' +
+          '<form class="sales-contact__form" action="#" novalidate>' +
+            '<div class="field"><label class="field__label" for="' + f + '-name">Nombre</label><div class="control"><input class="control__input" id="' + f + '-name" name="nombre" autocomplete="name" required></div></div>' +
+            '<div class="field"><label class="field__label" for="' + f + '-company">Empresa</label><div class="control"><input class="control__input" id="' + f + '-company" name="empresa" autocomplete="organization" required></div></div>' +
+            '<div class="field"><label class="field__label" for="' + f + '-email">Correo electrónico</label><div class="control"><input class="control__input" id="' + f + '-email" name="correo" type="email" autocomplete="email" placeholder="nombre@empresa.com" required></div></div>' +
+            '<div class="field"><label class="field__label" for="' + f + '-product">Producto de interés</label><div class="control control--select"><select class="control__input" id="' + f + '-product" name="producto">' +
+              '<option value="">Seleccionar</option>' +
+              PRODUCTS.map(function (p) { return '<option' + (p.toLowerCase() === preset ? ' selected' : '') + '>' + p + '</option>'; }).join('') +
+            '</select>' + icon('chev-down') + '</div></div>' +
+            '<div class="field"><label class="field__label" for="' + f + '-msg">Mensaje</label><div class="control control--textarea"><textarea class="control__input" id="' + f + '-msg" name="mensaje" rows="3"></textarea></div></div>' +
+            '<button type="submit" class="btn btn--primary">Enviar</button>' +
+            '<p class="t-small c-secondary sales-contact__done" role="status" hidden>Gracias. Te contactaremos dentro de 48 horas hábiles. [prototipo: no se envía]</p>' +
+          '</form>' +
+        '</div>' +
+        '<button type="button" class="btn btn--accent btn--speech sales-contact__toggle" aria-expanded="false" aria-controls="' + panelId + '">Contactar al equipo comercial</button>';
+
+      if (demo) return;
+
+      var toggle = this.querySelector('.sales-contact__toggle');
+      var panel = this.querySelector('.sales-contact__panel');
+      var form = this.querySelector('form');
+      var done = this.querySelector('.sales-contact__done');
+
+      function setOpen(open) {
+        panel.hidden = !open;
+        toggle.setAttribute('aria-expanded', String(open));
+        self.classList.toggle('is-open', open);
+        if (open) setTimeout(function () { panel.querySelector('input').focus(); }, 30);
+      }
+      toggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        setOpen(panel.hidden);
+      });
+      this.querySelector('.sales-contact__close').addEventListener('click', function () {
+        setOpen(false);
+        toggle.focus();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !panel.hidden) { setOpen(false); toggle.focus(); }
+      });
+      document.addEventListener('click', function (e) {
+        if (!panel.hidden && !self.contains(e.target)) setOpen(false);
+      });
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        done.hidden = false;
+        form.querySelector('button[type="submit"]').disabled = true;
+      });
+    }
+  }
+
+  /* ======================================================================
      <chat-launcher> · Botón flotante del asistente (chatbot).
      Transversal: se agrega solo en todas las páginas (no hace falta la etiqueta).
      Fijo abajo a la derecha. Blanco sobre fondos oscuros y Navy 900 sobre claros.
@@ -739,4 +826,5 @@
   customElements.define('season-strip', SeasonStrip);
   customElements.define('ir-contact', IrContact);
   customElements.define('chat-launcher', ChatLauncher);
+  customElements.define('sales-contact', SalesContact);
 })();
