@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Footer: títulos alineados y banderas
+- Código ✓ · El logo del footer pasa a su propia fila: "Direcciones", "Información" y "Personas y proveedores" quedan a la misma altura en desktop. En tablet, direcciones arriba y enlaces debajo.
+- Código ✓ · El título "Direcciones y teléfonos" pasa a "Direcciones". Cada oficina lleva la bandera de su país (SVG con forma de emoji en `assets/flags/cl.svg` y `us.svg`: Windows no dibuja los emojis de bandera y mostraría "CL" / "US"). Los teléfonos no se cortan.
+
 ## 2026-10-20 · Datos reales del footer y redes sociales
 - Código ✓ · Footer con las direcciones y teléfonos reales: Puerto Montt (Cardonal 2501, Región de Los Lagos · +56 65 2483 700), Santiago (Isidora Goyenechea 3621, Piso 17, Las Condes · +56 2 2430 1200) y Miami (703 Waterford Way Suite 510, FL 33126 · +1 305 647 2590). Desde tablet, en dos columnas.
 - Figma pendiente · Código ✓ · Redes sociales: LinkedIn, X, Facebook e Instagram (se quita YouTube). Íconos de X y Facebook nuevos, en el estilo de línea del kit. Aplica al footer y al menú.

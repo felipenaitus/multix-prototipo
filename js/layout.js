@@ -198,9 +198,9 @@
   };
 
   var OFFICES = [
-    { name: 'Puerto Montt, Chile', address: 'Cardonal 2501, Puerto Montt, Región de Los Lagos', phone: '+56 65 2483 700' },
-    { name: 'Santiago, Chile', address: 'Isidora Goyenechea 3621, Piso 17, Las Condes, Región Metropolitana', phone: '+56 2 2430 1200' },
-    { name: 'Miami, Estados Unidos', address: '703 Waterford Way Suite 510, Miami, FL 33126', phone: '+1 305 647 2590' }
+    { name: 'Puerto Montt, Chile', flag: 'cl', country: 'Chile', address: 'Cardonal 2501, Puerto Montt, Región de Los Lagos', phone: '+56 65 2483 700' },
+    { name: 'Santiago, Chile', flag: 'cl', country: 'Chile', address: 'Isidora Goyenechea 3621, Piso 17, Las Condes, Región Metropolitana', phone: '+56 2 2430 1200' },
+    { name: 'Miami, Estados Unidos', flag: 'us', country: 'Estados Unidos', address: '703 Waterford Way Suite 510, Miami, FL 33126', phone: '+1 305 647 2590' }
   ];
 
   var SOCIAL = [
@@ -574,7 +574,8 @@
 
       var offices = OFFICES.map(function (o) {
         return '<li class="footer__office">' +
-          '<p class="t-ui-small-strong">' + esc(o.name) + '</p>' +
+          // Bandera como SVG: Windows no dibuja los emojis de bandera (mostraría "CL" / "US")
+          '<p class="t-ui-small-strong footer__office-name"><img class="footer__flag" src="' + ROOT + 'assets/flags/' + o.flag + '.svg" alt="" width="18" height="12">' + esc(o.name) + '</p>' +
           '<address class="t-small footer__address">' + esc(o.address) + '</address>' +
           '<a class="footer__contact-link" href="' + telHref(o.phone) + '">' + icon('phone') + esc(o.phone) + '</a>' +
         '</li>';
@@ -595,10 +596,11 @@
 
       this.innerHTML =
         '<div class="container">' +
+          // El logo va en su propia fila para que los títulos de las columnas queden alineados
+          '<a class="footer__logo" href="' + ROOT + 'index.html" aria-label="Multi X, ir al inicio">' + logo() + '</a>' +
           '<div class="footer__top">' +
             '<div class="footer__brand">' +
-              '<a class="footer__logo" href="' + ROOT + 'index.html" aria-label="Multi X, ir al inicio">' + logo() + '</a>' +
-              '<p class="t-label footer__col-title">Direcciones y teléfonos</p>' +
+              '<p class="t-label footer__col-title">Direcciones</p>' +
               '<ul class="footer__offices" role="list">' + offices + '</ul>' +
               '<a class="footer__contact-link" href="mailto:' + esc(CONTACT.email) + '">' + icon('mail') + esc(CONTACT.email) + '</a>' +
             '</div>' +

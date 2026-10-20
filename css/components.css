@@ -2908,7 +2908,7 @@ a.pagination__item:hover,
   display: flex;
   flex-direction: column;
   gap: var(--space-40);
-  padding-block: var(--space-64) var(--space-40);
+  padding-block: var(--space-32) var(--space-40);
 }
 
 .footer__brand {
@@ -2923,8 +2923,22 @@ a.pagination__item:hover,
   display: inline-flex;
   align-items: center;
   min-height: var(--touch-target);
-  margin-bottom: var(--space-8);
+  margin-top: var(--space-64);
   color: var(--color-text-inverse);
+}
+
+.footer__office-name {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+/* Bandera del país (SVG con forma de emoji) */
+.footer__flag {
+  flex-shrink: 0;
+  width: auto;
+  height: var(--space-12);
+  border-radius: var(--radius-xs);
 }
 
 .site-footer .footer__logo:hover {
@@ -2978,6 +2992,12 @@ a.pagination__item:hover,
   line-height: var(--text-ui-strong-lh);
   font-weight: var(--text-ui-strong-weight);
   overflow-wrap: anywhere;
+}
+
+/* Los teléfonos no se cortan */
+.footer__office .footer__contact-link {
+  white-space: nowrap;
+  overflow-wrap: normal;
 }
 
 .footer__cols {
@@ -3059,9 +3079,10 @@ a.pagination__item:hover,
 }
 
 @media (min-width: 768px) {
+  /* Tablet: direcciones arriba (en dos columnas) y enlaces debajo */
   .footer__top {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-48) var(--space-40);
   }
 
@@ -3101,7 +3122,11 @@ a.pagination__item:hover,
   .footer__top {
     grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
     gap: var(--space-64);
-    padding-block: var(--space-80) var(--space-64);
+    padding-block: var(--space-40) var(--space-64);
+  }
+
+  .footer__logo {
+    margin-top: var(--space-80);
   }
 }
 

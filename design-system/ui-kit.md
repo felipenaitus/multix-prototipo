@@ -113,7 +113,8 @@ Header, menú hamburguesa y footer viven solo en `js/layout.js` (ver CLAUDE.md 2
 - La hamburguesa se transforma en X en la misma posición. Cierra con el botón, Escape y clic fuera del panel. Entrada con fade + leve desplazamiento (`--duration-slow`); los accesos entran con desfase (`--duration-stagger`).
 
 **Footer (`<site-footer>`)**
-- Direcciones y teléfonos reales: Puerto Montt, Santiago y Miami (teléfonos y correo clickeables; desde tablet en dos columnas, Chile a la izquierda y Miami a la derecha) · Información (Preguntas Frecuentes, Legislación, Canal de Denuncias) · Personas y proveedores (Trabaja con Nosotros, Portal Proveedores) · redes sociales · copyright.
+- Logo en su propia fila, arriba, para que los títulos de columna ("Direcciones", "Información", "Personas y proveedores") queden a la misma altura en desktop.
+- "Direcciones": Puerto Montt, Santiago y Miami, cada una con la bandera de su país (SVG en `assets/flags/`, porque Windows no dibuja los emojis de bandera), dirección y teléfono clickeable (sin cortes de línea). Desde tablet en dos columnas: Chile a la izquierda y Miami a la derecha · Información (Preguntas Frecuentes, Legislación, Canal de Denuncias) · Personas y proveedores (Trabaja con Nosotros, Portal Proveedores) · redes sociales · copyright.
 - Canal de Denuncias es un enlace más, con el mismo estilo que el resto (sin tarjeta ni botón).
 - Redes sociales: LinkedIn, X, Facebook e Instagram. Íconos dibujados en el estilo de línea del kit, pendientes de llevar a Figma.
 
