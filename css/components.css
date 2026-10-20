@@ -104,6 +104,11 @@
   transform: translateX(var(--space-4));
 }
 
+/* Forma de diálogo: esquina inferior izquierda recta (botón comercial del hero) */
+.btn--speech {
+  border-radius: var(--radius-full) var(--radius-full) var(--radius-full) 0;
+}
+
 /* Pequeño */
 .btn--sm {
   padding: var(--space-8) var(--space-16);
@@ -3145,4 +3150,59 @@ a.pagination__item:hover,
 
 .cursor.is-hover .cursor__ring {
   scale: 1.5;
+}
+
+
+/* ==========================================================================
+   Botón flotante del asistente (<chat-launcher>, js/layout.js)
+   Fijo abajo a la derecha en todo el sitio. Navy 900 con ícono blanco sobre
+   fondos claros; blanco con ícono Navy 900 sobre fondos oscuros.
+   ========================================================================== */
+.chat-launcher {
+  position: fixed;
+  right: var(--layout-gutter);
+  bottom: var(--space-24);
+  z-index: 57;
+  display: block;
+}
+
+.chat-launcher[demo] {
+  position: static;
+}
+
+.chat-launcher__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--space-48) + var(--space-8));
+  height: calc(var(--space-48) + var(--space-8));
+  border-radius: var(--radius-full);
+  background: var(--color-bg-brand);
+  color: var(--color-text-inverse);
+  transition:
+    background-color var(--duration-fast) var(--easing-standard),
+    color var(--duration-fast) var(--easing-standard);
+}
+
+.chat-launcher__btn:hover {
+  background: var(--color-bg-brand-hover);
+}
+
+.chat-launcher.is-on-dark .chat-launcher__btn {
+  background: var(--color-bg-page);
+  color: var(--color-text-brand);
+}
+
+.chat-launcher.is-on-dark .chat-launcher__btn:hover {
+  background: var(--color-bg-brand-soft);
+}
+
+.chat-launcher.is-on-dark .chat-launcher__btn:focus-visible {
+  outline-color: var(--color-border-inverse);
+}
+
+@media (min-width: 1280px) {
+  .chat-launcher {
+    bottom: var(--space-32);
+  }
 }

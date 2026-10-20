@@ -316,21 +316,10 @@
     document.body.appendChild(cursor);
     root.classList.add('has-cursor');
 
-    // Fondo visible bajo el puntero: la primera capa (de arriba hacia abajo) con
-    // color de fondo opaco y visible. Así funciona también sobre el header fijo
-    // transparente, que deja ver el hero.
+    // Fondo visible bajo el puntero (helper compartido MX.isDarkAt de layout.js).
+    // Funciona también sobre el header fijo transparente, que deja ver el hero.
     function isDark(px, py) {
-      var stack = document.elementsFromPoint(px, py);
-      for (var i = 0; i < stack.length; i++) {
-        var s = getComputedStyle(stack[i]);
-        if (parseFloat(s.opacity) < 0.5 || s.visibility === 'hidden') continue;
-        var m = s.backgroundColor.match(/[\d.]+/g);
-        if (m && (m.length < 4 || parseFloat(m[3]) > 0.5)) {
-          var lum = (0.2126 * m[0] + 0.7152 * m[1] + 0.0722 * m[2]) / 255;
-          return lum < 0.5;
-        }
-      }
-      return false;
+      return window.MX && window.MX.isDarkAt ? window.MX.isDarkAt(px, py) : false;
     }
 
     var x = 0, y = 0, raf = null;

@@ -133,3 +133,18 @@
     align-self: center;
   }
 }
+
+/* Botón comercial del hero: abajo a la izquierda. En mobile sube para no
+   chocar con el botón flotante del asistente (abajo a la derecha). */
+.test-hero__actions {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: var(--space-96);
+}
+
+@media (min-width: 768px) {
+  .test-hero__actions {
+    bottom: var(--space-32);
+  }
+}

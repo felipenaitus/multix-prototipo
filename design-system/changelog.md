@@ -4,6 +4,11 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Botón del asistente y botón comercial del hero
+- Figma pendiente · Código ✓ · Nuevo componente transversal `<chat-launcher>`: botón flotante del asistente, fijo abajo a la derecha en todo el sitio (se agrega solo desde layout.js). Navy 900 sobre fondos claros y blanco sobre oscuros. No abre nada por ahora. Ícono de chat nuevo, en el estilo del kit.
+- Figma pendiente · Código ✓ · Nueva variante de botón `.btn--speech` (Acento con forma de diálogo, esquina inferior izquierda recta) para "Contactar al equipo comercial", abajo a la izquierda del hero. Usa Coral 400 con texto Ink 900 (la regla prohíbe texto blanco sobre coral).
+- Código ✓ · La detección de fondo oscuro pasa a un helper compartido (`MX.isDarkAt` en layout.js) que usan el cursor y el botón del asistente.
+
 ## 2026-10-20 · El ícono de buscar abre el menú
 - Código ✓ · El ícono de buscar de la barra utilitaria (desktop) y del header (mobile y tablet) pasa a ser un botón que abre el menú hamburguesa con el foco en su buscador. Si el menú ya está abierto, solo enfoca el buscador.
 

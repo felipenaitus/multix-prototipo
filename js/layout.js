@@ -8,6 +8,7 @@
    <site-footer>                             Footer
    <season-strip label text href cta>        Franja temporal del hero
    <ir-contact name role-title phone email>  Contacto IR
+   <chat-launcher>                           Botón flotante del asistente (se agrega solo)
 
    Estilos en css/components.css. Íconos: sprite de Figma (UI Kit), salvo las
    redes sociales (linkedin, instagram, youtube), dibujadas en el mismo estilo
@@ -44,6 +45,8 @@
     minus: ['0 0 18 18', '2.53125 8.15625', 1.6875, ['M0.84375 0.84375H12.0938']],
     plus: ['0 0 18 18', '2.53125 2.53125', 1.6875, ['M6.46875 0.84375V6.46875M6.46875 6.46875V12.0938M6.46875 6.46875H0.84375M6.46875 6.46875H12.0938']],
     up: ['0 0 14 14', '3.0625 2.1875', 1.75, ['M3.9375 9.1875V0.875M7 3.9375L3.9375 0.875L0.875 3.9375']],
+    // Asistente (chat): dibujado en el estilo del kit (no viene de Figma)
+    chat: ['0 0 24 24', '0 0', 1.6, ['M5 4.5H19A1.5 1.5 0 0 1 20.5 6V15A1.5 1.5 0 0 1 19 16.5H10L5.5 20V16.5H5A1.5 1.5 0 0 1 3.5 15V6A1.5 1.5 0 0 1 5 4.5Z', 'M8.5 10.5H8.51M12 10.5H12.01M15.5 10.5H15.51']],
     // Redes sociales: dibujadas en el estilo del kit (no vienen de Figma)
     linkedin: ['0 0 16 16', '0 0', 1.5, ['M4 2.5H12A1.5 1.5 0 0 1 13.5 4V12A1.5 1.5 0 0 1 12 13.5H4A1.5 1.5 0 0 1 2.5 12V4A1.5 1.5 0 0 1 4 2.5Z', 'M5.5 7V11M5.5 5V5.01M8 11V7M8 9C8 7.9 8.9 7 10 7S11.5 7.6 11.5 8.5V11']],
     instagram: ['0 0 16 16', '0 0', 1.5, ['M5.5 2.5H10.5A3 3 0 0 1 13.5 5.5V10.5A3 3 0 0 1 10.5 13.5H5.5A3 3 0 0 1 2.5 10.5V5.5A3 3 0 0 1 5.5 2.5Z', 'M10.5 8A2.5 2.5 0 1 1 5.5 8A2.5 2.5 0 0 1 10.5 8Z', 'M11.25 4.75V4.76']],
@@ -78,6 +81,24 @@
   }
 
   window.MX = window.MX || {};
+
+  /* ¿El fondo visible en (x, y) es oscuro? Recorre las capas de arriba hacia abajo
+     y toma la primera con color de fondo opaco y visible. Lo usan el botón de chat
+     y el cursor (components.js). skip: elemento a ignorar (el propio botón). */
+  window.MX.isDarkAt = function (x, y, skip) {
+    var stack = document.elementsFromPoint(x, y);
+    for (var i = 0; i < stack.length; i++) {
+      var el = stack[i];
+      if (skip && (el === skip || skip.contains(el))) continue;
+      var s = getComputedStyle(el);
+      if (parseFloat(s.opacity) < 0.5 || s.visibility === 'hidden') continue;
+      var m = s.backgroundColor.match(/[\d.]+/g);
+      if (m && (m.length < 4 || parseFloat(m[3]) > 0.5)) {
+        return (0.2126 * m[0] + 0.7152 * m[1] + 0.0722 * m[2]) / 255 < 0.5;
+      }
+    }
+    return false;
+  };
   window.MX.icon = icon;
 
   function esc(str) {
@@ -667,8 +688,50 @@
     });
   });
 
+  /* ======================================================================
+     <chat-launcher> · Botón flotante del asistente (chatbot).
+     Transversal: se agrega solo en todas las páginas (no hace falta la etiqueta).
+     Fijo abajo a la derecha. Blanco sobre fondos oscuros y Navy 900 sobre claros.
+     Por ahora no abre nada (el asistente está por definir).
+     ====================================================================== */
+  class ChatLauncher extends HTMLElement {
+    connectedCallback() {
+      if (this._ready) return;
+      this._ready = true;
+      injectSprite();
+      var self = this;
+      this.classList.add('chat-launcher');
+      this.innerHTML =
+        '<button type="button" class="chat-launcher__btn" aria-label="Asistente virtual (próximamente)" title="Asistente virtual · próximamente">' +
+          icon('chat', 'lg') +
+        '</button>';
+      if (this.hasAttribute('demo')) return;
+      var ticking = false;
+      function update() {
+        var r = self.getBoundingClientRect();
+        self.classList.toggle('is-on-dark', window.MX.isDarkAt(r.left + r.width / 2, r.top + r.height / 2, self));
+        ticking = false;
+      }
+      function schedule() {
+        if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+      }
+      window.addEventListener('scroll', schedule, { passive: true });
+      window.addEventListener('resize', schedule);
+      // el header o el menú pueden cambiar lo que hay detrás
+      setTimeout(update, 300);
+      update();
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!document.querySelector('chat-launcher:not([demo])')) {
+      document.body.appendChild(document.createElement('chat-launcher'));
+    }
+  });
+
   customElements.define('site-header', SiteHeader);
   customElements.define('site-footer', SiteFooter);
   customElements.define('season-strip', SeasonStrip);
   customElements.define('ir-contact', IrContact);
+  customElements.define('chat-launcher', ChatLauncher);
 })();
