@@ -2142,7 +2142,7 @@ a.pagination__item:hover,
 }
 
 /* Menú abierto: el header desaparece y solo quedan el logo y la X de cerrar,
-   sobre el fondo oscurecido. Blancos sobre el hero, Navy 900 fuera de él. */
+   siempre en blanco sobre el fondo oscurecido. */
 .site-header.is-menu-open .header__bg,
 .site-header.is-menu-open .header__utility,
 .site-header.is-menu-open .header__nav,

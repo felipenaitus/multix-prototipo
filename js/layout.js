@@ -530,12 +530,11 @@
       this.classList.toggle('is-compact', compact);
 
       var overlayVariant = this.classList.contains('site-header--overlay');
-      // Con el menú abierto se mantiene el estado de fondo: así el logo y la X quedan
-      // blancos sobre el hero y navy fuera de él
       this.dataset.state = overlayVariant && !scrolled ? 'transparent' : 'solid';
 
-      // Textos claros solo mientras es transparente sobre el hero; si no, siempre blanco
-      this.dataset.tone = this.dataset.state === 'transparent' ? 'dark' : 'light';
+      // Textos claros sobre el hero y con el menú abierto (logo y X blancos sobre el
+      // fondo oscurecido); en el resto del sitio, header blanco con textos oscuros
+      this.dataset.tone = this.dataset.state === 'transparent' || menuOpen ? 'dark' : 'light';
 
       // Borde inferior visible del header (para ubicar el panel del menú)
       var bottom = compact ? mainCompact : util + main;

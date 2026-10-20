@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Logo y X blancos con el menú abierto
+- Código ✓ · Con el menú abierto, el logo y la X quedan siempre en blanco (también fuera del hero), sobre el fondo oscurecido.
+
 ## 2026-10-20 · Header con el menú abierto
 - Código ✓ · Con el menú abierto, el header se desvanece y solo quedan el logo y la X de cerrar: blancos sobre el hero y Navy 900 fuera de él (antes el header quedaba blanco y completo).
 

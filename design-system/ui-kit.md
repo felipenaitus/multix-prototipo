@@ -109,7 +109,7 @@ Header, menú hamburguesa y footer viven solo en `js/layout.js` (ver CLAUDE.md 2
 - Etiquetas de grupo: "La compañía" y "Negocio" en Coral 500 (**excepción a la regla del coral**, aprobada por Felipe: 3,1:1, no cumple AA); "Portales" y "Recursos" en Ink 500 (`--color-text-tertiary`).
 - Franja inferior, separada por un divisor: Portales (Portal Proveedores, Diving X) · Recursos (Contacto, Preguntas Frecuentes, Canal de Denuncias) en UI/Pequeño destacado e Ink 600, igual que la barra utilitaria (más suave, para no competir con los accesos principales), y las redes sociales a la derecha. Sin datos de contacto.
 - Espaciado vertical entre módulos: `--space-40` bajo el buscador, `--space-48` bajo los accesos y `--space-32` sobre los secundarios.
-- Con el menú abierto el header desaparece (fondo, barra utilitaria, accesos y buscador se desvanecen) y solo quedan el logo y la X de cerrar, en su misma posición sobre el fondo oscurecido: blancos sobre el hero y Navy 900 fuera de él.
+- Con el menú abierto el header desaparece (fondo, barra utilitaria, accesos y buscador se desvanecen) y solo quedan el logo y la X de cerrar, en su misma posición sobre el fondo oscurecido, siempre en blanco (logo versión blanca y X blanca), sobre el hero y fuera de él.
 - La hamburguesa se transforma en X en la misma posición. Cierra con el botón, Escape y clic fuera del panel. Entrada con fade + leve desplazamiento (`--duration-slow`); los accesos entran con desfase (`--duration-stagger`).
 
 **Footer (`<site-footer>`)**
