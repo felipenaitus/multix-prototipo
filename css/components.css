@@ -3401,13 +3401,11 @@ a.pagination__item:hover,
   gap: var(--space-40);
 }
 
-.markets__map {
+.markets__globe {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  aspect-ratio: 16 / 10;
-  background: var(--color-bg-brand-soft);
-  border-radius: var(--radius-xl);
+  gap: var(--space-16);
 }
 
 .markets__info {
@@ -3473,8 +3471,8 @@ a.pagination__item:hover,
 }
 
 @media (min-width: 768px) {
-  .markets__map {
-    aspect-ratio: 2 / 1;
+  .markets__globe .globe {
+    width: 70%;
   }
 
   .markets__regions {
@@ -3483,13 +3481,13 @@ a.pagination__item:hover,
 }
 
 @media (min-width: 1280px) {
-  .markets__map {
-    aspect-ratio: 16 / 10;
+  .markets__globe .globe {
+    width: 100%;
   }
 
   .markets {
     grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-    align-items: start;
+    align-items: center;
     gap: var(--space-64);
   }
 }
@@ -3666,5 +3664,306 @@ a.pagination__item:hover,
 @media (min-width: 1280px) {
   .sales-contact {
     bottom: var(--space-32);
+  }
+}
+
+/* Globo de mercados ([data-globe], js/components.js) · patrón Firma de Productos.
+   Esfera blanca con continentes en puntos Navy; pines Coral 500 (mercados) y
+   Navy (oficinas comerciales). El nombre aparece con hover, foco o clic. */
+.globe {
+  --globe-land: var(--color-text-brand);
+  --globe-sphere: var(--color-bg-page);
+  --globe-edge: var(--color-border-default);
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.globe__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y; /* en mobile el scroll vertical sigue funcionando */
+}
+
+.globe__pins {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  pointer-events: none;
+}
+
+.globe__pins > li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity var(--duration-fast) var(--easing-standard);
+}
+
+.globe__pins > li.is-back {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.globe__pin {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--touch-target);
+  height: var(--touch-target);
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: var(--radius-full);
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.globe__dot {
+  width: var(--space-12);
+  height: var(--space-12);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-accent-hover);
+  box-shadow: 0 0 0 var(--border-indicator) var(--color-bg-page);
+  transition: transform var(--duration-fast) var(--easing-standard);
+}
+
+.globe__pin--office .globe__dot {
+  background: var(--color-bg-brand);
+}
+
+.globe__pin:hover .globe__dot,
+.globe__pins > li.is-active .globe__dot {
+  transform: scale(1.35);
+}
+
+.globe__label {
+  position: absolute;
+  bottom: calc(100% - var(--space-8));
+  left: 50%;
+  padding: var(--space-4) var(--space-8);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  background: var(--color-bg-page);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+  opacity: 0;
+  transform: translate(-50%, var(--space-4));
+  transition:
+    opacity var(--duration-fast) var(--easing-standard),
+    transform var(--duration-fast) var(--easing-standard);
+  pointer-events: none;
+}
+
+.globe__pin:hover .globe__label,
+.globe__pin:focus-visible .globe__label,
+.globe__pins > li.is-active .globe__label {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.globe__legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-8) var(--space-24);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--color-text-secondary);
+}
+
+.globe__legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.globe__legend li::before {
+  content: "";
+  width: var(--space-8);
+  height: var(--space-8);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-accent-hover);
+}
+
+.globe__legend .is-office::before {
+  background: var(--color-bg-brand);
+}
+
+/* Descarga del catálogo: bloque Navy 950 con texto, botón y portada */
+.catalog-cta {
+  display: grid;
+  gap: var(--space-32);
+  align-items: center;
+  padding: var(--space-40) var(--space-24);
+  background: var(--color-bg-inverse);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-xl);
+}
+
+.brands + .catalog-cta {
+  margin-top: var(--space-48);
+}
+
+.catalog-cta__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+}
+
+.catalog-cta__label {
+  color: var(--color-text-accent-on-dark);
+}
+
+.catalog-cta__text p:not(.catalog-cta__label) {
+  color: var(--color-text-inverse-muted);
+}
+
+.catalog-cta__text .btn {
+  margin-top: var(--space-8);
+}
+
+.catalog-cta__cover {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .catalog-cta {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: var(--space-48);
+    padding: var(--space-48);
+  }
+
+  .catalog-cta__cover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 3 / 4;
+    width: 70%;
+    justify-self: center;
+    background: var(--color-bg-brand);
+    border: var(--border-thin) solid var(--color-border-inverse-muted);
+    border-radius: var(--radius-md);
+    color: var(--color-text-inverse-muted);
+  }
+}
+
+@media (min-width: 1280px) {
+  .catalog-cta {
+    padding: var(--space-64);
+  }
+
+  .catalog-cta__cover {
+    width: 50%;
+  }
+}
+
+/* Certificaciones en grilla (8 o más): tarjeta con espacio de logo, nombre y
+   descripción desplegable. Mobile: fila (logo a la izquierda). Desde tablet:
+   tarjeta con el logo arriba; 2 columnas en tablet y 4 en desktop. */
+.cert-grid {
+  display: grid;
+  gap: var(--space-12);
+  align-items: start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cert-card {
+  background: var(--color-bg-page);
+  border: var(--border-thin) solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.cert-card__head {
+  display: grid;
+  grid-template-columns: var(--size-cert-logo) minmax(0, 1fr) auto;
+  grid-template-areas: "logo name icon";
+  align-items: center;
+  gap: var(--space-16);
+  width: 100%;
+  padding: var(--space-16);
+  text-align: left;
+  color: var(--color-text-primary);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.cert-card__logo {
+  grid-area: logo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  background: var(--color-bg-subtle);
+  border: var(--border-thin) dashed var(--color-border-default);
+  border-radius: var(--radius-md);
+  font-size: var(--text-small-size);
+  line-height: var(--text-small-lh);
+  color: var(--color-text-tertiary);
+  text-align: center;
+}
+
+.cert-card__name {
+  grid-area: name;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.cert-card__name span {
+  color: var(--color-text-secondary);
+}
+
+.cert-card__head .toggle-icon {
+  grid-area: icon;
+}
+
+.cert-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-12);
+  padding: 0 var(--space-16) var(--space-20);
+}
+
+.cert-card__body p {
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 768px) {
+  .cert-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-16);
+  }
+
+  .cert-card__head {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "logo logo" "name icon";
+    padding: var(--space-20);
+  }
+
+  .cert-card__logo {
+    aspect-ratio: 16 / 9;
+  }
+
+  .cert-card__body {
+    padding: 0 var(--space-20) var(--space-24);
+  }
+}
+
+@media (min-width: 1280px) {
+  .cert-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-24);
   }
 }

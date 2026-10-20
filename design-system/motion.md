@@ -52,3 +52,8 @@ Estado: **Base** = se aplica en todo el sitio sin preguntar. **Firma** = efecto 
 
 ## Agregar un patrón nuevo
 Si una sección necesita un movimiento que no está en este catálogo: proponerlo a Felipe (qué hace, dónde, versión mobile y versión con movimiento reducido) y, si lo aprueba, agregarlo aquí antes de implementarlo.
+
+## Firma · Globo de mercados (solo Productos › Mercado y oficinas comerciales)
+- Giro continuo muy lento (aprox. una vuelta cada 80 s) solo mientras el globo está a la vista (IntersectionObserver); se detiene con el mouse encima o con un pin seleccionado.
+- Arrastrar gira el globo. Con foco o clic en un pin, el globo gira hasta centrarlo (3 × `--duration-slow`, salida suave) y muestra su nombre (`--duration-fast`).
+- Con `prefers-reduced-motion`: sin giro automático y el centrado es instantáneo.

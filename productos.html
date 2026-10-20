@@ -23,56 +23,14 @@
     <!-- Intro -->
     <section class="hero hero--page on-dark" aria-labelledby="prod-title">
       <div class="hero__media" aria-hidden="true">
-        <img src="assets/img/noticia-destacada.jpg" alt="">
+        <video data-hero-video autoplay muted loop playsinline preload="metadata" poster="assets/video/productos-poster.jpg">
+          <source src="assets/video/productos.mp4" type="video/mp4">
+        </video>
       </div>
-      <span class="hero__placeholder t-small">[foto por definir]</span>
       <div class="container hero__content">
         <p class="t-label c-inverse-muted">Productos</p>
         <h1 class="t-display hero__title" id="prod-title">Your salmon solution partner</h1>
         <p class="t-body-l hero__lead">Salmón Atlántico del sur de Chile, fresco, congelado y ahumado, con una cadena integrada que nos permite responder a cada cliente con la misma calidad. [contenido por definir]</p>
-      </div>
-    </section>
-
-    <!-- Soluciones -->
-    <section class="section" aria-labelledby="sol-title">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="t-label c-accent">Soluciones</p>
-          <h2 class="t-h2" id="sol-title">Un formato para cada mercado</h2>
-          <p class="t-body-l section-head__lead">Trabajamos con retail, food service e industria en más de 30 países, con productos adaptados a cada canal. [contenido por definir]</p>
-        </div>
-        <ul class="solutions" role="list">
-          <li class="reveal" style="--reveal-step: 0">
-            <article class="solution-card">
-              <div class="solution-card__media"><span class="placeholder-tag">[foto por definir]</span></div>
-              <div class="solution-card__body">
-                <h3 class="t-h3">Fresco</h3>
-                <p class="t-body">Filetes, porciones y salmón entero, despachados por vía aérea a pocas horas de la cosecha. [contenido por definir]</p>
-                <a class="btn btn--tertiary hit" href="#">Ver formatos<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg><span class="visually-hidden"> de salmón fresco</span></a>
-              </div>
-            </article>
-          </li>
-          <li class="reveal" style="--reveal-step: 1">
-            <article class="solution-card">
-              <div class="solution-card__media"><span class="placeholder-tag">[foto por definir]</span></div>
-              <div class="solution-card__body">
-                <h3 class="t-h3">Congelado</h3>
-                <p class="t-body">Porciones y filetes congelados individualmente, listos para retail y food service en cualquier destino. [contenido por definir]</p>
-                <a class="btn btn--tertiary hit" href="#">Ver formatos<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg><span class="visually-hidden"> de salmón congelado</span></a>
-              </div>
-            </article>
-          </li>
-          <li class="reveal" style="--reveal-step: 2">
-            <article class="solution-card">
-              <div class="solution-card__media"><span class="placeholder-tag">[foto por definir]</span></div>
-              <div class="solution-card__body">
-                <h3 class="t-h3">Ahumado</h3>
-                <p class="t-body">Salmón ahumado en frío y en caliente, en láminas y porciones, elaborado en nuestra propia planta. [contenido por definir]</p>
-                <a class="btn btn--tertiary hit" href="#">Ver formatos<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg><span class="visually-hidden"> de salmón ahumado</span></a>
-              </div>
-            </article>
-          </li>
-        </ul>
       </div>
     </section>
 
@@ -84,8 +42,30 @@
           <h2 class="t-h2" id="mkt-title">Mercado y oficinas comerciales</h2>
         </div>
         <div class="markets">
-          <div class="markets__map reveal">
-            <span class="placeholder-tag">[mapa por definir]</span>
+          <div class="markets__globe reveal">
+            <div class="globe" data-globe>
+              <canvas class="globe__canvas" aria-hidden="true"></canvas>
+              <ul class="globe__pins" role="list" aria-label="Oficinas comerciales y mercados">
+                <li data-lat="-41.47" data-lon="-72.94" data-type="office">Puerto Montt, Chile</li>
+                <li data-lat="-33.45" data-lon="-70.67" data-type="office">Santiago, Chile</li>
+                <li data-lat="25.76" data-lon="-80.19" data-type="office">Miami, Estados Unidos</li>
+                <li data-lat="40.7" data-lon="-74">Estados Unidos</li>
+                <li data-lat="56" data-lon="-106">Canadá</li>
+                <li data-lat="23.6" data-lon="-102.5">México</li>
+                <li data-lat="-14.2" data-lon="-51.9">Brasil</li>
+                <li data-lat="-34.6" data-lon="-58.4">Argentina</li>
+                <li data-lat="40.4" data-lon="-3.7">España</li>
+                <li data-lat="51.2" data-lon="10.4">Alemania</li>
+                <li data-lat="55.75" data-lon="37.6">Rusia</li>
+                <li data-lat="35.9" data-lon="104.2">China</li>
+                <li data-lat="37.5" data-lon="127">Corea del Sur</li>
+                <li data-lat="36.2" data-lon="138.3">Japón</li>
+              </ul>
+            </div>
+            <ul class="globe__legend t-small" role="list">
+              <li class="is-office">Oficina comercial</li>
+              <li>Mercado</li>
+            </ul>
           </div>
           <div class="markets__info reveal" style="--reveal-step: 1">
             <div class="markets__stat">
@@ -145,14 +125,18 @@
               <a class="btn btn--tertiary hit" href="#" target="_blank" rel="noopener">Ir al sitio<svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg><span class="visually-hidden">de Arka Fjord (abre en una pestaña nueva)</span></a>
             </article>
           </li>
-          <li class="reveal" style="--reveal-step: 2">
-            <article class="brand-card brand-card--catalog">
-              <p class="t-label c-accent">Catálogo Multi X</p>
-              <h3 class="t-h3">Productos frescos, congelados y ahumados</h3>
-              <a class="btn btn--primary btn--sm hit" href="#" download><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>Descargar catálogo</a>
-            </article>
-          </li>
         </ul>
+
+        <!-- Catálogo Multi X: bloque propio, separado de las marcas -->
+        <div class="catalog-cta on-dark reveal">
+          <div class="catalog-cta__text">
+            <p class="t-label catalog-cta__label">Catálogo Multi X</p>
+            <h2 class="t-h2" id="catalog-title">Productos frescos, congelados y ahumados</h2>
+            <p class="t-body-l">Formatos, especificaciones y fichas técnicas de toda nuestra línea en un solo documento. [contenido por definir]</p>
+            <a class="btn btn--accent hit" href="#" download><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>Descargar catálogo<span class="visually-hidden"> (PDF) [peso por definir]</span></a>
+          </div>
+          <div class="catalog-cta__cover" aria-hidden="true"><span class="t-small">[portada por definir]</span></div>
+        </div>
       </div>
     </section>
 
@@ -201,46 +185,106 @@
 
     <!-- Certificaciones -->
     <section class="section" aria-labelledby="cert-title">
-      <div class="container ir-pair">
+      <div class="container">
         <div class="section-head reveal">
           <p class="t-label c-accent">Calidad</p>
           <h2 class="t-h2" id="cert-title">Certificaciones</h2>
           <p class="t-body-l section-head__lead">Nuestros procesos están certificados por los principales estándares internacionales de acuicultura e inocuidad alimentaria. [contenido por definir]</p>
         </div>
-        <ul class="cert-list reveal" role="list" data-accordion>
-          <li class="cert">
-            <button class="cert__head" type="button" aria-expanded="false" aria-controls="cert-asc">
-              <span class="cert__logo" aria-hidden="true">ASC</span>
-              <span class="cert__name"><strong>ASC</strong><span>Aquaculture Stewardship Council</span></span>
+        <ul class="cert-grid" role="list" data-accordion>
+          <li class="cert-card reveal" style="--reveal-step: 0">
+            <button class="cert-card__head" type="button" aria-expanded="false" aria-controls="cert-1">
+              <span class="cert-card__logo" aria-hidden="true">[logo]</span>
+              <span class="cert-card__name"><strong class="t-ui-strong">ASC</strong><span class="t-small">Aquaculture Stewardship Council</span></span>
               <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
             </button>
-            <div class="cert__body acc-panel" id="cert-asc" hidden>
-              <p>Estándar internacional de acuicultura responsable. Evalúa impacto ambiental, bienestar animal y relación con comunidades.</p>
+            <div class="cert-card__body acc-panel" id="cert-1" hidden>
+              <p class="t-small">Estándar internacional de acuicultura responsable: impacto ambiental, bienestar animal y relación con comunidades. [contenido por definir]</p>
               <div class="cert__tags"><span class="badge badge--neutral">Cubre: centros de mar</span><span class="badge badge--brand">Vigente</span></div>
               <a class="doc-link" href="#" download>Ver certificado<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
             </div>
           </li>
-          <li class="cert">
-            <button class="cert__head" type="button" aria-expanded="false" aria-controls="cert-bap">
-              <span class="cert__logo" aria-hidden="true">BAP</span>
-              <span class="cert__name"><strong>BAP</strong><span>Best Aquaculture Practices</span></span>
+          <li class="cert-card reveal" style="--reveal-step: 1">
+            <button class="cert-card__head" type="button" aria-expanded="false" aria-controls="cert-2">
+              <span class="cert-card__logo" aria-hidden="true">[logo]</span>
+              <span class="cert-card__name"><strong class="t-ui-strong">BAP</strong><span class="t-small">Best Aquaculture Practices</span></span>
               <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
             </button>
-            <div class="cert__body acc-panel" id="cert-bap" hidden>
-              <p>Certificación de prácticas responsables en toda la cadena: pisciculturas, centros de engorda y plantas de proceso. [contenido por definir]</p>
+            <div class="cert-card__body acc-panel" id="cert-2" hidden>
+              <p class="t-small">Prácticas responsables en toda la cadena: pisciculturas, centros de engorda y plantas de proceso. [contenido por definir]</p>
               <div class="cert__tags"><span class="badge badge--neutral">Cubre: cadena completa</span><span class="badge badge--brand">Vigente</span></div>
               <a class="doc-link" href="#" download>Ver certificado<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
             </div>
           </li>
-          <li class="cert">
-            <button class="cert__head" type="button" aria-expanded="false" aria-controls="cert-brc">
-              <span class="cert__logo" aria-hidden="true">BRC</span>
-              <span class="cert__name"><strong>BRCGS</strong><span>Global Standard for Food Safety</span></span>
+          <li class="cert-card reveal" style="--reveal-step: 2">
+            <button class="cert-card__head" type="button" aria-expanded="false" aria-controls="cert-3">
+              <span class="cert-card__logo" aria-hidden="true">[logo]</span>
+              <span class="cert-card__name"><strong class="t-ui-strong">BRCGS</strong><span class="t-small">Global Standard for Food Safety</span></span>
               <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
             </button>
-            <div class="cert__body acc-panel" id="cert-brc" hidden>
-              <p>Estándar de inocuidad alimentaria para plantas de proceso. [contenido por definir]</p>
+            <div class="cert-card__body acc-panel" id="cert-3" hidden>
+              <p class="t-small">Estándar de inocuidad alimentaria para plantas de proceso. [contenido por definir]</p>
               <div class="cert__tags"><span class="badge badge--neutral">Cubre: plantas de proceso</span><span class="badge badge--brand">Vigente</span></div>
+              <a class="doc-link" href="#" download>Ver certificado<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
+            </div>
+          </li>
+          <li class="cert-card reveal" style="--reveal-step: 3">
+            <button class="cert-card__head" type="button" aria-expanded="false" aria-controls="cert-4">
+              <span class="cert-card__logo" aria-hidden="true">[logo]</span>
+              <span class="cert-card__name"><strong class="t-ui-strong">GLOBALG.A.P.</strong><span class="t-small">Good Agricultural Practices</span></span>
+              <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
+            </button>
+            <div class="cert-card__body acc-panel" id="cert-4" hidden>
+              <p class="t-small">Buenas prácticas de acuicultura, trazabilidad y seguridad de los trabajadores. [contenido por definir]</p>
+              <div class="cert__tags"><span class="badge badge--neutral">Cubre: centros de mar</span><span class="badge badge--brand">Vigente</span></div>
+              <a class="doc-link" href="#" download>Ver certificado<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
+            </div>
+          </li>
+          <li class="cert-card reveal" style="--reveal-step: 0">
+            <button class="cert-card__head" type="button" aria-expanded="false" aria-controls="cert-5">
+              <span class="cert-card__logo" aria-hidden="true">[logo]</span>
+              <span class="cert-card__name"><strong class="t-ui-strong">IFS Food</strong><span class="t-small">International Featured Standards</span></span>
+              <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
+            </button>
+            <div class="cert-card__body acc-panel" id="cert-5" hidden>
+              <p class="t-small">Seguridad y calidad de alimentos procesados, exigido por el retail europeo. [contenido por definir]</p>
+              <div class="cert__tags"><span class="badge badge--neutral">Cubre: plantas de proceso</span><span class="badge badge--brand">Vigente</span></div>
+              <a class="doc-link" href="#" download>Ver certificado<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
+            </div>
+          </li>
+          <li class="cert-card reveal" style="--reveal-step: 1">
+            <button class="cert-card__head" type="button" aria-expanded="false" aria-controls="cert-6">
+              <span class="cert-card__logo" aria-hidden="true">[logo]</span>
+              <span class="cert-card__name"><strong class="t-ui-strong">HACCP</strong><span class="t-small">Análisis de peligros y puntos críticos de control</span></span>
+              <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
+            </button>
+            <div class="cert-card__body acc-panel" id="cert-6" hidden>
+              <p class="t-small">Sistema de control de inocuidad en cada etapa del proceso. [contenido por definir]</p>
+              <div class="cert__tags"><span class="badge badge--neutral">Cubre: plantas de proceso</span><span class="badge badge--brand">Vigente</span></div>
+              <a class="doc-link" href="#" download>Ver certificado<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
+            </div>
+          </li>
+          <li class="cert-card reveal" style="--reveal-step: 2">
+            <button class="cert-card__head" type="button" aria-expanded="false" aria-controls="cert-7">
+              <span class="cert-card__logo" aria-hidden="true">[logo]</span>
+              <span class="cert-card__name"><strong class="t-ui-strong">Kosher</strong><span class="t-small">Certificación Kosher</span></span>
+              <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
+            </button>
+            <div class="cert-card__body acc-panel" id="cert-7" hidden>
+              <p class="t-small">Productos aptos según la normativa alimentaria judía. [contenido por definir]</p>
+              <div class="cert__tags"><span class="badge badge--neutral">Cubre: línea de productos</span><span class="badge badge--brand">Vigente</span></div>
+              <a class="doc-link" href="#" download>Ver certificado<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
+            </div>
+          </li>
+          <li class="cert-card reveal" style="--reveal-step: 3">
+            <button class="cert-card__head" type="button" aria-expanded="false" aria-controls="cert-8">
+              <span class="cert-card__logo" aria-hidden="true">[logo]</span>
+              <span class="cert-card__name"><strong class="t-ui-strong">Halal</strong><span class="t-small">Certificación Halal</span></span>
+              <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
+            </button>
+            <div class="cert-card__body acc-panel" id="cert-8" hidden>
+              <p class="t-small">Productos aptos según la normativa alimentaria islámica. [contenido por definir]</p>
+              <div class="cert__tags"><span class="badge badge--neutral">Cubre: línea de productos</span><span class="badge badge--brand">Vigente</span></div>
               <a class="doc-link" href="#" download>Ver certificado<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
             </div>
           </li>
@@ -250,16 +294,13 @@
 
     <!-- Contacto -->
     <section class="section section--subtle" aria-labelledby="contact-title">
-      <div class="container">
+      <div class="container ir-pair">
         <div class="section-head reveal">
           <p class="t-label c-accent">Contacto</p>
           <h2 class="t-h2" id="contact-title">Hablemos de tu próximo pedido</h2>
           <p class="t-body-l section-head__lead">Nuestro equipo comercial atiende a clientes en cada mercado. [contenido por definir]</p>
         </div>
-        <div class="ir-pair reveal">
-          <ir-contact label="Ventas Norteamérica · Miami" name="Nombre Apellido" role-title="Gerente comercial [contenido por definir]" phone="+1 305 647 2590" email="ventas@multi-x.com"></ir-contact>
-          <ir-contact label="Ventas Europa, Asia y Latinoamérica · Santiago" name="Nombre Apellido" role-title="Gerente comercial [contenido por definir]" phone="+56 2 2430 1200" email="ventas@multi-x.cl"></ir-contact>
-        </div>
+        <ir-contact class="reveal" label="Equipo comercial" name="Nombre Apellido" role-title="Gerente comercial [contenido por definir]" phone="+56 2 2430 1200" email="ventas@multi-x.cl"></ir-contact>
       </div>
     </section>
 

@@ -4,6 +4,14 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Productos: video, globo, catálogo aparte y 8 certificaciones
+- Código ✓ · Hero de Productos con video de fondo (`assets/video/productos.mp4`, 720p H.264 sin audio, 69 MB → 6,2 MB) y poster.
+- Código ✓ · Se quita la sección Soluciones de Productos por ahora (el componente sigue en el kit).
+- Figma pendiente · Código ✓ · Nuevo globo de mercados interactivo (`[data-globe]`) en lugar del mapa: continentes en puntos, pines de oficinas y mercados. Nuevo patrón Firma en motion.md.
+- Figma pendiente · Código ✓ · Nuestras marcas: solo Latitude 45 y Arka Fjord. El catálogo pasa a un bloque propio (`.catalog-cta`).
+- Figma pendiente · Código ✓ · Certificaciones en grilla de 8 (`.cert-grid`), con espacio de logo y descripción desplegable.
+- Código ✓ · Contacto con una sola persona.
+
 ## 2026-10-20 · Accesos principales a la derecha
 - Figma pendiente · Código ✓ · En desktop, Productos · Sustentabilidad · Inversionistas dejan de ir centrados y pasan a la derecha, junto al botón hamburguesa. Mobile y tablet sin cambios.
 

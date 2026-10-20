@@ -745,7 +745,7 @@
 
       <!-- Nuestras marcas -->
       <div class="kit-block">
-        <h3 class="t-label kit-block__title">Nuestras marcas + catálogo propio</h3>
+        <h3 class="t-label kit-block__title">Nuestras marcas + descarga del catálogo (bloque aparte)</h3>
         <ul class="brands" role="list">
           <li>
             <article class="brand-card">
@@ -761,14 +761,16 @@
               <a class="btn btn--tertiary hit" href="#" target="_blank" rel="noopener">Ir al sitio<svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg><span class="visually-hidden">de Arka Fjord (abre en una pestaña nueva)</span></a>
             </article>
           </li>
-          <li>
-            <article class="brand-card brand-card--catalog">
-              <p class="t-label c-accent">Catálogo Multi X</p>
-              <h4 class="t-h3">Productos frescos, congelados y ahumados</h4>
-              <a class="btn btn--primary btn--sm hit" href="#" download><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>Descargar catálogo</a>
-            </article>
-          </li>
         </ul>
+        <div class="catalog-cta on-dark">
+          <div class="catalog-cta__text">
+            <p class="t-label catalog-cta__label">Catálogo Multi X</p>
+            <h4 class="t-h2">Productos frescos, congelados y ahumados</h4>
+            <p class="t-body-l">Formatos, especificaciones y fichas técnicas. [contenido por definir]</p>
+            <a class="btn btn--accent hit" href="#" download><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>Descargar catálogo</a>
+          </div>
+          <div class="catalog-cta__cover" aria-hidden="true"><span class="t-small">[portada por definir]</span></div>
+        </div>
       </div>
 
       <!-- Componentes de la página Productos (nuevos, pendientes de llevar a Figma) -->
@@ -818,9 +820,24 @@
       </div>
 
       <div class="kit-block">
-        <h3 class="t-label kit-block__title">Mercados y oficinas · nuevo (mapa arriba en mobile, mapa + datos en desktop)</h3>
+        <h3 class="t-label kit-block__title">Mercados y oficinas · globo interactivo (gira solo, se arrastra; foco o clic en un pin lo centra)</h3>
         <div class="markets">
-          <div class="markets__map"><span class="placeholder-tag">[mapa por definir]</span></div>
+          <div class="markets__globe">
+            <div class="globe" data-globe>
+              <canvas class="globe__canvas" aria-hidden="true"></canvas>
+              <ul class="globe__pins" role="list" aria-label="Oficinas comerciales y mercados">
+                <li data-lat="-33.45" data-lon="-70.67" data-type="office">Santiago, Chile</li>
+                <li data-lat="25.76" data-lon="-80.19" data-type="office">Miami, Estados Unidos</li>
+                <li data-lat="-14.2" data-lon="-51.9">Brasil</li>
+                <li data-lat="40.4" data-lon="-3.7">España</li>
+                <li data-lat="36.2" data-lon="138.3">Japón</li>
+              </ul>
+            </div>
+            <ul class="globe__legend t-small" role="list">
+              <li class="is-office">Oficina comercial</li>
+              <li>Mercado</li>
+            </ul>
+          </div>
           <div class="markets__info">
             <div class="markets__stat">
               <p class="t-figure-l">30+</p>
@@ -839,6 +856,60 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Certificaciones en grilla · nuevo (8 o más; 4 columnas en desktop, 2 en tablet, lista en mobile)</h3>
+        <ul class="cert-grid" role="list" data-accordion>
+          <li class="cert-card">
+            <button class="cert-card__head" type="button" aria-expanded="true" aria-controls="kit-cert-1">
+              <span class="cert-card__logo" aria-hidden="true">[logo]</span>
+              <span class="cert-card__name"><strong class="t-ui-strong">ASC</strong><span class="t-small">Aquaculture Stewardship Council</span></span>
+              <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
+            </button>
+            <div class="cert-card__body acc-panel" id="kit-cert-1">
+              <p class="t-small">Descripción de la certificación. [contenido por definir]</p>
+              <div class="cert__tags"><span class="badge badge--neutral">Cubre: plantas de proceso</span><span class="badge badge--brand">Vigente</span></div>
+              <a class="doc-link" href="#" download>Ver certificado<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
+            </div>
+          </li>
+          <li class="cert-card">
+            <button class="cert-card__head" type="button" aria-expanded="false" aria-controls="kit-cert-2">
+              <span class="cert-card__logo" aria-hidden="true">[logo]</span>
+              <span class="cert-card__name"><strong class="t-ui-strong">BAP</strong><span class="t-small">Best Aquaculture Practices</span></span>
+              <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
+            </button>
+            <div class="cert-card__body acc-panel" id="kit-cert-2" hidden>
+              <p class="t-small">Descripción de la certificación. [contenido por definir]</p>
+              <div class="cert__tags"><span class="badge badge--neutral">Cubre: plantas de proceso</span><span class="badge badge--brand">Vigente</span></div>
+              <a class="doc-link" href="#" download>Ver certificado<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
+            </div>
+          </li>
+          <li class="cert-card">
+            <button class="cert-card__head" type="button" aria-expanded="false" aria-controls="kit-cert-3">
+              <span class="cert-card__logo" aria-hidden="true">[logo]</span>
+              <span class="cert-card__name"><strong class="t-ui-strong">BRCGS</strong><span class="t-small">Global Standard for Food Safety</span></span>
+              <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
+            </button>
+            <div class="cert-card__body acc-panel" id="kit-cert-3" hidden>
+              <p class="t-small">Descripción de la certificación. [contenido por definir]</p>
+              <div class="cert__tags"><span class="badge badge--neutral">Cubre: plantas de proceso</span><span class="badge badge--brand">Vigente</span></div>
+              <a class="doc-link" href="#" download>Ver certificado<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
+            </div>
+          </li>
+          <li class="cert-card">
+            <button class="cert-card__head" type="button" aria-expanded="false" aria-controls="kit-cert-4">
+              <span class="cert-card__logo" aria-hidden="true">[logo]</span>
+              <span class="cert-card__name"><strong class="t-ui-strong">HACCP</strong><span class="t-small">Análisis de peligros y puntos críticos de control</span></span>
+              <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
+            </button>
+            <div class="cert-card__body acc-panel" id="kit-cert-4" hidden>
+              <p class="t-small">Descripción de la certificación. [contenido por definir]</p>
+              <div class="cert__tags"><span class="badge badge--neutral">Cubre: plantas de proceso</span><span class="badge badge--brand">Vigente</span></div>
+              <a class="doc-link" href="#" download>Ver certificado<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
+            </div>
+          </li>
+        </ul>
       </div>
 
       <div class="kit-block">

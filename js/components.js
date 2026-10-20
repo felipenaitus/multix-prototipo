@@ -11,6 +11,7 @@
    [data-filters]                Barra de filtros (panel inferior en mobile)
    [data-add-calendar]           Agregar al calendario (opciones en mobile)
    video[data-hero-video]        Video de fondo: con movimiento reducido queda la imagen (poster)
+   [data-globe]                  Globo de puntos con pines (gira, se arrastra; Firma)
    Cursor                        Punto con anillo (blanco sobre oscuro); en clickeables el anillo crece
    ========================================================================== */
 (function () {
@@ -299,6 +300,224 @@
     });
   }
 
+  /* ---------- Globo de mercados ([data-globe]) ----------
+     Globo de puntos en proyección ortográfica (canvas), con los continentes de
+     Natural Earth 110m (dominio público) convertidos a una máscara de puntos.
+     Los pines salen de la lista .globe__pins del HTML (data-lat, data-lon,
+     data-type="office|market"): cada uno pasa a ser un botón; con foco o clic el
+     globo gira hasta centrarlo y muestra su nombre. Gira solo mientras está a la
+     vista; se puede arrastrar. Con movimiento reducido queda quieto. Colores
+     desde los tokens semánticos. */
+  var GLOBE_LAND = '-54:132:39-40;-52.4:137:40-41;-50.8:142:41-43;-49.2:147:43-45;-47.6:152:44-47;-46:156:46-48,150-151;-44.4:161:47-50,156;-42.8:165:48-52,149,161;-41.2:169:50-53,152-153,165;-39.6:173:51-56,170-171;-38:177:52-59,158-160,174-175;-36.4:181:54-61,161-165;-34.8:185:55-62,152,164-169,181;-33.2:188:57-65,104-107,154-158,164-172;-31.6:192:58-68,106-111,158-164,166-177;-30:195:59-69,107-113,160-179;-28.4:198:60-71,108-116,162-182;-26.8:201:61-72,109-118,164-185;-25.2:204:62-74,110-120,127,167-188;-23.6:206:63-76,111-122,128-129,168-188;-22:209:64-80,113-124,130-131,171-190;-20.4:211:64-81,113-125,131-133,175-192;-18.8:213:65-82,114-127,133-135,178-192;-17.2:215:65-83,114-129,134-136,181-190,192-194;-15.6:217:63-84,116-132,137,183-190,194-195;-14:218:63-84,116-133,138,188-190,195;-12.4:220:63-86,118-134,190-193,197;-10.8:221:63-87,119-134;-9.2:222:62-88,119-134,202;-7.6:223:62-89,120-135,178-181,197-202;-6:224:62-89,120-135,178,195,198-203,205,208;-4.4:224:61-88,119-136,176-177,186,188,196-201,206;-2.8:225:63-85,119-137,176-178,181-184,187-188,195-200;-1.2:225:62-83,118-138,175-177,181-185,187-188,194-195;0.4:225:62-80,118-139,174-176,181-185,187-189,192;2:225:63-80,118-140,174-175,177,182-185;3.6:225:64-80,118-141,173,176,183-185;5.2:224:64-78,106-111,115-141,171-172,174-175,184-185;6.8:223:63-75,104-141,161,173,188;8.4:223:60-61,63-73,103-142,159,161,172-173,188-189;10:222:58-59,64-72,102-141,158-159,176;11.6:220:57-58,65,100-135,140,156-158,170,173-176,186;13.2:219:56-58,99-134,136,155-157,169,171-175,184;14.8:218:53-58,98-133,135-138,154-156,168-174,182;16.4:216:49-54,98-130,134-138,152-156,165-172,180;18:214:46-54,61,64,67,97-129,132-140,150-156,163-169,179;19.6:212:14,44-48,53,63-64,96-127,130-139,149-155,161-167,170;21.2:210:44-47,53,59-60,95-126,128-138,146-155,159-167,169;22.8:207:43-46,55-57,94-123,126-137,143-169;24.4:205:41-46,94-122,124-131,133-134,141-169,171;26:202:38,40-45,55,93-119,122-128,132-167;27.6:199:36,38-45,54,92-117,119-126,128-165;29.2:196:35,37-45,48,53,92-123,126-163;30.8:193:34,36-52,91-105,107-161;32.4:190:33-52,90-102,106,113-158,164;34:187:32-52,90-98,112-155,161;35.6:183:30-52,88,91-96,110-151,156,159-162;37.2:179:29-51,85-88,94,96,100,103-114,116-149,152-153,157-159;38.8:175:27-50,83-87,95,98,100-110,114-144,148-149,155;40.4:171:26-49,81-85,89,95-96,98-108,111-142,144-146,152;42:167:26-50,79-84,89,92-95,99,103-105,108-143,148;43.6:163:25-49,81-84,86-87,89-93,99-102,105-142,146;45.2:159:25-49,51,79-84,86-92,94-99,102-139;46.8:154:24-49,76-98,100-135;48.4:149:24-47,50-52,73-131,133;50:145:21-45,49,73-128,130;51.6:140:20-47,68-69,71-125;53.2:135:19-36,38-46,64,66-67,69-119,126-127;54.8:130:18-34,36-43,62-64,68,72-113,121-122;56.4:125:7,17-31,36-40,60-61,65,67,70-109,117-118;58:119:7,15-28,34-38,63-64,68-105,112;59.6:114:6-7,13-26,32-34,36,59-62,66-103,105,108;61.2:108:4-25,31-32,39-40,56-58,60-100,103-105;62.8:103:4-24,31,37-38,53-56,58-102;64.4:97:5-27,29-30,34-37,43,51-53,55-95;66:92:3-48,55;67.6:86:1-45,54,60;69.2:80:4-8,10-16,18-19,21,23-24,29-33,43,48-52,54,77;70.8:74:4-5,13-15,17,19-22,26-32,42,48,51-69;72.4:68:10,12,15,17-19,24-28,47,49-57,60-61;74:62:10,21-26,40,46-49;75.6:56:10-12,19-24,37,42-45,49-50;77.2:50:8,13,15-21,39;78.8:44:9,11-19,23-24,34;80.4:38:9-16,21;82:31:8-10,12-13';
+
+  function initGlobes() {
+    $all('[data-globe]').forEach(initGlobe);
+  }
+
+  function initGlobe(box) {
+    var canvas = box.querySelector('.globe__canvas');
+    if (!canvas || !canvas.getContext) return;
+    var ctx = canvas.getContext('2d');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var RAD = Math.PI / 180;
+
+    // Puntos de tierra: lat y lon precalculadas (seno y coseno)
+    var dots = [];
+    GLOBE_LAND.split(';').forEach(function (row) {
+      var parts = row.split(':');
+      var lat = +parts[0] * RAD;
+      var n = +parts[1];
+      parts[2].split(',').forEach(function (run) {
+        var se = run.split('-');
+        for (var i = +se[0]; i <= +(se[1] || se[0]); i++) {
+          var lon = (-180 + (i + 0.5) * 360 / n) * RAD;
+          dots.push([Math.sin(lat), Math.cos(lat), lon]);
+        }
+      });
+    });
+
+    // Pines desde el HTML
+    var pins = $all('.globe__pins > li', box).map(function (li) {
+      var label = li.textContent.trim();
+      var type = li.getAttribute('data-type') || 'market';
+      li.innerHTML =
+        '<button type="button" class="globe__pin globe__pin--' + type + '">' +
+          '<span class="globe__dot" aria-hidden="true"></span>' +
+          '<span class="globe__label t-ui-small-strong">' + label + '</span>' +
+        '</button>';
+      var lat = +li.getAttribute('data-lat') * RAD;
+      return { li: li, btn: li.firstChild, lat: lat, lon: +li.getAttribute('data-lon') * RAD, sinLat: Math.sin(lat), cosLat: Math.cos(lat) };
+    });
+
+    var view = { lon: -70 * RAD, lat: -12 * RAD }; // arranca mirando a Chile
+    var size = 0, dpr = 1, colors = {};
+    var visible = false, dragging = false, hovering = false, tween = null, last = 0, active = null;
+
+    function readColors() {
+      var css = getComputedStyle(box);
+      colors.land = css.getPropertyValue('--globe-land').trim();
+      colors.sphere = css.getPropertyValue('--globe-sphere').trim();
+      colors.edge = css.getPropertyValue('--globe-edge').trim();
+    }
+
+    function resize() {
+      var r = canvas.getBoundingClientRect();
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      size = r.width;
+      canvas.width = Math.round(r.width * dpr);
+      canvas.height = Math.round(r.width * dpr);
+      draw();
+    }
+
+    function draw() {
+      if (!size) return;
+      var R = size / 2 * 0.94;
+      var c = size / 2;
+      var sin0 = Math.sin(view.lat), cos0 = Math.cos(view.lat);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, size, size);
+
+      // Esfera
+      ctx.beginPath();
+      ctx.arc(c, c, R, 0, Math.PI * 2);
+      ctx.fillStyle = colors.sphere;
+      ctx.fill();
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = colors.edge;
+      ctx.stroke();
+
+      // Tierra: puntos más tenues hacia el borde
+      var dotR = Math.max(R * 0.0072, 0.9);
+      ctx.fillStyle = colors.land;
+      for (var i = 0; i < dots.length; i++) {
+        var d = dots[i];
+        var dl = d[2] - view.lon;
+        var cosDl = Math.cos(dl);
+        var z = sin0 * d[0] + cos0 * d[1] * cosDl;
+        if (z <= 0) continue;
+        var x = c + R * d[1] * Math.sin(dl);
+        var y = c - R * (cos0 * d[0] - sin0 * d[1] * cosDl);
+        ctx.globalAlpha = 0.2 + 0.7 * z;
+        ctx.beginPath();
+        ctx.arc(x, y, dotR, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+
+      // Pines (HTML encima del canvas)
+      pins.forEach(function (p) {
+        var dl = p.lon - view.lon;
+        var cosDl = Math.cos(dl);
+        var z = sin0 * p.sinLat + cos0 * p.cosLat * cosDl;
+        var x = c + R * p.cosLat * Math.sin(dl);
+        var y = c - R * (cos0 * p.sinLat - sin0 * p.cosLat * cosDl);
+        var front = z > 0.12;
+        p.li.style.transform = 'translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px)';
+        p.li.classList.toggle('is-back', !front);
+      });
+    }
+
+    function setActive(p) {
+      if (active) active.li.classList.remove('is-active');
+      active = p;
+      if (p) p.li.classList.add('is-active');
+    }
+
+    // Girar hasta centrar un pin
+    function focusPin(p) {
+      setActive(p);
+      var dur = reduce.matches ? 0 : cssMs('--duration-slow') * 3;
+      var from = { lon: view.lon, lat: view.lat };
+      var dLon = Math.atan2(Math.sin(p.lon - view.lon), Math.cos(p.lon - view.lon)); // camino corto
+      var to = { lon: view.lon + dLon, lat: Math.max(-50 * RAD, Math.min(50 * RAD, p.lat)) };
+      if (!dur) { view.lon = to.lon; view.lat = to.lat; draw(); return; }
+      tween = { from: from, to: to, start: performance.now(), dur: dur };
+      loop();
+    }
+
+    pins.forEach(function (p) {
+      p.btn.addEventListener('click', function () { focusPin(p); });
+      p.btn.addEventListener('focus', function () { focusPin(p); });
+    });
+
+    // Arrastrar para girar
+    var startX = 0, startY = 0, startView = null;
+    canvas.addEventListener('pointerdown', function (e) {
+      dragging = true;
+      tween = null;
+      startX = e.clientX;
+      startY = e.clientY;
+      startView = { lon: view.lon, lat: view.lat };
+      canvas.setPointerCapture(e.pointerId);
+      box.classList.add('is-dragging');
+    });
+    canvas.addEventListener('pointermove', function (e) {
+      if (!dragging) return;
+      var k = Math.PI / size; // medio giro por ancho del globo
+      view.lon = startView.lon - (e.clientX - startX) * k;
+      view.lat = Math.max(-60 * RAD, Math.min(60 * RAD, startView.lat + (e.clientY - startY) * k));
+      draw();
+    });
+    function endDrag() {
+      dragging = false;
+      box.classList.remove('is-dragging');
+      loop();
+    }
+    canvas.addEventListener('pointerup', endDrag);
+    canvas.addEventListener('pointercancel', endDrag);
+    box.addEventListener('pointerenter', function () { hovering = true; });
+    box.addEventListener('pointerleave', function () { hovering = false; loop(); });
+
+    // Bucle: tween hacia un pin o giro lento continuo
+    var raf = null;
+    function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+    function frame(now) {
+      raf = null;
+      var dt = last ? now - last : 16;
+      last = now;
+      if (tween) {
+        var t = Math.min(1, (now - tween.start) / tween.dur);
+        var e = easeOut(t);
+        view.lon = tween.from.lon + (tween.to.lon - tween.from.lon) * e;
+        view.lat = tween.from.lat + (tween.to.lat - tween.from.lat) * e;
+        if (t >= 1) tween = null;
+      } else if (!dragging && !hovering && !active && !reduce.matches) {
+        view.lon -= dt * 0.00008; // ~ una vuelta por minuto y medio
+      } else {
+        draw();
+        last = 0;
+        return;
+      }
+      draw();
+      if (visible) raf = requestAnimationFrame(frame);
+      else last = 0;
+    }
+    function loop() {
+      if (!raf && visible) raf = requestAnimationFrame(frame);
+    }
+
+    // Clic fuera de un pin: suelta el pin activo y vuelve el giro
+    box.addEventListener('click', function (e) {
+      if (!e.target.closest('.globe__pin') && active && !dragging) { setActive(null); loop(); }
+    });
+
+    readColors();
+    resize();
+    if ('ResizeObserver' in window) new ResizeObserver(resize).observe(canvas);
+    else window.addEventListener('resize', resize);
+
+    if (hasIO) {
+      new IntersectionObserver(function (entries) {
+        visible = entries[0].isIntersecting;
+        if (visible) loop();
+      }).observe(box);
+    } else {
+      visible = true;
+      loop();
+    }
+    reduce.addEventListener('change', loop);
+  }
+
   /* ---------- Cursor: punto con anillo ----------
      Solo con mouse (hover + puntero fino). Navy sobre fondos claros y blanco
      sobre fondos oscuros (según el fondo real bajo el puntero). Sobre elementos
@@ -355,6 +574,7 @@
     initFilters();
     initAddCalendar();
     initHeroVideo();
+    initGlobes();
     initCursor();
   }
 

@@ -47,7 +47,10 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Suscripción (texto + campo + botón) | En una fila | Apilado; botón a ancho completo |
 | Encabezado de sección | Etiqueta + Título 2 + bajada al 68 % del contenedor | Bajada a ancho completo |
 | Tarjetas de solución | 3 columnas | Tablet y mobile: slider con scroll-snap (casi 2 tarjetas visibles en tablet; 1 y parte de la siguiente en mobile) |
-| Mercados y oficinas | Mapa a la izquierda (7/12) y datos a la derecha (5/12) | Mapa arriba (más bajo en tablet) y datos debajo; regiones en 2 columnas en tablet y 1 en mobile |
+| Mercados y oficinas | Globo a la izquierda (7/12) y datos a la derecha (5/12) | Globo arriba (70 % del ancho en tablet, completo en mobile) y datos debajo; regiones en 2 columnas en tablet y 1 en mobile |
+| Globo de mercados | Gira solo; se detiene con el mouse encima; se arrastra; nombre del pin con hover, foco o clic | Se arrastra en horizontal (el scroll vertical de la página sigue funcionando); nombre del pin al tocarlo |
+| Descarga del catálogo | Texto y botón a la izquierda, portada a la derecha | Sin portada; texto y botón apilados |
+| Certificaciones en grilla | 4 columnas de tarjetas con el logo arriba; la descripción se despliega dentro de la tarjeta | Tablet: 2 columnas. Mobile: lista de 1 columna con el logo a la izquierda |
 | Cadena de valor (Del cultivo a la mesa) | 6 pasos en una fila sobre una línea horizontal | Tablet: 3 columnas. Mobile: lista vertical con la línea y los marcadores a la izquierda |
 | Módulo comercial (`<sales-contact>`) | Botón flotante abajo a la izquierda; el formulario se abre como panel sobre el botón | El formulario se abre como panel inferior a lo ancho de la pantalla, por sobre el botón del asistente |
 | Botón flotante del asistente | Fijo abajo a la derecha, 56 px, a `--space-32` del borde | Igual, a `--space-24` del borde |
