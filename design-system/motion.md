@@ -61,3 +61,7 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 ## Firma · Hover de marcas (solo Productos › Nuestras marcas)
 - Con hover o foco en una marca, la foto de fondo aparece (opacidad, `--duration-slow`) y se acerca levemente (escala 1,06 → 1, `--duration-reveal`); el logo en color cambia al logo en blanco y "Ir al sitio" pasa a blanco (`--duration-slow`).
 - Con movimiento reducido el cambio es instantáneo (las duraciones quedan en 0).
+
+## Firma · Entrada del catálogo (solo Productos › Descarga del catálogo)
+- Al entrar en pantalla (IntersectionObserver de `.reveal`): etiqueta, título, bajada y botón aparecen en secuencia (`--duration-reveal`, desfase `--duration-stagger`); el círculo crece de 0,6 a 1 y aparece; al final entra la imagen del catálogo desde abajo a la izquierda con un giro de −4° a 0°.
+- Solo opacidad y transform. Con movimiento reducido todo aparece en su lugar, sin desplazamiento.

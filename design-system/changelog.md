@@ -4,6 +4,11 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Catálogo con imagen, círculo y entrada animada
+- Figma pendiente · Código ✓ · Descarga del catálogo con la imagen del catálogo (`assets/img/catalogo.png`) sobre un círculo Coral 100 (`--color-bg-illustration`). En mobile también se muestra, debajo del texto.
+- Figma pendiente · Código ✓ · Entrada animada del bloque: textos en secuencia, círculo que crece y catálogo que entra con un leve giro. Nuevo patrón Firma en motion.md.
+- Código ✓ · Más margen alrededor del catálogo: 160 px sobre él y 64 px bajo él en desktop (96 / 32 en mobile).
+
 ## 2026-10-20 · Marcas con logos y hover, cifra destacada y sin etiquetas
 - Figma pendiente · Código ✓ · Nuestras marcas con los logos oficiales (Latitude 45 y Arka Fjord, recortados y en versión blanca generada a partir del original). Hover con foto de fondo y logo en blanco: nuevo patrón Firma en motion.md.
 - Figma pendiente · Código ✓ · Nueva variante "Cifra destacada" (`--text-figure-strong-weight`: 600, `.t-figure-strong`), usada en la cifra de Mercados.
