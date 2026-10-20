@@ -38,7 +38,7 @@ Estado: **Base** = se aplica en todo el sitio sin preguntar. **Firma** = efecto 
 | Acordeones y desplegables | Rotación del ícono + aparición del contenido con `--duration-base`. | Igual |
 | Header al hacer scroll | Transparente sobre el hero; al bajar pasa a fondo blanco (siempre, sin importar el fondo del contenido), la barra utilitaria sale y la fila principal se compacta con el logo reducido, con `--duration-slow`. | Se oculta al bajar y aparece al subir |
 | Menú hamburguesa / overlay | Overlay a pantalla completa con fade + leve desplazamiento, `--duration-slow`. El mismo botón cierra; también Escape y tocar fuera. | Igual |
-| Menú hamburguesa (panel) | Panel flotante con fade + leve desplazamiento, `--duration-slow`; accesos con desfase de `--duration-stagger`. La tarjeta de noticia destacada es fija. | Pantalla completa |
+| Menú hamburguesa (panel) | Panel flotante con fade + leve desplazamiento, `--duration-slow`; accesos con desfase de `--duration-stagger`. La tarjeta de noticia destacada es fija. Al abrir, el header se desvanece (`--duration-slow`) y quedan solo el logo y la X. | Pantalla completa |
 
 ### Firma (usar solo donde se indica)
 | Patrón | Comportamiento | Dónde | Mobile |

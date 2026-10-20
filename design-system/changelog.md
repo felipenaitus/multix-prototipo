@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Header con el menú abierto
+- Código ✓ · Con el menú abierto, el header se desvanece y solo quedan el logo y la X de cerrar: blancos sobre el hero y Navy 900 fuera de él (antes el header quedaba blanco y completo).
+
 ## 2026-10-20 · Sin botón comercial; asistente en outline
 - Código ✓ · Se elimina el botón "Contactar al equipo comercial" del hero y la variante `.btn--speech`.
 - Código ✓ · Botón del asistente: contenedor outline (sin relleno) e ícono de chat relleno, navy sobre claro y blanco sobre oscuro.

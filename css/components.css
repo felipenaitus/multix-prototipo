@@ -2141,6 +2141,30 @@ a.pagination__item:hover,
   transform: scale(.85);
 }
 
+/* Menú abierto: el header desaparece y solo quedan el logo y la X de cerrar,
+   sobre el fondo oscurecido. Blancos sobre el hero, Navy 900 fuera de él. */
+.site-header.is-menu-open .header__bg,
+.site-header.is-menu-open .header__utility,
+.site-header.is-menu-open .header__nav,
+.site-header.is-menu-open .header__search-mobile {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity var(--duration-slow) var(--easing-standard),
+    visibility 0s linear var(--duration-slow);
+}
+
+.site-header .header__utility,
+.site-header .header__nav,
+.site-header .header__search-mobile {
+  transition: opacity var(--duration-slow) var(--easing-standard);
+}
+
+.site-header.is-menu-open .header__utility-inner {
+  pointer-events: none;
+}
+
 /* Mobile y tablet: se oculta al bajar y aparece al subir */
 .site-header.is-hidden .header__bar {
   transform: translateY(-100%);

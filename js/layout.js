@@ -530,7 +530,9 @@
       this.classList.toggle('is-compact', compact);
 
       var overlayVariant = this.classList.contains('site-header--overlay');
-      this.dataset.state = overlayVariant && !scrolled && !menuOpen ? 'transparent' : 'solid';
+      // Con el menú abierto se mantiene el estado de fondo: así el logo y la X quedan
+      // blancos sobre el hero y navy fuera de él
+      this.dataset.state = overlayVariant && !scrolled ? 'transparent' : 'solid';
 
       // Textos claros solo mientras es transparente sobre el hero; si no, siempre blanco
       this.dataset.tone = this.dataset.state === 'transparent' ? 'dark' : 'light';
