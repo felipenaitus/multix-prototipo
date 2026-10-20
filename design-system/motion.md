@@ -59,7 +59,7 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 - Con `prefers-reduced-motion`: sin giro automático y el centrado es instantáneo.
 
 ## Firma · Hover de marcas (solo Productos › Nuestras marcas)
-- Con hover o foco en una marca, el video de fondo de esa marca aparece (opacidad, `--duration-slow`), se acerca levemente (escala 1,06 → 1, `--duration-reveal`) y se reproduce en loop mientras dura el hover; el logo en color cambia al logo en blanco y "Ir al sitio" pasa a blanco (`--duration-slow`).
+- Con hover o foco en una marca, el video de esa marca rellena el círculo desde el centro (clip-path de 0 % a 50 %, `--duration-reveal`), se acerca levemente (escala 1,1 → 1) y se reproduce en loop mientras dura el hover; el contorno desaparece; el logo en color cambia al logo en blanco y "Ir al sitio" pasa a blanco (`--duration-slow`).
 - Con movimiento reducido el cambio es instantáneo (las duraciones quedan en 0) y el video no se reproduce: queda su primer cuadro.
 
 ## Firma · Entrada del catálogo (solo Productos › Descarga del catálogo)

@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-20 · Marcas en círculos
+- Figma pendiente · Código ✓ · Nuestras marcas pasan de celdas rectangulares separadas por líneas a círculos con contorno delgado. Con hover, el video de cada marca rellena el círculo desde el centro y el logo pasa a blanco.
+
 ## 2026-10-20 · Nuevo video del hero del home
 - Código ✓ · Reemplazado por Video_Hero_4 (720p H.264 sin audio, 37 s, 47,3 MB → 4,5 MB). Comparte el primer segundo con el anterior, así que el poster no cambia.
 - Código ✓ · El hero del home usa el nuevo video (Video_Hero_3: 720p H.264 sin audio, 38 s, 49,5 MB → 4,8 MB) y su poster. Mismo archivo `assets/video/hero.mp4` (también lo usa la página de prueba del hero).
