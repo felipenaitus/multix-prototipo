@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Video del hero de Inversionistas
+- Código ✓ · El hero de Inversionistas usa su propio video (Video_Inversionistas: 720p H.264 sin audio, 24 fps, 2 min 6 s, 30,3 MB → 11,5 MB) y su poster.
+
 ## 2026-10-21 · "Limpiar filtros" en su propia fila y texto genérico del evento
 - Código ✓ · "Limpiar filtros" sale de la fila de los selects y pasa a la fila del conteo de documentos (a la derecha); en el kit, al final de los filtros activos. Su aparición ya no cambia ningún ancho.
 - Código ✓ · La bajada de "Próximo evento" pasa a un texto genérico, porque el evento cambia.
