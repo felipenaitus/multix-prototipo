@@ -4,6 +4,12 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Ajustes del home
+- Figma pendiente · Código ✓ · Productos: se quitan las dos marcas y entra el **círculo con video** (`[data-media-circle]`): la ilustración del salmón sobre un círculo blanco que, con hover, crece y se abre al video de productos, como en el relato vertical.
+- Figma pendiente · Código ✓ · Inversionistas: sin título ni bajada de sección; dos **módulos enfrentados** (`.ir-pair--facing` + `.ir-module`) con sus propios títulos, "Últimos reportes" (acceso al Centro de Resultados) y "Próximo evento" (acceso al calendario, página aún sin construir).
+- Figma pendiente · Código ✓ · Ofertas por región más llamativas: cantidad como cifra grande en coral corporativo (Coral 500), flecha en círculo Coral 500 que se rellena con hover y línea coral que recorre la fila.
+- Código ✓ · Etiqueta de las noticias en coral corporativo (Coral 500, antes Coral 600). Excepción de contraste aprobada, igual que las cifras en coral.
+
 ## 2026-10-21 · Home con sus secciones
 - Código ✓ · El home reemplaza los bloques vacíos por las secciones del mapa de navegación (FigJam): Quiénes somos (texto, círculo con video y regiones, 4 cifras en coral, acceso a Nosotros), Productos (bajada, acceso a Productos y marcas con hover), Sustentabilidad (4 cifras + acceso), Inversionistas (últimos resultados, próximo evento y accesos), Trabaja con nosotros (ofertas por región) y Noticias (tres últimas). Se omite el módulo temporal de acceso a documentación. Fondos alternados con Apertura / Horizonte.
 - Figma pendiente · Código ✓ · Componentes nuevos: `.offer-list` (ofertas por región) y `.news-list` (noticias), sin cajas.

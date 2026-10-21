@@ -79,28 +79,15 @@
           <p class="t-body-l section-head__lead">Salmón fresco, congelado y ahumado para retail, food service e industria en más de 30 países. [contenido por definir]</p>
           <a class="btn btn--tertiary hit" href="productos.html">Ver productos<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
         </div>
-          <ul class="brands" role="list">
-            <li class="reveal" style="--reveal-step: 0">
-              <a class="brand-card" href="#" target="_blank" rel="noopener">
-                <span class="brand-card__media" aria-hidden="true"><video data-hover-video muted loop playsinline preload="none" poster="assets/video/marca-latitude45-poster.jpg"><source src="assets/video/marca-latitude45.mp4" type="video/mp4"></video></span>
-                <span class="brand-card__logo">
-                  <img class="brand-card__logo-color" src="assets/brands/latitude45.png" alt="Latitude 45" width="640" height="173">
-                  <img class="brand-card__logo-white" src="assets/brands/latitude45-blanco.png" alt="" aria-hidden="true" width="640" height="173">
-                </span>
-                <span class="brand-card__cta t-ui-button">Ir al sitio<svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg><span class="visually-hidden"> de Latitude 45 (abre en una pestaña nueva)</span></span>
-              </a>
-            </li>
-            <li class="reveal" style="--reveal-step: 1">
-              <a class="brand-card" href="#" target="_blank" rel="noopener">
-                <span class="brand-card__media" aria-hidden="true"><video data-hover-video muted loop playsinline preload="none" poster="assets/video/marca-arkafjord-poster.jpg"><source src="assets/video/marca-arkafjord.mp4" type="video/mp4"></video></span>
-                <span class="brand-card__logo">
-                  <img class="brand-card__logo-color" src="assets/brands/arkafjord.png" alt="Arka Fjord" width="640" height="202">
-                  <img class="brand-card__logo-white" src="assets/brands/arkafjord-blanco.png" alt="" aria-hidden="true" width="640" height="202">
-                </span>
-                <span class="brand-card__cta t-ui-button">Ir al sitio<svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg><span class="visually-hidden"> de Arka Fjord (abre en una pestaña nueva)</span></span>
-              </a>
-            </li>
-          </ul>
+        <div class="reveal">
+          <figure class="media-circle" data-media-circle role="button" tabindex="0" aria-pressed="false" aria-label="Ver video de nuestros productos">
+            <span class="media-circle__disc" aria-hidden="true">
+              <span class="media-circle__mask"><video muted loop playsinline preload="none" poster="assets/video/productos-poster.jpg"><source src="assets/video/productos.mp4" type="video/mp4"></video></span>
+            </span>
+            <img class="media-circle__img" src="assets/img/pescado.png" alt="" width="314" height="360" loading="lazy">
+            <span class="media-circle__hint" aria-hidden="true"></span>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -121,16 +108,12 @@
       </div>
     </section>
 
-    <!-- Inversionistas: últimos resultados, próximo evento y acceso -->
-    <section class="section section--subtle section--open-in section--curve-bottom" aria-labelledby="home-ir-title" data-section-open data-section-curve>
+    <!-- Inversionistas: últimos reportes y próximo evento, enfrentados -->
+    <section class="section section--subtle section--open-in section--curve-bottom" aria-label="Inversionistas" data-section-open data-section-curve>
       <div class="container">
-        <div class="section-head reveal">
-          <h2 class="t-h2" id="home-ir-title">Inversionistas</h2>
-          <p class="t-body-l section-head__lead">Resultados, documentos y eventos para accionistas, analistas e inversionistas. [contenido por definir]</p>
-        </div>
-        <div class="ir-pair">
-          <div class="reveal">
-            <h3 class="t-ui-strong home-ir__subtitle">Últimos resultados · Q2 2026</h3>
+        <div class="ir-pair ir-pair--facing">
+          <div class="ir-module reveal" style="--reveal-step: 0">
+            <h2 class="t-h2">Últimos reportes</h2>
             <div class="doc-list">
               <div class="doc-row">
                 <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
@@ -147,8 +130,8 @@
             </div>
             <a class="btn btn--tertiary hit" href="centro-de-resultados.html">Ir al Centro de Resultados<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
           </div>
-          <div class="reveal">
-            <h3 class="t-ui-strong home-ir__subtitle">Próximo evento</h3>
+          <div class="ir-module reveal" style="--reveal-step: 1">
+            <h2 class="t-h2">Próximo evento</h2>
             <div class="ir-event">
               <div class="event">
                 <time class="event__date" datetime="2026-11-12"><span class="t-figure-m">12</span><span class="t-label">Nov 2026</span></time>
@@ -157,8 +140,8 @@
                   <p class="t-small event__detail">Conferencia telefónica 13 nov · 11:00 h (CLT) [contenido por definir]</p>
                 </div>
               </div>
-              <a class="btn btn--tertiary hit" href="inversionistas.html">Ir a Inversionistas<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
             </div>
+            <a class="btn btn--tertiary hit" href="#">Ver calendario<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
           </div>
         </div>
       </div>
@@ -176,36 +159,36 @@
           <ul class="offer-list" role="list" aria-label="Ofertas laborales por región">
             <li>
               <a class="offer-row" href="#">
+                <span class="offer-row__count"><span class="t-figure-l t-figure-strong offer-row__num">12</span><span class="t-small offer-row__unit">ofertas</span></span>
                 <span class="offer-row__body"><span class="t-h3 offer-row__region">Los Lagos</span><span class="t-small offer-row__places">Puerto Montt, Calbuco y Chiloé</span></span>
-                <span class="t-ui-small-strong offer-row__count">12 ofertas</span>
                 <span class="offer-row__arrow"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
               </a>
             </li>
             <li>
               <a class="offer-row" href="#">
+                <span class="offer-row__count"><span class="t-figure-l t-figure-strong offer-row__num">5</span><span class="t-small offer-row__unit">ofertas</span></span>
                 <span class="offer-row__body"><span class="t-h3 offer-row__region">Aysén</span><span class="t-small offer-row__places">Puerto Aysén y Puerto Chacabuco</span></span>
-                <span class="t-ui-small-strong offer-row__count">5 ofertas</span>
                 <span class="offer-row__arrow"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
               </a>
             </li>
             <li>
               <a class="offer-row" href="#">
+                <span class="offer-row__count"><span class="t-figure-l t-figure-strong offer-row__num">3</span><span class="t-small offer-row__unit">ofertas</span></span>
                 <span class="offer-row__body"><span class="t-h3 offer-row__region">Magallanes</span><span class="t-small offer-row__places">Punta Arenas y Puerto Natales</span></span>
-                <span class="t-ui-small-strong offer-row__count">3 ofertas</span>
                 <span class="offer-row__arrow"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
               </a>
             </li>
             <li>
               <a class="offer-row" href="#">
+                <span class="offer-row__count"><span class="t-figure-l t-figure-strong offer-row__num">4</span><span class="t-small offer-row__unit">ofertas</span></span>
                 <span class="offer-row__body"><span class="t-h3 offer-row__region">Santiago</span><span class="t-small offer-row__places">Oficinas corporativas</span></span>
-                <span class="t-ui-small-strong offer-row__count">4 ofertas</span>
                 <span class="offer-row__arrow"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
               </a>
             </li>
             <li>
               <a class="offer-row" href="#">
+                <span class="offer-row__count"><span class="t-figure-l t-figure-strong offer-row__num">1</span><span class="t-small offer-row__unit">oferta</span></span>
                 <span class="offer-row__body"><span class="t-h3 offer-row__region">Miami</span><span class="t-small offer-row__places">Oficina comercial</span></span>
-                <span class="t-ui-small-strong offer-row__count">1 oferta</span>
                 <span class="offer-row__arrow"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
               </a>
             </li>

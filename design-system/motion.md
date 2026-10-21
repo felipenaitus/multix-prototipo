@@ -30,7 +30,7 @@ Estado: **Base** = se aplica en todo el sitio sin preguntar. **Firma** = efecto 
 ### Base
 | Patrón | Comportamiento | Mobile |
 |---|---|---|
-| Estados de interacción | Color, fondo y borde con `--duration-fast`. Flecha de enlaces terciarios se desplaza 4px a la derecha con `--duration-base`. | Igual (al tocar) |
+| Estados de interacción | Color, fondo y borde con `--duration-fast`. Flecha de enlaces terciarios se desplaza 4px a la derecha con `--duration-base`. En las ofertas por región, una línea Coral 500 recorre el borde superior de la fila de izquierda a derecha (`--duration-slow`). | Igual (al tocar) |
 | Entrada en viewport (`.reveal`) | Fade + subida de `--motion-reveal-distance` con `--duration-reveal`. Se activa con IntersectionObserver (threshold 0.2, rootMargin inferior −40px) y ocurre una sola vez. Elementos hermanos con desfase de `--duration-stagger` (hasta 3). | Igual, distancia reducida a la mitad |
 | Entrada reversible (`.reveal-rev`) | Igual, pero se esconde al volver hacia arriba. Solo para accesos destacados de la home. | Se usa `.reveal` simple |
 | Entrada del hero | Título y bajada con fade + subida al cargar; desfases de 100 y 350ms. | Igual |
@@ -87,6 +87,9 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 - Al cambiar de paso, el título del paso, la ilustración y la descripción hacen un fundido (`--duration-slow`) y la ilustración entra con un leve acercamiento (0,94 → 1, `--duration-reveal`).
 - Video en hover: el círculo crece un 15 % (`--duration-reveal`) y el video se abre dentro de él desde el centro (clip-path de 0 % a 50 %, con leve acercamiento 1,12 → 1, `--duration-reveal`) y la ilustración se desvanece y se achica (1 → 0,9). Al salir se cierra. Indicador de video: anillo que late cada 3 × `--duration-reveal` (2,4 s; se expande a 1,8 y se desvanece); al abrir el video el indicador se achica y desaparece (`--duration-slow`). Con movimiento reducido no late. Con el video aparecen 4 datos del paso en secuencia (fundido y desplazamiento de 8 px, `--duration-slow`, desfase `--duration-stagger`). Con movimiento reducido el cambio es instantáneo y el video no se reproduce.
 - Descartado antes: segunda instancia por paso con video en el círculo, alternando sola.
+
+## Firma · Círculo con video (solo home › Productos)
+- Mismo comportamiento que el video en hover del relato vertical: el círculo crece un 15 % y el video se abre desde el centro (clip-path 0 % → 50 %, `--duration-reveal`); la ilustración se desvanece y se achica (1 → 0,9); el indicador de play late y desaparece al abrir. Con movimiento reducido no late y el video no se reproduce.
 
 ## Firma · Transiciones entre secciones (PRUEBA en Productos, pendiente de confirmar como criterio)
 - Hero → primer contenido: recto.

@@ -5284,14 +5284,183 @@ html:not(.js) .company-visual__tag {
   margin-top: var(--space-48);
 }
 
-.home-ir__subtitle {
-  margin-bottom: var(--space-16);
-  color: var(--color-text-primary);
+/* Inversionistas en el home: dos módulos enfrentados (últimos reportes y próximo
+   evento), cada uno con su título, contenido y acceso. Apilados hasta desktop;
+   en desktop, lado a lado con una línea vertical entre ambos. */
+.ir-pair--facing {
+  gap: var(--space-64);
 }
 
-/* En el home, las marcas van a la derecha del encabezado */
-.split > .brands {
-  gap: var(--space-24);
+.ir-module {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-32);
+}
+
+.ir-module > .doc-list,
+.ir-module > .ir-event {
+  align-self: stretch;
+}
+
+.ir-module > .doc-list + .btn {
+  margin-top: 0;
+}
+
+@media (min-width: 1280px) {
+  .ir-pair--facing {
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .ir-pair--facing > .ir-module:first-child {
+    padding-right: var(--space-64);
+  }
+
+  .ir-pair--facing > .ir-module + .ir-module {
+    padding-left: var(--space-64);
+    border-left: var(--border-thin) solid var(--color-border-default);
+  }
+
+  /* Los accesos quedan alineados abajo */
+  .ir-module > .btn {
+    margin-top: auto;
+  }
+}
+
+/* Círculo con video ([data-media-circle]): ilustración sobre un círculo blanco
+   con el indicador de video. Con hover (o toque / Enter) el círculo crece un 15 %
+   y se abre como una ventana a un video; la ilustración se desvanece. Mismo
+   comportamiento que la composición del relato vertical. */
+.media-circle {
+  position: relative;
+  width: 80%;
+  aspect-ratio: 1;
+  margin: var(--space-48) auto;
+  cursor: pointer;
+}
+
+.media-circle:focus-visible {
+  outline-offset: var(--space-8);
+}
+
+.media-circle__disc {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-page);
+  transition: scale var(--duration-reveal) var(--easing-out);
+}
+
+.media-circle__mask {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: var(--radius-full);
+  clip-path: circle(0% at 50% 50%);
+  transition: clip-path var(--duration-reveal) var(--easing-out);
+}
+
+.media-circle__mask video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.12);
+  transition: transform var(--duration-reveal) var(--easing-out);
+}
+
+/* La ilustración sobresale un poco del círculo arriba */
+.media-circle__img {
+  position: absolute;
+  top: -6%;
+  left: 11%;
+  width: 78%;
+  height: auto;
+  transition:
+    opacity var(--duration-slow) var(--easing-standard),
+    transform var(--duration-reveal) var(--easing-out);
+}
+
+.media-circle__hint {
+  position: absolute;
+  z-index: 2;
+  top: 85.4%;
+  left: 85.4%;
+  width: var(--space-40);
+  height: var(--space-40);
+  border: var(--border-thin) solid var(--color-border-brand);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-page);
+  translate: -50% -50%;
+  pointer-events: none;
+  transition:
+    opacity var(--duration-slow) var(--easing-standard),
+    scale var(--duration-slow) var(--easing-standard);
+}
+
+.media-circle__hint::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: var(--space-12);
+  height: var(--space-12);
+  margin: auto;
+  translate: 10% 0;
+  background: var(--color-bg-brand);
+  clip-path: polygon(15% 5%, 95% 50%, 15% 95%);
+}
+
+.media-circle__hint::after {
+  content: "";
+  position: absolute;
+  inset: calc(-1 * var(--border-thin));
+  border: var(--border-thin) solid var(--color-border-brand);
+  border-radius: var(--radius-full);
+  opacity: 0;
+  animation: chain-hint-pulse calc(var(--duration-reveal) * 3) var(--easing-out) infinite;
+}
+
+.media-circle.is-open .media-circle__disc {
+  scale: 1.15;
+}
+
+.media-circle.is-open .media-circle__mask {
+  clip-path: circle(50% at 50% 50%);
+  background: var(--color-bg-inverse); /* el cursor lo lee como fondo oscuro y pasa a blanco */
+}
+
+.media-circle.is-open .media-circle__mask video {
+  transform: scale(1);
+}
+
+.media-circle.is-open .media-circle__img {
+  opacity: 0;
+  transform: scale(.9);
+}
+
+.media-circle.is-open .media-circle__hint {
+  opacity: 0;
+  scale: .6;
+}
+
+@media (min-width: 768px) {
+  .media-circle {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .media-circle {
+    width: 66%;
+    margin-block: var(--space-64);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media-circle__hint::after {
+    animation: none;
+  }
 }
 
 .split .section-head .btn {
@@ -5299,7 +5468,10 @@ html:not(.js) .company-visual__tag {
 }
 
 /* Ofertas por región (Trabaja con nosotros): filas abiertas con líneas; toda la
-   fila es el enlace; la flecha avanza con el hover. */
+   fila es el enlace. A la izquierda, la cantidad de ofertas en coral corporativo
+   (Coral 500, misma excepción que las cifras destacadas); a la derecha, la flecha
+   en un círculo Coral 500. Con hover, una línea Coral 500 recorre el borde
+   superior de la fila y el círculo se rellena (como el botón de acento). */
 .offer-list {
   margin: 0;
   padding: 0;
@@ -5308,14 +5480,33 @@ html:not(.js) .company-visual__tag {
 }
 
 .offer-row {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr) auto;
   align-items: center;
   gap: var(--space-16);
   min-height: var(--touch-target);
-  padding: var(--space-20) 0;
+  padding: var(--space-24) 0;
   color: var(--color-text-primary);
   border-top: var(--border-thin) solid var(--color-border-default);
+}
+
+.offer-row::before {
+  content: "";
+  position: absolute;
+  top: calc(-1 * var(--border-thin));
+  left: 0;
+  width: 100%;
+  height: var(--border-medium);
+  background: var(--color-bg-accent-hover);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-slow) var(--easing-out);
+}
+
+.offer-row:hover::before,
+.offer-row:focus-visible::before {
+  transform: scaleX(1);
 }
 
 .offer-row__body {
@@ -5330,13 +5521,35 @@ html:not(.js) .company-visual__tag {
 }
 
 .offer-row__count {
-  color: var(--color-text-brand);
+  display: flex;
+  flex-direction: column;
   white-space: nowrap;
+}
+
+.offer-row__num {
+  color: var(--color-text-accent-on-dark);
+}
+
+.offer-row__unit {
+  color: var(--color-text-secondary);
 }
 
 .offer-row__arrow {
   display: inline-flex;
-  color: var(--color-text-brand);
+  align-items: center;
+  justify-content: center;
+  width: var(--touch-target);
+  height: var(--touch-target);
+  border: var(--border-thin) solid var(--color-border-accent-on-dark);
+  border-radius: var(--radius-full);
+  color: var(--color-text-accent-on-dark);
+  transition:
+    background-color var(--duration-fast) var(--easing-standard),
+    border-color var(--duration-fast) var(--easing-standard),
+    color var(--duration-fast) var(--easing-standard);
+}
+
+.offer-row__arrow .icon {
   transition: transform var(--duration-base) var(--easing-standard);
 }
 
@@ -5345,7 +5558,19 @@ html:not(.js) .company-visual__tag {
 }
 
 .offer-row:hover .offer-row__arrow {
-  transform: translateX(var(--space-6));
+  border-color: var(--color-bg-accent);
+  background: var(--color-bg-accent);
+  color: var(--color-text-on-accent);
+}
+
+.offer-row:hover .offer-row__arrow .icon {
+  transform: translateX(var(--space-2));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .offer-row::before {
+    transition: none;
+  }
 }
 
 /* Noticias: encabezado con enlace a la derecha; tres notas abiertas (sin caja):
@@ -5403,8 +5628,9 @@ html:not(.js) .company-visual__tag {
   transition: transform var(--duration-reveal) var(--easing-out);
 }
 
+/* Etiqueta en coral corporativo (Coral 500): excepción aprobada, como las cifras */
 .news-item__tag {
-  color: var(--color-text-accent);
+  color: var(--color-text-accent-on-dark);
 }
 
 .news-item__cta {

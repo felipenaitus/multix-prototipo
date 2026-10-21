@@ -460,6 +460,32 @@
     });
   }
 
+  /* ---------- Círculo con video ([data-media-circle]) ----------
+     Ilustración sobre un círculo; con hover (mouse) el círculo se abre a un video
+     (.is-open). Con toque o Enter / Espacio se abre y cierra. Con movimiento
+     reducido el video no se reproduce (queda el poster). */
+  function initMediaCircle() {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    $all('[data-media-circle]').forEach(function (box) {
+      var video = box.querySelector('video');
+      function setOpen(on) {
+        box.classList.toggle('is-open', on);
+        box.setAttribute('aria-pressed', String(on));
+        if (!video) return;
+        if (on && !reduce.matches) { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+        else video.pause();
+      }
+      box.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') setOpen(true); });
+      box.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') setOpen(false); });
+      box.addEventListener('click', function (e) {
+        if (e.pointerType !== 'mouse') setOpen(!box.classList.contains('is-open'));
+      });
+      box.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpen(!box.classList.contains('is-open')); }
+      });
+    });
+  }
+
   /* ---------- Pasos ([data-steps]) ----------
      Lista de pasos (.steps__item con .steps__trigger y .steps__panel) y una
      ilustración por paso (.steps__img, en el mismo orden). Siempre hay uno activo.
@@ -931,6 +957,7 @@
     initSectionOpen();
     initSteps();
     initChain();
+    initMediaCircle();
     initDocFilter();
     initInviewVideos();
     initCursor();
