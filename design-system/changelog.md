@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Mercados: título de relato y tres cifras
+- Código ✓ · Se quita el desglose por región y país. El título pasa a "Del sur de Chile a las mesas del mundo" [contenido por definir] y se suman dos cifras: +400 clientes y 90 mil toneladas al año (de ejemplo). Las tres cifras van en fila desde tablet, separadas por líneas delgadas, y cuentan al entrar en pantalla.
+
 ## 2026-10-21 · Botón comercial en coral corporativo
 - Código ✓ · "Contactar al equipo comercial" usa Coral 500 (coral corporativo) en lugar de Coral 400, con texto Ink 900 (5,5:1, pasa AA). El hover se invierte a Coral 400. Excepción a la regla del botón de acento de CLAUDE.md §4 (fondo Coral 400, hover Coral 500), solo para este botón.
 

@@ -47,7 +47,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Suscripción (texto + campo + botón) | En una fila | Apilado; botón a ancho completo |
 | Encabezado de sección | Etiqueta + Título 2 + bajada al 68 % del contenedor | Bajada a ancho completo |
 | Tarjetas de solución | 3 columnas | Tablet y mobile: slider con scroll-snap (casi 2 tarjetas visibles en tablet; 1 y parte de la siguiente en mobile) |
-| Mercados y oficinas | Globo a la izquierda (80 % de su mitad) y título + datos a la derecha, en dos mitades | Título y datos primero, globo debajo (60 % del ancho en tablet, 90 % en mobile); regiones en 2 columnas en tablet y 1 en mobile |
+| Mercados y oficinas | Globo a la izquierda y, a la derecha, título, tres cifras en fila con líneas verticales entre ellas y oficinas | Título y cifras primero, globo debajo. Tablet: cifras en fila. Mobile: cifras apiladas con líneas horizontales entre ellas |
 | Globo de mercados | Gira solo; se detiene con el mouse encima; se arrastra; nombre del pin con hover, foco o clic | Se arrastra en horizontal (el scroll vertical de la página sigue funcionando); nombre del pin al tocarlo |
 | Descarga del catálogo | Texto y botón a la izquierda; a la derecha la imagen con círculo (mitad del ancho, predeterminada) o el flipbook (7/12); switch "Flipbook · Imagen" bajo la vista | Flipbook: debajo del texto a ancho completo (16:9 en tablet, 4:3 en mobile). Imagen: a la derecha desde tablet y debajo en mobile. El switch se mantiene |
 | Certificaciones en grilla | 4 columnas de celdas abiertas con una línea arriba; logo arriba; la descripción se despliega dentro de la celda | Tablet: 2 columnas. Mobile: lista de 1 columna separada por líneas, con el logo a la izquierda |
