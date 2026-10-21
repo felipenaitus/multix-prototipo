@@ -4430,50 +4430,54 @@ a.pagination__item:hover,
     width var(--duration-reveal) var(--easing-out);
 }
 
-/* Constelación: pocos puntos Coral 500 (elemento gráfico) ubicados alrededor del
-   círculo en coordenadas polares, así acompañan al círculo cuando cambia de lugar
-   y se reacomodan en cada paso (--orbit). Flotan lento y, con el mouse, se mueven
-   levemente en contra del cursor según su profundidad (--px, --py desde
-   components.js). Quedan entre el círculo y la ilustración. */
-.steps__stage[data-active="1"] { --orbit: 0deg; }
-.steps__stage[data-active="2"] { --orbit: 50deg; }
-.steps__stage[data-active="3"] { --orbit: -40deg; }
-
-.steps__dots {
+/* Burbujas: suben lento dentro del círculo, desde su base hasta arriba, y se
+   desvanecen; se mecen un poco hacia los lados. Contorno Coral 500 (algunas
+   rellenas), como elemento gráfico. Van entre el círculo y la ilustración y
+   acompañan al círculo cuando cambia de lugar en cada paso. Con movimiento
+   reducido no aparecen. */
+.steps__bubbles {
   position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.steps__dot {
-  position: absolute;
-  left: calc(var(--circle-x) + cos(var(--a) + var(--orbit, 0deg)) * var(--r) * var(--circle-size) / 2);
-  top: calc(var(--circle-y) + sin(var(--a) + var(--orbit, 0deg)) * var(--r) * var(--circle-size) / 2);
-  width: var(--d);
+  left: calc(var(--circle-x) - var(--circle-size) / 2);
+  top: calc(var(--circle-y) - var(--circle-size) / 2);
+  width: var(--circle-size);
   aspect-ratio: 1;
-  border-radius: var(--radius-full);
-  background: var(--color-bg-accent-hover);
-  translate:
-    calc(-50% + var(--px, 0) * var(--depth) * var(--space-24))
-    calc(-50% + var(--py, 0) * var(--depth) * var(--space-24));
-  animation: steps-float calc(var(--duration-reveal) * var(--float)) var(--easing-standard) infinite alternate;
+  pointer-events: none;
   transition:
     left var(--duration-reveal) var(--easing-out),
     top var(--duration-reveal) var(--easing-out),
-    translate var(--duration-slow) var(--easing-out);
+    width var(--duration-reveal) var(--easing-out);
 }
 
-.steps__dot:nth-child(1) { --a: -60deg; --r: 1.1; --d: var(--space-8); --depth: 1; --float: 7; }
-.steps__dot:nth-child(2) { --a: 20deg; --r: 1.18; --d: var(--space-6); --depth: 0.6; --float: 9; }
-.steps__dot:nth-child(3) { --a: 75deg; --r: 1.04; --d: var(--space-6); --depth: 0.9; --float: 6; }
-.steps__dot:nth-child(4) { --a: 150deg; --r: 1.14; --d: var(--space-8); --depth: 0.5; --float: 8; }
-.steps__dot:nth-child(5) { --a: 205deg; --r: 0.72; --d: var(--space-6); --depth: 0.8; --float: 10; }
-.steps__dot:nth-child(6) { --a: 258deg; --r: 1.2; --d: var(--space-6); --depth: 0.4; --float: 7.5; }
-.steps__dot:nth-child(7) { --a: 325deg; --r: 0.86; --d: var(--space-8); --depth: 0.7; --float: 8.5; }
+.steps__bubble {
+  position: absolute;
+  left: var(--x);
+  bottom: 5%;
+  width: var(--d);
+  aspect-ratio: 1;
+  border: var(--border-thin) solid var(--color-bg-accent-hover);
+  border-radius: var(--radius-full);
+  background: var(--fill, transparent);
+  opacity: 0;
+  animation: steps-bubble calc(var(--duration-reveal) * var(--dur)) linear infinite;
+  animation-delay: calc(var(--duration-reveal) * var(--delay) * -1);
+}
 
-@keyframes steps-float {
-  from { transform: translate(0, 0); }
-  to { transform: translate(var(--space-4), calc(-1 * var(--space-8))); }
+.steps__bubble:nth-child(1) { --x: 18%; --d: var(--space-8); --dur: 9; --delay: 0; }
+.steps__bubble:nth-child(2) { --x: 30%; --d: var(--space-6); --dur: 7; --delay: 2.5; --fill: var(--color-bg-accent-hover); }
+.steps__bubble:nth-child(3) { --x: 44%; --d: var(--space-12); --dur: 11; --delay: 5; }
+.steps__bubble:nth-child(4) { --x: 57%; --d: var(--space-6); --dur: 8; --delay: 1.2; --fill: var(--color-bg-accent-hover); }
+.steps__bubble:nth-child(5) { --x: 68%; --d: var(--space-8); --dur: 10; --delay: 6.5; }
+.steps__bubble:nth-child(6) { --x: 80%; --d: var(--space-6); --dur: 7.5; --delay: 3.8; --fill: var(--color-bg-accent-hover); }
+.steps__bubble:nth-child(7) { --x: 38%; --d: var(--space-6); --dur: 9.5; --delay: 8; }
+.steps__bubble:nth-child(8) { --x: 73%; --d: var(--space-12); --dur: 12; --delay: 9.5; }
+
+@keyframes steps-bubble {
+  0%   { bottom: 5%;  opacity: 0; transform: translateX(0); }
+  15%  { opacity: .9; }
+  35%  { transform: translateX(var(--space-8)); }
+  65%  { transform: translateX(calc(-1 * var(--space-6))); }
+  85%  { opacity: .9; }
+  100% { bottom: 95%; opacity: 0; transform: translateX(0); }
 }
 
 /* Cada ilustración con su centro y su caja (la imagen cabe dentro sin deformarse) */
