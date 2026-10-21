@@ -789,7 +789,6 @@
       var onText = e.target.closest && e.target.closest(TEXT);
       cursor.classList.toggle('is-hidden', !!onText);
       cursor.classList.toggle('is-hover', !onText && !!(e.target.closest && e.target.closest(CLICKABLE)));
-      cursor.classList.toggle('is-play', !onText && !!(e.target.closest && e.target.closest('[data-cursor="play"]')));
     }, { passive: true });
 
     // Al hacer scroll cambia lo que hay bajo el puntero aunque el mouse no se mueva

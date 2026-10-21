@@ -3294,21 +3294,6 @@ a.pagination__item:hover,
   scale: 1.5;
 }
 
-/* Sobre elementos con data-cursor="play" (video al pasar el mouse): el anillo
-   crece y el punto se vuelve un triángulo de play */
-.cursor.is-play .cursor__ring {
-  scale: 2;
-}
-
-.cursor.is-play .cursor__dot {
-  opacity: 1;
-  scale: 1;
-  width: var(--space-12);
-  height: var(--space-12);
-  border-radius: 0;
-  clip-path: polygon(20% 10%, 90% 50%, 20% 90%);
-}
-
 
 /* ==========================================================================
    Botón flotante del asistente (<chat-launcher>, js/layout.js)

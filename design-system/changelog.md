@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Cursor sin ícono de play
+- Código ✓ · Se quita el estado de play del cursor (`data-cursor="play"`): con el indicador del borde basta. Sobre la composición el cursor se comporta como en cualquier elemento clickeable.
+
 ## 2026-10-21 · Del cultivo a la mesa: indicador de video
 - Figma pendiente · Código ✓ · Indicador de play sobre el borde del círculo (abajo a la derecha) que late para avisar que hay un video. Desaparece al abrirlo. Funciona también como señal en mobile, donde no hay hover.
 
