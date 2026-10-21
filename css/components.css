@@ -3473,6 +3473,13 @@ a.pagination__item:hover,
   padding-top: 0;
 }
 
+/* Sección unida a la anterior (mismo fondo), sin línea: sin espacio arriba propio,
+   así entre ambas queda solo el aire de una sección. Ej.: Inversionistas, documentos
+   y próximo evento en azul oscuro. */
+.section--joined {
+  padding-top: 0;
+}
+
 .section--continued > .container {
   position: relative;
   padding-top: var(--layout-section-gap);

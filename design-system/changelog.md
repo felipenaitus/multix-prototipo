@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Inversionistas sin línea entre documentos y evento
+- Código ✓ · Se quita la línea entre Últimos documentos publicados y Próximo evento: la sección del evento pasa a `.section--joined` (unida a la anterior, sin línea y sin espacio arriba propio).
+
 ## 2026-10-21 · Secciones en azul oscuro (PRUEBA)
 - Figma pendiente · Código ✓ · Nueva variante de sección `.section--inverse` (fondo Navy 950). En `tokens.css` reasigna, dentro de ella, los tokens semánticos de texto, línea, contenedor y coral, para que el contenido se adapte solo. Pendiente de confirmar por Felipe.
 - Código ✓ · Se aplica a: home › Últimos reportes + Próximo evento, Productos › Catálogo e Inversionistas › Últimos documentos + Próximo evento (que pasa a continuar a los documentos con una línea y lleva el arco).
