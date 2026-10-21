@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Catálogo con fondo propio; Del cultivo a la mesa más inmersivo
+- Código ✓ · Nuestras marcas y la descarga del catálogo pasan a secciones separadas: marcas en blanco, catálogo en Offwhite. Del cultivo a la mesa pasa a fondo blanco.
+- Código ✓ · Del cultivo a la mesa ocupa casi toda la pantalla en desktop (mín. 768 px o 92 % del alto de la ventana). Círculo más chico (62 % de su mitad en desktop, 46 % en tablet, 80 % en mobile) con los textos más angostos; más aire entre título, ilustración, descripción y línea de secuencia.
+
 ## 2026-10-21 · Del cultivo a la mesa: nueva composición
 - Figma pendiente · Código ✓ · Nuevo relato vertical (`.chain[data-chain]`) según la referencia de Felipe: textura de escamas con círculo y título a la izquierda; a la derecha un paso a la vez con título, ilustración (ova, la misma en los seis por ahora) y descripción, línea de secuencia que avanza sola y flechas atrás/adelante. Reemplaza a la cadena de valor en lista en Productos (que queda en el kit). Patrón Firma en motion.md.
 - Código ✓ · Textura e ilustración optimizadas a WebP: textura 1,7 MB → 0,5 MB; ova 2,2 MB → 0,35 MB (sin pérdida, con la transparencia limpia).
