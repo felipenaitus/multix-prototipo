@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Del cultivo a la mesa: indicador de video
+- Figma pendiente · Código ✓ · Indicador de play sobre el borde del círculo (abajo a la derecha) que late para avisar que hay un video. Desaparece al abrirlo. Funciona también como señal en mobile, donde no hay hover.
+
 ## 2026-10-21 · Del cultivo a la mesa: datos del paso con el video
 - Figma pendiente · Código ✓ · Al abrir el video de un paso aparecen 4 datos (cifra + texto) que detallan el proceso: a la derecha de la composición en desktop y en el lugar de la descripción en tablet y mobile. Datos de ejemplo [contenido por definir].
 

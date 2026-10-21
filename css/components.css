@@ -4645,6 +4645,61 @@ a.pagination__item:hover,
   transition: transform var(--duration-reveal) var(--easing-out);
 }
 
+/* Indicador de video: botón chico con play sobre el borde del círculo (abajo a
+   la derecha, a 45°). Late con un anillo que se expande; desaparece al abrir el
+   video. Va por delante de la ilustración. Con movimiento reducido no late. */
+.chain__hint {
+  position: absolute;
+  z-index: 2;
+  top: 85.4%;
+  left: 85.4%;
+  width: var(--space-40);
+  height: var(--space-40);
+  border: var(--border-thin) solid var(--color-border-brand);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-page);
+  translate: -50% -50%;
+  pointer-events: none;
+  transition:
+    opacity var(--duration-slow) var(--easing-standard),
+    scale var(--duration-slow) var(--easing-standard);
+}
+
+/* Triángulo de play */
+.chain__hint::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: var(--space-12);
+  height: var(--space-12);
+  margin: auto;
+  translate: 10% 0;
+  background: var(--color-bg-brand);
+  clip-path: polygon(15% 5%, 95% 50%, 15% 95%);
+}
+
+/* Anillo que late */
+.chain__hint::after {
+  content: "";
+  position: absolute;
+  inset: calc(-1 * var(--border-thin));
+  border: var(--border-thin) solid var(--color-border-brand);
+  border-radius: var(--radius-full);
+  opacity: 0;
+  animation: chain-hint-pulse calc(var(--duration-reveal) * 3) var(--easing-out) infinite;
+}
+
+@keyframes chain-hint-pulse {
+  0%   { opacity: .6; transform: scale(1); }
+  70%  { opacity: 0; transform: scale(1.8); }
+  100% { opacity: 0; transform: scale(1.8); }
+}
+
+.chain.is-open .chain__hint {
+  opacity: 0;
+  scale: .6;
+}
+
 .chain.is-open .chain__mask {
   clip-path: circle(50% at 50% 50%);
   background: var(--color-bg-inverse); /* el cursor lo lee como fondo oscuro y pasa a blanco */
