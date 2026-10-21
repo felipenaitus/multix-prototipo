@@ -85,5 +85,5 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 ## Firma · Relato vertical (solo Productos › Del cultivo a la mesa)
 - Sin avance automático: el paso lo cambia la persona con las flechas o los tramos.
 - Al cambiar de paso, el título del paso, la ilustración y la descripción hacen un fundido (`--duration-slow`) y la ilustración entra con un leve acercamiento (0,94 → 1, `--duration-reveal`).
-- Video en hover: el video se abre dentro del círculo desde el centro (clip-path de 0 % a 50 %, con leve acercamiento 1,12 → 1, `--duration-reveal`) y la ilustración se desvanece y se achica (1 → 0,9). Al salir se cierra. El cursor cambia a un anillo más grande con un triángulo de play. Con movimiento reducido el cambio es instantáneo y el video no se reproduce.
+- Video en hover: el círculo crece un 15 % (`--duration-reveal`) y el video se abre dentro de él desde el centro (clip-path de 0 % a 50 %, con leve acercamiento 1,12 → 1, `--duration-reveal`) y la ilustración se desvanece y se achica (1 → 0,9). Al salir se cierra. El cursor cambia a un anillo más grande con un triángulo de play. Con movimiento reducido el cambio es instantáneo y el video no se reproduce.
 - Descartado antes: segunda instancia por paso con video en el círculo, alternando sola.

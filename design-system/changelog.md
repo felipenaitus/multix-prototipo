@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Del cultivo a la mesa: el círculo crece al abrir el video
+- Código ✓ · Con el video abierto, el círculo crece un 15 %; vuelve a su tamaño al cerrarse.
+
 ## 2026-10-21 · Del cultivo a la mesa: video en el círculo al pasar el mouse
 - Figma pendiente · Código ✓ · Al pasar el mouse por la composición, el círculo se abre a un video (por ahora el de Arka Fjord) y la ilustración se desvanece. Toque en mobile y Enter / Espacio con teclado. Al cambiar de paso se cierra.
 - Figma pendiente · Código ✓ · Cursor: nuevo estado de play (`data-cursor="play"`): anillo más grande y triángulo en lugar del punto.

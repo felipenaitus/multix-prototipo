@@ -4591,6 +4591,15 @@ a.pagination__item:hover,
   background: var(--color-bg-subtle);
 }
 
+/* Con el video abierto, el círculo crece un poco */
+.chain__stage {
+  transition: scale var(--duration-reveal) var(--easing-out);
+}
+
+.chain.is-open .chain__stage {
+  scale: 1.15;
+}
+
 .chain__stage:focus-visible {
   outline-offset: var(--space-8);
 }
