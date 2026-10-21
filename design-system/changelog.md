@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Certificaciones: solo descripción en el detalle
+- Código ✓ · Al desplegar una certificación (grilla de Productos) se muestra solo la descripción: se quitan las etiquetas de cobertura y vigencia y el enlace "Ver certificado".
+
 ## 2026-10-21 · Logo de prueba en las certificaciones
 - Código ✓ · Las 8 certificaciones muestran un logo de prueba (`assets/certs/logo-prueba.png`, el de ASC, recortado y con el fondo blanco quitado) en su espacio de logo, hasta tener los logos reales.
 
