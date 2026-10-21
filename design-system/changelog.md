@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Kit visual como referencia
+- Código ✓ · `kit.html` pasa a ser un kit de referencia (pedido de Felipe): sin header, menú ni footer del sitio (ni el botón del asistente); tokens completos con secciones nuevas de Espaciado, radio y bordes, y de Movimiento (valores leídos en vivo de `tokens.css`); un ejemplo por componente (botones, formularios, sub-menú, pestañas, migas de pan, encabezado de sección, cifras, filtros, listado de documentos, evento y agendar, preguntas frecuentes) y una sola composición de ejemplo (ilustración sobre círculo) junto a los fondos de sección. Las composiciones de cada página salen del kit y quedan descritas en `ui-kit.md`.
+- Conflicto con CLAUDE.md 2.2 ("todo componente usado en una página debe existir antes en kit.html"): desde ahora las composiciones de página no se agregan a `kit.html`; se definen en `ui-kit.md`. Pendiente de que Felipe confirme el cambio de la regla en CLAUDE.md.
+
 ## 2026-10-21 · Documentación del kit al día
 - Código ✓ · `ui-kit.md` y `kit.html` actualizados con las definiciones de la jornada: menú blanco en mobile, flecha del sub-menú, agendar siempre a la vista, tipo de documento como texto en mobile, `.section--joined` y fecha de última actualización en la portada del kit.
 

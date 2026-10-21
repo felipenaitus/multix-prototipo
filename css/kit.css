@@ -338,3 +338,99 @@
   background: var(--color-bg-inverse);
   border-color: var(--color-bg-inverse);
 }
+
+/* El kit es una página de referencia: sin el botón flotante del asistente (es del sitio) */
+.kit-page .chat-launcher {
+  display: none;
+}
+
+/* 03 y 04 · Tokens: nombre, valor (leído de tokens.css) y muestra, separados por líneas */
+.token-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: var(--border-thin) solid var(--color-border-default);
+}
+
+/* Mobile: nombre arriba; valor y muestra debajo */
+.token-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-4) var(--space-16);
+  min-height: var(--touch-target);
+  padding-block: var(--space-8);
+  border-bottom: var(--border-thin) solid var(--color-border-default);
+}
+
+.token-row__name {
+  grid-column: 1 / -1;
+  font-size: var(--text-small-size);
+  line-height: var(--text-small-lh);
+  color: var(--color-text-primary);
+  overflow-wrap: anywhere;
+}
+
+.token-row__value {
+  font-size: var(--text-small-size);
+  line-height: var(--text-small-lh);
+  color: var(--color-text-secondary);
+  overflow-wrap: anywhere;
+}
+
+.token-row__sample {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.token-bar {
+  display: block;
+  height: var(--space-8);
+  max-width: 100%;
+  background: var(--color-bg-accent-hover);
+}
+
+.token-radius {
+  display: block;
+  width: var(--space-40);
+  height: var(--space-40);
+  border: var(--border-thin) solid var(--color-border-brand);
+}
+
+.token-line {
+  display: block;
+  width: 100%;
+  background: var(--color-bg-brand);
+}
+
+/* Movimiento: el punto recorre la fila al pasar el mouse, con la duración o curva del token */
+.token-dot {
+  display: block;
+  width: var(--space-12);
+  height: var(--space-12);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-accent-hover);
+  transition-property: transform;
+  transition-duration: var(--duration-reveal);
+  transition-timing-function: var(--easing-standard);
+}
+
+.token-list--motion .token-row__sample {
+  container-type: inline-size;
+}
+
+.token-list--motion .token-row:hover .token-dot {
+  transform: translateX(calc(100cqw - var(--space-12)));
+}
+
+@media (min-width: 768px) {
+  .token-row {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 4fr);
+    gap: var(--space-32);
+  }
+
+  .token-row__name {
+    grid-column: auto;
+  }
+}

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>UI kit · Multi X</title>
-  <meta name="description" content="UI kit del rediseño de Multi X, Propuesta A Corporativo liviano.">
+  <meta name="description" content="Kit de referencia del rediseño de Multi X (Propuesta A, Corporativo liviano): tokens y un ejemplo de cada componente.">
   <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,31 +16,28 @@
   <script src="js/layout.js" defer></script>
   <script src="js/components.js" defer></script>
 </head>
-<body>
-  <site-header current="inversionistas"></site-header>
-
+<body class="kit-page">
   <main id="main" class="container kit">
 
     <!-- ===================================================================
-         Portada (node 75-3)
+         Portada
          =================================================================== -->
     <header class="kit-cover">
       <p class="t-label c-accent">UI kit · Rediseño 2026</p>
       <h1 class="t-display">Corporativo liviano</h1>
-      <p class="t-body-l kit-cover__lead">Propuesta A: Sora para títulos y cifras, Manrope para cuerpo e interfaz, Navy como color de marca y coral como acento. Márgenes amplios y movimiento que acompaña sin saturar. Esta página reúne todos los componentes del kit en sus versiones desktop y mobile.</p>
+      <p class="t-body-l kit-cover__lead">Kit de referencia de la Propuesta A: los tokens del sistema (color, tipografía, espaciado, radio, bordes y movimiento) y un ejemplo de cada componente. Las reglas de uso y la adaptación a mobile están en <code>design-system/ui-kit.md</code> y <code>design-system/responsive.md</code>.</p>
       <p class="t-small kit-cover__lead">Última actualización: 21 de octubre de 2026.</p>
       <nav aria-label="Secciones del kit">
         <ul class="kit-index" role="list">
           <li><a href="#color"><span>01</span> Color</a></li>
           <li><a href="#tipografia"><span>02</span> Tipografía</a></li>
-          <li><a href="#botones"><span>03</span> Botones</a></li>
-          <li><a href="#formularios"><span>04</span> Formularios</a></li>
-          <li><a href="#navegacion"><span>05</span> Navegación</a></li>
-          <li><a href="#documentacion"><span>06</span> Documentación</a></li>
-          <li><a href="#inversionistas"><span>07</span> Inversionistas</a></li>
-          <li><a href="#sustentabilidad"><span>08</span> Sustentabilidad y Productos</a></li>
-          <li><a href="#hero"><span>09</span> Hero</a></li>
-          <li><a href="#ilustracion"><span>10</span> Composición con ilustración</a></li>
+          <li><a href="#espaciado"><span>03</span> Espaciado, radio y bordes</a></li>
+          <li><a href="#movimiento"><span>04</span> Movimiento</a></li>
+          <li><a href="#botones"><span>05</span> Botones</a></li>
+          <li><a href="#formularios"><span>06</span> Formularios</a></li>
+          <li><a href="#navegacion"><span>07</span> Navegación</a></li>
+          <li><a href="#contenido"><span>08</span> Componentes de contenido</a></li>
+          <li><a href="#composicion"><span>09</span> Composición y fondos</a></li>
         </ul>
       </nav>
     </header>
@@ -121,11 +118,114 @@
     </section>
 
     <!-- ===================================================================
-         03 · Botones (node 75-194)
+         03 · Espaciado, radio y bordes
+         =================================================================== -->
+    <section class="kit-section" id="espaciado" aria-labelledby="espaciado-title">
+      <div class="kit-section__head">
+        <p class="t-label c-accent">03</p>
+        <h2 class="t-h2" id="espaciado-title">Espaciado, radio y bordes</h2>
+        <p class="t-small kit-section__desc">Valores de <code>css/tokens.css</code>; la columna del medio se lee del archivo en vivo. Anchos de columnas y bloques no tienen token: se usan proporciones del contenedor (<code>fr</code>, porcentajes).</p>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Espaciado</h3>
+        <ul class="token-list" role="list">
+          <li class="token-row"><code class="token-row__name">--space-2</code><span class="token-row__value" data-token="--space-2"></span><span class="token-row__sample"><i class="token-bar" style="width: var(--space-2)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--space-4</code><span class="token-row__value" data-token="--space-4"></span><span class="token-row__sample"><i class="token-bar" style="width: var(--space-4)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--space-6</code><span class="token-row__value" data-token="--space-6"></span><span class="token-row__sample"><i class="token-bar" style="width: var(--space-6)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--space-8</code><span class="token-row__value" data-token="--space-8"></span><span class="token-row__sample"><i class="token-bar" style="width: var(--space-8)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--space-12</code><span class="token-row__value" data-token="--space-12"></span><span class="token-row__sample"><i class="token-bar" style="width: var(--space-12)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--space-16</code><span class="token-row__value" data-token="--space-16"></span><span class="token-row__sample"><i class="token-bar" style="width: var(--space-16)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--space-20</code><span class="token-row__value" data-token="--space-20"></span><span class="token-row__sample"><i class="token-bar" style="width: var(--space-20)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--space-24</code><span class="token-row__value" data-token="--space-24"></span><span class="token-row__sample"><i class="token-bar" style="width: var(--space-24)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--space-32</code><span class="token-row__value" data-token="--space-32"></span><span class="token-row__sample"><i class="token-bar" style="width: var(--space-32)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--space-40</code><span class="token-row__value" data-token="--space-40"></span><span class="token-row__sample"><i class="token-bar" style="width: var(--space-40)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--space-48</code><span class="token-row__value" data-token="--space-48"></span><span class="token-row__sample"><i class="token-bar" style="width: var(--space-48)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--space-64</code><span class="token-row__value" data-token="--space-64"></span><span class="token-row__sample"><i class="token-bar" style="width: var(--space-64)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--space-80</code><span class="token-row__value" data-token="--space-80"></span><span class="token-row__sample"><i class="token-bar" style="width: var(--space-80)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--space-96</code><span class="token-row__value" data-token="--space-96"></span><span class="token-row__sample"><i class="token-bar" style="width: var(--space-96)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--space-128</code><span class="token-row__value" data-token="--space-128"></span><span class="token-row__sample"><i class="token-bar" style="width: var(--space-128)"></i></span></li>
+        </ul>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Radio</h3>
+        <ul class="token-list" role="list">
+          <li class="token-row"><code class="token-row__name">--radius-xs</code><span class="token-row__value" data-token="--radius-xs"></span><span class="token-row__sample"><i class="token-radius" style="border-radius: var(--radius-xs)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--radius-sm</code><span class="token-row__value" data-token="--radius-sm"></span><span class="token-row__sample"><i class="token-radius" style="border-radius: var(--radius-sm)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--radius-md</code><span class="token-row__value" data-token="--radius-md"></span><span class="token-row__sample"><i class="token-radius" style="border-radius: var(--radius-md)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--radius-lg</code><span class="token-row__value" data-token="--radius-lg"></span><span class="token-row__sample"><i class="token-radius" style="border-radius: var(--radius-lg)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--radius-xl</code><span class="token-row__value" data-token="--radius-xl"></span><span class="token-row__sample"><i class="token-radius" style="border-radius: var(--radius-xl)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--radius-full</code><span class="token-row__value" data-token="--radius-full"></span><span class="token-row__sample"><i class="token-radius" style="border-radius: var(--radius-full)"></i></span></li>
+        </ul>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Bordes y sombra</h3>
+        <ul class="token-list" role="list">
+          <li class="token-row"><code class="token-row__name">--border-thin</code><span class="token-row__value" data-token="--border-thin"></span><span class="token-row__sample"><i class="token-line" style="height: var(--border-thin)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--border-medium</code><span class="token-row__value" data-token="--border-medium"></span><span class="token-row__sample"><i class="token-line" style="height: var(--border-medium)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--border-focus</code><span class="token-row__value" data-token="--border-focus"></span><span class="token-row__sample"><i class="token-line" style="height: var(--border-focus)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--border-indicator</code><span class="token-row__value" data-token="--border-indicator"></span><span class="token-row__sample"><i class="token-line" style="height: var(--border-indicator)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--shadow-card</code><span class="token-row__value" data-token="--shadow-card"></span><span class="token-row__sample"><i class="token-radius" style="box-shadow: var(--shadow-card); border-color: transparent"></i></span></li>
+        </ul>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Layout y tamaños</h3>
+        <ul class="token-list" role="list">
+          <li class="token-row"><code class="token-row__name">--layout-content-width</code><span class="token-row__value" data-token="--layout-content-width"></span><span class="token-row__sample"></span></li>
+          <li class="token-row"><code class="token-row__name">--layout-gutter</code><span class="token-row__value" data-token="--layout-gutter"></span><span class="token-row__sample"></span></li>
+          <li class="token-row"><code class="token-row__name">--layout-section-gap</code><span class="token-row__value" data-token="--layout-section-gap"></span><span class="token-row__sample"></span></li>
+          <li class="token-row"><code class="token-row__name">--touch-target</code><span class="token-row__value" data-token="--touch-target"></span><span class="token-row__sample"></span></li>
+          <li class="token-row"><code class="token-row__name">--icon-sm</code><span class="token-row__value" data-token="--icon-sm"></span><span class="token-row__sample"></span></li>
+          <li class="token-row"><code class="token-row__name">--icon-md</code><span class="token-row__value" data-token="--icon-md"></span><span class="token-row__sample"></span></li>
+          <li class="token-row"><code class="token-row__name">--icon-lg</code><span class="token-row__value" data-token="--icon-lg"></span><span class="token-row__sample"></span></li>
+          <li class="token-row"><code class="token-row__name">--size-event-date</code><span class="token-row__value" data-token="--size-event-date"></span><span class="token-row__sample"></span></li>
+          <li class="token-row"><code class="token-row__name">--size-cert-logo</code><span class="token-row__value" data-token="--size-cert-logo"></span><span class="token-row__sample"></span></li>
+        </ul>
+        <p class="t-small kit-note">Breakpoints: 768 (tablet) y 1280 (desktop); estilos base para mobile. El margen lateral y la separación entre secciones se ajustan solos entre mobile y desktop.</p>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         04 · Movimiento
+         =================================================================== -->
+    <section class="kit-section" id="movimiento" aria-labelledby="movimiento-title">
+      <div class="kit-section__head">
+        <p class="t-label c-accent">04</p>
+        <h2 class="t-h2" id="movimiento-title">Movimiento</h2>
+        <p class="t-small kit-section__desc">Duraciones y curvas de <code>css/tokens.css</code>; pasa el mouse por una fila para ver la duración. El catálogo de patrones (Base en todo el sitio, Firma solo donde se indica) está en <code>design-system/motion.md</code>. Con movimiento reducido las duraciones quedan en 0.</p>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Duraciones</h3>
+        <ul class="token-list token-list--motion" role="list">
+          <li class="token-row"><code class="token-row__name">--duration-fast</code><span class="token-row__value" data-token="--duration-fast"></span><span class="token-row__sample"><i class="token-dot" style="transition-duration: var(--duration-fast)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--duration-base</code><span class="token-row__value" data-token="--duration-base"></span><span class="token-row__sample"><i class="token-dot" style="transition-duration: var(--duration-base)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--duration-slow</code><span class="token-row__value" data-token="--duration-slow"></span><span class="token-row__sample"><i class="token-dot" style="transition-duration: var(--duration-slow)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--duration-reveal</code><span class="token-row__value" data-token="--duration-reveal"></span><span class="token-row__sample"><i class="token-dot" style="transition-duration: var(--duration-reveal)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--duration-counter</code><span class="token-row__value" data-token="--duration-counter"></span><span class="token-row__sample"><i class="token-dot" style="transition-duration: var(--duration-counter)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--duration-stagger</code><span class="token-row__value" data-token="--duration-stagger"></span><span class="token-row__sample"><i class="token-dot" style="transition-duration: var(--duration-stagger)"></i></span></li>
+        </ul>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Curvas y desplazamiento</h3>
+        <ul class="token-list token-list--motion" role="list">
+          <li class="token-row"><code class="token-row__name">--easing-standard</code><span class="token-row__value" data-token="--easing-standard"></span><span class="token-row__sample"><i class="token-dot" style="transition-timing-function: var(--easing-standard)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--easing-out</code><span class="token-row__value" data-token="--easing-out"></span><span class="token-row__sample"><i class="token-dot" style="transition-timing-function: var(--easing-out)"></i></span></li>
+          <li class="token-row"><code class="token-row__name">--motion-reveal-distance</code><span class="token-row__value" data-token="--motion-reveal-distance"></span><span class="token-row__sample"></span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         05 · Botones (node 75-194)
          =================================================================== -->
     <section class="kit-section" id="botones" aria-labelledby="botones-title">
       <div class="kit-section__head">
-        <p class="t-label c-accent">03</p>
+        <p class="t-label c-accent">05</p>
         <h2 class="t-h2" id="botones-title">Botones</h2>
         <p class="t-small kit-section__desc">El acento usa Coral 400 con texto Ink 900 (6,7:1) y en hover pasa al Coral 500 original (5,5:1). Sobre fondo oscuro se usa la misma versión rellena o el contorno coral (5,6:1). El texto blanco sobre coral no se usa en botones.</p>
       </div>
@@ -169,11 +269,11 @@
     </section>
 
     <!-- ===================================================================
-         04 · Formularios (node 75-244)
+         06 · Formularios (node 75-244)
          =================================================================== -->
     <section class="kit-section" id="formularios" aria-labelledby="form-title">
       <div class="kit-section__head">
-        <p class="t-label c-accent">04</p>
+        <p class="t-label c-accent">06</p>
         <h2 class="t-h2" id="form-title">Formularios</h2>
         <p class="t-small kit-section__desc">Campos con etiqueta visible siempre (no solo placeholder) y zona táctil mínima de 44 px. En mobile, una columna y teclado según el tipo de campo.</p>
       </div>
@@ -218,80 +318,21 @@
           Hechos esenciales
         </label>
       </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Composición · suscripción</h3>
-        <form class="subscribe" action="#" onsubmit="return false">
-          <div class="subscribe__text">
-            <h4 class="t-h3">Alertas para inversionistas</h4>
-            <p>Recibe un correo cuando publiquemos resultados o hechos esenciales.</p>
-          </div>
-          <div class="subscribe__form">
-            <div class="field">
-              <label class="field__label" for="f-sub">Correo electrónico</label>
-              <div class="control"><input class="control__input" id="f-sub" type="email" placeholder="nombre@empresa.com" autocomplete="email" required></div>
-            </div>
-            <button class="btn btn--primary" type="submit">Suscribirme</button>
-          </div>
-        </form>
-      </div>
     </section>
 
     <!-- ===================================================================
-         05 · Navegación (node 75-353; header y menú según Etapa 1)
+         07 · Navegación
          =================================================================== -->
-    <section class="kit-section" id="navegacion" aria-labelledby="nav-title">
+    <section class="kit-section" id="navegacion" aria-labelledby="navegacion-title">
       <div class="kit-section__head">
-        <p class="t-label c-accent">05</p>
-        <h2 class="t-h2" id="nav-title">Navegación</h2>
-        <p class="t-small kit-section__desc">Header de dos filas en desktop: barra utilitaria delgada (Portal Proveedores · Diving X · Contacto · buscador · ES/EN) y fila principal con el logo, los tres accesos centrados (Inversionistas con desplegable) y el menú hamburguesa. Header, menú y footer viven en <code>js/layout.js</code>; el header de esta página es el componente real (variante sólida).</p>
+        <p class="t-label c-accent">07</p>
+        <h2 class="t-h2" id="navegacion-title">Navegación</h2>
+        <p class="t-small kit-section__desc">Piezas de navegación dentro de una página: sub-menú, pestañas y migas de pan. El header, el menú hamburguesa y el footer son del sitio (viven en <code>js/layout.js</code>) y no se muestran aquí; su definición está en <code>design-system/ui-kit.md</code>.</p>
       </div>
 
       <div class="kit-block">
-        <h3 class="t-label kit-block__title">Páginas de prueba</h3>
-        <p class="t-body kit-note">Para revisar el comportamiento al hacer scroll (transparente → sólido, compactación y ocultar en mobile):</p>
-        <div class="btn-group">
-          <a class="btn btn--secondary" href="pruebas/navegacion-hero.html">Prueba con hero<svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-          <a class="btn btn--secondary" href="pruebas/navegacion-interior.html">Prueba página interior<svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-        </div>
-      </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Header · transparente sobre el hero</h3>
-        <div class="kit-header-demo kit-header-demo--dark"><site-header demo demo-state="transparent" variant="overlay"></site-header></div>
-        <p class="t-small kit-variant__caption">variant="overlay" · barra utilitaria y fila principal transparentes, logo y textos claros. Al hacer scroll pasa a blanco, sin importar el fondo del contenido.</p>
-      </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Header · sólido (páginas interiores)</h3>
-        <div class="kit-header-demo"><site-header demo demo-state="light" current="inversionistas"></site-header></div>
-        <p class="t-small kit-variant__caption">Sólido desde el inicio. Sección activa con indicador coral. Inversionistas abre un desplegable con mouse (hover o clic) y teclado (Enter, flechas, Escape).</p>
-      </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Header · compacto al hacer scroll</h3>
-        <div class="kit-header-demo"><site-header demo demo-state="compact"></site-header></div>
-        <p class="t-small kit-variant__caption">Desktop: al bajar, la barra utilitaria sale y la fila principal pasa de 80 a 64 px (logo al 85%), con transform; al volver arriba reaparece. Mobile y tablet: una sola fila de 64 px que se oculta al bajar y aparece al subir.</p>
-      </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Menú hamburguesa (overlay)</h3>
-        <p class="t-body kit-note">Según el prototipo de venta aprobado. Desktop: panel flotante bajo el header, con el ancho del contenedor, sobre el sitio oscurecido y desenfocado. Arriba, buscador del sitio (al escribir aparece la misma X del menú para borrar); al centro, tarjeta fija de noticia destacada y accesos en dos grupos, "La compañía" y "Negocio", solo con su nombre; abajo, Portales y Recursos en un tono más suave y las redes sociales. Tablet: mismo panel sin vista previa. Mobile: pantalla completa, idioma y redes al final. Se cierra con el mismo botón (la hamburguesa pasa a X), Escape o clic fuera del panel.</p>
-        <button class="btn btn--primary" type="button" data-open-menu style="align-self: flex-start">Abrir el menú</button>
-      </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Botón flotante del asistente</h3>
-        <p class="t-body kit-note">Transversal (<code>&lt;chat-launcher&gt;</code> en <code>js/layout.js</code>): se agrega solo en todas las páginas y queda fijo abajo a la derecha (es el de esta página). Contenedor outline e ícono relleno: navy sobre fondos claros y blanco sobre fondos oscuros; cambia solo según lo que tenga detrás al hacer scroll. Por ahora no abre nada.</p>
-        <div class="kit-variants">
-          <div class="kit-variant"><chat-launcher demo></chat-launcher><span class="t-small kit-variant__caption">Sobre fondo claro</span></div>
-          <div class="kit-variant"><div class="kit-dark"><chat-launcher demo class="is-on-dark"></chat-launcher></div><span class="t-small kit-variant__caption">Sobre fondo oscuro</span></div>
-        </div>
-      </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Footer</h3>
-        <p class="t-body kit-note">El footer real está al final de esta página: direcciones y teléfonos (Puerto Montt, Santiago y Miami), Información (Preguntas Frecuentes, Legislación, Canal de Denuncias), Personas y proveedores, redes sociales y copyright. En mobile, Información y Personas y proveedores van en acordeón; direcciones y teléfonos siempre visibles.</p>
+        <h3 class="t-label kit-block__title">Sub-menú de Inversionistas (<code>&lt;ir-subnav current&gt;</code>: fijo bajo el header; en mobile, flecha si hay más secciones)</h3>
+        <ir-subnav current="resultados" style="position: static"></ir-subnav>
       </div>
 
       <div class="kit-nav-row">
@@ -328,16 +369,33 @@
     </section>
 
     <!-- ===================================================================
-         06 · Páginas de documentación (node 75-641)
+         08 · Componentes de contenido
          =================================================================== -->
-    <section class="kit-section" id="documentacion" aria-labelledby="doc-title">
+    <section class="kit-section" id="contenido" aria-labelledby="contenido-title">
       <div class="kit-section__head">
-        <p class="t-label c-accent">06</p>
-        <h2 class="t-h2" id="doc-title">Páginas de documentación</h2>
-        <p class="t-small kit-section__desc">Patrón único para toda la documentación: agrupado por año con el más reciente abierto. No se muestran años ni categorías sin documentos; el estado vacío solo aparece en búsquedas. La etiqueta del enlace (ej. "PDF") es editable.</p>
+        <p class="t-label c-accent">08</p>
+        <h2 class="t-h2" id="contenido-title">Componentes de contenido</h2>
+        <p class="t-small kit-section__desc">Un ejemplo de cada componente; las secciones de cada página no se repiten aquí. Sin cajas: se agrupa con líneas delgadas y espaciado.</p>
       </div>
 
-      <!-- Barra de filtros -->
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Encabezado de sección (<code>.section-head</code>)</h3>
+        <div class="section-head">
+          <h2 class="t-h2">Un formato para cada mercado</h2>
+          <p class="t-body-l section-head__lead">Título 2 + bajada opcional (máx. 68 % del contenedor en desktop). Sin etiqueta. [contenido por definir]</p>
+        </div>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Cifras (<code>.stats</code>; <code>.stats--accent</code> las pasa a coral)</h3>
+        <ul class="stats" role="list">
+          <li class="stat reveal"><span class="stat__value t-figure-l" data-count="34">34</span><span class="stat__label t-small">años de trayectoria</span></li>
+          <li class="stat reveal"><span class="stat__value t-figure-l" data-count="3500" data-prefix="+">+3.500</span><span class="stat__label t-small">colaboradores</span></li>
+          <li class="stat reveal"><span class="stat__value t-figure-l" data-count="30" data-prefix="+">+30</span><span class="stat__label t-small">países de destino</span></li>
+          <li class="stat reveal"><span class="stat__value t-figure-l" data-count="100" data-suffix="%">100%</span><span class="stat__label t-small">integración vertical</span></li>
+        </ul>
+      </div>
+
       <div class="kit-block">
         <h3 class="t-label kit-block__title">Barra de filtros</h3>
         <div class="filters" data-filters>
@@ -394,9 +452,8 @@
         </div>
       </div>
 
-      <!-- Listado por año -->
       <div class="kit-block">
-        <h3 class="t-label kit-block__title">Listado por año (acordeón)</h3>
+        <h3 class="t-label kit-block__title">Listado de documentos por año (<code>.doc-years</code> + <code>.doc-row</code>)</h3>
         <div class="doc-years" data-accordion>
           <div class="doc-year">
             <button class="doc-year__head" type="button" aria-expanded="true" aria-controls="year-2026">
@@ -461,679 +518,64 @@
         </div>
       </div>
 
-      <!-- Matriz trimestre × tipo -->
       <div class="kit-block">
-        <h3 class="t-label kit-block__title">Matriz trimestre × tipo de documento</h3>
-        <div class="matrix" role="region" aria-label="Documentos por trimestre" tabindex="0">
-          <table>
-            <thead>
-              <tr><th scope="col">Período</th><th scope="col">Análisis razonado</th><th scope="col">Estados financieros</th><th scope="col">Presentación</th><th scope="col">EEFF filiales</th></tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row"><span class="matrix__period">Q2 2026 <span class="badge badge--accent">Último</span></span></th>
-                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
-                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
-                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
-                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
-              </tr>
-              <tr>
-                <th scope="row">Q1 2026</th>
-                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
-                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
-                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
-                <td><span class="matrix__empty" aria-label="Sin documento">—</span></td>
-              </tr>
-              <tr>
-                <th scope="row">Q4 2025</th>
-                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
-                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
-                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
-                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
-              </tr>
-              <tr>
-                <th scope="row">Q3 2025</th>
-                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
-                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
-                <td><span class="matrix__empty" aria-label="Sin documento">—</span></td>
-                <td><a class="doc-link" href="#" download>PDF<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></td>
-              </tr>
-            </tbody>
-          </table>
+        <h3 class="t-label kit-block__title">Evento y agendar (<code>.ir-event</code> + <code>.add-calendar</code>)</h3>
+        <div class="ir-event">
+          <div class="event">
+            <time class="event__date" datetime="2026-11-12"><span class="t-figure-m">12</span><span class="t-label">Nov 2026</span></time>
+            <div class="event__body">
+              <p class="t-h3">Publicación de resultados Q3 2026</p>
+              <p class="t-small event__detail">Conferencia telefónica 13 nov · 11:00 h (CLT) [contenido por definir]</p>
+            </div>
+          </div>
+          <div class="add-calendar" data-add-calendar>
+            <button class="btn btn--secondary btn--sm hit add-calendar__toggle" type="button" aria-expanded="false" aria-controls="kit-cal"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Agendar</button>
+            <ul class="add-calendar__options" id="kit-cal" role="list" aria-label="Agendar en">
+              <li class="add-calendar__label t-ui-small-strong" aria-hidden="true">Agendar</li>
+              <li><a class="btn btn--secondary btn--sm hit" href="#"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Google</a></li>
+              <li><a class="btn btn--secondary btn--sm hit" href="#"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Outlook</a></li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div class="kit-grid kit-grid--2">
-        <!-- Estado vacío -->
-        <div class="kit-block">
-          <h3 class="t-label kit-block__title">Estado vacío de búsqueda</h3>
-          <div class="empty-state" role="status">
-            <span class="empty-state__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-search"></use></svg></span>
-            <p class="t-h3">Sin resultados para «dividendos 2019»</p>
-            <p>Prueba con otra palabra o revisa el archivo histórico desde 2007.</p>
-            <button class="btn btn--secondary btn--sm hit" type="button">Limpiar filtros</button>
-          </div>
-        </div>
-
-        <!-- Paginación -->
-        <div class="kit-block">
-          <h3 class="t-label kit-block__title">Paginación (colecciones grandes)</h3>
-          <nav class="pagination" aria-label="Paginación">
-            <a class="pagination__arrow" href="#" aria-label="Página anterior" aria-disabled="true"><svg class="icon" aria-hidden="true" style="transform: scaleX(-1)"><use href="#i-chev-right"></use></svg></a>
-            <ol class="pagination__list" role="list">
-              <li><span class="pagination__item" aria-current="page">1</span></li>
-              <li><a class="pagination__item" href="#" aria-label="Página 2">2</a></li>
-              <li><a class="pagination__item" href="#" aria-label="Página 3">3</a></li>
-              <li><span class="pagination__item" aria-hidden="true">…</span></li>
-              <li><a class="pagination__item" href="#" aria-label="Página 8">8</a></li>
-            </ol>
-            <span class="pagination__status">Página 1 de 8</span>
-            <a class="pagination__arrow" href="#" aria-label="Página siguiente"><svg class="icon" aria-hidden="true"><use href="#i-chev-right"></use></svg></a>
-          </nav>
-        </div>
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Preguntas frecuentes (<code>.faq</code>)</h3>
+        <ul class="faq" role="list" data-accordion="single">
+          <li class="faq__item">
+            <button class="faq__question" type="button" aria-expanded="true" aria-controls="faq-1">¿Dónde encuentro los poderes para la Junta de Accionistas?<span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span></button>
+            <div class="faq__answer acc-panel" id="faq-1"><p>En Gobernanza › Junta de accionistas, dentro de los documentos relacionados de cada año.</p></div>
+          </li>
+          <li class="faq__item">
+            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-2">¿Cuándo se publican los próximos resultados?<span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span></button>
+            <div class="faq__answer acc-panel" id="faq-2" hidden><p>Los resultados del tercer trimestre se publican el 12 de noviembre de 2026. Revisa el calendario completo en Agenda. [contenido por definir]</p></div>
+          </li>
+          <li class="faq__item">
+            <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-3">¿Las políticas están disponibles en inglés?<span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span></button>
+            <div class="faq__answer acc-panel" id="faq-3" hidden><p>Sí, todas las políticas corporativas tienen versión en inglés. [contenido por definir]</p></div>
+          </li>
+        </ul>
       </div>
     </section>
 
     <!-- ===================================================================
-         07 · Inversionistas (node 75-764)
+         09 · Composición y fondos de sección
          =================================================================== -->
-    <section class="kit-section" id="inversionistas" aria-labelledby="ir-title">
+    <section class="kit-section" id="composicion" aria-labelledby="composicion-title">
       <div class="kit-section__head">
-        <p class="t-label c-accent">07</p>
-        <h2 class="t-h2" id="ir-title">Inversionistas</h2>
-        <p class="t-small kit-section__desc">Componentes de la portada de Inversionistas: resumen, último resultado, próximo evento y contacto. Cifras de ejemplo.</p>
+        <p class="t-label c-accent">09</p>
+        <h2 class="t-h2" id="composicion-title">Composición y fondos de sección</h2>
+        <p class="t-small kit-section__desc">Un ejemplo de composición (ilustración sobre círculo) y los fondos de sección con sus transiciones. Cada página arma sus propias composiciones a partir de estas piezas.</p>
       </div>
 
       <div class="kit-block">
-        <h3 class="t-label kit-block__title">Sub-menú de Inversionistas · nuevo (<code>&lt;ir-subnav current&gt;</code>: fijo bajo el header al hacer scroll)</h3>
-        <ir-subnav current="resultados" style="position: static"></ir-subnav>
-      </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Encabezado de página interior · nuevo (<code>.page-head</code>)</h3>
-        <header class="page-head">
-          <nav class="breadcrumb" aria-label="Migas de pan (ejemplo)">
-            <ol class="breadcrumb__list">
-              <li class="breadcrumb__item"><a href="#">Inicio</a><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chev-right"></use></svg></li>
-              <li class="breadcrumb__item"><a href="#">Inversionistas</a><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chev-right"></use></svg></li>
-              <li class="breadcrumb__item"><span aria-current="page">Centro de Resultados</span></li>
-            </ol>
-          </nav>
-          <p class="t-h1">Centro de Resultados</p>
-          <p class="t-body-l page-head__lead">Bajada de la página. [contenido por definir]</p>
-        </header>
-      </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Bloque en dos columnas · nuevo (<code>.split</code>: encabezado 5/12 + contenido 7/12) con lista de documentos (<code>.doc-list</code>)</h3>
-        <div class="split">
+        <h3 class="t-label kit-block__title">Ilustración sobre círculo, con video en hover y puntos en órbita (<code>[data-media-circle]</code>)</h3>
+        <div class="section section--subtle">
+        <div class="container split split--center">
           <div class="section-head">
-            <h4 class="t-h2">Últimos documentos publicados</h4>
-            <p class="t-body-l section-head__lead">Bajada. [contenido por definir]</p>
+            <h4 class="t-h2">Título de la sección</h4>
+            <p class="t-body-l section-head__lead">Sobre fondo crema el círculo es blanco. Con hover crece y se abre al video; la ilustración se desvanece. [contenido por definir]</p>
           </div>
-          <div>
-            <div class="doc-list">
-              <div class="doc-row">
-                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
-                <span class="doc-row__body"><span class="doc-row__title">Análisis razonado Q2 2026</span><span class="doc-row__meta">27 ago 2026 · PDF 860 KB</span></span>
-                <span class="badge badge--neutral doc-row__badge">Análisis</span>
-                <a class="doc-link doc-row__action" href="#" download>Descargar<span class="visually-hidden"> Análisis razonado Q2 2026</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
-              </div>
-            </div>
-            <a class="btn btn--tertiary hit" href="#">Ir al Centro de Resultados<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Compañía integrada · nuevo (<code>.company</code> + <code>.company-visual</code>: círculo con video que crece con el scroll y regiones alrededor)</h3>
-        <div class="company">
-          <div class="split__body">
-            <h4 class="t-h2">Una compañía integrada del sur de Chile</h4>
-            <p class="t-body-l">Texto de la compañía. [contenido por definir]</p>
-          </div>
-          <figure class="company-visual reveal" data-scroll-grow data-inview-video>
-            <span class="company-visual__circle"><video muted loop playsinline preload="none" poster="assets/video/hero-poster.jpg" aria-hidden="true"><source src="assets/video/hero.mp4" type="video/mp4"></video></span>
-            <ul class="company-visual__tags" role="list" aria-label="Regiones de operación">
-              <li class="company-visual__tag t-ui-small-strong">Los Lagos</li>
-              <li class="company-visual__tag t-ui-small-strong">Aysén</li>
-              <li class="company-visual__tag t-ui-small-strong">Magallanes</li>
-            </ul>
-          </figure>
-        </div>
-      </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">En una mirada</h3>
-        <ul class="stats" role="list">
-          <li class="stat reveal"><span class="stat__value t-figure-l" data-count="34">34</span><span class="stat__label t-small">años de trayectoria</span></li>
-          <li class="stat reveal"><span class="stat__value t-figure-l" data-count="3500" data-prefix="+">+3.500</span><span class="stat__label t-small">colaboradores</span></li>
-          <li class="stat reveal"><span class="stat__value t-figure-l" data-count="30" data-prefix="+">+30</span><span class="stat__label t-small">países de destino</span></li>
-          <li class="stat reveal"><span class="stat__value t-figure-l" data-count="100" data-suffix="%">100%</span><span class="stat__label t-small">integración vertical</span></li>
-        </ul>
-      </div>
-
-      <div class="ir-pair">
-        <div class="kit-block">
-          <h3 class="t-label kit-block__title">Último resultado</h3>
-          <article class="card card--elevated result-card on-dark">
-            <p class="t-label c-inverse-muted">Último resultado</p>
-            <h4 class="t-h2">Resultados Q2 2026</h4>
-            <p class="t-small c-inverse-muted">Publicado el 27 de agosto de 2026</p>
-            <ul class="result-card__docs" role="list">
-              <li><a class="result-card__doc" href="#" download>Análisis razonado<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></li>
-              <li><a class="result-card__doc" href="#" download>Estados financieros<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></li>
-              <li><a class="result-card__doc" href="#" download>Presentación<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></li>
-              <li><a class="result-card__doc" href="#" download>EEFF filiales<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></li>
-            </ul>
-            <a class="btn btn--tertiary-light hit" href="#" style="align-self: flex-start">Ir al centro de resultados<svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-          </article>
-        </div>
-
-        <div class="kit-block">
-          <h3 class="t-label kit-block__title">Próximo evento</h3>
-          <article class="card card--elevated">
-            <p class="t-label c-accent">Próximo evento</p>
-            <div class="event">
-              <time class="event__date" datetime="2026-11-12"><span class="t-figure-m">12</span><span class="t-label">Nov 2026</span></time>
-              <div class="event__body">
-                <h4 class="t-h3">Publicación de resultados Q3 2026</h4>
-                <p class="t-small event__detail">Conferencia telefónica 13 nov · 11:00 h (CLT)</p>
-              </div>
-            </div>
-            <div class="add-calendar" data-add-calendar>
-              <button class="btn btn--secondary btn--sm hit add-calendar__toggle" type="button" aria-expanded="false" aria-controls="cal-options"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Agendar</button>
-              <ul class="add-calendar__options" id="cal-options" role="list" aria-label="Agendar en">
-                <li class="add-calendar__label t-ui-small-strong" aria-hidden="true">Agendar</li>
-                <li><a class="btn btn--secondary btn--sm hit" href="#"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Google</a></li>
-                <li><a class="btn btn--secondary btn--sm hit" href="#"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Outlook</a></li>
-              </ul>
-            </div>
-            <a class="btn btn--tertiary hit" href="#" style="align-self: flex-start">Ver calendario completo<svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-          </article>
-        </div>
-      </div>
-
-      <div class="ir-row">
-        <div class="kit-block">
-          <h3 class="t-label kit-block__title">Acción</h3>
-          <article class="card card--elevated" aria-label="Cotización de la acción">
-            <p class="stock__head"><span class="t-label">MULTI X</span><span class="t-small">· Bolsa de Santiago</span></p>
-            <p class="stock__price">
-              <span class="t-figure-m">$ 152,40</span>
-              <span class="stock__change stock__change--up"><svg class="icon" aria-hidden="true"><use href="#i-up"></use></svg>+1,2%<span class="visually-hidden">respecto del cierre anterior</span></span>
-            </p>
-            <svg class="stock__chart" viewBox="0 0 296 56" preserveAspectRatio="none" role="img" aria-label="Evolución de la acción en el último mes, al alza">
-              <path d="M0 44L24 40L48 46L72 34L96 36L120 28L144 32L168 22L192 26L216 18L240 21L264 12L296 8" vector-effect="non-scaling-stroke"/>
-            </svg>
-            <p class="t-small stock__meta">Cierre 16 oct 2026 · 15 min de retraso</p>
-          </article>
-        </div>
-
-        <div class="kit-block">
-          <h3 class="t-label kit-block__title">Contacto IR</h3>
-          <ir-contact name="Nombre Apellido" role-title="Head of Investor Relations" phone="+56 65 248 3700" email="inversionistas@multi-x.cl"></ir-contact>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================================================================
-         08 · Sustentabilidad y Productos (node 75-902)
-         =================================================================== -->
-    <section class="kit-section" id="sustentabilidad" aria-labelledby="sus-title">
-      <div class="kit-section__head">
-        <p class="t-label c-accent">08</p>
-        <h2 class="t-h2" id="sus-title">Sustentabilidad y Productos</h2>
-        <p class="t-small kit-section__desc">Cifras con avance visible, certificaciones explicadas (no solo listadas), marcas como sitios externos y FAQ por página como base del asistente de IA. Cifras de ejemplo.</p>
-      </div>
-
-      <!-- Metas con avance -->
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Cifras y metas</h3>
-        <div class="goals">
-          <div class="goals__head">
-            <h4 class="t-h3">Avance hacia nuestras metas 2030</h4>
-            <div class="tabs" data-tabs>
-              <div class="tabs__list" role="tablist" aria-label="Año de reporte">
-                <button class="tab" type="button" role="tab" id="g-tab-23" aria-selected="false" aria-controls="g-23">2023</button>
-                <button class="tab" type="button" role="tab" id="g-tab-24" aria-selected="false" aria-controls="g-24">2024</button>
-                <button class="tab" type="button" role="tab" id="g-tab-25" aria-selected="true" aria-controls="g-25">2025</button>
-              </div>
-            </div>
-          </div>
-          <ul class="goals__list tab-panel" role="tabpanel" id="g-25" aria-labelledby="g-tab-25">
-            <li class="goal"><div class="goal__text"><span class="t-ui-strong">Reducción de emisiones (alcance 1 y 2)</span><span class="t-small goal__meta">Meta −30% al 2030</span></div><div class="goal__bar"><div class="goal__fill" style="--progress: .6"></div></div><span class="goal__value t-figure-m" data-count="18" data-prefix="−" data-suffix="%">−18%</span></li>
-            <li class="goal"><div class="goal__text"><span class="t-ui-strong">Proveedores locales</span><span class="t-small goal__meta">Meta 80% al 2030</span></div><div class="goal__bar"><div class="goal__fill" style="--progress: .9"></div></div><span class="goal__value t-figure-m" data-count="72" data-suffix="%">72%</span></li>
-            <li class="goal"><div class="goal__text"><span class="t-ui-strong">Energía renovable en plantas</span><span class="t-small goal__meta">Meta 70% al 2030</span></div><div class="goal__bar"><div class="goal__fill" style="--progress: .58"></div></div><span class="goal__value t-figure-m" data-count="41" data-suffix="%">41%</span></li>
-          </ul>
-          <ul class="goals__list tab-panel" role="tabpanel" id="g-24" aria-labelledby="g-tab-24" hidden>
-            <li class="goal"><div class="goal__text"><span class="t-ui-strong">Reducción de emisiones (alcance 1 y 2)</span><span class="t-small goal__meta">Meta −30% al 2030</span></div><div class="goal__bar"><div class="goal__fill" style="--progress: .4"></div></div><span class="goal__value t-figure-m" data-count="12" data-prefix="−" data-suffix="%">−12%</span></li>
-            <li class="goal"><div class="goal__text"><span class="t-ui-strong">Proveedores locales</span><span class="t-small goal__meta">Meta 80% al 2030</span></div><div class="goal__bar"><div class="goal__fill" style="--progress: .85"></div></div><span class="goal__value t-figure-m" data-count="68" data-suffix="%">68%</span></li>
-            <li class="goal"><div class="goal__text"><span class="t-ui-strong">Energía renovable en plantas</span><span class="t-small goal__meta">Meta 70% al 2030</span></div><div class="goal__bar"><div class="goal__fill" style="--progress: .46"></div></div><span class="goal__value t-figure-m" data-count="32" data-suffix="%">32%</span></li>
-          </ul>
-          <ul class="goals__list tab-panel" role="tabpanel" id="g-23" aria-labelledby="g-tab-23" hidden>
-            <li class="goal"><div class="goal__text"><span class="t-ui-strong">Reducción de emisiones (alcance 1 y 2)</span><span class="t-small goal__meta">Meta −30% al 2030</span></div><div class="goal__bar"><div class="goal__fill" style="--progress: .23"></div></div><span class="goal__value t-figure-m" data-count="7" data-prefix="−" data-suffix="%">−7%</span></li>
-            <li class="goal"><div class="goal__text"><span class="t-ui-strong">Proveedores locales</span><span class="t-small goal__meta">Meta 80% al 2030</span></div><div class="goal__bar"><div class="goal__fill" style="--progress: .79"></div></div><span class="goal__value t-figure-m" data-count="63" data-suffix="%">63%</span></li>
-            <li class="goal"><div class="goal__text"><span class="t-ui-strong">Energía renovable en plantas</span><span class="t-small goal__meta">Meta 70% al 2030</span></div><div class="goal__bar"><div class="goal__fill" style="--progress: .37"></div></div><span class="goal__value t-figure-m" data-count="26" data-suffix="%">26%</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="kit-grid kit-grid--2">
-        <!-- Certificaciones y membresías -->
-        <div class="kit-block">
-          <h3 class="t-label kit-block__title">Certificaciones y membresías</h3>
-          <div class="tabs" data-tabs>
-            <div class="tabs__list" role="tablist" aria-label="Tipo">
-              <button class="tab" type="button" role="tab" id="c-tab-cert" aria-selected="true" aria-controls="c-cert">Certificaciones</button>
-              <button class="tab" type="button" role="tab" id="c-tab-mem" aria-selected="false" aria-controls="c-mem">Membresías</button>
-            </div>
-          </div>
-          <div class="tab-panel" role="tabpanel" id="c-cert" aria-labelledby="c-tab-cert">
-            <ul class="cert-list" role="list" data-accordion>
-              <li class="cert">
-                <button class="cert__head" type="button" aria-expanded="true" aria-controls="cert-asc">
-                  <span class="cert__logo" aria-hidden="true">ASC</span>
-                  <span class="cert__name"><strong>ASC</strong><span>Aquaculture Stewardship Council</span></span>
-                  <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
-                </button>
-                <div class="cert__body acc-panel" id="cert-asc">
-                  <p>Estándar internacional de acuicultura responsable. Evalúa impacto ambiental, bienestar animal y relación con comunidades.</p>
-                  <div class="cert__tags"><span class="badge badge--neutral">Cubre: centros de mar</span><span class="badge badge--brand">Vigente</span></div>
-                  <a class="doc-link" href="#" download>Ver certificado<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
-                </div>
-              </li>
-              <li class="cert">
-                <button class="cert__head" type="button" aria-expanded="false" aria-controls="cert-bap">
-                  <span class="cert__logo" aria-hidden="true">BAP</span>
-                  <span class="cert__name"><strong>BAP</strong><span>Best Aquaculture Practices</span></span>
-                  <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
-                </button>
-                <div class="cert__body acc-panel" id="cert-bap" hidden>
-                  <p>Certificación de prácticas responsables en toda la cadena: pisciculturas, centros de engorda y plantas de proceso. [contenido por definir]</p>
-                  <div class="cert__tags"><span class="badge badge--neutral">Cubre: cadena completa</span><span class="badge badge--brand">Vigente</span></div>
-                  <a class="doc-link" href="#" download>Ver certificado<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
-                </div>
-              </li>
-              <li class="cert">
-                <button class="cert__head" type="button" aria-expanded="false" aria-controls="cert-brc">
-                  <span class="cert__logo" aria-hidden="true">BRC</span>
-                  <span class="cert__name"><strong>BRCGS</strong><span>Global Standard for Food Safety</span></span>
-                  <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
-                </button>
-                <div class="cert__body acc-panel" id="cert-brc" hidden>
-                  <p>Estándar de inocuidad alimentaria para plantas de proceso. [contenido por definir]</p>
-                  <div class="cert__tags"><span class="badge badge--neutral">Cubre: plantas de proceso</span><span class="badge badge--brand">Vigente</span></div>
-                  <a class="doc-link" href="#" download>Ver certificado<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="tab-panel" role="tabpanel" id="c-mem" aria-labelledby="c-tab-mem" hidden>
-            <ul class="cert-list" role="list" data-accordion>
-              <li class="cert">
-                <button class="cert__head" type="button" aria-expanded="false" aria-controls="mem-1">
-                  <span class="cert__logo" aria-hidden="true">GSI</span>
-                  <span class="cert__name"><strong>GSI</strong><span>Global Salmon Initiative · [contenido por definir]</span></span>
-                  <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
-                </button>
-                <div class="cert__body acc-panel" id="mem-1" hidden>
-                  <p>Membresía de ejemplo. [contenido por definir]</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Preguntas frecuentes -->
-        <div class="kit-block">
-          <h3 class="t-label kit-block__title">Preguntas frecuentes</h3>
-          <ul class="faq" role="list" data-accordion="single">
-            <li class="faq__item">
-              <button class="faq__question" type="button" aria-expanded="true" aria-controls="faq-1">¿Dónde encuentro los poderes para la Junta de Accionistas?<span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span></button>
-              <div class="faq__answer acc-panel" id="faq-1"><p>En Gobernanza › Junta de accionistas, dentro de los documentos relacionados de cada año.</p></div>
-            </li>
-            <li class="faq__item">
-              <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-2">¿Cuándo se publican los próximos resultados?<span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span></button>
-              <div class="faq__answer acc-panel" id="faq-2" hidden><p>Los resultados del tercer trimestre se publican el 12 de noviembre de 2026. Revisa el calendario completo en Agenda. [contenido por definir]</p></div>
-            </li>
-            <li class="faq__item">
-              <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-3">¿Las políticas están disponibles en inglés?<span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span></button>
-              <div class="faq__answer acc-panel" id="faq-3" hidden><p>Sí, todas las políticas corporativas tienen versión en inglés. [contenido por definir]</p></div>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Nuestras marcas -->
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Nuestras marcas (hover: foto de fondo y logo en blanco) + descarga del catálogo</h3>
-        <ul class="brands" role="list">
-          <li>
-            <a class="brand-card" href="#" target="_blank" rel="noopener">
-              <span class="brand-card__media" aria-hidden="true"><video data-hover-video muted loop playsinline preload="none" poster="assets/video/marca-latitude45-poster.jpg"><source src="assets/video/marca-latitude45.mp4" type="video/mp4"></video></span>
-              <span class="brand-card__logo">
-                <img class="brand-card__logo-color" src="assets/brands/latitude45.png" alt="Latitude 45" width="640" height="173">
-                <img class="brand-card__logo-white" src="assets/brands/latitude45-blanco.png" alt="" aria-hidden="true" width="640" height="173">
-              </span>
-              <span class="brand-card__cta t-ui-button">Ir al sitio<svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg><span class="visually-hidden"> de Latitude 45 (abre en una pestaña nueva)</span></span>
-            </a>
-          </li>
-          <li>
-            <a class="brand-card" href="#" target="_blank" rel="noopener">
-              <span class="brand-card__media" aria-hidden="true"><video data-hover-video muted loop playsinline preload="none" poster="assets/video/marca-arkafjord-poster.jpg"><source src="assets/video/marca-arkafjord.mp4" type="video/mp4"></video></span>
-              <span class="brand-card__logo">
-                <img class="brand-card__logo-color" src="assets/brands/arkafjord.png" alt="Arka Fjord" width="640" height="202">
-                <img class="brand-card__logo-white" src="assets/brands/arkafjord-blanco.png" alt="" aria-hidden="true" width="640" height="202">
-              </span>
-              <span class="brand-card__cta t-ui-button">Ir al sitio<svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg><span class="visually-hidden"> de Arka Fjord (abre en una pestaña nueva)</span></span>
-            </a>
-          </li>
-        </ul>
-        <div class="catalog-cta reveal" data-variant="image">
-          <div class="catalog-cta__text">
-            <h4 class="t-h2">Productos frescos, congelados y ahumados</h4>
-            <p class="t-body-l">Formatos, especificaciones y fichas técnicas. [contenido por definir]</p>
-            <a class="btn btn--secondary hit" href="#" download><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>Descargar catálogo</a>
-          </div>
-          <div class="catalog-cta__media">
-            <div class="catalog-cta__flipbook"><iframe src="https://heyzine.com/flip-book/0dbae772e3.html" title="Catálogo Multi X (flipbook interactivo)" allowfullscreen allow="autoplay; fullscreen; clipboard-write" scrolling="no" loading="lazy"></iframe></div>
-            <div class="catalog-cta__cover" aria-hidden="true" data-scroll-grow><img src="assets/img/catalogo.png" alt="" width="356" height="287" loading="lazy"></div>
-            <div class="variant-switch t-small" role="group" aria-label="Vista del catálogo (prototipo)" data-variant-switch>
-              <button type="button" data-show="flipbook" aria-pressed="false">Flipbook</button>
-              <span aria-hidden="true">·</span>
-              <button type="button" data-show="image" aria-pressed="true">Imagen</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Componentes de la página Productos (nuevos, pendientes de llevar a Figma) -->
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Encabezado de sección · nuevo</h3>
-        <div class="section-head">
-          <h2 class="t-h2">Un formato para cada mercado</h2>
-          <p class="t-body-l section-head__lead">Título 2 + bajada opcional (máx. 68 % del contenedor en desktop). Sin etiqueta. [contenido por definir]</p>
-        </div>
-      </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Tarjetas de solución · nuevo (slider en mobile y tablet, 3 columnas en desktop)</h3>
-        <ul class="solutions" role="list">
-          <li>
-            <article class="solution-card">
-              <div class="solution-card__media"><span class="placeholder-tag">[foto por definir]</span></div>
-              <div class="solution-card__body">
-                <h4 class="t-h3">Fresco</h4>
-                <p class="t-body">Filetes, porciones y salmón entero. [contenido por definir]</p>
-                <a class="btn btn--tertiary hit" href="#">Ver formatos<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-              </div>
-            </article>
-          </li>
-          <li>
-            <article class="solution-card">
-              <div class="solution-card__media"><span class="placeholder-tag">[foto por definir]</span></div>
-              <div class="solution-card__body">
-                <h4 class="t-h3">Congelado</h4>
-                <p class="t-body">Porciones y filetes congelados. [contenido por definir]</p>
-                <a class="btn btn--tertiary hit" href="#">Ver formatos<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-              </div>
-            </article>
-          </li>
-          <li>
-            <article class="solution-card">
-              <div class="solution-card__media"><span class="placeholder-tag">[foto por definir]</span></div>
-              <div class="solution-card__body">
-                <h4 class="t-h3">Ahumado</h4>
-                <p class="t-body">Ahumado en frío y en caliente. [contenido por definir]</p>
-                <a class="btn btn--tertiary hit" href="#">Ver formatos<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-              </div>
-            </article>
-          </li>
-        </ul>
-      </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Soluciones en pasos · nuevo (<code>[data-steps]</code>: avanzan solos con una línea de tiempo; se detienen al elegir uno)</h3>
-        <div class="steps" data-steps>
-          <div class="steps__text">
-            <div class="section-head">
-              <h4 class="t-h2">Soluciones para cada mercado</h4>
-            </div>
-            <ol class="steps__list" role="list">
-              <li class="steps__item">
-                <span class="steps__progress" aria-hidden="true"></span>
-                <button class="steps__trigger" type="button" aria-expanded="true" aria-controls="kit-sol-1">
-                  <span class="t-label steps__num">01</span>
-                  <span class="t-h3">Fresco</span>
-                </button>
-                <div class="steps__panel" id="kit-sol-1">
-                  <p class="t-body">Filetes, porciones y salmón entero despachados por vía aérea a pocas horas de la cosecha, para llegar a la mesa de tus clientes con la frescura del sur de Chile. [contenido por definir]</p>
-                </div>
-              </li>
-              <li class="steps__item">
-                <span class="steps__progress" aria-hidden="true"></span>
-                <button class="steps__trigger" type="button" aria-expanded="false" aria-controls="kit-sol-2">
-                  <span class="t-label steps__num">02</span>
-                  <span class="t-h3">Congelado</span>
-                </button>
-                <div class="steps__panel" id="kit-sol-2" hidden>
-                  <p class="t-body">Porciones y filetes congelados individualmente que conservan su textura y sabor, listos para retail y food service en cualquier destino y en cualquier temporada. [contenido por definir]</p>
-                </div>
-              </li>
-              <li class="steps__item">
-                <span class="steps__progress" aria-hidden="true"></span>
-                <button class="steps__trigger" type="button" aria-expanded="false" aria-controls="kit-sol-3">
-                  <span class="t-label steps__num">03</span>
-                  <span class="t-h3">Ahumado</span>
-                </button>
-                <div class="steps__panel" id="kit-sol-3" hidden>
-                  <p class="t-body">Ahumado en frío y en caliente en nuestra propia planta, con ingredientes reconocibles como sal del desierto, roble chileno y azúcar. [contenido por definir]</p>
-                </div>
-              </li>
-            </ol>
-          </div>
-          <figure class="steps__stage" aria-hidden="true" data-scroll-grow data-active="1">
-            <span class="steps__orbit" aria-hidden="true"><i class="steps__orbit-dot"></i><i class="steps__orbit-dot"></i><i class="steps__orbit-dot"></i><i class="steps__orbit-dot"></i><i class="steps__orbit-dot"></i><i class="steps__orbit-dot"></i></span>
-            <img class="steps__img is-active" src="assets/img/pescado.png" alt="" width="314" height="360" loading="lazy">
-            <img class="steps__img" src="assets/img/congelado.webp" alt="" width="800" height="562" loading="lazy">
-            <img class="steps__img" src="assets/img/ahumado.webp" alt="" width="800" height="533" loading="lazy">
-          </figure>
-        </div>
-      </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Mercados y oficinas · globo a la izquierda, título y datos a la derecha (gira solo, se arrastra; foco o clic en un pin lo centra)</h3>
-        <div class="markets">
-          <div class="markets__info">
-            <div class="section-head">
-              <h4 class="t-h2">Del sur de Chile a las mesas del mundo</h4>
-            </div>
-            <ul class="markets__stats" role="list">
-              <li class="markets__stat">
-                <p class="t-figure-l t-figure-strong" data-count="30" data-suffix="+">30+</p>
-                <p class="t-small c-secondary">países de destino en América, Europa y Asia [contenido por definir]</p>
-              </li>
-              <li class="markets__stat">
-                <p class="t-figure-l t-figure-strong" data-count="400" data-prefix="+">+400</p>
-                <p class="t-small c-secondary">clientes en retail, food service e industria [contenido por definir]</p>
-              </li>
-              <li class="markets__stat">
-                <p class="t-figure-l t-figure-strong" data-count="90" data-suffix=" mil">90 mil</p>
-                <p class="t-small c-secondary">toneladas exportadas cada año [contenido por definir]</p>
-              </li>
-            </ul>
-            <div class="markets__group">
-              <p class="t-label c-secondary">Oficinas comerciales</p>
-              <ul class="markets__offices t-small" role="list">
-                <li><img src="assets/flags/cl.svg" alt="" width="18" height="12">Santiago</li>
-                <li><img src="assets/flags/us.svg" alt="" width="18" height="12">Miami</li>
-              </ul>
-            </div>
-          </div>
-          <div class="markets__globe">
-            <div class="globe" data-globe>
-              <canvas class="globe__canvas" aria-hidden="true"></canvas>
-              <ul class="globe__pins" role="list" aria-label="Oficinas comerciales y mercados">
-                <li data-lat="-33.45" data-lon="-70.67" data-type="office">Santiago, Chile</li>
-                <li data-lat="25.76" data-lon="-80.19" data-type="office">Miami, Estados Unidos</li>
-                <li data-lat="-14.2" data-lon="-51.9">Brasil</li>
-                <li data-lat="40.4" data-lon="-3.7">España</li>
-                <li data-lat="36.2" data-lon="138.3">Japón</li>
-              </ul>
-            </div>
-            <ul class="globe__legend t-small" role="list">
-              <li class="is-office">Oficina comercial</li>
-              <li>Mercado</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Certificaciones en grilla · nuevo (8 o más; 4 columnas en desktop, 2 en tablet, lista en mobile)</h3>
-        <ul class="cert-grid" role="list" data-accordion>
-          <li class="cert-card">
-            <button class="cert-card__head" type="button" aria-expanded="true" aria-controls="kit-cert-1">
-              <span class="cert-card__logo" aria-hidden="true"><img src="assets/certs/logo-prueba.png" alt="" width="240" height="113" loading="lazy"></span>
-              <span class="cert-card__name"><strong class="t-ui-strong">ASC</strong><span class="t-small">Aquaculture Stewardship Council</span></span>
-              <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
-            </button>
-            <div class="cert-card__body acc-panel" id="kit-cert-1">
-              <p class="t-small">Descripción de la certificación. [contenido por definir]</p>
-            </div>
-          </li>
-          <li class="cert-card">
-            <button class="cert-card__head" type="button" aria-expanded="false" aria-controls="kit-cert-2">
-              <span class="cert-card__logo" aria-hidden="true"><img src="assets/certs/logo-prueba.png" alt="" width="240" height="113" loading="lazy"></span>
-              <span class="cert-card__name"><strong class="t-ui-strong">BAP</strong><span class="t-small">Best Aquaculture Practices</span></span>
-              <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
-            </button>
-            <div class="cert-card__body acc-panel" id="kit-cert-2" hidden>
-              <p class="t-small">Descripción de la certificación. [contenido por definir]</p>
-            </div>
-          </li>
-          <li class="cert-card">
-            <button class="cert-card__head" type="button" aria-expanded="false" aria-controls="kit-cert-3">
-              <span class="cert-card__logo" aria-hidden="true"><img src="assets/certs/logo-prueba.png" alt="" width="240" height="113" loading="lazy"></span>
-              <span class="cert-card__name"><strong class="t-ui-strong">BRCGS</strong><span class="t-small">Global Standard for Food Safety</span></span>
-              <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
-            </button>
-            <div class="cert-card__body acc-panel" id="kit-cert-3" hidden>
-              <p class="t-small">Descripción de la certificación. [contenido por definir]</p>
-            </div>
-          </li>
-          <li class="cert-card">
-            <button class="cert-card__head" type="button" aria-expanded="false" aria-controls="kit-cert-4">
-              <span class="cert-card__logo" aria-hidden="true"><img src="assets/certs/logo-prueba.png" alt="" width="240" height="113" loading="lazy"></span>
-              <span class="cert-card__name"><strong class="t-ui-strong">HACCP</strong><span class="t-small">Análisis de peligros y puntos críticos de control</span></span>
-              <span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>
-            </button>
-            <div class="cert-card__body acc-panel" id="kit-cert-4" hidden>
-              <p class="t-small">Descripción de la certificación. [contenido por definir]</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Relato vertical · nuevo (<code>[data-chain]</code>: cada paso alterna solo entre ilustración y video en el círculo; el paso se cambia con flechas o tramos)</h3>
-        <div class="chain reveal" data-chain>
-          <h4 class="t-h2 chain__title">Del cultivo a la mesa</h4>
-          <figure class="chain__stage" role="button" tabindex="0" aria-pressed="false" aria-label="Ver video del paso">
-            <span class="chain__hint" aria-hidden="true"></span>
-            <span class="chain__mask" aria-hidden="true"><video muted loop playsinline preload="none" poster="assets/video/marca-arkafjord-poster.jpg"><source src="assets/video/marca-arkafjord.mp4" type="video/mp4"></video></span>
-          </figure>
-          <ol class="chain__steps" role="list">
-            <li class="chain__step is-active" role="listitem" id="kit-chain-paso-1">
-              <h3 class="t-h2 chain__sub">01. Genética y ovas</h3>
-              <img class="chain__img" src="assets/img/ova.webp" alt="" width="800" height="480" loading="lazy">
-              <p class="t-body chain__text">Programa genético propio para peces sanos y de crecimiento eficiente. [contenido por definir]</p>
-              <ul class="chain__facts" role="list" aria-label="Datos de Genética y ovas">
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">4</span><span class="t-small chain__fact-label">generaciones de selección genética</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">100 %</span><span class="t-small chain__fact-label">ovas de producción propia</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">2</span><span class="t-small chain__fact-label">centros de reproductores</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">+30</span><span class="t-small chain__fact-label">rasgos evaluados por pez</span></li>
-              </ul>
-            </li>
-            <li class="chain__step" role="listitem" id="kit-chain-paso-2" aria-hidden="true">
-              <h3 class="t-h2 chain__sub">02. Agua dulce</h3>
-              <img class="chain__img" src="assets/img/paso-2.webp" alt="" width="800" height="480" loading="lazy">
-              <p class="t-body chain__text">Pisciculturas con recirculación donde crecen alevines y smolts. [contenido por definir]</p>
-              <ul class="chain__facts" role="list" aria-label="Datos de Agua dulce">
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">3</span><span class="t-small chain__fact-label">pisciculturas con recirculación</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">95 %</span><span class="t-small chain__fact-label">del agua se reutiliza</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">12</span><span class="t-small chain__fact-label">meses hasta smolt</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">24/7</span><span class="t-small chain__fact-label">monitoreo de oxígeno y temperatura</span></li>
-              </ul>
-            </li>
-            <li class="chain__step" role="listitem" id="kit-chain-paso-3" aria-hidden="true">
-              <h3 class="t-h2 chain__sub">03. Centros de mar</h3>
-              <img class="chain__img" src="assets/img/ova.webp" alt="" width="800" height="480" loading="lazy">
-              <p class="t-body chain__text">Engorda en las regiones de Los Lagos, Aysén y Magallanes. [contenido por definir]</p>
-              <ul class="chain__facts" role="list" aria-label="Datos de Centros de mar">
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">3</span><span class="t-small chain__fact-label">regiones: Los Lagos, Aysén y Magallanes</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">+40</span><span class="t-small chain__fact-label">centros de engorda</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">18</span><span class="t-small chain__fact-label">meses de engorda en mar</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">24/7</span><span class="t-small chain__fact-label">monitoreo de bienestar animal</span></li>
-              </ul>
-            </li>
-            <li class="chain__step" role="listitem" id="kit-chain-paso-4" aria-hidden="true">
-              <h3 class="t-h2 chain__sub">04. Cosecha</h3>
-              <img class="chain__img" src="assets/img/ova.webp" alt="" width="800" height="480" loading="lazy">
-              <p class="t-body chain__text">Cosecha planificada según la demanda de cada mercado. [contenido por definir]</p>
-              <ul class="chain__facts" role="list" aria-label="Datos de Cosecha">
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">< 6 h</span><span class="t-small chain__fact-label">del centro a la planta</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">0–2 °C</span><span class="t-small chain__fact-label">cadena de frío</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">100 %</span><span class="t-small chain__fact-label">cosecha planificada</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">365</span><span class="t-small chain__fact-label">días al año</span></li>
-              </ul>
-            </li>
-            <li class="chain__step" role="listitem" id="kit-chain-paso-5" aria-hidden="true">
-              <h3 class="t-h2 chain__sub">05. Proceso</h3>
-              <img class="chain__img" src="assets/img/ova.webp" alt="" width="800" height="480" loading="lazy">
-              <p class="t-body chain__text">Plantas propias de proceso primario, secundario y ahumado. [contenido por definir]</p>
-              <ul class="chain__facts" role="list" aria-label="Datos de Proceso">
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">3</span><span class="t-small chain__fact-label">plantas de proceso propias</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">+150</span><span class="t-small chain__fact-label">formatos de producto</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">100 %</span><span class="t-small chain__fact-label">lotes trazables</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">4</span><span class="t-small chain__fact-label">certificaciones de inocuidad</span></li>
-              </ul>
-            </li>
-            <li class="chain__step" role="listitem" id="kit-chain-paso-6" aria-hidden="true">
-              <h3 class="t-h2 chain__sub">06. Distribución</h3>
-              <img class="chain__img" src="assets/img/ova.webp" alt="" width="800" height="480" loading="lazy">
-              <p class="t-body chain__text">Despacho aéreo y marítimo a clientes en más de 30 países. [contenido por definir]</p>
-              <ul class="chain__facts" role="list" aria-label="Datos de Distribución">
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">30+</span><span class="t-small chain__fact-label">países de destino</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">2</span><span class="t-small chain__fact-label">oficinas comerciales</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">48 h</span><span class="t-small chain__fact-label">a destinos aéreos</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">3</span><span class="t-small chain__fact-label">continentes</span></li>
-              </ul>
-            </li>
-          </ol>
-          <div class="chain__nav" role="group" aria-label="Etapas de la cadena">
-            <div class="chain__segs">
-              <button class="chain__seg" type="button" aria-controls="kit-chain-paso-1" aria-label="Paso 1: Genética y ovas" aria-current="step"><span class="chain__seg-line"></span></button>
-              <button class="chain__seg" type="button" aria-controls="kit-chain-paso-2" aria-label="Paso 2: Agua dulce"><span class="chain__seg-line"></span></button>
-              <button class="chain__seg" type="button" aria-controls="kit-chain-paso-3" aria-label="Paso 3: Centros de mar"><span class="chain__seg-line"></span></button>
-              <button class="chain__seg" type="button" aria-controls="kit-chain-paso-4" aria-label="Paso 4: Cosecha"><span class="chain__seg-line"></span></button>
-              <button class="chain__seg" type="button" aria-controls="kit-chain-paso-5" aria-label="Paso 5: Proceso"><span class="chain__seg-line"></span></button>
-              <button class="chain__seg" type="button" aria-controls="kit-chain-paso-6" aria-label="Paso 6: Distribución"><span class="chain__seg-line"></span></button>
-            </div>
-            <p class="t-small chain__count" aria-live="polite"><span class="chain__current">01</span> / 06</p>
-            <div class="chain__arrows">
-              <button class="chain__arrow chain__arrow--prev" type="button" aria-label="Paso anterior"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
-              <button class="chain__arrow" type="button" aria-label="Paso siguiente"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Círculo con video · nuevo (<code>[data-media-circle]</code>: home › Productos; con hover el círculo se abre a un video)</h3>
-        <div class="split">
-          <div></div>
           <figure class="media-circle" data-media-circle role="button" tabindex="0" aria-pressed="false" aria-label="Ver video de nuestros productos">
             <span class="media-circle__disc" aria-hidden="true">
               <span class="media-circle__mask"><video muted loop playsinline preload="none" poster="assets/video/productos-poster.jpg"><source src="assets/video/productos.mp4" type="video/mp4"></video></span>
@@ -1143,49 +585,19 @@
             <span class="media-circle__hint" aria-hidden="true"></span>
           </figure>
         </div>
-      </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Módulos enfrentados de Inversionistas · nuevo (<code>.ir-pair--facing</code> + <code>.ir-module</code>: home › Inversionistas)</h3>
-        <div class="ir-pair ir-pair--facing">
-          <div class="ir-module">
-            <h4 class="t-h2">Últimos reportes</h4>
-            <div class="doc-list">
-              <div class="doc-row">
-                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
-                <span class="doc-row__body"><span class="doc-row__title">Presentación de resultados Q2 2026</span><span class="doc-row__meta">28 ago 2026 · PDF 4,6 MB</span></span>
-                <span class="badge badge--neutral doc-row__badge">Presentación</span>
-                <a class="doc-link doc-row__action" href="#" download>Descargar<span class="visually-hidden"> Presentación de resultados Q2 2026</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
-              </div>
-            </div>
-            <a class="btn btn--tertiary hit" href="centro-de-resultados.html">Ir al Centro de Resultados<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-          </div>
-          <div class="ir-module">
-            <h4 class="t-h2">Próximo evento</h4>
-            <div class="ir-event">
-              <div class="event">
-                <time class="event__date" datetime="2026-11-12"><span class="t-figure-m">12</span><span class="t-label">Nov 2026</span></time>
-                <div class="event__body">
-                  <p class="t-h3">Publicación de resultados Q3 2026</p>
-                  <p class="t-small event__detail">Conferencia telefónica 13 nov · 11:00 h (CLT) [contenido por definir]</p>
-                </div>
-              </div>
-              <div class="add-calendar" data-add-calendar>
-                <button class="btn btn--secondary btn--sm hit add-calendar__toggle" type="button" aria-expanded="false" aria-controls="kit-home-cal"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Agendar</button>
-                <ul class="add-calendar__options" id="kit-home-cal" role="list" aria-label="Agendar en">
-                  <li class="add-calendar__label t-ui-small-strong" aria-hidden="true">Agendar</li>
-                  <li><a class="btn btn--secondary btn--sm hit" href="#"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Google</a></li>
-                  <li><a class="btn btn--secondary btn--sm hit" href="#"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Outlook</a></li>
-                </ul>
-              </div>
-            </div>
-            <a class="btn btn--tertiary hit" href="#">Ver calendario<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-          </div>
         </div>
       </div>
 
       <div class="kit-block">
-        <h3 class="t-label kit-block__title">Sección oscura · PRUEBA (<code>.section--inverse.on-dark</code>: home › Inversionistas, Productos › Catálogo, Inversionistas › documentos y próximo evento; los colores del contenido se reasignan en tokens.css)</h3>
+        <h3 class="t-label kit-block__title">Fondo crema con borde curvo (Horizonte) (<code>.section--curve-bottom[data-section-curve]</code>: el arco se aplana con el scroll)</h3>
+        <div class="section section--subtle section--curve-bottom" data-section-curve>
+          <p class="t-body c-secondary" style="text-align: center">Sección Offwhite que termina en arco sobre la siguiente.</p>
+        </div>
+        <div class="section"></div>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Fondo oscuro · PRUEBA (<code>.section--inverse.on-dark</code>: los colores del contenido se reasignan en tokens.css)</h3>
         <div class="section section--inverse on-dark">
           <div class="container ir-pair ir-pair--facing">
             <div class="ir-module">
@@ -1216,171 +628,21 @@
           </div>
         </div>
       </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Ofertas por región · nuevo (<code>.offer-list</code>: home › Trabaja con nosotros; cantidad y flecha en Coral 500, línea coral con hover)</h3>
-        <ul class="offer-list" role="list" aria-label="Ofertas laborales por región">
-            <li>
-              <a class="offer-row" href="#">
-                <span class="offer-row__count"><span class="t-figure-l t-figure-strong offer-row__num">12</span><span class="t-small offer-row__unit">ofertas</span></span>
-                <span class="offer-row__body"><span class="t-h3 offer-row__region">Los Lagos</span><span class="t-small offer-row__places">Puerto Montt, Calbuco y Chiloé</span></span>
-                <span class="offer-row__arrow"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
-              </a>
-            </li>
-            <li>
-              <a class="offer-row" href="#">
-                <span class="offer-row__count"><span class="t-figure-l t-figure-strong offer-row__num">5</span><span class="t-small offer-row__unit">ofertas</span></span>
-                <span class="offer-row__body"><span class="t-h3 offer-row__region">Aysén</span><span class="t-small offer-row__places">Puerto Aysén y Puerto Chacabuco</span></span>
-                <span class="offer-row__arrow"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
-              </a>
-            </li>
-            <li>
-              <a class="offer-row" href="#">
-                <span class="offer-row__count"><span class="t-figure-l t-figure-strong offer-row__num">3</span><span class="t-small offer-row__unit">ofertas</span></span>
-                <span class="offer-row__body"><span class="t-h3 offer-row__region">Magallanes</span><span class="t-small offer-row__places">Punta Arenas y Puerto Natales</span></span>
-                <span class="offer-row__arrow"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
-              </a>
-            </li>
-            <li>
-              <a class="offer-row" href="#">
-                <span class="offer-row__count"><span class="t-figure-l t-figure-strong offer-row__num">4</span><span class="t-small offer-row__unit">ofertas</span></span>
-                <span class="offer-row__body"><span class="t-h3 offer-row__region">Santiago</span><span class="t-small offer-row__places">Oficinas corporativas</span></span>
-                <span class="offer-row__arrow"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
-              </a>
-            </li>
-            <li>
-              <a class="offer-row" href="#">
-                <span class="offer-row__count"><span class="t-figure-l t-figure-strong offer-row__num">1</span><span class="t-small offer-row__unit">oferta</span></span>
-                <span class="offer-row__body"><span class="t-h3 offer-row__region">Miami</span><span class="t-small offer-row__places">Oficina comercial</span></span>
-                <span class="offer-row__arrow"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
-              </a>
-            </li>
-          </ul>
-      </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Noticias · nuevo (<code>.news-list</code>: home › Noticias)</h3>
-        <ul class="news-list" role="list">
-          <li class="reveal" style="--reveal-step: 0">
-            <article class="news-item">
-              <a class="news-item__link" href="#">
-                <span class="news-item__media"><img src="assets/img/noticia-destacada.jpg" alt="" loading="lazy"></span>
-                <span class="t-label news-item__tag">Sustentabilidad · 14 oct 2026</span>
-                <span class="t-h3 news-item__title">Multi X obtiene la recertificación ASC en sus centros de Aysén [contenido por definir]</span>
-                <span class="news-item__cta t-ui-button">Leer noticia<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
-              </a>
-            </article>
-          </li>
-          <li class="reveal" style="--reveal-step: 1">
-            <article class="news-item">
-              <a class="news-item__link" href="#">
-                <span class="news-item__media"><img src="assets/video/productos-poster.jpg" alt="" loading="lazy"></span>
-                <span class="t-label news-item__tag">Productos · 2 oct 2026</span>
-                <span class="t-h3 news-item__title">Nueva línea de porciones congeladas para retail en Estados Unidos [contenido por definir]</span>
-                <span class="news-item__cta t-ui-button">Leer noticia<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
-              </a>
-            </article>
-          </li>
-          <li class="reveal" style="--reveal-step: 2">
-            <article class="news-item">
-              <a class="news-item__link" href="#">
-                <span class="news-item__media"><img src="assets/video/hero-poster.jpg" alt="" loading="lazy"></span>
-                <span class="t-label news-item__tag">Compañía · 18 sep 2026</span>
-                <span class="t-h3 news-item__title">Inauguramos un nuevo centro de cultivo con tecnología de monitoreo remoto [contenido por definir]</span>
-                <span class="news-item__cta t-ui-button">Leer noticia<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
-              </a>
-            </article>
-          </li>
-        </ul>
-      </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Cadena de valor (alternativa en lista, ya no se usa en Productos) · nuevo (fila en desktop, 3 columnas en tablet, línea vertical en mobile)</h3>
-        <ol class="value-chain" role="list">
-          <li class="value-chain__step"><span class="t-label value-chain__num">01</span><h4 class="t-ui-strong">Genética y ovas</h4><p class="t-small">Programa genético propio.</p></li>
-          <li class="value-chain__step"><span class="t-label value-chain__num">02</span><h4 class="t-ui-strong">Agua dulce</h4><p class="t-small">Pisciculturas con recirculación.</p></li>
-          <li class="value-chain__step"><span class="t-label value-chain__num">03</span><h4 class="t-ui-strong">Centros de mar</h4><p class="t-small">Engorda en Los Lagos, Aysén y Magallanes.</p></li>
-          <li class="value-chain__step"><span class="t-label value-chain__num">04</span><h4 class="t-ui-strong">Cosecha</h4><p class="t-small">Según la demanda de cada mercado.</p></li>
-          <li class="value-chain__step"><span class="t-label value-chain__num">05</span><h4 class="t-ui-strong">Proceso</h4><p class="t-small">Plantas propias.</p></li>
-          <li class="value-chain__step"><span class="t-label value-chain__num">06</span><h4 class="t-ui-strong">Distribución</h4><p class="t-small">Despacho aéreo y marítimo.</p></li>
-        </ol>
-      </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Módulo comercial · nuevo (<code>&lt;sales-contact&gt;</code>: flotante abajo a la izquierda; panel sobre el botón en desktop, panel inferior en mobile)</h3>
-        <sales-contact demo></sales-contact>
-      </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Borde curvo entre secciones · nuevo (<code>.section--curve-bottom[data-section-curve]</code>: el arco se aplana con el scroll)</h3>
-        <div class="section section--subtle section--curve-bottom" data-section-curve>
-          <p class="t-body c-secondary" style="text-align: center">Sección Offwhite que termina en arco sobre la siguiente.</p>
-        </div>
-        <div class="section"></div>
-      </div>
-
-      <div class="kit-block">
-        <h3 class="t-label kit-block__title">Hero con acción a la derecha · nuevo (<code>.hero__content--split</code> + <code>&lt;sales-contact variant="inline"&gt;</code>: el formulario se abre como modal)</h3>
-        <div class="hero hero--contained on-dark">
-          <div class="hero__media" aria-hidden="true"></div>
-          <span class="hero__placeholder t-small">[video por definir]</span>
-          <div class="hero__content hero__content--split">
-            <div class="hero__text">
-              <p class="t-display hero__title"><span class="hero__title-line t-display-light">Your salmon</span> <span class="hero__title-line t-display-strong">solution partner</span></p>
-              <p class="t-body-l hero__lead hero__lead--inverse">Bajada del hero en blanco (<code>.hero__lead--inverse</code>). [contenido por definir]</p>
-            </div>
-            <sales-contact variant="inline"></sales-contact>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================================================================
-         09 · Hero con franja temporal (node 75-921)
-         =================================================================== -->
-    <section class="kit-section" id="hero" aria-labelledby="hero-title">
-      <div class="kit-section__head">
-        <p class="t-label c-accent">09</p>
-        <h2 class="t-h2" id="hero-title">Hero con franja temporal</h2>
-        <p class="t-small kit-section__desc">Franja inferior administrable para contenidos de temporada (ferias, documentación post feria, encuestas). Se oculta cuando no está activa. La franja es un bloque transversal: <code>&lt;season-strip&gt;</code> en <code>js/layout.js</code>.</p>
-      </div>
-
-      <div class="hero hero--contained on-dark">
-        <div class="hero__media" aria-hidden="true"></div>
-        <span class="hero__placeholder t-small">[foto por definir]</span>
-        <div class="hero__content">
-          <p class="t-label c-inverse-muted">Video / fotografía de fondo</p>
-          <p class="t-display hero__title">Del sur de Chile al mundo</p>
-        </div>
-        <season-strip
-          label="Seafood Expo · Barcelona"
-          text="Conversemos en la feria: agenda una reunión con nuestro equipo comercial."
-          href="#"
-          cta="Agendar"></season-strip>
-      </div>
-    </section>
-
-    <!-- ===================================================================
-         10 · Composición con ilustración (pendiente)
-         =================================================================== -->
-    <section class="kit-section" id="ilustracion" aria-labelledby="ilus-title">
-      <div class="kit-section__head">
-        <p class="t-label c-accent">10</p>
-        <h2 class="t-h2" id="ilus-title">Composición con ilustración</h2>
-        <p class="t-small kit-section__desc">Texto (Título 1 con palabra destacada en coral) + ilustración en línea Navy sobre círculo Coral 100, con fila de cifras debajo.</p>
-      </div>
-      <div class="kit-pending">
-        <p class="t-label c-accent">Pendiente de definir con Felipe</p>
-        <p class="t-body">No se construye hasta que exista en Figma y se resuelva:</p>
-        <ul class="t-body">
-          <li>Sora no tiene cursiva: definir si el destacado va solo en color, en otro peso o con otra familia.</li>
-          <li>La palabra destacada va en Coral 600 (regla del coral), no en Coral 500 como en el prototipo de venta.</li>
-        </ul>
-      </div>
     </section>
 
   </main>
-
-  <site-footer></site-footer>
+  <script>
+    // Valores de los tokens leídos de css/tokens.css (según el ancho de pantalla actual)
+    (function () {
+      function fill() {
+        var css = getComputedStyle(document.documentElement);
+        document.querySelectorAll('[data-token]').forEach(function (el) {
+          el.textContent = css.getPropertyValue(el.getAttribute('data-token')).trim();
+        });
+      }
+      fill();
+      window.addEventListener('resize', fill);
+    })();
+  </script>
 </body>
 </html>

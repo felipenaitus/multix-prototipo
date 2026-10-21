@@ -3,6 +3,8 @@
 Definición elegida el 19-10-2026 · última actualización 21-10-2026. Fuente: Figma "Rediseño 2026" › UI Kit › Propuesta A.
 Base del enlace a cada sección: `https://www.figma.com/design/e7bTcjX8aUFftdqckOYyPZ/Redise%C3%B1o-2026?node-id=` + node-id (con guion: `75-194`).
 
+`kit.html` es el **kit visual de referencia**: muestra los tokens (color, tipografía, espaciado, radio, bordes, layout y movimiento) y **un ejemplo** de cada componente. No incluye el header, el menú ni el footer (son del sitio) ni repite las composiciones de cada página; esas se definen aquí, en texto.
+
 Este archivo dice **qué** componentes existen y **cómo se usan**. Las medidas exactas se leen del Figma (sección indicada) y los valores, de `css/tokens.css`.
 
 ---
