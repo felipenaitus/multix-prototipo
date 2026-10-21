@@ -4430,54 +4430,64 @@ a.pagination__item:hover,
     width var(--duration-reveal) var(--easing-out);
 }
 
-/* Burbujas: suben lento dentro del círculo, desde su base hasta arriba, y se
-   desvanecen; se mecen un poco hacia los lados. Contorno Coral 500 (algunas
-   rellenas), como elemento gráfico. Van entre el círculo y la ilustración y
-   acompañan al círculo cuando cambia de lugar en cada paso. Con movimiento
-   reducido no aparecen. */
-.steps__bubbles {
+/* Órbita: pocos puntos Coral 500 (elemento gráfico; algunos rellenos y otros
+   con contorno) sobre el borde del círculo. Cada uno aparece, recorre un tramo
+   corto de la órbita y se desvanece, en tiempos distintos: nunca están todos a la
+   vista. La órbita acompaña al círculo (posición, tamaño y escala con el scroll)
+   y queda por delante de la ilustración. Con movimiento reducido no aparecen. */
+.steps__orbit {
   position: absolute;
+  z-index: 1;
   left: calc(var(--circle-x) - var(--circle-size) / 2);
   top: calc(var(--circle-y) - var(--circle-size) / 2);
   width: var(--circle-size);
   aspect-ratio: 1;
+  container-type: inline-size;
   pointer-events: none;
+  transform: scale(calc(.6 + .5 * var(--scroll-progress, .8)));
   transition:
     left var(--duration-reveal) var(--easing-out),
     top var(--duration-reveal) var(--easing-out),
     width var(--duration-reveal) var(--easing-out);
 }
 
-.steps__bubble {
+/* Brazo que gira desde el centro; el punto va en su extremo */
+.steps__orbit-dot {
   position: absolute;
-  left: var(--x);
-  bottom: 5%;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  transform: rotate(var(--a));
+  animation: steps-orbit calc(var(--duration-reveal) * var(--dur)) var(--easing-standard) infinite;
+  animation-delay: calc(var(--duration-reveal) * var(--delay) * -1);
+}
+
+.steps__orbit-dot::before {
+  content: "";
+  position: absolute;
   width: var(--d);
   aspect-ratio: 1;
   border: var(--border-thin) solid var(--color-bg-accent-hover);
   border-radius: var(--radius-full);
   background: var(--fill, transparent);
-  opacity: 0;
-  animation: steps-bubble calc(var(--duration-reveal) * var(--dur)) linear infinite;
-  animation-delay: calc(var(--duration-reveal) * var(--delay) * -1);
+  transform: translate(calc(var(--r) * 50cqw - 50%), -50%);
 }
 
-.steps__bubble:nth-child(1) { --x: 18%; --d: var(--space-8); --dur: 9; --delay: 0; }
-.steps__bubble:nth-child(2) { --x: 30%; --d: var(--space-6); --dur: 7; --delay: 2.5; --fill: var(--color-bg-accent-hover); }
-.steps__bubble:nth-child(3) { --x: 44%; --d: var(--space-12); --dur: 11; --delay: 5; }
-.steps__bubble:nth-child(4) { --x: 57%; --d: var(--space-6); --dur: 8; --delay: 1.2; --fill: var(--color-bg-accent-hover); }
-.steps__bubble:nth-child(5) { --x: 68%; --d: var(--space-8); --dur: 10; --delay: 6.5; }
-.steps__bubble:nth-child(6) { --x: 80%; --d: var(--space-6); --dur: 7.5; --delay: 3.8; --fill: var(--color-bg-accent-hover); }
-.steps__bubble:nth-child(7) { --x: 38%; --d: var(--space-6); --dur: 9.5; --delay: 8; }
-.steps__bubble:nth-child(8) { --x: 73%; --d: var(--space-12); --dur: 12; --delay: 9.5; }
+.steps__orbit-dot:nth-child(1) { --a: -70deg; --r: 1.06; --d: var(--space-8); --drift: 18deg; --dur: 8; --delay: 0; --fill: var(--color-bg-accent-hover); }
+.steps__orbit-dot:nth-child(2) { --a: -15deg; --r: 1.12; --d: var(--space-6); --drift: -14deg; --dur: 7; --delay: 2.2; }
+.steps__orbit-dot:nth-child(3) { --a: 40deg; --r: 1.05; --d: var(--space-6); --drift: 20deg; --dur: 9; --delay: 4.5; --fill: var(--color-bg-accent-hover); }
+.steps__orbit-dot:nth-child(4) { --a: 115deg; --r: 1.14; --d: var(--space-8); --drift: -16deg; --dur: 7.5; --delay: 1.1; }
+.steps__orbit-dot:nth-child(5) { --a: 170deg; --r: 1.07; --d: var(--space-6); --drift: 15deg; --dur: 8.5; --delay: 6; --fill: var(--color-bg-accent-hover); }
+.steps__orbit-dot:nth-child(6) { --a: 230deg; --r: 1.1; --d: var(--space-6); --drift: -20deg; --dur: 9.5; --delay: 3.4; }
 
-@keyframes steps-bubble {
-  0%   { bottom: 5%;  opacity: 0; transform: translateX(0); }
-  15%  { opacity: .9; }
-  35%  { transform: translateX(var(--space-8)); }
-  65%  { transform: translateX(calc(-1 * var(--space-6))); }
-  85%  { opacity: .9; }
-  100% { bottom: 95%; opacity: 0; transform: translateX(0); }
+@keyframes steps-orbit {
+  0%   { opacity: 0; transform: rotate(var(--a)); }
+  30%  { opacity: 1; }
+  55%  { opacity: 1; }
+  80%  { opacity: 0; transform: rotate(calc(var(--a) + var(--drift))); }
+  100% { opacity: 0; transform: rotate(calc(var(--a) + var(--drift))); }
 }
 
 /* Cada ilustración con su centro y su caja (la imagen cabe dentro sin deformarse) */

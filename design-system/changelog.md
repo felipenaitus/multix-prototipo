@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Soluciones: órbita de puntos en lugar de las burbujas
+- Figma pendiente · Código ✓ · Se reemplazan las burbujas (no convencieron) por 6 puntos Coral 500 sobre el borde del círculo que aparecen, recorren un tramo corto de la órbita y se desvanecen.
+
 ## 2026-10-21 · Soluciones: burbujas en lugar de la constelación
 - Figma pendiente · Código ✓ · Se reemplaza la constelación de puntos (no convenció) por burbujas Coral 500 que suben dentro del círculo y se desvanecen. Se quita el desplazamiento con el mouse.
 
