@@ -4704,6 +4704,60 @@ a.pagination__item:hover,
   transition-delay: 0s;
 }
 
+/* Datos del paso: aparecen con el video (.is-open), en secuencia. Lista abierta
+   separada por líneas delgadas (sin cajas). Desktop: a la derecha de la
+   composición. Mobile y tablet: en el lugar de la descripción. */
+.chain__facts {
+  grid-area: text;
+  align-self: start;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 var(--space-24);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chain__fact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-12) 0;
+  border-top: var(--border-thin) solid var(--color-border-default);
+  opacity: 0;
+  transform: translateY(var(--space-8));
+  transition:
+    opacity var(--duration-slow) var(--easing-out),
+    transform var(--duration-slow) var(--easing-out);
+}
+
+.chain__fact-value {
+  color: var(--color-text-primary);
+}
+
+.chain__fact-label {
+  color: var(--color-text-secondary);
+}
+
+/* Cerrado: los datos no se ven ni reciben foco; abierto: la descripción da paso a ellos */
+.chain:not(.is-open) .chain__facts {
+  visibility: hidden;
+  transition: visibility 0s linear var(--duration-slow);
+}
+
+.chain.is-open .chain__step.is-active .chain__fact {
+  opacity: 1;
+  transform: none;
+}
+
+.chain.is-open .chain__step.is-active .chain__fact:nth-child(2) { transition-delay: var(--duration-stagger); }
+.chain.is-open .chain__step.is-active .chain__fact:nth-child(3) { transition-delay: calc(var(--duration-stagger) * 2); }
+.chain.is-open .chain__step.is-active .chain__fact:nth-child(4) { transition-delay: calc(var(--duration-stagger) * 3); }
+
+.chain.is-open .chain__step.is-active .chain__text {
+  opacity: 0;
+}
+
 /* Línea de secuencia: un tramo por paso; el activo en Coral 500 */
 .chain__segs {
   display: flex;
@@ -4812,6 +4866,18 @@ a.pagination__item:hover,
 
   .chain__text {
     max-width: 52%;
+  }
+
+  .chain__facts {
+    grid-area: stage;
+    align-self: center;
+    justify-self: end;
+    grid-template-columns: minmax(0, 1fr);
+    width: 22%;
+  }
+
+  .chain.is-open .chain__step.is-active .chain__text {
+    opacity: 1;
   }
 
   .chain__nav {

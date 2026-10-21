@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Del cultivo a la mesa: datos del paso con el video
+- Figma pendiente · Código ✓ · Al abrir el video de un paso aparecen 4 datos (cifra + texto) que detallan el proceso: a la derecha de la composición en desktop y en el lugar de la descripción en tablet y mobile. Datos de ejemplo [contenido por definir].
+
 ## 2026-10-21 · Cifras de Mercados en el color del título
 - Código ✓ · Las cifras pasan de Navy 900 a Ink 900 (`--color-text-primary`), el mismo color del título.
 

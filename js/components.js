@@ -320,9 +320,9 @@
       var current = box.querySelector('.chain__current');
       var stage = box.querySelector('.chain__stage');
       var video = stage && stage.querySelector('video');
-      var targets = [stage].concat($all('.chain__img', box)).filter(Boolean);
+      var targets = [stage].concat($all('.chain__img', box), $all('.chain__facts', box)).filter(Boolean);
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-      var n = steps.length, i = 0;
+      var n = steps.length, i = 0, closeTimer = null;
 
       // Video en la composición: hover con mouse; toque o Enter / Espacio lo abre y cierra
       function setOpen(on) {
@@ -333,11 +333,15 @@
         else video.pause();
       }
       targets.forEach(function (t) {
-        t.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') setOpen(true); });
+        t.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { clearTimeout(closeTimer); setOpen(true); } });
         t.addEventListener('pointerleave', function (e) {
           if (e.pointerType !== 'mouse') return;
           var to = e.relatedTarget;
-          if (!targets.some(function (x) { return to && x.contains(to); })) setOpen(false);
+          // Pequeña espera: cruzar del círculo a los datos no cierra el video
+          if (!targets.some(function (x) { return to && x.contains(to); })) {
+            clearTimeout(closeTimer);
+            closeTimer = setTimeout(function () { setOpen(false); }, cssMs('--duration-slow'));
+          }
         });
         t.addEventListener('click', function (e) {
           if (e.pointerType !== 'mouse') setOpen(!box.classList.contains('is-open'));
