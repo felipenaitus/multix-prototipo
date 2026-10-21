@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · CTAs de sección en botón de línea
+- Código ✓ · Por decisión de Felipe, los CTAs de las secciones usan botones de línea en vez de rellenos: "Descargar catálogo" pasa a Secundario (contorno Navy) y "Contactar al equipo comercial" del hero a contorno blanco (`.btn--ghost-light`, variante en línea de `<sales-contact>`). El botón flotante comercial y el "Enviar" del formulario no cambian.
+
 ## 2026-10-21 · Del cultivo a la mesa: el círculo crece al abrir el video
 - Código ✓ · Con el video abierto, el círculo crece un 15 %; vuelve a su tamaño al cerrarse.
 
