@@ -4304,7 +4304,7 @@ a.pagination__item:hover,
    A la izquierda, el título y una lista de pasos separados por líneas delgadas
    (sin cajas): número, nombre y, en el paso activo, su descripción. A la derecha,
    la ilustración sobre el círculo Offwhite (misma composición del catálogo); al
-   cambiar de paso la ilustración cambia con un fundido y un leve giro. Los pasos
+   cambiar de paso la ilustración cambia con un fundido y un leve desplazamiento. Los pasos
    avanzan solos mientras la sección está a la vista (una línea fina marca el
    tiempo); se detienen con el mouse encima o al elegir uno. */
 .steps {
@@ -4417,8 +4417,9 @@ a.pagination__item:hover,
 .steps__img {
   position: relative;
   grid-area: 1 / 1;
-  width: 78%;
-  height: auto;
+  width: 88%;
+  height: 78%;
+  object-fit: contain; /* ilustraciones verticales y horizontales caben igual en el círculo */
   opacity: 0;
   transform: rotate(var(--steps-tilt, 0deg)) translateY(var(--motion-reveal-distance));
   transition:
@@ -4431,9 +4432,6 @@ a.pagination__item:hover,
   transform: rotate(var(--steps-tilt, 0deg));
 }
 
-/* Cada paso con su propio ángulo: la misma ilustración "se mueve" al cambiar */
-.steps__img:nth-child(2) { --steps-tilt: -8deg; }
-.steps__img:nth-child(3) { --steps-tilt: 8deg; }
 
 @media (min-width: 768px) {
   .steps {

@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Ilustraciones de Congelado y Ahumado
+- Código ✓ · Cada paso de Soluciones tiene su ilustración: salmón (Fresco), filetes con hielo (Congelado) y salmón ahumado con leña (Ahumado). Las nuevas se optimizaron a WebP sin pérdida de 800 px (el doble de su tamaño en pantalla), con la transparencia limpia: se quitó el resplandor casi invisible del original, que dibujaba un rectángulo tenue (~2,9 MB → ~450 KB). Se quita el giro por paso, que servía cuando las tres eran la misma imagen.
+
 ## 2026-10-21 · Soluciones en pasos (módulo 2 de Productos)
 - Figma pendiente · Código ✓ · Nueva sección Soluciones después del hero: título y tres pasos (Fresco, Congelado, Ahumado) con descripción, e ilustración del salmón (`assets/img/pescado.png`) sobre el círculo Offwhite del catálogo. Componente `.steps[data-steps]`, patrón Firma en motion.md. Textos de ejemplo según la ficha del cliente (título 60, nombre 25 y texto 260 caracteres como máximo).
 

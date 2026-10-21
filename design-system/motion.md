@@ -73,5 +73,5 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 
 ## Firma · Soluciones en pasos (solo Productos › Soluciones)
 - Los pasos avanzan solos cada 8 × `--duration-reveal` (6,4 s) mientras la sección está a la vista; una línea Coral 500 sobre el paso activo se llena en ese tiempo.
-- Al cambiar de paso: la descripción aparece con `fade-up` (`--duration-slow`) y la ilustración hace un fundido con un leve giro (0°, −8°, 8°) en `--duration-reveal`.
+- Al cambiar de paso: la descripción aparece con `fade-up` (`--duration-slow`) y la ilustración del paso entra con un fundido y un leve desplazamiento hacia arriba en `--duration-reveal`.
 - Se pausan con el mouse o el foco dentro de la sección y se detienen del todo cuando la persona elige un paso. Con movimiento reducido no avanzan solos.
