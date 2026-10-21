@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Paso de Del cultivo a la mesa en coral corporativo
+- Código ✓ · El título del paso ("01. Genética y ovas") pasa de Coral 600 a Coral 500, el coral corporativo, por decisión de Felipe. Contradice la regla de CLAUDE.md §4 (Coral 500 nunca como texto sobre claro); se registra como excepción solo para este título grande, que pasa AA para texto grande (3,1:1; mínimo 3:1). Usa `--color-text-accent-on-dark` como en las etiquetas del menú; queda pendiente proponer un token propio (por ejemplo `--color-text-accent-large`).
+
 ## 2026-10-21 · Del cultivo a la mesa: sin segunda instancia; ilustración del paso 2
 - Código ✓ · Se elimina la instancia B de cada paso (video en el círculo y segundo texto). Queda un paso a la vez, que se cambia con flechas o tramos.
 - Código ✓ · Agua dulce (paso 2) usa su propia ilustración (`assets/img/paso-2.webp`, WebP sin pérdida de 800 px, 3 MB → 0,43 MB).

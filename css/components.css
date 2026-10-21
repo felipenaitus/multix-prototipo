@@ -4554,9 +4554,11 @@ a.pagination__item:hover,
   color: var(--color-text-brand);
 }
 
+/* Coral corporativo (Coral 500), excepción aprobada por Felipe: solo en este título
+   grande (Título 2, 26–32 px), donde pasa AA para texto grande (3,1:1 sobre blanco). */
 .chain__sub {
   grid-area: sub;
-  color: var(--color-text-accent);
+  color: var(--color-text-accent-on-dark);
 }
 
 /* Composición: círculo Offwhite; la ilustración va encima */
