@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Logo de prueba en las certificaciones
+- Código ✓ · Las 8 certificaciones muestran un logo de prueba (`assets/certs/logo-prueba.png`, el de ASC, recortado y con el fondo blanco quitado) en su espacio de logo, hasta tener los logos reales.
+
 ## 2026-10-21 · Productos: fondos de Certificaciones, Contacto y Preguntas frecuentes
 - Código ✓ · Certificaciones pasa a fondo Offwhite; Contacto y Preguntas frecuentes a blanco. Preguntas frecuentes queda asociada a Contacto, separada por una línea delgada (nueva variante `.section--continued`).
 

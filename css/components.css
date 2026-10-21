@@ -4281,6 +4281,14 @@ a.pagination__item:hover,
   text-align: center;
 }
 
+/* Logo de la certificación: cabe en su espacio sin deformarse */
+.cert-card__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+
 .cert-card__name {
   grid-area: name;
   display: flex;
