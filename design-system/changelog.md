@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Documentación del kit al día
+- Código ✓ · `ui-kit.md` y `kit.html` actualizados con las definiciones de la jornada: menú blanco en mobile, flecha del sub-menú, agendar siempre a la vista, tipo de documento como texto en mobile, `.section--joined` y fecha de última actualización en la portada del kit.
+
 ## 2026-10-21 · Inversionistas sin línea entre documentos y evento
 - Código ✓ · Se quita la línea entre Últimos documentos publicados y Próximo evento: la sección del evento pasa a `.section--joined` (unida a la anterior, sin línea y sin espacio arriba propio).
 
