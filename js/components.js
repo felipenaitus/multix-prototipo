@@ -350,6 +350,21 @@
           schedule();
         });
       });
+      // Constelación: con el mouse, los puntos se desplazan en contra del cursor
+      if (stage) {
+        box.addEventListener('pointermove', function (e) {
+          if (e.pointerType !== 'mouse' || reduce.matches) return;
+          var r = stage.getBoundingClientRect();
+          var px = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width / 2)) / (r.width / 2)));
+          var py = Math.max(-1, Math.min(1, (e.clientY - (r.top + r.height / 2)) / (r.height / 2)));
+          stage.style.setProperty('--px', (-px).toFixed(3));
+          stage.style.setProperty('--py', (-py).toFixed(3));
+        });
+        box.addEventListener('pointerleave', function () {
+          stage.style.removeProperty('--px');
+          stage.style.removeProperty('--py');
+        });
+      }
       box.addEventListener('pointerenter', function () { hovering = true; schedule(); });
       box.addEventListener('pointerleave', function () { hovering = false; show(current); schedule(); });
       box.addEventListener('focusin', function () { hovering = true; schedule(); });

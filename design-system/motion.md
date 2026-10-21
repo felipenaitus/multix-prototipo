@@ -75,3 +75,9 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 - Los pasos avanzan solos cada 8 × `--duration-reveal` (6,4 s) mientras la sección está a la vista; una línea Coral 500 sobre el paso activo se llena en ese tiempo.
 - Al cambiar de paso: la descripción aparece con `fade-up` (`--duration-slow`) la ilustración del paso entra con un fundido y un leve desplazamiento hacia arriba, y el círculo se desplaza y cambia de tamaño hasta la ubicación de ese paso, todo en `--duration-reveal`.
 - Se pausan con el mouse o el foco dentro de la sección y se detienen del todo cuando la persona elige un paso. Con movimiento reducido no avanzan solos.
+
+## Firma · Constelación de puntos (solo Productos › Soluciones)
+- 7 puntos Coral 500 alrededor del círculo, ubicados en relación con él: cuando el círculo cambia de lugar en cada paso, los puntos lo acompañan y se reacomodan (`--duration-reveal`).
+- Flotan lento y sin parar (vaivén de 4 × 8 px, entre 4,8 y 8 s según el punto).
+- Con el mouse sobre la sección se desplazan en contra del cursor, hasta 24 px según su profundidad (`--duration-slow`), lo que da sensación de capas.
+- Con movimiento reducido quedan quietos: la flotación dura 0 y no hay desplazamiento con el mouse. En pantallas táctiles solo flotan.

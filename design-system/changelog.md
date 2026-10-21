@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Soluciones: constelación de puntos
+- Figma pendiente · Código ✓ · La composición de círculo e ilustración suma 7 puntos Coral 500 que flotan lento, acompañan al círculo cuando cambia de paso y se mueven levemente en contra del mouse (patrón Firma en motion.md).
+
 ## 2026-10-21 · Soluciones: composición más grande
 - Código ✓ · La composición de ilustración y círculo ocupa todo el ancho de su columna (antes 80–90 %); en desktop su columna pasa a 6/11 y el texto a 5/11. La ilustración de Ahumado crece (de 78 % a 94 % del ancho del cuadro).
 
