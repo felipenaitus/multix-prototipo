@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · "Limpiar filtros" en su propia fila y texto genérico del evento
+- Código ✓ · "Limpiar filtros" sale de la fila de los selects y pasa a la fila del conteo de documentos (a la derecha); en el kit, al final de los filtros activos. Su aparición ya no cambia ningún ancho.
+- Código ✓ · La bajada de "Próximo evento" pasa a un texto genérico, porque el evento cambia.
+
 ## 2026-10-21 · Ajustes en Inversionistas y Centro de Resultados
 - Código ✓ · Cifras de "Multi X en una mirada" en coral corporativo (`.stats--accent`), misma excepción que en Mercados.
 - Código ✓ · Filas de documento: el hover y el enlace quedan solo en "Descargar" (antes toda la fila). "Descargar" se ve también en mobile. Sobre fondo crema, el contenedor del ícono es blanco.

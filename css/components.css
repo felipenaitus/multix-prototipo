@@ -597,8 +597,22 @@
   flex: 1;
 }
 
+/* "Limpiar filtros" va en la fila del conteo (o de filtros activos), nunca en la
+   fila de los selects: así su aparición no cambia ningún ancho. */
+.filters__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+  min-height: var(--touch-target);
+}
+
 .filters__clear {
-  align-self: flex-start;
+  flex-shrink: 0;
+}
+
+.filters__active .filters__clear {
+  margin-left: auto;
 }
 
 .filters__active {
@@ -663,9 +677,6 @@
     transition: transform var(--duration-slow) var(--easing-out), visibility 0s;
   }
 
-  .filters__panel .filters__clear {
-    display: none;
-  }
 }
 
 @media (min-width: 1280px) {
@@ -694,17 +705,6 @@
   .filters__panel .field--quarter { flex: 0 0 12%; }
   .filters__panel .field--type { flex: 0 0 22%; }
 
-  /* "Limpiar filtros" reserva su espacio aunque esté oculto */
-  .filters__clear[hidden] {
-    display: inline-flex;
-    visibility: hidden;
-  }
-
-  .filters__clear {
-    margin-left: auto;
-    align-self: center;
-    margin-top: var(--space-24);
-  }
 
   .filters__active {
     flex-wrap: wrap;

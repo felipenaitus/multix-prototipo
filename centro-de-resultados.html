@@ -84,7 +84,6 @@
                   <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
                 </div>
               </div>
-              <button class="btn btn--tertiary hit filters__clear" type="button" data-filter-clear><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>Limpiar filtros</button>
               <div class="filters__panel-actions">
                 <button class="btn btn--secondary" type="button" data-filter-clear>Limpiar</button>
                 <button class="btn btn--primary" type="button" data-filter-close>Ver resultados</button>
@@ -92,7 +91,10 @@
             </div>
             <div class="filters__scrim" aria-hidden="true"></div>
           </div>
-          <p class="t-small c-secondary" aria-live="polite" data-doc-count></p>
+          <div class="filters__meta">
+            <p class="t-small c-secondary" aria-live="polite" data-doc-count></p>
+            <button class="btn btn--tertiary hit filters__clear" type="button" data-filter-clear><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>Limpiar filtros</button>
+          </div>
         </div>
 
         <div class="doc-results">
