@@ -11,7 +11,7 @@
    [data-filters]                Barra de filtros (panel inferior en mobile)
    [data-add-calendar]           Agregar al calendario (opciones en mobile)
    video[data-hero-video]        Video de fondo: con movimiento reducido queda la imagen (poster)
-   [data-bg-blend]               Fondo compartido que pasa de Offwhite a blanco entre dos secciones
+   [data-section-curve]          Borde inferior curvo de una sección que se aplana con el scroll
    video[data-hover-video]       Video que se reproduce solo con hover o foco en su enlace (marcas)
    [data-variant-switch]         Switch de vista: botones data-show cambian data-variant del bloque
    [data-scroll-grow]            Avance del scroll (0 a 1) en --scroll-progress (círculo del catálogo)
@@ -304,27 +304,26 @@
     });
   }
 
-  /* ---------- Transición de fondo entre secciones ([data-bg-blend]) ----------
-     Va en la segunda sección (.section--blend-to); la anterior lleva
-     .section--blend-from. Escribe --bg-blend (0 a 1) en ambas: 0 cuando el borde
-     superior de la segunda entra por abajo de la ventana y 1 cuando llega al 40 %
-     superior. Las dos muestran el mismo color, así que no se ve el corte. */
-  function initBgBlend() {
-    $all('[data-bg-blend]').forEach(function (to) {
-      var from = to.previousElementSibling;
-      if (!from) return;
+  /* ---------- Borde inferior curvo ([data-section-curve]) ----------
+     Escribe --curve-progress (0 a 1) en la sección: 0 mientras su borde inferior
+     está bajo el 75 % de la ventana y 1 cuando ese borde llegó al 25 %. El CSS aplana
+     el arco con ese valor. Con movimiento reducido no se mueve (queda el arco). */
+  function initSectionCurve() {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    $all('[data-section-curve]').forEach(function (sec) {
       var raf = null;
       function update() {
         raf = null;
+        if (reduce.matches) { sec.style.removeProperty('--curve-progress'); return; }
         var vh = window.innerHeight;
-        var top = to.getBoundingClientRect().top;
-        var p = Math.min(1, Math.max(0, (vh - top) / (vh * 0.6)));
-        from.style.setProperty('--bg-blend', p.toFixed(3));
-        to.style.setProperty('--bg-blend', p.toFixed(3));
+        var bottom = sec.getBoundingClientRect().bottom;
+        var p = Math.min(1, Math.max(0, (vh * 0.75 - bottom) / (vh * 0.5)));
+        sec.style.setProperty('--curve-progress', p.toFixed(3));
       }
       function request() { if (!raf) raf = window.requestAnimationFrame(update); }
       window.addEventListener('scroll', request, { passive: true });
       window.addEventListener('resize', request);
+      reduce.addEventListener('change', update);
       update();
     });
   }
@@ -685,7 +684,7 @@
     initScrollGrow();
     initVariantSwitch();
     initHoverVideos();
-    initBgBlend();
+    initSectionCurve();
     initCursor();
   }
 

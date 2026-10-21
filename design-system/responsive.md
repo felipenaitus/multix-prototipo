@@ -55,7 +55,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Módulo comercial (`<sales-contact>`) | Botón flotante abajo a la izquierda; el formulario se abre como panel sobre el botón | El formulario se abre como panel inferior a lo ancho de la pantalla, por sobre el botón del asistente |
 | Hero con acción a la derecha | Textos a la izquierda y botón a la derecha, alineados abajo | Tablet y mobile: el botón va debajo de los textos (en tablet no hay ancho para ambos sin cortar el título) |
 | Formulario comercial en modal (`variant="inline"`) | Modal centrado sobre el sitio oscurecido | Panel inferior a lo ancho, sobre el sitio oscurecido |
-| Transición de fondo entre secciones | El fondo de ambas secciones pasa de Offwhite a blanco con el scroll | Igual |
+| Borde inferior curvo entre secciones | Arco de 96 px que se aplana con el scroll | Mismo comportamiento con arco más bajo: 64 px en tablet, 40 px en mobile |
 | Botón flotante del asistente | Fijo abajo a la derecha, 56 px, a `--space-32` del borde | Igual, a `--space-24` del borde |
 | Footer | Logo arriba; Direcciones · Información · Personas y proveedores en una fila con los títulos alineados; redes y copyright abajo. Tablet: direcciones arriba (en dos columnas) y enlaces debajo | Mobile: Información y Personas y proveedores en acordeón; direcciones y teléfonos siempre visibles; Canal de Denuncias como enlace dentro de Información |
 | Teléfonos y correos | Enlace | Enlace (marca o abre el correo con un toque) |

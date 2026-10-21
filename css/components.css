@@ -3374,21 +3374,38 @@ a.pagination__item:hover,
   color: var(--color-text-secondary);
 }
 
-/* Transición de fondo entre secciones ([data-bg-blend], components.js): en vez de
-   un corte recto, las dos secciones comparten un mismo color que pasa de Offwhite
-   a blanco a medida que la segunda entra en pantalla (--bg-blend de 0 a 1).
-   Sin JS: la primera queda Offwhite y la segunda blanca, como siempre. */
-.section--blend-from,
-.section--blend-to {
-  background: color-mix(in srgb, var(--color-bg-page) calc(var(--bg-blend) * 100%), var(--color-bg-subtle));
+/* Borde inferior curvo ([data-section-curve], components.js): en vez de un corte
+   recto, la sección termina en un arco suave (como un horizonte) que se monta
+   sobre la siguiente y se aplana a medida que se hace scroll (--curve-progress de
+   0 a 1). Toma el fondo de su sección. Sin JS, queda el arco completo. */
+.section--curve-bottom {
+  position: relative;
+  z-index: 1;
 }
 
-.section--blend-from {
-  --bg-blend: 0;
+.section--curve-bottom::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: var(--space-40);
+  background: inherit;
+  clip-path: polygon(0 0, 100% 0, 100% 0%, 95% 19%, 90% 36%, 85% 51%, 80% 64%, 75% 75%, 70% 84%, 65% 91%, 60% 96%, 55% 99%, 50% 100%, 45% 99%, 40% 96%, 35% 91%, 30% 84%, 25% 75%, 20% 64%, 15% 51%, 10% 36%, 5% 19%, 0% 0%);
+  transform: scaleY(calc(1 - var(--curve-progress, 0)));
+  transform-origin: top;
 }
 
-.section--blend-to {
-  --bg-blend: 1;
+@media (min-width: 768px) {
+  .section--curve-bottom::after {
+    height: var(--space-64);
+  }
+}
+
+@media (min-width: 1280px) {
+  .section--curve-bottom::after {
+    height: var(--space-96);
+  }
 }
 
 /* Variante centrada: para bloques de composición simétrica (por ejemplo, las marcas) */
