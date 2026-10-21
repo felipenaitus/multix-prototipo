@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Nuevo video del hero de Inversionistas
+- Código ✓ · Reemplazado por Video_Inversionistas_2, cortado a los primeros 45 s y en loop (720p H.264 sin audio, 74 MB → 6,1 MB), con su poster.
+
 ## 2026-10-21 · Inversionistas: compañía integrada más visual
 - Figma pendiente · Código ✓ · La sección "Una compañía integrada del sur de Chile" pasa a texto + círculo con video (por ahora el del home) que crece con el scroll, con las regiones de operación alrededor que aparecen en secuencia. Nuevo comportamiento `[data-inview-video]` y patrón Firma en motion.md.
 
