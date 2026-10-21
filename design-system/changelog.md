@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Cifras de Mercados en coral corporativo (prueba)
+- Código ✓ · Por pedido de Felipe, las tres cifras pasan a Coral 500 (coral corporativo) para probar. Advertencia: sobre el fondo Offwhite contrasta 2,86:1 y no llega al mínimo AA de 3:1 para texto grande (CLAUDE.md §4). Si se mantiene, hay que oscurecer un poco el coral de las cifras o ponerlas sobre fondo blanco (3,08:1).
+
 ## 2026-10-21 · Cursor sin ícono de play
 - Código ✓ · Se quita el estado de play del cursor (`data-cursor="play"`): con el indicador del borde basta. Sobre la composición el cursor se comporta como en cualquier elemento clickeable.
 
