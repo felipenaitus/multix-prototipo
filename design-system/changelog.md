@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Soluciones: composición propia en cada paso
+- Figma pendiente · Código ✓ · El círculo y la ilustración se ubican distinto en cada paso, según las referencias de Felipe (Fresco: círculo arriba a la izquierda y salmón grande abajo a la derecha; Congelado: círculo a la derecha y filetes abajo a la izquierda; Ahumado: casi centrado). La composición ocupa siempre el mismo cuadro y el círculo se desplaza con suavidad al cambiar de paso.
+
 ## 2026-10-21 · Ilustraciones de Congelado y Ahumado
 - Código ✓ · Cada paso de Soluciones tiene su ilustración: salmón (Fresco), filetes con hielo (Congelado) y salmón ahumado con leña (Ahumado). Las nuevas se optimizaron a WebP sin pérdida de 800 px (el doble de su tamaño en pantalla), con la transparencia limpia: se quitó el resplandor casi invisible del original, que dibujaba un rectángulo tenue (~2,9 MB → ~450 KB). Se quita el giro por paso, que servía cuando las tres eran la misma imagen.
 

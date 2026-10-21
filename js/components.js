@@ -316,6 +316,7 @@
     $all('[data-steps]').forEach(function (box) {
       var items = $all('.steps__item', box);
       var imgs = $all('.steps__img', box);
+      var stage = box.querySelector('.steps__stage');
       var current = 0, timer = null, visible = false, hovering = false, stopped = false;
       var interval = cssMs('--duration-reveal') * 8;
 
@@ -331,6 +332,7 @@
           if (bar && on) { bar.style.transition = 'none'; bar.style.transform = 'scaleX(0)'; void bar.offsetWidth; bar.style.transition = ''; bar.style.transform = ''; }
         });
         imgs.forEach(function (img, n) { img.classList.toggle('is-active', n === i); });
+        if (stage) stage.setAttribute('data-active', String(i + 1)); // ubicación del círculo de ese paso
       }
 
       function schedule() {
