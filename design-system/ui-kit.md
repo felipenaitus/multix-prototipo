@@ -155,6 +155,9 @@ Patrón único para toda la documentación del sitio (Inversionistas, Gobernanza
 - **Lista de documentos (`.doc-list`):** filas de documento sin agrupar por año, con líneas arriba y abajo.
 - **Próximo evento sin caja (`.ir-event`):** fecha, título, detalle, agregar al calendario y enlace al calendario, sobre una línea.
 - **Filtro de documentos (`[data-doc-filter]` en `js/components.js`):** sobre la barra de filtros; filtra por año, trimestre, tipo y texto, oculta los años sin resultados, actualiza conteos y muestra el estado vacío.
+- **Fila de documento (`.doc-row`):** la fila no es un enlace ni tiene hover; solo "Descargar" lo es (con subrayado al pasar el mouse) y siempre está visible. Sobre fondo crema el contenedor del ícono es blanco.
+- **Agendar:** "Agendar" + Google y Outlook (sin iCal).
+- **Cifras en coral (`.stats--accent`):** variante de "En una mirada" con las cifras en Coral 500, usada en Inversionistas.
 - **Sin cajas en la documentación:** la lista por año (`.doc-years`) y el estado vacío pasan de caja con borde y fondo a líneas arriba y abajo.
 - **Contacto IR:** etiqueta, nombre, cargo, teléfono y correo clickeables. Bloque transversal `<ir-contact>` en `js/layout.js`.
 

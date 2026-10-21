@@ -31,9 +31,9 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Cifras "en una mirada" | 4 columnas con divisores verticales | Grilla de 2 × 2 con divisores horizontales |
 | Último resultado + próximo evento | Dos tarjetas lado a lado | Apiladas: último resultado primero |
 | Accesos a documentos del trimestre | Grilla 2 × 2 | Lista de 1 columna |
-| Botones de agendar (Google, Outlook, iCal) | Fila de botones pequeños | Un botón "Agregar al calendario" que abre las opciones |
+| Botones de agendar (Google, Outlook) | "Agendar" seguido de los dos botones pequeños en fila | Un botón "Agendar" que abre las dos opciones |
 | Barra de filtros | Buscador + selects en una fila; chips activos debajo | Buscador visible + botón "Filtrar (n)" que abre un panel inferior con los filtros y "Aplicar"/"Limpiar"; chips activos con scroll horizontal |
-| Listado de documentos por año | Fila: ícono + título + metadatos + badge + "Descargar" | Tarjeta: título, metadatos y badge apilados; toda la fila es tocable para descargar |
+| Listado de documentos por año | Fila: ícono + título + metadatos + badge + "Descargar" | Título, metadatos y badge apilados; enlace "Descargar" visible debajo (zona táctil de 44 px) |
 | Matriz trimestre × tipo | Tabla completa | Scroll horizontal con la columna "Período" fija y un divisor (`--border-thin`) a su derecha que indica que hay más; sin sombra (la única sombra del sistema es `--shadow-card`). Alternativa: acordeón por trimestre con la lista de documentos |
 | Tablas en general (dividendos, etc.) | Tabla | Si tiene ≤ 3 columnas, se mantiene; si tiene más, cada fila pasa a tarjeta con pares etiqueta–valor |
 | Paginación | Números + flechas | Flechas + "Página 2 de 8" |

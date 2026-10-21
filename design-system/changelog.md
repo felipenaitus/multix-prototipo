@@ -4,6 +4,12 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Ajustes en Inversionistas y Centro de Resultados
+- Código ✓ · Cifras de "Multi X en una mirada" en coral corporativo (`.stats--accent`), misma excepción que en Mercados.
+- Código ✓ · Filas de documento: el hover y el enlace quedan solo en "Descargar" (antes toda la fila). "Descargar" se ve también en mobile. Sobre fondo crema, el contenedor del ícono es blanco.
+- Código ✓ · Agendar: se quita iCal; queda "Agendar" + Google y Outlook.
+- Código ✓ · Centro de Resultados: más aire entre los filtros y los documentos; los selects tienen ancho fijo y "Limpiar filtros" reserva su espacio, así nada se mueve cuando aparece.
+
 ## 2026-10-21 · Páginas de Inversionistas y Centro de Resultados
 - Código ✓ · Nueva página `inversionistas.html` según el mapa de navegación (Figma "Research y Definiciones"): hero con video y Display destacado, sub-menú, Multi X en una mirada (4 cifras), últimos documentos, próximo evento, descripción de la compañía, contacto y preguntas frecuentes. Transiciones Apertura / Horizonte en las secciones crema.
 - Código ✓ · Nueva página `centro-de-resultados.html`: encabezado simple con ruta, sub-menú, resultados trimestrales con filtros reales (año, trimestre, tipo, búsqueda) y años desplegables, y memoria anual.
