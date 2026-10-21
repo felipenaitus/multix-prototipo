@@ -3582,7 +3582,7 @@ a.pagination__item:hover,
 }
 
 .markets__stat .t-figure-l {
-  color: var(--color-text-brand);
+  color: var(--color-text-primary); /* mismo color que el título de la sección */
   white-space: nowrap;
 }
 

@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Cifras de Mercados en el color del título
+- Código ✓ · Las cifras pasan de Navy 900 a Ink 900 (`--color-text-primary`), el mismo color del título.
+
 ## 2026-10-21 · Mercados: título de relato y tres cifras
 - Código ✓ · Se quita el desglose por región y país. El título pasa a "Del sur de Chile a las mesas del mundo" [contenido por definir] y se suman dos cifras: +400 clientes y 90 mil toneladas al año (de ejemplo). Las tres cifras van en fila desde tablet, separadas por líneas delgadas, y cuentan al entrar en pantalla.
 
