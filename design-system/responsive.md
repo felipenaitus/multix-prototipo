@@ -62,6 +62,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Bloque en dos columnas (`.split`) | Encabezado 5/12 y contenido 7/12 | Apilado: encabezado arriba, contenido debajo |
 | Filtros del Centro de Resultados | Buscador y tres selects (año, trimestre, tipo) en una fila; debajo, el conteo de documentos y "Limpiar filtros" a la derecha | Buscador visible + "Filtrar (n)" que abre el panel inferior con los selects y "Ver resultados" |
 | Compañía integrada (Inversionistas) | Texto y círculo con video en dos mitades | Texto arriba y círculo debajo (86 % del ancho en mobile, 60 % en tablet), con las regiones alrededor |
+| Trabaja con nosotros (home) | Título, bajada, acceso y recuadro con GIF a la izquierda; ofertas a la derecha | Recuadro con GIF a ancho completo bajo el acceso; ofertas debajo |
 | Ofertas por región | Filas con la cantidad en coral a la izquierda, región y localidades al centro y la flecha en círculo a la derecha | Igual (las tres columnas se mantienen); la flecha en círculo es la zona táctil de 44 px y toda la fila es el enlace |
 | Círculo con video | Ilustración sobre círculo a la derecha del texto; hover abre el video | Debajo del texto (80 % del ancho en mobile, 60 % en tablet). Sin hover: el video se abre y cierra con un toque |
 | Módulos enfrentados de Inversionistas | Dos módulos lado a lado con una línea vertical entre ambos | Tablet y mobile: apilados (últimos reportes primero), cada uno con su acceso debajo |

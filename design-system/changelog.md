@@ -4,6 +4,13 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Segundos ajustes del home
+- Código ✓ · Productos: texto y círculo centrados en vertical (`.split--center`); el salmón es más grande y queda centrado sobre el círculo.
+- Código ✓ · Últimos reportes: en los módulos enfrentados la fila de documento lleva el ícono arriba a la izquierda y, debajo de título y datos, el tipo y "Descargar".
+- Código ✓ · Próximo evento del home suma "Agendar" (Google, Outlook).
+- Figma pendiente · Código ✓ · Trabaja con nosotros: nuevo recuadro con GIF (`.media-rect`) bajo el título, la bajada y el acceso. GIF temporal hecho con el video de Inversionistas, `[gif por definir]`.
+- Código ✓ · Noticias: el título se corta en 3 líneas con puntos suspensivos.
+
 ## 2026-10-21 · Ajustes del home
 - Figma pendiente · Código ✓ · Productos: se quitan las dos marcas y entra el **círculo con video** (`[data-media-circle]`): la ilustración del salmón sobre un círculo blanco que, con hover, crece y se abre al video de productos, como en el relato vertical.
 - Figma pendiente · Código ✓ · Inversionistas: sin título ni bajada de sección; dos **módulos enfrentados** (`.ir-pair--facing` + `.ir-module`) con sus propios títulos, "Últimos reportes" (acceso al Centro de Resultados) y "Próximo evento" (acceso al calendario, página aún sin construir).

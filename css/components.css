@@ -5328,6 +5328,39 @@ html:not(.js) .company-visual__tag {
   }
 }
 
+/* Bloque en dos columnas con ambos lados centrados en vertical (home › Productos) */
+@media (min-width: 1280px) {
+  .split--center {
+    align-items: center;
+  }
+}
+
+/* En los módulos enfrentados, la fila de documento siempre ordenada igual: ícono
+   arriba a la izquierda; título y datos a su derecha; debajo, tipo y "Descargar" */
+.ir-module .doc-row {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: var(--space-16);
+}
+
+.ir-module .doc-row__icon {
+  grid-row: span 2;
+  align-self: start;
+}
+
+.ir-module .doc-row__body {
+  grid-column: 2 / -1;
+}
+
+.ir-module .doc-row__badge {
+  grid-column: 2;
+}
+
+.ir-module .doc-row .doc-row__action {
+  grid-column: 3;
+  justify-self: end;
+}
+
 /* Círculo con video ([data-media-circle]): ilustración sobre un círculo blanco
    con el indicador de video. Con hover (o toque / Enter) el círculo crece un 15 %
    y se abre como una ventana a un video; la ilustración se desvanece. Mismo
@@ -5370,12 +5403,13 @@ html:not(.js) .company-visual__tag {
   transition: transform var(--duration-reveal) var(--easing-out);
 }
 
-/* La ilustración sobresale un poco del círculo arriba */
+/* La ilustración, centrada sobre el círculo, lo ocupa casi entero y sobresale
+   apenas arriba y abajo */
 .media-circle__img {
   position: absolute;
-  top: -6%;
-  left: 11%;
-  width: 78%;
+  top: -5%;
+  left: 4%;
+  width: 92%;
   height: auto;
   transition:
     opacity var(--duration-slow) var(--easing-standard),
@@ -5465,6 +5499,24 @@ html:not(.js) .company-visual__tag {
 
 .split .section-head .btn {
   margin-top: var(--space-8);
+}
+
+/* Recuadro con foto o GIF (Trabaja con nosotros): rectángulo con esquinas
+   redondeadas, sin texto encima. En el encabezado del bloque, bajo el acceso. */
+.media-rect {
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  margin: var(--space-16) 0 0;
+  border-radius: var(--radius-xl);
+  background: var(--color-bg-muted);
+}
+
+.media-rect img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Ofertas por región (Trabaja con nosotros): filas abiertas con líneas; toda la
@@ -5643,6 +5695,15 @@ html:not(.js) .company-visual__tag {
 
 .news-item__link:hover .news-item__media img {
   transform: scale(1.04);
+}
+
+/* Título: máximo tres líneas; si el texto es más largo termina en puntos suspensivos */
+.news-item__title {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
 }
 
 .news-item__link:hover .news-item__title {
