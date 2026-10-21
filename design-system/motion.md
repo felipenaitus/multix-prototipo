@@ -65,3 +65,7 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 ## Firma · Entrada del catálogo (solo Productos › Descarga del catálogo)
 - Al entrar en pantalla (IntersectionObserver de `.reveal`): etiqueta, título, bajada y botón aparecen en secuencia (`--duration-reveal`, desfase `--duration-stagger`) y al final el flipbook. Solo opacidad y transform; con movimiento reducido todo aparece en su lugar.
 - En la vista "Imagen", el círculo crece con el scroll (escala de 0,6 a 1,1, `[data-scroll-grow]`) y la imagen entra desde abajo a la izquierda con un giro de −4° a 0°.
+
+## Firma · Transición de fondo entre secciones (en prueba: Productos › Mercados → Nuestras marcas)
+- En lugar de un corte recto entre una sección Offwhite y una blanca, las dos comparten el mismo color de fondo, que pasa de Offwhite (`--color-bg-subtle`) a blanco (`--color-bg-page`) mientras la segunda sección sube desde el borde inferior de la ventana hasta el 40 % superior. Va directo al scroll, sin transición propia.
+- `[data-bg-blend]` en la segunda sección escribe `--bg-blend` (0 a 1); el CSS mezcla los dos colores con `color-mix`. Es un cambio de color, no de movimiento, así que se mantiene con movimiento reducido.

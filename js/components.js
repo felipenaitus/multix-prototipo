@@ -11,6 +11,7 @@
    [data-filters]                Barra de filtros (panel inferior en mobile)
    [data-add-calendar]           Agregar al calendario (opciones en mobile)
    video[data-hero-video]        Video de fondo: con movimiento reducido queda la imagen (poster)
+   [data-bg-blend]               Fondo compartido que pasa de Offwhite a blanco entre dos secciones
    video[data-hover-video]       Video que se reproduce solo con hover o foco en su enlace (marcas)
    [data-variant-switch]         Switch de vista: botones data-show cambian data-variant del bloque
    [data-scroll-grow]            Avance del scroll (0 a 1) en --scroll-progress (círculo del catálogo)
@@ -300,6 +301,31 @@
       }
       apply();
       reduce.addEventListener('change', apply);
+    });
+  }
+
+  /* ---------- Transición de fondo entre secciones ([data-bg-blend]) ----------
+     Va en la segunda sección (.section--blend-to); la anterior lleva
+     .section--blend-from. Escribe --bg-blend (0 a 1) en ambas: 0 cuando el borde
+     superior de la segunda entra por abajo de la ventana y 1 cuando llega al 40 %
+     superior. Las dos muestran el mismo color, así que no se ve el corte. */
+  function initBgBlend() {
+    $all('[data-bg-blend]').forEach(function (to) {
+      var from = to.previousElementSibling;
+      if (!from) return;
+      var raf = null;
+      function update() {
+        raf = null;
+        var vh = window.innerHeight;
+        var top = to.getBoundingClientRect().top;
+        var p = Math.min(1, Math.max(0, (vh - top) / (vh * 0.6)));
+        from.style.setProperty('--bg-blend', p.toFixed(3));
+        to.style.setProperty('--bg-blend', p.toFixed(3));
+      }
+      function request() { if (!raf) raf = window.requestAnimationFrame(update); }
+      window.addEventListener('scroll', request, { passive: true });
+      window.addEventListener('resize', request);
+      update();
     });
   }
 
@@ -659,6 +685,7 @@
     initScrollGrow();
     initVariantSwitch();
     initHoverVideos();
+    initBgBlend();
     initCursor();
   }
 

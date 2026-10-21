@@ -3374,6 +3374,23 @@ a.pagination__item:hover,
   color: var(--color-text-secondary);
 }
 
+/* Transición de fondo entre secciones ([data-bg-blend], components.js): en vez de
+   un corte recto, las dos secciones comparten un mismo color que pasa de Offwhite
+   a blanco a medida que la segunda entra en pantalla (--bg-blend de 0 a 1).
+   Sin JS: la primera queda Offwhite y la segunda blanca, como siempre. */
+.section--blend-from,
+.section--blend-to {
+  background: color-mix(in srgb, var(--color-bg-page) calc(var(--bg-blend) * 100%), var(--color-bg-subtle));
+}
+
+.section--blend-from {
+  --bg-blend: 0;
+}
+
+.section--blend-to {
+  --bg-blend: 1;
+}
+
 /* Variante centrada: para bloques de composición simétrica (por ejemplo, las marcas) */
 .section-head--center {
   align-items: center;

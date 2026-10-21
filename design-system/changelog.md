@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Transición de fondo entre Mercados y Nuestras marcas (prueba)
+- Figma pendiente · Código ✓ · En vez del corte recto entre el fondo Offwhite de Mercados y el blanco de Nuestras marcas, ambas secciones comparten un color que pasa de Offwhite a blanco con el scroll. Nuevo comportamiento `[data-bg-blend]` y patrón Firma en motion.md. Solo en ese corte, para probar.
+- Código ✓ · `MX.isDarkAt` (layout.js) ahora entiende colores `color(srgb …)` que genera `color-mix`; antes el botón del asistente se veía blanco sobre la sección en transición.
+
 ## 2026-10-21 · Bajada del hero de Productos en blanco
 - Código ✓ · Nueva variante `.hero__lead--inverse` (bajada en blanco pleno). Se usa en el hero de Productos; el resto de los heros mantiene la bajada en Navy 300.
 

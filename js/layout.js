@@ -92,9 +92,12 @@
       if (skip && (el === skip || skip.contains(el))) continue;
       var s = getComputedStyle(el);
       if (parseFloat(s.opacity) < 0.5 || s.visibility === 'hidden') continue;
-      var m = s.backgroundColor.match(/[\d.]+/g);
+      // rgb()/rgba() vienen en 0–255; color(srgb …) (por ejemplo, de color-mix) en 0–1
+      var bg = s.backgroundColor;
+      var max = bg.indexOf('color(') === 0 ? 1 : 255;
+      var m = bg.match(/[\d.]+/g);
       if (m && (m.length < 4 || parseFloat(m[3]) > 0.5)) {
-        return (0.2126 * m[0] + 0.7152 * m[1] + 0.0722 * m[2]) / 255 < 0.5;
+        return (0.2126 * m[0] + 0.7152 * m[1] + 0.0722 * m[2]) / max < 0.5;
       }
     }
     return false;
