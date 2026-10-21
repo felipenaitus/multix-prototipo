@@ -61,6 +61,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Sub-menú de Inversionistas | Tira bajo el hero, fija bajo la fila compacta del header al hacer scroll | Se desliza de lado con el acceso activo centrado; queda arriba del todo cuando el header se esconde y bajo el header cuando reaparece |
 | Bloque en dos columnas (`.split`) | Encabezado 5/12 y contenido 7/12 | Apilado: encabezado arriba, contenido debajo |
 | Filtros del Centro de Resultados | Buscador y tres selects (año, trimestre, tipo) en una fila; debajo, el conteo de documentos y "Limpiar filtros" a la derecha | Buscador visible + "Filtrar (n)" que abre el panel inferior con los selects y "Ver resultados" |
+| Compañía integrada (Inversionistas) | Texto y círculo con video en dos mitades | Texto arriba y círculo debajo (86 % del ancho en mobile, 60 % en tablet), con las regiones alrededor |
 | Botón flotante del asistente | Fijo abajo a la derecha, 56 px, a `--space-32` del borde | Igual, a `--space-24` del borde |
 | Footer | Logo arriba; Direcciones · Información · Personas y proveedores en una fila con los títulos alineados; redes y copyright abajo. Tablet: direcciones arriba (en dos columnas) y enlaces debajo | Mobile: Información y Personas y proveedores en acordeón; direcciones y teléfonos siempre visibles; Canal de Denuncias como enlace dentro de Información |
 | Teléfonos y correos | Enlace | Enlace (marca o abre el correo con un toque) |

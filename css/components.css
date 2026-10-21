@@ -5166,3 +5166,105 @@ body:has(.site-header.is-hidden) .subnav {
   padding-top: var(--space-24);
   border-top: var(--border-thin) solid var(--color-border-default);
 }
+
+/* Compañía integrada (Inversionistas): texto a la izquierda y, a la derecha, un
+   círculo con video que crece con el scroll ([data-scroll-grow]) y se reproduce
+   solo mientras está a la vista ([data-inview-video]). Alrededor, las regiones de
+   operación aparecen en secuencia, cada una con un punto Coral 500. */
+.company {
+  display: grid;
+  gap: var(--space-48);
+  align-items: center;
+}
+
+.company .split__body h2 {
+  color: var(--color-text-primary);
+}
+
+.company-visual {
+  position: relative;
+  width: 86%;
+  justify-self: center;
+  aspect-ratio: 1;
+  margin: 0;
+}
+
+.company-visual__circle {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-inverse);
+  transform: scale(calc(.7 + .4 * var(--scroll-progress, .75)));
+}
+
+.company-visual__circle video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.company-visual__tags {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.company-visual__tag {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-8) var(--space-16);
+  color: var(--color-text-primary);
+  background: var(--color-bg-page);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(var(--space-8));
+  transition:
+    opacity var(--duration-reveal) var(--easing-out),
+    transform var(--duration-reveal) var(--easing-out);
+}
+
+.company-visual__tag::before {
+  content: "";
+  width: var(--space-8);
+  height: var(--space-8);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-accent-hover);
+}
+
+/* Ubicación de cada región alrededor del círculo (de norte a sur) */
+.company-visual__tag:nth-child(1) { top: 12%; left: -4%; }
+.company-visual__tag:nth-child(2) { top: 48%; right: -6%; transition-delay: calc(var(--duration-stagger) * 3); }
+.company-visual__tag:nth-child(3) { bottom: 10%; left: 6%; transition-delay: calc(var(--duration-stagger) * 6); }
+
+.company-visual.is-visible .company-visual__tag {
+  opacity: 1;
+  transform: none;
+}
+
+/* Sin JS: todo visible */
+html:not(.js) .company-visual__tag {
+  opacity: 1;
+  transform: none;
+}
+
+@media (min-width: 768px) {
+  .company-visual {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .company {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-96);
+  }
+
+  .company-visual {
+    width: 88%;
+  }
+}

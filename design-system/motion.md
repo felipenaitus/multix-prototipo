@@ -94,3 +94,8 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 - Crema → blanco: **Horizonte** (`.section--curve-bottom[data-section-curve]`). Arco inferior que se aplana con el scroll.
 - Secciones asociadas con el mismo fondo: línea delgada (`.section--continued`). Bordes con imagen o textura a todo el ancho: rectos.
 - Con movimiento reducido: todos los cortes rectos.
+
+## Firma · Compañía integrada (solo Inversionistas)
+- El círculo con video crece con el scroll (escala 0,7 → 1,1, `[data-scroll-grow]`) y el video se reproduce solo mientras el bloque está a la vista (`[data-inview-video]`).
+- Las tres regiones (Los Lagos, Aysén, Magallanes) aparecen en secuencia al entrar el bloque (`--duration-reveal`, desfase 3 × `--duration-stagger`).
+- Con movimiento reducido: sin crecimiento, sin video (queda el poster) y las etiquetas aparecen sin desplazamiento.

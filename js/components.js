@@ -11,6 +11,7 @@
    [data-filters]                Barra de filtros (panel inferior en mobile)
    [data-add-calendar]           Agregar al calendario (opciones en mobile)
    video[data-hero-video]        Video de fondo: con movimiento reducido queda la imagen (poster)
+   [data-inview-video]           Reproduce el video interno solo mientras el bloque está a la vista
    [data-doc-filter]             Filtra documentos por año, trimestre, tipo y texto (Centro de Resultados)
    [data-chain]                  Relato vertical: un paso a la vez; flechas y tramos para cambiar de paso
    [data-steps]                  Pasos con ilustración que avanzan solos (Soluciones en Productos)
@@ -305,6 +306,25 @@
       }
       apply();
       reduce.addEventListener('change', apply);
+    });
+  }
+
+  /* ---------- Video a la vista ([data-inview-video]) ----------
+     Reproduce el video interno mientras el bloque está a la vista y lo pausa al
+     salir. Con movimiento reducido no se reproduce (queda el poster). */
+  function initInviewVideos() {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    $all('[data-inview-video]').forEach(function (box) {
+      var v = box.querySelector('video');
+      if (!v || !hasIO) return;
+      new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting && !reduce.matches) {
+          var p = v.play();
+          if (p && p.catch) p.catch(function () {});
+        } else {
+          v.pause();
+        }
+      }, { threshold: 0.25 }).observe(box);
     });
   }
 
@@ -912,6 +932,7 @@
     initSteps();
     initChain();
     initDocFilter();
+    initInviewVideos();
     initCursor();
   }
 
