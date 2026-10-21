@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Apertura más visible
+- Código ✓ · La Apertura parte más recortada para que se note: 8 % del ancho por lado en mobile, 14 % en tablet y 20 % en desktop (antes 16, 48 y 96 px), con esquinas más redondeadas (48, 80 y 96 px).
+
 ## 2026-10-21 · Transiciones entre secciones en Productos (prueba)
 - Figma pendiente · Código ✓ · Cada sección crema (Mercados, Catálogo, Certificaciones) entra con la **Apertura** (se abre de recortada a todo el ancho) y sale con el **Horizonte** (arco inferior que se aplana). El hero sigue con corte recto. Prueba para que Felipe decida si pasa a criterio general.
 - Código ✓ · Con movimiento reducido, el Horizonte ahora queda recto (antes quedaba el arco fijo).

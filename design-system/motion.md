@@ -90,7 +90,7 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 
 ## Firma · Transiciones entre secciones (PRUEBA en Productos, pendiente de confirmar como criterio)
 - Hero → primer contenido: recto.
-- Blanco → crema: **Apertura** (`.section--open-in[data-section-open]`). La sección crema entra recortada (16 px por lado en mobile, 48 en tablet, 96 en desktop; esquinas de 32 / 64 px) y se abre a todo el ancho con bordes rectos mientras su borde superior sube desde el fondo de la ventana hasta el 40 % superior. Va directo al scroll.
+- Blanco → crema: **Apertura** (`.section--open-in[data-section-open]`). La sección crema entra recortada (8 % del ancho por lado en mobile, 14 % en tablet y 20 % en desktop; esquinas de 48, 80 y 96 px) y se abre a todo el ancho con bordes rectos mientras su borde superior sube desde el fondo de la ventana hasta el 40 % superior. Va directo al scroll.
 - Crema → blanco: **Horizonte** (`.section--curve-bottom[data-section-curve]`). Arco inferior que se aplana con el scroll.
 - Secciones asociadas con el mismo fondo: línea delgada (`.section--continued`). Bordes con imagen o textura a todo el ancho: rectos.
 - Con movimiento reducido: todos los cortes rectos.

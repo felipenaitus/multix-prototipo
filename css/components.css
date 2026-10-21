@@ -3381,8 +3381,8 @@ a.pagination__item:hover,
    El recorte deja libre lo que sobresale por abajo (el arco del Horizonte). Sin
    JS o con movimiento reducido, recta. */
 .section--open-in {
-  --open-inset: var(--space-16);
-  --open-radius: calc(var(--radius-xl) * 2);
+  --open-inset: 8%; /* recorte lateral al inicio, en % del ancho */
+  --open-radius: calc(var(--radius-xl) * 3);
   clip-path: inset(
     0
     calc((1 - var(--open-progress, 1)) * var(--open-inset))
@@ -3393,14 +3393,15 @@ a.pagination__item:hover,
 
 @media (min-width: 768px) {
   .section--open-in {
-    --open-inset: var(--space-48);
-    --open-radius: calc(var(--radius-xl) * 4);
+    --open-inset: 14%;
+    --open-radius: calc(var(--radius-xl) * 5);
   }
 }
 
 @media (min-width: 1280px) {
   .section--open-in {
-    --open-inset: var(--space-96);
+    --open-inset: 20%;
+    --open-radius: calc(var(--radius-xl) * 6);
   }
 }
 
