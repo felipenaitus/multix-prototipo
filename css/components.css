@@ -4551,6 +4551,7 @@ a.pagination__item:hover,
 
 .chain__title {
   grid-area: title;
+  margin-bottom: var(--space-12);
   color: var(--color-text-brand);
 }
 
