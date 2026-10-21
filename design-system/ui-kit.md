@@ -149,7 +149,7 @@ Patrón único para toda la documentación del sitio (Inversionistas, Gobernanza
 - **Último resultado:** tarjeta Navy 900 con título, fecha y accesos directos a los 4 documentos del trimestre + enlace al centro de resultados.
 - **Próximo evento:** fecha destacada (día + mes), título, detalle y botones para agendar (Google, Outlook, iCal) + enlace al calendario completo.
 - **Acción:** precio (Cifra M), variación (texto success o accent), mini gráfico, fecha y retraso de la cotización.
-- **Sub-menú de Inversionistas (`<ir-subnav current>` en `js/layout.js`):** tira con Inicio · Centro de Resultados · Gobernanza · Calendario y Eventos · Acción · Contacto, bajo el hero o el encabezado de página. Queda fija bajo el header al hacer scroll; el acceso activo con indicador Navy (`--border-indicator`). Transversal a todas las páginas de Inversionistas.
+- **Sub-menú de Inversionistas (`<ir-subnav current>` en `js/layout.js`):** tira con Inicio · Centro de Resultados · Gobernanza · Calendario y Eventos · Acción · Contacto, bajo el hero o el encabezado de página. Queda fija bajo el header al hacer scroll. En prueba sobre Navy 900 (azul corporativo): accesos en Navy 300, activo y hover en blanco, indicador Coral 500 (`--border-indicator`). Transversal a todas las páginas de Inversionistas.
 - **Encabezado de página interior (`.page-head`):** ruta (breadcrumb), Título 1 y bajada; para páginas de consulta sin hero (Centro de Resultados).
 - **Bloque en dos columnas (`.split`):** encabezado de sección a la izquierda (5/12) y contenido a la derecha (7/12); en mobile, apilado. Se usa en Inversionistas (documentos, evento, descripción, contacto, preguntas).
 - **Lista de documentos (`.doc-list`):** filas de documento sin agrupar por año, con líneas arriba y abajo.

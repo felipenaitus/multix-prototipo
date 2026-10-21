@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Sub-menú de Inversionistas en azul corporativo (prueba)
+- Código ✓ · El sub-menú pasa de blanco a Navy 900: accesos en Navy 300, activo y hover en blanco, indicador del activo en Coral 500 (como en el header). Foco claro (`.on-dark`).
+
 ## 2026-10-21 · Nuevo video del hero de Inversionistas
 - Código ✓ · Reemplazado por Video_Inversionistas_2, cortado a los primeros 45 s y en loop (720p H.264 sin audio, 74 MB → 6,1 MB), con su poster.
 
