@@ -3294,6 +3294,21 @@ a.pagination__item:hover,
   scale: 1.5;
 }
 
+/* Sobre elementos con data-cursor="play" (video al pasar el mouse): el anillo
+   crece y el punto se vuelve un triángulo de play */
+.cursor.is-play .cursor__ring {
+  scale: 2;
+}
+
+.cursor.is-play .cursor__dot {
+  opacity: 1;
+  scale: 1;
+  width: var(--space-12);
+  height: var(--space-12);
+  border-radius: 0;
+  clip-path: polygon(20% 10%, 90% 50%, 20% 90%);
+}
+
 
 /* ==========================================================================
    Botón flotante del asistente (<chat-launcher>, js/layout.js)
@@ -4562,7 +4577,9 @@ a.pagination__item:hover,
   color: var(--color-text-accent-on-dark);
 }
 
-/* Composición: círculo Offwhite; la ilustración va encima */
+/* Composición: círculo Offwhite; la ilustración va encima. Con hover (o toque /
+   Enter) sobre la composición, el círculo se abre como una ventana a un video
+   (.is-open en el bloque, components.js) y la ilustración se desvanece. */
 .chain__stage {
   grid-area: stage;
   justify-self: center;
@@ -4572,6 +4589,43 @@ a.pagination__item:hover,
   margin: var(--space-48) 0;
   border-radius: var(--radius-full);
   background: var(--color-bg-subtle);
+}
+
+.chain__stage:focus-visible {
+  outline-offset: var(--space-8);
+}
+
+.chain__mask {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: var(--radius-full);
+  clip-path: circle(0% at 50% 50%);
+  transition: clip-path var(--duration-reveal) var(--easing-out);
+}
+
+.chain__mask video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.12);
+  transition: transform var(--duration-reveal) var(--easing-out);
+}
+
+.chain.is-open .chain__mask {
+  clip-path: circle(50% at 50% 50%);
+  background: var(--color-bg-inverse); /* el cursor lo lee como fondo oscuro y pasa a blanco */
+}
+
+.chain.is-open .chain__mask video {
+  transform: scale(1);
+}
+
+/* La ilustración da paso al video (sigue recibiendo el mouse para no cerrarlo) */
+.chain.is-open .chain__step.is-active .chain__img {
+  opacity: 0;
+  transform: scale(.9);
 }
 
 .chain__img {

@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Del cultivo a la mesa: video en el círculo al pasar el mouse
+- Figma pendiente · Código ✓ · Al pasar el mouse por la composición, el círculo se abre a un video (por ahora el de Arka Fjord) y la ilustración se desvanece. Toque en mobile y Enter / Espacio con teclado. Al cambiar de paso se cierra.
+- Figma pendiente · Código ✓ · Cursor: nuevo estado de play (`data-cursor="play"`): anillo más grande y triángulo en lugar del punto.
+
 ## 2026-10-21 · Paso de Del cultivo a la mesa en coral corporativo
 - Código ✓ · El título del paso ("01. Genética y ovas") pasa de Coral 600 a Coral 500, el coral corporativo, por decisión de Felipe. Contradice la regla de CLAUDE.md §4 (Coral 500 nunca como texto sobre claro); se registra como excepción solo para este título grande, que pasa AA para texto grande (3,1:1; mínimo 3:1). Usa `--color-text-accent-on-dark` como en las etiquetas del menú; queda pendiente proponer un token propio (por ejemplo `--color-text-accent-large`).
 

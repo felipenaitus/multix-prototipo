@@ -308,14 +308,46 @@
 
   /* ---------- Relato vertical ([data-chain]) ----------
      Un paso visible a la vez (.chain__step). Lo cambia la persona con las
-     flechas (atrás / adelante, en loop) o los tramos de la línea de secuencia. */
+     flechas (atrás / adelante, en loop) o los tramos de la línea de secuencia.
+     Sobre la composición, el círculo se abre a un video (.is-open): con hover del
+     mouse, o con toque / Enter / Espacio en pantallas táctiles y teclado. Al
+     cambiar de paso se cierra. Con movimiento reducido el video no se reproduce. */
   function initChain() {
     $all('[data-chain]').forEach(function (box) {
       var steps = $all('.chain__step', box);
       var segs = $all('.chain__seg', box);
       var arrows = $all('.chain__arrow', box);
       var current = box.querySelector('.chain__current');
+      var stage = box.querySelector('.chain__stage');
+      var video = stage && stage.querySelector('video');
+      var targets = [stage].concat($all('.chain__img', box)).filter(Boolean);
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
       var n = steps.length, i = 0;
+
+      // Video en la composición: hover con mouse; toque o Enter / Espacio lo abre y cierra
+      function setOpen(on) {
+        box.classList.toggle('is-open', on);
+        if (stage) stage.setAttribute('aria-pressed', String(on));
+        if (!video) return;
+        if (on && !reduce.matches) { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+        else video.pause();
+      }
+      targets.forEach(function (t) {
+        t.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') setOpen(true); });
+        t.addEventListener('pointerleave', function (e) {
+          if (e.pointerType !== 'mouse') return;
+          var to = e.relatedTarget;
+          if (!targets.some(function (x) { return to && x.contains(to); })) setOpen(false);
+        });
+        t.addEventListener('click', function (e) {
+          if (e.pointerType !== 'mouse') setOpen(!box.classList.contains('is-open'));
+        });
+      });
+      if (stage) {
+        stage.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpen(!box.classList.contains('is-open')); }
+        });
+      }
 
       function go(k) {
         i = (k + n) % n;
@@ -327,6 +359,7 @@
           if (j === i) s.setAttribute('aria-current', 'step'); else s.removeAttribute('aria-current');
         });
         if (current) current.textContent = (i + 1 < 10 ? '0' : '') + (i + 1);
+        setOpen(false);
       }
 
       arrows[0].addEventListener('click', function () { go(i - 1); });
@@ -752,6 +785,7 @@
       var onText = e.target.closest && e.target.closest(TEXT);
       cursor.classList.toggle('is-hidden', !!onText);
       cursor.classList.toggle('is-hover', !onText && !!(e.target.closest && e.target.closest(CLICKABLE)));
+      cursor.classList.toggle('is-play', !onText && !!(e.target.closest && e.target.closest('[data-cursor="play"]')));
     }, { passive: true });
 
     // Al hacer scroll cambia lo que hay bajo el puntero aunque el mouse no se mueva
