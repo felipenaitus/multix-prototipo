@@ -13,6 +13,7 @@
    video[data-hero-video]        Video de fondo: con movimiento reducido queda la imagen (poster)
    [data-chain]                  Relato vertical: un paso a la vez; flechas y tramos para cambiar de paso
    [data-steps]                  Pasos con ilustración que avanzan solos (Soluciones en Productos)
+   [data-section-open]           Apertura: la sección crema se abre a todo el ancho con el scroll
    [data-section-curve]          Borde inferior curvo de una sección que se aplana con el scroll
    video[data-hover-video]       Video que se reproduce solo con hover o foco en su enlace (marcas)
    [data-variant-switch]         Switch de vista: botones data-show cambian data-variant del bloque
@@ -446,11 +447,35 @@
       var raf = null;
       function update() {
         raf = null;
-        if (reduce.matches) { sec.style.removeProperty('--curve-progress'); return; }
+        if (reduce.matches) { sec.style.setProperty('--curve-progress', '1'); return; } // recto
         var vh = window.innerHeight;
         var bottom = sec.getBoundingClientRect().bottom;
         var p = Math.min(1, Math.max(0, (vh * 0.75 - bottom) / (vh * 0.5)));
         sec.style.setProperty('--curve-progress', p.toFixed(3));
+      }
+      function request() { if (!raf) raf = window.requestAnimationFrame(update); }
+      window.addEventListener('scroll', request, { passive: true });
+      window.addEventListener('resize', request);
+      reduce.addEventListener('change', update);
+      update();
+    });
+  }
+
+  /* ---------- Apertura ([data-section-open]) ----------
+     Escribe --open-progress (0 a 1) en la sección: 0 cuando su borde superior
+     entra por abajo de la ventana y 1 cuando llega al 40 % superior. El CSS la
+     recorta y la abre con ese valor. Con movimiento reducido queda en 1 (recta). */
+  function initSectionOpen() {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    $all('[data-section-open]').forEach(function (sec) {
+      var raf = null;
+      function update() {
+        raf = null;
+        if (reduce.matches) { sec.style.setProperty('--open-progress', '1'); return; }
+        var vh = window.innerHeight;
+        var top = sec.getBoundingClientRect().top;
+        var p = Math.min(1, Math.max(0, (vh - top) / (vh * 0.6)));
+        sec.style.setProperty('--open-progress', p.toFixed(3));
       }
       function request() { if (!raf) raf = window.requestAnimationFrame(update); }
       window.addEventListener('scroll', request, { passive: true });
@@ -817,6 +842,7 @@
     initVariantSwitch();
     initHoverVideos();
     initSectionCurve();
+    initSectionOpen();
     initSteps();
     initChain();
     initCursor();

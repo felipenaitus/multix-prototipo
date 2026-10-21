@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Transiciones entre secciones en Productos (prueba)
+- Figma pendiente · Código ✓ · Cada sección crema (Mercados, Catálogo, Certificaciones) entra con la **Apertura** (se abre de recortada a todo el ancho) y sale con el **Horizonte** (arco inferior que se aplana). El hero sigue con corte recto. Prueba para que Felipe decida si pasa a criterio general.
+- Código ✓ · Con movimiento reducido, el Horizonte ahora queda recto (antes quedaba el arco fijo).
+
 ## 2026-10-21 · Certificaciones: solo descripción en el detalle
 - Código ✓ · Al desplegar una certificación (grilla de Productos) se muestra solo la descripción: se quitan las etiquetas de cobertura y vigencia y el enlace "Ver certificado".
 

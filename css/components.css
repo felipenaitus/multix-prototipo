@@ -3374,6 +3374,36 @@ a.pagination__item:hover,
   color: var(--color-text-secondary);
 }
 
+/* Apertura ([data-section-open], components.js) · transición de blanco a crema
+   (PRUEBA). La sección entra recortada (más angosta y con esquinas redondeadas) y
+   se abre a todo el ancho con bordes rectos mientras sube: --open-progress de 0
+   (su borde superior entra por abajo de la ventana) a 1 (llega al 40 % superior).
+   El recorte deja libre lo que sobresale por abajo (el arco del Horizonte). Sin
+   JS o con movimiento reducido, recta. */
+.section--open-in {
+  --open-inset: var(--space-16);
+  --open-radius: calc(var(--radius-xl) * 2);
+  clip-path: inset(
+    0
+    calc((1 - var(--open-progress, 1)) * var(--open-inset))
+    calc(-1 * var(--space-128))
+    round calc((1 - var(--open-progress, 1)) * var(--open-radius))
+  );
+}
+
+@media (min-width: 768px) {
+  .section--open-in {
+    --open-inset: var(--space-48);
+    --open-radius: calc(var(--radius-xl) * 4);
+  }
+}
+
+@media (min-width: 1280px) {
+  .section--open-in {
+    --open-inset: var(--space-96);
+  }
+}
+
 /* Borde inferior curvo ([data-section-curve], components.js): en vez de un corte
    recto, la sección termina en un arco suave (como un horizonte) que se monta
    sobre la siguiente y se aplana a medida que se hace scroll (--curve-progress de

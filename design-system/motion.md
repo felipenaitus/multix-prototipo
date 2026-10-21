@@ -87,3 +87,10 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 - Al cambiar de paso, el título del paso, la ilustración y la descripción hacen un fundido (`--duration-slow`) y la ilustración entra con un leve acercamiento (0,94 → 1, `--duration-reveal`).
 - Video en hover: el círculo crece un 15 % (`--duration-reveal`) y el video se abre dentro de él desde el centro (clip-path de 0 % a 50 %, con leve acercamiento 1,12 → 1, `--duration-reveal`) y la ilustración se desvanece y se achica (1 → 0,9). Al salir se cierra. Indicador de video: anillo que late cada 3 × `--duration-reveal` (2,4 s; se expande a 1,8 y se desvanece); al abrir el video el indicador se achica y desaparece (`--duration-slow`). Con movimiento reducido no late. Con el video aparecen 4 datos del paso en secuencia (fundido y desplazamiento de 8 px, `--duration-slow`, desfase `--duration-stagger`). Con movimiento reducido el cambio es instantáneo y el video no se reproduce.
 - Descartado antes: segunda instancia por paso con video en el círculo, alternando sola.
+
+## Firma · Transiciones entre secciones (PRUEBA en Productos, pendiente de confirmar como criterio)
+- Hero → primer contenido: recto.
+- Blanco → crema: **Apertura** (`.section--open-in[data-section-open]`). La sección crema entra recortada (16 px por lado en mobile, 48 en tablet, 96 en desktop; esquinas de 32 / 64 px) y se abre a todo el ancho con bordes rectos mientras su borde superior sube desde el fondo de la ventana hasta el 40 % superior. Va directo al scroll.
+- Crema → blanco: **Horizonte** (`.section--curve-bottom[data-section-curve]`). Arco inferior que se aplana con el scroll.
+- Secciones asociadas con el mismo fondo: línea delgada (`.section--continued`). Bordes con imagen o textura a todo el ancho: rectos.
+- Con movimiento reducido: todos los cortes rectos.
