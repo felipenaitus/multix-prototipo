@@ -10,6 +10,7 @@
    <ir-contact name role-title phone email>  Contacto IR
    <chat-launcher>                           Botón flotante del asistente (se agrega solo)
    <sales-contact product>                   Botón flotante + formulario comercial
+   <ir-subnav current>                       Sub-menú fijo de las páginas de Inversionistas
 
    Estilos en css/components.css. Íconos: sprite de Figma (UI Kit), salvo las
    redes sociales (linkedin, x, facebook, instagram), dibujadas en el mismo estilo
@@ -133,20 +134,21 @@
 
   /* ---------- Arquitectura de navegación (Etapa 1, ajustada) ----------
      Páginas aún no construidas apuntan a "#". [contenido por definir] en textos. */
+  // id: identifica la página en el sub-menú (<ir-subnav current="...">); short: nombre en el sub-menú
   var INVESTOR_PAGES = [
-    { label: 'Ir a Inversionistas', href: '#', home: true },
-    { label: 'Centro de Resultados', href: '#' },
-    { label: 'Gobernanza', href: '#' },
-    { label: 'Calendario y Eventos', href: '#' },
-    { label: 'Acción', href: '#' },
-    { label: 'Contacto', href: '#' }
+    { id: 'inicio', label: 'Ir a Inversionistas', short: 'Inicio', href: 'inversionistas.html', home: true },
+    { id: 'resultados', label: 'Centro de Resultados', href: 'centro-de-resultados.html' },
+    { id: 'gobernanza', label: 'Gobernanza', href: '#' },
+    { id: 'calendario', label: 'Calendario y Eventos', href: '#' },
+    { id: 'accion', label: 'Acción', href: '#' },
+    { id: 'contacto', label: 'Contacto', href: '#' }
   ];
 
   // Accesos visibles en la fila principal del header (desktop), centrados
   var HEADER_MAIN = [
     { id: 'productos', label: 'Productos', href: 'productos.html' },
     { id: 'sustentabilidad', label: 'Sustentabilidad', href: '#' },
-    { id: 'inversionistas', label: 'Inversionistas', href: '#', children: INVESTOR_PAGES }
+    { id: 'inversionistas', label: 'Inversionistas', href: 'inversionistas.html', children: INVESTOR_PAGES }
   ];
 
   // Barra utilitaria (desktop)
@@ -172,7 +174,7 @@
       items: [
         { id: 'productos', label: 'Productos', href: 'productos.html' },
         { id: 'sustentabilidad', label: 'Sustentabilidad', href: '#' },
-        { id: 'inversionistas', label: 'Inversionistas', href: '#' }
+        { id: 'inversionistas', label: 'Inversionistas', href: 'inversionistas.html' }
       ]
     }
   ];
@@ -279,9 +281,9 @@
               item.children.map(function (c) {
                 // El acceso a la portada se distingue de las subpáginas y va separado por un divisor
                 if (c.home) {
-                  return '<li class="dropdown__home"><a class="dropdown__link dropdown__link--home" href="' + c.href + '">' + esc(c.label) + '</a></li>';
+                  return '<li class="dropdown__home"><a class="dropdown__link dropdown__link--home" href="' + url(c.href) + '">' + esc(c.label) + '</a></li>';
                 }
-                return '<li><a class="dropdown__link" href="' + c.href + '">' + esc(c.label) + '</a></li>';
+                return '<li><a class="dropdown__link" href="' + url(c.href) + '">' + esc(c.label) + '</a></li>';
               }).join('') +
             '</ul>' +
           '</li>';
@@ -797,6 +799,35 @@
   }
 
   /* ======================================================================
+     <ir-subnav current="inicio|resultados|..."> · Sub-menú de Inversionistas.
+     Tira de accesos a las páginas de Inversionistas (INVESTOR_PAGES), fija bajo
+     el header al hacer scroll. En mobile se desliza de lado y centra el acceso
+     activo. Es transversal a todas las páginas de Inversionistas.
+     ====================================================================== */
+  class IrSubnav extends HTMLElement {
+    connectedCallback() {
+      if (this._ready) return;
+      this._ready = true;
+      var current = this.getAttribute('current');
+      this.classList.add('subnav');
+      this.innerHTML =
+        '<nav class="container subnav__inner" aria-label="Inversionistas">' +
+          '<ul class="subnav__list" role="list">' +
+            INVESTOR_PAGES.map(function (p) {
+              var on = p.id === current;
+              return '<li><a class="subnav__link t-ui-nav' + (on ? ' is-current' : '') + '" href="' + url(p.href) + '"' + (on ? ' aria-current="page"' : '') + '>' + esc(p.short || p.label) + '</a></li>';
+            }).join('') +
+          '</ul>' +
+        '</nav>';
+      var active = this.querySelector('.is-current');
+      if (active && active.scrollIntoView) {
+        var list = this.querySelector('.subnav__list');
+        list.scrollLeft = active.offsetLeft - (list.clientWidth - active.offsetWidth) / 2;
+      }
+    }
+  }
+
+  /* ======================================================================
      <chat-launcher> · Botón flotante del asistente (chatbot).
      Transversal: se agrega solo en todas las páginas (no hace falta la etiqueta).
      Fijo abajo a la derecha. Blanco sobre fondos oscuros y Navy 900 sobre claros.
@@ -843,5 +874,6 @@
   customElements.define('season-strip', SeasonStrip);
   customElements.define('ir-contact', IrContact);
   customElements.define('chat-launcher', ChatLauncher);
+  customElements.define('ir-subnav', IrSubnav);
   customElements.define('sales-contact', SalesContact);
 })();

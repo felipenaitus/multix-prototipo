@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Centro de Resultados · Multi X</title>
+  <meta name="description" content="Resultados trimestrales y memorias anuales de Multi X para descargar.">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@200;300;400;600&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script src="js/layout.js" defer></script>
+  <script src="js/components.js" defer></script>
+</head>
+<body>
+  <site-header current="inversionistas"></site-header>
+
+  <main id="main">
+    <header class="container page-head">
+      <nav class="breadcrumb" aria-label="Migas de pan">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="index.html">Inicio</a><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chev-right"></use></svg></li>
+          <li class="breadcrumb__item"><a href="inversionistas.html">Inversionistas</a><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chev-right"></use></svg></li>
+          <li class="breadcrumb__item"><span aria-current="page">Centro de Resultados</span></li>
+        </ol>
+        <a class="breadcrumb__back" href="inversionistas.html"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>Volver a Inversionistas</a>
+      </nav>
+      <h1 class="t-h1">Centro de Resultados</h1>
+      <p class="t-body-l page-head__lead">Resultados trimestrales, estados financieros y memorias anuales de Multi X, disponibles para descargar. [contenido por definir]</p>
+    </header>
+
+    <ir-subnav current="resultados"></ir-subnav>
+
+    <!-- Resultados trimestrales -->
+    <section class="section" aria-labelledby="quarterly-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="t-h2" id="quarterly-title">Resultados trimestrales</h2>
+          <p class="t-body-l section-head__lead">Comunicado, presentación, estados financieros y análisis razonado de cada trimestre. [contenido por definir]</p>
+        </div>
+        <div class="filters" data-filters data-doc-filter="#cr-years">
+          <div class="filters__bar">
+            <div class="field filters__search">
+              <label class="field__label" for="cr-search">Buscar</label>
+              <div class="control">
+                <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+                <input class="control__input" id="cr-search" type="search" placeholder="Ej: estados financieros">
+              </div>
+            </div>
+            <button class="btn btn--secondary filters__toggle" type="button" aria-expanded="false" aria-controls="cr-filters">Filtrar <span data-filter-count></span></button>
+
+            <div class="filters__panel" id="cr-filters" role="group" aria-label="Filtros">
+              <div class="filters__panel-head">
+                <p class="t-h3">Filtros</p>
+                <button class="header__icon-btn" type="button" data-filter-close aria-label="Cerrar filtros"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-close"></use></svg></button>
+              </div>
+              <div class="field field--year">
+                <label class="field__label" for="cr-year">Año</label>
+                <div class="control control--select">
+                  <select class="control__input" id="cr-year" name="year">
+                    <option value="">Todos</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option>
+                  </select>
+                  <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+                </div>
+              </div>
+              <div class="field field--quarter">
+                <label class="field__label" for="cr-quarter">Trimestre</label>
+                <div class="control control--select">
+                  <select class="control__input" id="cr-quarter" name="quarter">
+                    <option value="">Todos</option><option value="Q1">Q1</option><option value="Q2">Q2</option><option value="Q3">Q3</option><option value="Q4">Q4</option>
+                  </select>
+                  <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+                </div>
+              </div>
+              <div class="field field--type">
+                <label class="field__label" for="cr-type">Tipo de documento</label>
+                <div class="control control--select">
+                  <select class="control__input" id="cr-type" name="type">
+                    <option value="">Todos los tipos</option><option value="Comunicado">Comunicado</option><option value="Presentación">Presentación</option><option value="EEFF">Estados financieros</option><option value="Análisis">Análisis razonado</option>
+                  </select>
+                  <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+                </div>
+              </div>
+              <button class="btn btn--tertiary hit filters__clear" type="button" data-filter-clear><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>Limpiar filtros</button>
+              <div class="filters__panel-actions">
+                <button class="btn btn--secondary" type="button" data-filter-clear>Limpiar</button>
+                <button class="btn btn--primary" type="button" data-filter-close>Ver resultados</button>
+              </div>
+            </div>
+            <div class="filters__scrim" aria-hidden="true"></div>
+          </div>
+          <p class="t-small c-secondary" aria-live="polite" data-doc-count></p>
+        </div>
+
+        <div class="doc-results">
+          <div class="doc-years" id="cr-years" data-accordion>
+          <div class="doc-year">
+            <button class="doc-year__head" type="button" aria-expanded="true" aria-controls="cr-2026">
+              <span class="doc-year__title"><span class="doc-year__year t-figure-s">2026</span><span class="doc-year__count t-small">8 documentos</span></span>
+              <svg class="icon icon--lg acc-icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+            </button>
+            <div class="acc-panel" id="cr-2026">
+              <a class="doc-row" href="#" download data-year="2026" data-quarter="Q2" data-type="Comunicado">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Comunicado de resultados Q2 2026</span><span class="doc-row__meta">27 ago 2026 · PDF 310 KB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Comunicado</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2026" data-quarter="Q2" data-type="Presentación">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Presentación de resultados Q2 2026</span><span class="doc-row__meta">27 ago 2026 · PDF 4,6 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Presentación</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2026" data-quarter="Q2" data-type="EEFF">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Estados financieros consolidados Q2 2026</span><span class="doc-row__meta">27 ago 2026 · PDF 2,1 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">EEFF</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2026" data-quarter="Q2" data-type="Análisis">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Análisis razonado Q2 2026</span><span class="doc-row__meta">27 ago 2026 · PDF 860 KB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Análisis</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2026" data-quarter="Q1" data-type="Comunicado">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Comunicado de resultados Q1 2026</span><span class="doc-row__meta">27 may 2026 · PDF 310 KB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Comunicado</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2026" data-quarter="Q1" data-type="Presentación">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Presentación de resultados Q1 2026</span><span class="doc-row__meta">27 may 2026 · PDF 4,6 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Presentación</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2026" data-quarter="Q1" data-type="EEFF">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Estados financieros consolidados Q1 2026</span><span class="doc-row__meta">27 may 2026 · PDF 2,1 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">EEFF</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2026" data-quarter="Q1" data-type="Análisis">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Análisis razonado Q1 2026</span><span class="doc-row__meta">27 may 2026 · PDF 860 KB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Análisis</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+            </div>
+          </div>
+          <div class="doc-year">
+            <button class="doc-year__head" type="button" aria-expanded="false" aria-controls="cr-2025">
+              <span class="doc-year__title"><span class="doc-year__year t-figure-s">2025</span><span class="doc-year__count t-small">16 documentos</span></span>
+              <svg class="icon icon--lg acc-icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+            </button>
+            <div class="acc-panel" id="cr-2025" hidden>
+              <a class="doc-row" href="#" download data-year="2025" data-quarter="Q4" data-type="Comunicado">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Comunicado de resultados Q4 2025</span><span class="doc-row__meta">28 mar 2026 · PDF 310 KB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Comunicado</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2025" data-quarter="Q4" data-type="Presentación">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Presentación de resultados Q4 2025</span><span class="doc-row__meta">28 mar 2026 · PDF 4,6 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Presentación</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2025" data-quarter="Q4" data-type="EEFF">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Estados financieros consolidados Q4 2025</span><span class="doc-row__meta">28 mar 2026 · PDF 2,1 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">EEFF</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2025" data-quarter="Q4" data-type="Análisis">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Análisis razonado Q4 2025</span><span class="doc-row__meta">28 mar 2026 · PDF 860 KB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Análisis</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2025" data-quarter="Q3" data-type="Comunicado">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Comunicado de resultados Q3 2025</span><span class="doc-row__meta">27 nov 2025 · PDF 310 KB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Comunicado</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2025" data-quarter="Q3" data-type="Presentación">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Presentación de resultados Q3 2025</span><span class="doc-row__meta">27 nov 2025 · PDF 4,6 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Presentación</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2025" data-quarter="Q3" data-type="EEFF">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Estados financieros consolidados Q3 2025</span><span class="doc-row__meta">27 nov 2025 · PDF 2,1 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">EEFF</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2025" data-quarter="Q3" data-type="Análisis">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Análisis razonado Q3 2025</span><span class="doc-row__meta">27 nov 2025 · PDF 860 KB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Análisis</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2025" data-quarter="Q2" data-type="Comunicado">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Comunicado de resultados Q2 2025</span><span class="doc-row__meta">27 ago 2025 · PDF 310 KB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Comunicado</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2025" data-quarter="Q2" data-type="Presentación">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Presentación de resultados Q2 2025</span><span class="doc-row__meta">27 ago 2025 · PDF 4,6 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Presentación</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2025" data-quarter="Q2" data-type="EEFF">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Estados financieros consolidados Q2 2025</span><span class="doc-row__meta">27 ago 2025 · PDF 2,1 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">EEFF</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2025" data-quarter="Q2" data-type="Análisis">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Análisis razonado Q2 2025</span><span class="doc-row__meta">27 ago 2025 · PDF 860 KB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Análisis</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2025" data-quarter="Q1" data-type="Comunicado">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Comunicado de resultados Q1 2025</span><span class="doc-row__meta">27 may 2025 · PDF 310 KB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Comunicado</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2025" data-quarter="Q1" data-type="Presentación">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Presentación de resultados Q1 2025</span><span class="doc-row__meta">27 may 2025 · PDF 4,6 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Presentación</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2025" data-quarter="Q1" data-type="EEFF">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Estados financieros consolidados Q1 2025</span><span class="doc-row__meta">27 may 2025 · PDF 2,1 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">EEFF</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2025" data-quarter="Q1" data-type="Análisis">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Análisis razonado Q1 2025</span><span class="doc-row__meta">27 may 2025 · PDF 860 KB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Análisis</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+            </div>
+          </div>
+          <div class="doc-year">
+            <button class="doc-year__head" type="button" aria-expanded="false" aria-controls="cr-2024">
+              <span class="doc-year__title"><span class="doc-year__year t-figure-s">2024</span><span class="doc-year__count t-small">16 documentos</span></span>
+              <svg class="icon icon--lg acc-icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+            </button>
+            <div class="acc-panel" id="cr-2024" hidden>
+              <a class="doc-row" href="#" download data-year="2024" data-quarter="Q4" data-type="Comunicado">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Comunicado de resultados Q4 2024</span><span class="doc-row__meta">28 mar 2025 · PDF 310 KB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Comunicado</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2024" data-quarter="Q4" data-type="Presentación">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Presentación de resultados Q4 2024</span><span class="doc-row__meta">28 mar 2025 · PDF 4,6 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Presentación</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2024" data-quarter="Q4" data-type="EEFF">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Estados financieros consolidados Q4 2024</span><span class="doc-row__meta">28 mar 2025 · PDF 2,1 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">EEFF</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2024" data-quarter="Q4" data-type="Análisis">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Análisis razonado Q4 2024</span><span class="doc-row__meta">28 mar 2025 · PDF 860 KB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Análisis</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2024" data-quarter="Q3" data-type="Comunicado">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Comunicado de resultados Q3 2024</span><span class="doc-row__meta">27 nov 2024 · PDF 310 KB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Comunicado</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2024" data-quarter="Q3" data-type="Presentación">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Presentación de resultados Q3 2024</span><span class="doc-row__meta">27 nov 2024 · PDF 4,6 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Presentación</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2024" data-quarter="Q3" data-type="EEFF">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Estados financieros consolidados Q3 2024</span><span class="doc-row__meta">27 nov 2024 · PDF 2,1 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">EEFF</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2024" data-quarter="Q3" data-type="Análisis">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Análisis razonado Q3 2024</span><span class="doc-row__meta">27 nov 2024 · PDF 860 KB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Análisis</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2024" data-quarter="Q2" data-type="Comunicado">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Comunicado de resultados Q2 2024</span><span class="doc-row__meta">27 ago 2024 · PDF 310 KB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Comunicado</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2024" data-quarter="Q2" data-type="Presentación">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Presentación de resultados Q2 2024</span><span class="doc-row__meta">27 ago 2024 · PDF 4,6 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Presentación</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2024" data-quarter="Q2" data-type="EEFF">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Estados financieros consolidados Q2 2024</span><span class="doc-row__meta">27 ago 2024 · PDF 2,1 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">EEFF</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2024" data-quarter="Q2" data-type="Análisis">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Análisis razonado Q2 2024</span><span class="doc-row__meta">27 ago 2024 · PDF 860 KB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Análisis</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2024" data-quarter="Q1" data-type="Comunicado">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Comunicado de resultados Q1 2024</span><span class="doc-row__meta">27 may 2024 · PDF 310 KB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Comunicado</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2024" data-quarter="Q1" data-type="Presentación">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Presentación de resultados Q1 2024</span><span class="doc-row__meta">27 may 2024 · PDF 4,6 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Presentación</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2024" data-quarter="Q1" data-type="EEFF">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Estados financieros consolidados Q1 2024</span><span class="doc-row__meta">27 may 2024 · PDF 2,1 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">EEFF</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download data-year="2024" data-quarter="Q1" data-type="Análisis">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Análisis razonado Q1 2024</span><span class="doc-row__meta">27 may 2024 · PDF 860 KB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Análisis</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+            </div>
+          </div>
+          </div>
+          <div class="empty-state" role="status" hidden>
+            <span class="empty-state__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-search"></use></svg></span>
+            <p class="t-h3">Sin resultados</p>
+            <p>Prueba con otra palabra o cambia los filtros.</p>
+            <button class="btn btn--secondary btn--sm hit" type="button" data-empty-clear>Limpiar filtros</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Memoria anual -->
+    <section class="section section--subtle section--open-in" aria-labelledby="annual-title" data-section-open>
+      <div class="container split">
+        <div class="section-head reveal">
+          <h2 class="t-h2" id="annual-title">Memoria anual</h2>
+          <p class="t-body-l section-head__lead">La memoria integrada reúne el desempeño financiero, social y ambiental de cada año. [contenido por definir]</p>
+        </div>
+        <div class="doc-list reveal">
+              <a class="doc-row" href="#" download>
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Memoria anual integrada 2025</span><span class="doc-row__meta">30 abr 2026 · PDF 12,4 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Memoria</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download>
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Memoria anual integrada 2024</span><span class="doc-row__meta">30 abr 2025 · PDF 11,8 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Memoria</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download>
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Memoria anual integrada 2023</span><span class="doc-row__meta">30 abr 2024 · PDF 11,2 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Memoria</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download>
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Memoria anual integrada 2022</span><span class="doc-row__meta">30 abr 2023 · PDF 10,6 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Memoria</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+              <a class="doc-row" href="#" download>
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Memoria anual integrada 2021</span><span class="doc-row__meta">30 abr 2022 · PDF 10,0 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Memoria</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>

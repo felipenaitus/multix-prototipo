@@ -544,6 +544,47 @@
       </div>
 
       <div class="kit-block">
+        <h3 class="t-label kit-block__title">Sub-menú de Inversionistas · nuevo (<code>&lt;ir-subnav current&gt;</code>: fijo bajo el header al hacer scroll)</h3>
+        <ir-subnav current="resultados" style="position: static"></ir-subnav>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Encabezado de página interior · nuevo (<code>.page-head</code>)</h3>
+        <header class="page-head">
+          <nav class="breadcrumb" aria-label="Migas de pan (ejemplo)">
+            <ol class="breadcrumb__list">
+              <li class="breadcrumb__item"><a href="#">Inicio</a><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chev-right"></use></svg></li>
+              <li class="breadcrumb__item"><a href="#">Inversionistas</a><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chev-right"></use></svg></li>
+              <li class="breadcrumb__item"><span aria-current="page">Centro de Resultados</span></li>
+            </ol>
+          </nav>
+          <p class="t-h1">Centro de Resultados</p>
+          <p class="t-body-l page-head__lead">Bajada de la página. [contenido por definir]</p>
+        </header>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Bloque en dos columnas · nuevo (<code>.split</code>: encabezado 5/12 + contenido 7/12) con lista de documentos (<code>.doc-list</code>)</h3>
+        <div class="split">
+          <div class="section-head">
+            <h4 class="t-h2">Últimos documentos publicados</h4>
+            <p class="t-body-l section-head__lead">Bajada. [contenido por definir]</p>
+          </div>
+          <div>
+            <div class="doc-list">
+              <a class="doc-row" href="#" download>
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Análisis razonado Q2 2026</span><span class="doc-row__meta">27 ago 2026 · PDF 860 KB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Análisis</span>
+                <span class="doc-link doc-row__action">Descargar<svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></span>
+              </a>
+            </div>
+            <a class="btn btn--tertiary hit" href="#">Ir al Centro de Resultados<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="kit-block">
         <h3 class="t-label kit-block__title">En una mirada</h3>
         <ul class="stats" role="list">
           <li class="stat reveal"><span class="stat__value t-figure-l" data-count="34">34</span><span class="stat__label t-small">años de trayectoria</span></li>

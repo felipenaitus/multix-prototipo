@@ -11,6 +11,7 @@
    [data-filters]                Barra de filtros (panel inferior en mobile)
    [data-add-calendar]           Agregar al calendario (opciones en mobile)
    video[data-hero-video]        Video de fondo: con movimiento reducido queda la imagen (poster)
+   [data-doc-filter]             Filtra documentos por año, trimestre, tipo y texto (Centro de Resultados)
    [data-chain]                  Relato vertical: un paso a la vez; flechas y tramos para cambiar de paso
    [data-steps]                  Pasos con ilustración que avanzan solos (Soluciones en Productos)
    [data-section-open]           Apertura: la sección crema se abre a todo el ancho con el scroll
@@ -304,6 +305,71 @@
       }
       apply();
       reduce.addEventListener('change', apply);
+    });
+  }
+
+  /* ---------- Filtro de documentos ([data-doc-filter="#lista"]) ----------
+     Sobre la barra de filtros: filtra las filas (.doc-row con data-year,
+     data-quarter y data-type) de la lista indicada. Oculta los años sin
+     resultados, actualiza los conteos, abre los años con resultados mientras hay
+     filtros y muestra el estado vacío si no queda nada. */
+  function initDocFilter() {
+    $all('[data-doc-filter]').forEach(function (box) {
+      var list = document.querySelector(box.getAttribute('data-doc-filter'));
+      if (!list) return;
+      var selects = $all('select[name]', box);
+      var search = box.querySelector('input[type="search"]');
+      var rows = $all('.doc-row', list);
+      var years = $all('.doc-year', list);
+      var empty = list.parentElement.querySelector('.empty-state');
+      var countEl = box.querySelector('[data-doc-count]');
+      var clearBtns = $all('[data-filter-clear]', box);
+      var toggleCount = box.querySelector('[data-filter-count]');
+
+      function apply() {
+        var f = {};
+        selects.forEach(function (s) { f[s.name] = s.value; });
+        var q = search ? search.value.trim().toLowerCase() : '';
+        var active = selects.filter(function (s) { return s.value; }).length;
+        var total = 0;
+        rows.forEach(function (r) {
+          var ok = (!f.year || r.dataset.year === f.year) &&
+                   (!f.quarter || r.dataset.quarter === f.quarter) &&
+                   (!f.type || r.dataset.type === f.type) &&
+                   (!q || r.textContent.toLowerCase().indexOf(q) > -1);
+          r.hidden = !ok;
+          if (ok) total++;
+        });
+        years.forEach(function (y, n) {
+          var visible = $all('.doc-row', y).filter(function (r) { return !r.hidden; }).length;
+          y.hidden = visible === 0;
+          var c = y.querySelector('.doc-year__count');
+          if (c) c.textContent = visible + (visible === 1 ? ' documento' : ' documentos');
+          var head = y.querySelector('.doc-year__head');
+          var panel = head && document.getElementById(head.getAttribute('aria-controls'));
+          if (head && panel && (active || q)) { head.setAttribute('aria-expanded', 'true'); panel.hidden = false; }
+        });
+        if (empty) empty.hidden = total > 0;
+        if (countEl) countEl.textContent = total + (total === 1 ? ' documento' : ' documentos');
+        if (toggleCount) toggleCount.textContent = active ? '(' + active + ')' : '';
+        clearBtns.forEach(function (b) { b.hidden = !(active || q); });
+      }
+
+      var emptyClear = empty && empty.querySelector('[data-empty-clear]');
+      if (emptyClear) emptyClear.addEventListener('click', function () {
+        selects.forEach(function (s) { s.selectedIndex = 0; });
+        if (search) search.value = '';
+        apply();
+      });
+      selects.forEach(function (s) { s.addEventListener('change', apply); });
+      if (search) search.addEventListener('input', apply);
+      clearBtns.forEach(function (b) {
+        b.addEventListener('click', function () {
+          if (search) search.value = '';
+          setTimeout(apply, 0); // initFilters ya reinició los selects
+        });
+      });
+      apply();
     });
   }
 
@@ -845,6 +911,7 @@
     initSectionOpen();
     initSteps();
     initChain();
+    initDocFilter();
     initCursor();
   }
 

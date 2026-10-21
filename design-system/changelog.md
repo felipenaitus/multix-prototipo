@@ -4,6 +4,13 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Páginas de Inversionistas y Centro de Resultados
+- Código ✓ · Nueva página `inversionistas.html` según el mapa de navegación (Figma "Research y Definiciones"): hero con video y Display destacado, sub-menú, Multi X en una mirada (4 cifras), últimos documentos, próximo evento, descripción de la compañía, contacto y preguntas frecuentes. Transiciones Apertura / Horizonte en las secciones crema.
+- Código ✓ · Nueva página `centro-de-resultados.html`: encabezado simple con ruta, sub-menú, resultados trimestrales con filtros reales (año, trimestre, tipo, búsqueda) y años desplegables, y memoria anual.
+- Figma pendiente · Código ✓ · Componentes nuevos: `<ir-subnav>` (sub-menú fijo, transversal), `.page-head`, `.split`, `.doc-list`, `.ir-event` y `[data-doc-filter]`.
+- Código ✓ · Sin cajas en la documentación: `.doc-years` y `.empty-state` pasan a líneas. También cambia el ejemplo del kit.
+- Código ✓ · El desplegable y el menú enlazan Inversionistas e "Ir a Inversionistas" a `inversionistas.html` y Centro de Resultados a `centro-de-resultados.html`; el resto de las subpáginas sigue en "#".
+
 ## 2026-10-21 · Apertura más visible
 - Código ✓ · La Apertura parte más recortada para que se note: 8 % del ancho por lado en mobile, 14 % en tablet y 20 % en desktop (antes 16, 48 y 96 px), con esquinas más redondeadas (48, 80 y 96 px).
 

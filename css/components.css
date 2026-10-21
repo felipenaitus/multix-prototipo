@@ -689,6 +689,7 @@
   }
 
   .filters__panel .field--year { flex: 0 1 16%; }
+  .filters__panel .field--quarter { flex: 0 1 14%; }
   .filters__panel .field--type { flex: 0 1 25%; }
 
   .filters__clear {
@@ -747,11 +748,10 @@
 }
 
 /* Listado por año (acordeón) */
+/* Sin cajas: lista abierta con una línea arriba y abajo */
 .doc-years {
-  background: var(--color-bg-page);
-  border: var(--border-thin) solid var(--color-border-default);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
+  border-top: var(--border-thin) solid var(--color-border-default);
+  border-bottom: var(--border-thin) solid var(--color-border-default);
 }
 
 .doc-year + .doc-year {
@@ -776,7 +776,6 @@
 }
 
 .doc-year__head[aria-expanded="true"] {
-  background: var(--color-bg-subtle);
   border-bottom: var(--border-thin) solid var(--color-border-default);
 }
 
@@ -1004,8 +1003,8 @@
   align-items: center;
   gap: var(--space-12);
   padding: var(--space-48) var(--space-24);
-  background: var(--color-bg-subtle);
-  border-radius: var(--radius-xl);
+  border-top: var(--border-thin) solid var(--color-border-default);
+  border-bottom: var(--border-thin) solid var(--color-border-default);
   text-align: center;
 }
 
@@ -4989,4 +4988,141 @@ a.pagination__item:hover,
     justify-self: end;
     width: 80%;
   }
+}
+
+/* ==========================================================================
+   Páginas de Inversionistas
+   ========================================================================== */
+
+/* Sub-menú de Inversionistas (<ir-subnav>, js/layout.js). Tira fija bajo el
+   header al hacer scroll (debajo de la fila compacta en desktop; arriba del
+   todo cuando el header se esconde en mobile). Activo con indicador Navy. */
+.subnav {
+  position: sticky;
+  top: var(--space-64);
+  z-index: 50;
+  display: block;
+  background: var(--color-bg-page);
+  border-bottom: var(--border-thin) solid var(--color-border-default);
+  transition: top var(--duration-slow) var(--easing-standard);
+}
+
+body:has(.site-header.is-hidden) .subnav {
+  top: 0;
+}
+
+.subnav__list {
+  display: flex;
+  gap: var(--space-24);
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  list-style: none;
+}
+
+.subnav__list::-webkit-scrollbar {
+  display: none;
+}
+
+.subnav__link {
+  display: flex;
+  align-items: center;
+  min-height: calc(var(--touch-target) + var(--space-12));
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  border-bottom: var(--border-indicator) solid transparent;
+  transition:
+    color var(--duration-fast) var(--easing-standard),
+    border-color var(--duration-fast) var(--easing-standard);
+}
+
+.subnav__link:hover {
+  color: var(--color-text-brand);
+}
+
+.subnav__link.is-current {
+  color: var(--color-text-brand);
+  border-bottom-color: var(--color-border-brand);
+}
+
+@media (min-width: 1280px) {
+  .subnav__list {
+    gap: var(--space-40);
+  }
+}
+
+/* Encabezado de página interior (sin hero): ruta, título y bajada */
+.page-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+  padding-top: var(--space-48);
+  padding-bottom: var(--space-48);
+}
+
+.page-head__lead {
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 1280px) {
+  .page-head {
+    padding-top: var(--space-64);
+    padding-bottom: var(--space-64);
+  }
+
+  .page-head__lead {
+    max-width: 60%;
+  }
+}
+
+/* Lista simple de documentos (sin años), con líneas arriba y abajo */
+.doc-list {
+  border-top: var(--border-thin) solid var(--color-border-default);
+  border-bottom: var(--border-thin) solid var(--color-border-default);
+}
+
+.doc-list + .btn,
+.doc-years + .btn {
+  margin-top: var(--space-24);
+}
+
+/* Bloque de dos columnas: encabezado a la izquierda y contenido a la derecha */
+.split {
+  display: grid;
+  gap: var(--space-32);
+  align-items: start;
+}
+
+.split__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-24);
+}
+
+.split__body p {
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 1280px) {
+  .split {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: var(--space-64);
+  }
+
+  .split .section-head {
+    margin-bottom: 0;
+  }
+}
+
+/* Próximo evento sin caja: fecha, título y detalle sobre una línea */
+.ir-event {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-24);
+  padding-top: var(--space-24);
+  border-top: var(--border-thin) solid var(--color-border-default);
 }
