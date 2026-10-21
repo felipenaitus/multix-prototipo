@@ -5019,14 +5019,14 @@ a.pagination__item:hover,
 
 /* Sub-menú de Inversionistas (<ir-subnav>, js/layout.js). Tira fija bajo el
    header al hacer scroll (debajo de la fila compacta en desktop; arriba del
-   todo cuando el header se esconde en mobile). PRUEBA: fondo Navy 900 (azul
-   corporativo); textos Navy 300, activo y hover en blanco con indicador Coral 500. */
+   todo cuando el header se esconde en mobile). Activo con indicador Navy. */
 .subnav {
   position: sticky;
   top: var(--space-64);
   z-index: 50;
   display: block;
-  background: var(--color-bg-brand);
+  background: var(--color-bg-page);
+  border-bottom: var(--border-thin) solid var(--color-border-default);
   transition: top var(--duration-slow) var(--easing-standard);
 }
 
@@ -5052,7 +5052,7 @@ body:has(.site-header.is-hidden) .subnav {
   display: flex;
   align-items: center;
   min-height: calc(var(--touch-target) + var(--space-12));
-  color: var(--color-text-inverse-muted);
+  color: var(--color-text-secondary);
   white-space: nowrap;
   border-bottom: var(--border-indicator) solid transparent;
   transition:
@@ -5061,12 +5061,12 @@ body:has(.site-header.is-hidden) .subnav {
 }
 
 .subnav__link:hover {
-  color: var(--color-text-inverse);
+  color: var(--color-text-brand);
 }
 
 .subnav__link.is-current {
-  color: var(--color-text-inverse);
-  border-bottom-color: var(--color-border-accent-on-dark);
+  color: var(--color-text-brand);
+  border-bottom-color: var(--color-border-brand);
 }
 
 @media (min-width: 1280px) {
