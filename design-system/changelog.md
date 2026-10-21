@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Botón comercial en coral corporativo
+- Código ✓ · "Contactar al equipo comercial" usa Coral 500 (coral corporativo) en lugar de Coral 400, con texto Ink 900 (5,5:1, pasa AA). El hover se invierte a Coral 400. Excepción a la regla del botón de acento de CLAUDE.md §4 (fondo Coral 400, hover Coral 500), solo para este botón.
+
 ## 2026-10-21 · CTAs de sección en botón de línea
 - Código ✓ · Por decisión de Felipe, los CTAs de las secciones usan botones de línea en vez de rellenos: "Descargar catálogo" pasa a Secundario (contorno Navy). "Contactar al equipo comercial" del hero se mantiene en Acento coral (se probó en contorno blanco y se revirtió por decisión de Felipe). El "Enviar" del formulario no cambia.
 

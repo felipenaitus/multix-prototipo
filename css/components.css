@@ -3729,6 +3729,16 @@ a.pagination__item:hover,
   border-radius: var(--radius-full) var(--radius-full) var(--radius-full) 0;
 }
 
+/* Botón comercial en el coral corporativo (Coral 500), por decisión de Felipe.
+   Texto Ink 900 (5,5:1). El hover se invierte a Coral 400 (6,7:1). */
+.sales-contact__toggle.btn--accent {
+  background: var(--color-bg-accent-hover);
+}
+
+.sales-contact__toggle.btn--accent:hover {
+  background: var(--color-bg-accent);
+}
+
 .sales-contact {
   position: fixed;
   left: var(--layout-gutter);
