@@ -12,13 +12,13 @@
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
-  <!-- Home base: el hero y los bloques vacíos usan pruebas.css hasta que se definan sus componentes -->
+  <!-- El hero del home (frase que cambia) usa pruebas.css -->
   <link rel="stylesheet" href="css/pruebas.css">
   <script src="js/layout.js" defer></script>
   <script src="js/components.js" defer></script>
 </head>
 <body>
-  <!-- Home base: header transparente sobre el hero; los bloques de contenido se definen más adelante -->
+  <!-- Home: header transparente sobre el hero -->
   <site-header variant="overlay"></site-header>
 
   <main id="main">
@@ -44,9 +44,217 @@
         </span>
       </h1>
     </section>
-    <section class="test-block test-block--white" aria-label="Bloque 1"><p class="t-h2">[contenido por definir]</p></section>
-    <section class="test-block test-block--subtle" aria-label="Bloque 2"><p class="t-h2">[contenido por definir]</p></section>
-    <section class="test-block test-block--dark" aria-label="Bloque 3"><p class="t-h2">[contenido por definir]</p></section>
+    <!-- Quiénes somos: breve, cifras clave y acceso a Nosotros -->
+    <section class="section" aria-labelledby="about-title">
+      <div class="container">
+        <div class="company">
+          <div class="split__body reveal">
+            <h2 class="t-h2" id="about-title">Salmón del sur de Chile para el mundo</h2>
+            <p class="t-body-l">Somos una compañía salmonera integrada: producimos, procesamos y comercializamos salmón Atlántico desde las regiones de Los Lagos, Aysén y Magallanes. [contenido por definir]</p>
+            <a class="btn btn--tertiary hit" href="#">Conoce Multi X<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </div>
+          <figure class="company-visual reveal" data-scroll-grow data-inview-video>
+            <span class="company-visual__circle"><video muted loop playsinline preload="none" poster="assets/video/inversionistas-poster.jpg" aria-hidden="true"><source src="assets/video/inversionistas.mp4" type="video/mp4"></video></span>
+            <ul class="company-visual__tags" role="list" aria-label="Regiones de operación">
+              <li class="company-visual__tag t-ui-small-strong">Los Lagos</li>
+              <li class="company-visual__tag t-ui-small-strong">Aysén</li>
+              <li class="company-visual__tag t-ui-small-strong">Magallanes</li>
+            </ul>
+          </figure>
+        </div>
+        <ul class="stats stats--accent home-stats" role="list">
+          <li class="stat reveal"><span class="stat__value t-figure-l t-figure-strong" data-count="34">34</span><span class="stat__label t-small">años de trayectoria</span></li>
+          <li class="stat reveal"><span class="stat__value t-figure-l t-figure-strong" data-count="3500" data-prefix="+">+3.500</span><span class="stat__label t-small">colaboradores</span></li>
+          <li class="stat reveal"><span class="stat__value t-figure-l t-figure-strong" data-count="30" data-suffix="+">30+</span><span class="stat__label t-small">países de destino</span></li>
+          <li class="stat reveal"><span class="stat__value t-figure-l t-figure-strong" data-count="100" data-suffix="%">100%</span><span class="stat__label t-small">integración vertical</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Productos: info breve + accesos (interno y marcas externas) -->
+    <section class="section section--subtle section--open-in section--curve-bottom" aria-labelledby="home-prod-title" data-section-open data-section-curve>
+      <div class="container split">
+        <div class="section-head reveal">
+          <h2 class="t-h2" id="home-prod-title">Your salmon solution partner</h2>
+          <p class="t-body-l section-head__lead">Salmón fresco, congelado y ahumado para retail, food service e industria en más de 30 países. [contenido por definir]</p>
+          <a class="btn btn--tertiary hit" href="productos.html">Ver productos<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+        </div>
+          <ul class="brands" role="list">
+            <li class="reveal" style="--reveal-step: 0">
+              <a class="brand-card" href="#" target="_blank" rel="noopener">
+                <span class="brand-card__media" aria-hidden="true"><video data-hover-video muted loop playsinline preload="none" poster="assets/video/marca-latitude45-poster.jpg"><source src="assets/video/marca-latitude45.mp4" type="video/mp4"></video></span>
+                <span class="brand-card__logo">
+                  <img class="brand-card__logo-color" src="assets/brands/latitude45.png" alt="Latitude 45" width="640" height="173">
+                  <img class="brand-card__logo-white" src="assets/brands/latitude45-blanco.png" alt="" aria-hidden="true" width="640" height="173">
+                </span>
+                <span class="brand-card__cta t-ui-button">Ir al sitio<svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg><span class="visually-hidden"> de Latitude 45 (abre en una pestaña nueva)</span></span>
+              </a>
+            </li>
+            <li class="reveal" style="--reveal-step: 1">
+              <a class="brand-card" href="#" target="_blank" rel="noopener">
+                <span class="brand-card__media" aria-hidden="true"><video data-hover-video muted loop playsinline preload="none" poster="assets/video/marca-arkafjord-poster.jpg"><source src="assets/video/marca-arkafjord.mp4" type="video/mp4"></video></span>
+                <span class="brand-card__logo">
+                  <img class="brand-card__logo-color" src="assets/brands/arkafjord.png" alt="Arka Fjord" width="640" height="202">
+                  <img class="brand-card__logo-white" src="assets/brands/arkafjord-blanco.png" alt="" aria-hidden="true" width="640" height="202">
+                </span>
+                <span class="brand-card__cta t-ui-button">Ir al sitio<svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg><span class="visually-hidden"> de Arka Fjord (abre en una pestaña nueva)</span></span>
+              </a>
+            </li>
+          </ul>
+      </div>
+    </section>
+
+    <!-- Sustentabilidad: cifras destacadas + acceso -->
+    <section class="section" aria-labelledby="home-sus-title">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <h2 class="t-h2" id="home-sus-title">Producir cuidando el sur de Chile</h2>
+          <p class="t-body-l section-head__lead">Metas medibles en bienestar animal, emisiones y comunidades, reportadas cada año. [contenido por definir]</p>
+        </div>
+        <ul class="stats stats--accent" role="list">
+          <li class="stat reveal"><span class="stat__value t-figure-l t-figure-strong" data-count="100" data-suffix="%">100%</span><span class="stat__label t-small">centros de mar con certificación ASC</span></li>
+          <li class="stat reveal"><span class="stat__value t-figure-l t-figure-strong" data-count="18" data-prefix="−" data-suffix="%">−18%</span><span class="stat__label t-small">emisiones desde 2020 (meta −30% al 2030)</span></li>
+          <li class="stat reveal"><span class="stat__value t-figure-l t-figure-strong" data-count="72" data-suffix="%">72%</span><span class="stat__label t-small">compras a proveedores locales</span></li>
+          <li class="stat reveal"><span class="stat__value t-figure-l t-figure-strong" data-count="41" data-suffix="%">41%</span><span class="stat__label t-small">energía renovable en plantas</span></li>
+        </ul>
+        <div class="home-cta reveal"><a class="btn btn--secondary hit" href="#">Ir a Sustentabilidad<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a></div>
+      </div>
+    </section>
+
+    <!-- Inversionistas: últimos resultados, próximo evento y acceso -->
+    <section class="section section--subtle section--open-in section--curve-bottom" aria-labelledby="home-ir-title" data-section-open data-section-curve>
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="t-h2" id="home-ir-title">Inversionistas</h2>
+          <p class="t-body-l section-head__lead">Resultados, documentos y eventos para accionistas, analistas e inversionistas. [contenido por definir]</p>
+        </div>
+        <div class="ir-pair">
+          <div class="reveal">
+            <h3 class="t-ui-strong home-ir__subtitle">Últimos resultados · Q2 2026</h3>
+            <div class="doc-list">
+              <div class="doc-row">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Presentación de resultados Q2 2026</span><span class="doc-row__meta">28 ago 2026 · PDF 4,6 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">Presentación</span>
+                <a class="doc-link doc-row__action" href="#" download>Descargar<span class="visually-hidden"> Presentación de resultados Q2 2026</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
+              </div>
+              <div class="doc-row">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Estados financieros consolidados Q2 2026</span><span class="doc-row__meta">27 ago 2026 · PDF 2,1 MB</span></span>
+                <span class="badge badge--neutral doc-row__badge">EEFF</span>
+                <a class="doc-link doc-row__action" href="#" download>Descargar<span class="visually-hidden"> Estados financieros consolidados Q2 2026</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
+              </div>
+            </div>
+            <a class="btn btn--tertiary hit" href="centro-de-resultados.html">Ir al Centro de Resultados<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </div>
+          <div class="reveal">
+            <h3 class="t-ui-strong home-ir__subtitle">Próximo evento</h3>
+            <div class="ir-event">
+              <div class="event">
+                <time class="event__date" datetime="2026-11-12"><span class="t-figure-m">12</span><span class="t-label">Nov 2026</span></time>
+                <div class="event__body">
+                  <p class="t-h3">Publicación de resultados Q3 2026</p>
+                  <p class="t-small event__detail">Conferencia telefónica 13 nov · 11:00 h (CLT) [contenido por definir]</p>
+                </div>
+              </div>
+              <a class="btn btn--tertiary hit" href="inversionistas.html">Ir a Inversionistas<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trabaja con nosotros: ofertas por región + accesos -->
+    <section class="section" aria-labelledby="home-jobs-title">
+      <div class="container split">
+        <div class="section-head reveal">
+          <h2 class="t-h2" id="home-jobs-title">Trabaja con nosotros</h2>
+          <p class="t-body-l section-head__lead">Más de 3.500 personas hacen posible nuestro salmón. Busca tu oportunidad en la región donde vives. [contenido por definir]</p>
+          <a class="btn btn--tertiary hit" href="#">Ver todas las ofertas<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+        </div>
+        <div class="reveal">
+          <ul class="offer-list" role="list" aria-label="Ofertas laborales por región">
+            <li>
+              <a class="offer-row" href="#">
+                <span class="offer-row__body"><span class="t-h3 offer-row__region">Los Lagos</span><span class="t-small offer-row__places">Puerto Montt, Calbuco y Chiloé</span></span>
+                <span class="t-ui-small-strong offer-row__count">12 ofertas</span>
+                <span class="offer-row__arrow"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
+              </a>
+            </li>
+            <li>
+              <a class="offer-row" href="#">
+                <span class="offer-row__body"><span class="t-h3 offer-row__region">Aysén</span><span class="t-small offer-row__places">Puerto Aysén y Puerto Chacabuco</span></span>
+                <span class="t-ui-small-strong offer-row__count">5 ofertas</span>
+                <span class="offer-row__arrow"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
+              </a>
+            </li>
+            <li>
+              <a class="offer-row" href="#">
+                <span class="offer-row__body"><span class="t-h3 offer-row__region">Magallanes</span><span class="t-small offer-row__places">Punta Arenas y Puerto Natales</span></span>
+                <span class="t-ui-small-strong offer-row__count">3 ofertas</span>
+                <span class="offer-row__arrow"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
+              </a>
+            </li>
+            <li>
+              <a class="offer-row" href="#">
+                <span class="offer-row__body"><span class="t-h3 offer-row__region">Santiago</span><span class="t-small offer-row__places">Oficinas corporativas</span></span>
+                <span class="t-ui-small-strong offer-row__count">4 ofertas</span>
+                <span class="offer-row__arrow"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
+              </a>
+            </li>
+            <li>
+              <a class="offer-row" href="#">
+                <span class="offer-row__body"><span class="t-h3 offer-row__region">Miami</span><span class="t-small offer-row__places">Oficina comercial</span></span>
+                <span class="t-ui-small-strong offer-row__count">1 oferta</span>
+                <span class="offer-row__arrow"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Noticias: últimas publicadas -->
+    <section class="section section--subtle section--open-in" aria-labelledby="home-news-title" data-section-open>
+      <div class="container">
+        <div class="news-head reveal">
+          <h2 class="t-h2" id="home-news-title">Noticias</h2>
+          <a class="btn btn--tertiary hit" href="#">Ver todas las noticias<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+        </div>
+        <ul class="news-list" role="list">
+          <li class="reveal" style="--reveal-step: 0">
+            <article class="news-item">
+              <a class="news-item__link" href="#">
+                <span class="news-item__media"><img src="assets/img/noticia-destacada.jpg" alt="" loading="lazy"></span>
+                <span class="t-label news-item__tag">Sustentabilidad · 14 oct 2026</span>
+                <span class="t-h3 news-item__title">Multi X obtiene la recertificación ASC en sus centros de Aysén [contenido por definir]</span>
+                <span class="news-item__cta t-ui-button">Leer noticia<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
+              </a>
+            </article>
+          </li>
+          <li class="reveal" style="--reveal-step: 1">
+            <article class="news-item">
+              <a class="news-item__link" href="#">
+                <span class="news-item__media"><img src="assets/video/productos-poster.jpg" alt="" loading="lazy"></span>
+                <span class="t-label news-item__tag">Productos · 2 oct 2026</span>
+                <span class="t-h3 news-item__title">Nueva línea de porciones congeladas para retail en Estados Unidos [contenido por definir]</span>
+                <span class="news-item__cta t-ui-button">Leer noticia<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
+              </a>
+            </article>
+          </li>
+          <li class="reveal" style="--reveal-step: 2">
+            <article class="news-item">
+              <a class="news-item__link" href="#">
+                <span class="news-item__media"><img src="assets/video/hero-poster.jpg" alt="" loading="lazy"></span>
+                <span class="t-label news-item__tag">Compañía · 18 sep 2026</span>
+                <span class="t-h3 news-item__title">Inauguramos un nuevo centro de cultivo con tecnología de monitoreo remoto [contenido por definir]</span>
+                <span class="news-item__cta t-ui-button">Leer noticia<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
+              </a>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
   </main>
 
   <site-footer></site-footer>

@@ -160,6 +160,8 @@ Patrón único para toda la documentación del sitio (Inversionistas, Gobernanza
 - **Cifras en coral (`.stats--accent`):** variante de "En una mirada" con las cifras en Coral 500, usada en Inversionistas.
 - **Sin cajas en la documentación:** la lista por año (`.doc-years`) y el estado vacío pasan de caja con borde y fondo a líneas arriba y abajo.
 - **Compañía integrada (`.company` + `.company-visual`):** texto a la izquierda y un círculo con video a la derecha que crece con el scroll y se reproduce solo a la vista; alrededor, etiquetas de las regiones de operación (blancas, con punto Coral 500) que aparecen en secuencia.
+- **Ofertas por región (`.offer-list` + `.offer-row`):** filas abiertas separadas por líneas: región (Título 3), localidades, cantidad de ofertas y flecha que avanza con el hover. Toda la fila es el enlace. Home › Trabaja con nosotros.
+- **Noticias (`.news-head` + `.news-list` + `.news-item`):** encabezado con "Ver todas las noticias" a la derecha y tres notas abiertas (sin caja): foto con leve acercamiento en hover, sección y fecha (Etiqueta, Coral 600), título (Título 3) y "Leer noticia". Home › Noticias.
 - **Contacto IR:** etiqueta, nombre, cargo, teléfono y correo clickeables. Bloque transversal `<ir-contact>` en `js/layout.js`.
 
 ### Sustentabilidad y Productos (node 75-902)

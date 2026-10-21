@@ -5268,3 +5268,178 @@ html:not(.js) .company-visual__tag {
     width: 88%;
   }
 }
+
+/* ==========================================================================
+   Home
+   ========================================================================== */
+
+/* Cifras bajo la composición de Quiénes somos */
+.home-stats {
+  margin-top: var(--space-64);
+}
+
+.home-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-48);
+}
+
+.home-ir__subtitle {
+  margin-bottom: var(--space-16);
+  color: var(--color-text-primary);
+}
+
+/* En el home, las marcas van a la derecha del encabezado */
+.split > .brands {
+  gap: var(--space-24);
+}
+
+.split .section-head .btn {
+  margin-top: var(--space-8);
+}
+
+/* Ofertas por región (Trabaja con nosotros): filas abiertas con líneas; toda la
+   fila es el enlace; la flecha avanza con el hover. */
+.offer-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: var(--border-thin) solid var(--color-border-default);
+}
+
+.offer-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: var(--space-16);
+  min-height: var(--touch-target);
+  padding: var(--space-20) 0;
+  color: var(--color-text-primary);
+  border-top: var(--border-thin) solid var(--color-border-default);
+}
+
+.offer-row__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.offer-row__places {
+  color: var(--color-text-secondary);
+}
+
+.offer-row__count {
+  color: var(--color-text-brand);
+  white-space: nowrap;
+}
+
+.offer-row__arrow {
+  display: inline-flex;
+  color: var(--color-text-brand);
+  transition: transform var(--duration-base) var(--easing-standard);
+}
+
+.offer-row:hover .offer-row__region {
+  color: var(--color-text-brand);
+}
+
+.offer-row:hover .offer-row__arrow {
+  transform: translateX(var(--space-6));
+}
+
+/* Noticias: encabezado con enlace a la derecha; tres notas abiertas (sin caja):
+   foto, sección y fecha, título y "Leer noticia". Slider en mobile. */
+.news-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-16);
+  margin-bottom: var(--space-40);
+}
+
+.news-list {
+  display: flex;
+  gap: var(--space-16);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  margin: 0 calc(-1 * var(--layout-gutter));
+  padding: 0 var(--layout-gutter);
+  scroll-padding-inline: var(--layout-gutter);
+  list-style: none;
+}
+
+.news-list::-webkit-scrollbar {
+  display: none;
+}
+
+.news-list > li {
+  flex: 0 0 85%;
+  scroll-snap-align: start;
+}
+
+.news-item__link {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  color: var(--color-text-primary);
+}
+
+.news-item__media {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  margin-bottom: var(--space-8);
+  border-radius: var(--radius-xl);
+  background: var(--color-bg-muted);
+}
+
+.news-item__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-reveal) var(--easing-out);
+}
+
+.news-item__tag {
+  color: var(--color-text-accent);
+}
+
+.news-item__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  min-height: var(--touch-target);
+  color: var(--color-text-brand);
+}
+
+.news-item__link:hover .news-item__media img {
+  transform: scale(1.04);
+}
+
+.news-item__link:hover .news-item__title {
+  color: var(--color-text-brand);
+}
+
+@media (min-width: 768px) {
+  .news-list > li {
+    flex-basis: 45%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .home-stats {
+    margin-top: var(--space-96);
+  }
+
+  .news-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-32);
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+  }
+}

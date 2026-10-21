@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Home con sus secciones
+- Código ✓ · El home reemplaza los bloques vacíos por las secciones del mapa de navegación (FigJam): Quiénes somos (texto, círculo con video y regiones, 4 cifras en coral, acceso a Nosotros), Productos (bajada, acceso a Productos y marcas con hover), Sustentabilidad (4 cifras + acceso), Inversionistas (últimos resultados, próximo evento y accesos), Trabaja con nosotros (ofertas por región) y Noticias (tres últimas). Se omite el módulo temporal de acceso a documentación. Fondos alternados con Apertura / Horizonte.
+- Figma pendiente · Código ✓ · Componentes nuevos: `.offer-list` (ofertas por región) y `.news-list` (noticias), sin cajas.
+
 ## 2026-10-21 · Nuevo video del hero de Inversionistas
 - Código ✓ · Reemplazado por Video_Inversionistas_2, cortado a los primeros 45 s y en loop (720p H.264 sin audio, 74 MB → 6,1 MB), con su poster.
 
