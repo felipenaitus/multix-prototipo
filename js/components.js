@@ -11,7 +11,7 @@
    [data-filters]                Barra de filtros (panel inferior en mobile)
    [data-add-calendar]           Agregar al calendario (opciones en mobile)
    video[data-hero-video]        Video de fondo: con movimiento reducido queda la imagen (poster)
-   [data-chain]                  Relato vertical: un paso a la vez, avance solo, línea de secuencia y flechas
+   [data-chain]                  Relato vertical: cada paso alterna solo ilustración / video; flechas para cambiar de paso
    [data-steps]                  Pasos con ilustración que avanzan solos (Soluciones en Productos)
    [data-section-curve]          Borde inferior curvo de una sección que se aplana con el scroll
    video[data-hover-video]       Video que se reproduce solo con hover o foco en su enlace (marcas)
@@ -307,69 +307,65 @@
   }
 
   /* ---------- Relato vertical ([data-chain]) ----------
-     Un paso visible a la vez (.chain__step). Avanzan solos cada 8 ×
-     --duration-reveal mientras el bloque está a la vista; el tramo activo de la
-     línea se llena en ese tiempo. Flechas y tramos permiten ir atrás, adelante o
-     a un paso; el avance automático sigue desde ahí. Se pausa con el mouse o el
-     foco dentro. Con movimiento reducido no avanza solo. */
+     Cada paso (.chain__step) tiene dos instancias que se alternan solas en loop
+     cada 8 × --duration-reveal mientras el bloque está a la vista: (a) ilustración
+     + texto A y (b) video en el círculo + texto B (clase .is-b en el bloque). El
+     paso lo cambia la persona con las flechas o los tramos; al cambiar vuelve a
+     la instancia (a). Con movimiento reducido no alterna solo. */
   function initChain() {
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
     $all('[data-chain]').forEach(function (box) {
       var steps = $all('.chain__step', box);
       var segs = $all('.chain__seg', box);
-      var current = box.querySelector('.chain__current');
       var arrows = $all('.chain__arrow', box);
-      var n = steps.length, i = 0, timer = null, visible = !hasIO, hovering = false;
+      var current = box.querySelector('.chain__current');
+      var video = box.querySelector('.chain__mask video');
+      var n = steps.length, i = 0, b = false, timer = null, visible = !hasIO;
       var interval = cssMs('--duration-reveal') * 8;
 
-      function show(k) {
-        i = (k + n) % n;
+      function render() {
         steps.forEach(function (s, j) {
           s.classList.toggle('is-active', j === i);
           if (j === i) s.removeAttribute('aria-hidden'); else s.setAttribute('aria-hidden', 'true');
         });
         segs.forEach(function (s, j) {
-          s.classList.toggle('is-done', j < i);
-          if (j === i) {
-            s.setAttribute('aria-current', 'step');
-            // Reinicia el llenado del tramo activo
-            var fill = s.querySelector('.chain__seg-fill');
-            fill.style.transition = 'none'; fill.style.transform = 'scaleX(0)'; void fill.offsetWidth;
-            fill.style.transition = ''; fill.style.transform = '';
-          } else {
-            s.removeAttribute('aria-current');
-          }
+          if (j === i) s.setAttribute('aria-current', 'step'); else s.removeAttribute('aria-current');
         });
         if (current) current.textContent = (i + 1 < 10 ? '0' : '') + (i + 1);
+        box.classList.toggle('is-b', b);
+        if (video) {
+          if (b) { var p = video.play(); if (p && p.catch) p.catch(function () {}); } else video.pause();
+        }
       }
 
-      function schedule() {
+      function loop() {
         clearTimeout(timer);
-        var run = visible && !hovering && !reduce.matches && interval > 0;
-        box.classList.toggle('is-paused', !run);
-        box.style.setProperty('--chain-duration', run ? interval + 'ms' : '0ms');
-        if (run) timer = setTimeout(function () { show(i + 1); schedule(); }, interval);
+        if (visible && !reduce.matches && interval > 0) {
+          timer = setTimeout(function () { b = !b; render(); loop(); }, interval);
+        }
       }
 
-      arrows[0].addEventListener('click', function () { show(i - 1); schedule(); });
-      arrows[1].addEventListener('click', function () { show(i + 1); schedule(); });
-      segs.forEach(function (s, j) { s.addEventListener('click', function () { show(j); schedule(); }); });
-      box.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hovering = true; schedule(); } });
-      box.addEventListener('pointerleave', function () { if (hovering) { hovering = false; show(i); schedule(); } });
-      // Solo pausa el foco de teclado: con el mouse, el clic no deja el carrusel detenido
-      box.addEventListener('focusin', function (e) { if (e.target.matches(':focus-visible')) { hovering = true; schedule(); } });
-      box.addEventListener('focusout', function (e) { if (!box.contains(e.relatedTarget)) { hovering = false; schedule(); } });
+      function go(k) {
+        i = (k + n) % n;
+        b = false;
+        render();
+        loop();
+      }
+
+      arrows[0].addEventListener('click', function () { go(i - 1); });
+      arrows[1].addEventListener('click', function () { go(i + 1); });
+      segs.forEach(function (s, j) { s.addEventListener('click', function () { go(j); }); });
 
       if (hasIO) {
         new IntersectionObserver(function (entries) {
-          var was = visible;
           visible = entries[0].isIntersecting;
-          if (visible && !was) show(i);
-          schedule();
-        }, { threshold: 0.2 }).observe(box); // bajo: en tablet el bloque es más alto que la pantalla
+          if (!visible && video) video.pause();
+          else if (visible && b && video) render();
+          loop();
+        }, { threshold: 0.2 }).observe(box);
       }
-      show(0);
-      schedule();
+      render();
+      loop();
     });
   }
 

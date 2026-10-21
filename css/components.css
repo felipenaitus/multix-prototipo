@@ -4531,119 +4531,132 @@ a.pagination__item:hover,
 }
 
 /* Relato vertical "Del cultivo a la mesa" ([data-chain], components.js).
-   Mobile: textura arriba con el círculo y el título; los pasos debajo.
-   Desktop: dos mitades a todo el ancho de la pantalla. A la izquierda, la
-   textura de escamas (assets/img/textura-escama.webp) con un círculo Offwhite que
-   contiene el título y la bajada; a la derecha, un paso a la vez (título,
-   ilustración y descripción) con la línea de secuencia y flechas. Los pasos
-   avanzan solos mientras la sección está a la vista; se pausan con el mouse o el
-   foco dentro y siguen desde el paso elegido. */
-.section--chain {
-  padding-block: 0;
-}
-
+   Arriba a la izquierda, el título de la sección y el paso actual en coral
+   ("01. Genética y ovas"). Al centro, la ilustración del paso sobre un círculo
+   Offwhite. Abajo, la descripción a la izquierda y, a la derecha, la línea de
+   secuencia, el contador y las flechas. Cada paso tiene dos instancias que se
+   alternan solas en loop: (a) ilustración + texto A; (b) el círculo se vuelve
+   una máscara con video, la ilustración desaparece y cambia el texto (B). El
+   paso lo cambia la persona con las flechas o los tramos. */
 .chain {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "title" "sub" "stage" "text" "nav";
+  align-items: center;
 }
 
-.chain__visual {
-  display: grid;
-  place-items: center;
-  aspect-ratio: 1;
-  background: url("../assets/img/textura-escama.webp") center / cover no-repeat; /* la textura no es continua: sin mosaico */
+/* Las partes de cada paso se ubican directo en la grilla */
+.chain__steps,
+.chain__step {
+  display: contents;
 }
 
-.chain__circle {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: var(--space-16);
-  width: 80%;
+.chain__title {
+  grid-area: title;
+  color: var(--color-text-brand);
+}
+
+.chain__sub {
+  grid-area: sub;
+  color: var(--color-text-accent);
+}
+
+/* Composición: círculo con la máscara de video; la ilustración va encima */
+.chain__stage {
+  grid-area: stage;
+  justify-self: center;
+  position: relative;
+  width: 66%;
   aspect-ratio: 1;
-  padding: var(--space-32) 0;
+  margin: var(--space-48) 0;
   border-radius: var(--radius-full);
   background: var(--color-bg-subtle);
-  color: var(--color-text-brand);
 }
 
-.chain__lead {
-  color: var(--color-text-secondary);
+.chain__mask {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: var(--radius-full);
+  clip-path: circle(0% at 50% 50%);
+  transition: clip-path var(--duration-reveal) var(--easing-out);
 }
 
-/* Textos más angostos que el círculo y centrados en él (margen lateral en % del círculo) */
-.chain__circle > * {
-  margin-inline: var(--circle-inset, 18%);
-}
-
-/* En mobile el círculo es chico: bajada en tamaño Pequeño para que quepa */
-@media (max-width: 767px) {
-  .chain__lead {
-    font-size: var(--text-small-size);
-    line-height: var(--text-small-lh);
-  }
-}
-
-.chain__panel {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: var(--space-48);
-  padding: var(--layout-section-gap) var(--layout-gutter);
-}
-
-/* Todos los pasos en la misma celda: el alto no cambia al pasar de uno a otro */
-.chain__steps {
-  display: grid;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.chain__step {
-  grid-area: 1 / 1;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-40);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(calc(var(--motion-reveal-distance) / 2));
-  transition:
-    opacity var(--duration-slow) var(--easing-standard),
-    transform var(--duration-slow) var(--easing-standard),
-    visibility 0s linear var(--duration-slow);
-}
-
-.chain__step.is-active {
-  opacity: 1;
-  visibility: visible;
-  transform: none;
-  transition-delay: 0s;
-}
-
-.chain__step-title {
-  color: var(--color-text-brand);
+.chain__mask video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+  transition: transform var(--duration-reveal) var(--easing-out);
 }
 
 .chain__img {
-  width: 100%;
-  aspect-ratio: 16 / 10;
+  grid-area: stage;
+  justify-self: center;
+  position: relative;
+  width: 92%;
   height: auto;
-  object-fit: contain;
 }
 
-.chain__step-text {
-  max-width: 80%;
-  color: var(--color-text-secondary);
+.chain__text {
+  grid-area: text;
+  align-self: start;
+  color: var(--color-text-brand);
 }
 
-/* Línea de secuencia: un tramo por paso; el activo se llena con el tiempo */
 .chain__nav {
+  grid-area: nav;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto auto;
   align-items: center;
   gap: var(--space-16);
+  margin-top: var(--space-32);
 }
 
+/* Paso activo e instancias */
+.chain__step > *,
+.chain__text {
+  transition:
+    opacity var(--duration-slow) var(--easing-standard),
+    visibility 0s linear var(--duration-slow);
+}
+
+.chain__step:not(.is-active) > *,
+.chain:not(.is-b) .chain__text--b,
+.chain.is-b .chain__text--a {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.chain__step.is-active > *,
+.chain:not(.is-b) .chain__text--a,
+.chain.is-b .chain__step.is-active .chain__text--b {
+  transition-delay: 0s;
+}
+
+.chain__img {
+  transition:
+    opacity var(--duration-reveal) var(--easing-out),
+    transform var(--duration-reveal) var(--easing-out),
+    visibility 0s linear var(--duration-reveal);
+}
+
+.chain.is-b .chain__img {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(.94);
+}
+
+.chain.is-b .chain__mask {
+  clip-path: circle(50% at 50% 50%);
+}
+
+.chain.is-b .chain__mask video {
+  transform: scale(1);
+}
+
+/* Línea de secuencia: un tramo por paso; el activo en Coral 500 */
 .chain__segs {
   display: flex;
   gap: var(--space-4);
@@ -4661,34 +4674,18 @@ a.pagination__item:hover,
 }
 
 .chain__seg-line {
-  position: relative;
   flex: 1;
   height: var(--border-indicator);
-  overflow: hidden;
   background: var(--color-border-default);
+  transition: background-color var(--duration-base) var(--easing-standard);
 }
 
-.chain__seg-fill {
-  position: absolute;
-  inset: 0;
-  background: var(--color-bg-brand);
-  transform: scaleX(0);
-  transform-origin: left;
+.chain__seg:hover .chain__seg-line {
+  background: var(--color-border-strong);
 }
 
-/* Pasos ya vistos: llenos en Navy; el activo se llena en Coral 500 */
-.chain__seg.is-done .chain__seg-fill {
-  transform: scaleX(1);
-}
-
-.chain__seg[aria-current="step"] .chain__seg-fill {
+.chain__seg[aria-current="step"] .chain__seg-line {
   background: var(--color-bg-accent-hover);
-  transform: scaleX(1);
-  transition: transform var(--chain-duration, 0ms) linear;
-}
-
-.chain.is-paused .chain__seg[aria-current="step"] .chain__seg-fill {
-  transition: none;
 }
 
 .chain__count {
@@ -4713,9 +4710,7 @@ a.pagination__item:hover,
   border: var(--border-thin) solid var(--color-border-default);
   border-radius: var(--radius-full);
   cursor: pointer;
-  transition:
-    border-color var(--duration-fast) var(--easing-standard),
-    color var(--duration-fast) var(--easing-standard);
+  transition: border-color var(--duration-fast) var(--easing-standard);
 }
 
 .chain__arrow:hover {
@@ -4727,56 +4722,52 @@ a.pagination__item:hover,
 }
 
 @media (min-width: 768px) {
-  /* Tablet: franja más baja para no ocupar toda la pantalla */
-  .chain__visual {
-    aspect-ratio: 3 / 2;
+  .chain {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas: "title title" "sub sub" "stage stage" "text nav";
+    column-gap: var(--space-48);
   }
 
-  .chain__circle {
+  .chain__stage {
     width: 46%;
-    padding: var(--space-48) 0;
-    --circle-inset: 22%;
   }
 
   .chain__img {
-    width: 80%;
+    width: 66%;
+  }
+
+  .chain__text {
+    max-width: 70%;
+  }
+
+  .chain__nav {
+    align-self: end;
+    margin-top: 0;
   }
 }
 
+/* Desktop: casi a pantalla completa; la composición ocupa el espacio central */
 @media (min-width: 1280px) {
   .chain {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto auto minmax(0, 1fr) auto;
+    min-height: max(calc(5 * var(--space-128)), 76vh);
   }
 
-  .chain__visual {
-    aspect-ratio: auto;
-    min-height: max(calc(6 * var(--space-128)), 92vh);
-  }
-
-  .chain__circle {
-    width: 62%;
-    padding: var(--space-64) 0;
-    --circle-inset: 24%;
-  }
-
-  /* El contenido del panel termina en el borde derecho del contenedor */
-  .chain__panel {
-    padding: var(--space-96) max(var(--layout-gutter), calc(100% - var(--layout-content-width) / 2)) var(--space-96) var(--space-96);
-  }
-
-  .chain__panel {
-    gap: var(--space-64);
-  }
-
-  .chain__step {
-    gap: var(--space-48);
-  }
-
-  .chain__step-text {
-    max-width: 64%;
+  .chain__stage {
+    width: 32%;
+    margin: var(--space-32) 0;
   }
 
   .chain__img {
-    width: 90%;
+    width: 48%;
+  }
+
+  .chain__text {
+    max-width: 52%;
+  }
+
+  .chain__nav {
+    justify-self: end;
+    width: 80%;
   }
 }

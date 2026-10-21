@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Del cultivo a la mesa: nuevo diseño con dos instancias por paso
+- Figma pendiente · Código ✓ · Se rediseña según la nueva referencia de Felipe: título y paso actual en coral arriba a la izquierda, ilustración sobre círculo al centro, descripción abajo a la izquierda y línea de secuencia con flechas abajo a la derecha. Se deja de usar la textura de escamas (el archivo queda en assets/img).
+- Figma pendiente · Código ✓ · Cada paso alterna solo entre ilustración + texto A y video en el círculo (por ahora el de Arka Fjord) + texto B. El cambio de paso es manual (flechas o tramos).
+
 ## 2026-10-21 · Catálogo con fondo propio; Del cultivo a la mesa más inmersivo
 - Código ✓ · Nuestras marcas y la descarga del catálogo pasan a secciones separadas: marcas en blanco, catálogo en Offwhite. Del cultivo a la mesa pasa a fondo blanco.
 - Código ✓ · Del cultivo a la mesa ocupa casi toda la pantalla en desktop (mín. 768 px o 92 % del alto de la ventana). Círculo más chico (62 % de su mitad en desktop, 46 % en tablet, 80 % en mobile) con los textos más angostos; más aire entre título, ilustración, descripción y línea de secuencia.
