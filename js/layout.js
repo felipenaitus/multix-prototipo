@@ -240,6 +240,7 @@
   }
 
   var desktopMq = window.matchMedia('(min-width: 1280px)');
+  var mobileMq = window.matchMedia('(max-width: 767px)');
   var hoverMq = window.matchMedia('(hover: hover) and (pointer: fine)');
 
   /* ======================================================================
@@ -547,8 +548,10 @@
       this.dataset.state = overlayVariant && !scrolled ? 'transparent' : 'solid';
 
       // Textos claros sobre el hero y con el menú abierto (logo y X blancos sobre el
-      // fondo oscurecido); en el resto del sitio, header blanco con textos oscuros
-      this.dataset.tone = this.dataset.state === 'transparent' || menuOpen ? 'dark' : 'light';
+      // fondo oscurecido); en el resto del sitio, header blanco con textos oscuros.
+      // En mobile el menú es una pantalla blanca: header blanco con el logo en color.
+      var menuSheet = menuOpen && mobileMq.matches;
+      this.dataset.tone = !menuSheet && (this.dataset.state === 'transparent' || menuOpen) ? 'dark' : 'light';
 
       // Borde inferior visible del header (para ubicar el panel del menú)
       var bottom = compact ? mainCompact : util + main;
@@ -818,12 +821,24 @@
               return '<li><a class="subnav__link t-ui-nav' + (on ? ' is-current' : '') + '" href="' + url(p.href) + '"' + (on ? ' aria-current="page"' : '') + '>' + esc(p.short || p.label) + '</a></li>';
             }).join('') +
           '</ul>' +
+          '<button type="button" class="subnav__more" aria-label="Ver más secciones" hidden>' + icon('chev-right') + '</button>' +
         '</nav>';
+      var list = this.querySelector('.subnav__list');
+      var more = this.querySelector('.subnav__more');
       var active = this.querySelector('.is-current');
       if (active && active.scrollIntoView) {
-        var list = this.querySelector('.subnav__list');
         list.scrollLeft = active.offsetLeft - (list.clientWidth - active.offsetWidth) / 2;
       }
+      // La flecha indica que hay más secciones a la derecha; se oculta al final
+      function updateMore() {
+        more.hidden = list.scrollLeft + list.clientWidth >= list.scrollWidth - 2;
+      }
+      more.addEventListener('click', function () {
+        list.scrollBy({ left: list.clientWidth * 0.6, behavior: 'smooth' });
+      });
+      list.addEventListener('scroll', updateMore, { passive: true });
+      window.addEventListener('resize', updateMore);
+      updateMore();
     }
   }
 

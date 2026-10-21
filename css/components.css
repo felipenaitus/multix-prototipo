@@ -868,9 +868,17 @@
   color: var(--color-text-secondary);
 }
 
+/* Mobile: el tipo va como texto alineado con el título (sin relleno de etiqueta);
+   desde tablet, etiqueta al final de la fila */
 .doc-row__badge {
   grid-column: 2;
   justify-self: start;
+}
+
+.doc-row .doc-row__badge {
+  padding-inline: 0;
+  border: 0;
+  background: none;
 }
 
 /* Mobile: "Descargar" debajo de los datos; desde tablet, al final de la fila */
@@ -921,6 +929,11 @@
 
   .doc-row__badge {
     grid-column: auto;
+  }
+
+  .doc-row .doc-row__badge {
+    padding-inline: var(--space-12);
+    background: var(--color-bg-subtle);
   }
 
   .doc-row .doc-row__action {
@@ -1287,8 +1300,9 @@ a.pagination__item:hover,
 }
 
 /* Botones de agendar: fila de botones pequeños en desktop; un botón que abre las opciones en mobile */
+/* "Agendar" seguido de Google y Outlook, siempre desplegados (también en mobile) */
 .add-calendar__toggle {
-  align-self: flex-start;
+  display: none;
 }
 
 .add-calendar__options {
@@ -1301,34 +1315,9 @@ a.pagination__item:hover,
 }
 
 .add-calendar__label {
-  display: none;
+  display: inline-flex;
   align-self: center;
   color: var(--color-text-secondary);
-}
-
-.add-calendar.js-ready:not(.is-open) .add-calendar__options {
-  display: none;
-}
-
-.add-calendar.is-open .add-calendar__options {
-  margin-top: var(--space-12);
-  animation: fade-up var(--duration-base) var(--easing-out);
-}
-
-@media (min-width: 768px) {
-  .add-calendar__toggle {
-    display: none;
-  }
-
-  .add-calendar__label {
-    display: inline-flex;
-  }
-
-  .add-calendar.js-ready:not(.is-open) .add-calendar__options,
-  .add-calendar__options {
-    display: flex;
-    margin-top: 0;
-  }
 }
 
 /* Acción */
@@ -2274,6 +2263,16 @@ a.pagination__item:hover,
 
 .site-header.is-menu-open .header__utility-inner {
   pointer-events: none;
+}
+
+/* Mobile: el menú es una pantalla completa blanca, así que el header también
+   queda blanco, con el logo en su color (el tono claro lo pone layout.js) */
+@media (max-width: 767px) {
+  .site-header.is-menu-open .header__bg {
+    opacity: 1;
+    visibility: visible;
+    background: var(--color-bg-page);
+  }
 }
 
 /* Mobile y tablet: se oculta al bajar y aparece al subir */
@@ -5047,6 +5046,49 @@ body:has(.site-header.is-hidden) .subnav {
 
 .subnav__list::-webkit-scrollbar {
   display: none;
+}
+
+/* Indicador de más secciones a la derecha: flecha sobre un fundido blanco.
+   Aparece solo si la tira se desborda y desaparece al llegar al final; al
+   tocarla, la tira avanza. */
+.subnav__inner {
+  position: relative;
+}
+
+.subnav__more {
+  position: absolute;
+  top: 0;
+  right: var(--layout-gutter);
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: var(--touch-target);
+  padding: 0;
+  border: 0;
+  background: var(--color-bg-page);
+  color: var(--color-text-brand);
+  cursor: pointer;
+  transition:
+    opacity var(--duration-fast) var(--easing-standard),
+    visibility 0s linear var(--duration-fast);
+}
+
+.subnav__more::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 100%;
+  bottom: 0;
+  width: var(--space-32);
+  background: linear-gradient(to right, transparent, var(--color-bg-page));
+  pointer-events: none;
+}
+
+.subnav__more[hidden] {
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .subnav__link {

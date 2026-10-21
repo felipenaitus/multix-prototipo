@@ -4,6 +4,12 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Ajustes de mobile
+- Código ✓ · Agendar: en mobile las dos opciones (Google, Outlook) quedan siempre a la vista, como en desktop; se quita el botón que las desplegaba.
+- Código ✓ · Menú hamburguesa en mobile: el header queda blanco con el logo en su color mientras el menú está abierto.
+- Figma pendiente · Código ✓ · Sub-menú de Inversionistas: flecha a la derecha sobre un fundido blanco que indica más secciones (`.subnav__more`); avanza la tira y desaparece al llegar al final.
+- Código ✓ · Centro de Resultados en mobile: el tipo de documento va como texto alineado con el título (sin relleno de etiqueta). Desde tablet sigue como etiqueta.
+
 ## 2026-10-21 · Contenedores blancos sobre crema
 - Código ✓ · Regla nueva: sobre fondo crema, los contenedores de ícono y de fecha son blancos. Se aplica a la fecha del evento (`.event__date`), que se suma al ícono de documento.
 - Código ✓ · Últimos reportes (home): el tipo de documento va sin relleno, alineado con el título y los datos.
