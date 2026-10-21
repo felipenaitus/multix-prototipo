@@ -3408,6 +3408,29 @@ a.pagination__item:hover,
   }
 }
 
+/* Sección que continúa a la anterior (mismo fondo): sin espacio arriba propio; el
+   contenido parte con una línea delgada y el aire de sección. Ej.: Preguntas
+   frecuentes después de Contacto. */
+.section--continued {
+  padding-top: 0;
+}
+
+.section--continued > .container {
+  position: relative;
+  padding-top: var(--layout-section-gap);
+}
+
+/* Línea al ancho del contenido (sin los márgenes laterales del contenedor) */
+.section--continued > .container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--layout-gutter);
+  right: var(--layout-gutter);
+  height: var(--border-thin);
+  background: var(--color-border-default);
+}
+
 /* Variante centrada: para bloques de composición simétrica (por ejemplo, las marcas) */
 .section-head--center {
   align-items: center;

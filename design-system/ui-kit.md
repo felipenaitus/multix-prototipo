@@ -173,6 +173,7 @@ Patrón único para toda la documentación del sitio (Inversionistas, Gobernanza
 - **Hero con acción a la derecha (`.hero__content--split`):** textos (etiqueta, Display y bajada) a la izquierda y la acción a la derecha, alineada abajo dentro del ancho de contenido.
 - **Certificaciones en grilla (`.cert-grid` + `.cert-card`):** para 8 o más certificaciones. Cada certificación es una celda abierta con una línea delgada arriba (sin caja): espacio de logo (por ahora vacío, sin relleno), sigla y nombre completo; al tocarla despliega la descripción, qué cubre, vigencia y el certificado. Reemplaza a la lista de certificaciones en Productos.
 - **Borde inferior curvo (`.section--curve-bottom[data-section-curve]`):** en vez del corte recto, la sección termina en un arco suave (parábola, del color de su fondo) que se monta sobre la siguiente y se aplana con el scroll. Alto máximo: 40 px en mobile, 64 en tablet y 96 en desktop. En prueba solo entre Mercados y Nuestras marcas.
+- **Sección continua (`.section--continued`):** cuando una sección sigue a otra con el mismo fondo y están asociadas (Preguntas frecuentes después de Contacto), se separan con una línea delgada al ancho del contenido en vez de duplicar el espacio.
 - **Contacto comercial:** reutiliza `<ir-contact>` con `label` propio. Una sola persona de contacto.
 
 ### Hero con franja temporal (node 75-921)

@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Productos: fondos de Certificaciones, Contacto y Preguntas frecuentes
+- Código ✓ · Certificaciones pasa a fondo Offwhite; Contacto y Preguntas frecuentes a blanco. Preguntas frecuentes queda asociada a Contacto, separada por una línea delgada (nueva variante `.section--continued`).
+
 ## 2026-10-21 · Cifras de Mercados en coral corporativo
 - Decisión · Felipe mantiene el coral corporativo en las cifras: el tamaño y el peso (Cifra L, Sora 600) compensan el contraste. Queda como excepción documentada a CLAUDE.md §4, solo para estas cifras.
 - Código ✓ · Por pedido de Felipe, las tres cifras pasan a Coral 500 (coral corporativo) para probar. Advertencia: sobre el fondo Offwhite contrasta 2,86:1 y no llega al mínimo AA de 3:1 para texto grande (CLAUDE.md §4). Si se mantiene, hay que oscurecer un poco el coral de las cifras o ponerlas sobre fondo blanco (3,08:1).
