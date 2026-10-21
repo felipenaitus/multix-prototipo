@@ -76,9 +76,10 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 - Al cambiar de paso: la descripción aparece con `fade-up` (`--duration-slow`) la ilustración del paso entra con un fundido y un leve desplazamiento hacia arriba, y el círculo se desplaza y cambia de tamaño hasta la ubicación de ese paso, todo en `--duration-reveal`.
 - Se pausan con el mouse o el foco dentro de la sección y se detienen del todo cuando la persona elige un paso. Con movimiento reducido no avanzan solos.
 
-## Firma · Órbita de puntos (solo Productos › Soluciones)
+## Firma · Órbita de puntos (Productos › Soluciones y home › Productos)
 - 6 puntos Coral 500 sobre el borde del círculo (entre 1,05 y 1,14 veces su radio). Cada uno aparece, recorre un tramo corto de la órbita (14° a 20°, en un sentido u otro) y se desvanece, en loop y desfasados (5,6 a 7,6 s, según 7 a 9,5 × `--duration-reveal`). Cada punto se ve cerca de la mitad de su ciclo, así que nunca están todos a la vista a la vez.
 - La órbita acompaña al círculo: su posición y tamaño en cada paso (`--duration-reveal`) y su escala con el scroll.
+- En el home acompaña al círculo con video (`.media-circle`): sigue al círculo completo y crece con él (15 %) al abrir el video.
 - Con movimiento reducido no aparecen (las duraciones quedan en 0 y su opacidad base es 0).
 - Descartadas antes: constelación que reaccionaba al mouse, burbujas que subían y círculo que mostraba un video en hover.
 

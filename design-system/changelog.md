@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Puntos en órbita en el home
+- Código ✓ · El círculo con video de home › Productos suma la órbita de puntos Coral 500 de Productos › Soluciones; los puntos crecen con el círculo al abrir el video.
+
 ## 2026-10-21 · Ajustes de mobile
 - Código ✓ · Agendar: en mobile las dos opciones (Google, Outlook) quedan siempre a la vista, como en desktop; se quita el botón que las desplegaba.
 - Código ✓ · Menú hamburguesa en mobile: el header queda blanco con el logo en su color mientras el menú está abierto.

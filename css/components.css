@@ -5502,7 +5502,18 @@ html:not(.js) .company-visual__tag {
   animation: chain-hint-pulse calc(var(--duration-reveal) * 3) var(--easing-out) infinite;
 }
 
-.media-circle.is-open .media-circle__disc {
+/* Órbita de puntos de Productos › Soluciones: aquí sigue al círculo completo y
+   crece con él al abrir el video */
+.media-circle .steps__orbit {
+  left: 0;
+  top: 0;
+  width: 100%;
+  transform: none;
+  transition: scale var(--duration-reveal) var(--easing-out);
+}
+
+.media-circle.is-open .media-circle__disc,
+.media-circle.is-open .steps__orbit {
   scale: 1.15;
 }
 
