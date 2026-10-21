@@ -979,7 +979,70 @@
       </div>
 
       <div class="kit-block">
-        <h3 class="t-label kit-block__title">Cadena de valor · nuevo (fila en desktop, 3 columnas en tablet, línea vertical en mobile)</h3>
+        <h3 class="t-label kit-block__title">Relato vertical · nuevo (<code>[data-chain]</code>: textura con círculo + pasos que avanzan solos, con línea de secuencia y flechas)</h3>
+        <div class="section--subtle section--chain">
+          <div class="chain" data-chain>
+            <div class="chain__visual reveal">
+              <div class="chain__circle">
+                <h4 class="t-h2">Del cultivo a la mesa</h4>
+                <p class="t-body chain__lead">Controlamos cada etapa de la cadena, desde la ova hasta el despacho, para asegurar trazabilidad y calidad constante. [contenido por definir]</p>
+              </div>
+            </div>
+            <div class="chain__panel reveal" role="group" aria-roledescription="carrusel" aria-label="Etapas de la cadena">
+              <ol class="chain__steps" role="list">
+                <li class="chain__step is-active" id="kit-chain-paso-1">
+                  <h3 class="t-h2 chain__step-title">Genética y ovas</h3>
+                  <img class="chain__img" src="assets/img/ova.webp" alt="" width="800" height="480" loading="lazy">
+                  <p class="t-body chain__step-text">Programa genético propio para peces sanos y de crecimiento eficiente. [contenido por definir]</p>
+                </li>
+                <li class="chain__step" id="kit-chain-paso-2" aria-hidden="true">
+                  <h3 class="t-h2 chain__step-title">Agua dulce</h3>
+                  <img class="chain__img" src="assets/img/ova.webp" alt="" width="800" height="480" loading="lazy">
+                  <p class="t-body chain__step-text">Pisciculturas con recirculación donde crecen alevines y smolts. [contenido por definir]</p>
+                </li>
+                <li class="chain__step" id="kit-chain-paso-3" aria-hidden="true">
+                  <h3 class="t-h2 chain__step-title">Centros de mar</h3>
+                  <img class="chain__img" src="assets/img/ova.webp" alt="" width="800" height="480" loading="lazy">
+                  <p class="t-body chain__step-text">Engorda en las regiones de Los Lagos, Aysén y Magallanes. [contenido por definir]</p>
+                </li>
+                <li class="chain__step" id="kit-chain-paso-4" aria-hidden="true">
+                  <h3 class="t-h2 chain__step-title">Cosecha</h3>
+                  <img class="chain__img" src="assets/img/ova.webp" alt="" width="800" height="480" loading="lazy">
+                  <p class="t-body chain__step-text">Cosecha planificada según la demanda de cada mercado. [contenido por definir]</p>
+                </li>
+                <li class="chain__step" id="kit-chain-paso-5" aria-hidden="true">
+                  <h3 class="t-h2 chain__step-title">Proceso</h3>
+                  <img class="chain__img" src="assets/img/ova.webp" alt="" width="800" height="480" loading="lazy">
+                  <p class="t-body chain__step-text">Plantas propias de proceso primario, secundario y ahumado. [contenido por definir]</p>
+                </li>
+                <li class="chain__step" id="kit-chain-paso-6" aria-hidden="true">
+                  <h3 class="t-h2 chain__step-title">Distribución</h3>
+                  <img class="chain__img" src="assets/img/ova.webp" alt="" width="800" height="480" loading="lazy">
+                  <p class="t-body chain__step-text">Despacho aéreo y marítimo a clientes en más de 30 países. [contenido por definir]</p>
+                </li>
+              </ol>
+              <div class="chain__nav">
+                <div class="chain__segs">
+                  <button class="chain__seg" type="button" aria-controls="kit-chain-paso-1" aria-label="Paso 1: Genética y ovas" aria-current="step"><span class="chain__seg-line"><span class="chain__seg-fill"></span></span></button>
+                  <button class="chain__seg" type="button" aria-controls="kit-chain-paso-2" aria-label="Paso 2: Agua dulce"><span class="chain__seg-line"><span class="chain__seg-fill"></span></span></button>
+                  <button class="chain__seg" type="button" aria-controls="kit-chain-paso-3" aria-label="Paso 3: Centros de mar"><span class="chain__seg-line"><span class="chain__seg-fill"></span></span></button>
+                  <button class="chain__seg" type="button" aria-controls="kit-chain-paso-4" aria-label="Paso 4: Cosecha"><span class="chain__seg-line"><span class="chain__seg-fill"></span></span></button>
+                  <button class="chain__seg" type="button" aria-controls="kit-chain-paso-5" aria-label="Paso 5: Proceso"><span class="chain__seg-line"><span class="chain__seg-fill"></span></span></button>
+                  <button class="chain__seg" type="button" aria-controls="kit-chain-paso-6" aria-label="Paso 6: Distribución"><span class="chain__seg-line"><span class="chain__seg-fill"></span></span></button>
+                </div>
+                <p class="t-small chain__count" aria-live="polite"><span class="chain__current">01</span> / 06</p>
+                <div class="chain__arrows">
+                  <button class="chain__arrow chain__arrow--prev" type="button" aria-label="Paso anterior"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+                  <button class="chain__arrow" type="button" aria-label="Paso siguiente"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Cadena de valor (alternativa en lista, ya no se usa en Productos) · nuevo (fila en desktop, 3 columnas en tablet, línea vertical en mobile)</h3>
         <ol class="value-chain" role="list">
           <li class="value-chain__step"><span class="t-label value-chain__num">01</span><h4 class="t-ui-strong">Genética y ovas</h4><p class="t-small">Programa genético propio.</p></li>
           <li class="value-chain__step"><span class="t-label value-chain__num">02</span><h4 class="t-ui-strong">Agua dulce</h4><p class="t-small">Pisciculturas con recirculación.</p></li>

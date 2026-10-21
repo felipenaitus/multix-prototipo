@@ -4542,3 +4542,235 @@ a.pagination__item:hover,
     width: 100%;
   }
 }
+
+/* Relato vertical "Del cultivo a la mesa" ([data-chain], components.js).
+   Mobile: textura arriba con el círculo y el título; los pasos debajo.
+   Desktop: dos mitades a todo el ancho de la pantalla. A la izquierda, la
+   textura de escamas (assets/img/textura-escama.webp) con un círculo Offwhite que
+   contiene el título y la bajada; a la derecha, un paso a la vez (título,
+   ilustración y descripción) con la línea de secuencia y flechas. Los pasos
+   avanzan solos mientras la sección está a la vista; se pausan con el mouse o el
+   foco dentro y siguen desde el paso elegido. */
+.section--chain {
+  padding-block: 0;
+}
+
+.chain {
+  display: grid;
+}
+
+.chain__visual {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  background: url("../assets/img/textura-escama.webp") center / cover no-repeat; /* la textura no es continua: sin mosaico */
+}
+
+.chain__circle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-16);
+  width: 84%;
+  aspect-ratio: 1;
+  padding: var(--space-40);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-subtle);
+  color: var(--color-text-brand);
+}
+
+.chain__lead {
+  color: var(--color-text-secondary);
+}
+
+/* En mobile el círculo es chico: bajada en tamaño Pequeño para que quepa */
+@media (max-width: 767px) {
+  .chain__lead {
+    font-size: var(--text-small-size);
+    line-height: var(--text-small-lh);
+  }
+}
+
+.chain__panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-32);
+  padding: var(--layout-section-gap) var(--layout-gutter);
+}
+
+/* Todos los pasos en la misma celda: el alto no cambia al pasar de uno a otro */
+.chain__steps {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chain__step {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(calc(var(--motion-reveal-distance) / 2));
+  transition:
+    opacity var(--duration-slow) var(--easing-standard),
+    transform var(--duration-slow) var(--easing-standard),
+    visibility 0s linear var(--duration-slow);
+}
+
+.chain__step.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
+
+.chain__step-title {
+  color: var(--color-text-brand);
+}
+
+.chain__img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  height: auto;
+  object-fit: contain;
+}
+
+.chain__step-text {
+  max-width: 80%;
+  color: var(--color-text-secondary);
+}
+
+/* Línea de secuencia: un tramo por paso; el activo se llena con el tiempo */
+.chain__nav {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.chain__segs {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.chain__seg {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-height: var(--touch-target);
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.chain__seg-line {
+  position: relative;
+  flex: 1;
+  height: var(--border-indicator);
+  overflow: hidden;
+  background: var(--color-border-default);
+}
+
+.chain__seg-fill {
+  position: absolute;
+  inset: 0;
+  background: var(--color-bg-brand);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+/* Pasos ya vistos: llenos en Navy; el activo se llena en Coral 500 */
+.chain__seg.is-done .chain__seg-fill {
+  transform: scaleX(1);
+}
+
+.chain__seg[aria-current="step"] .chain__seg-fill {
+  background: var(--color-bg-accent-hover);
+  transform: scaleX(1);
+  transition: transform var(--chain-duration, 0ms) linear;
+}
+
+.chain.is-paused .chain__seg[aria-current="step"] .chain__seg-fill {
+  transition: none;
+}
+
+.chain__count {
+  color: var(--color-text-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+
+.chain__arrows {
+  display: flex;
+  gap: var(--space-8);
+}
+
+.chain__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--touch-target);
+  height: var(--touch-target);
+  padding: 0;
+  color: var(--color-text-brand);
+  background: none;
+  border: var(--border-thin) solid var(--color-border-default);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition:
+    border-color var(--duration-fast) var(--easing-standard),
+    color var(--duration-fast) var(--easing-standard);
+}
+
+.chain__arrow:hover {
+  border-color: var(--color-border-brand);
+}
+
+.chain__arrow--prev .icon {
+  transform: rotate(180deg);
+}
+
+@media (min-width: 768px) {
+  /* Tablet: franja más baja para no ocupar toda la pantalla */
+  .chain__visual {
+    aspect-ratio: 3 / 2;
+  }
+
+  .chain__circle {
+    width: 56%;
+    padding: var(--space-48);
+  }
+
+  .chain__img {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .chain {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .chain__visual {
+    aspect-ratio: auto;
+    min-height: calc(5 * var(--space-128));
+  }
+
+  .chain__circle {
+    width: 76%;
+    padding: var(--space-64);
+  }
+
+  /* El contenido del panel termina en el borde derecho del contenedor */
+  .chain__panel {
+    padding: var(--space-96) max(var(--layout-gutter), calc(100% - var(--layout-content-width) / 2)) var(--space-96) var(--space-96);
+  }
+
+  .chain__img {
+    width: 90%;
+  }
+}

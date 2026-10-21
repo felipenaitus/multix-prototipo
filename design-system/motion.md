@@ -81,3 +81,8 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 - La órbita acompaña al círculo: su posición y tamaño en cada paso (`--duration-reveal`) y su escala con el scroll.
 - Con movimiento reducido no aparecen (las duraciones quedan en 0 y su opacidad base es 0).
 - Descartadas antes: constelación que reaccionaba al mouse, burbujas que subían y círculo que mostraba un video en hover.
+
+## Firma · Relato vertical (solo Productos › Del cultivo a la mesa)
+- Un paso a la vez; avanzan solos cada 8 × `--duration-reveal` (6,4 s) mientras el bloque está a la vista. El tramo activo de la línea de secuencia se llena en Coral 500 en ese tiempo; los ya vistos quedan llenos en Navy.
+- Al cambiar de paso, el anterior se desvanece y el nuevo entra con un leve desplazamiento hacia arriba (`--duration-slow`).
+- Se pausa con el mouse o el foco dentro. Flechas y tramos llevan al paso anterior, siguiente o a cualquiera, y el avance automático sigue desde ahí. Con movimiento reducido no avanza solo.

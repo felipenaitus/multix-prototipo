@@ -206,44 +206,63 @@
     </section>
 
     <!-- Relato empresa vertical: Del cultivo a la mesa -->
-    <section class="section section--subtle" aria-labelledby="chain-title">
-      <div class="container">
-        <div class="section-head reveal">
-          <h2 class="t-h2" id="chain-title">Del cultivo a la mesa</h2>
-          <p class="t-body-l section-head__lead">Controlamos cada etapa de la cadena, desde la ova hasta el despacho, para asegurar trazabilidad y calidad constante. [contenido por definir]</p>
+    <section class="section section--subtle section--chain" aria-labelledby="chain-title">
+      <div class="chain" data-chain>
+        <div class="chain__visual reveal">
+          <div class="chain__circle">
+            <h2 class="t-h2" id="chain-title">Del cultivo a la mesa</h2>
+            <p class="t-body chain__lead">Controlamos cada etapa de la cadena, desde la ova hasta el despacho, para asegurar trazabilidad y calidad constante. [contenido por definir]</p>
+          </div>
         </div>
-        <ol class="value-chain" role="list">
-          <li class="value-chain__step reveal" style="--reveal-step: 0">
-            <span class="t-label value-chain__num">01</span>
-            <h3 class="t-ui-strong">Genética y ovas</h3>
-            <p class="t-small">Programa genético propio para peces sanos y de crecimiento eficiente.</p>
-          </li>
-          <li class="value-chain__step reveal" style="--reveal-step: 1">
-            <span class="t-label value-chain__num">02</span>
-            <h3 class="t-ui-strong">Agua dulce</h3>
-            <p class="t-small">Pisciculturas con recirculación donde crecen alevines y smolts.</p>
-          </li>
-          <li class="value-chain__step reveal" style="--reveal-step: 2">
-            <span class="t-label value-chain__num">03</span>
-            <h3 class="t-ui-strong">Centros de mar</h3>
-            <p class="t-small">Engorda en las regiones de Los Lagos, Aysén y Magallanes.</p>
-          </li>
-          <li class="value-chain__step reveal" style="--reveal-step: 3">
-            <span class="t-label value-chain__num">04</span>
-            <h3 class="t-ui-strong">Cosecha</h3>
-            <p class="t-small">Cosecha planificada según la demanda de cada mercado.</p>
-          </li>
-          <li class="value-chain__step reveal" style="--reveal-step: 4">
-            <span class="t-label value-chain__num">05</span>
-            <h3 class="t-ui-strong">Proceso</h3>
-            <p class="t-small">Plantas propias de proceso primario, secundario y ahumado.</p>
-          </li>
-          <li class="value-chain__step reveal" style="--reveal-step: 5">
-            <span class="t-label value-chain__num">06</span>
-            <h3 class="t-ui-strong">Distribución</h3>
-            <p class="t-small">Despacho aéreo y marítimo a clientes en más de 30 países.</p>
-          </li>
-        </ol>
+        <div class="chain__panel reveal" role="group" aria-roledescription="carrusel" aria-label="Etapas de la cadena">
+          <ol class="chain__steps" role="list">
+            <li class="chain__step is-active" id="chain-paso-1">
+              <h3 class="t-h2 chain__step-title">Genética y ovas</h3>
+              <img class="chain__img" src="assets/img/ova.webp" alt="" width="800" height="480" loading="lazy">
+              <p class="t-body chain__step-text">Programa genético propio para peces sanos y de crecimiento eficiente. [contenido por definir]</p>
+            </li>
+            <li class="chain__step" id="chain-paso-2" aria-hidden="true">
+              <h3 class="t-h2 chain__step-title">Agua dulce</h3>
+              <img class="chain__img" src="assets/img/ova.webp" alt="" width="800" height="480" loading="lazy">
+              <p class="t-body chain__step-text">Pisciculturas con recirculación donde crecen alevines y smolts. [contenido por definir]</p>
+            </li>
+            <li class="chain__step" id="chain-paso-3" aria-hidden="true">
+              <h3 class="t-h2 chain__step-title">Centros de mar</h3>
+              <img class="chain__img" src="assets/img/ova.webp" alt="" width="800" height="480" loading="lazy">
+              <p class="t-body chain__step-text">Engorda en las regiones de Los Lagos, Aysén y Magallanes. [contenido por definir]</p>
+            </li>
+            <li class="chain__step" id="chain-paso-4" aria-hidden="true">
+              <h3 class="t-h2 chain__step-title">Cosecha</h3>
+              <img class="chain__img" src="assets/img/ova.webp" alt="" width="800" height="480" loading="lazy">
+              <p class="t-body chain__step-text">Cosecha planificada según la demanda de cada mercado. [contenido por definir]</p>
+            </li>
+            <li class="chain__step" id="chain-paso-5" aria-hidden="true">
+              <h3 class="t-h2 chain__step-title">Proceso</h3>
+              <img class="chain__img" src="assets/img/ova.webp" alt="" width="800" height="480" loading="lazy">
+              <p class="t-body chain__step-text">Plantas propias de proceso primario, secundario y ahumado. [contenido por definir]</p>
+            </li>
+            <li class="chain__step" id="chain-paso-6" aria-hidden="true">
+              <h3 class="t-h2 chain__step-title">Distribución</h3>
+              <img class="chain__img" src="assets/img/ova.webp" alt="" width="800" height="480" loading="lazy">
+              <p class="t-body chain__step-text">Despacho aéreo y marítimo a clientes en más de 30 países. [contenido por definir]</p>
+            </li>
+          </ol>
+          <div class="chain__nav">
+            <div class="chain__segs">
+              <button class="chain__seg" type="button" aria-controls="chain-paso-1" aria-label="Paso 1: Genética y ovas" aria-current="step"><span class="chain__seg-line"><span class="chain__seg-fill"></span></span></button>
+              <button class="chain__seg" type="button" aria-controls="chain-paso-2" aria-label="Paso 2: Agua dulce"><span class="chain__seg-line"><span class="chain__seg-fill"></span></span></button>
+              <button class="chain__seg" type="button" aria-controls="chain-paso-3" aria-label="Paso 3: Centros de mar"><span class="chain__seg-line"><span class="chain__seg-fill"></span></span></button>
+              <button class="chain__seg" type="button" aria-controls="chain-paso-4" aria-label="Paso 4: Cosecha"><span class="chain__seg-line"><span class="chain__seg-fill"></span></span></button>
+              <button class="chain__seg" type="button" aria-controls="chain-paso-5" aria-label="Paso 5: Proceso"><span class="chain__seg-line"><span class="chain__seg-fill"></span></span></button>
+              <button class="chain__seg" type="button" aria-controls="chain-paso-6" aria-label="Paso 6: Distribución"><span class="chain__seg-line"><span class="chain__seg-fill"></span></span></button>
+            </div>
+            <p class="t-small chain__count" aria-live="polite"><span class="chain__current">01</span> / 06</p>
+            <div class="chain__arrows">
+              <button class="chain__arrow chain__arrow--prev" type="button" aria-label="Paso anterior"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+              <button class="chain__arrow" type="button" aria-label="Paso siguiente"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

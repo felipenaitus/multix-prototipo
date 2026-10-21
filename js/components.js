@@ -11,6 +11,7 @@
    [data-filters]                Barra de filtros (panel inferior en mobile)
    [data-add-calendar]           Agregar al calendario (opciones en mobile)
    video[data-hero-video]        Video de fondo: con movimiento reducido queda la imagen (poster)
+   [data-chain]                  Relato vertical: un paso a la vez, avance solo, línea de secuencia y flechas
    [data-steps]                  Pasos con ilustración que avanzan solos (Soluciones en Productos)
    [data-section-curve]          Borde inferior curvo de una sección que se aplana con el scroll
    video[data-hover-video]       Video que se reproduce solo con hover o foco en su enlace (marcas)
@@ -302,6 +303,73 @@
       }
       apply();
       reduce.addEventListener('change', apply);
+    });
+  }
+
+  /* ---------- Relato vertical ([data-chain]) ----------
+     Un paso visible a la vez (.chain__step). Avanzan solos cada 8 ×
+     --duration-reveal mientras el bloque está a la vista; el tramo activo de la
+     línea se llena en ese tiempo. Flechas y tramos permiten ir atrás, adelante o
+     a un paso; el avance automático sigue desde ahí. Se pausa con el mouse o el
+     foco dentro. Con movimiento reducido no avanza solo. */
+  function initChain() {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    $all('[data-chain]').forEach(function (box) {
+      var steps = $all('.chain__step', box);
+      var segs = $all('.chain__seg', box);
+      var current = box.querySelector('.chain__current');
+      var arrows = $all('.chain__arrow', box);
+      var n = steps.length, i = 0, timer = null, visible = !hasIO, hovering = false;
+      var interval = cssMs('--duration-reveal') * 8;
+
+      function show(k) {
+        i = (k + n) % n;
+        steps.forEach(function (s, j) {
+          s.classList.toggle('is-active', j === i);
+          if (j === i) s.removeAttribute('aria-hidden'); else s.setAttribute('aria-hidden', 'true');
+        });
+        segs.forEach(function (s, j) {
+          s.classList.toggle('is-done', j < i);
+          if (j === i) {
+            s.setAttribute('aria-current', 'step');
+            // Reinicia el llenado del tramo activo
+            var fill = s.querySelector('.chain__seg-fill');
+            fill.style.transition = 'none'; fill.style.transform = 'scaleX(0)'; void fill.offsetWidth;
+            fill.style.transition = ''; fill.style.transform = '';
+          } else {
+            s.removeAttribute('aria-current');
+          }
+        });
+        if (current) current.textContent = (i + 1 < 10 ? '0' : '') + (i + 1);
+      }
+
+      function schedule() {
+        clearTimeout(timer);
+        var run = visible && !hovering && !reduce.matches && interval > 0;
+        box.classList.toggle('is-paused', !run);
+        box.style.setProperty('--chain-duration', run ? interval + 'ms' : '0ms');
+        if (run) timer = setTimeout(function () { show(i + 1); schedule(); }, interval);
+      }
+
+      arrows[0].addEventListener('click', function () { show(i - 1); schedule(); });
+      arrows[1].addEventListener('click', function () { show(i + 1); schedule(); });
+      segs.forEach(function (s, j) { s.addEventListener('click', function () { show(j); schedule(); }); });
+      box.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hovering = true; schedule(); } });
+      box.addEventListener('pointerleave', function () { if (hovering) { hovering = false; show(i); schedule(); } });
+      // Solo pausa el foco de teclado: con el mouse, el clic no deja el carrusel detenido
+      box.addEventListener('focusin', function (e) { if (e.target.matches(':focus-visible')) { hovering = true; schedule(); } });
+      box.addEventListener('focusout', function (e) { if (!box.contains(e.relatedTarget)) { hovering = false; schedule(); } });
+
+      if (hasIO) {
+        new IntersectionObserver(function (entries) {
+          var was = visible;
+          visible = entries[0].isIntersecting;
+          if (visible && !was) show(i);
+          schedule();
+        }, { threshold: 0.2 }).observe(box); // bajo: en tablet el bloque es más alto que la pantalla
+      }
+      show(0);
+      schedule();
     });
   }
 
@@ -750,6 +818,7 @@
     initHoverVideos();
     initSectionCurve();
     initSteps();
+    initChain();
     initCursor();
   }
 
