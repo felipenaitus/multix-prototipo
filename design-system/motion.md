@@ -80,8 +80,4 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 - 6 puntos Coral 500 sobre el borde del círculo (entre 1,05 y 1,14 veces su radio). Cada uno aparece, recorre un tramo corto de la órbita (14° a 20°, en un sentido u otro) y se desvanece, en loop y desfasados (5,6 a 7,6 s, según 7 a 9,5 × `--duration-reveal`). Cada punto se ve cerca de la mitad de su ciclo, así que nunca están todos a la vista a la vez.
 - La órbita acompaña al círculo: su posición y tamaño en cada paso (`--duration-reveal`) y su escala con el scroll.
 - Con movimiento reducido no aparecen (las duraciones quedan en 0 y su opacidad base es 0).
-- Descartadas antes: constelación que reaccionaba al mouse y burbujas que subían.
-
-## Firma · Círculo con video en hover (Productos › Soluciones, opción 2)
-- Con el mouse sobre la composición, el círculo se convierte en una máscara: el video aparece abriéndose desde el centro (clip-path de 0 % a 50 %, `--duration-reveal`) con un leve acercamiento (1,1 → 1) y se reproduce solo mientras dura el hover; la ilustración activa se desvanece (`--duration-reveal`).
-- Al salir, el video se cierra y vuelve la ilustración. Con movimiento reducido el cambio es instantáneo y el video no se reproduce (queda su primer cuadro).
+- Descartadas antes: constelación que reaccionaba al mouse, burbujas que subían y círculo que mostraba un video en hover.

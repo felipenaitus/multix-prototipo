@@ -4491,69 +4491,6 @@ a.pagination__item:hover,
   100% { opacity: 0; transform: rotate(calc(var(--a) + var(--drift))); }
 }
 
-/* Opción 2 de la composición (data-variant="reveal" en .steps): sin puntos. Con
-   el mouse sobre la composición, el círculo se vuelve una máscara que muestra un
-   video (por ahora el de Latitude 45) y la ilustración desaparece. La máscara
-   ocupa el mismo lugar y escala que el círculo. Sin hover en pantallas táctiles. */
-.steps__reveal {
-  position: absolute;
-  z-index: 1;
-  left: calc(var(--circle-x) - var(--circle-size) / 2);
-  top: calc(var(--circle-y) - var(--circle-size) / 2);
-  width: var(--circle-size);
-  aspect-ratio: 1;
-  overflow: hidden;
-  border-radius: var(--radius-full);
-  opacity: 0;
-  pointer-events: none;
-  scale: calc(.6 + .5 * var(--scroll-progress, .8));
-  clip-path: circle(0% at 50% 50%);
-  transition:
-    clip-path var(--duration-reveal) var(--easing-out),
-    opacity var(--duration-slow) var(--easing-standard),
-    left var(--duration-reveal) var(--easing-out),
-    top var(--duration-reveal) var(--easing-out),
-    width var(--duration-reveal) var(--easing-out);
-}
-
-.steps__reveal video {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.1);
-  transition: transform var(--duration-reveal) var(--easing-out);
-}
-
-.steps[data-variant="orbit"] .steps__reveal,
-.steps[data-variant="reveal"] .steps__orbit {
-  display: none;
-}
-
-.steps[data-variant="reveal"] .steps__stage:hover .steps__reveal {
-  opacity: 1;
-  clip-path: circle(50% at 50% 50%);
-}
-
-.steps[data-variant="reveal"] .steps__stage:hover .steps__reveal video {
-  transform: scale(1);
-}
-
-.steps[data-variant="reveal"] .steps__stage:hover .steps__img.is-active {
-  opacity: 0;
-}
-
-/* Imagen + switch de opciones */
-.steps__media {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-8);
-}
-
-.steps__media .variant-switch {
-  align-self: flex-end;
-}
-
 /* Cada ilustración con su centro y su caja (la imagen cabe dentro sin deformarse) */
 .steps__img {
   position: absolute;

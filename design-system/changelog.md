@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Soluciones: queda solo la órbita de puntos
+- Código ✓ · Se elimina la opción 2 (círculo con video en hover) y su switch; queda la órbita de puntos. El switch compartido `.variant-switch` sigue en el catálogo.
+
 ## 2026-10-21 · Soluciones: opción 2 con video en el círculo y switch
 - Figma pendiente · Código ✓ · La órbita de puntos queda como opción 1. Nueva opción 2: sin puntos; con hover, el círculo muestra un video (por ahora el de Latitude 45) y la ilustración desaparece. Switch discreto "Opción 1 · Opción 2" bajo la composición.
 - Código ✓ · El switch pasa a ser un componente compartido (`.variant-switch`), que usan el catálogo y Soluciones.
