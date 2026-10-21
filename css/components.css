@@ -897,8 +897,9 @@
   text-underline-offset: var(--space-4);
 }
 
-/* Sobre fondo crema, el contenedor del ícono pasa a blanco para contrastar */
-.section--subtle .doc-row__icon {
+/* Regla: sobre fondo crema, los contenedores de ícono y de fecha pasan a blanco */
+.section--subtle .doc-row__icon,
+.section--subtle .event__date {
   background: var(--color-bg-page);
 }
 
@@ -5352,8 +5353,12 @@ html:not(.js) .company-visual__tag {
   grid-column: 2 / -1;
 }
 
+/* El tipo de documento va como texto alineado con el título (sin relleno de etiqueta) */
 .ir-module .doc-row__badge {
   grid-column: 2;
+  padding-inline: 0;
+  border: 0;
+  background: none;
 }
 
 .ir-module .doc-row .doc-row__action {
@@ -5499,24 +5504,6 @@ html:not(.js) .company-visual__tag {
 
 .split .section-head .btn {
   margin-top: var(--space-8);
-}
-
-/* Recuadro con foto o GIF (Trabaja con nosotros): rectángulo con esquinas
-   redondeadas, sin texto encima. En el encabezado del bloque, bajo el acceso. */
-.media-rect {
-  overflow: hidden;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  margin: var(--space-16) 0 0;
-  border-radius: var(--radius-xl);
-  background: var(--color-bg-muted);
-}
-
-.media-rect img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 /* Ofertas por región (Trabaja con nosotros): filas abiertas con líneas; toda la

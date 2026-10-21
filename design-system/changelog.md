@@ -4,6 +4,11 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Contenedores blancos sobre crema
+- Código ✓ · Regla nueva: sobre fondo crema, los contenedores de ícono y de fecha son blancos. Se aplica a la fecha del evento (`.event__date`), que se suma al ícono de documento.
+- Código ✓ · Últimos reportes (home): el tipo de documento va sin relleno, alineado con el título y los datos.
+- Código ✓ · Se quita el recuadro con GIF de Trabaja con nosotros y el componente `.media-rect` (kit, CSS y docs).
+
 ## 2026-10-21 · Segundos ajustes del home
 - Código ✓ · Productos: texto y círculo centrados en vertical (`.split--center`); el salmón es más grande y queda centrado sobre el círculo.
 - Código ✓ · Últimos reportes: en los módulos enfrentados la fila de documento lleva el ícono arriba a la izquierda y, debajo de título y datos, el tipo y "Descargar".
