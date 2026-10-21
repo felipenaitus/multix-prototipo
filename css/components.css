@@ -1916,6 +1916,11 @@ a.pagination__item:hover,
   color: var(--color-text-inverse-muted);
 }
 
+/* Bajada en blanco pleno (por ejemplo, sobre videos con mucho color) */
+.hero__lead--inverse {
+  color: var(--color-text-inverse);
+}
+
 @media (min-width: 768px) {
   .hero__lead {
     max-width: 60%;
