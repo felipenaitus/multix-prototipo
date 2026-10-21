@@ -29,7 +29,7 @@ Este archivo dice **qué** componentes existen y **cómo se usan**. Las medidas 
 
 Regla del coral:
 - **Coral 600:** todo texto coral sobre fondos claros (etiquetas, badges, palabra destacada en títulos).
-- **Coral 500 (marca):** rellenos y elementos gráficos sobre fondos claros (hover del botón de acento, líneas, barras, marcadores). No se usa como texto sobre claro. Excepción aprobada por Felipe: el paso actual de "Del cultivo a la mesa" (Título 2, 26–32 px), que como texto grande pasa AA (3,1:1 sobre blanco; mínimo 3:1).
+- **Coral 500 (marca):** rellenos y elementos gráficos sobre fondos claros (hover del botón de acento, líneas, barras, marcadores). No se usa como texto sobre claro. Excepciones aprobadas por Felipe: las cifras de Mercados (Cifra L, Sora 600, sobre Offwhite: 2,86:1, aceptado por tamaño y peso) y el paso actual de "Del cultivo a la mesa" (Título 2, 26–32 px), que como texto grande pasa AA (3,1:1 sobre blanco; mínimo 3:1).
 - **Coral 400:** relleno del botón de acento.
 - **Sobre fondos oscuros:** texto y contorno coral en Coral 500 (excepción: el 600 no pasa ahí).
 
