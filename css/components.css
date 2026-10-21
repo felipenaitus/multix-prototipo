@@ -4080,8 +4080,9 @@ a.pagination__item:hover,
   height: auto;
 }
 
-/* Switch de vista: texto pequeño y tenue, para que pase desapercibido */
-.catalog-cta__switch {
+/* Switch de vista (prototipo): texto pequeño y tenue, para que pase desapercibido.
+   Lo usan el catálogo y Soluciones ([data-variant-switch] en components.js). */
+.variant-switch {
   display: flex;
   align-self: flex-end;
   align-items: center;
@@ -4089,7 +4090,7 @@ a.pagination__item:hover,
   color: var(--color-text-tertiary);
 }
 
-.catalog-cta__switch button {
+.variant-switch button {
   min-height: var(--touch-target);
   padding: 0 var(--space-4);
   color: inherit;
@@ -4099,12 +4100,12 @@ a.pagination__item:hover,
   transition: color var(--duration-fast) var(--easing-standard);
 }
 
-.catalog-cta__switch button:hover,
-.catalog-cta__switch button[aria-pressed="true"] {
+.variant-switch button:hover,
+.variant-switch button[aria-pressed="true"] {
   color: var(--color-text-secondary);
 }
 
-.catalog-cta__switch button[aria-pressed="true"] {
+.variant-switch button[aria-pressed="true"] {
   text-decoration: underline;
   text-underline-offset: var(--space-4);
 }
@@ -4117,7 +4118,7 @@ a.pagination__item:hover,
 
 .js .catalog-cta__text > *,
 .js .catalog-cta__flipbook,
-.js .catalog-cta__switch {
+.js .catalog-cta .variant-switch {
   opacity: 0;
   transform: translateY(calc(var(--motion-reveal-distance) / 2));
   transition:
@@ -4128,7 +4129,7 @@ a.pagination__item:hover,
 .js .catalog-cta__text > :nth-child(2) { transition-delay: var(--duration-stagger); }
 .js .catalog-cta__text > :nth-child(3) { transition-delay: calc(var(--duration-stagger) * 2); }
 .js .catalog-cta__flipbook { transition-delay: calc(var(--duration-stagger) * 3); }
-.js .catalog-cta__switch { transition-delay: calc(var(--duration-stagger) * 5); }
+.js .catalog-cta .variant-switch { transition-delay: calc(var(--duration-stagger) * 5); }
 
 .js .catalog-cta__cover::before {
   opacity: 0;
@@ -4147,7 +4148,7 @@ a.pagination__item:hover,
 
 .js .catalog-cta.is-visible .catalog-cta__text > *,
 .js .catalog-cta.is-visible .catalog-cta__flipbook,
-.js .catalog-cta.is-visible .catalog-cta__switch,
+.js .catalog-cta.is-visible .variant-switch,
 .js .catalog-cta.is-visible .catalog-cta__cover img {
   opacity: 1;
   transform: none;
@@ -4488,6 +4489,69 @@ a.pagination__item:hover,
   55%  { opacity: 1; }
   80%  { opacity: 0; transform: rotate(calc(var(--a) + var(--drift))); }
   100% { opacity: 0; transform: rotate(calc(var(--a) + var(--drift))); }
+}
+
+/* Opción 2 de la composición (data-variant="reveal" en .steps): sin puntos. Con
+   el mouse sobre la composición, el círculo se vuelve una máscara que muestra un
+   video (por ahora el de Latitude 45) y la ilustración desaparece. La máscara
+   ocupa el mismo lugar y escala que el círculo. Sin hover en pantallas táctiles. */
+.steps__reveal {
+  position: absolute;
+  z-index: 1;
+  left: calc(var(--circle-x) - var(--circle-size) / 2);
+  top: calc(var(--circle-y) - var(--circle-size) / 2);
+  width: var(--circle-size);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--radius-full);
+  opacity: 0;
+  pointer-events: none;
+  scale: calc(.6 + .5 * var(--scroll-progress, .8));
+  clip-path: circle(0% at 50% 50%);
+  transition:
+    clip-path var(--duration-reveal) var(--easing-out),
+    opacity var(--duration-slow) var(--easing-standard),
+    left var(--duration-reveal) var(--easing-out),
+    top var(--duration-reveal) var(--easing-out),
+    width var(--duration-reveal) var(--easing-out);
+}
+
+.steps__reveal video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+  transition: transform var(--duration-reveal) var(--easing-out);
+}
+
+.steps[data-variant="orbit"] .steps__reveal,
+.steps[data-variant="reveal"] .steps__orbit {
+  display: none;
+}
+
+.steps[data-variant="reveal"] .steps__stage:hover .steps__reveal {
+  opacity: 1;
+  clip-path: circle(50% at 50% 50%);
+}
+
+.steps[data-variant="reveal"] .steps__stage:hover .steps__reveal video {
+  transform: scale(1);
+}
+
+.steps[data-variant="reveal"] .steps__stage:hover .steps__img.is-active {
+  opacity: 0;
+}
+
+/* Imagen + switch de opciones */
+.steps__media {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.steps__media .variant-switch {
+  align-self: flex-end;
 }
 
 /* Cada ilustración con su centro y su caja (la imagen cabe dentro sin deformarse) */

@@ -81,3 +81,7 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 - La órbita acompaña al círculo: su posición y tamaño en cada paso (`--duration-reveal`) y su escala con el scroll.
 - Con movimiento reducido no aparecen (las duraciones quedan en 0 y su opacidad base es 0).
 - Descartadas antes: constelación que reaccionaba al mouse y burbujas que subían.
+
+## Firma · Círculo con video en hover (Productos › Soluciones, opción 2)
+- Con el mouse sobre la composición, el círculo se convierte en una máscara: el video aparece abriéndose desde el centro (clip-path de 0 % a 50 %, `--duration-reveal`) con un leve acercamiento (1,1 → 1) y se reproduce solo mientras dura el hover; la ilustración activa se desvanece (`--duration-reveal`).
+- Al salir, el video se cierra y vuelve la ilustración. Con movimiento reducido el cambio es instantáneo y el video no se reproduce (queda su primer cuadro).

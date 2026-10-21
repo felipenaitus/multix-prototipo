@@ -57,6 +57,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Formulario comercial en modal (`variant="inline"`) | Modal centrado sobre el sitio oscurecido | Panel inferior a lo ancho, sobre el sitio oscurecido |
 | Borde inferior curvo entre secciones | Arco de 96 px que se aplana con el scroll | Mismo comportamiento con arco más bajo: 64 px en tablet, 40 px en mobile |
 | Soluciones en pasos | Título y pasos a la izquierda (5/11); ilustración con círculo a la derecha (6/11), a todo el ancho de su columna | Tablet: dos mitades. Mobile: título y pasos arriba, ilustración debajo a ancho completo; los pasos siguen siendo una lista con la descripción del activo abierta |
+| Soluciones · opción 2 (círculo con video) | Con hover sobre la composición, el círculo muestra el video y la ilustración desaparece | Sin hover en pantallas táctiles: queda la ilustración con su círculo |
 | Botón flotante del asistente | Fijo abajo a la derecha, 56 px, a `--space-32` del borde | Igual, a `--space-24` del borde |
 | Footer | Logo arriba; Direcciones · Información · Personas y proveedores en una fila con los títulos alineados; redes y copyright abajo. Tablet: direcciones arriba (en dos columnas) y enlaces debajo | Mobile: Información y Personas y proveedores en acordeón; direcciones y teléfonos siempre visibles; Canal de Denuncias como enlace dentro de Información |
 | Teléfonos y correos | Enlace | Enlace (marca o abre el correo con un toque) |

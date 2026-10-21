@@ -399,7 +399,7 @@
   function initHoverVideos() {
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
     $all('video[data-hover-video]').forEach(function (v) {
-      var trigger = v.closest('a, button') || v.parentElement;
+      var trigger = v.closest('a, button, [data-hover-scope]') || v.parentElement;
       function play() {
         if (reduce.matches) return;
         var p = v.play();

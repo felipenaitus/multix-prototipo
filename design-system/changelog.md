@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Soluciones: opción 2 con video en el círculo y switch
+- Figma pendiente · Código ✓ · La órbita de puntos queda como opción 1. Nueva opción 2: sin puntos; con hover, el círculo muestra un video (por ahora el de Latitude 45) y la ilustración desaparece. Switch discreto "Opción 1 · Opción 2" bajo la composición.
+- Código ✓ · El switch pasa a ser un componente compartido (`.variant-switch`), que usan el catálogo y Soluciones.
+
 ## 2026-10-21 · Soluciones: órbita de puntos en lugar de las burbujas
 - Figma pendiente · Código ✓ · Se reemplazan las burbujas (no convencieron) por 6 puntos Coral 500 sobre el borde del círculo que aparecen, recorren un tramo corto de la órbita y se desvanecen.
 
