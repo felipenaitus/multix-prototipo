@@ -11,6 +11,7 @@
    [data-filters]                Barra de filtros (panel inferior en mobile)
    [data-add-calendar]           Agregar al calendario (opciones en mobile)
    video[data-hero-video]        Video de fondo: con movimiento reducido queda la imagen (poster)
+   [data-steps]                  Pasos con ilustración que avanzan solos (Soluciones en Productos)
    [data-section-curve]          Borde inferior curvo de una sección que se aplana con el scroll
    video[data-hover-video]       Video que se reproduce solo con hover o foco en su enlace (marcas)
    [data-variant-switch]         Switch de vista: botones data-show cambian data-variant del bloque
@@ -301,6 +302,67 @@
       }
       apply();
       reduce.addEventListener('change', apply);
+    });
+  }
+
+  /* ---------- Pasos ([data-steps]) ----------
+     Lista de pasos (.steps__item con .steps__trigger y .steps__panel) y una
+     ilustración por paso (.steps__img, en el mismo orden). Siempre hay uno activo.
+     Avanzan solos cada 8 × --duration-reveal mientras la sección está a la vista;
+     se pausan con el mouse o el foco dentro, y se detienen del todo cuando la
+     persona elige un paso. Con movimiento reducido no avanzan solos. */
+  function initSteps() {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    $all('[data-steps]').forEach(function (box) {
+      var items = $all('.steps__item', box);
+      var imgs = $all('.steps__img', box);
+      var current = 0, timer = null, visible = false, hovering = false, stopped = false;
+      var interval = cssMs('--duration-reveal') * 8;
+
+      function show(i) {
+        current = i;
+        items.forEach(function (it, n) {
+          var on = n === i;
+          it.classList.toggle('is-active', on);
+          it.querySelector('.steps__trigger').setAttribute('aria-expanded', String(on));
+          it.querySelector('.steps__panel').hidden = !on;
+          // Reinicia la línea de tiempo
+          var bar = it.querySelector('.steps__progress');
+          if (bar && on) { bar.style.transition = 'none'; bar.style.transform = 'scaleX(0)'; void bar.offsetWidth; bar.style.transition = ''; bar.style.transform = ''; }
+        });
+        imgs.forEach(function (img, n) { img.classList.toggle('is-active', n === i); });
+      }
+
+      function schedule() {
+        clearTimeout(timer);
+        var run = visible && !hovering && !stopped && !reduce.matches && interval > 0;
+        box.classList.toggle('is-paused', !run);
+        box.style.setProperty('--steps-duration', run ? interval + 'ms' : '0ms');
+        if (run) timer = setTimeout(function () { show((current + 1) % items.length); schedule(); }, interval);
+      }
+
+      items.forEach(function (it, n) {
+        it.querySelector('.steps__trigger').addEventListener('click', function () {
+          stopped = true;
+          show(n);
+          schedule();
+        });
+      });
+      box.addEventListener('pointerenter', function () { hovering = true; schedule(); });
+      box.addEventListener('pointerleave', function () { hovering = false; show(current); schedule(); });
+      box.addEventListener('focusin', function () { hovering = true; schedule(); });
+      box.addEventListener('focusout', function () { hovering = false; schedule(); });
+
+      if (hasIO) {
+        new IntersectionObserver(function (entries) {
+          var was = visible;
+          visible = entries[0].isIntersecting;
+          if (visible && !was) show(current);
+          schedule();
+        }, { threshold: 0.4 }).observe(box);
+      }
+      show(0);
+      schedule();
     });
   }
 
@@ -685,6 +747,7 @@
     initVariantSwitch();
     initHoverVideos();
     initSectionCurve();
+    initSteps();
     initCursor();
   }
 

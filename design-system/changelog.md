@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Soluciones en pasos (módulo 2 de Productos)
+- Figma pendiente · Código ✓ · Nueva sección Soluciones después del hero: título y tres pasos (Fresco, Congelado, Ahumado) con descripción, e ilustración del salmón (`assets/img/pescado.png`) sobre el círculo Offwhite del catálogo. Componente `.steps[data-steps]`, patrón Firma en motion.md. Textos de ejemplo según la ficha del cliente (título 60, nombre 25 y texto 260 caracteres como máximo).
+
 ## 2026-10-21 · Borde curvo entre Mercados y Nuestras marcas (prueba)
 - Figma pendiente · Código ✓ · Se reemplaza la mezcla de fondo (pasaba desapercibida) por un borde inferior curvo en Mercados que se aplana con el scroll (`.section--curve-bottom`, `[data-section-curve]`). Se elimina `[data-bg-blend]`.
 

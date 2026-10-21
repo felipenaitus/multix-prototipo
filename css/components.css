@@ -4299,3 +4299,163 @@ a.pagination__item:hover,
     row-gap: var(--space-24);
   }
 }
+
+/* Soluciones en pasos ([data-steps], components.js): Fresco · Congelado · Ahumado.
+   A la izquierda, el título y una lista de pasos separados por líneas delgadas
+   (sin cajas): número, nombre y, en el paso activo, su descripción. A la derecha,
+   la ilustración sobre el círculo Offwhite (misma composición del catálogo); al
+   cambiar de paso la ilustración cambia con un fundido y un leve giro. Los pasos
+   avanzan solos mientras la sección está a la vista (una línea fina marca el
+   tiempo); se detienen con el mouse encima o al elegir uno. */
+.steps {
+  display: grid;
+  gap: var(--space-40);
+  align-items: center;
+}
+
+.steps__text .section-head {
+  margin-bottom: var(--space-32);
+}
+
+.steps__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: var(--border-thin) solid var(--color-border-default);
+}
+
+.steps__item {
+  position: relative;
+  border-top: var(--border-thin) solid var(--color-border-default);
+}
+
+/* Línea de tiempo del paso activo, sobre su línea superior */
+.steps__progress {
+  position: absolute;
+  top: calc(-1 * var(--border-thin));
+  left: 0;
+  width: 100%;
+  height: var(--border-indicator);
+  background: var(--color-bg-accent-hover);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.steps__item.is-active .steps__progress {
+  transform: scaleX(1);
+  transition: transform var(--steps-duration, 0ms) linear;
+}
+
+.steps.is-paused .steps__item.is-active .steps__progress {
+  transform: scaleX(1);
+  transition: none;
+}
+
+.steps__trigger {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-16);
+  width: 100%;
+  min-height: var(--touch-target);
+  padding: var(--space-20) 0;
+  text-align: left;
+  color: var(--color-text-tertiary);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  transition: color var(--duration-base) var(--easing-standard);
+}
+
+.steps__trigger:hover,
+.steps__item.is-active .steps__trigger {
+  color: var(--color-text-primary);
+}
+
+.steps__num {
+  color: inherit;
+}
+
+.steps__item.is-active .steps__num {
+  color: var(--color-text-accent);
+}
+
+.steps__panel {
+  padding: 0 0 var(--space-24) var(--space-32); /* alineada con el nombre: número + separación */
+}
+
+.steps__panel p {
+  color: var(--color-text-secondary);
+}
+
+.js .steps__panel:not([hidden]) {
+  animation: fade-up var(--duration-slow) var(--easing-out);
+}
+
+/* Ilustración sobre el círculo */
+.steps__stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 80%;
+  justify-self: center;
+  aspect-ratio: 1;
+  margin: 0;
+}
+
+.steps__stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 82%;
+  height: 82%;
+  margin: auto;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-subtle);
+  transform: scale(calc(.6 + .5 * var(--scroll-progress, .8)));
+}
+
+.steps__img {
+  position: relative;
+  grid-area: 1 / 1;
+  width: 78%;
+  height: auto;
+  opacity: 0;
+  transform: rotate(var(--steps-tilt, 0deg)) translateY(var(--motion-reveal-distance));
+  transition:
+    opacity var(--duration-reveal) var(--easing-out),
+    transform var(--duration-reveal) var(--easing-out);
+}
+
+.steps__img.is-active {
+  opacity: 1;
+  transform: rotate(var(--steps-tilt, 0deg));
+}
+
+/* Cada paso con su propio ángulo: la misma ilustración "se mueve" al cambiar */
+.steps__img:nth-child(2) { --steps-tilt: -8deg; }
+.steps__img:nth-child(3) { --steps-tilt: 8deg; }
+
+@media (min-width: 768px) {
+  .steps {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-48);
+  }
+
+  .steps__stage {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .steps {
+    gap: var(--space-96);
+  }
+
+  .steps__trigger {
+    padding: var(--space-24) 0;
+  }
+
+  .steps__stage {
+    width: 90%;
+  }
+}

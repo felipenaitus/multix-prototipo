@@ -70,3 +70,8 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 - En lugar de un corte recto, la sección Offwhite termina en un arco suave que se monta sobre la blanca. El arco se ve completo hasta que su borde inferior llega al 75 % de la ventana y se aplana mientras sube hasta el 25 % (escala vertical de 1 a 0). Va directo al scroll, sin transición propia.
 - `[data-section-curve]` escribe `--curve-progress` (0 a 1). Con movimiento reducido el arco queda fijo.
 - Descartada antes: la mezcla de fondo de Offwhite a blanco (el contraste entre ambos colores es casi imperceptible).
+
+## Firma · Soluciones en pasos (solo Productos › Soluciones)
+- Los pasos avanzan solos cada 8 × `--duration-reveal` (6,4 s) mientras la sección está a la vista; una línea Coral 500 sobre el paso activo se llena en ese tiempo.
+- Al cambiar de paso: la descripción aparece con `fade-up` (`--duration-slow`) y la ilustración hace un fundido con un leve giro (0°, −8°, 8°) en `--duration-reveal`.
+- Se pausan con el mouse o el foco dentro de la sección y se detienen del todo cuando la persona elige un paso. Con movimiento reducido no avanzan solos.
