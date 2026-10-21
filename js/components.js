@@ -11,7 +11,7 @@
    [data-filters]                Barra de filtros (panel inferior en mobile)
    [data-add-calendar]           Agregar al calendario (opciones en mobile)
    video[data-hero-video]        Video de fondo: con movimiento reducido queda la imagen (poster)
-   [data-chain]                  Relato vertical: cada paso alterna solo ilustración / video; flechas para cambiar de paso
+   [data-chain]                  Relato vertical: un paso a la vez; flechas y tramos para cambiar de paso
    [data-steps]                  Pasos con ilustración que avanzan solos (Soluciones en Productos)
    [data-section-curve]          Borde inferior curvo de una sección que se aplana con el scroll
    video[data-hover-video]       Video que se reproduce solo con hover o foco en su enlace (marcas)
@@ -307,23 +307,18 @@
   }
 
   /* ---------- Relato vertical ([data-chain]) ----------
-     Cada paso (.chain__step) tiene dos instancias que se alternan solas en loop
-     cada 8 × --duration-reveal mientras el bloque está a la vista: (a) ilustración
-     + texto A y (b) video en el círculo + texto B (clase .is-b en el bloque). El
-     paso lo cambia la persona con las flechas o los tramos; al cambiar vuelve a
-     la instancia (a). Con movimiento reducido no alterna solo. */
+     Un paso visible a la vez (.chain__step). Lo cambia la persona con las
+     flechas (atrás / adelante, en loop) o los tramos de la línea de secuencia. */
   function initChain() {
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
     $all('[data-chain]').forEach(function (box) {
       var steps = $all('.chain__step', box);
       var segs = $all('.chain__seg', box);
       var arrows = $all('.chain__arrow', box);
       var current = box.querySelector('.chain__current');
-      var video = box.querySelector('.chain__mask video');
-      var n = steps.length, i = 0, b = false, timer = null, visible = !hasIO;
-      var interval = cssMs('--duration-reveal') * 8;
+      var n = steps.length, i = 0;
 
-      function render() {
+      function go(k) {
+        i = (k + n) % n;
         steps.forEach(function (s, j) {
           s.classList.toggle('is-active', j === i);
           if (j === i) s.removeAttribute('aria-hidden'); else s.setAttribute('aria-hidden', 'true');
@@ -332,40 +327,12 @@
           if (j === i) s.setAttribute('aria-current', 'step'); else s.removeAttribute('aria-current');
         });
         if (current) current.textContent = (i + 1 < 10 ? '0' : '') + (i + 1);
-        box.classList.toggle('is-b', b);
-        if (video) {
-          if (b) { var p = video.play(); if (p && p.catch) p.catch(function () {}); } else video.pause();
-        }
-      }
-
-      function loop() {
-        clearTimeout(timer);
-        if (visible && !reduce.matches && interval > 0) {
-          timer = setTimeout(function () { b = !b; render(); loop(); }, interval);
-        }
-      }
-
-      function go(k) {
-        i = (k + n) % n;
-        b = false;
-        render();
-        loop();
       }
 
       arrows[0].addEventListener('click', function () { go(i - 1); });
       arrows[1].addEventListener('click', function () { go(i + 1); });
       segs.forEach(function (s, j) { s.addEventListener('click', function () { go(j); }); });
-
-      if (hasIO) {
-        new IntersectionObserver(function (entries) {
-          visible = entries[0].isIntersecting;
-          if (!visible && video) video.pause();
-          else if (visible && b && video) render();
-          loop();
-        }, { threshold: 0.2 }).observe(box);
-      }
-      render();
-      loop();
+      go(0);
     });
   }
 

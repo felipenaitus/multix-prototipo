@@ -83,6 +83,6 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 - Descartadas antes: constelación que reaccionaba al mouse, burbujas que subían y círculo que mostraba un video en hover.
 
 ## Firma · Relato vertical (solo Productos › Del cultivo a la mesa)
-- Cada paso alterna solo, en loop, entre dos instancias cada 8 × `--duration-reveal` (6,4 s) mientras el bloque está a la vista: (a) ilustración sobre el círculo + texto A; (b) el video se abre dentro del círculo desde el centro (clip-path de 0 % a 50 %, con leve acercamiento 1,1 → 1, `--duration-reveal`), la ilustración se desvanece y se reduce levemente, y el texto cambia a B (`--duration-slow`).
-- El paso no avanza solo: lo cambia la persona con las flechas o los tramos, y al cambiar vuelve a la instancia (a).
-- Con movimiento reducido no alterna solo (queda la instancia a).
+- Sin avance automático: el paso lo cambia la persona con las flechas o los tramos.
+- Al cambiar de paso, el título del paso, la ilustración y la descripción hacen un fundido (`--duration-slow`) y la ilustración entra con un leve acercamiento (0,94 → 1, `--duration-reveal`).
+- Descartado antes: segunda instancia por paso con video en el círculo, alternando sola.

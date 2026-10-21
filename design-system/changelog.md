@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-21 · Del cultivo a la mesa: sin segunda instancia; ilustración del paso 2
+- Código ✓ · Se elimina la instancia B de cada paso (video en el círculo y segundo texto). Queda un paso a la vez, que se cambia con flechas o tramos.
+- Código ✓ · Agua dulce (paso 2) usa su propia ilustración (`assets/img/paso-2.webp`, WebP sin pérdida de 800 px, 3 MB → 0,43 MB).
+
 ## 2026-10-21 · Del cultivo a la mesa: nuevo diseño con dos instancias por paso
 - Figma pendiente · Código ✓ · Se rediseña según la nueva referencia de Felipe: título y paso actual en coral arriba a la izquierda, ilustración sobre círculo al centro, descripción abajo a la izquierda y línea de secuencia con flechas abajo a la derecha. Se deja de usar la textura de escamas (el archivo queda en assets/img).
 - Figma pendiente · Código ✓ · Cada paso alterna solo entre ilustración + texto A y video en el círculo (por ahora el de Arka Fjord) + texto B. El cambio de paso es manual (flechas o tramos).

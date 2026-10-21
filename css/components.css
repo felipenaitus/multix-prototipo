@@ -4534,10 +4534,8 @@ a.pagination__item:hover,
    Arriba a la izquierda, el título de la sección y el paso actual en coral
    ("01. Genética y ovas"). Al centro, la ilustración del paso sobre un círculo
    Offwhite. Abajo, la descripción a la izquierda y, a la derecha, la línea de
-   secuencia, el contador y las flechas. Cada paso tiene dos instancias que se
-   alternan solas en loop: (a) ilustración + texto A; (b) el círculo se vuelve
-   una máscara con video, la ilustración desaparece y cambia el texto (B). El
-   paso lo cambia la persona con las flechas o los tramos. */
+   secuencia, el contador y las flechas. El paso lo cambia la persona con las
+   flechas o los tramos. */
 .chain {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -4561,7 +4559,7 @@ a.pagination__item:hover,
   color: var(--color-text-accent);
 }
 
-/* Composición: círculo con la máscara de video; la ilustración va encima */
+/* Composición: círculo Offwhite; la ilustración va encima */
 .chain__stage {
   grid-area: stage;
   justify-self: center;
@@ -4571,24 +4569,6 @@ a.pagination__item:hover,
   margin: var(--space-48) 0;
   border-radius: var(--radius-full);
   background: var(--color-bg-subtle);
-}
-
-.chain__mask {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  border-radius: var(--radius-full);
-  clip-path: circle(0% at 50% 50%);
-  transition: clip-path var(--duration-reveal) var(--easing-out);
-}
-
-.chain__mask video {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.1);
-  transition: transform var(--duration-reveal) var(--easing-out);
 }
 
 .chain__img {
@@ -4614,46 +4594,25 @@ a.pagination__item:hover,
   margin-top: var(--space-32);
 }
 
-/* Paso activo e instancias */
-.chain__step > *,
-.chain__text {
+/* Paso activo: fundido; la ilustración entra con un leve acercamiento */
+.chain__step > * {
   transition:
     opacity var(--duration-slow) var(--easing-standard),
+    transform var(--duration-reveal) var(--easing-out),
     visibility 0s linear var(--duration-slow);
 }
 
-.chain__step:not(.is-active) > *,
-.chain:not(.is-b) .chain__text--b,
-.chain.is-b .chain__text--a {
+.chain__step:not(.is-active) > * {
   opacity: 0;
   visibility: hidden;
 }
 
-.chain__step.is-active > *,
-.chain:not(.is-b) .chain__text--a,
-.chain.is-b .chain__step.is-active .chain__text--b {
-  transition-delay: 0s;
-}
-
-.chain__img {
-  transition:
-    opacity var(--duration-reveal) var(--easing-out),
-    transform var(--duration-reveal) var(--easing-out),
-    visibility 0s linear var(--duration-reveal);
-}
-
-.chain.is-b .chain__img {
-  opacity: 0;
-  visibility: hidden;
+.chain__step:not(.is-active) .chain__img {
   transform: scale(.94);
 }
 
-.chain.is-b .chain__mask {
-  clip-path: circle(50% at 50% 50%);
-}
-
-.chain.is-b .chain__mask video {
-  transform: scale(1);
+.chain__step.is-active > * {
+  transition-delay: 0s;
 }
 
 /* Línea de secuencia: un tramo por paso; el activo en Coral 500 */
