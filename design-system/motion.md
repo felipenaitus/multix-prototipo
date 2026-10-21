@@ -97,6 +97,7 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 - Blanco → crema: **Apertura** (`.section--open-in[data-section-open]`). La sección crema entra recortada (8 % del ancho por lado en mobile, 14 % en tablet y 20 % en desktop; esquinas de 48, 80 y 96 px) y se abre a todo el ancho con bordes rectos mientras su borde superior sube desde el fondo de la ventana hasta el 40 % superior. Va directo al scroll.
 - Crema → blanco: **Horizonte** (`.section--curve-bottom[data-section-curve]`). Arco inferior que se aplana con el scroll.
 - Secciones asociadas con el mismo fondo: línea delgada (`.section--continued`). Bordes con imagen o textura a todo el ancho: rectos.
+- Algunas secciones con Apertura usan fondo azul oscuro en vez de crema (`.section--inverse`, PRUEBA): misma Apertura y mismo Horizonte, con el arco en azul. Si dos secciones seguidas tienen arco, la primera queda por encima para que su arco se vea.
 - Con movimiento reducido: todos los cortes rectos.
 
 ## Firma · Compañía integrada (solo Inversionistas)

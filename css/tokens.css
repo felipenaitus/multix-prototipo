@@ -142,6 +142,26 @@
   --easing-out: cubic-bezier(.16,1,.3,1);
 }
 
+/* Sección oscura (.section--inverse) · PRUEBA, pendiente de Figma.
+   Fondo Navy 950. Dentro de ella los tokens semánticos se reasignan para que
+   los componentes (documentos, evento, botones, catálogo) se adapten solos:
+   textos claros, líneas Navy 600, contenedores Navy 900 y coral 500. */
+.section--inverse {
+  --color-bg-page: var(--color-navy-900);
+  --color-bg-subtle: var(--color-navy-900);
+  --color-bg-brand-soft: var(--color-navy-900);
+  --color-text-primary: var(--color-neutral-0);
+  --color-text-secondary: var(--color-navy-300);
+  --color-text-tertiary: var(--color-navy-300);
+  --color-text-brand: var(--color-neutral-0);
+  --color-text-brand-hover: var(--color-navy-300);
+  --color-text-accent: var(--color-coral-500);
+  --color-border-default: var(--color-navy-600);
+  --color-border-brand: var(--color-neutral-0);
+  --color-border-brand-hover: var(--color-navy-300);
+  --color-border-accent: var(--color-coral-500);
+}
+
 /* Tipografía móvil (< 768px). Propuesta inicial: validar en el prototipo
    y, si se aprueba, llevarla a Figma. */
 @media (max-width: 767px) {

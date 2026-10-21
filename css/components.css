@@ -3436,10 +3436,15 @@ a.pagination__item:hover,
   z-index: 1;
 }
 
+/* Si la siguiente también tiene arco, esta queda por encima para que su arco se vea */
+.section--curve-bottom:has(+ .section--curve-bottom) {
+  z-index: 2;
+}
+
 .section--curve-bottom::after {
   content: "";
   position: absolute;
-  top: 100%;
+  top: calc(100% - var(--border-thin)); /* se monta apenas sobre la sección: sin costura visible */
   left: 0;
   right: 0;
   height: var(--space-40);

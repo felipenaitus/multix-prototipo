@@ -240,6 +240,12 @@ a:hover {
   background: var(--color-bg-subtle);
 }
 
+/* Sección oscura (PRUEBA): los colores de su contenido se reasignan en tokens.css */
+.section--inverse {
+  background: var(--color-bg-inverse);
+  color: var(--color-text-primary);
+}
+
 .stack {
   display: flex;
   flex-direction: column;
