@@ -750,7 +750,7 @@
             '<p class="t-small c-secondary sales-contact__done" role="status" hidden>Gracias. Te contactaremos dentro de 48 horas hábiles. [prototipo: no se envía]</p>' +
           '</form>' +
         '</div>' +
-        '<button type="button" class="btn ' + (inline ? 'btn--ghost-light' : 'btn--accent') + ' btn--speech sales-contact__toggle" aria-expanded="false" aria-controls="' + panelId + '">Contactar al equipo comercial</button>';
+        '<button type="button" class="btn btn--accent btn--speech sales-contact__toggle" aria-expanded="false" aria-controls="' + panelId + '">Contactar al equipo comercial</button>';
 
       if (demo) return;
 
