@@ -195,6 +195,15 @@ Patrón único para toda la documentación del sitio (Inversionistas, Gobernanza
 - **Sección continua (`.section--continued`):** cuando una sección sigue a otra con el mismo fondo y están asociadas (Preguntas frecuentes después de Contacto), se separan con una línea delgada al ancho del contenido en vez de duplicar el espacio.
 - **Contacto comercial:** reutiliza `<ir-contact>` con `label` propio. Una sola persona de contacto.
 
+### Página Nosotros (nuevos · pendientes de llevar a Figma)
+Orden: hero con video · Quiénes somos (propósito y valores) · Cifras clave (crema) · Personas · Historia (crema) · acceso a Directorio y Ejecutivos. Fondos alternados con Apertura / Horizonte.
+- **Lista de valores (`.value-list` + `.value-item`):** filas abiertas separadas por líneas: número (Etiqueta, Coral 600), nombre (Título 3) y descripción. Va a la derecha del propósito en un `.split`.
+- **Cifras clave:** reutiliza la compañía integrada (`.company`: texto + círculo con video y regiones) y `.stats--accent` con regiones, comunas, localidades y centros.
+- **Pilares con foto (`.pillars` + `.pillar`):** foto 4:3 con esquinas redondeadas (sin texto encima), Título 3 y texto. Dos en fila desde tablet. Reformula "Excelencia" e "Innovación" del sitio actual en una sola sección "Personas", con encabezado centrado.
+- **Cifra total (`.figure-total`):** una sola cifra grande en Coral 500 (excepción de las cifras destacadas) con su etiqueta, centrada bajo una línea. Personas › total de colaboradores.
+- **Línea de tiempo (`.chain.chain--timeline`):** el relato vertical de Productos sin video: título de la sección, hito en coral (Título 2, Coral 500), año grande (Display, Navy) sobre el círculo (blanco sobre crema), descripción y la línea con un tramo por hito y su año debajo; flechas debajo a la derecha. Sin contador (el año activo indica la posición). Se cambia con las flechas o tocando un año.
+- **Acceso a Directorio y Ejecutivos:** encabezado centrado y botón secundario (enlace pendiente: la página de Gobernanza aún no existe).
+
 ### Hero con franja temporal (node 75-921)
 Hero con video o foto de fondo y overlay oscuro, Display en blanco. Franja inferior administrable para contenidos de temporada (ferias, documentación post feria, encuestas): etiqueta en coral + texto + enlace. Se oculta cuando no está activa. Bloque transversal `<season-strip>` en `js/layout.js`.
 

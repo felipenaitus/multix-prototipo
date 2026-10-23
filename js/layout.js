@@ -164,7 +164,7 @@
     {
       title: 'La compañía',
       items: [
-        { id: 'nosotros', label: 'Nosotros', href: '#' },
+        { id: 'nosotros', label: 'Nosotros', href: 'nosotros.html' },
         { id: 'trabaja', label: 'Trabaja con Nosotros', href: '#' },
         { id: 'noticias', label: 'Noticias', href: '#' }
       ]

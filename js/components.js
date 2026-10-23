@@ -407,7 +407,8 @@
       var current = box.querySelector('.chain__current');
       var stage = box.querySelector('.chain__stage');
       var video = stage && stage.querySelector('video');
-      var targets = [stage].concat($all('.chain__img', box), $all('.chain__facts', box)).filter(Boolean);
+      // Sin video (línea de tiempo) la composición no reacciona al hover
+      var targets = video ? [stage].concat($all('.chain__img', box), $all('.chain__facts', box)).filter(Boolean) : [];
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
       var n = steps.length, i = 0, closeTimer = null;
 
@@ -434,7 +435,7 @@
           if (e.pointerType !== 'mouse') setOpen(!box.classList.contains('is-open'));
         });
       });
-      if (stage) {
+      if (stage && video) {
         stage.addEventListener('keydown', function (e) {
           if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpen(!box.classList.contains('is-open')); }
         });

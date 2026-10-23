@@ -4,6 +4,12 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-23 · Página Nosotros (solo local)
+- Figma pendiente · Código ✓ · Nueva página `nosotros.html` según el mapa: hero con video, Quiénes somos (propósito y valores), Cifras clave (regiones, comunas, localidades y centros), Personas (excelencia, innovación y total de colaboradores, reformulado en una sección), Historia en línea de tiempo y acceso a Directorio y Ejecutivos. Contenidos de ejemplo marcados `[contenido por definir]`; fotos y video por definir.
+- Figma pendiente · Código ✓ · Componentes nuevos: `.value-list`, `.pillars`, `.figure-total` (en el kit) y la variante `.chain--timeline` del relato vertical (en ui-kit.md). El video del relato vertical pasa a ser opcional en `components.js`.
+- Código ✓ · Regla de contenedores sobre crema: el círculo del relato vertical también pasa a blanco.
+- Código ✓ · "Nosotros" del menú y "Conoce Multi X" del home enlazan a la nueva página.
+
 ## 2026-10-21 · Kit visual como referencia
 - Código ✓ · `kit.html` pasa a ser un kit de referencia (pedido de Felipe): sin header, menú ni footer del sitio (ni el botón del asistente); tokens completos con secciones nuevas de Espaciado, radio y bordes, y de Movimiento (valores leídos en vivo de `tokens.css`); un ejemplo por componente (botones, formularios, sub-menú, pestañas, migas de pan, encabezado de sección, cifras, filtros, listado de documentos, evento y agendar, preguntas frecuentes) y una sola composición de ejemplo (ilustración sobre círculo) junto a los fondos de sección. Las composiciones de cada página salen del kit y quedan descritas en `ui-kit.md`.
 - Conflicto con CLAUDE.md 2.2 ("todo componente usado en una página debe existir antes en kit.html"): desde ahora las composiciones de página no se agregan a `kit.html`; se definen en `ui-kit.md`. Pendiente de que Felipe confirme el cambio de la regla en CLAUDE.md.
