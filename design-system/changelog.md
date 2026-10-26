@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-26 · Catálogo de Productos solo con imagen
+- Código ✓ · Productos › catálogo: se quitan el flipbook y el switch "Flipbook · Imagen"; queda solo la imagen del catálogo sobre el círculo.
+
 ## 2026-10-26 · Título de la sección que lleva a Nosotros
 - Código ✓ · Home: la primera sección después del hero (enlace a Nosotros) cambia su título de "Salmón del sur de Chile para el mundo" a "Una salmonera del sur de Chile", para que se entienda que presenta a la compañía. El acceso sigue como "Conoce Multi X".
 
