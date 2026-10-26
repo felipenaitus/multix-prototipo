@@ -67,7 +67,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Compañía integrada (Inversionistas) | Texto y círculo con video en dos mitades | Texto arriba y círculo debajo (86 % del ancho en mobile, 60 % en tablet), con las regiones alrededor |
 | Ofertas por región | Filas con la cantidad en coral a la izquierda, región y localidades al centro y la flecha en círculo a la derecha | Igual (las tres columnas se mantienen); la flecha en círculo es la zona táctil de 44 px y toda la fila es el enlace |
 | Círculo con video | Ilustración sobre círculo a la derecha del texto; hover abre el video | Debajo del texto (80 % del ancho en mobile, 60 % en tablet). Sin hover: el video se abre y cierra con un toque |
-| Ancla a Inversionistas (home) | Dos bloques: texto, cifras 2 × 2 y acceso a la izquierda; último reporte y próximo evento a la derecha | Apilados: texto, cifras (2 × 2) y acceso; debajo, último reporte y próximo evento |
+| Ancla a Inversionistas (home) | Dos mitades: texto y acceso a la izquierda; último reporte y próximo evento a la derecha | Apilados: texto y acceso; debajo, último reporte y próximo evento |
 | Lista con fecha | Fecha (día y mes) a la izquierda, título y dato a la derecha | Igual: la columna de la fecha se mantiene y el título baja de línea si no cabe |
 | Noticias | Tres notas en fila | Tablet: slider con casi dos notas a la vista. Mobile: slider con una nota y parte de la siguiente |
 | Botón flotante del asistente | Fijo abajo a la derecha, 56 px, a `--space-32` del borde | Igual, a `--space-24` del borde |
