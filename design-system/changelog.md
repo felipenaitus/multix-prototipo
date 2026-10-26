@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-26 · Nueva ilustración de Ahumado
+- Código ✓ · Productos › Soluciones para cada mercado: la ilustración del paso Ahumado se reemplaza por la nueva (Ahumado_2), convertida a WebP sin pérdida de 800 px en el mismo archivo `assets/img/ahumado.webp`.
+
 ## 2026-10-26 · Año del acordeón más grueso
 - Figma pendiente · Código ✓ · Token nuevo `--text-figure-regular-weight: 400` (Cifra regular). El año del acordeón de documentos (Centro de Resultados y kit) pasa de Sora 300 a Sora 400.
 
