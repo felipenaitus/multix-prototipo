@@ -3441,6 +3441,13 @@ a.pagination__item:hover,
   z-index: 2;
 }
 
+/* Si la sección anterior cierra con Horizonte, manda ese cierre: la siguiente no
+   hace Apertura y entra recta, bajo el arco (ej.: Inversionistas, evento en azul →
+   compañía integrada en crema) */
+.section--curve-bottom + .section--open-in {
+  clip-path: none;
+}
+
 .section--curve-bottom::after {
   content: "";
   position: absolute;

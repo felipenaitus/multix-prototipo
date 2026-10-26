@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-26 · Horizonte manda sobre Apertura
+- Código ✓ · Cuando una sección cierra con Horizonte y la siguiente tiene Apertura, se respeta solo el cierre: la siguiente entra recta (`.section--curve-bottom + .section--open-in`). Corrige Inversionistas (evento en azul → compañía integrada en crema).
+
 ## 2026-10-23 · Página Nosotros (solo local)
 - Figma pendiente · Código ✓ · Nueva página `nosotros.html` según el mapa: hero con video, Quiénes somos (propósito y valores), Cifras clave (regiones, comunas, localidades y centros), Personas (excelencia, innovación y total de colaboradores, reformulado en una sección), Historia en línea de tiempo y acceso a Directorio y Ejecutivos. Contenidos de ejemplo marcados `[contenido por definir]`; fotos y video por definir.
 - Figma pendiente · Código ✓ · Componentes nuevos: `.value-list`, `.pillars`, `.figure-total` (en el kit) y la variante `.chain--timeline` del relato vertical (en ui-kit.md). El video del relato vertical pasa a ser opcional en `components.js`.
