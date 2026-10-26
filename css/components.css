@@ -906,10 +906,10 @@
   min-height: var(--touch-target);
 }
 
-/* "Ver PDF" en gris claro (Ink 500, 4,6:1 sobre blanco: el más claro que cumple AA)
-   para diferenciarlo de "Descargar" (Navy) */
+/* "Ver PDF" en gris claro (Ink 400, 3,5:1 sobre blanco) para diferenciarlo de
+   "Descargar" (Navy). Excepción a AA aprobada por Felipe; con hover pasa a Ink 900. */
 .doc-link.doc-link--view {
-  color: var(--color-text-tertiary);
+  color: var(--color-text-quiet);
 }
 
 .doc-link.doc-link--view:hover {

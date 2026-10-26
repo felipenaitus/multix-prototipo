@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-26 · "Ver PDF" más claro (excepción a AA)
+- Figma pendiente · Código ✓ · Tokens nuevos: primitivo `--color-ink-400` (#7A8B91) y semántico `--color-text-quiet` (3,5:1 sobre blanco). "Ver PDF" pasa de Ink 500 a Ink 400. **Excepción a AA** (pide 4,5:1 para texto de ese tamaño) aprobada por Felipe, solo para "Ver PDF"; con hover pasa a Ink 900.
+
 ## 2026-10-26 · "Ver PDF" en gris
 - Código ✓ · "Ver PDF" pasa a gris claro (Ink 500, `--color-text-tertiary`, 4,6:1 sobre blanco; con hover, Ink 900) para diferenciarse de "Descargar", que sigue en Navy. Primero se probó Ink 600, pero se veía muy oscuro.
 

@@ -24,6 +24,7 @@ Este archivo dice **qué** componentes existen y **cómo se usan**. Las medidas 
 | Figura detrás de ilustraciones | `--color-bg-illustration` | Coral 100 #EBE2DC |
 | Texto principal / secundario | `--color-text-primary` / `--color-text-secondary` | Ink 900 / Ink 600 |
 | Texto terciario (etiquetas de menor jerarquía) | `--color-text-tertiary` | Ink 500 #66787F (4,6:1 sobre blanco) |
+| Texto atenuado (solo "Ver PDF") | `--color-text-quiet` | Ink 400 #7A8B91 (3,5:1 sobre blanco). **Excepción a AA** aprobada por Felipe; pendiente de Figma |
 | Texto de marca y enlaces | `--color-text-brand` | Navy 900 |
 | Etiquetas y badges en coral | `--color-text-accent` | Coral 600 #C44545 |
 | Variación positiva (acción, metas) | `--color-text-success` | Verde 600 |
@@ -160,7 +161,7 @@ Patrón único para toda la documentación del sitio (Inversionistas, Gobernanza
 - **Próximo evento sin caja (`.ir-event`):** fecha, título, detalle, agregar al calendario y enlace al calendario, sobre una línea.
 - **Filtro de documentos (`[data-doc-filter]` en `js/components.js`):** sobre la barra de filtros; filtra por año, trimestre, tipo y texto, oculta los años sin resultados, actualiza conteos y muestra el estado vacío.
 - **Acordeón de años (`.doc-years`):** el año va en Cifra S con peso Sora 400 (`--text-figure-regular-weight`), un paso más grueso que la Cifra S normal.
-- **Fila de documento (`.doc-row`):** la fila no es un enlace ni tiene hover; sus acciones sí, siempre visibles y juntas (`.doc-row__actions`): "Ver PDF" (abre el documento en una pestaña nueva, ícono de enlace externo; en gris claro Ink 500, `.doc-link--view`) y "Descargar" (en Navy) (con subrayado al pasar el mouse). Sobre fondo crema el contenedor del ícono es blanco. En mobile el tipo de documento va como texto (sin relleno de etiqueta), alineado con el título; desde tablet, como etiqueta al final de la fila.
+- **Fila de documento (`.doc-row`):** la fila no es un enlace ni tiene hover; sus acciones sí, siempre visibles y juntas (`.doc-row__actions`): "Ver PDF" (abre el documento en una pestaña nueva, ícono de enlace externo; en gris claro Ink 400, `.doc-link--view`, excepción a AA aprobada) y "Descargar" (en Navy) (con subrayado al pasar el mouse). Sobre fondo crema el contenedor del ícono es blanco. En mobile el tipo de documento va como texto (sin relleno de etiqueta), alineado con el título; desde tablet, como etiqueta al final de la fila.
 - **Regla de contenedores sobre crema:** cuando el fondo de la sección es crema (`section--subtle`), los contenedores de elementos como el ícono de documento o la fecha del evento pasan a blanco (`--color-bg-page`). **En fondo oscuro** (`section--inverse`) no llevan relleno: se descartó el Navy 900 sobre Navy 950; el círculo del catálogo queda solo con un contorno fino (Navy 600).
 - **Agendar:** "Agendar" + Google y Outlook (sin iCal), siempre a la vista en desktop y mobile (sin botón que despliegue las opciones).
 - **Cifras en coral (`.stats--accent`):** variante de "En una mirada" con las cifras en Coral 500, usada en Inversionistas.
