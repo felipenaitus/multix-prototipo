@@ -5398,9 +5398,44 @@ html:not(.js) .company-visual__tag {
     border-left: var(--border-thin) solid var(--color-border-default);
   }
 
-  /* Los accesos quedan alineados abajo */
+  /* Los dos módulos comparten filas (subgrid): título, cada ítem y el acceso quedan
+     a la misma altura en ambos; manda el que tiene más contenido */
+  .ir-pair--facing {
+    grid-template-rows: repeat(4, auto);
+  }
+
+  .ir-pair--facing:has(.date-item:nth-child(3)) {
+    grid-template-rows: repeat(5, auto);
+  }
+
+  .ir-pair--facing:has(.date-item:nth-child(4)) {
+    grid-template-rows: repeat(6, auto);
+  }
+
+  .ir-pair--facing > .ir-module {
+    display: grid;
+    grid-row: 1 / -1;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+    justify-items: stretch;
+  }
+
+  .ir-module > .t-h2 {
+    padding-bottom: var(--space-32);
+  }
+
+  .ir-module > .date-list {
+    display: contents;
+  }
+
+  .ir-module .date-item:first-child {
+    border-top: var(--border-thin) solid var(--color-border-default);
+  }
+
   .ir-module > .btn {
-    margin-top: auto;
+    justify-self: start;
+    align-self: end;
+    margin-top: var(--space-32);
   }
 }
 
@@ -5423,12 +5458,37 @@ html:not(.js) .company-visual__tag {
 }
 
 .date-item {
+  border-bottom: var(--border-thin) solid var(--color-border-default);
+}
+
+/* Toda la fila es el enlace (al documento filtrado en el Centro de Resultados, o al
+   evento). Con hover el título cambia de tono y la flecha avanza. */
+.date-item__link {
   display: grid;
-  grid-template-columns: var(--size-event-date) minmax(0, 1fr);
+  grid-template-columns: var(--size-event-date) minmax(0, 1fr) auto;
   align-items: center;
   gap: var(--space-16);
+  height: 100%;
   padding-block: var(--space-20);
-  border-bottom: var(--border-thin) solid var(--color-border-default);
+  color: var(--color-text-primary);
+}
+
+.date-item__link .t-h3 {
+  transition: color var(--duration-fast) var(--easing-standard);
+}
+
+.date-item__link:hover .t-h3 {
+  color: var(--color-text-brand-hover);
+}
+
+.date-item__arrow {
+  display: inline-flex;
+  color: var(--color-text-brand);
+  transition: transform var(--duration-base) var(--easing-standard);
+}
+
+.date-item__link:hover .date-item__arrow {
+  transform: translateX(var(--space-4));
 }
 
 .date-item__date {

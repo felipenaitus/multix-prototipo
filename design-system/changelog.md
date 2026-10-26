@@ -4,6 +4,11 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-26 · Accesos de Inversionistas alineados y clickeables
+- Código ✓ · En desktop los dos módulos comparten filas (subgrid): título, ítems y acceso a la misma altura en ambos.
+- Código ✓ · Cada fila de la lista con fecha es un enlace. Los documentos llevan al Centro de Resultados ya filtrado (año, trimestre y tipo por URL) para mostrar solo ese documento; los eventos, al calendario (`#` por ahora).
+- Código ✓ · El Centro de Resultados lee los filtros desde la URL (`year`, `quarter`, `type`, `q`) y, si llega con filtros, baja directo a los resultados.
+
 ## 2026-10-26 · Accesos de Inversionistas más uniformes y sin contenedores azul claro
 - Código ✓ · Fondo oscuro: se elimina el relleno Navy 900 de los contenedores (ícono, fecha, círculo del catálogo). Los contenedores no llevan relleno y el círculo del catálogo queda con un contorno fino Navy 600.
 - Figma pendiente · Código ✓ · Home › Inversionistas e Inversionistas › documentos y eventos: sin Descargar ni Agendar; cada módulo tiene solo su acceso (Centro de Resultados / calendario). Ambos módulos usan la misma estructura, la nueva lista con fecha (`.date-list`): 2 ítems por módulo en el home y 3 en Inversionistas. En Inversionistas, documentos y eventos pasan a una sola sección con los módulos enfrentados.

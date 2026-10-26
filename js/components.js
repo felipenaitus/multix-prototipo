@@ -381,6 +381,16 @@
         if (search) search.value = '';
         apply();
       });
+      // Filtros desde la URL (?year=2026&quarter=Q2&type=EEFF&q=texto): los accesos
+      // a un documento llegan con los filtros que lo dejan solo en la lista
+      var params = new URLSearchParams(window.location.search);
+      selects.forEach(function (s) {
+        var v = params.get(s.name);
+        if (v && $all('option', s).some(function (o) { return o.value === v; })) s.value = v;
+      });
+      if (search && params.get('q')) search.value = params.get('q');
+      var fromUrl = ['year', 'quarter', 'type', 'q'].some(function (k) { return params.get(k); });
+
       selects.forEach(function (s) { s.addEventListener('change', apply); });
       if (search) search.addEventListener('input', apply);
       clearBtns.forEach(function (b) {
@@ -390,6 +400,11 @@
         });
       });
       apply();
+      // Si se llegó con filtros en la URL, la página baja hasta los resultados
+      if (fromUrl) {
+        var sec = box.closest('section') || box;
+        window.requestAnimationFrame(function () { sec.scrollIntoView({ block: 'start' }); });
+      }
     });
   }
 
