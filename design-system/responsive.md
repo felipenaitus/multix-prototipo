@@ -29,7 +29,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Breadcrumb | Ruta completa | Solo "← Volver a [página padre]" |
 | Hero | Display + bajada + botones en fila; franja temporal en una línea | Display móvil; botones apilados a ancho completo; franja temporal en dos líneas (etiqueta arriba, texto + enlace abajo) |
 | Cifras "en una mirada" | 4 columnas con divisores verticales | Grilla de 2 × 2 con divisores horizontales |
-| Accesos de Inversionistas (últimos documentos + próximos eventos) | Dos módulos lado a lado con la misma estructura | Apilados: documentos primero; cada uno con su acceso debajo |
+| Accesos de Inversionistas (últimos documentos + próximo evento) | Dos módulos lado a lado con la misma estructura; el evento (uno solo) ocupa el alto de la lista de documentos | Apilados: documentos primero y luego el evento, cada uno con su acceso debajo |
 | Accesos a documentos del trimestre | Grilla 2 × 2 | Lista de 1 columna |
 | Botones de agendar (Google, Outlook) | "Agendar" seguido de los dos botones pequeños en fila | Igual: las dos opciones siempre a la vista (sin botón que las despliegue) |
 | Barra de filtros | Buscador + selects en una fila; chips activos debajo | Buscador visible + botón "Filtrar (n)" que abre un panel inferior con los filtros y "Aplicar"/"Limpiar"; chips activos con scroll horizontal |

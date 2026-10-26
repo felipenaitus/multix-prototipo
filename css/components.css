@@ -5467,6 +5467,13 @@ html:not(.js) .company-visual__tag {
     border-top: var(--border-thin) solid var(--color-border-default);
   }
 
+  /* Ítem único destacado (el próximo evento): ocupa el alto de toda la lista del
+     módulo vecino, con sus líneas arriba y abajo alineadas, y el contenido centrado */
+  .ir-module .date-item--featured {
+    grid-row: 2 / -2;
+    align-self: stretch;
+  }
+
   .ir-module > .btn {
     justify-self: start;
     align-self: end;

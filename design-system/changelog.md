@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-26 · Un solo próximo evento
+- Código ✓ · Home e Inversionistas: el módulo "Próximo evento" muestra un solo evento (nunca hay dos próximos). Va destacado (`.date-item--featured`, fecha en Cifra L) y en desktop ocupa el alto de toda la lista de documentos, con las líneas alineadas arriba y abajo. Se quitan los eventos de ejemplo extra.
+
 ## 2026-10-26 · Márgenes y tipografía para pantallas chicas
 - Figma pendiente · Código ✓ · `--layout-gutter` es como mínimo 64 px desde 1024 px (antes 4 % del ancho: 43 px en un notebook de ≈ 1067 px).
 - Figma pendiente · Código ✓ · Display, Títulos 1–3 y Cifras L/M/S pasan a tamaños fluidos (`clamp()` en `tokens.css`): del tamaño móvil a 768 px al de desktop a 1440 px. Ejemplo a 1067 px: Display 51, Título 1 37, Título 2 29, Cifra L 45 px. Motivo: el cliente ve el sitio en un ThinkPad con escalado alto (≈ 1067 × 500 px útiles) y todo se veía grande y junto.
