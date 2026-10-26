@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-26 · Título del ancla a Inversionistas
+- Código ✓ · El título pasa de "Inversionistas" a "Conoce nuestro desempeño" (más invitacional, sin repetir el nombre de la página).
+
 ## 2026-10-26 · Ancla a Inversionistas sin cifras, en dos mitades
 - Código ✓ · Se quitan las cifras del ancla a Inversionistas del home; los dos bloques (texto + acceso / último reporte + próximo evento) pasan a mitades iguales con `.split--half`. Se retira `.stats--compact` (ya no se usa).
 
