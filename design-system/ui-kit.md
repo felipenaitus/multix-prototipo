@@ -31,7 +31,7 @@ Este archivo dice **qué** componentes existen y **cómo se usan**. Las medidas 
 
 Regla del coral:
 - **Coral 600:** todo texto coral sobre fondos claros (etiquetas, badges, palabra destacada en títulos).
-- **Coral 500 (marca):** rellenos y elementos gráficos sobre fondos claros (hover del botón de acento, líneas, barras, marcadores). No se usa como texto sobre claro. Excepciones aprobadas por Felipe: las cifras de Mercados (Cifra L, Sora 600, sobre Offwhite: 2,86:1, aceptado por tamaño y peso) y el paso actual de "Del cultivo a la mesa" (Título 2, 26–32 px), que como texto grande pasa AA (3,1:1 sobre blanco; mínimo 3:1).
+- **Coral 500 (marca):** rellenos y elementos gráficos sobre fondos claros (hover del botón de acento, líneas, barras, marcadores). No se usa como texto sobre claro. Excepciones aprobadas por Felipe: las cifras en coral del sitio (Cifra L en Cifra destacada, Sora 400; sobre Offwhite 2,86:1 y sobre blanco 3,08:1, aceptado por tamaño) y el paso actual de "Del cultivo a la mesa" (Título 2, 26–32 px), que como texto grande pasa AA (3,1:1 sobre blanco; mínimo 3:1).
 - **Coral 400:** relleno del botón de acento.
 - **Sobre fondos oscuros:** texto y contorno coral en Coral 500 (excepción: el 600 no pasa ahí).
 
@@ -52,7 +52,7 @@ Sora (títulos y cifras, pesos 300 y 400; 200 y 600 solo en el Display destacado
 | Título 1 | `--text-h1-*` | Título de página interior. |
 | Título 2 | `--text-h2-*` | Título de sección. Sora 300 (antes 400, más liviano por decisión de Felipe). |
 | Título 3 | `--text-h3-*` | Títulos de tarjeta, bloque o evento. |
-| Cifra destacada | `--text-figure-*` + `--text-figure-strong-weight` (600) | Variante más pesada de Cifra L / M / S para la cifra principal de un bloque (`.t-figure-strong`), por ejemplo la de Mercados. Pendiente de llevar a Figma. |
+| Cifra destacada | `--text-figure-*` + `--text-figure-strong-weight` (400) | Variante un paso más gruesa de Cifra L / M / S (`.t-figure-strong`) para todas las cifras en coral: cifras del home, Inversionistas y Nosotros, Mercados, ofertas por región y total de colaboradores. Antes Sora 600. Pendiente de llevar a Figma. |
 | Cifra L / M / S | `--text-figure-*` | Cifras "en una mirada", precio de la acción, metas, años de acordeón. Toda cifra o métrica destacada cuenta desde 0 hasta su valor al entrar en pantalla (`data-count`, con `data-prefix` / `data-suffix`). No aplica a fechas, años ni al precio de la acción. |
 | Cuerpo L | `--text-body-l-*` | Bajadas y textos introductorios. |
 | Cuerpo | `--text-body-*` | Texto corrido. |

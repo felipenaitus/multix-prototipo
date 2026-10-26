@@ -3670,7 +3670,7 @@ a.pagination__item:hover,
 .markets__stat .t-figure-l {
   /* Coral corporativo (Coral 500), decisión de Felipe: sobre Offwhite contrasta 2,86:1
      (bajo el mínimo AA de 3:1 para texto grande); se acepta por el tamaño y el peso
-     de la cifra (Cifra L, Sora 600). Excepción solo para estas cifras. */
+     de la cifra (Cifra L, Cifra destacada). Excepción solo para estas cifras. */
   color: var(--color-text-accent-on-dark);
   white-space: nowrap;
 }
@@ -5191,7 +5191,7 @@ body:has(.site-header.is-hidden) .subnav {
 }
 
 /* Cifras en coral corporativo (Coral 500): excepción aprobada por Felipe para
-   cifras grandes y pesadas (Cifra L, Sora 600; 3,08:1 sobre blanco). */
+   cifras grandes (Cifra L, Cifra destacada en Sora 400; 3,08:1 sobre blanco). */
 .stats--accent .stat__value {
   color: var(--color-text-accent-on-dark);
 }
