@@ -108,7 +108,7 @@ Header, menú hamburguesa y footer viven solo en `js/layout.js` (ver CLAUDE.md 2
 - Mobile y tablet: una fila de `--space-64` con logo, buscador y hamburguesa.
 
 **Menú hamburguesa (panel flotante)**
-- El sitio queda visible detrás, oscurecido (Navy 950 al 45%) y desenfocado (backdrop blur).
+- El sitio queda visible detrás, oscurecido (Navy 950 al 65 %, para que el logo y la X blancos tengan contraste AA, 5,4:1, aun sobre páginas blancas) y desenfocado (backdrop blur).
 - Panel con `--radius-xl`, fondo `--color-bg-page` y `--shadow-card`, alineado bajo el header y con el ancho del contenedor.
 - Arriba: buscador del sitio a lo ancho. El ícono de buscar de la barra utilitaria (y del header en mobile y tablet) abre este menú con el foco en el buscador. Al escribir aparece una X para borrar la búsqueda: es la misma X del botón que cierra el menú (hamburguesa abierta), para estandarizar la iconografía.
 - Cuerpo: a la izquierda, **tarjeta de noticia destacada**: foto arriba (proporción de la imagen, sin texto encima; leve zoom en hover) y debajo, sobre Navy 950, etiqueta con sección y fecha (Coral 500), título (UI/Destacado, máximo 2 líneas con puntos suspensivos si no cabe; sin bajada) y "Leer noticia". Es fija: no cambia con el hover de los accesos. Imagen de ejemplo: `assets/img/noticia-destacada.jpg`. A la derecha, **accesos en dos columnas**: "La compañía" (Nosotros · Trabaja con Nosotros · Noticias) y "Negocio" (Productos · Sustentabilidad · Inversionistas). Cada acceso muestra solo su nombre, en tamaño Título 3 y Sora 300 (más grande y liviano), sin ícono, sin descripción y sin subpáginas (las subpáginas de Inversionistas están en el desplegable del header).

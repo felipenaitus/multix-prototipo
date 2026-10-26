@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-26 · Fondo del menú más oscuro
+- Código ✓ · Con el menú hamburguesa abierto, el fondo oscurecido pasa de Navy 950 al 45 % a 65 %: el logo y la X blancos suben de 2,9:1 a 5,4:1 sobre páginas blancas (AA). En mobile no cambia (el menú es una pantalla blanca).
+
 ## 2026-10-26 · Horizonte manda sobre Apertura
 - Código ✓ · Cuando una sección cierra con Horizonte y la siguiente tiene Apertura, se respeta solo el cierre: la siguiente entra recta (`.section--curve-bottom + .section--open-in`). Corrige Inversionistas (evento en azul → compañía integrada en crema).
 

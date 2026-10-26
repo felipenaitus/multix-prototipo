@@ -2601,7 +2601,8 @@ a.pagination__item:hover,
   position: absolute;
   inset: 0;
   background: var(--color-bg-inverse);
-  opacity: .45;
+  /* 65 %: el logo y la X blancos quedan en 5,4:1 aunque la página detrás sea blanca */
+  opacity: .65;
 }
 
 .menu-overlay.is-open .menu-overlay__scrim {
