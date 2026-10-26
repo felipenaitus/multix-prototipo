@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-26 · Título de la sección que lleva a Nosotros
+- Código ✓ · Home: la primera sección después del hero (enlace a Nosotros) cambia su título de "Salmón del sur de Chile para el mundo" a "Una salmonera del sur de Chile", para que se entienda que presenta a la compañía. El acceso sigue como "Conoce Multi X".
+
 ## 2026-10-26 · Home: tres regiones en Trabaja con nosotros y acceso a Sustentabilidad
 - Código ✓ · Trabaja con nosotros muestra solo tres regiones destacadas con su cifra de ofertas (Los Lagos, Aysén y Magallanes); salen Santiago y Miami ("Ver todas las ofertas" sigue llevando al listado completo).
 - Código ✓ · "Ir a Sustentabilidad" pasa de botón secundario (con borde) a acceso de texto con flecha, igual que el resto de los accesos del home.
