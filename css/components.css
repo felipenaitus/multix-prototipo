@@ -906,9 +906,10 @@
   min-height: var(--touch-target);
 }
 
-/* "Ver PDF" en gris secundario (Ink 600) para diferenciarlo de "Descargar" (Navy) */
+/* "Ver PDF" en gris claro (Ink 500, 4,6:1 sobre blanco: el más claro que cumple AA)
+   para diferenciarlo de "Descargar" (Navy) */
 .doc-link.doc-link--view {
-  color: var(--color-text-secondary);
+  color: var(--color-text-tertiary);
 }
 
 .doc-link.doc-link--view:hover {
