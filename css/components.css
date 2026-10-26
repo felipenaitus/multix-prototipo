@@ -793,6 +793,11 @@
   gap: var(--space-16);
 }
 
+/* Año del acordeón: Cifra S un paso más gruesa (Sora 400) */
+.doc-year__year {
+  font-weight: var(--text-figure-regular-weight);
+}
+
 .doc-year__head[aria-expanded="true"] .doc-year__year {
   color: var(--color-text-brand);
 }
