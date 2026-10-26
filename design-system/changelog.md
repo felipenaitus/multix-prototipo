@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-26 · Home: sección de Inversionistas como ancla
+- Figma pendiente · Código ✓ · La sección azul del home deja los dos módulos enfrentados y pasa a ser un ancla a Inversionistas: a la izquierda título, bajada, 4 cifras (ingresos, EBITDA, acción y dividendo, `[contenido por definir]`) y "Ir a Inversionistas"; a la derecha el último reporte y el próximo evento (uno de cada uno, clickeables). Nuevos: `.stats--compact` y `.ir-highlights`. La página Inversionistas mantiene sus módulos enfrentados.
+
 ## 2026-10-26 · Un solo próximo evento
 - Código ✓ · Home e Inversionistas: el módulo "Próximo evento" muestra un solo evento (nunca hay dos próximos). Va destacado (`.date-item--featured`, fecha en Cifra L) y en desktop ocupa el alto de toda la lista de documentos, con las líneas alineadas arriba y abajo. Se quitan los eventos de ejemplo extra.
 

@@ -5488,6 +5488,48 @@ html:not(.js) .company-visual__tag {
   }
 }
 
+/* Cifras compactas (`.stats--compact`): siempre en 2 × 2 con líneas horizontales,
+   también en desktop, para columnas angostas (ej.: ancla a Inversionistas del home) */
+.stats--compact {
+  align-self: stretch;
+}
+
+@media (min-width: 1024px) {
+  .stats--compact {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stats--compact .stat {
+    padding: var(--space-24) var(--space-16) var(--space-24) 0;
+  }
+
+  .stats--compact .stat + .stat {
+    border-left: 0;
+  }
+
+  .stats--compact .stat:nth-child(n + 3) {
+    border-top: var(--border-thin) solid var(--color-border-default);
+  }
+}
+
+/* Destacados de Inversionistas (`.ir-highlights`): grupos con su etiqueta coral
+   ("Último reporte", "Próximo evento") y un ítem de lista con fecha cada uno */
+.ir-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-48);
+}
+
+.ir-highlights__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.ir-highlights__label {
+  color: var(--color-text-accent);
+}
+
 /* Lista con fecha (`.date-list`): cada ítem lleva la fecha a la izquierda (día en
    Cifra M y mes con año en Etiqueta coral) y, a la derecha, el título (Título 3) y
    un dato. Sin cajas ni acciones: filas separadas por líneas. La misma estructura

@@ -109,42 +109,44 @@
       </div>
     </section>
 
-    <!-- Inversionistas: accesos a los últimos reportes y a los próximos eventos (misma estructura) -->
-    <section class="section section--inverse on-dark section--open-in section--curve-bottom" aria-label="Inversionistas" data-section-open data-section-curve>
-      <div class="container">
-        <div class="ir-pair ir-pair--facing">
-          <div class="ir-module reveal" style="--reveal-step: 0">
-            <h2 class="t-h2">Últimos reportes</h2>
-            <ul class="date-list" role="list" aria-label="Últimos documentos">
+    <!-- Inversionistas: ancla a la sección (texto, cifras y acceso) con el último reporte y el próximo evento -->
+    <section class="section section--inverse on-dark section--open-in section--curve-bottom" aria-labelledby="home-ir-title" data-section-open data-section-curve>
+      <div class="container split split--center">
+        <div class="split__body reveal">
+          <h2 class="t-h2" id="home-ir-title">Inversionistas</h2>
+          <p class="t-body-l section-head__lead">Información financiera, documentos y eventos para accionistas, analistas e inversionistas de Multi X. [contenido por definir]</p>
+          <ul class="stats stats--accent stats--compact" role="list">
+            <li class="stat"><span class="stat__value t-figure-l t-figure-strong" data-count="620">620</span><span class="stat__label t-small">ingresos 2025, en millones de US$ [contenido por definir]</span></li>
+            <li class="stat"><span class="stat__value t-figure-l t-figure-strong" data-count="96">96</span><span class="stat__label t-small">EBITDA 2025, en millones de US$ [contenido por definir]</span></li>
+            <li class="stat"><span class="stat__value t-figure-l t-figure-strong" data-count="152.4" data-decimals="1">152,4</span><span class="stat__label t-small">precio de la acción en CLP, cierre 16 oct [contenido por definir]</span></li>
+            <li class="stat"><span class="stat__value t-figure-l t-figure-strong" data-count="30" data-suffix="%">30%</span><span class="stat__label t-small">utilidad repartida como dividendo [contenido por definir]</span></li>
+          </ul>
+          <a class="btn btn--tertiary hit" href="inversionistas.html">Ir a Inversionistas<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+        </div>
+        <div class="ir-highlights reveal" style="--reveal-step: 1">
+          <div class="ir-highlights__group">
+            <h3 class="t-label ir-highlights__label">Último reporte</h3>
+            <ul class="date-list" role="list">
               <li class="date-item">
                 <a class="date-item__link" href="centro-de-resultados.html?year=2026&amp;quarter=Q2&amp;type=Presentaci%C3%B3n">
                   <time class="date-item__date" datetime="2026-08-28"><span class="t-figure-m date-item__day">28</span><span class="t-label date-item__month">Ago 2026</span></time>
-                  <div class="date-item__body"><h3 class="t-h3">Presentación de resultados Q2 2026</h3><p class="t-small date-item__meta">Presentación · PDF 4,6 MB</p></div>
-                  <span class="date-item__arrow" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
-                </a>
-              </li>
-              <li class="date-item">
-                <a class="date-item__link" href="centro-de-resultados.html?year=2026&amp;quarter=Q2&amp;type=EEFF">
-                  <time class="date-item__date" datetime="2026-08-27"><span class="t-figure-m date-item__day">27</span><span class="t-label date-item__month">Ago 2026</span></time>
-                  <div class="date-item__body"><h3 class="t-h3">Estados financieros consolidados Q2 2026</h3><p class="t-small date-item__meta">Estados financieros · PDF 2,1 MB</p></div>
+                  <div class="date-item__body"><p class="t-h3">Presentación de resultados Q2 2026</p><p class="t-small date-item__meta">Presentación · PDF 4,6 MB</p></div>
                   <span class="date-item__arrow" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
                 </a>
               </li>
             </ul>
-            <a class="btn btn--tertiary hit" href="centro-de-resultados.html">Ir al Centro de Resultados<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
           </div>
-          <div class="ir-module reveal" style="--reveal-step: 1">
-            <h2 class="t-h2">Próximo evento</h2>
-            <ul class="date-list" role="list" aria-label="Próximo evento">
-              <li class="date-item date-item--featured">
+          <div class="ir-highlights__group">
+            <h3 class="t-label ir-highlights__label">Próximo evento</h3>
+            <ul class="date-list" role="list">
+              <li class="date-item">
                 <a class="date-item__link" href="#">
-                  <time class="date-item__date" datetime="2026-11-12"><span class="t-figure-l date-item__day">12</span><span class="t-label date-item__month">Nov 2026</span></time>
-                  <div class="date-item__body"><h3 class="t-h3">Publicación de resultados Q3 2026</h3><p class="t-small date-item__meta">Conferencia telefónica 13 nov · 11:00 h (CLT) [contenido por definir]</p></div>
+                  <time class="date-item__date" datetime="2026-11-12"><span class="t-figure-m date-item__day">12</span><span class="t-label date-item__month">Nov 2026</span></time>
+                  <div class="date-item__body"><p class="t-h3">Publicación de resultados Q3 2026</p><p class="t-small date-item__meta">Conferencia telefónica 13 nov · 11:00 h (CLT) [contenido por definir]</p></div>
                   <span class="date-item__arrow" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
                 </a>
               </li>
             </ul>
-            <a class="btn btn--tertiary hit" href="#">Ver calendario completo<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
           </div>
         </div>
       </div>
