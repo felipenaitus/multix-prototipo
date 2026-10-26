@@ -239,7 +239,7 @@
       '</ul>';
   }
 
-  var desktopMq = window.matchMedia('(min-width: 1280px)');
+  var desktopMq = window.matchMedia('(min-width: 1024px)');
   var mobileMq = window.matchMedia('(max-width: 767px)');
   var hoverMq = window.matchMedia('(hover: hover) and (pointer: fine)');
 

@@ -129,7 +129,7 @@
   --layout-section-gap: clamp(var(--layout-section-gap-mobile), 9vw, var(--layout-section-gap-desktop));
   --touch-target: 44px;
   /* Breakpoints (las media queries no aceptan variables; usar estos literales):
-     mobile 375 · tablet 768 · desktop 1280 · wide 1440 */
+     mobile 375 · tablet 768 · desktop 1024 · wide 1440 */
 
   /* ---------- Movimiento (catálogo en design-system/motion.md) ---------- */
   --duration-fast: 200ms;     /* hover, foco, cambios de color */

@@ -6,8 +6,8 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Nombre | Ancho | Uso |
 |---|---|---|
 | Mobile | < 768px | Base de los estilos (mobile first). Se diseña y prueba a 375px. |
-| Tablet | 768–1279px | Ajustes intermedios: grillas de 2 columnas, menú aún en hamburguesa. |
-| Desktop | ≥ 1280px | Menú completo, grillas completas, mega menú. Se prueba a 1280 y 1440px. |
+| Tablet | 768–1023px | Ajustes intermedios: grillas de 2 columnas, menú aún en hamburguesa. |
+| Desktop | ≥ 1024px | Menú completo, grillas completas, mega menú. Se prueba a 1024, 1280 y 1440px. Bajó desde 1280: los notebooks con escalado de Windows (125–150 %) muestran el sitio entre 1024 y 1279 px y veían la versión tablet ampliada. |
 
 ## Principios
 1. **Una columna por defecto en mobile.** Las grillas de 3-4 columnas pasan a 1 (o 2 si los elementos son muy cortos, como cifras).
@@ -21,7 +21,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 ## Patrones por componente
 | Componente | Desktop | Mobile |
 |---|---|---|
-| Header | Dos filas: barra utilitaria (Portal Proveedores · Diving X · Contacto · buscador · ES/EN) y fila principal (logo · Productos · Sustentabilidad · Inversionistas a la derecha, junto a la hamburguesa) | Mobile y tablet (< 1280): una fila con logo, buscador y hamburguesa. Utilitaria, accesos e idioma pasan al menú |
+| Header | Dos filas: barra utilitaria (Portal Proveedores · Diving X · Contacto · buscador · ES/EN) y fila principal (logo · Productos · Sustentabilidad · Inversionistas a la derecha, junto a la hamburguesa) | Mobile y tablet (< 1024): una fila con logo, buscador y hamburguesa. Utilitaria, accesos e idioma pasan al menú |
 | Desplegable de Inversionistas | Se abre con hover o clic; navegable con teclado | No aplica: Inversionistas va en acordeón dentro del overlay |
 | Menú hamburguesa | Panel flotante bajo el header, ancho del contenedor, sobre el sitio oscurecido y desenfocado: buscador, tarjeta de noticia destacada, accesos en dos grupos y franja de Portales · Recursos con las redes a la derecha | Tablet: mismo panel sin vista previa, idioma dentro. Mobile: pantalla completa blanca, con el header también blanco y el logo en su color; sin vista previa; buscador arriba, "La compañía" y "Negocio" en lista, luego Portales, Recursos, idioma y redes |
 | Header fijo | Al bajar, la barra utilitaria sale y la fila principal pasa de 80 a 64 px; al volver arriba reaparece. Transparente sobre el hero → blanco al hacer scroll, siempre (sin importar el fondo) | Alto 64 px; se oculta al bajar y aparece al subir. Mismo cambio de transparente a blanco |
@@ -47,7 +47,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Suscripción (texto + campo + botón) | En una fila | Apilado; botón a ancho completo |
 | Encabezado de sección | Etiqueta + Título 2 + bajada al 68 % del contenedor | Bajada a ancho completo |
 | Tarjetas de solución | 3 columnas | Tablet y mobile: slider con scroll-snap (casi 2 tarjetas visibles en tablet; 1 y parte de la siguiente en mobile) |
-| Mercados y oficinas | Globo a la izquierda y, a la derecha, título, tres cifras en fila con líneas verticales entre ellas y oficinas | Título y cifras primero, globo debajo. Tablet: cifras en fila. Mobile: cifras apiladas con líneas horizontales entre ellas |
+| Mercados y oficinas | Globo a la izquierda (2/5) y, a la derecha (3/5), título, tres cifras en fila con líneas verticales entre ellas y oficinas. Entre 1024 y 1279 px las cifras bajan a Cifra M para caber | Título y cifras primero, globo debajo. Tablet: cifras en fila. Mobile: cifras apiladas con líneas horizontales entre ellas |
 | Globo de mercados | Gira solo; se detiene con el mouse encima; se arrastra; nombre del pin con hover, foco o clic | Se arrastra en horizontal (el scroll vertical de la página sigue funcionando); nombre del pin al tocarlo |
 | Descarga del catálogo | Texto y botón a la izquierda; a la derecha la imagen con círculo (mitad del ancho, predeterminada) o el flipbook (7/12); switch "Flipbook · Imagen" bajo la vista | Flipbook: debajo del texto a ancho completo (16:9 en tablet, 4:3 en mobile). Imagen: a la derecha desde tablet y debajo en mobile. El switch se mantiene |
 | Certificaciones en grilla | 4 columnas de celdas abiertas con una línea arriba; logo arriba; la descripción se despliega dentro de la celda | Tablet: 2 columnas. Mobile: lista de 1 columna separada por líneas, con el logo a la izquierda |
@@ -77,4 +77,4 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 Si un componente nuevo no está en esta tabla: proponer el patrón a Felipe antes de implementarlo y, una vez aprobado, agregarlo aquí.
 
 ## Verificación
-Capturas con Playwright en 375, 768, 1280 y 1440px de todo lo modificado. Revisar: sin scroll horizontal de la página, textos sin cortar, zonas táctiles de 44px, menús y paneles que abren y cierran (incluido al tocar fuera y con la tecla Escape).
+Capturas con Playwright en 375, 768, 1024, 1280 y 1440px de todo lo modificado. Revisar: sin scroll horizontal de la página, textos sin cortar, zonas táctiles de 44px, menús y paneles que abren y cierran (incluido al tocar fuera y con la tecla Escape).

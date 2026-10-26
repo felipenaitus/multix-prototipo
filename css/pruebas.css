@@ -112,7 +112,7 @@
 }
 
 /* Una línea solo en desktop: en tablet "Alimentando el mundo" no cabe con aire */
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .word-swap {
     flex-direction: row;
     align-items: baseline;

@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-26 · Punto de quiebre de desktop en 1024 px
+- Código ✓ · El desktop empieza en 1024 px (antes 1280). Motivo: el cliente veía el sitio en un notebook con escalado de Windows (≈ 1093–1229 px de ancho) y le llegaba la versión tablet ampliada (círculo gigante, noticias en slider, header con hamburguesa). Se actualizan todas las media queries, los `matchMedia` de `layout.js` y `components.js`, CLAUDE.md y responsive.md. La verificación suma 1024 px.
+- Código ✓ · Ajustes para que todo quepa desde 1024: Mercados pasa a globo 2/5 y datos 3/5 (antes mitades; las cifras ya se salían de su columna a 1280 y 1440) y entre 1024 y 1279 usa Cifra M; las cifras en fila tienen menos aire lateral entre 1024 y 1279. Revisadas las seis páginas a 375, 768, 1024, 1093, 1229, 1280 y 1440 px.
+
 ## 2026-10-26 · Accesos de Inversionistas alineados y clickeables
 - Código ✓ · En desktop los dos módulos comparten filas (subgrid): título, ítems y acceso a la misma altura en ambos.
 - Código ✓ · Cada fila de la lista con fecha es un enlace. Los documentos llevan al Centro de Resultados ya filtrado (año, trimestre y tipo por URL) para mostrar solo ese documento; los eventos, al calendario (`#` por ahora).

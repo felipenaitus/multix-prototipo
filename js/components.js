@@ -264,7 +264,7 @@
         document.addEventListener('keydown', function (e) {
           if (e.key === 'Escape' && box.classList.contains('is-open')) setOpen(false);
         });
-        window.matchMedia('(min-width: 1280px)').addEventListener('change', function (e) {
+        window.matchMedia('(min-width: 1024px)').addEventListener('change', function (e) {
           if (e.matches && box.classList.contains('is-open')) {
             box.classList.remove('is-open');
             document.body.classList.remove('is-locked');

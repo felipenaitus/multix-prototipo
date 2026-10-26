@@ -46,7 +46,7 @@ Si hay conflicto entre el código y el Figma, manda el Figma. Si hay conflicto e
 - Cada funcionalidad se construye para desktop **y** mobile en la misma tarea. Una tarea no está terminada si solo funciona en uno.
 - La adaptación a mobile no es reducir: sigue los patrones de `design-system/responsive.md` según el contexto (menú → hamburguesa, filtros → panel, tablas → tarjetas, etc.).
 - Si un componente no tiene patrón definido en `responsive.md`, propone uno a Felipe antes de implementarlo y, una vez aprobado, agrégalo al archivo.
-- Estilos base pensados para mobile; desktop se agrega con `@media (min-width: ...)`. Breakpoints: 768 (tablet) y 1280 (desktop).
+- Estilos base pensados para mobile; desktop se agrega con `@media (min-width: ...)`. Breakpoints: 768 (tablet) y 1024 (desktop). (Antes 1280: se bajó porque notebooks con escalado de Windows muestran el sitio entre 1024 y 1279 px.)
 
 ### 2.6 Stack
 - HTML, CSS y JavaScript vanilla. Sin frameworks, sin paso de build, sin npm para el sitio.
@@ -73,7 +73,7 @@ Si hay conflicto entre el código y el Figma, manda el Figma. Si hay conflicto e
 - Componentes administrables que no tienen contenido no se muestran (sin títulos vacíos, sin pestañas o años sin documentos).
 
 ## 5. Verificación antes de dar una tarea por terminada
-1. Levantar el prototipo y tomar capturas con Playwright en **375, 768, 1280 y 1440 px** de lo que se modificó.
+1. Levantar el prototipo y tomar capturas con Playwright en **375, 768, 1024, 1280 y 1440 px** de lo que se modificó.
 2. Revisar: sin scroll horizontal, sin textos cortados ni superpuestos, márgenes consistentes, estados (hover, foco, abierto/cerrado) funcionando.
 3. Si el trabajo es un componente, comparar contra la captura de su sección en Figma.
 4. Correr una búsqueda rápida de valores fuera de tokens en los archivos tocados (hex, `px` sueltos en `font-size`, `transition` sin variables) y corregirlos.

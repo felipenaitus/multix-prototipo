@@ -164,7 +164,7 @@
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .kit-grid--2 {
     grid-template-columns: minmax(0, 4fr) minmax(0, 3fr);
     gap: var(--space-40);
@@ -234,7 +234,7 @@
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .swatches {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
@@ -317,7 +317,7 @@
 }
 
 /* Textos descriptivos del kit: dos tercios del contenedor en desktop (760 de 1120 en Figma) */
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .kit-cover__lead,
   .kit-section__desc,
   .kit-note {

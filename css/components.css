@@ -2,7 +2,7 @@
    Multi X · components.css
    Componentes del UI kit (Propuesta A). Cada bloque indica su sección en
    Figma (node-id) y su ficha en design-system/ui-kit.md.
-   Mobile first: estilos base < 768px; 768 (tablet) y 1280 (desktop).
+   Mobile first: estilos base < 768px; 768 (tablet) y 1024 (desktop).
    ========================================================================== */
 
 
@@ -372,7 +372,7 @@
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .subscribe {
     flex-direction: row;
     align-items: center;
@@ -649,7 +649,7 @@
   pointer-events: auto;
 }
 
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
   .filters__panel {
     position: fixed;
     left: 0;
@@ -679,7 +679,7 @@
 
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .filters__bar {
     gap: var(--space-16);
   }
@@ -1023,7 +1023,7 @@
   background: var(--color-bg-subtle);
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .matrix {
     overflow: hidden;
   }
@@ -1193,13 +1193,13 @@ a.pagination__item:hover,
   color: var(--color-text-secondary);
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .stats {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .stat {
-    padding: var(--space-32);
+    padding: var(--space-32) var(--space-20);
   }
 
   .stat:first-child {
@@ -1215,6 +1215,12 @@ a.pagination__item:hover,
   }
 }
 
+@media (min-width: 1280px) {
+  .stat {
+    padding-inline: var(--space-32);
+  }
+}
+
 /* Último resultado + próximo evento: apiladas en mobile, lado a lado en desktop */
 .ir-pair {
   display: grid;
@@ -1222,7 +1228,7 @@ a.pagination__item:hover,
   align-items: start;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .ir-pair {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-40);
@@ -1346,7 +1352,7 @@ a.pagination__item:hover,
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .ir-row {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1535,7 +1541,7 @@ a.pagination__item:hover,
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .goal {
     grid-template-columns: minmax(0, 3fr) minmax(0, 5fr) auto;
     grid-template-areas: "text bar value";
@@ -1854,7 +1860,7 @@ a.pagination__item:hover,
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .brand-card {
     width: 75%;
   }
@@ -1884,7 +1890,7 @@ a.pagination__item:hover,
   border-radius: var(--radius-xl);
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .hero--contained {
     aspect-ratio: 28 / 9; /* proporción del Figma */
   }
@@ -2001,7 +2007,7 @@ a.pagination__item:hover,
   font-weight: var(--text-ui-strong-weight);
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .season-strip {
     flex-direction: row;
     align-items: center;
@@ -2047,7 +2053,7 @@ a.pagination__item:hover,
   height: calc(var(--util-h) + var(--main-h));
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .site-header {
     --util-h: var(--space-40);
     --main-h: var(--space-80);
@@ -2220,7 +2226,7 @@ a.pagination__item:hover,
   fill: var(--color-bg-accent-hover);
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .header__logo .logo {
     height: var(--space-24);
   }
@@ -2525,7 +2531,7 @@ a.pagination__item:hover,
   color: var(--hdr-fg, var(--color-text-primary));
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .header__utility {
     display: block;
   }
@@ -2958,7 +2964,7 @@ a.pagination__item:hover,
 }
 
 /* Desktop: tarjeta de vista previa a la izquierda */
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .menu-panel__body {
     grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
     gap: var(--space-40);
@@ -3242,7 +3248,7 @@ a.pagination__item:hover,
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .footer__top {
     grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
     gap: var(--space-64);
@@ -3385,7 +3391,7 @@ a.pagination__item:hover,
   outline-color: var(--color-border-inverse);
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .chat-launcher {
     bottom: var(--space-32);
   }
@@ -3433,7 +3439,7 @@ a.pagination__item:hover,
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .section--open-in {
     --open-inset: 20%;
     --open-radius: calc(var(--radius-xl) * 6);
@@ -3480,7 +3486,7 @@ a.pagination__item:hover,
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .section--curve-bottom::after {
     height: var(--space-96);
   }
@@ -3522,7 +3528,7 @@ a.pagination__item:hover,
   text-align: center;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .section-head {
     margin-bottom: var(--space-48);
   }
@@ -3615,7 +3621,7 @@ a.pagination__item:hover,
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .solutions {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -3735,7 +3741,7 @@ a.pagination__item:hover,
 
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .markets__globe .globe {
     width: 80%;
   }
@@ -3749,6 +3755,35 @@ a.pagination__item:hover,
 
   .markets__globe {
     order: -1;
+  }
+
+  /* Desktop angosto (notebooks con escalado): más ancho para los datos y cifras en
+     Cifra M, para que las tres quepan en fila */
+  .markets {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: var(--space-48);
+  }
+
+  .markets__stat {
+    padding-inline: var(--space-16);
+  }
+
+  .markets__stat .t-figure-l {
+    font-size: var(--text-figure-m-size);
+    line-height: var(--text-figure-m-lh);
+    letter-spacing: var(--text-figure-m-ls);
+  }
+}
+
+@media (min-width: 1280px) {
+  .markets {
+    gap: var(--space-64);
+  }
+
+  .markets__stat .t-figure-l {
+    font-size: var(--text-figure-l-size);
+    line-height: var(--text-figure-l-lh);
+    letter-spacing: var(--text-figure-l-ls);
   }
 }
 
@@ -3811,7 +3846,7 @@ a.pagination__item:hover,
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .value-chain {
     grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: var(--space-24);
@@ -3931,7 +3966,7 @@ a.pagination__item:hover,
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .sales-contact {
     bottom: var(--space-32);
   }
@@ -3984,7 +4019,7 @@ a.pagination__item:hover,
   gap: var(--space-20);
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .hero__content--split {
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: end;
@@ -4312,7 +4347,7 @@ a.pagination__item:hover,
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
 
   .catalog-cta[data-variant="flipbook"] {
     grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
@@ -4427,7 +4462,7 @@ a.pagination__item:hover,
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .cert-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     column-gap: var(--space-32);
@@ -4661,7 +4696,7 @@ a.pagination__item:hover,
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   /* La composición toma algo más de ancho que el texto */
   .steps {
     grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
@@ -5013,7 +5048,7 @@ a.pagination__item:hover,
 }
 
 /* Desktop: casi a pantalla completa; la composición ocupa el espacio central */
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .chain {
     grid-template-rows: auto auto minmax(0, 1fr) auto;
     min-height: max(calc(5 * var(--space-128)), 76vh);
@@ -5149,7 +5184,7 @@ body:has(.site-header.is-hidden) .subnav {
   border-bottom-color: var(--color-border-brand);
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .subnav__list {
     gap: var(--space-40);
   }
@@ -5169,7 +5204,7 @@ body:has(.site-header.is-hidden) .subnav {
   color: var(--color-text-secondary);
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .page-head {
     padding-top: var(--space-64);
     padding-bottom: var(--space-64);
@@ -5196,7 +5231,7 @@ body:has(.site-header.is-hidden) .subnav {
   margin-top: var(--space-32);
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .filters + .doc-results {
     margin-top: var(--space-48);
   }
@@ -5226,7 +5261,7 @@ body:has(.site-header.is-hidden) .subnav {
   color: var(--color-text-secondary);
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .split {
     grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
     gap: var(--space-64);
@@ -5338,7 +5373,7 @@ html:not(.js) .company-visual__tag {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .company {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: var(--space-96);
@@ -5383,7 +5418,7 @@ html:not(.js) .company-visual__tag {
   align-self: stretch;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .ir-pair--facing {
     align-items: stretch;
     gap: 0;
@@ -5440,7 +5475,7 @@ html:not(.js) .company-visual__tag {
 }
 
 /* Bloque en dos columnas con ambos lados centrados en vertical (home › Productos) */
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .split--center {
     align-items: center;
   }
@@ -5650,7 +5685,7 @@ html:not(.js) .company-visual__tag {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .media-circle {
     width: 66%;
     margin-block: var(--space-64);
@@ -5864,7 +5899,7 @@ html:not(.js) .company-visual__tag {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .home-stats {
     margin-top: var(--space-96);
   }
@@ -5981,7 +6016,7 @@ html:not(.js) .company-visual__tag {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .pillars {
     gap: var(--space-64);
   }
