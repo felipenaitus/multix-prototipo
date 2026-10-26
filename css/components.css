@@ -910,6 +910,13 @@
   text-underline-offset: var(--space-4);
 }
 
+/* Regla en fondo oscuro (`.section--inverse`): los contenedores de ícono y de fecha
+   no llevan relleno (se descartó el Navy 900 sobre Navy 950) */
+.section--inverse .doc-row__icon,
+.section--inverse .event__date {
+  background: none;
+}
+
 /* Regla: sobre fondo crema, los contenedores de ícono y de fecha pasan a blanco */
 .section--subtle .doc-row__icon,
 .section--subtle .event__date {
@@ -4195,6 +4202,11 @@ a.pagination__item:hover,
   transform: scale(calc(.6 + .5 * var(--scroll-progress, .8)));
 }
 
+/* En fondo oscuro el círculo no lleva relleno: solo un contorno fino */
+.section--inverse .catalog-cta__cover::before {
+  border: var(--border-thin) solid var(--color-border-default);
+}
+
 .catalog-cta__cover img {
   position: relative;
   z-index: 1;
@@ -5352,9 +5364,10 @@ html:not(.js) .company-visual__tag {
   margin-top: var(--space-48);
 }
 
-/* Inversionistas en el home: dos módulos enfrentados (últimos reportes y próximo
-   evento), cada uno con su título, contenido y acceso. Apilados hasta desktop;
-   en desktop, lado a lado con una línea vertical entre ambos. */
+/* Accesos de Inversionistas (home e Inversionistas): dos módulos enfrentados con la
+   misma estructura (título, lista con fecha y un solo acceso a la sección), sin
+   acciones de descarga ni de agenda. Apilados hasta desktop; en desktop, lado a
+   lado con una línea vertical entre ambos. */
 .ir-pair--facing {
   gap: var(--space-64);
 }
@@ -5366,13 +5379,8 @@ html:not(.js) .company-visual__tag {
   gap: var(--space-32);
 }
 
-.ir-module > .doc-list,
-.ir-module > .ir-event {
+.ir-module > .date-list {
   align-self: stretch;
-}
-
-.ir-module > .doc-list + .btn {
-  margin-top: 0;
 }
 
 @media (min-width: 1280px) {
@@ -5403,34 +5411,49 @@ html:not(.js) .company-visual__tag {
   }
 }
 
-/* En los módulos enfrentados, la fila de documento siempre ordenada igual: ícono
-   arriba a la izquierda; título y datos a su derecha; debajo, tipo y "Descargar" */
-.ir-module .doc-row {
-  grid-template-columns: auto minmax(0, 1fr) auto;
+/* Lista con fecha (`.date-list`): cada ítem lleva la fecha a la izquierda (día en
+   Cifra M y mes con año en Etiqueta coral) y, a la derecha, el título (Título 3) y
+   un dato. Sin cajas ni acciones: filas separadas por líneas. La misma estructura
+   sirve para documentos y para eventos. */
+.date-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: var(--border-thin) solid var(--color-border-default);
+}
+
+.date-item {
+  display: grid;
+  grid-template-columns: var(--size-event-date) minmax(0, 1fr);
   align-items: center;
-  column-gap: var(--space-16);
+  gap: var(--space-16);
+  padding-block: var(--space-20);
+  border-bottom: var(--border-thin) solid var(--color-border-default);
 }
 
-.ir-module .doc-row__icon {
-  grid-row: span 2;
-  align-self: start;
+.date-item__date {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
 }
 
-.ir-module .doc-row__body {
-  grid-column: 2 / -1;
+.date-item__day {
+  color: var(--color-text-brand);
 }
 
-/* El tipo de documento va como texto alineado con el título (sin relleno de etiqueta) */
-.ir-module .doc-row__badge {
-  grid-column: 2;
-  padding-inline: 0;
-  border: 0;
-  background: none;
+.date-item__month {
+  color: var(--color-text-accent);
 }
 
-.ir-module .doc-row .doc-row__action {
-  grid-column: 3;
-  justify-self: end;
+.date-item__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.date-item__meta {
+  color: var(--color-text-secondary);
 }
 
 /* Círculo con video ([data-media-circle]): ilustración sobre un círculo blanco

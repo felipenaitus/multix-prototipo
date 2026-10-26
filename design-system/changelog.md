@@ -4,6 +4,11 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-26 · Accesos de Inversionistas más uniformes y sin contenedores azul claro
+- Código ✓ · Fondo oscuro: se elimina el relleno Navy 900 de los contenedores (ícono, fecha, círculo del catálogo). Los contenedores no llevan relleno y el círculo del catálogo queda con un contorno fino Navy 600.
+- Figma pendiente · Código ✓ · Home › Inversionistas e Inversionistas › documentos y eventos: sin Descargar ni Agendar; cada módulo tiene solo su acceso (Centro de Resultados / calendario). Ambos módulos usan la misma estructura, la nueva lista con fecha (`.date-list`): 2 ítems por módulo en el home y 3 en Inversionistas. En Inversionistas, documentos y eventos pasan a una sola sección con los módulos enfrentados.
+- Contenido de ejemplo: se suman dos eventos (resultados Q4 2026 y Junta Ordinaria 2027), marcados `[contenido por definir]`.
+
 ## 2026-10-26 · Cifras en coral más delgadas
 - Figma pendiente · Código ✓ · `--text-figure-strong-weight` pasa de 600 a 400: todas las cifras en coral del sitio (home, Inversionistas, Nosotros, Mercados, ofertas por región y total de colaboradores) quedan en Sora 400. La excepción de contraste del coral se mantiene por tamaño (Cifra L).
 

@@ -51,69 +51,46 @@
       </div>
     </section>
 
-    <!-- Últimos documentos publicados -->
-    <section class="section section--inverse on-dark section--open-in" aria-labelledby="docs-title" data-section-open>
-      <div class="container split">
-        <div class="section-head reveal">
-          <h2 class="t-h2" id="docs-title">Últimos documentos publicados</h2>
-          <p class="t-body-l section-head__lead">Resultados del segundo trimestre de 2026. [contenido por definir]</p>
-        </div>
-        <div class="reveal">
-          <div class="doc-list">
-              <div class="doc-row">
-                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
-                <span class="doc-row__body"><span class="doc-row__title">Análisis razonado Q2 2026</span><span class="doc-row__meta">27 ago 2026 · PDF 860 KB</span></span>
-                <span class="badge badge--neutral doc-row__badge">Análisis</span>
-                <a class="doc-link doc-row__action" href="#" download>Descargar<span class="visually-hidden"> Análisis razonado Q2 2026</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
-              </div>
-              <div class="doc-row">
-                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
-                <span class="doc-row__body"><span class="doc-row__title">Estados financieros consolidados Q2 2026</span><span class="doc-row__meta">27 ago 2026 · PDF 2,1 MB</span></span>
-                <span class="badge badge--neutral doc-row__badge">EEFF</span>
-                <a class="doc-link doc-row__action" href="#" download>Descargar<span class="visually-hidden"> Estados financieros consolidados Q2 2026</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
-              </div>
-              <div class="doc-row">
-                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
-                <span class="doc-row__body"><span class="doc-row__title">Presentación de resultados Q2 2026</span><span class="doc-row__meta">28 ago 2026 · PDF 4,6 MB</span></span>
-                <span class="badge badge--neutral doc-row__badge">Presentación</span>
-                <a class="doc-link doc-row__action" href="#" download>Descargar<span class="visually-hidden"> Presentación de resultados Q2 2026</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
-              </div>
-              <div class="doc-row">
-                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
-                <span class="doc-row__body"><span class="doc-row__title">Comunicado de resultados Q2 2026</span><span class="doc-row__meta">27 ago 2026 · PDF 310 KB</span></span>
-                <span class="badge badge--neutral doc-row__badge">Comunicado</span>
-                <a class="doc-link doc-row__action" href="#" download>Descargar<span class="visually-hidden"> Comunicado de resultados Q2 2026</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>
-              </div>
-          </div>
-          <a class="btn btn--tertiary hit" href="centro-de-resultados.html">Ir al Centro de Resultados<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Próximo evento -->
-    <section class="section section--inverse on-dark section--joined section--curve-bottom" aria-labelledby="event-title" data-section-curve>
-      <div class="container split">
-        <div class="section-head reveal">
-          <h2 class="t-h2" id="event-title">Próximo evento</h2>
-          <p class="t-body-l section-head__lead">Publicaciones de resultados, juntas de accionistas y encuentros con el mercado. [contenido por definir]</p>
-        </div>
-        <div class="ir-event reveal">
-          <div class="event">
-            <time class="event__date" datetime="2026-11-12"><span class="t-figure-m">12</span><span class="t-label">Nov 2026</span></time>
-            <div class="event__body">
-              <h3 class="t-h3">Publicación de resultados Q3 2026</h3>
-              <p class="t-small event__detail">Conferencia telefónica 13 nov · 11:00 h (CLT) [contenido por definir]</p>
-            </div>
-          </div>
-          <div class="add-calendar" data-add-calendar>
-            <button class="btn btn--secondary btn--sm hit add-calendar__toggle" type="button" aria-expanded="false" aria-controls="ir-cal"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Agendar</button>
-            <ul class="add-calendar__options" id="ir-cal" role="list" aria-label="Agendar en">
-              <li class="add-calendar__label t-ui-small-strong" aria-hidden="true">Agendar</li>
-              <li><a class="btn btn--secondary btn--sm hit" href="#"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Google</a></li>
-              <li><a class="btn btn--secondary btn--sm hit" href="#"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Outlook</a></li>
+    <!-- Últimos documentos y próximos eventos: accesos al Centro de Resultados y al calendario -->
+    <section class="section section--inverse on-dark section--open-in section--curve-bottom" aria-label="Documentos y eventos" data-section-open data-section-curve>
+      <div class="container">
+        <div class="ir-pair ir-pair--facing">
+          <div class="ir-module reveal" style="--reveal-step: 0">
+            <h2 class="t-h2" id="docs-title">Últimos documentos publicados</h2>
+            <ul class="date-list" role="list" aria-label="Últimos documentos">
+              <li class="date-item">
+                <time class="date-item__date" datetime="2026-08-28"><span class="t-figure-m date-item__day">28</span><span class="t-label date-item__month">Ago 2026</span></time>
+                <div class="date-item__body"><h3 class="t-h3">Presentación de resultados Q2 2026</h3><p class="t-small date-item__meta">Presentación · PDF 4,6 MB</p></div>
+              </li>
+              <li class="date-item">
+                <time class="date-item__date" datetime="2026-08-27"><span class="t-figure-m date-item__day">27</span><span class="t-label date-item__month">Ago 2026</span></time>
+                <div class="date-item__body"><h3 class="t-h3">Estados financieros consolidados Q2 2026</h3><p class="t-small date-item__meta">Estados financieros · PDF 2,1 MB</p></div>
+              </li>
+              <li class="date-item">
+                <time class="date-item__date" datetime="2026-08-27"><span class="t-figure-m date-item__day">27</span><span class="t-label date-item__month">Ago 2026</span></time>
+                <div class="date-item__body"><h3 class="t-h3">Análisis razonado Q2 2026</h3><p class="t-small date-item__meta">Análisis razonado · PDF 860 KB</p></div>
+              </li>
             </ul>
+            <a class="btn btn--tertiary hit" href="centro-de-resultados.html">Ir al Centro de Resultados<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
           </div>
-          <a class="btn btn--tertiary hit" href="#">Ver calendario completo<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          <div class="ir-module reveal" style="--reveal-step: 1">
+            <h2 class="t-h2" id="event-title">Próximos eventos</h2>
+            <ul class="date-list" role="list" aria-label="Próximos eventos">
+              <li class="date-item">
+                <time class="date-item__date" datetime="2026-11-12"><span class="t-figure-m date-item__day">12</span><span class="t-label date-item__month">Nov 2026</span></time>
+                <div class="date-item__body"><h3 class="t-h3">Publicación de resultados Q3 2026</h3><p class="t-small date-item__meta">Conferencia telefónica 13 nov · 11:00 h (CLT) [contenido por definir]</p></div>
+              </li>
+              <li class="date-item">
+                <time class="date-item__date" datetime="2027-02-25"><span class="t-figure-m date-item__day">25</span><span class="t-label date-item__month">Feb 2027</span></time>
+                <div class="date-item__body"><h3 class="t-h3">Publicación de resultados Q4 2026</h3><p class="t-small date-item__meta">Conferencia telefónica · hora por confirmar [contenido por definir]</p></div>
+              </li>
+              <li class="date-item">
+                <time class="date-item__date" datetime="2027-04-28"><span class="t-figure-m date-item__day">28</span><span class="t-label date-item__month">Abr 2027</span></time>
+                <div class="date-item__body"><h3 class="t-h3">Junta Ordinaria de Accionistas</h3><p class="t-small date-item__meta">Santiago · 10:00 h (CLT) [contenido por definir]</p></div>
+              </li>
+            </ul>
+            <a class="btn btn--tertiary hit" href="#">Ver calendario completo<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </div>
         </div>
       </div>
     </section>

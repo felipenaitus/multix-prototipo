@@ -29,7 +29,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Breadcrumb | Ruta completa | Solo "← Volver a [página padre]" |
 | Hero | Display + bajada + botones en fila; franja temporal en una línea | Display móvil; botones apilados a ancho completo; franja temporal en dos líneas (etiqueta arriba, texto + enlace abajo) |
 | Cifras "en una mirada" | 4 columnas con divisores verticales | Grilla de 2 × 2 con divisores horizontales |
-| Último resultado + próximo evento | Dos tarjetas lado a lado | Apiladas: último resultado primero |
+| Accesos de Inversionistas (últimos documentos + próximos eventos) | Dos módulos lado a lado con la misma estructura | Apilados: documentos primero; cada uno con su acceso debajo |
 | Accesos a documentos del trimestre | Grilla 2 × 2 | Lista de 1 columna |
 | Botones de agendar (Google, Outlook) | "Agendar" seguido de los dos botones pequeños en fila | Igual: las dos opciones siempre a la vista (sin botón que las despliegue) |
 | Barra de filtros | Buscador + selects en una fila; chips activos debajo | Buscador visible + botón "Filtrar (n)" que abre un panel inferior con los filtros y "Aplicar"/"Limpiar"; chips activos con scroll horizontal |
@@ -67,7 +67,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Compañía integrada (Inversionistas) | Texto y círculo con video en dos mitades | Texto arriba y círculo debajo (86 % del ancho en mobile, 60 % en tablet), con las regiones alrededor |
 | Ofertas por región | Filas con la cantidad en coral a la izquierda, región y localidades al centro y la flecha en círculo a la derecha | Igual (las tres columnas se mantienen); la flecha en círculo es la zona táctil de 44 px y toda la fila es el enlace |
 | Círculo con video | Ilustración sobre círculo a la derecha del texto; hover abre el video | Debajo del texto (80 % del ancho en mobile, 60 % en tablet). Sin hover: el video se abre y cierra con un toque |
-| Módulos enfrentados de Inversionistas | Dos módulos lado a lado con una línea vertical entre ambos | Tablet y mobile: apilados (últimos reportes primero), cada uno con su acceso debajo |
+| Lista con fecha | Fecha (día y mes) a la izquierda, título y dato a la derecha | Igual: la columna de la fecha se mantiene y el título baja de línea si no cabe |
 | Noticias | Tres notas en fila | Tablet: slider con casi dos notas a la vista. Mobile: slider con una nota y parte de la siguiente |
 | Botón flotante del asistente | Fijo abajo a la derecha, 56 px, a `--space-32` del borde | Igual, a `--space-24` del borde |
 | Footer | Logo arriba; Direcciones · Información · Personas y proveedores en una fila con los títulos alineados; redes y copyright abajo. Tablet: direcciones arriba (en dos columnas) y enlaces debajo | Mobile: Información y Personas y proveedores en acordeón; direcciones y teléfonos siempre visibles; Canal de Denuncias como enlace dentro de Información |

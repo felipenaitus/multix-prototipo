@@ -146,10 +146,11 @@
 /* Sección oscura (.section--inverse) · PRUEBA, pendiente de Figma.
    Fondo Navy 950. Dentro de ella los tokens semánticos se reasignan para que
    los componentes (documentos, evento, botones, catálogo) se adapten solos:
-   textos claros, líneas Navy 600, contenedores Navy 900 y coral 500. */
+   textos claros, líneas Navy 600 y coral 500. Los contenedores no llevan relleno
+   (fondo = Navy 950); Navy 900 queda solo para el hover de los botones de contorno. */
 .section--inverse {
-  --color-bg-page: var(--color-navy-900);
-  --color-bg-subtle: var(--color-navy-900);
+  --color-bg-page: var(--color-navy-950);
+  --color-bg-subtle: var(--color-navy-950);
   --color-bg-brand-soft: var(--color-navy-900);
   --color-text-primary: var(--color-neutral-0);
   --color-text-secondary: var(--color-navy-300);
