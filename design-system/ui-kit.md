@@ -45,6 +45,8 @@ Reglas de contraste verificadas (WCAG 2.1 AA):
 ### Tipografía (node 75-115)
 Sora (títulos y cifras, pesos 300 y 400; 200 y 600 solo en el Display destacado) + Manrope (cuerpo e interfaz, 400 a 700).
 
+**Tamaños fluidos (pendiente de Figma):** Display, Títulos 1–3 y Cifras L/M/S crecen de forma continua entre su tamaño móvil (a 768 px) y el de desktop (a 1440 px); desde 1440 px quedan en el tamaño de Figma. Así, en notebooks con escalado alto (≈ 1067 px) los títulos no se ven desproporcionados. Cuerpo, etiquetas e interfaz tienen tamaño fijo.
+
 | Estilo Figma | Token | Uso |
 |---|---|---|
 | Display | `--text-display-*` | Título del hero. Uno por página. |

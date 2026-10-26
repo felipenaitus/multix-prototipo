@@ -15,7 +15,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 3. **Ocultar no es adaptar.** No se elimina contenido en mobile; se reordena, se colapsa o se mueve a un panel.
 4. **Toque, no hover.** Todo lo que en desktop aparece con hover tiene en mobile un equivalente visible o activable con un toque. Zona táctil mínima de 44px.
 5. **Lo importante, primero.** En mobile se respeta el orden de lectura: lo que en desktop está a la derecha (por ejemplo, el próximo evento junto al último resultado) baja debajo, nunca queda oculto.
-6. **Márgenes y aire se mantienen proporcionales.** Gutter 20px y separación entre secciones de 72px en mobile (tokens `--layout-gutter`, `--layout-section-gap`).
+6. **Márgenes y aire se mantienen proporcionales.** En desktop (≥ 1024 px) el margen lateral es como mínimo 64 px, para que el contenido no quede pegado a los bordes en notebooks con escalado alto; y Display, títulos y cifras crecen de forma continua entre 768 y 1440 px. Gutter 20px y separación entre secciones de 72px en mobile (tokens `--layout-gutter`, `--layout-section-gap`).
 7. **Movimiento liviano.** Videos de scroll-scrubbing y animaciones pesadas se reemplazan por imagen o por una animación simple en mobile y con `prefers-reduced-motion`.
 
 ## Patrones por componente

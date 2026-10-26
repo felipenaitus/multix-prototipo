@@ -164,6 +164,30 @@
   --color-border-accent: var(--color-coral-500);
 }
 
+/* Pantallas medianas (desde 768 px). Pedido de Felipe (pendiente de Figma):
+   - El margen lateral en desktop (≥ 1024 px) es como mínimo 64 px; antes era el 4 % del
+     ancho (43 px en un notebook de 1067 px con escalado alto).
+   - Display, Títulos y Cifras crecen de forma continua entre el tamaño móvil (a 768 px)
+     y el de desktop (a 1440 px); desde 1440 px quedan como antes. Cuerpo, etiquetas e
+     interfaz no cambian. */
+@media (min-width: 768px) {
+  :root {
+    --text-display-size: clamp(40px, calc(40px + 0.03571 * (100vw - 768px)), 64px);
+    --text-h1-size: clamp(32px, calc(32px + 0.01786 * (100vw - 768px)), 44px);
+    --text-h2-size: clamp(26px, calc(26px + 0.00893 * (100vw - 768px)), 32px);
+    --text-h3-size: clamp(20px, calc(20px + 0.00298 * (100vw - 768px)), 22px);
+    --text-figure-l-size: clamp(40px, calc(40px + 0.01786 * (100vw - 768px)), 52px);
+    --text-figure-m-size: clamp(32px, calc(32px + 0.01190 * (100vw - 768px)), 40px);
+    --text-figure-s-size: clamp(24px, calc(24px + 0.00595 * (100vw - 768px)), 28px);
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --layout-gutter: var(--layout-gutter-desktop);
+  }
+}
+
 /* Tipografía móvil (< 768px). Propuesta inicial: validar en el prototipo
    y, si se aprueba, llevarla a Figma. */
 @media (max-width: 767px) {

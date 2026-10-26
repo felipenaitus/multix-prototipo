@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-26 · Márgenes y tipografía para pantallas chicas
+- Figma pendiente · Código ✓ · `--layout-gutter` es como mínimo 64 px desde 1024 px (antes 4 % del ancho: 43 px en un notebook de ≈ 1067 px).
+- Figma pendiente · Código ✓ · Display, Títulos 1–3 y Cifras L/M/S pasan a tamaños fluidos (`clamp()` en `tokens.css`): del tamaño móvil a 768 px al de desktop a 1440 px. Ejemplo a 1067 px: Display 51, Título 1 37, Título 2 29, Cifra L 45 px. Motivo: el cliente ve el sitio en un ThinkPad con escalado alto (≈ 1067 × 500 px útiles) y todo se veía grande y junto.
+
 ## 2026-10-26 · Punto de quiebre de desktop en 1024 px
 - Código ✓ · El desktop empieza en 1024 px (antes 1280). Motivo: el cliente veía el sitio en un notebook con escalado de Windows (≈ 1093–1229 px de ancho) y le llegaba la versión tablet ampliada (círculo gigante, noticias en slider, header con hamburguesa). Se actualizan todas las media queries, los `matchMedia` de `layout.js` y `components.js`, CLAUDE.md y responsive.md. La verificación suma 1024 px.
 - Código ✓ · Ajustes para que todo quepa desde 1024: Mercados pasa a globo 2/5 y datos 3/5 (antes mitades; las cifras ya se salían de su columna a 1280 y 1440) y entre 1024 y 1279 usa Cifra M; las cifras en fila tienen menos aire lateral entre 1024 y 1279. Revisadas las seis páginas a 375, 768, 1024, 1093, 1229, 1280 y 1440 px.
