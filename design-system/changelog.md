@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-26 · "Ver PDF" en todos los documentos
+- Código ✓ · Centro de Resultados (y kit): cada documento suma "Ver PDF", que abre el archivo en una pestaña nueva, junto a "Descargar". Las dos acciones van juntas al final de la fila (`.doc-row__actions`); en mobile, debajo de los datos, en fila.
+
 ## 2026-10-26 · Inversionistas: dos últimos documentos
 - Código ✓ · El módulo "Últimos documentos publicados" de Inversionistas muestra los 2 últimos (antes 3); el próximo evento sigue ocupando el alto de la lista.
 

@@ -893,6 +893,19 @@
   min-height: var(--touch-target);
 }
 
+/* Acciones del documento: "Ver PDF" (abre en una pestaña nueva) y "Descargar",
+   siempre las dos y juntas */
+.doc-row__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: var(--space-24);
+}
+
+.doc-row__actions .doc-link {
+  min-height: var(--touch-target);
+}
+
 .doc-link {
   display: inline-flex;
   align-items: center;
