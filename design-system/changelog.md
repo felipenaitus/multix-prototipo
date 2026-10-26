@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-26 · Home: tres regiones en Trabaja con nosotros y acceso a Sustentabilidad
+- Código ✓ · Trabaja con nosotros muestra solo tres regiones destacadas con su cifra de ofertas (Los Lagos, Aysén y Magallanes); salen Santiago y Miami ("Ver todas las ofertas" sigue llevando al listado completo).
+- Código ✓ · "Ir a Sustentabilidad" pasa de botón secundario (con borde) a acceso de texto con flecha, igual que el resto de los accesos del home.
+
 ## 2026-10-26 · Hero del home: cambio de frase completa
 - Código ✓ · El hero deja de cambiar palabra por palabra (que armaba "Cuidando el futuro" y "Alimentando el mundo") y alterna dos frases completas: "Alimentando el futuro" → "Cuidando el mundo". La oración entera sale hacia arriba y la siguiente entra desde abajo (`--duration-reveal`, pausa de 4 × `--duration-reveal`). Sigue como PRUEBA (`pruebas.css`), pendiente de llevar a motion.md.
 
