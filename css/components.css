@@ -3438,6 +3438,28 @@ a.pagination__item:hover,
   color: var(--color-text-secondary);
 }
 
+/* Imagen bajo el título y la bajada (ej.: portada de la última memoria anual).
+   Sin caja: la imagen va recortada sobre el fondo de la sección. */
+.section-head__media {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: var(--space-16);
+}
+
+/* Tablet: el encabezado va a todo el ancho, así que la imagen no ocupa todo */
+@media (min-width: 768px) {
+  .section-head__media {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-head__media {
+    width: 100%;
+  }
+}
+
 /* Apertura ([data-section-open], components.js) · transición de blanco a crema
    (PRUEBA). La sección entra recortada (más angosta y con esquinas redondeadas) y
    se abre a todo el ancho con bordes rectos mientras sube: --open-progress de 0

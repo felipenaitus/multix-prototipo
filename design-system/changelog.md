@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-26 · Portada de la última memoria
+- Código ✓ · Centro de Resultados › Memoria anual: bajo el título y la bajada va la portada de la Memoria integrada 2025 (`assets/img/memoria-2025.webp`, 900 px, desde Memoria_Imagen). Nuevo elemento `.section-head__media`.
+
 ## 2026-10-26 · "Ver PDF" más claro (excepción a AA)
 - Figma pendiente · Código ✓ · Tokens nuevos: primitivo `--color-ink-400` (#7A8B91) y semántico `--color-text-quiet` (3,5:1 sobre blanco). "Ver PDF" pasa de Ink 500 a Ink 400. **Excepción a AA** (pide 4,5:1 para texto de ese tamaño) aprobada por Felipe, solo para "Ver PDF"; con hover pasa a Ink 900.
 
