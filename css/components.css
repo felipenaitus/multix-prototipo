@@ -906,6 +906,15 @@
   min-height: var(--touch-target);
 }
 
+/* "Ver PDF" en gris secundario (Ink 600) para diferenciarlo de "Descargar" (Navy) */
+.doc-link.doc-link--view {
+  color: var(--color-text-secondary);
+}
+
+.doc-link.doc-link--view:hover {
+  color: var(--color-text-primary);
+}
+
 .doc-link {
   display: inline-flex;
   align-items: center;

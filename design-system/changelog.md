@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-26 · "Ver PDF" en gris
+- Código ✓ · "Ver PDF" pasa a gris secundario (Ink 600, `.doc-link--view`; con hover, Ink 900) para diferenciarse de "Descargar", que sigue en Navy.
+
 ## 2026-10-26 · "Ver PDF" en todos los documentos
 - Código ✓ · Centro de Resultados (y kit): cada documento suma "Ver PDF", que abre el archivo en una pestaña nueva, junto a "Descargar". Las dos acciones van juntas al final de la fila (`.doc-row__actions`); en mobile, debajo de los datos, en fila.
 
