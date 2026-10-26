@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-26 · Nueva ilustración de Congelado
+- Código ✓ · Productos › Soluciones para cada mercado: la ilustración del paso Congelado se reemplaza por la nueva (Congelado_2), convertida a WebP sin pérdida de 800 px en el mismo archivo `assets/img/congelado.webp`.
+
 ## 2026-10-26 · Fondo del menú más oscuro
 - Código ✓ · Con el menú hamburguesa abierto, el fondo oscurecido pasa de Navy 950 al 45 % a 65 %: el logo y la X blancos suben de 2,9:1 a 5,4:1 sobre páginas blancas (AA). En mobile no cambia (el menú es una pantalla blanca).
 
