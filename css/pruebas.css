@@ -52,34 +52,21 @@
 }
 
 /* ==========================================================================
-   PRUEBA · Cambio de palabras del hero (patrón nuevo, aún no está en motion.md)
+   PRUEBA · Cambio de frase del hero (patrón nuevo, aún no está en motion.md)
+   Dos frases completas apiladas en la misma celda; cambia la oración entera.
    Todo en blanco: la primera palabra en Sora 200 y "el futuro / el mundo" en
-   semibold (Sora 600). Cada espacio apila sus dos palabras en la misma celda
-   para que el cambio no mueva el resto de la frase. Solo opacity y transform.
+   semibold (Sora 600), con el ícono de la marca. Solo opacity y transform.
    ========================================================================== */
 .word-swap {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.word-swap__line {
-  display: inline-flex;
-  align-items: center;
-  gap: .3em;
-}
-
-.word-swap__slot {
   display: inline-grid;
   justify-items: center;
 }
 
-.word-swap__slot--b {
-  font-weight: var(--text-display-strong-weight); /* Display destacado: Semibold */
-}
-
-.word-swap__word {
+.word-swap__phrase {
   grid-area: 1 / 1;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
   white-space: nowrap;
   opacity: 0;
   transform: translateY(var(--motion-reveal-distance));
@@ -88,21 +75,22 @@
     transform var(--duration-reveal) var(--easing-out);
 }
 
-.word-swap__word.is-active {
+.word-swap__phrase.is-active {
   opacity: 1;
   transform: none;
 }
 
-.word-swap__word.is-leaving {
+.word-swap__phrase.is-leaving {
   opacity: 0;
   transform: translateY(calc(-1 * var(--motion-reveal-distance)));
 }
 
-/* Ícono de la marca pegado a "el futuro / el mundo" (assets/brand/icon-chevron.svg) */
-.word-swap__slot--b .word-swap__word {
+/* "el futuro / el mundo" con el ícono de la marca (assets/brand/icon-chevron.svg) */
+.word-swap__b {
   display: inline-flex;
   align-items: center;
   gap: .3em;
+  font-weight: var(--text-display-strong-weight); /* Display destacado: Semibold */
 }
 
 .word-swap__icon {
@@ -111,25 +99,15 @@
   height: .62em;
 }
 
-/* Una línea solo en desktop: en tablet "Alimentando el mundo" no cabe con aire */
+/* Una línea solo en desktop; en mobile y tablet, cada frase en dos líneas */
 @media (min-width: 1024px) {
-  .word-swap {
+  .word-swap__phrase {
     flex-direction: row;
     align-items: baseline;
     gap: .3em;
   }
 
-  /* La primera palabra se alinea a la derecha y la segunda a la izquierda:
-     la frase queda unida al centro aunque cambie el largo de las palabras */
-  .word-swap__slot--a {
-    justify-items: end;
-  }
-
-  .word-swap__slot--b {
-    justify-items: start;
-  }
-
-  .word-swap__line {
+  .word-swap__b {
     align-self: center;
   }
 }
