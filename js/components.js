@@ -173,7 +173,14 @@
     $all('[data-tabs]').forEach(function (strip) {
       var tabs = $all('[role="tab"]', strip);
 
+      // Con data-tabs-hash, cada pestaña tiene su enlace (#data-hash): se abre al
+      // cargar la página con ese hash y la URL se actualiza al cambiar de pestaña
+      var useHash = strip.hasAttribute('data-tabs-hash');
+
       function select(tab, focus) {
+        if (useHash && tab.getAttribute('data-hash')) {
+          history.replaceState(null, '', location.pathname + location.search + '#' + tab.getAttribute('data-hash'));
+        }
         tabs.forEach(function (t) {
           var on = t === tab;
           t.setAttribute('aria-selected', String(on));
@@ -187,6 +194,16 @@
         strip.scrollTo({ left: Math.max(left, 0), behavior: cssMs('--duration-base') ? 'smooth' : 'auto' });
         var shown = document.getElementById(tab.getAttribute('aria-controls'));
         if (shown) replayCounters(shown);
+      }
+
+      function fromHash() {
+        var h = location.hash.slice(1);
+        var t = h && tabs.filter(function (x) { return x.getAttribute('data-hash') === h; })[0];
+        if (t) select(t);
+      }
+      if (useHash) {
+        fromHash();
+        window.addEventListener('hashchange', fromHash);
       }
 
       tabs.forEach(function (tab, i) {

@@ -34,8 +34,19 @@
 
     <ir-subnav current="resultados"></ir-subnav>
 
+    <!-- Pestañas de contenido: cada grupo de documentos al mismo nivel, arriba.
+         Enlace directo: centro-de-resultados.html#memoria-anual -->
+    <div class="container page-tabs">
+      <div class="tabs" data-tabs data-tabs-hash>
+        <div class="tabs__list" role="tablist" aria-label="Contenido del Centro de Resultados">
+          <button class="tab" type="button" role="tab" id="tab-trimestrales" aria-selected="true" aria-controls="panel-trimestrales" data-hash="resultados-trimestrales">Resultados trimestrales</button>
+          <button class="tab" type="button" role="tab" id="tab-memoria" aria-selected="false" aria-controls="panel-memoria" data-hash="memoria-anual">Memoria anual</button>
+        </div>
+      </div>
+    </div>
+
     <!-- Resultados trimestrales -->
-    <section class="section" aria-labelledby="quarterly-title">
+    <section class="section tab-panel" id="panel-trimestrales" role="tabpanel" aria-labelledby="tab-trimestrales">
       <div class="container">
         <div class="section-head">
           <h2 class="t-h2" id="quarterly-title">Resultados trimestrales</h2>
@@ -375,7 +386,7 @@
     </section>
 
     <!-- Memoria anual: la más reciente destacada y, al lado, las anteriores (3 a la vista + "Ver más memorias") -->
-    <section class="section section--subtle section--open-in" aria-label="Memoria anual" data-section-open>
+    <section class="section section--subtle tab-panel" id="panel-memoria" role="tabpanel" aria-labelledby="tab-memoria" hidden>
       <div class="container">
         <div class="annual">
           <article class="annual-featured reveal" aria-labelledby="annual-latest">

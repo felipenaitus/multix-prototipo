@@ -460,6 +460,43 @@
   display: none;
 }
 
+/* Pestañas de contenido de una página (bajo el encabezado y el sub-menú): cada
+   pestaña muestra una sección; el contenido parte más cerca de las pestañas */
+.page-tabs {
+  padding-block: var(--space-40);
+}
+
+.page-tabs ~ .section {
+  padding-top: var(--space-48);
+}
+
+/* Mobile: las pestañas se reparten el ancho (todas a la vista, el texto puede
+   ir en dos líneas); desde tablet, del ancho de su texto */
+.page-tabs .tabs__list {
+  display: flex;
+  width: 100%;
+}
+
+.page-tabs .tab {
+  flex: 1 1 0;
+  white-space: normal;
+  text-align: center;
+  padding-inline: var(--space-12);
+}
+
+@media (min-width: 768px) {
+  .page-tabs .tabs__list {
+    display: inline-flex;
+    width: auto;
+  }
+
+  .page-tabs .tab {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding-inline: var(--space-20);
+  }
+}
+
 .tab-panel {
   animation: fade-up var(--duration-base) var(--easing-out);
 }
