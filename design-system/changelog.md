@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-27 · Memorias anteriores hasta 2020
+- Código ✓ · "Años anteriores" muestra de 2024 a 2020; "Ver más memorias" despliega 2019.
+
 ## 2026-10-27 · Memoria anual más jerarquizada
 - Código ✓ · La memoria destacada baja su título a Título 3 (antes Título 2, igual que el de la sección). "Más reciente" va arriba con una línea debajo, como "Años anteriores", así las dos columnas parten a la misma altura; la portada pasa al 80 % de su columna.
 
