@@ -175,6 +175,12 @@
   }
 
   /* ---------- Pestañas ---------- */
+  var tabsIdCount = 0;
+  function nextTabsId(prefix) {
+    tabsIdCount += 1;
+    return prefix + '-' + tabsIdCount;
+  }
+
   function initTabs() {
     $all('[data-tabs]').forEach(function (strip) {
       var tabs = $all('[role="tab"]', strip);
@@ -182,10 +188,29 @@
       // Con data-tabs-hash, cada pestaña tiene su enlace (#data-hash): se abre al
       // cargar la página con ese hash y la URL se actualiza al cambiar de pestaña
       var useHash = strip.hasAttribute('data-tabs-hash');
-      // Selector desplegable equivalente (mobile), en el mismo contenedor: cada
-      // opción tiene como valor el id de su pestaña
-      var picker = strip.parentElement.querySelector('[data-tabs-select]');
-      if (picker) picker.addEventListener('change', function () {
+      // Regla mobile: toda tira de pestañas tiene un selector desplegable equivalente
+      // (lo crea este script; el CSS muestra el selector en mobile y las pestañas
+      // desde tablet). Cada opción tiene como valor el id de su pestaña.
+      var list = strip.querySelector('[role="tablist"]');
+      var pickerId = nextTabsId('tabs-select');
+      var wrap = document.createElement('div');
+      wrap.className = 'tabs-select';
+      wrap.innerHTML =
+        '<label class="visually-hidden" for="' + pickerId + '">' + ((list && list.getAttribute('aria-label')) || 'Ver') + '</label>' +
+        '<div class="control control--select control--brand"><select class="control__input" id="' + pickerId + '"></select>' +
+        '<svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg></div>';
+      var picker = wrap.querySelector('select');
+      tabs.forEach(function (t) {
+        if (!t.id) t.id = nextTabsId('tab');
+        var o = document.createElement('option');
+        o.value = t.id;
+        o.textContent = t.textContent.trim();
+        if (t.getAttribute('aria-selected') === 'true') o.selected = true;
+        picker.appendChild(o);
+      });
+      strip.parentNode.insertBefore(wrap, strip);
+      strip.classList.add('has-select');
+      picker.addEventListener('change', function () {
         var t = document.getElementById(picker.value);
         if (t) select(t);
       });
@@ -194,7 +219,7 @@
         if (useHash && tab.getAttribute('data-hash')) {
           history.replaceState(null, '', location.pathname + location.search + '#' + tab.getAttribute('data-hash'));
         }
-        if (picker) picker.value = tab.id;
+        picker.value = tab.id;
         tabs.forEach(function (t) {
           var on = t === tab;
           t.setAttribute('aria-selected', String(on));

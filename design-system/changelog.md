@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-27 · Regla: pestañas como selector en mobile
+- Figma pendiente · Código ✓ · Regla para todo componente de pestañas (`[data-tabs]`): en mobile se ve un selector desplegable que crea `components.js` a partir de las pestañas (`.tabs-select`), sincronizado con ellas y con el enlace directo. El selector va en azul Navy 900 con texto blanco (`.control--brand`, como la pestaña activa). El Centro de Resultados deja su selector escrito a mano.
+
 ## 2026-10-27 · Selector desplegable para las pestañas en mobile
 - Código ✓ · Centro de Resultados: en mobile las pestañas de contenido pasan a un selector desplegable "Ver" (Resultados trimestrales / Memoria anual), sincronizado con las pestañas y el enlace directo (`#memoria-anual`). Desde tablet se mantienen las pestañas. Decisión de Felipe.
 

@@ -456,6 +456,53 @@
   color: var(--color-text-inverse);
 }
 
+/* Regla mobile de las pestañas: en mobile se ve un selector desplegable en azul
+   (como la pestaña activa), que creó components.js; desde tablet, las pestañas */
+.tabs-select {
+  margin-bottom: var(--space-16);
+}
+
+.tabs.has-select {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .tabs-select {
+    display: none;
+  }
+
+  .tabs.has-select {
+    display: flex;
+  }
+}
+
+/* Campo de selección en azul (Navy 900, texto blanco) */
+.control--brand {
+  background: var(--color-bg-brand);
+  border-color: var(--color-bg-brand);
+}
+
+.control--brand:hover {
+  border-color: var(--color-bg-brand-hover);
+  background: var(--color-bg-brand-hover);
+}
+
+.control--brand .control__input,
+.control--brand .icon {
+  color: var(--color-text-inverse);
+  font-weight: var(--text-ui-button-weight);
+}
+
+.control--brand option {
+  color: var(--color-text-primary);
+  background: var(--color-bg-page);
+}
+
+.control--brand:focus-within {
+  border-color: var(--color-border-brand);
+  box-shadow: 0 0 0 var(--border-focus) var(--color-bg-page), 0 0 0 calc(var(--border-focus) * 2) var(--color-border-brand);
+}
+
 .tab-panel[hidden] {
   display: none;
 }
@@ -480,21 +527,7 @@
   padding-top: 0;
 }
 
-/* Mobile: selector desplegable ("Ver: …") en lugar de las pestañas; desde tablet,
-   las pestañas. Los dos muestran la misma sección ([data-tabs-select]). */
-.page-tabs .tabs {
-  display: none;
-}
 
-@media (min-width: 768px) {
-  .page-tabs__select {
-    display: none;
-  }
-
-  .page-tabs .tabs {
-    display: flex;
-  }
-}
 
 .tab-panel {
   animation: fade-up var(--duration-base) var(--easing-out);
