@@ -1014,6 +1014,14 @@
   color: var(--color-text-primary);
 }
 
+/* Variante grande (ej.: memoria destacada): mismo enlace, en UI/Botón */
+.doc-link--lg {
+  gap: var(--space-8);
+  font-size: var(--text-ui-button-size);
+  line-height: var(--text-ui-button-lh);
+  font-weight: var(--text-ui-button-weight);
+}
+
 .doc-link {
   display: inline-flex;
   align-items: center;
