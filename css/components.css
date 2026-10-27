@@ -1087,9 +1087,11 @@
   background: none;
 }
 
-/* Regla: sobre fondo crema, los contenedores de ícono y de fecha pasan a blanco */
+/* Regla: sobre fondo crema, los contenedores de ícono, fecha y etiqueta, y el hover
+   de los años del acordeón, pasan a blanco */
 .section--subtle .doc-row__icon,
-.section--subtle .event__date {
+.section--subtle .event__date,
+.section--subtle .doc-year__head:hover {
   background: var(--color-bg-page);
 }
 
@@ -1116,6 +1118,11 @@
   .doc-row .doc-row__badge {
     padding-inline: var(--space-12);
     background: var(--color-bg-subtle);
+  }
+
+  /* Sobre crema la etiqueta es blanca (en mobile va como texto, sin relleno) */
+  .section--subtle .doc-row .doc-row__badge {
+    background: var(--color-bg-page);
   }
 
   .doc-row .doc-row__action {

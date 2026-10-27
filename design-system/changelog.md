@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-27 · Centro de Resultados con las dos pestañas en crema
+- Código ✓ · Resultados trimestrales también pasa a fondo crema (`section--subtle`), igual que Memoria anual: el fondo empieza después de las pestañas. Sobre crema, la etiqueta neutra del tipo de documento y el hover de los años pasan a blanco (regla de contenedores sobre crema).
+
 ## 2026-10-27 · Menos aire entre pestañas y contenido
 - Código ✓ · En las pestañas de contenido sobre fondo blanco, el contenido parte justo bajo las pestañas (de 88 a 40 px entre las pestañas y el título de Resultados trimestrales). Las pestañas con fondo crema mantienen su aire.
 
