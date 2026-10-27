@@ -480,30 +480,19 @@
   padding-top: 0;
 }
 
-/* Mobile: las pestañas se reparten el ancho (todas a la vista, el texto puede
-   ir en dos líneas); desde tablet, del ancho de su texto */
-.page-tabs .tabs__list {
-  display: flex;
-  width: 100%;
-}
-
-.page-tabs .tab {
-  flex: 1 1 0;
-  white-space: normal;
-  text-align: center;
-  padding-inline: var(--space-12);
+/* Mobile: selector desplegable ("Ver: …") en lugar de las pestañas; desde tablet,
+   las pestañas. Los dos muestran la misma sección ([data-tabs-select]). */
+.page-tabs .tabs {
+  display: none;
 }
 
 @media (min-width: 768px) {
-  .page-tabs .tabs__list {
-    display: inline-flex;
-    width: auto;
+  .page-tabs__select {
+    display: none;
   }
 
-  .page-tabs .tab {
-    flex: 0 0 auto;
-    white-space: nowrap;
-    padding-inline: var(--space-20);
+  .page-tabs .tabs {
+    display: flex;
   }
 }
 

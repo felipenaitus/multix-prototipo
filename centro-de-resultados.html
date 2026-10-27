@@ -30,6 +30,17 @@
     <!-- Pestañas de contenido: cada grupo de documentos al mismo nivel, arriba.
          Enlace directo: centro-de-resultados.html#memoria-anual -->
     <div class="container page-tabs">
+      <!-- Mobile: selector desplegable; desde tablet, pestañas (ambos se sincronizan) -->
+      <div class="field page-tabs__select">
+        <label class="field__label" for="cr-view">Ver</label>
+        <div class="control control--select">
+          <select class="control__input" id="cr-view" data-tabs-select>
+            <option value="tab-trimestrales">Resultados trimestrales</option>
+            <option value="tab-memoria">Memoria anual</option>
+          </select>
+          <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+        </div>
+      </div>
       <div class="tabs" data-tabs data-tabs-hash>
         <div class="tabs__list" role="tablist" aria-label="Contenido del Centro de Resultados">
           <button class="tab" type="button" role="tab" id="tab-trimestrales" aria-selected="true" aria-controls="panel-trimestrales" data-hash="resultados-trimestrales">Resultados trimestrales</button>

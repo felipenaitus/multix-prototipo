@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-27 · Selector desplegable para las pestañas en mobile
+- Código ✓ · Centro de Resultados: en mobile las pestañas de contenido pasan a un selector desplegable "Ver" (Resultados trimestrales / Memoria anual), sincronizado con las pestañas y el enlace directo (`#memoria-anual`). Desde tablet se mantienen las pestañas. Decisión de Felipe.
+
 ## 2026-10-27 · Búsqueda sin tildes
 - Código ✓ · El buscador de documentos (Centro de Resultados) compara sin tildes ni mayúsculas: "analisis razonado" encuentra "Análisis razonado". Además busca cada palabra por separado, en cualquier orden ("presentacion q2" encuentra "Presentación de resultados Q2 2026"). Criterio para todos los buscadores que filtren contenido.
 

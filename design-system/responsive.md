@@ -25,7 +25,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Desplegable de Inversionistas | Se abre con hover o clic; navegable con teclado | No aplica: Inversionistas va en acordeón dentro del overlay |
 | Menú hamburguesa | Panel flotante bajo el header, ancho del contenedor, sobre el sitio oscurecido y desenfocado: buscador, tarjeta de noticia destacada, accesos en dos grupos y franja de Portales · Recursos con las redes a la derecha | Tablet: mismo panel sin vista previa, idioma dentro. Mobile: pantalla completa blanca, con el header también blanco y el logo en su color; sin vista previa; buscador arriba, "La compañía" y "Negocio" en lista, luego Portales, Recursos, idioma y redes |
 | Header fijo | Al bajar, la barra utilitaria sale y la fila principal pasa de 80 a 64 px; al volver arriba reaparece. Transparente sobre el hero → blanco al hacer scroll, siempre (sin importar el fondo) | Alto 64 px; se oculta al bajar y aparece al subir. Mismo cambio de transparente a blanco |
-| Pestañas de contenido de página | Bajo el encabezado y el sub-menú, del ancho de su texto | Las pestañas se reparten el ancho (todas a la vista); el texto puede ir en dos líneas |
+| Pestañas de contenido de página | Bajo el encabezado y el sub-menú, del ancho de su texto | Mobile: selector desplegable "Ver" (a ancho completo) con las mismas opciones. Tablet: pestañas |
 | Tabs de sección (sub-navegación) | Fila completa | Tira con scroll horizontal, tab activa visible y centrada |
 | Breadcrumb | Ruta completa | Solo "← Volver a [página padre]" |
 | Hero | Display + bajada + botones en fila; franja temporal en una línea | Display móvil; botones apilados a ancho completo; franja temporal en dos líneas (etiqueta arriba, texto + enlace abajo) |

@@ -182,11 +182,19 @@
       // Con data-tabs-hash, cada pestaña tiene su enlace (#data-hash): se abre al
       // cargar la página con ese hash y la URL se actualiza al cambiar de pestaña
       var useHash = strip.hasAttribute('data-tabs-hash');
+      // Selector desplegable equivalente (mobile), en el mismo contenedor: cada
+      // opción tiene como valor el id de su pestaña
+      var picker = strip.parentElement.querySelector('[data-tabs-select]');
+      if (picker) picker.addEventListener('change', function () {
+        var t = document.getElementById(picker.value);
+        if (t) select(t);
+      });
 
       function select(tab, focus) {
         if (useHash && tab.getAttribute('data-hash')) {
           history.replaceState(null, '', location.pathname + location.search + '#' + tab.getAttribute('data-hash'));
         }
+        if (picker) picker.value = tab.id;
         tabs.forEach(function (t) {
           var on = t === tab;
           t.setAttribute('aria-selected', String(on));
