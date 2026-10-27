@@ -918,34 +918,22 @@
   border-top: var(--border-thin) solid var(--color-border-default);
 }
 
-/* Portada sobre un círculo (como las ilustraciones e imágenes del sitio). Sobre
-   crema el círculo es blanco; crece con el scroll ([data-scroll-grow]). */
+/* Portada sobre un rectángulo redondeado a todo el ancho del bloque. Sobre crema
+   el fondo es blanco (regla de contenedores sobre crema). */
 .annual-featured__media {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   aspect-ratio: 3 / 2;
   margin: var(--space-8) 0;
-}
-
-.annual-featured__media::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  height: 100%;
-  aspect-ratio: 1;
-  margin: auto;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-xl);
   background: var(--color-bg-page);
-  transform: scale(calc(.6 + .5 * var(--scroll-progress, .8)));
 }
 
 .annual-featured__cover {
-  position: relative;
   display: block;
-  width: 92%;
+  width: 84%;
   height: auto;
 }
 
@@ -998,20 +986,10 @@
   transform: rotate(180deg);
 }
 
-@media (min-width: 768px) {
-  .annual-featured__media {
-    width: 70%;
-  }
-}
-
 @media (min-width: 1024px) {
   .annual {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: start;
-  }
-
-  .annual-featured__media {
-    width: 100%;
   }
 }
 
