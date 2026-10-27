@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-27 · Memorias anteriores hasta 2019
+- Código ✓ · "Años anteriores" muestra de 2024 a 2019; "Ver más memorias" despliega 2018 a 2015 (de ejemplo).
+
 ## 2026-10-27 · Se quita el índice de la página
 - Código ✓ · Se retira el índice "En esta página" del Centro de Resultados (ocupaba demasiado espacio): vuelve el ancho completo del contenido y las filas de "Años anteriores" lado a lado. Se mantienen los botones de la memoria destacada (secundario y primario).
 
