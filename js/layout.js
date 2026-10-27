@@ -11,6 +11,7 @@
    <chat-launcher>                           Botón flotante del asistente (se agrega solo)
    <sales-contact product>                   Botón flotante + formulario comercial
    <ir-subnav current>                       Sub-menú fijo de las páginas de Inversionistas
+   <results-release label title meta href>   Presentación del último trimestre (temporal; inactive la oculta)
 
    Estilos en css/components.css. Íconos: sprite de Figma (UI Kit), salvo las
    redes sociales (linkedin, x, facebook, instagram), dibujadas en el mismo estilo
@@ -807,6 +808,50 @@
      el header al hacer scroll. En mobile se desliza de lado y centra el acceso
      activo. Es transversal a todas las páginas de Inversionistas.
      ====================================================================== */
+  /* ======================================================================
+     <results-release> · Presentación de resultados del último trimestre.
+     Módulo administrable que se activa en ciertos períodos (tras cada
+     publicación de resultados): bajo el sub-menú de Inversionistas, da acceso
+     directo a la presentación ("Ver PDF" y "Descargar"). Sin title, o con el
+     atributo inactive, no se muestra.
+       label   Etiqueta (ej. "Nuevo")
+       title   Nombre del documento (ej. "Presentación de resultados Q2 2026")
+       meta    Fecha y peso (ej. "Publicada el 28 ago 2026 · PDF 4,6 MB")
+       href    Archivo PDF
+     ====================================================================== */
+  class ResultsRelease extends HTMLElement {
+    connectedCallback() {
+      if (this._ready) return;
+      this._ready = true;
+      injectSprite();
+      var title = this.getAttribute('title');
+      if (!title || this.hasAttribute('inactive')) {
+        this.hidden = true;
+        return;
+      }
+      var label = this.getAttribute('label');
+      var meta = this.getAttribute('meta');
+      var href = this.getAttribute('href') || '#';
+      this.removeAttribute('title'); // sin tooltip nativo sobre todo el bloque
+      this.classList.add('results-release');
+      this.setAttribute('role', 'region');
+      this.setAttribute('aria-label', 'Últimos resultados publicados');
+      this.innerHTML =
+        '<div class="container results-release__inner">' +
+          '<span class="results-release__icon">' + icon('doc', 'lg') + '</span>' +
+          '<div class="results-release__body">' +
+            (label ? '<p class="t-label results-release__label">' + esc(label) + '</p>' : '') +
+            '<p class="t-h3 results-release__title">' + esc(title) + '</p>' +
+            (meta ? '<p class="t-small results-release__meta">' + esc(meta) + '</p>' : '') +
+          '</div>' +
+          '<div class="results-release__actions">' +
+            '<a class="btn btn--secondary hit" href="' + esc(href) + '" target="_blank" rel="noopener">' + icon('external') + 'Ver PDF<span class="visually-hidden"> ' + esc(title) + ' (abre en una pestaña nueva)</span></a>' +
+            '<a class="btn btn--primary hit" href="' + esc(href) + '" download>' + icon('download') + 'Descargar<span class="visually-hidden"> ' + esc(title) + '</span></a>' +
+          '</div>' +
+        '</div>';
+    }
+  }
+
   class IrSubnav extends HTMLElement {
     connectedCallback() {
       if (this._ready) return;
@@ -890,5 +935,6 @@
   customElements.define('ir-contact', IrContact);
   customElements.define('chat-launcher', ChatLauncher);
   customElements.define('ir-subnav', IrSubnav);
+  customElements.define('results-release', ResultsRelease);
   customElements.define('sales-contact', SalesContact);
 })();

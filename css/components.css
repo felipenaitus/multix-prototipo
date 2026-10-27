@@ -2176,6 +2176,69 @@ a.pagination__item:hover,
   }
 }
 
+/* Presentación del último trimestre (<results-release> en js/layout.js): banda
+   bajo el sub-menú de Inversionistas, sin caja: ícono, etiqueta coral, nombre del
+   documento y datos a la izquierda; "Ver PDF" y "Descargar" a la derecha. Una
+   línea la separa del contenido. En mobile se apila y los botones van a lo ancho. */
+.results-release {
+  display: block;
+  border-bottom: var(--border-thin) solid var(--color-border-default);
+}
+
+.results-release__inner {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-16) var(--space-20);
+  padding-block: var(--space-32);
+}
+
+.results-release__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: start;
+  width: var(--touch-target);
+  height: var(--touch-target);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-brand-soft);
+  color: var(--color-text-brand);
+}
+
+.results-release__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.results-release__label {
+  color: var(--color-text-accent);
+}
+
+.results-release__meta {
+  color: var(--color-text-secondary);
+}
+
+.results-release__actions {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-12);
+}
+
+@media (min-width: 768px) {
+  .results-release__inner {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: var(--space-24);
+  }
+
+  .results-release__actions {
+    grid-column: auto;
+    display: flex;
+  }
+}
+
 /* Franja temporal (bloque transversal <season-strip> en js/layout.js).
    Mobile: dos líneas (etiqueta arriba; texto + enlace abajo). Desktop: una línea. */
 .season-strip {

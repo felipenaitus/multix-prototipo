@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-27 · Presentación del último trimestre en Inversionistas
+- Figma pendiente · Código ✓ · Nuevo módulo temporal `<results-release>` (`js/layout.js`) bajo el hero y el sub-menú de Inversionistas, con la presentación de resultados del último trimestre (Q2 2026) y sus acciones "Ver PDF" y "Descargar". Se activa en ciertos períodos: con el atributo `inactive` (o sin `title`) no se muestra.
+
 ## 2026-10-27 · Regla: pestañas como selector en mobile
 - Figma pendiente · Código ✓ · Regla para todo componente de pestañas (`[data-tabs]`): en mobile se ve un selector desplegable que crea `components.js` a partir de las pestañas (`.tabs-select`), sincronizado con ellas y con el enlace directo. El selector va en azul Navy 900 con texto blanco (`.control--brand`, como la pestaña activa). El Centro de Resultados deja su selector escrito a mano.
 
