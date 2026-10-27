@@ -35,7 +35,7 @@ Estado: **Base** = se aplica en todo el sitio sin preguntar. **Firma** = efecto 
 | Entrada reversible (`.reveal-rev`) | Igual, pero se esconde al volver hacia arriba. Solo para accesos destacados de la home. | Se usa `.reveal` simple |
 | Entrada del hero | Título y bajada con fade + subida al cargar; desfases de 100 y 350ms. | Igual |
 | Contadores | Toda cifra o métrica destacada del sitio (cifras "en una mirada", metas, la cifra de Mercados, etc.) cuenta desde 0 al entrar en viewport, con `--duration-counter` y `data-count`. No aplica a fechas, años ni al precio de la acción. Formato chileno (punto de miles, coma decimal). | Igual |
-| Acordeones y desplegables | Rotación del ícono + aparición del contenido con `--duration-base`. | Igual |
+| Acordeones y desplegables (incluye "Ver más") | Rotación del ícono + aparición del contenido con `--duration-base`. | Igual |
 | Header al hacer scroll | Transparente sobre el hero; al bajar pasa a fondo blanco (siempre, sin importar el fondo del contenido), la barra utilitaria sale y la fila principal se compacta con el logo reducido, con `--duration-slow`. | Se oculta al bajar y aparece al subir |
 | Menú hamburguesa / overlay | Overlay a pantalla completa con fade + leve desplazamiento, `--duration-slow`. El mismo botón cierra; también Escape y tocar fuera. | Igual |
 | Menú hamburguesa (panel) | Panel flotante con fade + leve desplazamiento, `--duration-slow`; accesos con desfase de `--duration-stagger`. La tarjeta de noticia destacada es fija. Al abrir, el header se desvanece (`--duration-slow`) y quedan solo el logo y la X. | Pantalla completa |

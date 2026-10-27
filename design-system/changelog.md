@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-27 · Memoria anual con la más reciente destacada
+- Figma pendiente · Código ✓ · Centro de Resultados › Memoria anual: a la izquierda la memoria más reciente destacada (portada, "Más reciente", título, datos, "Descargar" y "Ver PDF"); a la derecha "Años anteriores" con 3 memorias a la vista y "Ver más memorias", que despliega las siguientes hacia abajo. Nuevos: `.annual`, `.annual-featured`, `.annual-archive` y el comportamiento `[data-reveal-more]`. Se suman 2020 y 2019 de ejemplo. Se retira `.section-head__media` (la portada pasa a la memoria destacada).
+
 ## 2026-10-26 · Portada de la última memoria
 - Código ✓ · Centro de Resultados › Memoria anual: bajo el título y la bajada va la portada de la Memoria integrada 2025 (`assets/img/memoria-2025.webp`, 900 px, desde Memoria_Imagen). Nuevo elemento `.section-head__media`.
 

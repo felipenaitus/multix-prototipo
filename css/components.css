@@ -893,6 +893,94 @@
   min-height: var(--touch-target);
 }
 
+/* Memoria anual (Centro de Resultados): la más reciente destacada (portada, etiqueta
+   "Más reciente", título, datos y acciones) y, al lado, las anteriores en lista: tres a
+   la vista y el resto tras "Ver más memorias" ([data-reveal-more]). Sin cajas. */
+.annual {
+  display: grid;
+  gap: var(--space-64);
+}
+
+.annual-featured {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-12);
+}
+
+.annual-featured__cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: var(--space-12);
+}
+
+.annual-featured__label {
+  color: var(--color-text-accent);
+}
+
+.annual-featured__meta {
+  color: var(--color-text-secondary);
+}
+
+.annual-featured__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-16) var(--space-32);
+  margin-top: var(--space-12);
+}
+
+.annual-archive {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+}
+
+.annual-archive__label {
+  color: var(--color-text-secondary);
+}
+
+.annual-archive > .doc-list {
+  align-self: stretch;
+}
+
+/* Grupo que se despliega con "Ver más": continúa la lista con su línea */
+.doc-list__more > .doc-row:first-child {
+  border-top: var(--border-thin) solid var(--color-border-default);
+}
+
+.doc-list__more:not([hidden]) {
+  animation: fade-up var(--duration-base) var(--easing-out);
+}
+
+/* Botón "Ver más": la flecha gira al desplegar */
+.reveal-more .icon {
+  transition: transform var(--duration-base) var(--easing-standard);
+}
+
+.reveal-more[aria-expanded="true"] .icon {
+  transform: rotate(180deg);
+}
+
+@media (min-width: 768px) {
+  .annual-featured__cover {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .annual {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .annual-featured__cover {
+    width: 100%;
+  }
+}
+
 /* Acciones del documento: "Ver PDF" (abre en una pestaña nueva) y "Descargar",
    siempre las dos y juntas */
 .doc-row__actions {
@@ -3436,28 +3524,6 @@ a.pagination__item:hover,
 
 .section-head__lead {
   color: var(--color-text-secondary);
-}
-
-/* Imagen bajo el título y la bajada (ej.: portada de la última memoria anual).
-   Sin caja: la imagen va recortada sobre el fondo de la sección. */
-.section-head__media {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-top: var(--space-16);
-}
-
-/* Tablet: el encabezado va a todo el ancho, así que la imagen no ocupa todo */
-@media (min-width: 768px) {
-  .section-head__media {
-    width: 70%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .section-head__media {
-    width: 100%;
-  }
 }
 
 /* Apertura ([data-section-open], components.js) · transición de blanco a crema

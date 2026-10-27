@@ -408,6 +408,23 @@
     });
   }
 
+  /* ---------- Ver más ([data-reveal-more]) ----------
+     Botón que muestra u oculta un grupo de elementos (aria-controls) y cambia su
+     texto entre data-label-more y data-label-less. Ej.: memorias anteriores. */
+  function initRevealMore() {
+    $all('[data-reveal-more]').forEach(function (btn) {
+      var target = document.getElementById(btn.getAttribute('aria-controls'));
+      var label = btn.querySelector('.reveal-more__label');
+      if (!target) return;
+      btn.addEventListener('click', function () {
+        var open = btn.getAttribute('aria-expanded') !== 'true';
+        btn.setAttribute('aria-expanded', String(open));
+        target.hidden = !open;
+        if (label) label.textContent = open ? btn.getAttribute('data-label-less') : btn.getAttribute('data-label-more');
+      });
+    });
+  }
+
   /* ---------- Relato vertical ([data-chain]) ----------
      Un paso visible a la vez (.chain__step). Lo cambia la persona con las
      flechas (atrás / adelante, en loop) o los tramos de la línea de secuencia.
@@ -973,6 +990,7 @@
     initSectionOpen();
     initSteps();
     initChain();
+    initRevealMore();
     initMediaCircle();
     initDocFilter();
     initInviewVideos();
