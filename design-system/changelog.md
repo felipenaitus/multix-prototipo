@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-27 · Orden de la memoria destacada
+- Código ✓ · En la memoria destacada, el título y los datos van sobre la portada y las acciones debajo de ella.
+
 ## 2026-10-27 · Acciones de la memoria destacada como las del resto
 - Código ✓ · La memoria destacada deja el botón de contorno "Descargar" y usa los mismos enlaces que las filas de documento: "Ver PDF" en gris y "Descargar" en Navy, sin contorno, en el mismo orden y en tamaño UI/Botón (`.doc-link--lg`).
 

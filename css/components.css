@@ -922,7 +922,7 @@
   display: block;
   width: 80%;
   height: auto;
-  margin-bottom: var(--space-16);
+  margin-top: var(--space-24);
 }
 
 .annual-featured__label {
