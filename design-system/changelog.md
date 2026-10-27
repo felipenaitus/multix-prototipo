@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-27 · Índice de la página en Centro de Resultados
+- Figma pendiente · Código ✓ · Nuevo índice "En esta página" (`.toc` + `[data-toc]`) con Resultados trimestrales y Memoria anual, para que la memoria no pase desapercibida. Desktop (≥ 1280): fijo arriba a la izquierda, fuera del ancho del contenido, que se angosta al centro (5/7); marca la sección a la vista. Mobile y tablet: fila de enlaces bajo el sub-menú. Con el contenido angosto, las filas de "Años anteriores" se apilan.
+- Código ✓ · Botones de la memoria destacada: "Ver PDF" secundario (contorno) y "Descargar" primario (relleno). Se retira `.doc-link--lg`.
+
 ## 2026-10-27 · Portada de la memoria sobre un círculo
 - Código ✓ · La portada de la memoria destacada va sobre un círculo blanco (regla de contenedores sobre crema) que crece con el scroll, igual que las ilustraciones del catálogo y de Soluciones (`.annual-featured__media` + `[data-scroll-grow]`).
 

@@ -332,6 +332,19 @@
       </div>
 
       <div class="kit-block">
+        <h3 class="t-label kit-block__title">Índice de la página (<code>.toc</code> + <code>[data-toc]</code>: en desktop va fijo a la izquierda del contenido; aquí, como fila de mobile y tablet)</h3>
+        <nav class="toc" aria-label="En esta página (ejemplo)" data-toc>
+          <div class="toc__inner">
+            <p class="t-label toc__label">En esta página</p>
+            <ul class="toc__list" role="list">
+              <li><a class="toc__link" href="#color">Color</a></li>
+              <li><a class="toc__link" href="#tipografia">Tipografía</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="kit-block">
         <h3 class="t-label kit-block__title">Sub-menú de Inversionistas (<code>&lt;ir-subnav current&gt;</code>: fijo bajo el header; en mobile, flecha si hay más secciones)</h3>
         <ir-subnav current="resultados" style="position: static"></ir-subnav>
       </div>
