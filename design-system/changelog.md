@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-27 · Sin migas de pan en Inversionistas y sub-menú con "Inversionistas"
+- Código ✓ · Centro de Resultados: se quitan las migas de pan (repetían el sub-menú). El primer acceso del sub-menú de Inversionistas pasa de "Inicio" a "Inversionistas". Las migas de pan siguen en el kit para otras secciones.
+
 ## 2026-10-27 · Sub-menú arriba en las páginas internas de Inversionistas
 - Código ✓ · En las páginas internas de Inversionistas (hoy, Centro de Resultados) el orden pasa a: sub-menú, encabezado (migas, título y bajada) y pestañas. La página principal de Inversionistas mantiene el sub-menú bajo el hero.
 

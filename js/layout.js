@@ -136,7 +136,7 @@
      Páginas aún no construidas apuntan a "#". [contenido por definir] en textos. */
   // id: identifica la página en el sub-menú (<ir-subnav current="...">); short: nombre en el sub-menú
   var INVESTOR_PAGES = [
-    { id: 'inicio', label: 'Ir a Inversionistas', short: 'Inicio', href: 'inversionistas.html', home: true },
+    { id: 'inicio', label: 'Ir a Inversionistas', short: 'Inversionistas', href: 'inversionistas.html', home: true },
     { id: 'resultados', label: 'Centro de Resultados', href: 'centro-de-resultados.html' },
     { id: 'gobernanza', label: 'Gobernanza', href: '#' },
     { id: 'calendario', label: 'Calendario y Eventos', href: '#' },
