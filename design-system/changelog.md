@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-27 · Portada de la memoria sobre un círculo
+- Código ✓ · La portada de la memoria destacada va sobre un círculo blanco (regla de contenedores sobre crema) que crece con el scroll, igual que las ilustraciones del catálogo y de Soluciones (`.annual-featured__media` + `[data-scroll-grow]`).
+
 ## 2026-10-27 · Orden de la memoria destacada
 - Código ✓ · En la memoria destacada, el título y los datos van sobre la portada y las acciones debajo de ella.
 
