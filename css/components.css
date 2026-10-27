@@ -2176,13 +2176,14 @@ a.pagination__item:hover,
   }
 }
 
-/* Presentación del último trimestre (<results-release> en js/layout.js): banda
-   bajo el sub-menú de Inversionistas, sin caja: ícono, etiqueta coral, nombre del
-   documento y datos a la izquierda; "Ver PDF" y "Descargar" a la derecha. Una
-   línea la separa del contenido. En mobile se apila y los botones van a lo ancho. */
+/* Presentación del último trimestre (<results-release> en js/layout.js): bloque
+   crema con esquinas redondeadas, dentro del contenedor y separado del sub-menú
+   (excepción a "sin cajas" pedida por Felipe: destaca un acceso temporal). Ícono,
+   etiqueta coral, nombre del documento y datos a la izquierda; "Ver PDF" y
+   "Descargar" a la derecha. En mobile se apila y los botones van a lo ancho. */
 .results-release {
   display: block;
-  border-bottom: var(--border-thin) solid var(--color-border-default);
+  padding-top: var(--space-40);
 }
 
 .results-release__inner {
@@ -2190,7 +2191,9 @@ a.pagination__item:hover,
   grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
   gap: var(--space-16) var(--space-20);
-  padding-block: var(--space-32);
+  padding: var(--space-24);
+  border-radius: var(--radius-xl);
+  background: var(--color-bg-subtle);
 }
 
 .results-release__icon {
@@ -2201,7 +2204,7 @@ a.pagination__item:hover,
   width: var(--touch-target);
   height: var(--touch-target);
   border-radius: var(--radius-lg);
-  background: var(--color-bg-brand-soft);
+  background: var(--color-bg-page); /* blanco sobre el bloque crema */
   color: var(--color-text-brand);
 }
 
@@ -2228,9 +2231,14 @@ a.pagination__item:hover,
 }
 
 @media (min-width: 768px) {
+  .results-release {
+    padding-top: var(--space-48);
+  }
+
   .results-release__inner {
     grid-template-columns: auto minmax(0, 1fr) auto;
     gap: var(--space-24);
+    padding: var(--space-32) var(--space-40);
   }
 
   .results-release__actions {

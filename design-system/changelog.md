@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-27 · Presentación del último trimestre como bloque
+- Código ✓ · `<results-release>` deja de ser una banda a todo el ancho con línea y pasa a un bloque crema redondeado dentro del contenedor, con más aire bajo el sub-menú (40 px en mobile, 48 px desde tablet). Excepción a "sin cajas" pedida por Felipe, porque destaca un acceso temporal.
+
 ## 2026-10-27 · Presentación del último trimestre en Inversionistas
 - Figma pendiente · Código ✓ · Nuevo módulo temporal `<results-release>` (`js/layout.js`) bajo el hero y el sub-menú de Inversionistas, con la presentación de resultados del último trimestre (Q2 2026) y sus acciones "Ver PDF" y "Descargar". Se activa en ciertos períodos: con el atributo `inactive` (o sin `title`) no se muestra.
 

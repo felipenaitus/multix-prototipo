@@ -837,7 +837,7 @@
       this.setAttribute('role', 'region');
       this.setAttribute('aria-label', 'Últimos resultados publicados');
       this.innerHTML =
-        '<div class="container results-release__inner">' +
+        '<div class="container"><div class="results-release__inner">' +
           '<span class="results-release__icon">' + icon('doc', 'lg') + '</span>' +
           '<div class="results-release__body">' +
             (label ? '<p class="t-label results-release__label">' + esc(label) + '</p>' : '') +
@@ -848,7 +848,7 @@
             '<a class="btn btn--secondary hit" href="' + esc(href) + '" target="_blank" rel="noopener">' + icon('external') + 'Ver PDF<span class="visually-hidden"> ' + esc(title) + ' (abre en una pestaña nueva)</span></a>' +
             '<a class="btn btn--primary hit" href="' + esc(href) + '" download>' + icon('download') + 'Descargar<span class="visually-hidden"> ' + esc(title) + '</span></a>' +
           '</div>' +
-        '</div>';
+        '</div></div>';
     }
   }
 
