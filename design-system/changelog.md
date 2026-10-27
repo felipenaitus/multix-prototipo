@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-27 · Memoria anual sin título de sección
+- Código ✓ · Se quitan el título "Memoria anual" y su bajada; la sección parte con "Más reciente" y "Años anteriores" (para lectores de pantalla queda `aria-label="Memoria anual"`).
+
 ## 2026-10-27 · Portada de la memoria sobre un rectángulo
 - Código ✓ · El contenedor detrás de la portada de la memoria destacada pasa de círculo a rectángulo blanco redondeado (`--radius-xl`) a todo el ancho del bloque, en todos los anchos. Ya no crece con el scroll.
 
