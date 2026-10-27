@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-27 · Menos aire entre pestañas y contenido
+- Código ✓ · En las pestañas de contenido sobre fondo blanco, el contenido parte justo bajo las pestañas (de 88 a 40 px entre las pestañas y el título de Resultados trimestrales). Las pestañas con fondo crema mantienen su aire.
+
 ## 2026-10-27 · Encabezado compacto en Resultados trimestrales
 - Código ✓ · El título y la bajada de Resultados trimestrales pasan a Título 3 y Cuerpo, con menos aire (`.section-head--compact`), porque la pestaña ya nombra la sección.
 

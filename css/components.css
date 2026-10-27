@@ -470,6 +470,11 @@
   padding-top: var(--space-48);
 }
 
+/* Pestaña sobre fondo blanco: el contenido parte justo bajo las pestañas */
+.page-tabs ~ .section:not(.section--subtle) {
+  padding-top: 0;
+}
+
 /* Las pestañas siguen directo al encabezado de la página */
 .page-head + .page-tabs {
   padding-top: 0;
