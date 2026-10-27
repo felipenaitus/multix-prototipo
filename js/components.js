@@ -408,30 +408,6 @@
     });
   }
 
-  /* ---------- Índice de la página ([data-toc]) ----------
-     Marca con aria-current el enlace de la sección que está a la vista (la última
-     cuyo borde superior pasó el 40 % alto de la ventana). */
-  function initToc() {
-    $all('[data-toc]').forEach(function (nav) {
-      var links = $all('.toc__link', nav);
-      var targets = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
-      var ticking = false;
-      function update() {
-        ticking = false;
-        var line = window.innerHeight * 0.4;
-        var current = 0;
-        targets.forEach(function (t, i) { if (t && t.getBoundingClientRect().top <= line) current = i; });
-        links.forEach(function (a, i) {
-          if (i === current) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
-        });
-      }
-      window.addEventListener('scroll', function () {
-        if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
-      }, { passive: true });
-      update();
-    });
-  }
-
   /* ---------- Ver más ([data-reveal-more]) ----------
      Botón que muestra u oculta un grupo de elementos (aria-controls) y cambia su
      texto entre data-label-more y data-label-less. Ej.: memorias anteriores. */
@@ -1015,7 +991,6 @@
     initSteps();
     initChain();
     initRevealMore();
-    initToc();
     initMediaCircle();
     initDocFilter();
     initInviewVideos();
