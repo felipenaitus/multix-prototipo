@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-27 · Sub-menú arriba en las páginas internas de Inversionistas
+- Código ✓ · En las páginas internas de Inversionistas (hoy, Centro de Resultados) el orden pasa a: sub-menú, encabezado (migas, título y bajada) y pestañas. La página principal de Inversionistas mantiene el sub-menú bajo el hero.
+
 ## 2026-10-27 · Centro de Resultados con pestañas de contenido
 - Figma pendiente · Código ✓ · Bajo el encabezado y el sub-menú, pestañas "Resultados trimestrales · Memoria anual" (`.page-tabs` con las pestañas del kit): cada una muestra su sección, así la memoria ya no queda al fondo. Enlace directo por pestaña (`[data-tabs-hash]` + `data-hash`, ej. `#memoria-anual`). Los enlaces con filtros (`?year=…`) siguen abriendo Resultados trimestrales. La memoria deja la Apertura (ahora es una pestaña).
 - Criterio nuevo para Inversionistas: 2 a 5 grupos → pestañas de contenido; más de 5 o documentos del mismo tipo → lista con filtros; un grupo → sin pestañas.

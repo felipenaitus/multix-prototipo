@@ -470,6 +470,11 @@
   padding-top: var(--space-48);
 }
 
+/* Las pestañas siguen directo al encabezado de la página */
+.page-head + .page-tabs {
+  padding-top: 0;
+}
+
 /* Mobile: las pestañas se reparten el ancho (todas a la vista, el texto puede
    ir en dos líneas); desde tablet, del ancho de su texto */
 .page-tabs .tabs__list {
