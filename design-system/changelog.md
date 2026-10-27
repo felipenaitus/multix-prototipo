@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-27 · Búsqueda sin tildes
+- Código ✓ · El buscador de documentos (Centro de Resultados) compara sin tildes ni mayúsculas: "analisis razonado" encuentra "Análisis razonado". Además busca cada palabra por separado, en cualquier orden ("presentacion q2" encuentra "Presentación de resultados Q2 2026"). Criterio para todos los buscadores que filtren contenido.
+
 ## 2026-10-27 · Centro de Resultados con las dos pestañas en crema
 - Código ✓ · Resultados trimestrales también pasa a fondo crema (`section--subtle`), igual que Memoria anual: el fondo empieza después de las pestañas. Sobre crema, la etiqueta neutra del tipo de documento y el hover de los años pasan a blanco (regla de contenedores sobre crema).
 

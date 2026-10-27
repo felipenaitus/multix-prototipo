@@ -33,6 +33,12 @@
     return Array.prototype.slice.call((ctx || document).querySelectorAll(sel));
   }
 
+  // Texto para búsquedas: sin tildes ni mayúsculas ("documentacion" encuentra
+  // "Documentación"; también ñ → n y ü → u)
+  function fold(text) {
+    return String(text).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  }
+
   function cssMs(name) {
     var v = getComputedStyle(root).getPropertyValue(name).trim();
     return v.indexOf('ms') > -1 ? parseFloat(v) : parseFloat(v) * 1000 || 0;
@@ -366,14 +372,16 @@
       function apply() {
         var f = {};
         selects.forEach(function (s) { f[s.name] = s.value; });
-        var q = search ? search.value.trim().toLowerCase() : '';
+        var q = search ? fold(search.value.trim()) : '';
+        // Cada palabra buscada debe aparecer, en cualquier orden ("presentacion q2")
+        var words = q ? q.split(/\s+/) : [];
         var active = selects.filter(function (s) { return s.value; }).length;
         var total = 0;
         rows.forEach(function (r) {
           var ok = (!f.year || r.dataset.year === f.year) &&
                    (!f.quarter || r.dataset.quarter === f.quarter) &&
                    (!f.type || r.dataset.type === f.type) &&
-                   (!q || r.textContent.toLowerCase().indexOf(q) > -1);
+                   words.every(function (wd) { return fold(r.textContent).indexOf(wd) > -1; });
           r.hidden = !ok;
           if (ok) total++;
         });
