@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-27 · Memoria anual más jerarquizada
+- Código ✓ · La memoria destacada baja su título a Título 3 (antes Título 2, igual que el de la sección). "Más reciente" va arriba con una línea debajo, como "Años anteriores", así las dos columnas parten a la misma altura; la portada pasa al 80 % de su columna.
+
 ## 2026-10-27 · Memoria anual con la más reciente destacada
 - Figma pendiente · Código ✓ · Centro de Resultados › Memoria anual: a la izquierda la memoria más reciente destacada (portada, "Más reciente", título, datos, "Descargar" y "Ver PDF"); a la derecha "Años anteriores" con 3 memorias a la vista y "Ver más memorias", que despliega las siguientes hacia abajo. Nuevos: `.annual`, `.annual-featured`, `.annual-archive` y el comportamiento `[data-reveal-more]`. Se suman 2020 y 2019 de ejemplo. Se retira `.section-head__media` (la portada pasa a la memoria destacada).
 

@@ -901,18 +901,28 @@
   gap: var(--space-64);
 }
 
+/* Las dos columnas parten igual: etiqueta y, debajo, una línea. La destacada usa
+   Título 3 (un nivel bajo el título de la sección) */
 .annual-featured {
   display: flex;
   flex-direction: column;
+  gap: var(--space-16);
+}
+
+.annual-featured__body {
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-12);
+  gap: var(--space-8);
+  padding-top: var(--space-24);
+  border-top: var(--border-thin) solid var(--color-border-default);
 }
 
 .annual-featured__cover {
   display: block;
-  width: 100%;
+  width: 80%;
   height: auto;
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-16);
 }
 
 .annual-featured__label {
@@ -928,7 +938,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-16) var(--space-32);
-  margin-top: var(--space-12);
+  margin-top: var(--space-16);
 }
 
 .annual-archive {
@@ -966,7 +976,7 @@
 
 @media (min-width: 768px) {
   .annual-featured__cover {
-    width: 70%;
+    width: 60%;
   }
 }
 
@@ -977,7 +987,7 @@
   }
 
   .annual-featured__cover {
-    width: 100%;
+    width: 80%;
   }
 }
 
