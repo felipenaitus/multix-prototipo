@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-27 · Encabezado compacto en Resultados trimestrales
+- Código ✓ · El título y la bajada de Resultados trimestrales pasan a Título 3 y Cuerpo, con menos aire (`.section-head--compact`), porque la pestaña ya nombra la sección.
+
 ## 2026-10-27 · Sin migas de pan en Inversionistas y sub-menú con "Inversionistas"
 - Código ✓ · Centro de Resultados: se quitan las migas de pan (repetían el sub-menú). El primer acceso del sub-menú de Inversionistas pasa de "Inicio" a "Inversionistas". Las migas de pan siguen en el kit para otras secciones.
 

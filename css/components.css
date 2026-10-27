@@ -3580,6 +3580,13 @@ a.pagination__item:hover,
   color: var(--color-text-secondary);
 }
 
+/* Encabezado compacto: Título 3 y bajada en Cuerpo, con menos aire, para la
+   introducción de una pestaña (la pestaña ya nombra la sección) */
+.section-head.section-head--compact {
+  gap: var(--space-8);
+  margin-bottom: var(--space-32);
+}
+
 /* Apertura ([data-section-open], components.js) · transición de blanco a crema
    (PRUEBA). La sección entra recortada (más angosta y con esquinas redondeadas) y
    se abre a todo el ancho con bordes rectos mientras sube: --open-progress de 0
