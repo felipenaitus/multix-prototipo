@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-29 · Home: Noticias más livianas
+- Figma pendiente · Código ✓ · La sección de noticias se alinea con el resto del sitio: fotos más bajas (3:2) y con esquinas más suaves (`--radius-lg`), sección y fecha en gris (sin coral), título en Cuerpo L con máximo 2 líneas y sin el "Leer noticia" repetido (toda la nota es el enlace; con hover el título se subraya).
+
 ## 2026-10-29 · Menú: accesos sin contenedor en el hover
 - Código ✓ · Los accesos principales del menú (Nosotros, Productos, etc.) dejan de mostrar un bloque de fondo con el hover. Van en el color secundario (Navy 300 sobre el menú oscuro) y con hover o foco pasan a blanco, igual que los enlaces de Portales y Recursos.
 

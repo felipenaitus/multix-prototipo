@@ -6165,16 +6165,17 @@ html:not(.js) .company-visual__tag {
 .news-item__link {
   display: flex;
   flex-direction: column;
-  gap: var(--space-12);
+  gap: var(--space-8);
   color: var(--color-text-primary);
 }
 
+/* Foto más baja y con esquinas suaves, para que la sección se vea liviana */
 .news-item__media {
   display: block;
   overflow: hidden;
-  aspect-ratio: 4 / 3;
-  margin-bottom: var(--space-8);
-  border-radius: var(--radius-xl);
+  aspect-ratio: 3 / 2;
+  margin-bottom: var(--space-12);
+  border-radius: var(--radius-lg);
   background: var(--color-bg-muted);
 }
 
@@ -6185,34 +6186,33 @@ html:not(.js) .company-visual__tag {
   transition: transform var(--duration-reveal) var(--easing-out);
 }
 
-/* Etiqueta en coral corporativo (Coral 500): excepción aprobada, como las cifras */
+/* Sección y fecha en gris, sin coral */
 .news-item__tag {
-  color: var(--color-text-accent-on-dark);
-}
-
-.news-item__cta {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-8);
-  min-height: var(--touch-target);
-  color: var(--color-text-brand);
+  color: var(--color-text-tertiary);
 }
 
 .news-item__link:hover .news-item__media img {
   transform: scale(1.04);
 }
 
-/* Título: máximo tres líneas; si el texto es más largo termina en puntos suspensivos */
+/* Título en Cuerpo L: máximo dos líneas; si es más largo termina en puntos
+   suspensivos. Toda la nota es el enlace: con hover el título se subraya */
 .news-item__title {
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: var(--border-thin);
+  text-underline-offset: var(--space-4);
+  transition: text-decoration-color var(--duration-fast) var(--easing-standard);
 }
 
 .news-item__link:hover .news-item__title {
   color: var(--color-text-brand);
+  text-decoration-color: currentColor;
 }
 
 @media (min-width: 768px) {
