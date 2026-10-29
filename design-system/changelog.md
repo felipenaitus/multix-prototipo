@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-29 · Footer: direcciones más simples
+- Código ✓ · En "Direcciones" se quitan las banderas y los íconos de teléfono y correo, y todo queda en el mismo tamaño y peso (Pequeño): la ciudad en blanco y la dirección, el teléfono y el correo en Navy 300 (blanco con hover). Teléfonos y correo siguen siendo enlaces con zona táctil de 44 px.
+
 ## 2026-10-29 · Texto principal en azul oscuro
 - Figma pendiente · Código ✓ · `--color-text-primary` pasa de Ink 900 (casi negro) a Navy 900: títulos y textos sobre fondos claros en azul oscuro (11,6:1 sobre blanco). El texto del botón de acento sigue en Ink 900.
 

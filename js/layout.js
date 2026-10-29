@@ -588,11 +588,12 @@
       this.setAttribute('role', 'contentinfo');
 
       var offices = OFFICES.map(function (o) {
+        // Todo en el mismo tamaño y peso (Pequeño): ciudad en blanco; dirección y
+        // teléfono en Navy 300. Sin banderas ni íconos.
         return '<li class="footer__office">' +
-          // Bandera como SVG: Windows no dibuja los emojis de bandera (mostraría "CL" / "US")
-          '<p class="t-ui-small-strong footer__office-name"><img class="footer__flag" src="' + ROOT + 'assets/flags/' + o.flag + '.svg" alt="" width="18" height="12">' + esc(o.name) + '</p>' +
+          '<p class="t-small footer__office-name">' + esc(o.name) + '</p>' +
           '<address class="t-small footer__address">' + esc(o.address) + '</address>' +
-          '<a class="footer__contact-link" href="' + telHref(o.phone) + '">' + icon('phone') + esc(o.phone) + '</a>' +
+          '<a class="t-small footer__contact-link" href="' + telHref(o.phone) + '">' + esc(o.phone) + '</a>' +
         '</li>';
       }).join('');
 
@@ -617,7 +618,7 @@
             '<div class="footer__brand">' +
               '<p class="t-label footer__col-title">Direcciones</p>' +
               '<ul class="footer__offices" role="list">' + offices + '</ul>' +
-              '<a class="footer__contact-link" href="mailto:' + esc(CONTACT.email) + '">' + icon('mail') + esc(CONTACT.email) + '</a>' +
+              '<a class="t-small footer__contact-link" href="mailto:' + esc(CONTACT.email) + '">' + esc(CONTACT.email) + '</a>' +
             '</div>' +
             '<div class="footer__cols">' + cols + '</div>' +
           '</div>' +

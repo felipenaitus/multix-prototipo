@@ -123,7 +123,7 @@ Header, menú hamburguesa y footer viven solo en `js/layout.js` (ver CLAUDE.md 2
 
 **Footer (`<site-footer>`)**
 - Logo en su propia fila, arriba, para que los títulos de columna ("Direcciones", "Información", "Personas y proveedores") queden a la misma altura en desktop.
-- "Direcciones": Puerto Montt, Santiago y Miami, cada una con la bandera de su país (SVG en `assets/flags/`, porque Windows no dibuja los emojis de bandera), dirección y teléfono clickeable (sin cortes de línea). Desde tablet en dos columnas: Chile a la izquierda y Miami a la derecha · Información (Preguntas Frecuentes, Legislación, Canal de Denuncias) · Personas y proveedores (Trabaja con Nosotros, Portal Proveedores) · redes sociales · copyright.
+- "Direcciones": Puerto Montt, Santiago y Miami. Todo en el mismo tamaño y peso (Pequeño), sin banderas ni íconos: la ciudad en blanco y la dirección, el teléfono (`tel:`) y el correo general (`mailto:`) en Navy 300, blancos con hover. Desde tablet en dos columnas: Chile a la izquierda y Miami a la derecha · Información (Preguntas Frecuentes, Legislación, Canal de Denuncias) · Personas y proveedores (Trabaja con Nosotros, Portal Proveedores) · redes sociales · copyright.
 - Canal de Denuncias es un enlace más, con el mismo estilo que el resto (sin tarjeta ni botón).
 - Redes sociales: LinkedIn, X, Facebook e Instagram. Íconos dibujados en el estilo de línea del kit, pendientes de llevar a Figma.
 

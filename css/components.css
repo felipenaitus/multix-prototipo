@@ -3349,18 +3349,10 @@ a.pagination__item:hover,
   color: var(--color-text-inverse);
 }
 
+/* Direcciones: todo en Pequeño (mismo tamaño y peso); la ciudad en blanco, el
+   resto en Navy 300. Sin banderas ni íconos. */
 .footer__office-name {
-  display: flex;
-  align-items: center;
-  gap: var(--space-8);
-}
-
-/* Bandera del país (SVG con forma de emoji) */
-.footer__flag {
-  flex-shrink: 0;
-  width: auto;
-  height: var(--space-12);
-  border-radius: var(--radius-xs);
+  color: var(--color-text-inverse);
 }
 
 .site-footer .footer__logo:hover {
@@ -3397,7 +3389,7 @@ a.pagination__item:hover,
 .footer__office {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: 0;
 }
 
 .footer__address {
@@ -3408,12 +3400,16 @@ a.pagination__item:hover,
 .footer__contact-link {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-12);
   min-height: var(--touch-target);
-  font-size: var(--text-ui-strong-size);
-  line-height: var(--text-ui-strong-lh);
-  font-weight: var(--text-ui-strong-weight);
   overflow-wrap: anywhere;
+}
+
+.site-footer .footer__contact-link {
+  color: var(--color-text-inverse-muted);
+}
+
+.site-footer .footer__contact-link:hover {
+  color: var(--color-text-inverse);
 }
 
 /* Los teléfonos no se cortan */
