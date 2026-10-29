@@ -3602,8 +3602,8 @@ a.pagination__item:hover,
 }
 
 .cursor__dot {
-  width: var(--space-6);
-  height: var(--space-6);
+  width: var(--space-4);
+  height: var(--space-4);
   background: currentColor;
   transition:
     opacity var(--duration-fast) var(--easing-standard),
@@ -3611,8 +3611,8 @@ a.pagination__item:hover,
 }
 
 .cursor__ring {
-  width: var(--space-32);
-  height: var(--space-32);
+  width: var(--space-24);
+  height: var(--space-24);
   border: var(--border-thin) solid currentColor;
   transition: scale var(--duration-base) var(--easing-out);
 }
