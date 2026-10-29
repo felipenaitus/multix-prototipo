@@ -4856,10 +4856,11 @@ a.pagination__item:hover,
   animation: fade-up var(--duration-slow) var(--easing-out);
 }
 
-/* Ilustración sobre el círculo. La composición ocupa siempre el mismo cuadro,
-   pero cada paso ubica el círculo y la ilustración a su manera (data-active en
-   el cuadro, lo escribe components.js). Al cambiar de paso el círculo se desplaza
-   y cambia de tamaño con suavidad. Posiciones = centro, en % del cuadro. */
+/* Foto en el círculo. La composición ocupa siempre el mismo cuadro, pero cada
+   paso ubica el círculo a su manera (data-active en el cuadro, lo escribe
+   components.js). Al cambiar de paso el círculo se desplaza y cambia de tamaño
+   con suavidad, y la foto del paso entra con un fundido. Posiciones = centro, en %
+   del cuadro. */
 .steps__stage {
   --circle-x: 50%;
   --circle-y: 50%;
@@ -4871,11 +4872,11 @@ a.pagination__item:hover,
   margin: 0;
 }
 
-/* Fresco: círculo arriba a la izquierda; el salmón grande baja hacia la derecha */
+/* Fresco: círculo arriba a la izquierda */
 .steps__stage[data-active="1"] { --circle-x: 40%; --circle-y: 41%; --circle-size: 61%; }
-/* Congelado: círculo a la derecha; los filetes, anchos, abajo a la izquierda */
+/* Congelado: círculo a la derecha */
 .steps__stage[data-active="2"] { --circle-x: 64%; --circle-y: 48%; --circle-size: 60%; }
-/* Ahumado: círculo casi al centro; la ilustración apenas más abajo */
+/* Ahumado: círculo casi al centro */
 .steps__stage[data-active="3"] { --circle-x: 48%; --circle-y: 45%; --circle-size: 59%; }
 
 .steps__stage::before {
@@ -4899,7 +4900,7 @@ a.pagination__item:hover,
    con contorno) sobre el borde del círculo. Cada uno aparece, recorre un tramo
    corto de la órbita y se desvanece, en tiempos distintos: nunca están todos a la
    vista. La órbita acompaña al círculo (posición, tamaño y escala con el scroll)
-   y queda por delante de la ilustración. Con movimiento reducido no aparecen. */
+   y queda por delante de la foto. Con movimiento reducido no aparecen. */
 .steps__orbit {
   position: absolute;
   z-index: 1;
@@ -4955,29 +4956,29 @@ a.pagination__item:hover,
   100% { opacity: 0; transform: rotate(calc(var(--a) + var(--drift))); }
 }
 
-/* Cada ilustración con su centro y su caja (la imagen cabe dentro sin deformarse) */
+/* La foto de cada paso llena el círculo y lo acompaña (posición, tamaño y escala
+   con el scroll) */
 .steps__img {
   position: absolute;
-  top: var(--img-y, 50%);
-  left: var(--img-x, 50%);
-  width: var(--img-w, 80%);
-  height: var(--img-h, 80%);
-  object-fit: contain;
+  top: var(--circle-y);
+  left: var(--circle-x);
+  width: var(--circle-size);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-full);
   translate: -50% -50%;
   opacity: 0;
-  transform: translateY(var(--motion-reveal-distance));
+  transform: scale(calc(.6 + .5 * var(--scroll-progress, .8)));
   transition:
     opacity var(--duration-reveal) var(--easing-out),
-    transform var(--duration-reveal) var(--easing-out);
+    top var(--duration-reveal) var(--easing-out),
+    left var(--duration-reveal) var(--easing-out),
+    width var(--duration-reveal) var(--easing-out);
 }
-
-.steps__img:nth-of-type(1) { --img-x: 58%; --img-y: 53%; --img-w: 68%; --img-h: 80%; }
-.steps__img:nth-of-type(2) { --img-x: 50%; --img-y: 61%; --img-w: 80%; --img-h: 64%; }
-.steps__img:nth-of-type(3) { --img-x: 50%; --img-y: 54%; --img-w: 94%; --img-h: 84%; }
 
 .steps__img.is-active {
   opacity: 1;
-  transform: none;
 }
 
 @media (min-width: 768px) {
@@ -5039,9 +5040,9 @@ a.pagination__item:hover,
   color: var(--color-text-accent-on-dark);
 }
 
-/* Composición: círculo Offwhite; la ilustración va encima. Con hover (o toque /
-   Enter) sobre la composición, el círculo se abre como una ventana a un video
-   (.is-open en el bloque, components.js) y la ilustración se desvanece. */
+/* Composición: la foto del paso llena el círculo Offwhite. Con hover (o toque /
+   Enter) sobre la composición, el círculo crece y se abre como una ventana al
+   video del paso (.is-open en el bloque, components.js); la foto se desvanece. */
 .chain__stage {
   grid-area: stage;
   justify-self: center;
@@ -5086,7 +5087,7 @@ a.pagination__item:hover,
 
 /* Indicador de video: botón chico con play sobre el borde del círculo (abajo a
    la derecha, a 45°). Late con un anillo que se expande; desaparece al abrir el
-   video. Va por delante de la ilustración. Con movimiento reducido no late. */
+   video. Va por delante de la foto. Con movimiento reducido no late. */
 .chain__hint {
   position: absolute;
   z-index: 2;
@@ -5148,18 +5149,24 @@ a.pagination__item:hover,
   transform: scale(1);
 }
 
-/* La ilustración da paso al video (sigue recibiendo el mouse para no cerrarlo) */
+/* La foto da paso al video y crece con el círculo (sigue recibiendo el mouse
+   para no cerrarlo) */
 .chain.is-open .chain__step.is-active .chain__img {
   opacity: 0;
-  transform: scale(.9);
+  transform: scale(1.15);
 }
 
+/* Mismo tamaño y ubicación que el círculo */
 .chain__img {
   grid-area: stage;
   justify-self: center;
   position: relative;
-  width: 92%;
+  width: 66%;
   height: auto;
+  aspect-ratio: 1;
+  margin: var(--space-48) 0;
+  object-fit: cover;
+  border-radius: var(--radius-full);
 }
 
 .chain__text {
@@ -5177,7 +5184,7 @@ a.pagination__item:hover,
   margin-top: var(--space-32);
 }
 
-/* Paso activo: fundido; la ilustración entra con un leve acercamiento */
+/* Paso activo: fundido; la foto entra con un leve acercamiento */
 .chain__step > * {
   transition:
     opacity var(--duration-slow) var(--easing-standard),
@@ -5329,7 +5336,7 @@ a.pagination__item:hover,
   }
 
   .chain__img {
-    width: 66%;
+    width: 46%;
   }
 
   .chain__text {
@@ -5355,7 +5362,8 @@ a.pagination__item:hover,
   }
 
   .chain__img {
-    width: 48%;
+    width: 32%;
+    margin: var(--space-32) 0;
   }
 
   .chain__text {
@@ -5878,10 +5886,10 @@ html:not(.js) .company-visual__tag {
   color: var(--color-text-secondary);
 }
 
-/* Círculo con video ([data-media-circle]): ilustración sobre un círculo blanco
-   con el indicador de video. Con hover (o toque / Enter) el círculo crece un 15 %
-   y se abre como una ventana a un video; la ilustración se desvanece. Mismo
-   comportamiento que la composición del relato vertical. */
+/* Círculo con video ([data-media-circle]): una foto (cuadro del mismo video)
+   llena el círculo, con el indicador de video. Con hover (o toque / Enter) el
+   círculo crece un 15 % y se abre como una ventana al video; la foto se desvanece.
+   Mismo comportamiento que la composición del relato vertical. */
 .media-circle {
   position: relative;
   width: 80%;
@@ -5920,14 +5928,14 @@ html:not(.js) .company-visual__tag {
   transition: transform var(--duration-reveal) var(--easing-out);
 }
 
-/* La ilustración, centrada sobre el círculo, lo ocupa casi entero y sobresale
-   apenas arriba y abajo */
+/* La foto llena el círculo */
 .media-circle__img {
   position: absolute;
-  top: -5%;
-  left: 4%;
-  width: 92%;
-  height: auto;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-full);
   transition:
     opacity var(--duration-slow) var(--easing-standard),
     transform var(--duration-reveal) var(--easing-out);
@@ -5998,7 +6006,7 @@ html:not(.js) .company-visual__tag {
 
 .media-circle.is-open .media-circle__img {
   opacity: 0;
-  transform: scale(.9);
+  transform: scale(1.15);
 }
 
 .media-circle.is-open .media-circle__hint {

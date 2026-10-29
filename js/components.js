@@ -488,7 +488,9 @@
      flechas (atrás / adelante, en loop) o los tramos de la línea de secuencia.
      Sobre la composición, el círculo se abre a un video (.is-open): con hover del
      mouse, o con toque / Enter / Espacio en pantallas táctiles y teclado. Al
-     cambiar de paso se cierra. Con movimiento reducido el video no se reproduce. */
+     cambiar de paso se cierra y, si el paso tiene data-video (y opcionalmente #t=
+     segundos), el video pasa a ese, con la foto del paso como poster. Con
+     movimiento reducido el video no se reproduce. */
   function initChain() {
     $all('[data-chain]').forEach(function (box) {
       var steps = $all('.chain__step', box);
@@ -542,6 +544,13 @@
         });
         if (current) current.textContent = (i + 1 < 10 ? '0' : '') + (i + 1);
         setOpen(false);
+        var src = steps[i].getAttribute('data-video');
+        if (video && src && video.getAttribute('src') !== src) {
+          var foto = steps[i].querySelector('.chain__img');
+          if (foto) video.setAttribute('poster', foto.getAttribute('src'));
+          video.setAttribute('src', src);
+          video.load();
+        }
       }
 
       arrows[0].addEventListener('click', function () { go(i - 1); });
@@ -552,7 +561,7 @@
   }
 
   /* ---------- Círculo con video ([data-media-circle]) ----------
-     Ilustración sobre un círculo; con hover (mouse) el círculo se abre a un video
+     Foto que llena un círculo; con hover (mouse) el círculo se abre a un video
      (.is-open). Con toque o Enter / Espacio se abre y cierra. Con movimiento
      reducido el video no se reproduce (queda el poster). */
   function initMediaCircle() {
@@ -579,7 +588,7 @@
 
   /* ---------- Pasos ([data-steps]) ----------
      Lista de pasos (.steps__item con .steps__trigger y .steps__panel) y una
-     ilustración por paso (.steps__img, en el mismo orden). Siempre hay uno activo.
+     foto por paso (.steps__img, en el mismo orden). Siempre hay uno activo.
      Avanzan solos cada 8 × --duration-reveal mientras la sección está a la vista;
      se pausan con el mouse o el foco dentro, y se detienen del todo cuando la
      persona elige un paso. Con movimiento reducido no avanzan solos. */

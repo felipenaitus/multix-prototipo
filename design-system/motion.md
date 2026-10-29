@@ -73,7 +73,7 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 
 ## Firma · Soluciones en pasos (solo Productos › Soluciones)
 - Los pasos avanzan solos cada 8 × `--duration-reveal` (6,4 s) mientras la sección está a la vista; una línea Coral 500 sobre el paso activo se llena en ese tiempo.
-- Al cambiar de paso: la descripción aparece con `fade-up` (`--duration-slow`) la ilustración del paso entra con un fundido y un leve desplazamiento hacia arriba, y el círculo se desplaza y cambia de tamaño hasta la ubicación de ese paso, todo en `--duration-reveal`.
+- Al cambiar de paso: la descripción aparece con `fade-up` (`--duration-slow`) la foto del paso entra con un fundido, y el círculo (con la foto) se desplaza y cambia de tamaño hasta la ubicación de ese paso, todo en `--duration-reveal`.
 - Se pausan con el mouse o el foco dentro de la sección y se detienen del todo cuando la persona elige un paso. Con movimiento reducido no avanzan solos.
 
 ## Firma · Órbita de puntos (Productos › Soluciones y home › Productos)
@@ -85,13 +85,13 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 
 ## Firma · Relato vertical (solo Productos › Del cultivo a la mesa)
 - Sin avance automático: el paso lo cambia la persona con las flechas o los tramos.
-- Al cambiar de paso, el título del paso, la ilustración y la descripción hacen un fundido (`--duration-slow`) y la ilustración entra con un leve acercamiento (0,94 → 1, `--duration-reveal`).
-- Video en hover: el círculo crece un 15 % (`--duration-reveal`) y el video se abre dentro de él desde el centro (clip-path de 0 % a 50 %, con leve acercamiento 1,12 → 1, `--duration-reveal`) y la ilustración se desvanece y se achica (1 → 0,9). Al salir se cierra. Indicador de video: anillo que late cada 3 × `--duration-reveal` (2,4 s; se expande a 1,8 y se desvanece); al abrir el video el indicador se achica y desaparece (`--duration-slow`). Con movimiento reducido no late. Con el video aparecen 4 datos del paso en secuencia (fundido y desplazamiento de 8 px, `--duration-slow`, desfase `--duration-stagger`). Con movimiento reducido el cambio es instantáneo y el video no se reproduce.
+- Al cambiar de paso, el título del paso, la foto y la descripción hacen un fundido (`--duration-slow`) y la foto entra con un leve acercamiento (0,94 → 1, `--duration-reveal`).
+- Video en hover: el círculo crece un 15 % (`--duration-reveal`) y el video se abre dentro de él desde el centro (clip-path de 0 % a 50 %, con leve acercamiento 1,12 → 1, `--duration-reveal`) y la foto crece con el círculo (1 → 1,15) y se desvanece. Al salir se cierra. Indicador de video: anillo que late cada 3 × `--duration-reveal` (2,4 s; se expande a 1,8 y se desvanece); al abrir el video el indicador se achica y desaparece (`--duration-slow`). Con movimiento reducido no late. Con el video aparecen 4 datos del paso en secuencia (fundido y desplazamiento de 8 px, `--duration-slow`, desfase `--duration-stagger`). Con movimiento reducido el cambio es instantáneo y el video no se reproduce.
 - Descartado antes: segunda instancia por paso con video en el círculo, alternando sola.
 - Variante línea de tiempo (Nosotros › Historia, `.chain--timeline`): mismo fundido al cambiar de hito (el año entra con el leve acercamiento); sin video, la composición no reacciona al hover.
 
 ## Firma · Círculo con video (solo home › Productos)
-- Mismo comportamiento que el video en hover del relato vertical: el círculo crece un 15 % y el video se abre desde el centro (clip-path 0 % → 50 %, `--duration-reveal`); la ilustración se desvanece y se achica (1 → 0,9); el indicador de play late y desaparece al abrir. Con movimiento reducido no late y el video no se reproduce.
+- Mismo comportamiento que el video en hover del relato vertical: el círculo crece un 15 % y el video se abre desde el centro (clip-path 0 % → 50 %, `--duration-reveal`); la foto crece con el círculo (1 → 1,15) y se desvanece; el indicador de play late y desaparece al abrir. Con movimiento reducido no late y el video no se reproduce.
 
 ## Firma · Transiciones entre secciones (PRUEBA en Productos, pendiente de confirmar como criterio)
 - Hero → primer contenido: recto.
