@@ -5641,9 +5641,10 @@ body:has(.site-header.is-hidden) .subnav {
 }
 
 /* Ubicación de cada región alrededor del círculo (de norte a sur) */
-.company-visual__tag:nth-child(1) { top: 12%; left: -4%; }
-.company-visual__tag:nth-child(2) { top: 48%; right: -6%; transition-delay: calc(var(--duration-stagger) * 3); }
-.company-visual__tag:nth-child(3) { bottom: 10%; left: 6%; transition-delay: calc(var(--duration-stagger) * 6); }
+.company-visual__tag:nth-child(1) { top: 8%; left: -2%; }
+.company-visual__tag:nth-child(2) { top: 34%; right: -8%; transition-delay: calc(var(--duration-stagger) * 2); }
+.company-visual__tag:nth-child(3) { bottom: 30%; left: -6%; transition-delay: calc(var(--duration-stagger) * 4); }
+.company-visual__tag:nth-child(4) { bottom: 6%; right: 4%; transition-delay: calc(var(--duration-stagger) * 6); }
 
 .company-visual.is-visible .company-visual__tag {
   opacity: 1;
