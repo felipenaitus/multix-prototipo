@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-29 · Menú: accesos sin contenedor en el hover
+- Código ✓ · Los accesos principales del menú (Nosotros, Productos, etc.) dejan de mostrar un bloque de fondo con el hover. Van en el color secundario (Navy 300 sobre el menú oscuro) y con hover o foco pasan a blanco, igual que los enlaces de Portales y Recursos.
+
 ## 2026-10-29 · Soluciones: video constante en un círculo fijo
 - Figma pendiente · Código ✓ · En Productos › Soluciones el círculo deja de moverse entre pasos: queda en un solo lugar (el que tenía Ahumado, casi al centro). Cada paso muestra un video que se reproduce solo, en loop, mientras la sección está a la vista (sin hover), con su foto como poster. Al cambiar de paso solo cambia el video, con un fundido. Con movimiento reducido queda la foto. [videos por definir]
 

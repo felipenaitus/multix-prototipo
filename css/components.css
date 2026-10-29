@@ -3130,23 +3130,22 @@ a.pagination__item:hover,
   transition-delay: calc(var(--duration-stagger) * (var(--step, 0) + 1));
 }
 
-/* El relleno del hover se compensa para alinear el texto con el título del grupo */
+/* Sin contenedor: el acceso va en el color secundario y con hover (o foco) pasa
+   al color de marca, igual que los enlaces de la franja inferior (sobre el menú
+   oscuro: Navy 300 → blanco) */
 .menu-link {
   display: flex;
   align-items: center;
-  width: calc(100% + 2 * var(--space-12));
-  margin-inline: calc(-1 * var(--space-12));
-  padding: var(--space-8) var(--space-12);
-  border-radius: var(--radius-md);
+  width: 100%;
+  padding: var(--space-8) 0;
   text-align: left;
-  color: var(--color-text-primary);
-  transition: background-color var(--duration-fast) var(--easing-standard);
+  color: var(--color-text-secondary);
+  transition: color var(--duration-fast) var(--easing-standard);
 }
 
 .menu-link:hover,
 .menu-link:focus-visible {
-  background: var(--color-bg-subtle);
-  color: var(--color-text-primary);
+  color: var(--color-text-brand);
 }
 
 /* Tamaño Título 3 en Sora 300 (el peso liviano de Título 1) */
