@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-29 · Texto principal en azul oscuro
+- Figma pendiente · Código ✓ · `--color-text-primary` pasa de Ink 900 (casi negro) a Navy 900: títulos y textos sobre fondos claros en azul oscuro (11,6:1 sobre blanco). El texto del botón de acento sigue en Ink 900.
+
 ## 2026-10-29 · Cursor más pequeño
 - Código ✓ · El cursor baja en proporción: punto de 6 a 4 px y anillo de 32 a 24 px (con hover sigue creciendo ×1,5).
 

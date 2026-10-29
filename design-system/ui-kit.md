@@ -22,7 +22,7 @@ Este archivo dice **qué** componentes existen y **cómo se usan**. Las medidas 
 | Fondo suave de marca (íconos de documento, fecha de evento, hover secundario) | `--color-bg-brand-soft` | Navy 100 |
 | Botón de acento / hover | `--color-bg-accent` / `--color-bg-accent-hover` | Coral 400 / Coral 500 |
 | Figura detrás de ilustraciones | `--color-bg-illustration` | Coral 100 #EBE2DC |
-| Texto principal / secundario | `--color-text-primary` / `--color-text-secondary` | Ink 900 / Ink 600 |
+| Texto principal / secundario | `--color-text-primary` / `--color-text-secondary` | Navy 900 (títulos y textos sobre fondos claros: azul oscuro, no negro; antes Ink 900) / Ink 600 |
 | Texto terciario (etiquetas de menor jerarquía) | `--color-text-tertiary` | Ink 500 #66787F (4,6:1 sobre blanco) |
 | Texto atenuado (solo "Ver PDF") | `--color-text-quiet` | Ink 400 #7A8B91 (3,5:1 sobre blanco). **Excepción a AA** aprobada por Felipe; pendiente de Figma |
 | Texto de marca y enlaces | `--color-text-brand` | Navy 900 |
