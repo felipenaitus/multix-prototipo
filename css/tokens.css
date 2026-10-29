@@ -148,8 +148,20 @@
 /* Sección oscura (.section--inverse) · PRUEBA, pendiente de Figma.
    Fondo Navy 950. Dentro de ella los tokens semánticos se reasignan para que
    los componentes (documentos, evento, botones, catálogo) se adapten solos:
-   textos claros, líneas Navy 600 y coral 500. Los contenedores no llevan relleno
-   (fondo = Navy 950); Navy 900 queda solo para el hover de los botones de contorno. */
+   textos claros y líneas Navy 600. Los contenedores no llevan relleno
+   (fondo = Navy 950); Navy 900 queda solo para el hover de los botones de contorno.
+   Sin coral sobre azul (pedido de Felipe, 2026-10-29): los acentos (etiquetas,
+   contornos, botón de acento, elementos gráficos) pasan a Navy 300 (hover Navy 100). */
+.section--inverse,
+.menu-preview {
+  --color-text-accent: var(--color-navy-300);
+  --color-text-accent-on-dark: var(--color-navy-300);
+  --color-border-accent: var(--color-navy-300);
+  --color-border-accent-on-dark: var(--color-navy-300);
+  --color-bg-accent: var(--color-navy-300);
+  --color-bg-accent-hover: var(--color-navy-100);
+}
+
 .section--inverse {
   --color-bg-page: var(--color-navy-950);
   --color-bg-subtle: var(--color-navy-950);
@@ -159,18 +171,21 @@
   --color-text-tertiary: var(--color-navy-300);
   --color-text-brand: var(--color-neutral-0);
   --color-text-brand-hover: var(--color-navy-300);
-  --color-text-accent: var(--color-coral-500);
   --color-border-default: var(--color-navy-600);
   --color-border-brand: var(--color-neutral-0);
   --color-border-brand-hover: var(--color-navy-300);
-  --color-border-accent: var(--color-coral-500);
 }
 
 /* Menú hamburguesa desde tablet: el panel es transparente sobre el sitio oscurecido,
    así que su contenido usa los colores sobre oscuro (textos blancos, secundarios
-   Navy 300, líneas Navy 600, hover Navy 900). En mobile el menú sigue blanco. */
+   Navy 300, líneas Navy 600, hover Navy 900) y, sin coral sobre azul, las
+   etiquetas "La compañía" y "Negocio" en Navy 300. En mobile el menú sigue blanco. */
 @media (min-width: 768px) {
   .menu-panel {
+    --color-text-accent: var(--color-navy-300);
+    --color-text-accent-on-dark: var(--color-navy-300);
+    --color-border-accent-on-dark: var(--color-navy-300);
+    --color-bg-accent-hover: var(--color-navy-100);
     --color-bg-subtle: var(--color-navy-900);
     --color-bg-brand-soft: var(--color-navy-900);
     --color-text-primary: var(--color-neutral-0);

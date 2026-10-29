@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-29 · Sin coral sobre azul
+- Figma pendiente · Código ✓ · Regla transversal: no se usa coral sobre fondos azules. En `section--inverse`, en el menú oscuro (desde tablet) y en la tarjeta de noticia del menú, `tokens.css` reasigna los tokens de acento (`--color-text-accent`, `--color-text-accent-on-dark`, `--color-border-accent`, `--color-border-accent-on-dark`, `--color-bg-accent` y `--color-bg-accent-hover`) a Navy 300 (hover Navy 100). Cambian, entre otros, las etiquetas "La compañía" y "Negocio" del menú, la etiqueta de la noticia del menú, las etiquetas de los destacados IR, los meses de las fechas de eventos y el botón de acento sobre azul. Reemplaza la excepción "Coral 500 sobre Navy 950" (CLAUDE.md §4). Quedan en coral la X del logo y el botón comercial sobre el video del hero de Productos.
+
 ## 2026-10-29 · Home: Noticias más livianas
 - Figma pendiente · Código ✓ · La sección de noticias se alinea con el resto del sitio: fotos más bajas (3:2) y con esquinas más suaves (`--radius-lg`), sección y fecha en gris (sin coral), título en Cuerpo L con máximo 2 líneas y sin el "Leer noticia" repetido (toda la nota es el enlace; con hover el título se subraya).
 
