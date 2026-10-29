@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-29 · Menú hamburguesa transparente
+- Figma pendiente · Código ✓ · Desde tablet, el panel del menú deja de ser un bloque blanco: es transparente sobre el sitio oscurecido (Navy 950 al 88 %), con los accesos y textos en blanco, secundarios en Navy 300 y líneas Navy 600, alineado con el header. Los colores se reasignan en `tokens.css` para `.menu-panel`. Las etiquetas "La compañía" y "Negocio" en Coral 500 ahora van sobre oscuro (dejan de ser excepción de contraste). En mobile el menú sigue siendo una pantalla blanca.
+
 ## 2026-10-27 · Presentación del último trimestre como bloque
 - Código ✓ · `<results-release>` deja de ser una banda a todo el ancho con línea y pasa a un bloque crema redondeado dentro del contenedor, con más aire bajo el sub-menú (40 px en mobile, 48 px desde tablet). Excepción a "sin cajas" pedida por Felipe, porque destaca un acceso temporal.
 

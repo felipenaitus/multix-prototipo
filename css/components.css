@@ -3231,6 +3231,28 @@ a.pagination__item:hover,
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-40);
   }
+
+  /* Panel transparente: sin fondo, sombra ni esquinas; el contenido va directo
+     sobre el sitio oscurecido, alineado con el header */
+  .menu-panel {
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .menu-panel__search,
+  .menu-panel__body {
+    padding-inline: 0;
+  }
+
+  .menu-panel__foot {
+    margin-inline: 0;
+  }
+
+  /* Más oscuro detrás del contenido para que los textos blancos se lean bien */
+  .menu-overlay__scrim::before {
+    opacity: .88;
+  }
 }
 
 /* Desktop: tarjeta de vista previa a la izquierda */

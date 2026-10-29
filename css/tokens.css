@@ -166,6 +166,23 @@
   --color-border-accent: var(--color-coral-500);
 }
 
+/* Menú hamburguesa desde tablet: el panel es transparente sobre el sitio oscurecido,
+   así que su contenido usa los colores sobre oscuro (textos blancos, secundarios
+   Navy 300, líneas Navy 600, hover Navy 900). En mobile el menú sigue blanco. */
+@media (min-width: 768px) {
+  .menu-panel {
+    --color-bg-subtle: var(--color-navy-900);
+    --color-bg-brand-soft: var(--color-navy-900);
+    --color-text-primary: var(--color-neutral-0);
+    --color-text-secondary: var(--color-navy-300);
+    --color-text-tertiary: var(--color-navy-300);
+    --color-text-brand: var(--color-neutral-0);
+    --color-text-brand-hover: var(--color-navy-300);
+    --color-border-default: var(--color-navy-600);
+    --color-border-brand: var(--color-neutral-0);
+  }
+}
+
 /* Pantallas medianas (desde 768 px). Pedido de Felipe (pendiente de Figma):
    - El margen lateral en desktop (≥ 1024 px) es como mínimo 64 px; antes era el 4 % del
      ancho (43 px en un notebook de 1067 px con escalado alto).
