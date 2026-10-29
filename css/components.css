@@ -4856,28 +4856,19 @@ a.pagination__item:hover,
   animation: fade-up var(--duration-slow) var(--easing-out);
 }
 
-/* Foto en el círculo. La composición ocupa siempre el mismo cuadro, pero cada
-   paso ubica el círculo a su manera (data-active en el cuadro, lo escribe
-   components.js). Al cambiar de paso el círculo se desplaza y cambia de tamaño
-   con suavidad, y la foto del paso entra con un fundido. Posiciones = centro, en %
-   del cuadro. */
+/* Video en el círculo. El círculo queda fijo en el mismo lugar para los tres
+   pasos (casi al centro del cuadro); al cambiar de paso solo cambia el video, con
+   un fundido. Posición = centro, en % del cuadro. */
 .steps__stage {
-  --circle-x: 50%;
-  --circle-y: 50%;
-  --circle-size: 60%;
+  --circle-x: 48%;
+  --circle-y: 45%;
+  --circle-size: 59%;
   position: relative;
   width: 100%;
   justify-self: center;
   aspect-ratio: 1;
   margin: 0;
 }
-
-/* Fresco: círculo arriba a la izquierda */
-.steps__stage[data-active="1"] { --circle-x: 40%; --circle-y: 41%; --circle-size: 61%; }
-/* Congelado: círculo a la derecha */
-.steps__stage[data-active="2"] { --circle-x: 64%; --circle-y: 48%; --circle-size: 60%; }
-/* Ahumado: círculo casi al centro */
-.steps__stage[data-active="3"] { --circle-x: 48%; --circle-y: 45%; --circle-size: 59%; }
 
 .steps__stage::before {
   content: "";
@@ -4956,8 +4947,8 @@ a.pagination__item:hover,
   100% { opacity: 0; transform: rotate(calc(var(--a) + var(--drift))); }
 }
 
-/* La foto de cada paso llena el círculo y lo acompaña (posición, tamaño y escala
-   con el scroll) */
+/* El video de cada paso (su foto como poster) llena el círculo y crece con él al
+   hacer scroll. Se reproduce solo, en loop, mientras su paso está activo */
 .steps__img {
   position: absolute;
   top: var(--circle-y);
@@ -4970,11 +4961,7 @@ a.pagination__item:hover,
   translate: -50% -50%;
   opacity: 0;
   transform: scale(calc(.6 + .5 * var(--scroll-progress, .8)));
-  transition:
-    opacity var(--duration-reveal) var(--easing-out),
-    top var(--duration-reveal) var(--easing-out),
-    left var(--duration-reveal) var(--easing-out),
-    width var(--duration-reveal) var(--easing-out);
+  transition: opacity var(--duration-reveal) var(--easing-out);
 }
 
 .steps__img.is-active {

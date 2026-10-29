@@ -73,7 +73,7 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 
 ## Firma · Soluciones en pasos (solo Productos › Soluciones)
 - Los pasos avanzan solos cada 8 × `--duration-reveal` (6,4 s) mientras la sección está a la vista; una línea Coral 500 sobre el paso activo se llena en ese tiempo.
-- Al cambiar de paso: la descripción aparece con `fade-up` (`--duration-slow`) la foto del paso entra con un fundido, y el círculo (con la foto) se desplaza y cambia de tamaño hasta la ubicación de ese paso, todo en `--duration-reveal`.
+- Al cambiar de paso: la descripción aparece con `fade-up` (`--duration-slow`) el video del paso entra con un fundido (`--duration-reveal`) y empieza a reproducirse solo, en loop; el círculo no se mueve. Con movimiento reducido se muestra la foto (poster) sin reproducir.
 - Se pausan con el mouse o el foco dentro de la sección y se detienen del todo cuando la persona elige un paso. Con movimiento reducido no avanzan solos.
 
 ## Firma · Órbita de puntos (Productos › Soluciones y home › Productos)

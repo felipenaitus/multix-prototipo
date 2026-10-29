@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-29 · Soluciones: video constante en un círculo fijo
+- Figma pendiente · Código ✓ · En Productos › Soluciones el círculo deja de moverse entre pasos: queda en un solo lugar (el que tenía Ahumado, casi al centro). Cada paso muestra un video que se reproduce solo, en loop, mientras la sección está a la vista (sin hover), con su foto como poster. Al cambiar de paso solo cambia el video, con un fundido. Con movimiento reducido queda la foto. [videos por definir]
+
 ## 2026-10-29 · Fotos en lugar de ilustraciones
 - Figma pendiente · Código ✓ · Se eliminan las ilustraciones del sitio (salmón, congelado, ahumado, ovas). En su lugar, una foto (cuadro del mismo video, recortada en cuadrado) llena el círculo: Home › Productos y el ejemplo del kit (`.media-circle`), Productos › Soluciones (`.steps__img`, la foto se mueve con el círculo de cada paso) y Productos › Del cultivo a la mesa (`.chain__img`). Con hover el círculo crece, la foto crece con él y se desvanece, y se reproduce el video. En "Del cultivo a la mesa" cada paso tiene su propio video (`data-video`, con `#t=` para el segundo de inicio) y su foto como poster. Fotos y videos son provisorios: [fotos por definir]. Las imágenes antiguas (`pescado.png`, `congelado.webp`, `ahumado.webp`, `ova.webp`, `paso-2.webp`) quedan sin uso en `assets/img`.
 

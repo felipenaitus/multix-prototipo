@@ -588,7 +588,7 @@
 
   /* ---------- Pasos ([data-steps]) ----------
      Lista de pasos (.steps__item con .steps__trigger y .steps__panel) y una
-     foto por paso (.steps__img, en el mismo orden). Siempre hay uno activo.
+     video por paso (.steps__img, en el mismo orden; el activo se reproduce solo). Siempre hay uno activo.
      Avanzan solos cada 8 × --duration-reveal mientras la sección está a la vista;
      se pausan con el mouse o el foco dentro, y se detienen del todo cuando la
      persona elige un paso. Con movimiento reducido no avanzan solos. */
@@ -612,8 +612,14 @@
           var bar = it.querySelector('.steps__progress');
           if (bar && on) { bar.style.transition = 'none'; bar.style.transform = 'scaleX(0)'; void bar.offsetWidth; bar.style.transition = ''; bar.style.transform = ''; }
         });
-        imgs.forEach(function (img, n) { img.classList.toggle('is-active', n === i); });
-        if (stage) stage.setAttribute('data-active', String(i + 1)); // ubicación del círculo de ese paso
+        imgs.forEach(function (img, n) {
+          img.classList.toggle('is-active', n === i);
+          // Video del paso: se reproduce solo mientras está activo (con movimiento reducido queda el poster)
+          if (img.tagName !== 'VIDEO') return;
+          if (n === i && !reduce.matches && (visible || !hasIO)) { var p = img.play(); if (p && p.catch) p.catch(function () {}); }
+          else img.pause();
+        });
+        if (stage) stage.setAttribute('data-active', String(i + 1));
       }
 
       function schedule() {
@@ -641,6 +647,7 @@
           var was = visible;
           visible = entries[0].isIntersecting;
           if (visible && !was) show(current);
+          if (!visible) imgs.forEach(function (v) { if (v.pause) v.pause(); });
           schedule();
         }, { threshold: 0.4 }).observe(box);
       }
