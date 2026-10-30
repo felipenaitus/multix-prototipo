@@ -5132,6 +5132,24 @@ a.pagination__item:hover,
   transition: none;
 }
 
+/* Texto del paso activo a la izquierda y flechas (anterior / siguiente) en el
+   extremo derecho */
+.journey__foot {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-24);
+}
+
+.journey__detail {
+  flex: 1;
+  min-width: 0;
+}
+
+.journey__foot .chain__arrows {
+  flex-shrink: 0;
+}
+
 .journey__panel {
   display: flex;
   flex-direction: column;

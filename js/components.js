@@ -576,9 +576,10 @@
 
   /* ---------- Integración vertical ([data-journey]) ----------
      Seis pasos a la vista (.journey__step con .journey__trigger) y un panel por
-     paso (.journey__panel). El activo reproduce su video (.journey__video) y avanza
-     solo cada 8 × --duration-reveal mientras la sección está a la vista; se pausa
-     con el mouse o el foco dentro y se detiene cuando la persona elige un paso.
+     paso (.journey__panel), con flechas anterior / siguiente (.chain__arrow). El
+     activo reproduce su video (.journey__video) y avanza solo cada 8 ×
+     --duration-reveal mientras la sección está a la vista; se pausa con el mouse o
+     el foco dentro y se detiene cuando la persona elige un paso (o usa las flechas).
      Con movimiento reducido no avanza ni reproduce (queda la foto). */
   function initJourney() {
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -612,13 +613,20 @@
         if (run) timer = setTimeout(function () { show((current + 1) % items.length); schedule(); }, interval);
       }
 
+      function choose(k) {
+        stopped = true;
+        show((k + items.length) % items.length);
+        schedule();
+      }
       items.forEach(function (it, n) {
-        it.querySelector('.journey__trigger').addEventListener('click', function () {
-          stopped = true;
-          show(n);
-          schedule();
-        });
+        it.querySelector('.journey__trigger').addEventListener('click', function () { choose(n); });
       });
+      // Flechas: paso anterior / siguiente (en loop)
+      var arrows = $all('.chain__arrow', box);
+      if (arrows.length === 2) {
+        arrows[0].addEventListener('click', function () { choose(current - 1); });
+        arrows[1].addEventListener('click', function () { choose(current + 1); });
+      }
       box.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hovering = true; schedule(); } });
       box.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hovering = false; show(current); schedule(); } });
       box.addEventListener('focusin', function () { hovering = true; schedule(); });

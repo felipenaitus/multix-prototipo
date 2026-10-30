@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Productos: flechas en la integración vertical
+- Código ✓ · En "Del cultivo a la mesa" se agregan las flechas anterior / siguiente en el extremo derecho, en la fila del texto del paso, para avanzar o retroceder (en loop). Al usarlas se detiene el avance automático, como al elegir un paso.
+
 ## 2026-10-30 · Productos: integración vertical con pasos inactivos tenues
 - Código ✓ · Se descarta el carrusel y vuelven los seis pasos a la vista, con más aire vertical (64 px entre bloques, 80 px desde tablet; 24 px entre círculo y texto). Los pasos inactivos llevan la foto en blanco y negro al 50 % y el número y nombre tenues; el activo y el que tiene hover se ven a color.
 
