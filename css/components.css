@@ -589,10 +589,11 @@
   }
 
   /* El aire sobre la foto fija el alto mínimo del bloque (igual en todas las
-     páginas); el texto se centra en ese alto */
+     páginas); el texto se centra en ese alto. La foto, entera, termina justo en
+     el borde inferior */
   .page-intro__media {
     width: 100%;
-    padding-top: var(--space-96);
+    padding-top: var(--space-64);
   }
 
   .page-intro__text {
@@ -606,6 +607,13 @@
 
   .page-intro__text .page-head__lead {
     max-width: none;
+  }
+}
+
+/* Desktop: la foto toma la mitad del ancho, así es más alta y sube */
+@media (min-width: 1024px) {
+  .page-intro__inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 }
 
