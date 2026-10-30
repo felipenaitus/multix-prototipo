@@ -973,7 +973,7 @@
         view.lat = tween.from.lat + (tween.to.lat - tween.from.lat) * e;
         if (t >= 1) tween = null;
       } else if (!dragging && !hovering && !active && !reduce.matches) {
-        view.lon -= dt * 0.00008; // ~ una vuelta por minuto y medio
+        view.lon -= dt * 0.00004; // giro lento: ~ una vuelta cada tres minutos
       } else {
         draw();
         last = 0;

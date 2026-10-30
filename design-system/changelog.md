@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Productos: mercados más sobrios
+- Figma pendiente · Código ✓ · El bloque "Del sur de Chile a las mesas del mundo" baja su carga visual: cifras en Navy 900 y peso regular (antes Coral 500 destacadas), continentes del globo en Navy 300, pines solo en Navy 900 (mercados como punto lleno, oficinas como anillo; antes coral y navy), oficinas sin banderas y giro del globo más lento (una vuelta cada 3 minutos).
+
 ## 2026-10-30 · Home: "Ver noticia" con flecha
 - Código ✓ · "Ver noticia" pasa a ser el botón terciario con flecha, igual que los demás botones del sitio (antes era un enlace simple que se subrayaba).
 

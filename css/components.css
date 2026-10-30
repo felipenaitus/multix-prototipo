@@ -3983,11 +3983,9 @@ a.pagination__item:hover,
   border-top: var(--border-thin) solid var(--color-border-default);
 }
 
+/* Cifras en Navy 900 y peso regular: el bloque es más sobrio (sin coral) */
 .markets__stat .t-figure-l {
-  /* Coral corporativo (Coral 500), decisión de Felipe: sobre Offwhite contrasta 2,86:1
-     (bajo el mínimo AA de 3:1 para texto grande); se acepta por el tamaño y el peso
-     de la cifra (Cifra L, Cifra destacada). Excepción solo para estas cifras. */
-  color: var(--color-text-accent-on-dark);
+  color: var(--color-text-brand);
   white-space: nowrap;
 }
 
@@ -4025,16 +4023,10 @@ a.pagination__item:hover,
   list-style: none;
 }
 
+/* Oficinas: solo el nombre, sin banderas */
 .markets__offices li {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-8);
-}
-
-.markets__offices img {
-  width: auto;
-  height: var(--space-12);
-  border-radius: var(--radius-xs);
 }
 
 @media (min-width: 768px) {
@@ -4335,10 +4327,11 @@ a.pagination__item:hover,
 }
 
 /* Globo de mercados ([data-globe], js/components.js) · patrón Firma de Productos.
-   Esfera del color de fondo de su sección (solo el contorno) con continentes en puntos Navy; pines Coral 500 (mercados) y
-   Navy (oficinas comerciales). El nombre aparece con hover, foco o clic. */
+   Sobrio: esfera del color de fondo de su sección (solo el contorno), continentes
+   en puntos Navy 300 y pines solo en Navy 900: mercados como punto lleno y
+   oficinas comerciales como anillo. El nombre aparece con hover, foco o clic. */
 .globe {
-  --globe-land: var(--color-text-brand);
+  --globe-land: var(--color-border-inverse-muted);
   --globe-sphere: transparent; /* toma el fondo de la sección */
   --globe-edge: var(--color-border-default);
   position: relative;
@@ -4391,16 +4384,19 @@ a.pagination__item:hover,
 }
 
 .globe__dot {
-  width: var(--space-12);
-  height: var(--space-12);
+  width: var(--space-8);
+  height: var(--space-8);
   border-radius: var(--radius-full);
-  background: var(--color-bg-accent-hover);
+  background: var(--color-bg-brand);
   box-shadow: 0 0 0 var(--border-indicator) var(--color-bg-page);
   transition: transform var(--duration-fast) var(--easing-standard);
 }
 
 .globe__pin--office .globe__dot {
-  background: var(--color-bg-brand);
+  width: var(--space-12);
+  height: var(--space-12);
+  border: var(--border-medium) solid var(--color-border-brand);
+  background: var(--color-bg-page);
 }
 
 .globe__pin:hover .globe__dot,
@@ -4455,11 +4451,14 @@ a.pagination__item:hover,
   width: var(--space-8);
   height: var(--space-8);
   border-radius: var(--radius-full);
-  background: var(--color-bg-accent-hover);
+  background: var(--color-bg-brand);
 }
 
 .globe__legend .is-office::before {
-  background: var(--color-bg-brand);
+  width: var(--space-12);
+  height: var(--space-12);
+  border: var(--border-medium) solid var(--color-border-brand);
+  background: transparent;
 }
 
 /* Descarga del catálogo: fila abierta bajo las marcas (sin caja): texto y botón
