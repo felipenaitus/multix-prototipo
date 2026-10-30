@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Centro de Resultados: pestañas como en Gobernanza
+- Código ✓ · Para estandarizar, las pestañas de Centro de Resultados salen del bloque crema y van en una fila propia debajo (`.page-tabs--below`), igual que en Gobernanza. El ejemplo del kit se actualiza.
+
 ## 2026-10-30 · Nueva página: Gobernanza
 - Código ✓ · `gobernanza.html` dentro de Inversionistas, con el mismo encabezado crema con foto que Centro de Resultados y seis pestañas con enlace directo: Gobierno Corporativo, Hechos Esenciales, Junta de Accionistas, Compliance, Políticas y Reportes ESG. Solo componentes del kit (lista de valores, filas de documento, listado por año con buscador y filtros, lista con fecha, "ver más"). Contenidos de ejemplo [contenido por definir]. El sub-menú y el menú enlazan a la página.
 - Pestañas: por decisión de Felipe, con seis pestañas van en una fila propia bajo el bloque crema (`.page-tabs--below`). Regla nueva: si la cápsula no cabe en su espacio (desde tablet), se muestra el desplegable azul; con seis pestañas pasa entre 768 y ~1279 px.
