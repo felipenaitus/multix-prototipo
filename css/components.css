@@ -5630,9 +5630,9 @@ body:has(.site-header.is-hidden) .subnav {
   align-items: center;
   gap: var(--space-8);
   padding: var(--space-8) var(--space-16);
-  /* Azul suave (Navy 100): se distingue del fondo blanco de la sección */
+  /* Crema (el fondo de la sección siguiente): se distingue del fondo blanco */
   color: var(--color-text-brand);
-  background: var(--color-bg-brand-soft);
+  background: var(--color-bg-subtle);
   border-radius: var(--radius-full);
   white-space: nowrap;
   opacity: 0;
