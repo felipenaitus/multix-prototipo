@@ -5842,16 +5842,18 @@ body:has(.site-header.is-hidden) .subnav {
   position: relative;
 }
 
+/* Llega hasta el borde de la franja: cubre también el margen lateral (la tira
+   se corre hacia la izquierda y su texto pasa por ahí) */
 .subnav__more {
   position: absolute;
   top: 0;
-  right: var(--layout-gutter);
+  right: 0;
   bottom: 0;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: var(--touch-target);
-  padding: 0;
+  width: calc(var(--touch-target) + var(--layout-gutter));
+  padding: 0 var(--layout-gutter) 0 0;
   border: 0;
   background: var(--color-bg-brand);
   color: var(--color-text-inverse);
@@ -5875,8 +5877,9 @@ body:has(.site-header.is-hidden) .subnav {
 /* Flecha izquierda: aparece cuando la tira ya avanzó; fundido hacia la derecha */
 .subnav__more--prev {
   right: auto;
-  left: var(--layout-gutter);
+  left: 0;
   justify-content: flex-start;
+  padding: 0 0 0 var(--layout-gutter);
 }
 
 .subnav__more--prev .icon {
