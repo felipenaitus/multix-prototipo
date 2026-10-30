@@ -6264,11 +6264,13 @@ html:not(.js) .company-visual__tag {
   transform: scale(1.15);
 }
 
-/* Botón de la sección ("Ver productos"): aparece al centro al abrir el video */
+/* Botón de la sección ("Ver productos"): sutil (contorno y texto blancos, sin
+   relleno, tamaño chico) en la parte inferior del círculo; aparece al abrir el
+   video */
 .media-circle__cta {
   position: absolute;
   z-index: 3;
-  top: 50%;
+  top: 80%;
   left: 50%;
   white-space: nowrap;
   translate: -50% -50%;

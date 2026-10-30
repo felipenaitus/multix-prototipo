@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Círculo con video: botón de la sección más sutil
+- Código ✓ · El botón "Ver productos" que aparece al abrir el video pasa a ser de contorno blanco sin relleno y tamaño chico (`btn--ghost-light btn--sm`), en la parte inferior del círculo (antes botón claro con relleno al centro).
+
 ## 2026-10-30 · Círculo con video: botón de la sección al abrir
 - Código ✓ · Al abrir el video (hover, toque o teclado), aparece al centro del círculo el botón de la sección ("Ver productos" en el home), en estilo claro sobre el video. Para que el enlace no quede dentro de otro control, el círculo deja de ser un botón y el play pasa a ser un `<button>` real de 44 px (antes 40) que abre y cierra el video con toque o teclado.
 

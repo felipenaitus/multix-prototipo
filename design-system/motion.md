@@ -89,7 +89,7 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 - Variante línea de tiempo (Nosotros › Historia, `.chain--timeline`): mismo fundido al cambiar de hito (el año entra con el leve acercamiento); sin video, la composición no reacciona al hover.
 
 ## Firma · Círculo con video (solo home › Productos)
-- Mismo comportamiento que el video en hover del relato vertical: el círculo crece un 15 % y el video se abre desde el centro (clip-path 0 % → 50 %, `--duration-reveal`); la foto crece con el círculo (1 → 1,15) y se desvanece; el botón de la sección aparece al centro con fundido y un leve ascenso de 8 px (`--duration-slow`, tras `--duration-fast`); el indicador de play late y desaparece al abrir. Con movimiento reducido no late y el video no se reproduce.
+- Mismo comportamiento que el video en hover del relato vertical: el círculo crece un 15 % y el video se abre desde el centro (clip-path 0 % → 50 %, `--duration-reveal`); la foto crece con el círculo (1 → 1,15) y se desvanece; el botón de la sección aparece en la parte inferior del círculo con fundido y un leve ascenso de 8 px (`--duration-slow`, tras `--duration-fast`); el indicador de play late y desaparece al abrir. Con movimiento reducido no late y el video no se reproduce.
 
 ## Firma · Transiciones entre secciones (PRUEBA en Productos, pendiente de confirmar como criterio)
 - Hero → primer contenido: recto.
