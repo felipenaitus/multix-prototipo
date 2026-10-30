@@ -4959,12 +4959,12 @@ a.pagination__item:hover,
 }
 
 /* Video en el círculo. El círculo queda fijo en el mismo lugar para los tres
-   pasos (casi al centro del cuadro); al cambiar de paso solo cambia el video, con
+   pasos (centrado en el cuadro, así queda centrado en vertical con el texto); al cambiar de paso solo cambia el video, con
    un fundido. Posición = centro, en % del cuadro. */
 .steps__stage {
-  --circle-x: 48%;
-  --circle-y: 45%;
-  --circle-size: 59%;
+  --circle-x: 50%;
+  --circle-y: 50%;
+  --circle-size: 78%;
   position: relative;
   width: 100%;
   justify-self: center;

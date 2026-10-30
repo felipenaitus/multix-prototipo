@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Productos: círculo de Soluciones centrado y más grande
+- Código ✓ · El círculo con video de "Soluciones para cada mercado" queda centrado en su cuadro (antes al 45 % de la altura), así se alinea en vertical con el texto, y crece del 59 % al 78 % de su columna.
+
 ## 2026-10-30 · Home: línea de noticias más suave
 - Código ✓ · Vuelve la línea bajo cada noticia, ahora en el tono suave de los separadores (`--color-border-default`) en vez de `--color-border-strong`.
 
