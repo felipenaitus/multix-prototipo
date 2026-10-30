@@ -556,10 +556,15 @@
   }
 }
 
-/* Con foto: texto a la izquierda; la foto (PNG/WebP recortado en rectángulo
-   redondeado, con la cabeza que sobresale) a la derecha, apoyada en el borde
-   inferior del bloque crema. Mobile: la foto va debajo del texto. El título y
-   la descripción quedan centrados en vertical (mismo aire arriba y abajo). */
+/* Con foto: texto a la izquierda; la foto (PNG/WebP con la foto completa en
+   rectángulo redondeado y la cabeza que sobresale) a la derecha. La foto baja
+   más allá del bloque crema y el borde inferior del bloque la corta (la parte de
+   abajo queda oculta). Mobile: la foto va debajo del texto. El título y la
+   descripción quedan centrados en vertical (mismo aire arriba y abajo). */
+.page-intro {
+  overflow: hidden;
+}
+
 .page-intro__inner {
   display: grid;
 }
@@ -580,6 +585,7 @@
   display: block;
   width: 100%;
   height: auto;
+  margin-bottom: calc(-1 * var(--space-48));
 }
 
 @media (min-width: 768px) {
@@ -589,11 +595,14 @@
   }
 
   /* El aire sobre la foto fija el alto mínimo del bloque (igual en todas las
-     páginas); el texto se centra en ese alto. La foto, entera, termina justo en
-     el borde inferior */
+     páginas); el texto se centra en ese alto. El borde inferior corta la foto */
   .page-intro__media {
     width: 100%;
-    padding-top: var(--space-64);
+    padding-top: var(--space-32);
+  }
+
+  .page-intro__media img {
+    margin-bottom: calc(-1 * var(--space-64));
   }
 
   .page-intro__text {

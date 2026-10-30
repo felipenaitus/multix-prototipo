@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Encabezado de Inversionistas: foto completa cortada por el borde
+- Código ✓ · Se reemplaza la foto por `Imagen_Inverisonista_3.png` (la foto completa, con las cuatro esquinas redondeadas; recortada a su contenido y convertida a WebP, 26 KB). La foto sube (32 px de aire sobre ella desde tablet; antes 64) y baja más allá del bloque crema: el borde inferior del bloque la corta (se ocultan 64 px en tablet y desktop, 48 px en mobile).
+
 ## 2026-10-30 · Encabezado de Inversionistas: foto al ancho anterior
 - Código ✓ · Se descarta agrandar la foto: vuelve a 5/12 del ancho, entera y apoyada en el borde inferior del bloque crema (regenerada desde `Imagen_Inversionistasa_2.png`). Para que suba sin cortarse antes del borde hace falta una versión de la foto con más imagen hacia abajo.
 
