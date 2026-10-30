@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · 40 px entre título y párrafo: regla general
+- Código ✓ · La regla de 40 px entre título y párrafo pasa a todos los módulos de dos columnas con título y descripción a la izquierda, sin importar qué haya a la derecha. Se suman: Conoce nuestro desempeño y Trabaja con nosotros (home), Contacto de Inversionistas y el propósito de Nosotros.
+
 ## 2026-10-30 · 40 px entre título y párrafo junto a foto o video
 - Código ✓ · El aire de 40 px entre título y párrafo de home › Productos se aplica a todos los módulos con texto a la izquierda y foto o video a la derecha: compañía integrada (home, Inversionistas y Nosotros), catálogo de Productos y encabezado con foto de Centro de Resultados y Gobernanza. El bloque de Inversionistas del home (con listas a la derecha) queda igual.
 

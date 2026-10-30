@@ -6320,14 +6320,16 @@ html:not(.js) .company-visual__tag {
   }
 }
 
-/* Módulos con texto a la izquierda y foto o video a la derecha: 40 px entre el
-   título y el párrafo (Productos del home, compañía integrada, catálogo y
-   encabezado con foto de Inversionistas). Al resto le queda su espacio normal. */
-.split--center .section-head {
+/* Regla general: en todo módulo de dos columnas con título y descripción a la
+   izquierda (y cualquier elemento a la derecha), 40 px entre el título y el
+   párrafo: .split (Productos, Inversionistas y Trabaja con nosotros del home,
+   contacto IR, propósito de Nosotros), compañía integrada, catálogo y
+   encabezado con foto de Inversionistas */
+.split .section-head {
   gap: var(--space-40);
 }
 
-.company .split__body > h2 + p {
+.split__body > h2 + p {
   margin-top: calc(var(--space-40) - var(--space-24));
 }
 
