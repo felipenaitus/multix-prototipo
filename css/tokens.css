@@ -176,6 +176,22 @@
   --color-border-brand-hover: var(--color-navy-300);
 }
 
+/* Sin coral sobre crema (pedido de Felipe, 2026-10-30): en secciones crema
+   (.section--subtle) y bloques crema (presentación del trimestre, etiquetas de
+   regiones), los acentos pasan a tonos azules de la paleta: textos y bordes en
+   Navy 600 (azul grisáceo, 7:1 sobre crema), elementos gráficos (líneas, puntos,
+   cifras) en Navy 600 y el botón de acento en Navy 300. */
+.section--subtle,
+.results-release__inner,
+.company-visual__tag {
+  --color-text-accent: var(--color-navy-600);
+  --color-text-accent-on-dark: var(--color-navy-600);
+  --color-border-accent: var(--color-navy-600);
+  --color-border-accent-on-dark: var(--color-navy-600);
+  --color-bg-accent: var(--color-navy-300);
+  --color-bg-accent-hover: var(--color-navy-600);
+}
+
 /* Menú hamburguesa desde tablet: el panel es transparente sobre el sitio oscurecido,
    así que su contenido usa los colores sobre oscuro (textos blancos, secundarios
    Navy 300, líneas Navy 600, hover Navy 900) y, sin coral sobre azul, las
