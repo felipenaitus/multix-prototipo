@@ -5053,13 +5053,37 @@ a.pagination__item:hover,
   margin-bottom: 0;
 }
 
+/* Mobile: carrusel horizontal, un paso grande y el siguiente asomado; el texto
+   de cada paso va pegado bajo su círculo (.journey__desc) */
 .journey__steps {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-48) var(--space-16);
-  margin: 0;
-  padding: 0;
+  display: flex;
+  gap: var(--space-24);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  margin: 0 calc(-1 * var(--layout-gutter));
+  padding: 0 var(--layout-gutter);
+  scroll-padding-inline: var(--layout-gutter);
   list-style: none;
+}
+
+.journey__steps::-webkit-scrollbar {
+  display: none;
+}
+
+.journey__steps > .journey__step {
+  flex: 0 0 78%;
+  scroll-snap-align: start;
+}
+
+.journey__desc {
+  margin-top: var(--space-8);
+  color: var(--color-text-secondary);
+}
+
+/* En mobile el texto ya va en cada paso: el bloque de detalle se oculta */
+.journey__detail {
+  display: none;
 }
 
 /* Los pasos de una fila tienen la misma altura: las líneas quedan alineadas aunque
@@ -5195,6 +5219,7 @@ a.pagination__item:hover,
 
 .journey__foot .chain__arrows {
   flex-shrink: 0;
+  margin-left: auto; /* siempre al extremo derecho, también en mobile sin texto */
 }
 
 .journey__panel {
@@ -5221,8 +5246,24 @@ a.pagination__item:hover,
   }
 
   .journey__steps {
+    display: grid;
     grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: var(--space-24);
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+  }
+
+  .journey__steps > .journey__step {
+    flex: none;
+  }
+
+  .journey__desc {
+    display: none;
+  }
+
+  .journey__detail {
+    display: block;
   }
 
   .journey__text {

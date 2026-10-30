@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Productos: integración vertical como carrusel en mobile
+- Código ✓ · Solo en mobile, "Del cultivo a la mesa" pasa de grilla de 3 × 2 a carrusel horizontal: un paso grande (círculo más grande) y el siguiente asomado, con el texto de cada paso pegado bajo su nombre. Se puede deslizar; las flechas y el avance automático mueven el carrusel. Tablet y desktop sin cambios.
+
 ## 2026-10-30 · Productos: círculo de Soluciones centrado y más grande
 - Código ✓ · El círculo con video de "Soluciones para cada mercado" queda centrado en su cuadro (antes al 45 % de la altura), así se alinea en vertical con el texto, y crece del 59 % al 78 % de su columna.
 

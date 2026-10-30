@@ -605,9 +605,19 @@
       var panels = $all('.journey__panel', box);
       var current = 0, timer = null, visible = !hasIO, hovering = false, stopped = false;
       var interval = cssMs('--duration-reveal') * 8;
+      var list = box.querySelector('.journey__steps');
+      var programmatic = false, scrollTimer = null;
+      function isSlider() { return list && list.scrollWidth > list.clientWidth + 1; }
+      // Carrusel (mobile): lleva el paso activo al inicio de la pista
+      function scrollToStep(i) {
+        if (!isSlider()) return;
+        programmatic = true;
+        list.scrollTo({ left: items[i].offsetLeft - items[0].offsetLeft, behavior: reduce.matches ? 'auto' : 'smooth' });
+      }
 
-      function show(i) {
+      function show(i, noScroll) {
         current = i;
+        if (!noScroll && visible) scrollToStep(i);
         items.forEach(function (it, n) {
           var on = n === i;
           it.classList.toggle('is-active', on);
@@ -644,8 +654,20 @@
         arrows[0].addEventListener('click', function () { choose(current - 1); });
         arrows[1].addEventListener('click', function () { choose(current + 1); });
       }
+      // Al deslizar a mano, el paso más cercano pasa a ser el activo y se detiene el avance
+      if (list) list.addEventListener('scroll', function () {
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(function () {
+          if (programmatic) { programmatic = false; return; }
+          var x = list.scrollLeft, best = 0;
+          items.forEach(function (it, n) {
+            if (Math.abs(it.offsetLeft - items[0].offsetLeft - x) < Math.abs(items[best].offsetLeft - items[0].offsetLeft - x)) best = n;
+          });
+          if (best !== current) { stopped = true; show(best, true); schedule(); }
+        }, cssMs('--duration-base'));
+      }, { passive: true });
       box.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hovering = true; schedule(); } });
-      box.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hovering = false; show(current); schedule(); } });
+      box.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hovering = false; show(current, true); schedule(); } });
       box.addEventListener('focusin', function () { hovering = true; schedule(); });
       box.addEventListener('focusout', function () { hovering = false; schedule(); });
 
@@ -653,12 +675,12 @@
         new IntersectionObserver(function (entries) {
           var was = visible;
           visible = entries[0].isIntersecting;
-          if (visible && !was) show(current);
+          if (visible && !was) show(current, true);
           if (!visible) $all('.journey__video', box).forEach(function (v) { v.pause(); });
           schedule();
         }, { threshold: 0.3 }).observe(box);
       }
-      show(0);
+      show(0, true);
       schedule();
     });
   }
