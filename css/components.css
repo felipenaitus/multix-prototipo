@@ -6320,9 +6320,20 @@ html:not(.js) .company-visual__tag {
   }
 }
 
-/* Texto junto al círculo con video: más aire entre el título y el párrafo */
+/* Módulos con texto a la izquierda y foto o video a la derecha: 40 px entre el
+   título y el párrafo (Productos del home, compañía integrada, catálogo y
+   encabezado con foto de Inversionistas). Al resto le queda su espacio normal. */
 .split--center .section-head {
   gap: var(--space-40);
+}
+
+.company .split__body > h2 + p {
+  margin-top: calc(var(--space-40) - var(--space-24));
+}
+
+.catalog-cta__text > h2 + p,
+.page-intro .page-head > h1 + p {
+  margin-top: calc(var(--space-40) - var(--space-16));
 }
 
 .split .section-head .btn {
