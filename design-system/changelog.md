@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Productos: integración vertical con pasos inactivos tenues
+- Código ✓ · Se descarta el carrusel y vuelven los seis pasos a la vista, con más aire vertical (64 px entre bloques, 80 px desde tablet; 24 px entre círculo y texto). Los pasos inactivos llevan la foto en blanco y negro al 50 % y el número y nombre tenues; el activo y el que tiene hover se ven a color.
+
 ## 2026-10-30 · Productos: integración vertical más simple
 - Figma pendiente · Código ✓ · "Del cultivo a la mesa" deja el relato con flechas, video en hover y cuatro datos por paso. Nuevo componente `.journey` (en el kit): los seis pasos a la vista con su foto en un círculo; el activo reproduce su video en loop (como un gif) y avanza solo, con una línea Coral 500 que marca el tiempo (patrón de Soluciones); se pausa con el mouse y se detiene al elegir un paso. Debajo, solo el nombre y una frase. Mobile: grilla de 3 × 2. Se quitan los datos con cifras de cada paso (siguen en el historial de git).
 
