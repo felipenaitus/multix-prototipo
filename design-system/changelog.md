@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Centro de Resultados: encabezado en crema
+- Código ✓ · El encabezado de la página (título, descripción y pestañas) pasa a un bloque crema y la documentación (Resultados trimestrales y Memoria anual) queda sobre blanco (antes al revés). Sobre crema, el selector de pestañas va en blanco.
+
 ## 2026-10-30 · Inversionistas: menos aire bajo la presentación del trimestre
 - Código ✓ · La sección que sigue al bloque de la presentación del trimestre parte a 48 px en mobile y 64 px desde tablet (antes el espacio normal entre secciones, hasta ~128 px). Si la presentación está oculta, vuelve al espacio normal.
 

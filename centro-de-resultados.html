@@ -22,6 +22,9 @@
     <!-- Páginas internas de Inversionistas: primero el sub-menú, luego el encabezado y las pestañas -->
     <ir-subnav current="resultados"></ir-subnav>
 
+    <!-- Encabezado de la sección en crema: título, descripción y pestañas. La
+         documentación va debajo, sobre blanco -->
+    <div class="section--subtle page-intro">
     <header class="container page-head">
       <h1 class="t-h1">Centro de Resultados</h1>
       <p class="t-body-l page-head__lead">Resultados trimestrales, estados financieros y memorias anuales de Multi X, disponibles para descargar. [contenido por definir]</p>
@@ -37,9 +40,10 @@
         </div>
       </div>
     </div>
+    </div>
 
     <!-- Resultados trimestrales -->
-    <section class="section section--subtle tab-panel" id="panel-trimestrales" role="tabpanel" aria-labelledby="tab-trimestrales">
+    <section class="section tab-panel" id="panel-trimestrales" role="tabpanel" aria-labelledby="tab-trimestrales">
       <div class="container">
         <div class="section-head section-head--compact">
           <h2 class="t-h3" id="quarterly-title">Resultados trimestrales</h2>
@@ -379,7 +383,7 @@
     </section>
 
     <!-- Memoria anual: la más reciente destacada y, al lado, las anteriores (3 a la vista + "Ver más memorias") -->
-    <section class="section section--subtle tab-panel" id="panel-memoria" role="tabpanel" aria-labelledby="tab-memoria" hidden>
+    <section class="section tab-panel" id="panel-memoria" role="tabpanel" aria-labelledby="tab-memoria" hidden>
       <div class="container">
         <div class="annual">
           <article class="annual-featured reveal" aria-labelledby="annual-latest">
