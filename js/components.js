@@ -574,6 +574,70 @@
     });
   }
 
+  /* ---------- Integración vertical ([data-journey]) ----------
+     Seis pasos a la vista (.journey__step con .journey__trigger) y un panel por
+     paso (.journey__panel). El activo reproduce su video (.journey__video) y avanza
+     solo cada 8 × --duration-reveal mientras la sección está a la vista; se pausa
+     con el mouse o el foco dentro y se detiene cuando la persona elige un paso.
+     Con movimiento reducido no avanza ni reproduce (queda la foto). */
+  function initJourney() {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    $all('[data-journey]').forEach(function (box) {
+      var items = $all('.journey__step', box);
+      var panels = $all('.journey__panel', box);
+      var current = 0, timer = null, visible = !hasIO, hovering = false, stopped = false;
+      var interval = cssMs('--duration-reveal') * 8;
+
+      function show(i) {
+        current = i;
+        items.forEach(function (it, n) {
+          var on = n === i;
+          it.classList.toggle('is-active', on);
+          it.querySelector('.journey__trigger').setAttribute('aria-expanded', String(on));
+          var bar = it.querySelector('.journey__progress');
+          if (bar && on) { bar.style.transition = 'none'; bar.style.transform = 'scaleX(0)'; void bar.offsetWidth; bar.style.transition = ''; bar.style.transform = ''; }
+          var v = it.querySelector('.journey__video');
+          if (!v) return;
+          if (on && visible && !reduce.matches) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+          else v.pause();
+        });
+        panels.forEach(function (p, n) { p.hidden = n !== i; });
+      }
+
+      function schedule() {
+        clearTimeout(timer);
+        var run = visible && !hovering && !stopped && !reduce.matches && interval > 0;
+        box.classList.toggle('is-paused', !run);
+        box.style.setProperty('--journey-duration', run ? interval + 'ms' : '0ms');
+        if (run) timer = setTimeout(function () { show((current + 1) % items.length); schedule(); }, interval);
+      }
+
+      items.forEach(function (it, n) {
+        it.querySelector('.journey__trigger').addEventListener('click', function () {
+          stopped = true;
+          show(n);
+          schedule();
+        });
+      });
+      box.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hovering = true; schedule(); } });
+      box.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hovering = false; show(current); schedule(); } });
+      box.addEventListener('focusin', function () { hovering = true; schedule(); });
+      box.addEventListener('focusout', function () { hovering = false; schedule(); });
+
+      if (hasIO) {
+        new IntersectionObserver(function (entries) {
+          var was = visible;
+          visible = entries[0].isIntersecting;
+          if (visible && !was) show(current);
+          if (!visible) $all('.journey__video', box).forEach(function (v) { v.pause(); });
+          schedule();
+        }, { threshold: 0.3 }).observe(box);
+      }
+      show(0);
+      schedule();
+    });
+  }
+
   /* ---------- Círculo con video ([data-media-circle]) ----------
      Foto que llena un círculo; con hover (mouse) el círculo se abre a un video
      (.is-open). Con toque o Enter / Espacio se abre y cierra. Con movimiento
@@ -1078,6 +1142,7 @@
     initSectionOpen();
     initSteps();
     initChain();
+    initJourney();
     initRevealMore();
     initMediaCircle();
     initDocFilter();

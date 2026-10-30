@@ -53,6 +53,11 @@ Estado: **Base** = se aplica en todo el sitio sin preguntar. **Firma** = efecto 
 ## Agregar un patrón nuevo
 Si una sección necesita un movimiento que no está en este catálogo: proponerlo a Felipe (qué hace, dónde, versión mobile y versión con movimiento reducido) y, si lo aprueba, agregarlo aquí antes de implementarlo.
 
+## Base · Integración vertical (Productos › Del cultivo a la mesa)
+- Mismo patrón de avance automático que Soluciones: cada 8 × `--duration-reveal` pasa al paso siguiente mientras la sección está a la vista, con una línea Coral 500 que se llena bajo el paso activo (lineal). Se pausa con el mouse o el foco dentro y se detiene al elegir un paso.
+- Al activarse un paso, su círculo pasa de 0,9 a 1 (`--duration-reveal`, salida suave) y su video aparece sobre la foto con un fundido (`--duration-slow`) y se reproduce en loop; el paso anterior vuelve a la foto. El texto del paso entra con `fade-up`.
+- Con movimiento reducido no avanza solo ni reproduce video (queda la foto).
+
 ## Firma · Globo de mercados (solo Productos › Mercado y oficinas comerciales)
 - Giro continuo muy lento (aprox. una vuelta cada 3 minutos; se hizo más lento para un bloque más sobrio) solo mientras el globo está a la vista (IntersectionObserver); se detiene con el mouse encima o con un pin seleccionado.
 - Arrastrar gira el globo. Con foco o clic en un pin, el globo gira hasta centrarlo (3 × `--duration-slow`, salida suave) y muestra su nombre (`--duration-fast`).

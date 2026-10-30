@@ -196,96 +196,106 @@
       </div>
     </section>
 
-    <!-- Relato empresa vertical: Del cultivo a la mesa -->
-    <section class="section section--chain" aria-labelledby="chain-title">
+    <!-- Integración vertical: Del cultivo a la mesa ([data-journey]). Los seis pasos a
+         la vista; el activo reproduce su video y avanza solo. [fotos y videos por definir] -->
+    <section class="section" aria-labelledby="chain-title">
       <div class="container">
-        <div class="chain reveal" data-chain>
-          <h2 class="t-h2 chain__title" id="chain-title">Del cultivo a la mesa</h2>
-          <figure class="chain__stage" role="button" tabindex="0" aria-pressed="false" aria-label="Ver video del paso">
-            <span class="chain__hint" aria-hidden="true"></span>
-            <span class="chain__mask" aria-hidden="true"><video muted loop playsinline preload="none" src="assets/video/hero.mp4#t=2.3" poster="assets/img/foto-genetica.jpg"></video></span><!-- [fotos y videos por definir] -->
-          </figure>
-          <ol class="chain__steps" role="list">
-            <li class="chain__step is-active" role="listitem" id="chain-paso-1" data-video="assets/video/hero.mp4#t=2.3">
-              <h3 class="t-h2 chain__sub">01. Genética y ovas</h3>
-              <img class="chain__img" src="assets/img/foto-genetica.jpg" alt="" width="720" height="720" loading="lazy">
-              <p class="t-body chain__text">Programa genético propio para peces sanos y de crecimiento eficiente. [contenido por definir]</p>
-              <ul class="chain__facts" role="list" aria-label="Datos de Genética y ovas">
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">4</span><span class="t-small chain__fact-label">generaciones de selección genética</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">100 %</span><span class="t-small chain__fact-label">ovas de producción propia</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">2</span><span class="t-small chain__fact-label">centros de reproductores</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">+30</span><span class="t-small chain__fact-label">rasgos evaluados por pez</span></li>
-              </ul>
+        <div class="journey" data-journey>
+          <div class="section-head reveal">
+            <h2 class="t-h2" id="chain-title">Del cultivo a la mesa</h2>
+          </div>
+          <ol class="journey__steps reveal" role="list">
+            <li class="journey__step is-active">
+              <button class="journey__trigger" type="button" aria-controls="journey-1" aria-expanded="true">
+                <span class="journey__media" aria-hidden="true">
+                  <img class="journey__photo" src="assets/img/foto-genetica.jpg" alt="" width="720" height="720" loading="lazy">
+                  <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=2.3" poster="assets/img/foto-genetica.jpg"></video>
+                </span>
+                <span class="t-label journey__num">01</span>
+                <span class="t-ui-strong journey__name">Genética y ovas</span>
+                <span class="journey__progress" aria-hidden="true"></span>
+              </button>
             </li>
-            <li class="chain__step" role="listitem" id="chain-paso-2" data-video="assets/video/hero.mp4#t=27" aria-hidden="true">
-              <h3 class="t-h2 chain__sub">02. Agua dulce</h3>
-              <img class="chain__img" src="assets/img/foto-agua-dulce.jpg" alt="" width="720" height="720" loading="lazy">
-              <p class="t-body chain__text">Pisciculturas con recirculación donde crecen alevines y smolts. [contenido por definir]</p>
-              <ul class="chain__facts" role="list" aria-label="Datos de Agua dulce">
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">3</span><span class="t-small chain__fact-label">pisciculturas con recirculación</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">95 %</span><span class="t-small chain__fact-label">del agua se reutiliza</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">12</span><span class="t-small chain__fact-label">meses hasta smolt</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">24/7</span><span class="t-small chain__fact-label">monitoreo de oxígeno y temperatura</span></li>
-              </ul>
+            <li class="journey__step">
+              <button class="journey__trigger" type="button" aria-controls="journey-2" aria-expanded="false">
+                <span class="journey__media" aria-hidden="true">
+                  <img class="journey__photo" src="assets/img/foto-agua-dulce.jpg" alt="" width="720" height="720" loading="lazy">
+                  <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=27" poster="assets/img/foto-agua-dulce.jpg"></video>
+                </span>
+                <span class="t-label journey__num">02</span>
+                <span class="t-ui-strong journey__name">Agua dulce</span>
+                <span class="journey__progress" aria-hidden="true"></span>
+              </button>
             </li>
-            <li class="chain__step" role="listitem" id="chain-paso-3" data-video="assets/video/hero.mp4#t=7" aria-hidden="true">
-              <h3 class="t-h2 chain__sub">03. Centros de mar</h3>
-              <img class="chain__img" src="assets/img/foto-centros-mar.jpg" alt="" width="720" height="720" loading="lazy">
-              <p class="t-body chain__text">Engorda en las regiones de Los Lagos, Aysén y Magallanes. [contenido por definir]</p>
-              <ul class="chain__facts" role="list" aria-label="Datos de Centros de mar">
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">3</span><span class="t-small chain__fact-label">regiones: Los Lagos, Aysén y Magallanes</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">+40</span><span class="t-small chain__fact-label">centros de engorda</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">18</span><span class="t-small chain__fact-label">meses de engorda en mar</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">24/7</span><span class="t-small chain__fact-label">monitoreo de bienestar animal</span></li>
-              </ul>
+            <li class="journey__step">
+              <button class="journey__trigger" type="button" aria-controls="journey-3" aria-expanded="false">
+                <span class="journey__media" aria-hidden="true">
+                  <img class="journey__photo" src="assets/img/foto-centros-mar.jpg" alt="" width="720" height="720" loading="lazy">
+                  <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=7" poster="assets/img/foto-centros-mar.jpg"></video>
+                </span>
+                <span class="t-label journey__num">03</span>
+                <span class="t-ui-strong journey__name">Centros de mar</span>
+                <span class="journey__progress" aria-hidden="true"></span>
+              </button>
             </li>
-            <li class="chain__step" role="listitem" id="chain-paso-4" data-video="assets/video/inversionistas.mp4#t=14" aria-hidden="true">
-              <h3 class="t-h2 chain__sub">04. Cosecha</h3>
-              <img class="chain__img" src="assets/img/foto-cosecha.jpg" alt="" width="720" height="720" loading="lazy">
-              <p class="t-body chain__text">Cosecha planificada según la demanda de cada mercado. [contenido por definir]</p>
-              <ul class="chain__facts" role="list" aria-label="Datos de Cosecha">
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">< 6 h</span><span class="t-small chain__fact-label">del centro a la planta</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">0–2 °C</span><span class="t-small chain__fact-label">cadena de frío</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">100 %</span><span class="t-small chain__fact-label">cosecha planificada</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">365</span><span class="t-small chain__fact-label">días al año</span></li>
-              </ul>
+            <li class="journey__step">
+              <button class="journey__trigger" type="button" aria-controls="journey-4" aria-expanded="false">
+                <span class="journey__media" aria-hidden="true">
+                  <img class="journey__photo" src="assets/img/foto-cosecha.jpg" alt="" width="720" height="720" loading="lazy">
+                  <video class="journey__video" muted loop playsinline preload="none" src="assets/video/inversionistas.mp4#t=14" poster="assets/img/foto-cosecha.jpg"></video>
+                </span>
+                <span class="t-label journey__num">04</span>
+                <span class="t-ui-strong journey__name">Cosecha</span>
+                <span class="journey__progress" aria-hidden="true"></span>
+              </button>
             </li>
-            <li class="chain__step" role="listitem" id="chain-paso-5" data-video="assets/video/inversionistas.mp4#t=30" aria-hidden="true">
-              <h3 class="t-h2 chain__sub">05. Proceso</h3>
-              <img class="chain__img" src="assets/img/foto-proceso.jpg" alt="" width="720" height="720" loading="lazy">
-              <p class="t-body chain__text">Plantas propias de proceso primario, secundario y ahumado. [contenido por definir]</p>
-              <ul class="chain__facts" role="list" aria-label="Datos de Proceso">
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">3</span><span class="t-small chain__fact-label">plantas de proceso propias</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">+150</span><span class="t-small chain__fact-label">formatos de producto</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">100 %</span><span class="t-small chain__fact-label">lotes trazables</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">4</span><span class="t-small chain__fact-label">certificaciones de inocuidad</span></li>
-              </ul>
+            <li class="journey__step">
+              <button class="journey__trigger" type="button" aria-controls="journey-5" aria-expanded="false">
+                <span class="journey__media" aria-hidden="true">
+                  <img class="journey__photo" src="assets/img/foto-proceso.jpg" alt="" width="720" height="720" loading="lazy">
+                  <video class="journey__video" muted loop playsinline preload="none" src="assets/video/inversionistas.mp4#t=30" poster="assets/img/foto-proceso.jpg"></video>
+                </span>
+                <span class="t-label journey__num">05</span>
+                <span class="t-ui-strong journey__name">Proceso</span>
+                <span class="journey__progress" aria-hidden="true"></span>
+              </button>
             </li>
-            <li class="chain__step" role="listitem" id="chain-paso-6" data-video="assets/video/inversionistas.mp4#t=11" aria-hidden="true">
-              <h3 class="t-h2 chain__sub">06. Distribución</h3>
-              <img class="chain__img" src="assets/img/foto-distribucion.jpg" alt="" width="720" height="720" loading="lazy">
-              <p class="t-body chain__text">Despacho aéreo y marítimo a clientes en más de 30 países. [contenido por definir]</p>
-              <ul class="chain__facts" role="list" aria-label="Datos de Distribución">
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">30+</span><span class="t-small chain__fact-label">países de destino</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">2</span><span class="t-small chain__fact-label">oficinas comerciales</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">48 h</span><span class="t-small chain__fact-label">a destinos aéreos</span></li>
-                <li class="chain__fact"><span class="t-figure-s chain__fact-value">3</span><span class="t-small chain__fact-label">continentes</span></li>
-              </ul>
+            <li class="journey__step">
+              <button class="journey__trigger" type="button" aria-controls="journey-6" aria-expanded="false">
+                <span class="journey__media" aria-hidden="true">
+                  <img class="journey__photo" src="assets/img/foto-distribucion.jpg" alt="" width="720" height="720" loading="lazy">
+                  <video class="journey__video" muted loop playsinline preload="none" src="assets/video/inversionistas.mp4#t=11" poster="assets/img/foto-distribucion.jpg"></video>
+                </span>
+                <span class="t-label journey__num">06</span>
+                <span class="t-ui-strong journey__name">Distribución</span>
+                <span class="journey__progress" aria-hidden="true"></span>
+              </button>
             </li>
           </ol>
-          <div class="chain__nav" role="group" aria-label="Etapas de la cadena">
-            <div class="chain__segs">
-              <button class="chain__seg" type="button" aria-controls="chain-paso-1" aria-label="Paso 1: Genética y ovas" aria-current="step"><span class="chain__seg-line"></span></button>
-              <button class="chain__seg" type="button" aria-controls="chain-paso-2" aria-label="Paso 2: Agua dulce"><span class="chain__seg-line"></span></button>
-              <button class="chain__seg" type="button" aria-controls="chain-paso-3" aria-label="Paso 3: Centros de mar"><span class="chain__seg-line"></span></button>
-              <button class="chain__seg" type="button" aria-controls="chain-paso-4" aria-label="Paso 4: Cosecha"><span class="chain__seg-line"></span></button>
-              <button class="chain__seg" type="button" aria-controls="chain-paso-5" aria-label="Paso 5: Proceso"><span class="chain__seg-line"></span></button>
-              <button class="chain__seg" type="button" aria-controls="chain-paso-6" aria-label="Paso 6: Distribución"><span class="chain__seg-line"></span></button>
+          <div class="journey__detail reveal" aria-live="polite">
+            <div class="journey__panel" id="journey-1">
+              <p class="t-h3 journey__title">01. Genética y ovas</p>
+              <p class="t-body-l journey__text">Programa genético propio para peces sanos y de crecimiento eficiente. [contenido por definir]</p>
             </div>
-            <p class="t-small chain__count" aria-live="polite"><span class="chain__current">01</span> / 06</p>
-            <div class="chain__arrows">
-              <button class="chain__arrow chain__arrow--prev" type="button" aria-label="Paso anterior"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
-              <button class="chain__arrow" type="button" aria-label="Paso siguiente"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+            <div class="journey__panel" id="journey-2" hidden>
+              <p class="t-h3 journey__title">02. Agua dulce</p>
+              <p class="t-body-l journey__text">Pisciculturas con recirculación donde crecen alevines y smolts. [contenido por definir]</p>
+            </div>
+            <div class="journey__panel" id="journey-3" hidden>
+              <p class="t-h3 journey__title">03. Centros de mar</p>
+              <p class="t-body-l journey__text">Engorda en las regiones de Los Lagos, Aysén y Magallanes. [contenido por definir]</p>
+            </div>
+            <div class="journey__panel" id="journey-4" hidden>
+              <p class="t-h3 journey__title">04. Cosecha</p>
+              <p class="t-body-l journey__text">Cosecha planificada según la demanda de cada mercado. [contenido por definir]</p>
+            </div>
+            <div class="journey__panel" id="journey-5" hidden>
+              <p class="t-h3 journey__title">05. Proceso</p>
+              <p class="t-body-l journey__text">Plantas propias de proceso primario, secundario y ahumado. [contenido por definir]</p>
+            </div>
+            <div class="journey__panel" id="journey-6" hidden>
+              <p class="t-h3 journey__title">06. Distribución</p>
+              <p class="t-body-l journey__text">Despacho aéreo y marítimo a clientes en más de 30 países. [contenido por definir]</p>
             </div>
           </div>
         </div>
