@@ -6226,23 +6226,21 @@ html:not(.js) .company-visual__tag {
   line-clamp: 2;
 }
 
-/* "Ver noticia": enlace simple al pie; con el hover de la nota se subraya */
+/* "Ver noticia": botón terciario con flecha, como el resto del sitio, al pie.
+   El hover de toda la nota activa el hover del botón */
 .news-item__cta {
-  display: inline-flex;
-  align-items: center;
   align-self: flex-start;
   min-height: var(--touch-target);
   margin-top: auto;
-  color: var(--color-text-brand);
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  text-decoration-thickness: var(--border-thin);
-  text-underline-offset: var(--space-4);
-  transition: text-decoration-color var(--duration-fast) var(--easing-standard);
 }
 
 .news-item__link:hover .news-item__cta {
-  text-decoration-color: currentColor;
+  color: var(--color-text-brand-hover);
+}
+
+.news-item__link:hover .news-item__cta .icon--arrow {
+  color: var(--color-bg-accent-hover);
+  transform: translateX(var(--space-4));
 }
 
 @media (min-width: 768px) {

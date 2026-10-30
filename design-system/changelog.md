@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Home: "Ver noticia" con flecha
+- Código ✓ · "Ver noticia" pasa a ser el botón terciario con flecha, igual que los demás botones del sitio (antes era un enlace simple que se subrayaba).
+
 ## 2026-10-30 · Home: etiquetas de regiones en crema
 - Código ✓ · Las etiquetas de regiones alrededor del círculo de "Una salmonera del sur de Chile" pasan de blanco al crema de la sección siguiente (`--color-bg-subtle`), con texto Navy 900 (se probó antes Navy 100): eran del mismo color que el fondo de la sección y no se distinguían.
 
