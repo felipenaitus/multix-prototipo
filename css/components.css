@@ -5872,6 +5872,23 @@ body:has(.site-header.is-hidden) .subnav {
   pointer-events: none;
 }
 
+/* Flecha izquierda: aparece cuando la tira ya avanzó; fundido hacia la derecha */
+.subnav__more--prev {
+  right: auto;
+  left: var(--layout-gutter);
+  justify-content: flex-start;
+}
+
+.subnav__more--prev .icon {
+  transform: rotate(180deg);
+}
+
+.subnav__more--prev::before {
+  right: auto;
+  left: 100%;
+  background: linear-gradient(to left, transparent, var(--color-bg-brand));
+}
+
 .subnav__more[hidden] {
   display: flex;
   opacity: 0;

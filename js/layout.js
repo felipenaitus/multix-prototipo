@@ -871,20 +871,26 @@
               return '<li><a class="subnav__link t-ui-nav' + (on ? ' is-current' : '') + '" href="' + url(p.href) + '"' + (on ? ' aria-current="page"' : '') + '>' + esc(p.short || p.label) + '</a></li>';
             }).join('') +
           '</ul>' +
+          '<button type="button" class="subnav__more subnav__more--prev" aria-label="Ver secciones anteriores" hidden>' + icon('chev-right') + '</button>' +
           '<button type="button" class="subnav__more" aria-label="Ver más secciones" hidden>' + icon('chev-right') + '</button>' +
         '</nav>';
       var list = this.querySelector('.subnav__list');
-      var more = this.querySelector('.subnav__more');
+      var more = this.querySelector('.subnav__more:not(.subnav__more--prev)');
+      var prev = this.querySelector('.subnav__more--prev');
       var active = this.querySelector('.is-current');
       if (active && active.scrollIntoView) {
         list.scrollLeft = active.offsetLeft - (list.clientWidth - active.offsetWidth) / 2;
       }
-      // La flecha indica que hay más secciones a la derecha; se oculta al final
+      // Las flechas indican que hay más secciones hacia ese lado; se ocultan al llegar al extremo
       function updateMore() {
         more.hidden = list.scrollLeft + list.clientWidth >= list.scrollWidth - 2;
+        prev.hidden = list.scrollLeft <= 2;
       }
       more.addEventListener('click', function () {
         list.scrollBy({ left: list.clientWidth * 0.6, behavior: 'smooth' });
+      });
+      prev.addEventListener('click', function () {
+        list.scrollBy({ left: -list.clientWidth * 0.6, behavior: 'smooth' });
       });
       list.addEventListener('scroll', updateMore, { passive: true });
       window.addEventListener('resize', updateMore);

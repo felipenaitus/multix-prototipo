@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Sub-menú de Inversionistas: flecha también a la izquierda
+- Código ✓ · En mobile, el sub-menú de Inversionistas suma la flecha con fundido del lado izquierdo, que aparece cuando la tira ya avanzó (igual que el sub-menú de sección).
+
 ## 2026-10-30 · Inversionistas: se intercambian los sub-menús
 - Figma pendiente · Código ✓ · Transversal, en desktop y mobile. El sub-menú de Inversionistas pasa a ser una franja azul oscuro (Navy 900; activo en blanco sobre Navy 600, flecha sobre fundido azul). Las pestañas de Centro de Resultados y Gobernanza dejan la cápsula y el selector y toman el formato anterior del sub-menú: franja blanca con texto gris, activa en Navy 900 con indicador y línea fina abajo, flechas con fundido blanco en los extremos; al bajar quedan fijas justo bajo la franja azul.
 
