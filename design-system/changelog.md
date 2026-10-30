@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Home: Noticias sin contenedor
+- Figma pendiente · Código ✓ · Según la referencia de Felipe, las noticias dejan de ser cards: foto más baja (2:1) con esquinas suaves, título en Título 3 (máximo 2 líneas), "Ver noticia" como enlace simple y una línea bajo cada nota. Se quitan la sección y la fecha. Más aire entre notas. Reemplaza las cards blancas del mismo día.
+
 ## 2026-10-30 · Entrada de elementos en carruseles
 - Código ✓ · Corrección: dentro de un carrusel con scroll horizontal (por ejemplo, Noticias en mobile y tablet), los elementos que quedaban a la derecha no se mostraban porque nunca "entraban" en pantalla. Ahora se revelan todos cuando el carrusel entra, con el mismo desfase, y la siguiente card se asoma.
 
