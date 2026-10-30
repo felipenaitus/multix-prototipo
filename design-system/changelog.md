@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Memoria anual: portada sobre crema
+- Código ✓ · Con la documentación sobre blanco, el rectángulo detrás de la portada de la memoria más reciente pasa a crema; sobre secciones crema sigue en blanco.
+
 ## 2026-10-30 · Centro de Resultados: encabezado en crema
 - Código ✓ · El encabezado de la página (título, descripción y pestañas) pasa a un bloque crema y la documentación (Resultados trimestrales y Memoria anual) queda sobre blanco (antes al revés). Sobre crema, el selector de pestañas va en blanco.
 

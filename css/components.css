@@ -1004,8 +1004,8 @@
   border-top: var(--border-thin) solid var(--color-border-default);
 }
 
-/* Portada sobre un rectángulo redondeado a todo el ancho del bloque. Sobre crema
-   el fondo es blanco (regla de contenedores sobre crema). */
+/* Portada sobre un rectángulo redondeado a todo el ancho del bloque: crema sobre
+   fondo blanco y blanco sobre crema (regla de contenedores sobre crema). */
 .annual-featured__media {
   display: flex;
   align-items: center;
@@ -1014,6 +1014,10 @@
   aspect-ratio: 3 / 2;
   margin: var(--space-8) 0;
   border-radius: var(--radius-xl);
+  background: var(--color-bg-subtle);
+}
+
+.section--subtle .annual-featured__media {
   background: var(--color-bg-page);
 }
 
