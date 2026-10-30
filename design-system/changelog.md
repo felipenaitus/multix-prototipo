@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Home: foto recortada en el círculo de Productos
+- Código ✓ · El círculo con video de home › Productos muestra primero la foto entregada por Felipe (`Imagen_Home_1.png`, convertida a WebP: 859 KB → 88 KB), recortada con la figura que sobresale del círculo. Mismo botón de play; con hover la foto se desvanece y se reproduce el video. Nueva variante `.media-circle__img--cutout` (en el kit).
+
 ## 2026-10-30 · Encabezado de Inversionistas: foto completa cortada por el borde
 - Código ✓ · Se reemplaza la foto por `Imagen_Inverisonista_3.png` (la foto completa, con las cuatro esquinas redondeadas; recortada a su contenido y convertida a WebP, 26 KB). La foto sube (32 px de aire sobre ella desde tablet; antes 64) y baja más allá del bloque crema: el borde inferior del bloque la corta (se ocultan 64 px en tablet y desktop, 48 px en mobile).
 
