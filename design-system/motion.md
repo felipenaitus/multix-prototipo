@@ -81,13 +81,6 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 - Al cambiar de paso: la descripción aparece con `fade-up` (`--duration-slow`) el video del paso entra con un fundido (`--duration-reveal`) y empieza a reproducirse solo, en loop; el círculo no se mueve. Con movimiento reducido se muestra la foto (poster) sin reproducir.
 - Se pausan con el mouse o el foco dentro de la sección y se detienen del todo cuando la persona elige un paso. Con movimiento reducido no avanzan solos.
 
-## Firma · Órbita de puntos (Productos › Soluciones y home › Productos)
-- 6 puntos Coral 500 sobre el borde del círculo (entre 1,05 y 1,14 veces su radio). Cada uno aparece, recorre un tramo corto de la órbita (14° a 20°, en un sentido u otro) y se desvanece, en loop y desfasados (5,6 a 7,6 s, según 7 a 9,5 × `--duration-reveal`). Cada punto se ve cerca de la mitad de su ciclo, así que nunca están todos a la vista a la vez.
-- La órbita acompaña al círculo: su posición y tamaño en cada paso (`--duration-reveal`) y su escala con el scroll.
-- En el home acompaña al círculo con video (`.media-circle`): sigue al círculo completo y crece con él (15 %) al abrir el video.
-- Con movimiento reducido no aparecen (las duraciones quedan en 0 y su opacidad base es 0).
-- Descartadas antes: constelación que reaccionaba al mouse, burbujas que subían y círculo que mostraba un video en hover.
-
 ## Firma · Relato vertical (solo Productos › Del cultivo a la mesa)
 - Sin avance automático: el paso lo cambia la persona con las flechas o los tramos.
 - Al cambiar de paso, el título del paso, la foto y la descripción hacen un fundido (`--duration-slow`) y la foto entra con un leve acercamiento (0,94 → 1, `--duration-reveal`).
@@ -108,6 +101,6 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 - Con movimiento reducido: todos los cortes rectos.
 
 ## Firma · Compañía integrada (solo Inversionistas)
-- El círculo con video crece con el scroll (escala 0,7 → 1,1, `[data-scroll-grow]`) y el video se reproduce solo mientras el bloque está a la vista (`[data-inview-video]`).
+- El círculo con video tiene tamaño fijo (ya no crece con el scroll) y el video se reproduce solo mientras el bloque está a la vista (`[data-inview-video]`).
 - Las tres regiones (Los Lagos, Aysén, Magallanes) aparecen en secuencia al entrar el bloque (`--duration-reveal`, desfase 3 × `--duration-stagger`).
 - Con movimiento reducido: sin crecimiento, sin video (queda el poster) y las etiquetas aparecen sin desplazamiento.

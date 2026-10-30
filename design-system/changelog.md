@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Círculos con video: sin crecer con el scroll y sin puntos en órbita
+- Código ✓ · Los círculos con video ya no crecen con el scroll: compañía integrada (home, Inversionistas y Nosotros) y Productos › Soluciones. Se eliminan los puntos en órbita en todo el sitio (home › Productos, Productos › Soluciones y el kit) y el patrón "Firma · Órbita de puntos" de motion.md. El círculo del catálogo (imagen fija, sin video) sigue creciendo con el scroll.
+
 ## 2026-10-30 · Centro de Resultados: foto en el encabezado
 - Figma pendiente · Código ✓ · El encabezado crema suma a la derecha la foto entregada por Felipe (`Imagen_Inversionistas.png`, convertida a WebP: 564 KB → 38 KB), recortada en medio círculo y apoyada en el borde inferior del bloque. Texto y pestañas a la izquierda. En mobile la foto va debajo de las pestañas.
 

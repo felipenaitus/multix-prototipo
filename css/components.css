@@ -4940,75 +4940,14 @@ a.pagination__item:hover,
   border-radius: var(--radius-full);
   background: var(--color-bg-subtle);
   translate: -50% -50%;
-  transform: scale(calc(.6 + .5 * var(--scroll-progress, .8)));
   transition:
     top var(--duration-reveal) var(--easing-out),
     left var(--duration-reveal) var(--easing-out),
     width var(--duration-reveal) var(--easing-out);
 }
 
-/* Órbita: pocos puntos Coral 500 (elemento gráfico; algunos rellenos y otros
-   con contorno) sobre el borde del círculo. Cada uno aparece, recorre un tramo
-   corto de la órbita y se desvanece, en tiempos distintos: nunca están todos a la
-   vista. La órbita acompaña al círculo (posición, tamaño y escala con el scroll)
-   y queda por delante de la foto. Con movimiento reducido no aparecen. */
-.steps__orbit {
-  position: absolute;
-  z-index: 1;
-  left: calc(var(--circle-x) - var(--circle-size) / 2);
-  top: calc(var(--circle-y) - var(--circle-size) / 2);
-  width: var(--circle-size);
-  aspect-ratio: 1;
-  container-type: inline-size;
-  pointer-events: none;
-  transform: scale(calc(.6 + .5 * var(--scroll-progress, .8)));
-  transition:
-    left var(--duration-reveal) var(--easing-out),
-    top var(--duration-reveal) var(--easing-out),
-    width var(--duration-reveal) var(--easing-out);
-}
 
-/* Brazo que gira desde el centro; el punto va en su extremo */
-.steps__orbit-dot {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  opacity: 0;
-  transform: rotate(var(--a));
-  animation: steps-orbit calc(var(--duration-reveal) * var(--dur)) var(--easing-standard) infinite;
-  animation-delay: calc(var(--duration-reveal) * var(--delay) * -1);
-}
-
-.steps__orbit-dot::before {
-  content: "";
-  position: absolute;
-  width: var(--d);
-  aspect-ratio: 1;
-  border: var(--border-thin) solid var(--color-bg-accent-hover);
-  border-radius: var(--radius-full);
-  background: var(--fill, transparent);
-  transform: translate(calc(var(--r) * 50cqw - 50%), -50%);
-}
-
-.steps__orbit-dot:nth-child(1) { --a: -70deg; --r: 1.06; --d: var(--space-8); --drift: 18deg; --dur: 8; --delay: 0; --fill: var(--color-bg-accent-hover); }
-.steps__orbit-dot:nth-child(2) { --a: -15deg; --r: 1.12; --d: var(--space-6); --drift: -14deg; --dur: 7; --delay: 2.2; }
-.steps__orbit-dot:nth-child(3) { --a: 40deg; --r: 1.05; --d: var(--space-6); --drift: 20deg; --dur: 9; --delay: 4.5; --fill: var(--color-bg-accent-hover); }
-.steps__orbit-dot:nth-child(4) { --a: 115deg; --r: 1.14; --d: var(--space-8); --drift: -16deg; --dur: 7.5; --delay: 1.1; }
-.steps__orbit-dot:nth-child(5) { --a: 170deg; --r: 1.07; --d: var(--space-6); --drift: 15deg; --dur: 8.5; --delay: 6; --fill: var(--color-bg-accent-hover); }
-.steps__orbit-dot:nth-child(6) { --a: 230deg; --r: 1.1; --d: var(--space-6); --drift: -20deg; --dur: 9.5; --delay: 3.4; }
-
-@keyframes steps-orbit {
-  0%   { opacity: 0; transform: rotate(var(--a)); }
-  30%  { opacity: 1; }
-  55%  { opacity: 1; }
-  80%  { opacity: 0; transform: rotate(calc(var(--a) + var(--drift))); }
-  100% { opacity: 0; transform: rotate(calc(var(--a) + var(--drift))); }
-}
-
-/* El video de cada paso (su foto como poster) llena el círculo y crece con él al
-   hacer scroll. Se reproduce solo, en loop, mientras su paso está activo */
+/* El video de cada paso (su foto como poster) llena el círculo (tamaño fijo). Se reproduce solo, en loop, mientras su paso está activo */
 .steps__img {
   position: absolute;
   top: var(--circle-y);
@@ -5020,7 +4959,6 @@ a.pagination__item:hover,
   border-radius: var(--radius-full);
   translate: -50% -50%;
   opacity: 0;
-  transform: scale(calc(.6 + .5 * var(--scroll-progress, .8)));
   transition: opacity var(--duration-reveal) var(--easing-out);
 }
 
@@ -5844,9 +5782,9 @@ body:has(.site-header.is-hidden) .subnav {
 }
 
 /* Compañía integrada (Inversionistas): texto a la izquierda y, a la derecha, un
-   círculo con video que crece con el scroll ([data-scroll-grow]) y se reproduce
-   solo mientras está a la vista ([data-inview-video]). Alrededor, las regiones de
-   operación aparecen en secuencia, cada una con un punto Coral 500. */
+   círculo con video (tamaño fijo) que se reproduce solo mientras está a la vista
+   ([data-inview-video]). Alrededor, las regiones de operación aparecen en
+   secuencia, cada una con un punto. */
 .company {
   display: grid;
   gap: var(--space-48);
@@ -5871,7 +5809,6 @@ body:has(.site-header.is-hidden) .subnav {
   overflow: hidden;
   border-radius: var(--radius-full);
   background: var(--color-bg-inverse);
-  transform: scale(calc(.7 + .4 * var(--scroll-progress, .75)));
 }
 
 .company-visual__circle video {
@@ -6245,18 +6182,7 @@ html:not(.js) .company-visual__tag {
   animation: chain-hint-pulse calc(var(--duration-reveal) * 3) var(--easing-out) infinite;
 }
 
-/* Órbita de puntos de Productos › Soluciones: aquí sigue al círculo completo y
-   crece con él al abrir el video */
-.media-circle .steps__orbit {
-  left: 0;
-  top: 0;
-  width: 100%;
-  transform: none;
-  transition: scale var(--duration-reveal) var(--easing-out);
-}
-
-.media-circle.is-open .media-circle__disc,
-.media-circle.is-open .steps__orbit {
+.media-circle.is-open .media-circle__disc {
   scale: 1.15;
 }
 
