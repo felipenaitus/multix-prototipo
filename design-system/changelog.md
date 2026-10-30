@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Catálogo: sin crecer con el scroll
+- Código ✓ · El círculo detrás de la imagen del catálogo tampoco crece con el scroll. Ya no queda ningún elemento con ese comportamiento, así que se elimina `[data-scroll-grow]` (`initScrollGrow`) de components.js.
+
 ## 2026-10-30 · Círculos con video: sin crecer con el scroll y sin puntos en órbita
 - Código ✓ · Los círculos con video ya no crecen con el scroll: compañía integrada (home, Inversionistas y Nosotros) y Productos › Soluciones. Se eliminan los puntos en órbita en todo el sitio (home › Productos, Productos › Soluciones y el kit) y el patrón "Firma · Órbita de puntos" de motion.md. El círculo del catálogo (imagen fija, sin video) sigue creciendo con el scroll.
 

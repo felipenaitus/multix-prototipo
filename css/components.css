@@ -4531,8 +4531,7 @@ a.pagination__item:hover,
 /* Descarga del catálogo: fila abierta bajo las marcas (sin caja): texto y botón
    a la izquierda; a la derecha, una de dos vistas (data-variant):
    - "flipbook": el flipbook del catálogo incrustado (Heyzine), sin borde.
-   - "image": la imagen del catálogo sobre un círculo Offwhite que crece con el
-     scroll ([data-scroll-grow]).
+   - "image": la imagen del catálogo sobre un círculo Offwhite de tamaño fijo.
    Un switch discreto bajo la vista permite alternarlas (prototipo, para mostrar
    ambas opciones). Entrada al aparecer: textos en secuencia y luego la vista. */
 .catalog-cta {
@@ -4591,8 +4590,7 @@ a.pagination__item:hover,
   aspect-ratio: 1;
 }
 
-/* Círculo: escala según el avance del scroll (--scroll-progress de 0 a 1: de 0,6
-   a 1,1); sin JS o con movimiento reducido, tamaño normal. */
+/* Círculo detrás de la imagen (tamaño fijo) */
 .catalog-cta__cover::before {
   content: "";
   position: absolute;
@@ -4603,7 +4601,6 @@ a.pagination__item:hover,
   margin: auto;
   border-radius: var(--radius-full);
   background: var(--color-bg-page); /* blanco: el catálogo va sobre su sección Offwhite */
-  transform: scale(calc(.6 + .5 * var(--scroll-progress, .8)));
 }
 
 /* En fondo oscuro el círculo no lleva relleno: solo un contorno fino */

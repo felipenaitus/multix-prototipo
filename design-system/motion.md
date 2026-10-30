@@ -69,7 +69,7 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 
 ## Firma · Entrada del catálogo (solo Productos › Descarga del catálogo)
 - Al entrar en pantalla (IntersectionObserver de `.reveal`): etiqueta, título, bajada y botón aparecen en secuencia (`--duration-reveal`, desfase `--duration-stagger`) y al final el flipbook. Solo opacidad y transform; con movimiento reducido todo aparece en su lugar.
-- En la vista "Imagen", el círculo crece con el scroll (escala de 0,6 a 1,1, `[data-scroll-grow]`) y la imagen entra desde abajo a la izquierda con un giro de −4° a 0°.
+- En la vista "Imagen", el círculo tiene tamaño fijo (ya no crece con el scroll) y la imagen entra desde abajo a la izquierda con un giro de −4° a 0°.
 
 ## Firma · Borde curvo entre secciones (en prueba: Productos › Mercados → Nuestras marcas)
 - En lugar de un corte recto, la sección Offwhite termina en un arco suave que se monta sobre la blanca. El arco se ve completo hasta que su borde inferior llega al 75 % de la ventana y se aplana mientras sube hasta el 25 % (escala vertical de 1 a 0). Va directo al scroll, sin transición propia.
