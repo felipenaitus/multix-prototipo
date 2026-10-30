@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Home: Productos sin botón a la izquierda
+- Código ✓ · En "Your salmon solution partner" se quita el botón "Ver productos" de la columna de texto (queda solo el que aparece en el círculo al abrir el video) y el espacio entre título y párrafo sube de 12 a 24 px (`.split--center .section-head`).
+
 ## 2026-10-30 · Círculo con video: botón de la sección más sutil
 - Código ✓ · El botón "Ver productos" que aparece al abrir el video pasa a ser de contorno blanco sin relleno y tamaño chico (`btn--ghost-light btn--sm`), en la parte inferior del círculo (antes botón claro con relleno al centro).
 
