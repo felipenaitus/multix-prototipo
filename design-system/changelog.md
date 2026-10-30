@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Home: más espacio entre noticias
+- Código ✓ · Las notas quedan más angostas y con más aire entre ellas: 24 px en el carrusel de mobile y tablet, 64 px desde 1024 px y 96 px desde 1280 px.
+
 ## 2026-10-30 · Home: Noticias sin contenedor
 - Figma pendiente · Código ✓ · Según la referencia de Felipe, las noticias dejan de ser cards: foto más baja (2:1) con esquinas suaves, título en Título 3 (máximo 2 líneas), "Ver noticia" como enlace simple y una línea bajo cada nota. Se quitan la sección y la fecha. Más aire entre notas. Reemplaza las cards blancas del mismo día.
 
