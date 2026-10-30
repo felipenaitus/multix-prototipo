@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Productos: certificaciones con logo al abrir
+- Código ✓ · En la vista previa de cada certificación quedan solo la sigla y el nombre completo; el logo pasa al contenido desplegable, sobre la descripción.
+
 ## 2026-10-30 · Productos: mercados más sobrios
 - Figma pendiente · Código ✓ · El bloque "Del sur de Chile a las mesas del mundo" baja su carga visual: cifras en Navy 900 y peso regular (antes Coral 500 destacadas), continentes del globo en Navy 300, pines solo en Navy 900 (mercados como punto lleno, oficinas como anillo; antes coral y navy), oficinas sin banderas y giro del globo más lento (una vuelta cada 3 minutos).
 

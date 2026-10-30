@@ -4665,9 +4665,9 @@ a.pagination__item:hover,
 }
 
 /* Certificaciones en grilla (8 o más), sin cajas: cada certificación es una celda
-   abierta con una línea delgada arriba; espacio de logo, nombre y descripción
-   desplegable. Mobile: fila (logo a la izquierda). Desde tablet: logo arriba;
-   2 columnas en tablet y 4 en desktop. */
+   abierta con una línea delgada arriba. En la vista previa, solo el nombre y su
+   descripción; al abrir aparecen el logo y el texto. 2 columnas en tablet y 4 en
+   desktop. */
 .cert-grid {
   display: grid;
   align-items: start;
@@ -4683,8 +4683,8 @@ a.pagination__item:hover,
 
 .cert-card__head {
   display: grid;
-  grid-template-columns: var(--size-cert-logo) minmax(0, 1fr) auto;
-  grid-template-areas: "logo name icon";
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: "name icon";
   align-items: center;
   gap: var(--space-16);
   width: 100%;
@@ -4696,16 +4696,11 @@ a.pagination__item:hover,
   cursor: pointer;
 }
 
+/* Logo dentro del contenido desplegable, alineado a la izquierda */
 .cert-card__logo {
-  grid-area: logo;
   display: flex;
   align-items: center;
-  justify-content: center;
-  aspect-ratio: 1;
-  font-size: var(--text-small-size);
-  line-height: var(--text-small-lh);
-  color: var(--color-text-tertiary);
-  text-align: center;
+  height: var(--size-cert-logo);
 }
 
 /* Logo de la certificación: cabe en su espacio sin deformarse */
@@ -4751,16 +4746,7 @@ a.pagination__item:hover,
   }
 
   .cert-card__head {
-    grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-areas: "logo logo" "name icon";
     padding: var(--space-24) 0;
-  }
-
-  /* Espacio del logo: sin relleno ni borde, solo el aire que ocupará */
-  .cert-card__logo {
-    justify-content: flex-start;
-    aspect-ratio: auto;
-    height: calc(var(--size-cert-logo) + var(--space-12));
   }
 }
 
