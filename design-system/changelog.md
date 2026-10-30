@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Home: etiquetas de regiones en azul suave
+- Código ✓ · Las etiquetas de regiones alrededor del círculo de "Una salmonera del sur de Chile" pasan de blanco a Navy 100 con texto Navy 900: eran del mismo color que el fondo de la sección y no se distinguían.
+
 ## 2026-10-30 · Home: más espacio entre noticias
 - Código ✓ · Las notas quedan más angostas y con más aire entre ellas: 24 px en el carrusel de mobile y tablet, 64 px desde 1024 px y 96 px desde 1280 px.
 
