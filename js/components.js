@@ -223,6 +223,24 @@
       });
       strip.parentNode.insertBefore(wrap, strip);
       strip.classList.add('has-select');
+
+      // Desde tablet se ven las pestañas, salvo que la cápsula no quepa en su
+      // espacio: entonces también se usa el desplegable (.is-overflow)
+      var wide = window.matchMedia('(min-width: 768px)');
+      function fit() {
+        strip.classList.remove('is-overflow');
+        wrap.classList.remove('is-shown');
+        if (!wide.matches || !list) return;
+        var box = strip.parentNode, cs = getComputedStyle(box);
+        var room = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+        if (list.offsetWidth > room + 1) {
+          strip.classList.add('is-overflow');
+          wrap.classList.add('is-shown');
+        }
+      }
+      fit();
+      window.addEventListener('resize', fit);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
       picker.addEventListener('change', function () {
         var t = document.getElementById(picker.value);
         if (t) select(t);

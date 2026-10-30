@@ -139,7 +139,7 @@
   var INVESTOR_PAGES = [
     { id: 'inicio', label: 'Ir a Inversionistas', short: 'Inversionistas', href: 'inversionistas.html', home: true },
     { id: 'resultados', label: 'Centro de Resultados', href: 'centro-de-resultados.html' },
-    { id: 'gobernanza', label: 'Gobernanza', href: '#' },
+    { id: 'gobernanza', label: 'Gobernanza', href: 'gobernanza.html' },
     { id: 'calendario', label: 'Calendario y Eventos', href: '#' },
     { id: 'accion', label: 'Acción', href: '#' },
     { id: 'contacto', label: 'Contacto', href: '#' }

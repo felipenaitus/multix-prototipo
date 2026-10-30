@@ -474,6 +474,18 @@
   .tabs.has-select {
     display: flex;
   }
+
+  /* Si la cápsula de pestañas no cabe en su espacio, también desde tablet se usa
+     el desplegable (components.js agrega .is-overflow / .is-shown) */
+  .tabs.has-select.is-overflow {
+    display: none;
+  }
+
+  .tabs-select.is-shown {
+    display: block;
+    width: 50%;
+    margin-bottom: 0;
+  }
 }
 
 /* Campo de selección en azul (Navy 900, texto blanco) */
@@ -525,6 +537,11 @@
 /* Las pestañas siguen directo al encabezado de la página */
 .page-head + .page-tabs {
   padding-top: 0;
+}
+
+/* Pestañas en fila propia bajo el encabezado crema (muchas pestañas: Gobernanza) */
+.page-tabs--below {
+  padding-top: var(--space-40);
 }
 
 /* Encabezado de página en crema (título, descripción y pestañas); el contenido
@@ -6460,6 +6477,29 @@ html:not(.js) .company-visual__tag {
   .news-list {
     gap: var(--space-96);
   }
+}
+
+/* ==========================================================================
+   Página Gobernanza (Inversionistas): solo espaciado entre bloques de cada
+   pestaña; los componentes son los del kit
+   ========================================================================== */
+
+/* Grupo de documentos bajo una lista de valores: título, lista y acción */
+.gov-docs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-24);
+  margin-top: var(--space-64);
+}
+
+.gov-docs .doc-list {
+  width: 100%;
+}
+
+/* Próxima junta, antes de los documentos por año */
+.gov-next {
+  margin-bottom: var(--space-48);
 }
 
 /* ==========================================================================
