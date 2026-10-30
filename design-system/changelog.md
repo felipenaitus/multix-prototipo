@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Home: Noticias en cards
+- Figma pendiente · Código ✓ · Cada noticia pasa a ser una card blanca sobre el crema (sin borde ni sombra), con la foto más baja (16:9) y el texto con márgenes. Vuelve "Leer noticia", al pie de cada card y alineado entre ellas. Pedido de Felipe.
+
 ## 2026-10-30 · Menú: botón Buscar en el buscador
 - Código ✓ · Al escribir en el buscador del menú aparece el botón "Buscar" (secundario chico) junto a la X de borrar; también se busca con Enter. Ambos se ocultan con el campo vacío.
 

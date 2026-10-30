@@ -6171,21 +6171,39 @@ html:not(.js) .company-visual__tag {
   scroll-snap-align: start;
 }
 
+/* Cada nota es una card blanca sobre el crema (regla de contenedores sobre
+   crema), sin borde ni sombra: foto arriba a todo el ancho y el texto con
+   márgenes. Las cards de una fila tienen la misma altura y "Leer noticia" queda
+   al pie. */
+.news-list > li,
+.news-item {
+  display: flex;
+}
+
 .news-item__link {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  gap: var(--space-8);
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-page);
   color: var(--color-text-primary);
 }
 
-/* Foto más baja y con esquinas suaves, para que la sección se vea liviana */
+/* Foto baja (16:9) */
 .news-item__media {
   display: block;
   overflow: hidden;
-  aspect-ratio: 3 / 2;
-  margin-bottom: var(--space-12);
-  border-radius: var(--radius-lg);
+  aspect-ratio: 16 / 9;
   background: var(--color-bg-muted);
+}
+
+.news-item__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding: var(--space-20) var(--space-24) var(--space-16);
 }
 
 .news-item__media img {
@@ -6205,23 +6223,33 @@ html:not(.js) .company-visual__tag {
 }
 
 /* Título en Cuerpo L: máximo dos líneas; si es más largo termina en puntos
-   suspensivos. Toda la nota es el enlace: con hover el título se subraya */
+   suspensivos */
 .news-item__title {
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   line-clamp: 2;
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  text-decoration-thickness: var(--border-thin);
-  text-underline-offset: var(--space-4);
-  transition: text-decoration-color var(--duration-fast) var(--easing-standard);
 }
 
-.news-item__link:hover .news-item__title {
+/* "Leer noticia" al pie de la card, como el botón terciario: la flecha avanza
+   con el hover de toda la card */
+.news-item__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  min-height: var(--touch-target);
+  margin-top: auto;
+  padding-top: var(--space-8);
   color: var(--color-text-brand);
-  text-decoration-color: currentColor;
+}
+
+.news-item__cta .icon {
+  transition: transform var(--duration-fast) var(--easing-standard);
+}
+
+.news-item__link:hover .news-item__cta .icon {
+  transform: translateX(var(--space-4));
 }
 
 @media (min-width: 768px) {
