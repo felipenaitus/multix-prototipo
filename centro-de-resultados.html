@@ -22,17 +22,20 @@
     <!-- Páginas internas de Inversionistas: primero el sub-menú, luego el encabezado y las pestañas -->
     <ir-subnav current="resultados"></ir-subnav>
 
-    <!-- Encabezado de la sección en crema: título, descripción y pestañas. La
-         documentación va debajo, sobre blanco -->
+    <!-- Encabezado de la sección en crema: título, descripción y pestañas a la
+         izquierda; a la derecha, una foto en medio círculo apoyada en el borde
+         inferior. La documentación va debajo, sobre blanco -->
     <div class="section--subtle page-intro">
-    <header class="container page-head">
+      <div class="container page-intro__inner">
+        <div class="page-intro__text">
+    <header class="page-head">
       <h1 class="t-h1">Centro de Resultados</h1>
       <p class="t-body-l page-head__lead">Resultados trimestrales, estados financieros y memorias anuales de Multi X, disponibles para descargar. [contenido por definir]</p>
     </header>
 
     <!-- Pestañas de contenido: cada grupo de documentos al mismo nivel, arriba.
          Enlace directo: centro-de-resultados.html#memoria-anual -->
-    <div class="container page-tabs">
+    <div class="page-tabs">
       <div class="tabs" data-tabs data-tabs-hash>
         <div class="tabs__list" role="tablist" aria-label="Contenido del Centro de Resultados">
           <button class="tab" type="button" role="tab" id="tab-trimestrales" aria-selected="true" aria-controls="panel-trimestrales" data-hash="resultados-trimestrales">Resultados trimestrales</button>
@@ -40,6 +43,11 @@
         </div>
       </div>
     </div>
+        </div>
+        <figure class="page-intro__media">
+          <img src="assets/img/inversionistas-hero.webp" alt="" width="958" height="654">
+        </figure>
+      </div>
     </div>
 
     <!-- Resultados trimestrales -->

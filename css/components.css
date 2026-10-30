@@ -539,6 +539,42 @@
   }
 }
 
+/* Con foto: texto y pestañas a la izquierda; la foto (PNG/WebP recortado en
+   medio círculo, con la cabeza que sobresale) a la derecha, apoyada en el borde
+   inferior del bloque crema. Mobile: la foto va debajo de las pestañas. */
+.page-intro__inner {
+  display: grid;
+}
+
+.page-intro__media {
+  justify-self: center;
+  align-self: end;
+  width: 80%;
+  margin: 0;
+}
+
+.page-intro__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .page-intro__inner {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    column-gap: var(--space-40);
+  }
+
+  .page-intro__media {
+    width: 100%;
+    padding-top: var(--space-32);
+  }
+
+  .page-intro__text .page-head__lead {
+    max-width: none;
+  }
+}
+
 /* Sobre crema, el selector de pestañas va en blanco (regla de contenedores) */
 .section--subtle .tabs__list {
   background: var(--color-bg-page);

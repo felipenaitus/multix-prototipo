@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Centro de Resultados: foto en el encabezado
+- Figma pendiente · Código ✓ · El encabezado crema suma a la derecha la foto entregada por Felipe (`Imagen_Inversionistas.png`, convertida a WebP: 564 KB → 38 KB), recortada en medio círculo y apoyada en el borde inferior del bloque. Texto y pestañas a la izquierda. En mobile la foto va debajo de las pestañas.
+
 ## 2026-10-30 · Memoria anual: portada sobre crema
 - Código ✓ · Con la documentación sobre blanco, el rectángulo detrás de la portada de la memoria más reciente pasa a crema; sobre secciones crema sigue en blanco.
 
