@@ -212,11 +212,33 @@
       var wide = window.matchMedia('(min-width: 768px)');
       var fit;
       if (bar) {
+        // Flechas en los extremos (como el sub-menú de Inversionistas): aparecen
+        // solo si hay más pestañas hacia ese lado; al tocarlas la tira avanza
+        var arrow = function (dir) {
+          var b = document.createElement('button');
+          b.type = 'button';
+          b.className = 'page-tabs__more page-tabs__more--' + dir;
+          b.setAttribute('aria-label', dir === 'next' ? 'Ver más pestañas' : 'Ver pestañas anteriores');
+          b.hidden = true;
+          b.innerHTML = '<svg class="icon" aria-hidden="true"><use href="#i-chev-right"></use></svg>';
+          b.addEventListener('click', function () {
+            strip.scrollBy({ left: (dir === 'next' ? 1 : -1) * strip.clientWidth * 0.6, behavior: 'smooth' });
+          });
+          bar.appendChild(b);
+          return b;
+        };
+        var prev = arrow('prev'), next = arrow('next');
+        var updateMore = function () {
+          prev.hidden = strip.scrollLeft <= 2;
+          next.hidden = strip.scrollLeft + strip.clientWidth >= strip.scrollWidth - 2;
+        };
+        strip.addEventListener('scroll', updateMore, { passive: true });
         fit = function () {
           bar.classList.remove('is-bar');
           var cs = getComputedStyle(bar);
           var room = bar.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
           bar.classList.toggle('is-bar', !wide.matches || !!(list && list.offsetWidth > room + 1));
+          updateMore();
         };
       } else {
         var pickerId = nextTabsId('tabs-select');
