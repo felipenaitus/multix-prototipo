@@ -201,11 +201,12 @@
       // Con data-tabs-hash, cada pestaña tiene su enlace (#data-hash): se abre al
       // cargar la página con ese hash y la URL se actualiza al cambiar de pestaña
       var useHash = strip.hasAttribute('data-tabs-hash');
-      // Regla mobile: toda tira de pestañas tiene un equivalente para pantallas
-      // chicas, que también se usa desde tablet si la cápsula no cabe en su espacio:
-      // - Pestañas de página (.page-tabs): barra azul fija bajo el sub-menú (.is-bar).
-      // - El resto: un selector desplegable (lo crea este script; cada opción tiene
-      //   como valor el id de su pestaña).
+      // - Pestañas de página (.page-tabs): siempre como sub-menú de sección, una
+      //   franja fija bajo el sub-menú de Inversionistas (.is-bar), con flechas en
+      //   los extremos si no caben.
+      // - El resto (cápsula): en mobile, y desde tablet si no cabe en su espacio,
+      //   un selector desplegable (lo crea este script; cada opción tiene como
+      //   valor el id de su pestaña).
       var list = strip.querySelector('[role="tablist"]');
       var bar = strip.closest('.page-tabs');
       var picker = null;
@@ -233,13 +234,8 @@
           next.hidden = strip.scrollLeft + strip.clientWidth >= strip.scrollWidth - 2;
         };
         strip.addEventListener('scroll', updateMore, { passive: true });
-        fit = function () {
-          bar.classList.remove('is-bar');
-          var cs = getComputedStyle(bar);
-          var room = bar.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
-          bar.classList.toggle('is-bar', !wide.matches || !!(list && list.offsetWidth > room + 1));
-          updateMore();
-        };
+        bar.classList.add('is-bar');
+        fit = updateMore;
       } else {
         var pickerId = nextTabsId('tabs-select');
         var wrap = document.createElement('div');

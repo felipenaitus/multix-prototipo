@@ -337,7 +337,7 @@
       </div>
 
       <div class="kit-block">
-        <h3 class="t-label kit-block__title">Sub-menú de Inversionistas (<code>&lt;ir-subnav current&gt;</code>: fijo bajo el header; en mobile, flecha si hay más secciones)</h3>
+        <h3 class="t-label kit-block__title">Sub-menú de Inversionistas (<code>&lt;ir-subnav current&gt;</code>: franja azul fija bajo el header; flecha si hay más secciones)</h3>
         <ir-subnav current="resultados" style="position: static"></ir-subnav>
       </div>
 
@@ -688,7 +688,7 @@
       </div>
 
       <div class="kit-block">
-        <h3 class="t-label kit-block__title">Encabezado de página en crema con foto y pestañas debajo (<code>.page-intro</code> + <code>.page-tabs--below</code>: Centro de Resultados y Gobernanza)</h3>
+        <h3 class="t-label kit-block__title">Encabezado de página en crema con foto y sub-menú de sección debajo (<code>.page-intro</code> + <code>.page-tabs.is-bar</code>: Centro de Resultados y Gobernanza)</h3>
         <div class="section--subtle page-intro">
           <div class="container page-intro__inner">
             <div class="page-intro__text">
@@ -702,10 +702,12 @@
             </figure>
           </div>
         </div>
-        <div class="container page-tabs page-tabs--below">
-          <div class="tabs__list" role="tablist" aria-label="Ejemplo de pestañas">
-            <button class="tab" type="button" role="tab" aria-selected="true">Pestaña activa</button>
-            <button class="tab" type="button" role="tab" aria-selected="false">Otra pestaña</button>
+        <div class="page-tabs page-tabs--below is-bar" style="position: static">
+          <div class="tabs">
+            <div class="tabs__list" role="tablist" aria-label="Ejemplo de pestañas">
+              <button class="tab" type="button" role="tab" aria-selected="true">Pestaña activa</button>
+              <button class="tab" type="button" role="tab" aria-selected="false">Otra pestaña</button>
+            </div>
           </div>
         </div>
       </div>

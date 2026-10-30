@@ -544,19 +544,19 @@
   padding-top: var(--space-40);
 }
 
-/* Barra azul de pestañas (.is-bar, la pone components.js en mobile y cuando la
-   cápsula no cabe): reemplaza al selector. Mismo formato que el sub-menú de
-   Inversionistas pero sobre Navy 900: tira con scroll, texto Navy 300 y la activa
-   en blanco sobre un azul más claro (Navy 600). En los extremos, fundido y flecha
-   cuando hay más pestañas hacia ese lado. Al bajar queda fija bajo el sub-menú. */
+/* Sub-menú de sección (pestañas de página, .page-tabs.is-bar: Centro de
+   Resultados, Gobernanza). Franja blanca a todo el ancho, en todos los anchos:
+   texto gris, la activa en Navy 900 con indicador Navy y una línea fina abajo.
+   En los extremos, fundido blanco con flecha cuando hay más pestañas hacia ese
+   lado. Al bajar queda fija justo bajo el sub-menú de Inversionistas. */
 .page-tabs.is-bar {
   position: sticky;
   top: calc(var(--space-64) + var(--touch-target) + var(--space-12) + var(--border-thin));
   z-index: 40;
   max-width: none;
-  margin-top: var(--space-40);
   padding: 0;
-  background: var(--color-bg-brand);
+  background: var(--color-bg-page);
+  border-bottom: var(--border-thin) solid var(--color-border-default);
   transition: top var(--duration-slow) var(--easing-standard);
 }
 
@@ -570,11 +570,8 @@ body:has(.site-header.is-hidden) .page-tabs.is-bar {
   padding-inline: var(--layout-gutter);
 }
 
-/* Cada pestaña lleva aire a los lados (el fondo de la activa); la tira se corre
-   para que el texto de la primera quede alineado con el contenido */
 .page-tabs.is-bar .tabs__list {
-  gap: 0;
-  margin-left: calc(-1 * var(--space-16));
+  gap: var(--space-24);
   padding: 0;
   background: none;
   border-radius: 0;
@@ -584,21 +581,23 @@ body:has(.site-header.is-hidden) .page-tabs.is-bar {
   display: flex;
   align-items: center;
   min-height: calc(var(--touch-target) + var(--space-12));
-  padding: 0 var(--space-16);
+  padding: 0;
+  border-bottom: var(--border-indicator) solid transparent;
   border-radius: 0;
-  color: var(--color-text-inverse-muted);
+  color: var(--color-text-secondary);
 }
 
 .page-tabs.is-bar .tab:hover {
-  color: var(--color-text-inverse);
+  color: var(--color-text-brand);
 }
 
 .page-tabs.is-bar .tab[aria-selected="true"] {
-  background: var(--color-bg-brand-hover);
-  color: var(--color-text-inverse);
+  background: none;
+  color: var(--color-text-brand);
+  border-bottom-color: var(--color-border-brand);
 }
 
-/* Flechas en los extremos: fundido Navy 900 y flecha blanca; solo si hay más
+/* Flechas en los extremos: fundido blanco y flecha Navy; solo si hay más
    pestañas hacia ese lado (components.js). Al tocarla, la tira avanza */
 .page-tabs__more {
   display: none;
@@ -612,12 +611,12 @@ body:has(.site-header.is-hidden) .page-tabs.is-bar {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  /* llega hasta el borde de la barra: cubre también el margen lateral */
+  /* llega hasta el borde de la franja: cubre también el margen lateral */
   width: calc(var(--touch-target) + var(--layout-gutter));
   padding: 0 var(--layout-gutter) 0 0;
   border: 0;
-  background: var(--color-bg-brand);
-  color: var(--color-text-inverse);
+  background: var(--color-bg-page);
+  color: var(--color-text-brand);
   cursor: pointer;
   transition:
     opacity var(--duration-fast) var(--easing-standard),
@@ -649,12 +648,12 @@ body:has(.site-header.is-hidden) .page-tabs.is-bar {
 
 .page-tabs.is-bar .page-tabs__more--next::before {
   right: 100%;
-  background: linear-gradient(to right, transparent, var(--color-bg-brand));
+  background: linear-gradient(to right, transparent, var(--color-bg-page));
 }
 
 .page-tabs.is-bar .page-tabs__more--prev::before {
   left: 100%;
-  background: linear-gradient(to left, transparent, var(--color-bg-brand));
+  background: linear-gradient(to left, transparent, var(--color-bg-page));
 }
 
 .page-tabs.is-bar .page-tabs__more[hidden] {
@@ -663,15 +662,7 @@ body:has(.site-header.is-hidden) .page-tabs.is-bar {
   visibility: hidden;
 }
 
-.page-tabs.is-bar .page-tabs__more:focus-visible {
-  outline-color: var(--color-border-inverse);
-}
-
-.page-tabs.is-bar .tab:focus-visible {
-  outline-color: var(--color-border-inverse);
-}
-
-/* El contenido parte con el aire normal bajo la barra */
+/* El contenido parte con el aire normal bajo la franja */
 .page-tabs.is-bar ~ .section {
   padding-top: var(--space-40);
 }
@@ -5810,16 +5801,17 @@ a.pagination__item:hover,
    Páginas de Inversionistas
    ========================================================================== */
 
-/* Sub-menú de Inversionistas (<ir-subnav>, js/layout.js). Tira fija bajo el
-   header al hacer scroll (debajo de la fila compacta en desktop; arriba del
-   todo cuando el header se esconde en mobile). Activo con indicador Navy. */
+/* Sub-menú de Inversionistas (<ir-subnav>, js/layout.js). Franja transversal
+   Navy 900, fija bajo el header al hacer scroll (debajo de la fila compacta en
+   desktop; arriba del todo cuando el header se esconde en mobile). Texto Navy
+   300; la página activa en blanco sobre un azul más claro (Navy 600). */
 .subnav {
   position: sticky;
   top: var(--space-64);
   z-index: 50;
   display: block;
-  background: var(--color-bg-page);
-  border-bottom: var(--border-thin) solid var(--color-border-default);
+  background: var(--color-bg-brand);
+  border-bottom: var(--border-thin) solid var(--color-border-brand);
   transition: top var(--duration-slow) var(--easing-standard);
 }
 
@@ -5827,10 +5819,12 @@ body:has(.site-header.is-hidden) .subnav {
   top: 0;
 }
 
+/* Cada acceso lleva aire a los lados (el fondo del activo); la tira se corre para
+   que el texto del primero quede alineado con el contenido */
 .subnav__list {
   display: flex;
-  gap: var(--space-24);
-  margin: 0;
+  gap: 0;
+  margin: 0 0 0 calc(-1 * var(--space-16));
   padding: 0;
   overflow-x: auto;
   scrollbar-width: none;
@@ -5859,8 +5853,8 @@ body:has(.site-header.is-hidden) .subnav {
   width: var(--touch-target);
   padding: 0;
   border: 0;
-  background: var(--color-bg-page);
-  color: var(--color-text-brand);
+  background: var(--color-bg-brand);
+  color: var(--color-text-inverse);
   cursor: pointer;
   transition:
     opacity var(--duration-fast) var(--easing-standard),
@@ -5874,7 +5868,7 @@ body:has(.site-header.is-hidden) .subnav {
   right: 100%;
   bottom: 0;
   width: var(--space-32);
-  background: linear-gradient(to right, transparent, var(--color-bg-page));
+  background: linear-gradient(to right, transparent, var(--color-bg-brand));
   pointer-events: none;
 }
 
@@ -5888,26 +5882,34 @@ body:has(.site-header.is-hidden) .subnav {
   display: flex;
   align-items: center;
   min-height: calc(var(--touch-target) + var(--space-12));
-  color: var(--color-text-secondary);
+  padding: 0 var(--space-16);
+  color: var(--color-text-inverse-muted);
   white-space: nowrap;
-  border-bottom: var(--border-indicator) solid transparent;
   transition:
     color var(--duration-fast) var(--easing-standard),
-    border-color var(--duration-fast) var(--easing-standard);
+    background-color var(--duration-fast) var(--easing-standard);
 }
 
 .subnav__link:hover {
-  color: var(--color-text-brand);
+  color: var(--color-text-inverse);
 }
 
 .subnav__link.is-current {
-  color: var(--color-text-brand);
-  border-bottom-color: var(--color-border-brand);
+  color: var(--color-text-inverse);
+  background: var(--color-bg-brand-hover);
+}
+
+.subnav :focus-visible {
+  outline-color: var(--color-border-inverse);
 }
 
 @media (min-width: 1024px) {
+  .subnav__link {
+    padding: 0 var(--space-20);
+  }
+
   .subnav__list {
-    gap: var(--space-40);
+    margin-left: calc(-1 * var(--space-20));
   }
 }
 
