@@ -610,12 +610,6 @@
   }
 }
 
-/* Desktop: la foto toma la mitad del ancho, así es más alta y sube */
-@media (min-width: 1024px) {
-  .page-intro__inner {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  }
-}
 
 /* Sobre crema, el selector de pestañas va en blanco (regla de contenedores) */
 .section--subtle .tabs__list {
