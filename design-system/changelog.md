@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Inversionistas en mobile: foto arriba y barra azul de pestañas
+- Figma pendiente · Código ✓ · En Centro de Resultados y Gobernanza, en mobile la foto del encabezado va completa y arriba del título y la descripción. El selector azul que reemplazaba a las pestañas pasa a ser una barra Navy 900 con el formato del sub-menú de Inversionistas (tira con scroll, activa en blanco con indicador), que al bajar queda fija justo bajo el sub-menú. También se usa desde tablet cuando las pestañas no caben (Gobernanza entre 768 y ~1279 px).
+
 ## 2026-10-30 · Productos: integración vertical como carrusel en mobile
 - Código ✓ · Solo en mobile, "Del cultivo a la mesa" pasa de grilla de 3 × 2 a carrusel horizontal: un paso grande (círculo más grande) y el siguiente asomado, con el texto de cada paso pegado bajo su nombre. Se puede deslizar; las flechas y el avance automático mueven el carrusel. Tablet y desktop sin cambios.
 

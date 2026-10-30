@@ -544,6 +544,67 @@
   padding-top: var(--space-40);
 }
 
+/* Barra azul de pestañas (.is-bar, la pone components.js en mobile y cuando la
+   cápsula no cabe): reemplaza al selector. Mismo formato que el sub-menú de
+   Inversionistas pero sobre Navy 900: tira con scroll, texto Navy 300 y la activa
+   en blanco con indicador blanco. Al bajar queda fija justo bajo el sub-menú. */
+.page-tabs.is-bar {
+  position: sticky;
+  top: calc(var(--space-64) + var(--touch-target) + var(--space-12) + var(--border-thin));
+  z-index: 40;
+  max-width: none;
+  margin-top: var(--space-40);
+  padding: 0;
+  background: var(--color-bg-brand);
+  transition: top var(--duration-slow) var(--easing-standard);
+}
+
+body:has(.site-header.is-hidden) .page-tabs.is-bar {
+  top: calc(var(--touch-target) + var(--space-12) + var(--border-thin));
+}
+
+.page-tabs.is-bar .tabs {
+  max-width: calc(var(--layout-content-width) + 2 * var(--layout-gutter));
+  margin-inline: auto;
+  padding-inline: var(--layout-gutter);
+}
+
+.page-tabs.is-bar .tabs__list {
+  gap: var(--space-24);
+  padding: 0;
+  background: none;
+  border-radius: 0;
+}
+
+.page-tabs.is-bar .tab {
+  display: flex;
+  align-items: center;
+  min-height: calc(var(--touch-target) + var(--space-12));
+  padding: 0;
+  border-bottom: var(--border-indicator) solid transparent;
+  border-radius: 0;
+  color: var(--color-text-inverse-muted);
+}
+
+.page-tabs.is-bar .tab:hover {
+  color: var(--color-text-inverse);
+}
+
+.page-tabs.is-bar .tab[aria-selected="true"] {
+  background: none;
+  color: var(--color-text-inverse);
+  border-bottom-color: var(--color-border-inverse);
+}
+
+.page-tabs.is-bar .tab:focus-visible {
+  outline-color: var(--color-border-inverse);
+}
+
+/* El contenido parte con el aire normal bajo la barra */
+.page-tabs.is-bar ~ .section {
+  padding-top: var(--space-40);
+}
+
 /* Encabezado de página en crema (título, descripción y pestañas); el contenido
    sigue sobre blanco, con aire bajo el bloque crema */
 .page-intro + .section {
@@ -574,18 +635,24 @@
   padding-bottom: var(--space-48);
 }
 
+/* Mobile: la foto va completa, arriba, sobre el título y la descripción */
 .page-intro__media {
+  order: -1;
   justify-self: center;
   align-self: end;
   width: 80%;
   margin: 0;
+  padding-top: var(--space-32);
 }
 
 .page-intro__media img {
   display: block;
   width: 100%;
   height: auto;
-  margin-bottom: calc(-1 * var(--space-48));
+}
+
+.page-intro .page-head {
+  padding-top: var(--space-32);
 }
 
 @media (min-width: 768px) {
@@ -597,6 +664,7 @@
   /* El aire sobre la foto fija el alto mínimo del bloque (igual en todas las
      páginas); el texto se centra en ese alto. El borde inferior corta la foto */
   .page-intro__media {
+    order: 0;
     width: 100%;
     padding-top: var(--space-32);
   }

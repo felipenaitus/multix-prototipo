@@ -201,56 +201,69 @@
       // Con data-tabs-hash, cada pestaña tiene su enlace (#data-hash): se abre al
       // cargar la página con ese hash y la URL se actualiza al cambiar de pestaña
       var useHash = strip.hasAttribute('data-tabs-hash');
-      // Regla mobile: toda tira de pestañas tiene un selector desplegable equivalente
-      // (lo crea este script; el CSS muestra el selector en mobile y las pestañas
-      // desde tablet). Cada opción tiene como valor el id de su pestaña.
+      // Regla mobile: toda tira de pestañas tiene un equivalente para pantallas
+      // chicas, que también se usa desde tablet si la cápsula no cabe en su espacio:
+      // - Pestañas de página (.page-tabs): barra azul fija bajo el sub-menú (.is-bar).
+      // - El resto: un selector desplegable (lo crea este script; cada opción tiene
+      //   como valor el id de su pestaña).
       var list = strip.querySelector('[role="tablist"]');
-      var pickerId = nextTabsId('tabs-select');
-      var wrap = document.createElement('div');
-      wrap.className = 'tabs-select';
-      wrap.innerHTML =
-        '<label class="visually-hidden" for="' + pickerId + '">' + ((list && list.getAttribute('aria-label')) || 'Ver') + '</label>' +
-        '<div class="control control--select control--brand"><select class="control__input" id="' + pickerId + '"></select>' +
-        '<svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg></div>';
-      var picker = wrap.querySelector('select');
-      tabs.forEach(function (t) {
-        if (!t.id) t.id = nextTabsId('tab');
-        var o = document.createElement('option');
-        o.value = t.id;
-        o.textContent = t.textContent.trim();
-        if (t.getAttribute('aria-selected') === 'true') o.selected = true;
-        picker.appendChild(o);
-      });
-      strip.parentNode.insertBefore(wrap, strip);
-      strip.classList.add('has-select');
-
-      // Desde tablet se ven las pestañas, salvo que la cápsula no quepa en su
-      // espacio: entonces también se usa el desplegable (.is-overflow)
+      var bar = strip.closest('.page-tabs');
+      var picker = null;
       var wide = window.matchMedia('(min-width: 768px)');
-      function fit() {
-        strip.classList.remove('is-overflow');
-        wrap.classList.remove('is-shown');
-        if (!wide.matches || !list) return;
-        var box = strip.parentNode, cs = getComputedStyle(box);
-        var room = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
-        if (list.offsetWidth > room + 1) {
-          strip.classList.add('is-overflow');
-          wrap.classList.add('is-shown');
-        }
+      var fit;
+      if (bar) {
+        fit = function () {
+          bar.classList.remove('is-bar');
+          var cs = getComputedStyle(bar);
+          var room = bar.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+          bar.classList.toggle('is-bar', !wide.matches || !!(list && list.offsetWidth > room + 1));
+        };
+      } else {
+        var pickerId = nextTabsId('tabs-select');
+        var wrap = document.createElement('div');
+        wrap.className = 'tabs-select';
+        wrap.innerHTML =
+          '<label class="visually-hidden" for="' + pickerId + '">' + ((list && list.getAttribute('aria-label')) || 'Ver') + '</label>' +
+          '<div class="control control--select control--brand"><select class="control__input" id="' + pickerId + '"></select>' +
+          '<svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg></div>';
+        picker = wrap.querySelector('select');
+        tabs.forEach(function (t) {
+          if (!t.id) t.id = nextTabsId('tab');
+          var o = document.createElement('option');
+          o.value = t.id;
+          o.textContent = t.textContent.trim();
+          if (t.getAttribute('aria-selected') === 'true') o.selected = true;
+          picker.appendChild(o);
+        });
+        strip.parentNode.insertBefore(wrap, strip);
+        strip.classList.add('has-select');
+        picker.addEventListener('change', function () {
+          var t = document.getElementById(picker.value);
+          if (t) select(t);
+        });
+        // Desde tablet se ven las pestañas, salvo que la cápsula no quepa en su
+        // espacio: entonces también se usa el desplegable (.is-overflow)
+        fit = function () {
+          strip.classList.remove('is-overflow');
+          wrap.classList.remove('is-shown');
+          if (!wide.matches || !list) return;
+          var box = strip.parentNode, cs = getComputedStyle(box);
+          var room = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+          if (list.offsetWidth > room + 1) {
+            strip.classList.add('is-overflow');
+            wrap.classList.add('is-shown');
+          }
+        };
       }
       fit();
       window.addEventListener('resize', fit);
       if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
-      picker.addEventListener('change', function () {
-        var t = document.getElementById(picker.value);
-        if (t) select(t);
-      });
 
       function select(tab, focus) {
         if (useHash && tab.getAttribute('data-hash')) {
           history.replaceState(null, '', location.pathname + location.search + '#' + tab.getAttribute('data-hash'));
         }
-        picker.value = tab.id;
+        if (picker) picker.value = tab.id;
         tabs.forEach(function (t) {
           var on = t === tab;
           t.setAttribute('aria-selected', String(on));
