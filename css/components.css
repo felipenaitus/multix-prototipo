@@ -2186,6 +2186,12 @@ a.pagination__item:hover,
   padding-top: var(--space-40);
 }
 
+/* La sección que sigue a la presentación parte más cerca (menos aire que entre
+   secciones); si la presentación está oculta, vuelve al espacio normal */
+.results-release:not([hidden]) + .section {
+  padding-top: var(--space-48);
+}
+
 .results-release__inner {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
@@ -2233,6 +2239,10 @@ a.pagination__item:hover,
 @media (min-width: 768px) {
   .results-release {
     padding-top: var(--space-48);
+  }
+
+  .results-release:not([hidden]) + .section {
+    padding-top: var(--space-64);
   }
 
   .results-release__inner {

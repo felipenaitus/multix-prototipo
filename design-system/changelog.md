@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Inversionistas: menos aire bajo la presentación del trimestre
+- Código ✓ · La sección que sigue al bloque de la presentación del trimestre parte a 48 px en mobile y 64 px desde tablet (antes el espacio normal entre secciones, hasta ~128 px). Si la presentación está oculta, vuelve al espacio normal.
+
 ## 2026-10-30 · Nosotros: La Araucanía
 - Contenido · En "Presentes en el sur de Chile" se agrega la Región de La Araucanía: texto ("cuatro regiones del sur, de La Araucanía a Magallanes"), etiqueta en el círculo y la cifra de regiones (3 → 4).
 
