@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Círculo con video: botón de la sección al abrir
+- Código ✓ · Al abrir el video (hover, toque o teclado), aparece al centro del círculo el botón de la sección ("Ver productos" en el home), en estilo claro sobre el video. Para que el enlace no quede dentro de otro control, el círculo deja de ser un botón y el play pasa a ser un `<button>` real de 44 px (antes 40) que abre y cierra el video con toque o teclado.
+
 ## 2026-10-30 · Home: foto recortada en el círculo de Productos
 - Código ✓ · El círculo con video de home › Productos muestra primero la foto entregada por Felipe (`Imagen_Home_1.png`, convertida a WebP: 859 KB → 88 KB), recortada con la figura que sobresale del círculo. Mismo botón de play; con hover la foto se desvanece y se reproduce el video. Nueva variante `.media-circle__img--cutout` (en el kit).
 

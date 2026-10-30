@@ -6205,18 +6205,20 @@ html:not(.js) .company-visual__tag {
   pointer-events: none;
 }
 
+/* Play: botón real (toque y teclado abren y cierran el video) */
 .media-circle__hint {
   position: absolute;
   z-index: 2;
   top: 85.4%;
   left: 85.4%;
-  width: var(--space-40);
-  height: var(--space-40);
+  width: var(--touch-target);
+  height: var(--touch-target);
+  padding: 0;
   border: var(--border-thin) solid var(--color-border-brand);
   border-radius: var(--radius-full);
   background: var(--color-bg-page);
   translate: -50% -50%;
-  pointer-events: none;
+  cursor: pointer;
   transition:
     opacity var(--duration-slow) var(--easing-standard),
     scale var(--duration-slow) var(--easing-standard);
@@ -6260,6 +6262,36 @@ html:not(.js) .company-visual__tag {
 .media-circle.is-open .media-circle__img {
   opacity: 0;
   transform: scale(1.15);
+}
+
+/* Botón de la sección ("Ver productos"): aparece al centro al abrir el video */
+.media-circle__cta {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  white-space: nowrap;
+  translate: -50% -50%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(var(--space-8));
+  transition:
+    opacity var(--duration-slow) var(--easing-standard),
+    transform var(--duration-slow) var(--easing-out),
+    visibility 0s linear var(--duration-slow);
+}
+
+.media-circle.is-open .media-circle__cta {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: var(--duration-fast), var(--duration-fast), 0s;
+}
+
+/* Con teclado, el play sigue visible al tener el foco aunque el video esté abierto */
+.media-circle.is-open .media-circle__hint:focus-visible {
+  opacity: 1;
+  scale: 1;
 }
 
 .media-circle.is-open .media-circle__hint {

@@ -664,6 +664,8 @@
   }
 
   /* ---------- Círculo con video ([data-media-circle]) ----------
+     Al abrirse aparece el botón de la sección (.media-circle__cta). El play
+     (.media-circle__hint) es un botón real para toque y teclado.
      Foto que llena un círculo; con hover (mouse) el círculo se abre a un video
      (.is-open). Con toque o Enter / Espacio se abre y cierra. Con movimiento
      reducido el video no se reproduce (queda el poster). */
@@ -671,20 +673,24 @@
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
     $all('[data-media-circle]').forEach(function (box) {
       var video = box.querySelector('video');
+      var hint = box.querySelector('.media-circle__hint');
+      var cta = box.querySelector('.media-circle__cta');
       function setOpen(on) {
         box.classList.toggle('is-open', on);
-        box.setAttribute('aria-pressed', String(on));
+        if (hint) hint.setAttribute('aria-pressed', String(on));
         if (!video) return;
         if (on && !reduce.matches) { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
         else video.pause();
       }
       box.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') setOpen(true); });
       box.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') setOpen(false); });
+      // Toque en el círculo (o en el play) y teclado en el play: abre y cierra.
+      // El botón de la sección (.media-circle__cta) navega sin cerrar el video.
       box.addEventListener('click', function (e) {
-        if (e.pointerType !== 'mouse') setOpen(!box.classList.contains('is-open'));
-      });
-      box.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpen(!box.classList.contains('is-open')); }
+        if (cta && cta.contains(e.target)) return;
+        var byKeyboard = e.detail === 0; // Enter o Espacio sobre el play
+        var byTouch = e.pointerType && e.pointerType !== 'mouse';
+        if (byKeyboard || byTouch) setOpen(!box.classList.contains('is-open'));
       });
     });
   }
