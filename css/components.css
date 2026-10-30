@@ -558,15 +558,15 @@
 
 /* Con foto: texto a la izquierda; la foto (PNG/WebP recortado en rectángulo
    redondeado, con la cabeza que sobresale) a la derecha, apoyada en el borde
-   inferior del bloque crema. Mobile: la foto va debajo del texto. Bloque bajo:
-   menos aire arriba y abajo del título que en otras páginas. */
+   inferior del bloque crema. Mobile: la foto va debajo del texto. El título y
+   la descripción quedan centrados en vertical (mismo aire arriba y abajo). */
 .page-intro__inner {
   display: grid;
 }
 
 .page-intro .page-head {
-  padding-top: var(--space-32);
-  padding-bottom: var(--space-32);
+  padding-top: var(--space-48);
+  padding-bottom: var(--space-48);
 }
 
 .page-intro__media {
@@ -588,14 +588,20 @@
     column-gap: var(--space-40);
   }
 
+  /* El aire sobre la foto fija el alto mínimo del bloque (igual en todas las
+     páginas); el texto se centra en ese alto */
   .page-intro__media {
     width: 100%;
-    padding-top: var(--space-24);
+    padding-top: var(--space-96);
+  }
+
+  .page-intro__text {
+    align-self: center;
   }
 
   .page-intro .page-head {
-    padding-top: var(--space-40);
-    padding-bottom: var(--space-40);
+    padding-top: var(--space-64);
+    padding-bottom: var(--space-64);
   }
 
   .page-intro__text .page-head__lead {
