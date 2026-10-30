@@ -62,19 +62,33 @@
       return;
     }
 
+    // Dentro de un carrusel (scroll horizontal) el contenedor recorta a los que
+    // quedan a la derecha y nunca "entran": se observa el carrusel y, al entrar,
+    // se revelan todos sus elementos (con el mismo desfase)
+    var groups = new Map();
+    items.forEach(function (el) {
+      var parent = el.parentElement;
+      var ox = parent ? getComputedStyle(parent).overflowX : '';
+      var target = (ox === 'auto' || ox === 'scroll') ? parent : el;
+      if (!groups.has(target)) groups.set(target, []);
+      groups.get(target).push(el);
+    });
+
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        var el = entry.target;
-        if (entry.isIntersecting) {
-          el.classList.add('is-visible');
-          if (!el.classList.contains('reveal-rev')) io.unobserve(el);
-        } else if (el.classList.contains('reveal-rev') && entry.boundingClientRect.top > 0) {
-          el.classList.remove('is-visible');
-        }
+        groups.get(entry.target).forEach(function (el) {
+          if (entry.isIntersecting) {
+            el.classList.add('is-visible');
+          } else if (el.classList.contains('reveal-rev') && entry.boundingClientRect.top > 0) {
+            el.classList.remove('is-visible');
+          }
+        });
+        var once = groups.get(entry.target).every(function (el) { return !el.classList.contains('reveal-rev'); });
+        if (entry.isIntersecting && once) io.unobserve(entry.target);
       });
     }, { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
 
-    items.forEach(function (el) { io.observe(el); });
+    groups.forEach(function (els, target) { io.observe(target); });
   }
 
   /* ---------- Contadores (Cifra L/M/S) ----------

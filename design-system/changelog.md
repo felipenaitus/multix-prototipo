@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Entrada de elementos en carruseles
+- Código ✓ · Corrección: dentro de un carrusel con scroll horizontal (por ejemplo, Noticias en mobile y tablet), los elementos que quedaban a la derecha no se mostraban porque nunca "entraban" en pantalla. Ahora se revelan todos cuando el carrusel entra, con el mismo desfase, y la siguiente card se asoma.
+
 ## 2026-10-30 · Home: Noticias en cards
 - Figma pendiente · Código ✓ · Cada noticia pasa a ser una card blanca sobre el crema (sin borde ni sombra), con la foto más baja (16:9) y el texto con márgenes. Vuelve "Leer noticia", al pie de cada card y alineado entre ellas. Pedido de Felipe.
 
