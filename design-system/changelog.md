@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Nosotros: La Araucanía
+- Contenido · En "Presentes en el sur de Chile" se agrega la Región de La Araucanía: texto ("cuatro regiones del sur, de La Araucanía a Magallanes"), etiqueta en el círculo y la cifra de regiones (3 → 4).
+
 ## 2026-10-30 · Sin coral sobre crema
 - Figma pendiente · Código ✓ · Regla transversal: sobre fondo crema no se usa coral, todo va en tonos azules. En `section--subtle`, en la presentación del trimestre (`.results-release__inner`) y en las etiquetas de regiones, `tokens.css` reasigna los tokens de acento: textos y bordes en Navy 600, elementos gráficos en Navy 600 y botón de acento en Navy 300. Cambian la etiqueta "Nuevo · Resultados" de la presentación del trimestre, las cifras, el título del hito y la línea de secuencia de Nosotros (secciones crema) y el punto de las etiquetas de regiones.
 
