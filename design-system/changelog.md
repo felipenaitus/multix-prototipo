@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Home: línea de noticias más suave
+- Código ✓ · Vuelve la línea bajo cada noticia, ahora en el tono suave de los separadores (`--color-border-default`) en vez de `--color-border-strong`.
+
 ## 2026-10-30 · Home: noticias sin línea inferior
 - Código ✓ · Prueba pedida por Felipe: se quita la línea que cerraba cada noticia por abajo.
 
