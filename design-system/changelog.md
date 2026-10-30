@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Inversionistas: La Araucanía y etiquetas en blanco sobre crema
+- Código ✓ · En "Una compañía integrada del sur de Chile" se agrega la Región de La Araucanía en el texto y en las etiquetas del círculo. Sobre fondo crema las etiquetas de regiones van en blanco (regla de contenedores sobre crema); sobre fondo blanco siguen en crema.
+
 ## 2026-10-30 · Productos: flechas en la integración vertical
 - Código ✓ · En "Del cultivo a la mesa" se agregan las flechas anterior / siguiente en el extremo derecho, en la fila del texto del paso, para avanzar o retroceder (en loop). Al usarlas se detiene el avance automático, como al elegir un paso.
 

@@ -5852,6 +5852,11 @@ body:has(.site-header.is-hidden) .subnav {
 .company-visual__tag:nth-child(3) { bottom: 30%; left: -6%; transition-delay: calc(var(--duration-stagger) * 4); }
 .company-visual__tag:nth-child(4) { bottom: 6%; right: 4%; transition-delay: calc(var(--duration-stagger) * 6); }
 
+/* Sobre fondo crema (regla de contenedores sobre crema), las etiquetas van en blanco */
+.section--subtle .company-visual__tag {
+  background: var(--color-bg-page);
+}
+
 .company-visual.is-visible .company-visual__tag {
   opacity: 1;
   transform: none;
