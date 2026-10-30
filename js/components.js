@@ -575,33 +575,47 @@
   }
 
   /* ---------- Integración vertical ([data-journey]) ----------
-     Seis pasos a la vista (.journey__step con .journey__trigger) y un panel por
-     paso (.journey__panel). El activo reproduce su video (.journey__video) y avanza
-     solo cada 8 × --duration-reveal mientras la sección está a la vista; se pausa
-     con el mouse o el foco dentro y se detiene cuando la persona elige un paso.
+     Carrusel de pasos (.journey__slide en .journey__track) con la línea de
+     secuencia, contador y flechas de .chain__nav. El paso actual reproduce su video
+     (.journey__video) y avanza solo cada 8 × --duration-reveal mientras la sección
+     está a la vista; se pausa con el mouse o el foco dentro y se detiene cuando la
+     persona elige un paso (tramos, flechas, clic en el paso asomado o deslizando).
      Con movimiento reducido no avanza ni reproduce (queda la foto). */
   function initJourney() {
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
     $all('[data-journey]').forEach(function (box) {
-      var items = $all('.journey__step', box);
-      var panels = $all('.journey__panel', box);
-      var current = 0, timer = null, visible = !hasIO, hovering = false, stopped = false;
+      var track = box.querySelector('.journey__track');
+      var slides = $all('.journey__slide', box);
+      var segs = $all('.chain__seg', box);
+      var arrows = $all('.chain__arrow', box);
+      var current = box.querySelector('.chain__current');
+      var n = slides.length, i = 0, timer = null, scrollTimer = null;
+      var visible = !hasIO, hovering = false, stopped = false, programmatic = false;
       var interval = cssMs('--duration-reveal') * 8;
 
-      function show(i) {
-        current = i;
-        items.forEach(function (it, n) {
-          var on = n === i;
-          it.classList.toggle('is-active', on);
-          it.querySelector('.journey__trigger').setAttribute('aria-expanded', String(on));
-          var bar = it.querySelector('.journey__progress');
-          if (bar && on) { bar.style.transition = 'none'; bar.style.transform = 'scaleX(0)'; void bar.offsetWidth; bar.style.transition = ''; bar.style.transform = ''; }
-          var v = it.querySelector('.journey__video');
+      function scrollToSlide(k, smooth) {
+        programmatic = true;
+        track.scrollTo({ left: slides[k].offsetLeft - slides[0].offsetLeft, behavior: smooth && !reduce.matches ? 'smooth' : 'auto' });
+      }
+
+      function show(k, scroll) {
+        i = (k + n) % n;
+        slides.forEach(function (sl, j) {
+          var on = j === i;
+          sl.classList.toggle('is-active', on);
+          if (on) sl.removeAttribute('aria-hidden'); else sl.setAttribute('aria-hidden', 'true');
+          var v = sl.querySelector('.journey__video');
           if (!v) return;
           if (on && visible && !reduce.matches) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
           else v.pause();
         });
-        panels.forEach(function (p, n) { p.hidden = n !== i; });
+        segs.forEach(function (sg, j) {
+          if (j === i) sg.setAttribute('aria-current', 'step'); else sg.removeAttribute('aria-current');
+          var line = sg.querySelector('.chain__seg-line');
+          if (j === i && line) { line.classList.add('is-reset'); void line.offsetWidth; line.classList.remove('is-reset'); }
+        });
+        if (current) current.textContent = (i + 1 < 10 ? '0' : '') + (i + 1);
+        if (scroll !== false) scrollToSlide(i, true);
       }
 
       function schedule() {
@@ -609,18 +623,31 @@
         var run = visible && !hovering && !stopped && !reduce.matches && interval > 0;
         box.classList.toggle('is-paused', !run);
         box.style.setProperty('--journey-duration', run ? interval + 'ms' : '0ms');
-        if (run) timer = setTimeout(function () { show((current + 1) % items.length); schedule(); }, interval);
+        if (run) timer = setTimeout(function () { show(i + 1); schedule(); }, interval);
       }
 
-      items.forEach(function (it, n) {
-        it.querySelector('.journey__trigger').addEventListener('click', function () {
-          stopped = true;
-          show(n);
-          schedule();
-        });
-      });
+      function choose(k) { stopped = true; show(k); schedule(); }
+
+      arrows[0].addEventListener('click', function () { choose(i - 1); });
+      arrows[1].addEventListener('click', function () { choose(i + 1); });
+      segs.forEach(function (sg, j) { sg.addEventListener('click', function () { choose(j); }); });
+      slides.forEach(function (sl, j) { sl.addEventListener('click', function () { if (j !== i) choose(j); }); });
+
+      // Deslizar a mano: al terminar, el paso más cercano pasa a ser el actual
+      track.addEventListener('scroll', function () {
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(function () {
+          if (programmatic) { programmatic = false; return; }
+          var x = track.scrollLeft, best = 0;
+          slides.forEach(function (sl, j) {
+            if (Math.abs(sl.offsetLeft - slides[0].offsetLeft - x) < Math.abs(slides[best].offsetLeft - slides[0].offsetLeft - x)) best = j;
+          });
+          if (best !== i) { stopped = true; show(best, false); schedule(); }
+        }, cssMs('--duration-fast'));
+      }, { passive: true });
+
       box.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hovering = true; schedule(); } });
-      box.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hovering = false; show(current); schedule(); } });
+      box.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hovering = false; show(i, false); schedule(); } });
       box.addEventListener('focusin', function () { hovering = true; schedule(); });
       box.addEventListener('focusout', function () { hovering = false; schedule(); });
 
@@ -628,12 +655,12 @@
         new IntersectionObserver(function (entries) {
           var was = visible;
           visible = entries[0].isIntersecting;
-          if (visible && !was) show(current);
+          if (visible && !was) show(i, false);
           if (!visible) $all('.journey__video', box).forEach(function (v) { v.pause(); });
           schedule();
         }, { threshold: 0.3 }).observe(box);
       }
-      show(0);
+      show(0, false);
       schedule();
     });
   }

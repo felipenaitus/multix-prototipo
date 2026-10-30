@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Productos: integración vertical como carrusel
+- Figma pendiente · Código ✓ · Aclaración de Felipe: "Del cultivo a la mesa" muestra un paso grande a la vez y el siguiente asomado, en vez de los seis pasos chicos. Cada paso: círculo con video (gif) del paso actual y número, nombre y frase con más aire. Avanza solo; el tramo del paso actual se llena como indicador. Reutiliza la línea de secuencia, el contador y las flechas de `.chain__nav`. En mobile se puede deslizar.
+
 ## 2026-10-30 · Productos: integración vertical más simple
 - Figma pendiente · Código ✓ · "Del cultivo a la mesa" deja el relato con flechas, video en hover y cuatro datos por paso. Nuevo componente `.journey` (en el kit): los seis pasos a la vista con su foto en un círculo; el activo reproduce su video en loop (como un gif) y avanza solo, con una línea Coral 500 que marca el tiempo (patrón de Soluciones); se pausa con el mouse y se detiene al elegir un paso. Debajo, solo el nombre y una frase. Mobile: grilla de 3 × 2. Se quitan los datos con cifras de cada paso (siguen en el historial de git).
 

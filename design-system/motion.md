@@ -54,9 +54,10 @@ Estado: **Base** = se aplica en todo el sitio sin preguntar. **Firma** = efecto 
 Si una sección necesita un movimiento que no está en este catálogo: proponerlo a Felipe (qué hace, dónde, versión mobile y versión con movimiento reducido) y, si lo aprueba, agregarlo aquí antes de implementarlo.
 
 ## Base · Integración vertical (Productos › Del cultivo a la mesa)
-- Mismo patrón de avance automático que Soluciones: cada 8 × `--duration-reveal` pasa al paso siguiente mientras la sección está a la vista, con una línea Coral 500 que se llena bajo el paso activo (lineal). Se pausa con el mouse o el foco dentro y se detiene al elegir un paso.
-- Al activarse un paso, su círculo pasa de 0,9 a 1 (`--duration-reveal`, salida suave) y su video aparece sobre la foto con un fundido (`--duration-slow`) y se reproduce en loop; el paso anterior vuelve a la foto. El texto del paso entra con `fade-up`.
-- Con movimiento reducido no avanza solo ni reproduce video (queda la foto).
+- Carrusel: al cambiar de paso, la pista se desplaza con scroll suave hasta el paso nuevo; el paso actual pasa a opacidad plena y el anterior queda atenuado al 35 % (`--duration-slow`).
+- Avance automático cada 8 × `--duration-reveal` mientras la sección está a la vista: el tramo del paso actual en la línea de secuencia se llena en Coral 500 (lineal). Se pausa con el mouse o el foco dentro y se detiene al elegir un paso.
+- El video del paso actual aparece sobre su foto con un fundido (`--duration-slow`) y se reproduce en loop.
+- Con movimiento reducido no avanza solo, no reproduce video (queda la foto) y el desplazamiento es instantáneo.
 
 ## Firma · Globo de mercados (solo Productos › Mercado y oficinas comerciales)
 - Giro continuo muy lento (aprox. una vuelta cada 3 minutos; se hizo más lento para un bloque más sobrio) solo mientras el globo está a la vista (IntersectionObserver); se detiene con el mouse encima o con un pin seleccionado.
