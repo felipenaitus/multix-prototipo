@@ -556,11 +556,17 @@
   }
 }
 
-/* Con foto: texto y pestañas a la izquierda; la foto (PNG/WebP recortado en
-   medio círculo, con la cabeza que sobresale) a la derecha, apoyada en el borde
-   inferior del bloque crema. Mobile: la foto va debajo de las pestañas. */
+/* Con foto: texto a la izquierda; la foto (PNG/WebP recortado en rectángulo
+   redondeado, con la cabeza que sobresale) a la derecha, apoyada en el borde
+   inferior del bloque crema. Mobile: la foto va debajo del texto. Bloque bajo:
+   menos aire arriba y abajo del título que en otras páginas. */
 .page-intro__inner {
   display: grid;
+}
+
+.page-intro .page-head {
+  padding-top: var(--space-32);
+  padding-bottom: var(--space-32);
 }
 
 .page-intro__media {
@@ -584,7 +590,12 @@
 
   .page-intro__media {
     width: 100%;
-    padding-top: var(--space-32);
+    padding-top: var(--space-24);
+  }
+
+  .page-intro .page-head {
+    padding-top: var(--space-40);
+    padding-bottom: var(--space-40);
   }
 
   .page-intro__text .page-head__lead {

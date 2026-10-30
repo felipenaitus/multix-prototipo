@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-10-30 · Encabezado de Inversionistas más bajo y foto nueva
+- Código ✓ · En Centro de Resultados y Gobernanza el bloque crema es más bajo (40 px de aire arriba y abajo del título; 32 px en mobile; antes 64 y 48) y la foto se reemplaza por `Imagen_Inversionistasa_2.png` (rectángulo redondeado con la figura que sobresale), recortada a su contenido y convertida a WebP (17 KB).
+
 ## 2026-10-30 · Centro de Resultados: pestañas como en Gobernanza
 - Código ✓ · Para estandarizar, las pestañas de Centro de Resultados salen del bloque crema y van en una fila propia debajo (`.page-tabs--below`), igual que en Gobernanza. El ejemplo del kit se actualiza.
 
