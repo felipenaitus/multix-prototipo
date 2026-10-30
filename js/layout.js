@@ -346,6 +346,8 @@
                   '<button type="button" class="menu-search__clear" aria-label="Borrar búsqueda" hidden>' +
                     '<span class="burger burger--x" aria-hidden="true"><span></span><span></span><span></span></span>' +
                   '</button>' +
+                  // Buscar: aparece junto a la X al escribir (también se busca con Enter)
+                  '<button type="submit" class="btn btn--secondary btn--sm hit menu-search__submit" hidden>Buscar</button>' +
                 '</form>' +
               '</div>' +
               '<div class="menu-panel__body">' +
@@ -503,13 +505,15 @@
         if (btn.getAttribute('aria-expanded') === 'true' && !self.contains(e.target)) setMenu(false);
       });
 
-      // Buscador: la X para borrar aparece solo cuando hay texto
+      // Buscador: la X para borrar y el botón Buscar aparecen solo cuando hay texto
       var input = overlay.querySelector('.menu-search__input');
       var clear = overlay.querySelector('.menu-search__clear');
-      input.addEventListener('input', function () { clear.hidden = !input.value; });
+      var submit = overlay.querySelector('.menu-search__submit');
+      function syncSearch() { clear.hidden = submit.hidden = !input.value; }
+      input.addEventListener('input', syncSearch);
       clear.addEventListener('click', function () {
         input.value = '';
-        clear.hidden = true;
+        syncSearch();
         input.focus();
       });
 

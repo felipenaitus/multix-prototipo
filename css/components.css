@@ -2990,8 +2990,17 @@ a.pagination__item:hover,
   background: var(--color-bg-subtle);
 }
 
-.menu-search__clear[hidden] {
+.menu-search__clear[hidden],
+.menu-search__submit[hidden] {
   display: none;
+}
+
+/* Botón Buscar: a la derecha de la X, separado de la línea inferior; entra con
+   fade-up al escribir */
+.menu-search__submit {
+  flex-shrink: 0;
+  margin-block: var(--space-8);
+  animation: fade-up var(--duration-slow) var(--easing-out);
 }
 
 /* Cuerpo: tarjeta de vista previa + accesos en dos columnas */
