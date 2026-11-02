@@ -3245,23 +3245,23 @@ a.pagination__item:hover,
   animation: fade-up var(--duration-slow) var(--easing-out);
 }
 
-/* Cuerpo: tarjeta de vista previa + accesos en dos columnas */
+/* Cuerpo: accesos en dos columnas + noticia destacada (a la derecha en desktop) */
 .menu-panel__body {
   display: grid;
   gap: var(--space-32);
   padding: 0 var(--space-40) var(--space-48);
 }
 
-/* Tarjeta de noticia destacada: foto arriba (sin texto encima) y texto debajo
-   sobre Navy 950 (el coral de la etiqueta cumple contraste solo sobre 950) */
+/* Noticia destacada, compacta y sin caja: foto con esquinas suaves y debajo
+   etiqueta, título y "Leer noticia". Una línea delgada la separa de los
+   accesos. */
 .menu-preview {
   position: relative;
   display: none;
   flex-direction: column;
-  overflow: hidden;
   align-self: start;
-  border-radius: var(--radius-lg);
-  background: var(--color-bg-inverse);
+  padding-left: var(--space-40);
+  border-left: var(--border-thin) solid var(--color-border-default);
   color: var(--color-text-inverse);
 }
 
@@ -3269,11 +3269,11 @@ a.pagination__item:hover,
   color: var(--color-text-inverse);
 }
 
-/* Imagen placeholder con degradado navy */
 .menu-preview__media {
   display: block;
   overflow: hidden;
-  aspect-ratio: 945 / 390; /* proporción de la foto */
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
   background: var(--color-bg-brand-hover);
 }
 
@@ -3305,7 +3305,7 @@ a.pagination__item:hover,
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-8);
-  padding: var(--space-20) var(--space-24) var(--space-24);
+  padding-top: var(--space-16);
 }
 
 .menu-preview__tag {
@@ -3505,10 +3505,12 @@ a.pagination__item:hover,
   }
 }
 
-/* Desktop: tarjeta de vista previa a la izquierda */
+/* Desktop: accesos a la izquierda (8/12) y noticia a la derecha (4/12),
+   alineados arriba */
 @media (min-width: 1024px) {
   .menu-panel__body {
-    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+    align-items: start;
     gap: var(--space-40);
   }
 

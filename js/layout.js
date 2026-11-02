@@ -351,6 +351,7 @@
                 '</form>' +
               '</div>' +
               '<div class="menu-panel__body">' +
+                '<div class="menu-panel__groups">' + groups + '</div>' +
                 '<a class="menu-preview" href="' + FEATURED.href + '">' +
                   '<span class="menu-preview__media"><img src="' + ROOT + FEATURED.image + '" alt="" loading="lazy" decoding="async"></span>' +
                   '<span class="menu-preview__content">' +
@@ -359,7 +360,6 @@
                     '<span class="menu-preview__cta">' + esc(FEATURED.cta) + icon('arrow', 'md', 'icon--arrow') + '</span>' +
                   '</span>' +
                 '</a>' +
-                '<div class="menu-panel__groups">' + groups + '</div>' +
               '</div>' +
               '<div class="menu-panel__foot">' +
                 '<div class="menu-foot-group"><p class="t-label menu-foot-group__title">Portales</p><ul class="menu-foot-group__list" role="list">' +

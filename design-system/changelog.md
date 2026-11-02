@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-02 · Mega menú: accesos a la izquierda y noticia a la derecha
+- Figma pendiente · Código ✓ · Para equilibrar el cuerpo del menú (desktop), los accesos en dos columnas pasan a la izquierda (8/12) y la noticia destacada a la derecha (4/12), compacta y sin caja (sin el fondo Navy 950): foto 16:9 con esquinas suaves, etiqueta, título y "Leer noticia", separada de los accesos por una línea delgada. Ambos bloques alineados arriba.
+
 ## 2026-10-30 · Sub-menú de Inversionistas: flecha también a la izquierda
 - Código ✓ · En mobile, el sub-menú de Inversionistas suma la flecha con fundido del lado izquierdo, que aparece cuando la tira ya avanzó (igual que el sub-menú de sección).
 
