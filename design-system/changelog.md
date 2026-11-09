@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-09 · Junta de Accionistas: solo información real y filtro por tipo de junta
+- Código ✓ · La pestaña muestra solo los 25 documentos publicados en el sitio actual de Multi X (2020 a 2026); se quitan los de ejemplo (Aviso Reparto de Dividendos 2026 y los antecedentes 2026). Cada documento indica su tipo (Junta Ordinaria o Extraordinaria) y se agrega el filtro "Tipo de junta" junto al de año, como en el sitio actual. Los documentos sin tipo en el sitio actual se asignaron por su nombre (todos de juntas ordinarias).
+
 ## 2026-11-09 · Junta de Accionistas: Documentos relacionados y Antecedentes de la junta
 - Código ✓ · La pestaña muestra, en la misma página, Documentos relacionados y Antecedentes de la junta, cada una con su lista por año (2020 a 2026), y un solo buscador con filtro por año para ambas, igual que Hechos Esenciales. Nombres reales del sitio actual de Multi X; son de ejemplo [contenido por definir] Aviso Reparto de Dividendos 2026 y, en Antecedentes 2026, Propuesta Clasificadoras de Riesgo, Propuesta Auditoría Externa y Carta Auditores Externos. Se quita el bloque "Próxima Junta" que estaba arriba. El filtro de documentos ahora puede cubrir varias secciones (`[data-doc-group]`).
 
