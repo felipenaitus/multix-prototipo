@@ -7166,21 +7166,8 @@ html:not(.js) .company-visual__tag {
   margin-top: var(--space-64);
 }
 
-.gov-docs .doc-list,
-.gov-docs > .filters,
-.gov-docs > .doc-results {
+.gov-docs .doc-list {
   width: 100%;
-}
-
-/* Dentro del bloque ya hay gap: misma distancia filtros → lista que en el resto */
-.gov-docs > .filters + .doc-results {
-  margin-top: var(--space-8);
-}
-
-@media (min-width: 1024px) {
-  .gov-docs > .filters + .doc-results {
-    margin-top: var(--space-24);
-  }
 }
 
 /* Próxima junta, antes de los documentos por año */
