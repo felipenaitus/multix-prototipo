@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-09 · Hechos Esenciales con nombres y años reales
+- Código ✓ · El listado de Hechos Esenciales usa los 57 nombres publicados en el sitio actual de Multi X, agrupados por año (2016 a 2026), y el filtro de año ofrece esos años. Solo nombres: Ver PDF y Descargar no llevan a ningún archivo en el prototipo.
+
 ## 2026-11-09 · Hechos Esenciales: solo buscador y filtro por año
 - Código ✓ · En Gobernanza › Hechos Esenciales se quita el filtro por Materia; quedan el buscador y el filtro por año (en mobile, el panel de filtros solo trae Año). También se quitan las etiquetas de materia de cada documento.
 
