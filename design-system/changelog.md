@@ -5,7 +5,7 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
 ## 2026-11-09 · Gobernanza: Directores y Principales ejecutivos como desplegables
-- Figma pendiente · Código ✓ · En Gobierno Corporativo, Directores y Principales ejecutivos pasan a ser desplegables (acordeón `.doc-years`, variante con título de sección y cantidad de personas), cerrados al cargar y abribles por separado. El acordeón ahora solo considera como cabecera los botones con `aria-expanded`, para que las tarjetas de persona sigan abriendo su perfil.
+- Figma pendiente · Código ✓ · En Gobierno Corporativo, Directores y Principales ejecutivos pasan a ser desplegables (acordeón `.doc-years`, variante con título de sección y cantidad de personas), abiertos al cargar y plegables por separado. El acordeón ahora solo considera como cabecera los botones con `aria-expanded`, para que las tarjetas de persona sigan abriendo su perfil.
 
 ## 2026-11-09 · Gobernanza: Gobierno Corporativo con 5 sub-secciones
 - Figma pendiente · Código ✓ · La pestaña Gobierno Corporativo muestra, una tras otra en la misma página: Directores (7), Principales ejecutivos (8), Manual de Manejo de Información, Transacciones entre Empresas Relacionadas y Política General de Elección de Directores en Filiales (estas tres, con su título y los archivos adjuntos debajo). Nombres, cargos, formación, trayectoria y fotos tomados del sitio actual de Multi X (fotos recortadas a 4:5 en `assets/img/personas`); Paula García Angulo no tiene foto publicada [foto por definir]. Los archivos adjuntos son de ejemplo [contenido por definir].
