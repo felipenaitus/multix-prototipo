@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-09 · Junta de Accionistas: Documentos relacionados y Antecedentes de la junta
+- Código ✓ · La pestaña muestra, en la misma página, Documentos relacionados y Antecedentes de la junta, cada una con su lista por año (2020 a 2026), y un solo buscador con filtro por año para ambas, igual que Hechos Esenciales. Nombres reales del sitio actual de Multi X; son de ejemplo [contenido por definir] Aviso Reparto de Dividendos 2026 y, en Antecedentes 2026, Propuesta Clasificadoras de Riesgo, Propuesta Auditoría Externa y Carta Auditores Externos. Se mantiene la próxima junta arriba. El filtro de documentos ahora puede cubrir varias secciones (`[data-doc-group]`).
+
 ## 2026-11-09 · Listado por año: máximo de 5 años a la vista
 - Código ✓ · Regla para todo `.doc-years`: se ven los 5 años más recientes y "Ver años anteriores" despliega el resto ("Ver menos" lo vuelve a plegar). Con filtros o búsqueda activos se muestran todos los años con resultados y el botón se oculta. Aplica hoy en Centro de Resultados (20 años) y Gobernanza › Hechos Esenciales (11 años). Ejemplo en el kit con `data-years-limit="2"`.
 

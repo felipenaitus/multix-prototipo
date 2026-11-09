@@ -493,7 +493,13 @@
         if (countEl) countEl.textContent = total + (total === 1 ? ' documento' : ' documentos');
         if (toggleCount) toggleCount.textContent = active ? '(' + active + ')' : '';
         clearBtns.forEach(function (b) { b.hidden = !(active || q); });
-        list.classList.toggle('is-filtering', !!(active || q));
+        // Varias listas bajo un mismo filtro (ej.: Junta de Accionistas): cada
+        // grupo [data-doc-group] se oculta entero si se queda sin resultados
+        $all('[data-doc-group]', list).forEach(function (g) {
+          g.hidden = !$all('.doc-row', g).some(function (r) { return !r.hidden; });
+        });
+        var lists = list.matches('.doc-years') ? [list] : $all('.doc-years', list);
+        lists.forEach(function (l) { l.classList.toggle('is-filtering', !!(active || q)); });
       }
 
       var emptyClear = empty && empty.querySelector('[data-empty-clear]');

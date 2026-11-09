@@ -887,7 +887,7 @@
       <div class="container">
         <div class="section-head section-head--compact">
           <h2 class="t-h3" id="ja-title">Junta de Accionistas</h2>
-          <p class="t-body section-head__lead">Citaciones, poderes, documentos de fundamento y actas de cada junta. [contenido por definir]</p>
+          <p class="t-body section-head__lead">Documentos de cada junta y sus antecedentes, ordenados por año. [contenido por definir]</p>
         </div>
         <ul class="date-list gov-next" role="list" aria-label="Próxima junta">
           <li class="date-item">
@@ -898,59 +898,306 @@
             </a>
           </li>
         </ul>
-          <div class="doc-years" id="ja-years" data-accordion>
+        <div class="filters" data-filters data-doc-filter="#ja-docs">
+          <div class="filters__bar">
+            <div class="field filters__search">
+              <label class="field__label" for="ja-search">Buscar</label>
+              <div class="control">
+                <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+                <input class="control__input" id="ja-search" type="search" placeholder="Ej: carta poder">
+              </div>
+            </div>
+            <button class="btn btn--secondary filters__toggle" type="button" aria-expanded="false" aria-controls="ja-filters">Filtrar <span data-filter-count></span></button>
+
+            <div class="filters__panel" id="ja-filters" role="group" aria-label="Filtros">
+              <div class="filters__panel-head">
+                <p class="t-h3">Filtros</p>
+                <button class="header__icon-btn" type="button" data-filter-close aria-label="Cerrar filtros"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-close"></use></svg></button>
+              </div>
+              <div class="field field--year">
+                <label class="field__label" for="ja-year">Año</label>
+                <div class="control control--select">
+                  <select class="control__input" id="ja-year" name="year">
+                    <option value="">Todos</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option><option value="2021">2021</option><option value="2020">2020</option>
+                  </select>
+                  <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+                </div>
+              </div>
+              <div class="filters__panel-actions">
+                <button class="btn btn--secondary" type="button" data-filter-clear>Limpiar</button>
+                <button class="btn btn--primary" type="button" data-filter-close>Ver resultados</button>
+              </div>
+            </div>
+            <div class="filters__scrim" aria-hidden="true"></div>
+          </div>
+          <div class="filters__meta">
+            <p class="t-small c-secondary" aria-live="polite" data-doc-count></p>
+            <button class="btn btn--tertiary hit filters__clear" type="button" data-filter-clear><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>Limpiar filtros</button>
+          </div>
+        </div>
+
+        <div class="doc-results">
+          <div class="doc-groups" id="ja-docs">
+          <div class="page-group" data-doc-group aria-labelledby="ja-relacionados">
+          <h3 class="t-h3" id="ja-relacionados">Documentos relacionados</h3>
+          <div class="doc-years" data-accordion>
           <div class="doc-year">
-            <button class="doc-year__head" type="button" aria-expanded="true" aria-controls="ja-years-2026">
-              <span class="doc-year__title"><span class="doc-year__year t-figure-s">2026</span><span class="doc-year__count t-small">4 documentos</span></span>
+            <button class="doc-year__head" type="button" aria-expanded="true" aria-controls="ja-relacionados-2026">
+              <span class="doc-year__title"><span class="doc-year__year t-figure-s">2026</span><span class="doc-year__count t-small">5 documentos</span></span>
               <svg class="icon icon--lg acc-icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
             </button>
-            <div class="acc-panel" id="ja-years-2026">
+            <div class="acc-panel" id="ja-relacionados-2026">
               <div class="doc-row" data-year="2026">
                 <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
-                <span class="doc-row__body"><span class="doc-row__title">Citación a Junta Extraordinaria de Accionistas</span><span class="doc-row__meta">2 sep 2026 · PDF 140 KB</span></span>
-                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Citación a Junta Extraordinaria de Accionistas (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Citación a Junta Extraordinaria de Accionistas</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+                <span class="doc-row__body"><span class="doc-row__title">Carta de Citación a Junta General Ordinaria de Accionistas 2026</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Carta de Citación a Junta General Ordinaria de Accionistas 2026 (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Carta de Citación a Junta General Ordinaria de Accionistas 2026</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
               </div>
               <div class="doc-row" data-year="2026">
                 <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
-                <span class="doc-row__body"><span class="doc-row__title">Acta Junta Ordinaria de Accionistas 2026</span><span class="doc-row__meta">20 may 2026 · PDF 620 KB</span></span>
-                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Acta Junta Ordinaria de Accionistas 2026 (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Acta Junta Ordinaria de Accionistas 2026</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+                <span class="doc-row__body"><span class="doc-row__title">Carta Poder para comparecer en Junta General Ordinaria de Accionistas 2026</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Carta Poder para comparecer en Junta General Ordinaria de Accionistas 2026 (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Carta Poder para comparecer en Junta General Ordinaria de Accionistas 2026</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
               </div>
               <div class="doc-row" data-year="2026">
                 <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
-                <span class="doc-row__body"><span class="doc-row__title">Fundamento de opciones de empresa de auditoría externa</span><span class="doc-row__meta">10 abr 2026 · PDF 180 KB</span></span>
-                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Fundamento de opciones de empresa de auditoría externa (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Fundamento de opciones de empresa de auditoría externa</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+                <span class="doc-row__body"><span class="doc-row__title">Publicación Aviso Citación JOA 2026</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Publicación Aviso Citación JOA 2026 (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Publicación Aviso Citación JOA 2026</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
               </div>
               <div class="doc-row" data-year="2026">
                 <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
-                <span class="doc-row__body"><span class="doc-row__title">Poder para la Junta Ordinaria</span><span class="doc-row__meta">10 abr 2026 · PDF 90 KB</span></span>
-                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Poder para la Junta Ordinaria (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Poder para la Junta Ordinaria</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+                <span class="doc-row__body"><span class="doc-row__title">Acta Junta Ordinaria de Accionistas Multiexport Foods S.A. 2026</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Acta Junta Ordinaria de Accionistas Multiexport Foods S.A. 2026 (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Acta Junta Ordinaria de Accionistas Multiexport Foods S.A. 2026</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+              <div class="doc-row" data-year="2026">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Aviso Reparto de Dividendos 2026</span><span class="doc-row__meta">PDF [contenido por definir]</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Aviso Reparto de Dividendos 2026 (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Aviso Reparto de Dividendos 2026</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
               </div>
             </div>
           </div>
           <div class="doc-year">
-            <button class="doc-year__head" type="button" aria-expanded="false" aria-controls="ja-years-2025">
-              <span class="doc-year__title"><span class="doc-year__year t-figure-s">2025</span><span class="doc-year__count t-small">3 documentos</span></span>
+            <button class="doc-year__head" type="button" aria-expanded="false" aria-controls="ja-relacionados-2025">
+              <span class="doc-year__title"><span class="doc-year__year t-figure-s">2025</span><span class="doc-year__count t-small">4 documentos</span></span>
               <svg class="icon icon--lg acc-icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
             </button>
-            <div class="acc-panel" id="ja-years-2025" hidden>
+            <div class="acc-panel" id="ja-relacionados-2025" hidden>
               <div class="doc-row" data-year="2025">
                 <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
-                <span class="doc-row__body"><span class="doc-row__title">Acta Junta Ordinaria de Accionistas 2025</span><span class="doc-row__meta">21 may 2025 · PDF 590 KB</span></span>
-                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Acta Junta Ordinaria de Accionistas 2025 (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Acta Junta Ordinaria de Accionistas 2025</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+                <span class="doc-row__body"><span class="doc-row__title">Carta de Citación a Junta General Ordinaria de Accionistas</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Carta de Citación a Junta General Ordinaria de Accionistas (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Carta de Citación a Junta General Ordinaria de Accionistas</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
               </div>
               <div class="doc-row" data-year="2025">
                 <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
-                <span class="doc-row__body"><span class="doc-row__title">Presentación a los accionistas</span><span class="doc-row__meta">29 abr 2025 · PDF 3,8 MB</span></span>
-                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Presentación a los accionistas (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Presentación a los accionistas</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+                <span class="doc-row__body"><span class="doc-row__title">Poder para comparecer en Junta General Ordinaria de Accionistas</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Poder para comparecer en Junta General Ordinaria de Accionistas (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Poder para comparecer en Junta General Ordinaria de Accionistas</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
               </div>
               <div class="doc-row" data-year="2025">
                 <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
-                <span class="doc-row__body"><span class="doc-row__title">Citación a Junta Ordinaria de Accionistas</span><span class="doc-row__meta">8 abr 2025 · PDF 130 KB</span></span>
-                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Citación a Junta Ordinaria de Accionistas (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Citación a Junta Ordinaria de Accionistas</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+                <span class="doc-row__body"><span class="doc-row__title">Publicación Aviso Citación JOA 2025</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Publicación Aviso Citación JOA 2025 (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Publicación Aviso Citación JOA 2025</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+              <div class="doc-row" data-year="2025">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Acta Junta Ordinaria de Accionistas Multiexport Foods S.A. 2025</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Acta Junta Ordinaria de Accionistas Multiexport Foods S.A. 2025 (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Acta Junta Ordinaria de Accionistas Multiexport Foods S.A. 2025</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+            </div>
+          </div>
+          <div class="doc-year">
+            <button class="doc-year__head" type="button" aria-expanded="false" aria-controls="ja-relacionados-2024">
+              <span class="doc-year__title"><span class="doc-year__year t-figure-s">2024</span><span class="doc-year__count t-small">2 documentos</span></span>
+              <svg class="icon icon--lg acc-icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+            </button>
+            <div class="acc-panel" id="ja-relacionados-2024" hidden>
+              <div class="doc-row" data-year="2024">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Carta de Citación a Junta General Ordinaria de Accionistas</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Carta de Citación a Junta General Ordinaria de Accionistas (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Carta de Citación a Junta General Ordinaria de Accionistas</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+              <div class="doc-row" data-year="2024">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Poder para comparecer en Junta General Ordinaria de Accionistas</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Poder para comparecer en Junta General Ordinaria de Accionistas (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Poder para comparecer en Junta General Ordinaria de Accionistas</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+            </div>
+          </div>
+          <div class="doc-year">
+            <button class="doc-year__head" type="button" aria-expanded="false" aria-controls="ja-relacionados-2023">
+              <span class="doc-year__title"><span class="doc-year__year t-figure-s">2023</span><span class="doc-year__count t-small">3 documentos</span></span>
+              <svg class="icon icon--lg acc-icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+            </button>
+            <div class="acc-panel" id="ja-relacionados-2023" hidden>
+              <div class="doc-row" data-year="2023">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Carta de Citación a Junta General Ordinaria de Accionistas</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Carta de Citación a Junta General Ordinaria de Accionistas (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Carta de Citación a Junta General Ordinaria de Accionistas</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+              <div class="doc-row" data-year="2023">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Rectificación Carta Citación JOA 2023</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Rectificación Carta Citación JOA 2023 (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Rectificación Carta Citación JOA 2023</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+              <div class="doc-row" data-year="2023">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Poder para comparecer en Junta General Ordinaria de Accionistas</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Poder para comparecer en Junta General Ordinaria de Accionistas (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Poder para comparecer en Junta General Ordinaria de Accionistas</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+            </div>
+          </div>
+          <div class="doc-year">
+            <button class="doc-year__head" type="button" aria-expanded="false" aria-controls="ja-relacionados-2022">
+              <span class="doc-year__title"><span class="doc-year__year t-figure-s">2022</span><span class="doc-year__count t-small">2 documentos</span></span>
+              <svg class="icon icon--lg acc-icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+            </button>
+            <div class="acc-panel" id="ja-relacionados-2022" hidden>
+              <div class="doc-row" data-year="2022">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Carta de Citación a Junta Extraordinaria de Accionistas</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Carta de Citación a Junta Extraordinaria de Accionistas (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Carta de Citación a Junta Extraordinaria de Accionistas</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+              <div class="doc-row" data-year="2022">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Poder para comparecer en Junta Extraordinaria de Accionistas</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Poder para comparecer en Junta Extraordinaria de Accionistas (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Poder para comparecer en Junta Extraordinaria de Accionistas</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+            </div>
+          </div>
+          <div class="doc-year">
+            <button class="doc-year__head" type="button" aria-expanded="false" aria-controls="ja-relacionados-2021">
+              <span class="doc-year__title"><span class="doc-year__year t-figure-s">2021</span><span class="doc-year__count t-small">3 documentos</span></span>
+              <svg class="icon icon--lg acc-icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+            </button>
+            <div class="acc-panel" id="ja-relacionados-2021" hidden>
+              <div class="doc-row" data-year="2021">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Poder para comparecer en Junta General Ordinaria de Accionistas</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Poder para comparecer en Junta General Ordinaria de Accionistas (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Poder para comparecer en Junta General Ordinaria de Accionistas</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+              <div class="doc-row" data-year="2021">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Instructivo de participación remota en Junta General Ordinaria de Accionistas</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Instructivo de participación remota en Junta General Ordinaria de Accionistas (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Instructivo de participación remota en Junta General Ordinaria de Accionistas</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+              <div class="doc-row" data-year="2021">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Formulario de Solicitud de Participación</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Formulario de Solicitud de Participación (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Formulario de Solicitud de Participación</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+            </div>
+          </div>
+          <div class="doc-year">
+            <button class="doc-year__head" type="button" aria-expanded="false" aria-controls="ja-relacionados-2020">
+              <span class="doc-year__title"><span class="doc-year__year t-figure-s">2020</span><span class="doc-year__count t-small">3 documentos</span></span>
+              <svg class="icon icon--lg acc-icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+            </button>
+            <div class="acc-panel" id="ja-relacionados-2020" hidden>
+              <div class="doc-row" data-year="2020">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Poder para comparecer en Junta General Ordinaria de Accionistas</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Poder para comparecer en Junta General Ordinaria de Accionistas (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Poder para comparecer en Junta General Ordinaria de Accionistas</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+              <div class="doc-row" data-year="2020">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Instructivo de participación remota en Junta General Ordinaria de Accionistas</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Instructivo de participación remota en Junta General Ordinaria de Accionistas (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Instructivo de participación remota en Junta General Ordinaria de Accionistas</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+              <div class="doc-row" data-year="2020">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Formulario de Solicitud de Participación</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Formulario de Solicitud de Participación (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Formulario de Solicitud de Participación</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
               </div>
             </div>
           </div>
           </div>
+          </div>
+
+          <div class="page-group" data-doc-group aria-labelledby="ja-antecedentes">
+          <h3 class="t-h3" id="ja-antecedentes">Antecedentes de la junta</h3>
+          <div class="doc-years" data-accordion>
+          <div class="doc-year">
+            <button class="doc-year__head" type="button" aria-expanded="true" aria-controls="ja-antecedentes-2026">
+              <span class="doc-year__title"><span class="doc-year__year t-figure-s">2026</span><span class="doc-year__count t-small">3 documentos</span></span>
+              <svg class="icon icon--lg acc-icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+            </button>
+            <div class="acc-panel" id="ja-antecedentes-2026">
+              <div class="doc-row" data-year="2026">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Propuesta Clasificadoras de Riesgo 2026</span><span class="doc-row__meta">PDF [contenido por definir]</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Propuesta Clasificadoras de Riesgo 2026 (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Propuesta Clasificadoras de Riesgo 2026</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+              <div class="doc-row" data-year="2026">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Propuesta Auditoría Externa 2026</span><span class="doc-row__meta">PDF [contenido por definir]</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Propuesta Auditoría Externa 2026 (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Propuesta Auditoría Externa 2026</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+              <div class="doc-row" data-year="2026">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Carta Auditores Externos 2026</span><span class="doc-row__meta">PDF [contenido por definir]</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Carta Auditores Externos 2026 (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Carta Auditores Externos 2026</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+            </div>
+          </div>
+          <div class="doc-year">
+            <button class="doc-year__head" type="button" aria-expanded="false" aria-controls="ja-antecedentes-2025">
+              <span class="doc-year__title"><span class="doc-year__year t-figure-s">2025</span><span class="doc-year__count t-small">1 documento</span></span>
+              <svg class="icon icon--lg acc-icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+            </button>
+            <div class="acc-panel" id="ja-antecedentes-2025" hidden>
+              <div class="doc-row" data-year="2025">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Antecedentes Junta General Ordinaria de Accionistas</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Antecedentes Junta General Ordinaria de Accionistas (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Antecedentes Junta General Ordinaria de Accionistas</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+            </div>
+          </div>
+          <div class="doc-year">
+            <button class="doc-year__head" type="button" aria-expanded="false" aria-controls="ja-antecedentes-2024">
+              <span class="doc-year__title"><span class="doc-year__year t-figure-s">2024</span><span class="doc-year__count t-small">1 documento</span></span>
+              <svg class="icon icon--lg acc-icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+            </button>
+            <div class="acc-panel" id="ja-antecedentes-2024" hidden>
+              <div class="doc-row" data-year="2024">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Antecedentes Junta General Ordinaria de Accionistas</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Antecedentes Junta General Ordinaria de Accionistas (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Antecedentes Junta General Ordinaria de Accionistas</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+            </div>
+          </div>
+          <div class="doc-year">
+            <button class="doc-year__head" type="button" aria-expanded="false" aria-controls="ja-antecedentes-2023">
+              <span class="doc-year__title"><span class="doc-year__year t-figure-s">2023</span><span class="doc-year__count t-small">1 documento</span></span>
+              <svg class="icon icon--lg acc-icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+            </button>
+            <div class="acc-panel" id="ja-antecedentes-2023" hidden>
+              <div class="doc-row" data-year="2023">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Antecedentes Junta General Ordinaria de Accionistas</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Antecedentes Junta General Ordinaria de Accionistas (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Antecedentes Junta General Ordinaria de Accionistas</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+            </div>
+          </div>
+          <div class="doc-year">
+            <button class="doc-year__head" type="button" aria-expanded="false" aria-controls="ja-antecedentes-2022">
+              <span class="doc-year__title"><span class="doc-year__year t-figure-s">2022</span><span class="doc-year__count t-small">1 documento</span></span>
+              <svg class="icon icon--lg acc-icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+            </button>
+            <div class="acc-panel" id="ja-antecedentes-2022" hidden>
+              <div class="doc-row" data-year="2022">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Antecedentes Junta Extraordinaria de Accionistas</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Antecedentes Junta Extraordinaria de Accionistas (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Antecedentes Junta Extraordinaria de Accionistas</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+            </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          <div class="empty-state" role="status" hidden>
+            <span class="empty-state__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-search"></use></svg></span>
+            <p class="t-h3">Sin resultados</p>
+            <p>Prueba con otra palabra o cambia los filtros.</p>
+            <button class="btn btn--secondary btn--sm hit" type="button" data-empty-clear>Limpiar filtros</button>
+          </div>
+        </div>
       </div>
     </section>
 
