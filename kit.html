@@ -619,6 +619,45 @@
       </div>
 
       <div class="kit-block">
+        <h3 class="t-label kit-block__title">Personas (<code>.people</code> + <code>.person</code>; la tarjeta abre el perfil completo en <code>.person-dialog</code>)</h3>
+        <ul class="people" role="list" aria-label="Ejemplo de personas">
+            <li class="person">
+              <button class="person__card person__trigger" type="button" aria-haspopup="dialog" aria-controls="kit-perfil-1">
+                <span class="person__photo"><img src="assets/img/personas/jose-ramon-gutierrez-arrivillaga.webp" alt="" width="400" height="500" loading="lazy"></span>
+                <span class="person__info">
+                  <span class="t-ui-strong person__name">José Ramón Gutiérrez Arrivillaga</span>
+                  <span class="t-small person__role">Presidente Ejecutivo</span>
+                  <span class="person__more t-ui-button-sm">Ver perfil<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
+                </span>
+              </button>
+              <dialog class="person-dialog" id="kit-perfil-1" aria-labelledby="kit-perfil-1-name">
+                <div class="person-dialog__inner">
+                  <button class="header__icon-btn person-dialog__close" type="button" aria-label="Cerrar perfil"><span class="burger burger--x" aria-hidden="true"><span></span><span></span><span></span></span></button>
+                  <img class="person-dialog__photo" src="assets/img/personas/jose-ramon-gutierrez-arrivillaga.webp" alt="" width="400" height="500" loading="lazy">
+                  <div class="person-dialog__body">
+                    <p class="t-label person-dialog__role">Presidente Ejecutivo</p>
+                    <h4 class="t-h2" id="kit-perfil-1-name">José Ramón Gutiérrez Arrivillaga</h4>
+                    <p class="t-ui-strong person-dialog__studies">Ingeniero Civil Industrial, Universidad de Chile.</p>
+                    <p class="t-body">José Ramón Gutiérrez se integró a la compañía como socio fundador en 1987, apoyando fuertemente el desarrollo de la salmonicultura desde el cultivo hasta el procesamiento y venta, logrando, a lo largo de los años, un importante conocimiento en términos de Calidad, Inocuidad y Seguridad de los alimentos.</p>
+                    <p class="t-body">Ha sido Presidente del Directorio de SalmonChile A.G en 2 ocasiones y varias veces Vicepresidente. En 2003 fue co fundador de la organización de comercio internacional SALMON OF THE AMERICAS y ha sido miembro del Consejo Asesor Chileno de ENDEAVOR, organización internacional que promueve el emprendimiento. Durante 2012 y 2013 se desempeñó como Co-Presidente de Global Salmon Initiative (GSI), una iniciativa de liderazgo de los productores mundiales de salmón cultivado comprometidos a realizar mejoras significativas para asegurar la de sustentabilidad de la industria.</p>
+                    <p class="t-body">José Ramón es un líder ampliamente reconocido de la industria acuícola chilena, quien jugó un papel clave en el desarrollo de la nueva regulación para la industria salmonera chilena. En 2011 fue elegido como uno de los 30 principales líderes de la industria acuícola mundial por Intrafish Media Group. Asimismo, en 2012 fue reconocido por El Mercurio, como uno de los 100 líderes empresariales más respetables de Chile.</p>
+                  </div>
+                </div>
+              </dialog>
+            </li>
+            <li class="person">
+              <div class="person__card">
+                <span class="person__photo person__photo--empty"><span class="t-small">[foto por definir]</span></span>
+                <span class="person__info">
+                  <span class="t-ui-strong person__name">Nombre Apellido</span>
+                  <span class="t-small person__role">Cargo (sin perfil)</span>
+                </span>
+              </div>
+            </li>
+        </ul>
+      </div>
+
+      <div class="kit-block">
         <h3 class="t-label kit-block__title">Tabla de datos (<code>.data-table</code>; con más de 3 columnas, <code>.data-table--cards</code>: en mobile cada fila pasa a tarjeta)</h3>
         <div class="data-table-wrap">
           <table class="data-table data-table--cards">

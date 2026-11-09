@@ -716,6 +716,21 @@
     });
   }
 
+  /* ---------- Personas (.person__trigger + .person-dialog) ----------
+     La tarjeta abre el perfil completo en un <dialog> modal. Se cierra con la X,
+     con Esc o tocando fuera; el foco vuelve a la tarjeta. */
+  function initPeople() {
+    $all('.person__trigger').forEach(function (btn) {
+      var dlg = document.getElementById(btn.getAttribute('aria-controls'));
+      if (!dlg || !dlg.showModal) return;
+      btn.addEventListener('click', function () { dlg.showModal(); });
+      var close = dlg.querySelector('.person-dialog__close');
+      if (close) close.addEventListener('click', function () { dlg.close(); });
+      dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+      dlg.addEventListener('close', function () { btn.focus(); });
+    });
+  }
+
   /* ---------- Formulario de contacto (.contact-form) ----------
      Prototipo: no se envía. Valida los campos obligatorios y muestra el mensaje
      de confirmación. */
@@ -1208,6 +1223,7 @@
     initChain();
     initJourney();
     initContactForm();
+    initPeople();
     initRevealMore();
     initMediaCircle();
     initDocFilter();

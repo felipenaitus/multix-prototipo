@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-09 · Gobernanza: Gobierno Corporativo con 5 sub-secciones
+- Figma pendiente · Código ✓ · La pestaña Gobierno Corporativo muestra, una tras otra en la misma página: Directores (7), Principales ejecutivos (8), Manual de Manejo de Información, Transacciones entre Empresas Relacionadas y Política General de Elección de Directores en Filiales (estas tres, con su título y los archivos adjuntos debajo). Nombres, cargos, formación, trayectoria y fotos tomados del sitio actual de Multi X (fotos recortadas a 4:5 en `assets/img/personas`); Paula García Angulo no tiene foto publicada [foto por definir]. Los archivos adjuntos son de ejemplo [contenido por definir].
+- Componente nuevo en el kit: personas (`.people`), con perfil completo en modal (`.person-dialog`).
+
 ## 2026-11-09 · Nuevas páginas de Inversionistas: Calendario, Acción y Contacto
 - Figma pendiente · Código ✓ · `calendario.html`, `accion.html` y `contacto-inversionistas.html`, con el encabezado crema con foto. Acción tiene cinco pestañas con enlace directo (Información bursátil, Principales 20 accionistas, Análisis de accionistas, Dividendos y Transacciones relacionadas). El sub-menú y el menú ya enlazan a las tres; "Ver calendario completo" de Inversionistas lleva a Calendario. Contenidos de ejemplo [contenido por definir].
 - Componente nuevo en el kit: tabla de datos (`.data-table`), según el patrón de tablas de responsive.md (con más de 3 columnas, en mobile cada fila pasa a tarjeta).
