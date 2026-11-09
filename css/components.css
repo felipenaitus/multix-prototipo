@@ -1307,6 +1307,20 @@ body:has(.site-header.is-hidden) .page-tabs.is-bar {
   animation: fade-up var(--duration-base) var(--easing-out);
 }
 
+/* Listado por año: sobre el máximo de años (5), el resto queda tras
+   "Ver años anteriores"; con filtros activos se ven todos los años con resultados */
+.doc-years.is-limited:not(.is-filtering) > [data-years-extra] {
+  display: none;
+}
+
+.doc-years.is-filtering + .doc-years__more {
+  display: none;
+}
+
+.doc-years:not(.is-limited) > [data-years-extra] {
+  animation: fade-up var(--duration-base) var(--easing-out);
+}
+
 /* Botón "Ver más": la flecha gira al desplegar */
 .reveal-more .icon {
   transition: transform var(--duration-base) var(--easing-standard);

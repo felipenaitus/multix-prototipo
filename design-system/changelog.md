@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-09 · Listado por año: máximo de 5 años a la vista
+- Código ✓ · Regla para todo `.doc-years`: se ven los 5 años más recientes y "Ver años anteriores" despliega el resto ("Ver menos" lo vuelve a plegar). Con filtros o búsqueda activos se muestran todos los años con resultados y el botón se oculta. Aplica hoy en Centro de Resultados (20 años) y Gobernanza › Hechos Esenciales (11 años). Ejemplo en el kit con `data-years-limit="2"`.
+
 ## 2026-11-09 · Centro de Resultados con nombres y categorías reales
 - Código ✓ · Resultados trimestrales lista los 359 archivos publicados en el sitio actual de Multi X (2007 a 2026) con su nombre, trimestre y categoría real (Presentación Resultados, Hechos Relevantes, Estados Financieros, Análisis Razonado, Estados Financieros (Filiales), Memoria Anual, Reporte de Sustentabilidad y Reportes ESG); los filtros de año y tipo ofrecen esos valores. Los archivos sin categoría en el sitio actual se asignaron por su nombre (EEFF Filiales, Hechos Relevantes IFRS, huellas hídrica y de carbono → Reportes ESG); se dejó fuera "Política de Home Office". Memoria anual usa los nombres reales en español de 2025 a 2007 (con el año agregado cuando el nombre no lo trae). Solo nombres: Ver PDF y Descargar no llevan a ningún archivo en el prototipo.
 

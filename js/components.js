@@ -493,6 +493,7 @@
         if (countEl) countEl.textContent = total + (total === 1 ? ' documento' : ' documentos');
         if (toggleCount) toggleCount.textContent = active ? '(' + active + ')' : '';
         clearBtns.forEach(function (b) { b.hidden = !(active || q); });
+        list.classList.toggle('is-filtering', !!(active || q));
       }
 
       var emptyClear = empty && empty.querySelector('[data-empty-clear]');
@@ -525,6 +526,39 @@
         var sec = box.closest('section') || box;
         window.requestAnimationFrame(function () { sec.scrollIntoView({ block: 'start' }); });
       }
+    });
+  }
+
+  /* ---------- Listado por año: máximo de años a la vista (.doc-years) ----------
+     Regla para todas las listas por año: se ven los 5 años más recientes
+     (data-years-limit cambia el máximo) y un botón "Ver años anteriores" muestra el
+     resto. Mientras hay filtros o búsqueda (.is-filtering, lo pone initDocFilter)
+     se muestran todos los años con resultados y el botón se oculta. */
+  var yearsMoreCount = 0;
+  function initDocYearsLimit() {
+    $all('.doc-years').forEach(function (list) {
+      var max = parseInt(list.getAttribute('data-years-limit'), 10) || 5;
+      var years = $all(':scope > .doc-year', list);
+      if (years.length <= max) return;
+      yearsMoreCount += 1;
+      if (!list.id) list.id = 'doc-years-' + yearsMoreCount;
+      years.forEach(function (y, i) { if (i >= max) y.setAttribute('data-years-extra', ''); });
+      list.classList.add('is-limited');
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'btn btn--tertiary hit reveal-more doc-years__more';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-controls', list.id);
+      btn.innerHTML = '<span class="reveal-more__label">Ver años anteriores</span><svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>';
+      list.insertAdjacentElement('afterend', btn);
+      var label = btn.querySelector('.reveal-more__label');
+      btn.addEventListener('click', function () {
+        var open = btn.getAttribute('aria-expanded') !== 'true';
+        btn.setAttribute('aria-expanded', String(open));
+        list.classList.toggle('is-limited', !open);
+        label.textContent = open ? 'Ver menos' : 'Ver años anteriores';
+        if (!open) list.scrollIntoView({ block: 'nearest' });
+      });
     });
   }
 
@@ -1226,6 +1260,7 @@
     initPeople();
     initRevealMore();
     initMediaCircle();
+    initDocYearsLimit();
     initDocFilter();
     initInviewVideos();
     initCursor();
