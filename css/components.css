@@ -1103,6 +1103,35 @@ body:has(.site-header.is-hidden) .page-tabs.is-bar {
   color: var(--color-text-secondary);
 }
 
+/* Acordeón con título de sección (.doc-year__heading > .doc-year__head):
+   el h3 no agrega márgenes; el título usa Título 3. Al abrir, una grilla de
+   personas (.people) dentro del panel lleva aire arriba y abajo.
+   Gobernanza › Gobierno Corporativo (Directores, Principales ejecutivos). */
+.page-group > .doc-years {
+  width: 100%;
+}
+
+.doc-year__heading {
+  margin: 0;
+}
+
+.doc-year__heading .doc-year__title {
+  flex-wrap: wrap;
+  row-gap: var(--space-4);
+}
+
+.doc-year__heading .doc-year__count {
+  white-space: nowrap;
+}
+
+.doc-year__head[aria-expanded="true"] .t-h3 {
+  color: var(--color-text-brand);
+}
+
+.acc-panel > .people {
+  padding: var(--space-32) 0 var(--space-48);
+}
+
 /* Ícono de acordeón: rota al abrir */
 .acc-icon {
   transition: transform var(--duration-base) var(--easing-standard);

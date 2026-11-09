@@ -165,7 +165,7 @@
   function initAccordions() {
     $all('[data-accordion]').forEach(function (group) {
       var single = group.getAttribute('data-accordion') === 'single';
-      var triggers = $all('[aria-controls]', group).filter(function (t) {
+      var triggers = $all('[aria-controls][aria-expanded]', group).filter(function (t) {
         return t.closest('[data-accordion]') === group;
       });
       triggers.forEach(function (t) {

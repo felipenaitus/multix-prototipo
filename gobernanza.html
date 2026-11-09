@@ -63,8 +63,16 @@
           <p class="t-body section-head__lead">El Directorio, la administración y los documentos que rigen el gobierno corporativo de Multi X. [contenido por definir]</p>
         </div>
 
-        <div class="page-group" aria-labelledby="gc-directores">
-          <h3 class="t-h3" id="gc-directores">Directores</h3>
+        <div class="page-group">
+        <div class="doc-years" data-accordion>
+          <div class="doc-year">
+            <h3 class="doc-year__heading">
+              <button class="doc-year__head" type="button" aria-expanded="false" aria-controls="gc-directores-panel" id="gc-directores">
+                <span class="doc-year__title"><span class="t-h3">Directores</span><span class="doc-year__count t-small">7 personas</span></span>
+                <svg class="icon icon--lg acc-icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+              </button>
+            </h3>
+            <div class="acc-panel" id="gc-directores-panel" hidden>
           <ul class="people" role="list" aria-label="Directores">
             <li class="person">
               <button class="person__card person__trigger" type="button" aria-haspopup="dialog" aria-controls="perfil-jose-ramon-gutierrez-arrivillaga">
@@ -222,10 +230,16 @@
               </dialog>
             </li>
           </ul>
-        </div>
-
-        <div class="page-group" aria-labelledby="gc-ejecutivos">
-          <h3 class="t-h3" id="gc-ejecutivos">Principales ejecutivos</h3>
+            </div>
+          </div>
+          <div class="doc-year">
+            <h3 class="doc-year__heading">
+              <button class="doc-year__head" type="button" aria-expanded="false" aria-controls="gc-ejecutivos-panel" id="gc-ejecutivos">
+                <span class="doc-year__title"><span class="t-h3">Principales ejecutivos</span><span class="doc-year__count t-small">8 personas</span></span>
+                <svg class="icon icon--lg acc-icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+              </button>
+            </h3>
+            <div class="acc-panel" id="gc-ejecutivos-panel" hidden>
           <ul class="people" role="list" aria-label="Principales ejecutivos">
             <li class="person">
               <button class="person__card person__trigger" type="button" aria-haspopup="dialog" aria-controls="perfil-cristian-swett-pla">
@@ -392,6 +406,9 @@
               </dialog>
             </li>
           </ul>
+            </div>
+          </div>
+        </div>
         </div>
 
         <div class="page-group" aria-labelledby="gc-manual">
