@@ -1205,23 +1205,118 @@
         </ol>
         <div class="gov-docs">
           <h3 class="t-h3">Documentos de compliance</h3>
-            <div class="doc-list">
-                <div class="doc-row">
-                  <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
-                  <span class="doc-row__body"><span class="doc-row__title">Código de Ética</span><span class="doc-row__meta">jul 2025 · PDF 1,4 MB</span></span>
-                  <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Código de Ética (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Código de Ética</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
-                </div>
-                <div class="doc-row">
-                  <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
-                  <span class="doc-row__body"><span class="doc-row__title">Modelo de Prevención de Delitos</span><span class="doc-row__meta">jul 2025 · PDF 860 KB</span></span>
-                  <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Modelo de Prevención de Delitos (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Modelo de Prevención de Delitos</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
-                </div>
-                <div class="doc-row">
-                  <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
-                  <span class="doc-row__body"><span class="doc-row__title">Procedimiento del Canal de Denuncias</span><span class="doc-row__meta">mar 2025 · PDF 340 KB</span></span>
-                  <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Procedimiento del Canal de Denuncias (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Procedimiento del Canal de Denuncias</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
-                </div>
+        <div class="filters" data-filters data-doc-filter="#co-years">
+          <div class="filters__bar">
+            <div class="field filters__search">
+              <label class="field__label" for="co-search">Buscar</label>
+              <div class="control">
+                <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+                <input class="control__input" id="co-search" type="search" placeholder="Ej: código de ética">
+              </div>
             </div>
+            <button class="btn btn--secondary filters__toggle" type="button" aria-expanded="false" aria-controls="co-filters">Filtrar <span data-filter-count></span></button>
+
+            <div class="filters__panel" id="co-filters" role="group" aria-label="Filtros">
+              <div class="filters__panel-head">
+                <p class="t-h3">Filtros</p>
+                <button class="header__icon-btn" type="button" data-filter-close aria-label="Cerrar filtros"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-close"></use></svg></button>
+              </div>
+              <div class="field field--year">
+                <label class="field__label" for="co-year">Año</label>
+                <div class="control control--select">
+                  <select class="control__input" id="co-year" name="year">
+                    <option value="">Todos</option><option value="2026">2026</option><option value="2024">2024</option><option value="2021">2021</option>
+                  </select>
+                  <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+                </div>
+              </div>
+              <div class="filters__panel-actions">
+                <button class="btn btn--secondary" type="button" data-filter-clear>Limpiar</button>
+                <button class="btn btn--primary" type="button" data-filter-close>Ver resultados</button>
+              </div>
+            </div>
+            <div class="filters__scrim" aria-hidden="true"></div>
+          </div>
+          <div class="filters__meta">
+            <p class="t-small c-secondary" aria-live="polite" data-doc-count></p>
+            <button class="btn btn--tertiary hit filters__clear" type="button" data-filter-clear><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>Limpiar filtros</button>
+          </div>
+        </div>
+
+        <div class="doc-results">
+          <div class="doc-years" id="co-years" data-accordion>
+          <div class="doc-year">
+            <button class="doc-year__head" type="button" aria-expanded="true" aria-controls="co-years-2026">
+              <span class="doc-year__title"><span class="doc-year__year t-figure-s">2026</span><span class="doc-year__count t-small">1 documento</span></span>
+              <svg class="icon icon--lg acc-icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+            </button>
+            <div class="acc-panel" id="co-years-2026">
+              <div class="doc-row" data-year="2026">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Reglamento Especial de Empresas Contratistas y Subcontratistas</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Reglamento Especial de Empresas Contratistas y Subcontratistas (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Reglamento Especial de Empresas Contratistas y Subcontratistas</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+            </div>
+          </div>
+          <div class="doc-year">
+            <button class="doc-year__head" type="button" aria-expanded="false" aria-controls="co-years-2024">
+              <span class="doc-year__title"><span class="doc-year__year t-figure-s">2024</span><span class="doc-year__count t-small">6 documentos</span></span>
+              <svg class="icon icon--lg acc-icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+            </button>
+            <div class="acc-panel" id="co-years-2024" hidden>
+              <div class="doc-row" data-year="2024">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Código de Ética</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Código de Ética (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Código de Ética</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+              <div class="doc-row" data-year="2024">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Reglamento Interno</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Reglamento Interno (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Reglamento Interno</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+              <div class="doc-row" data-year="2024">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Código de Conducta de Proveedores</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Código de Conducta de Proveedores (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Código de Conducta de Proveedores</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+              <div class="doc-row" data-year="2024">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Política de Libre Competencia</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Política de Libre Competencia (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Política de Libre Competencia</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+              <div class="doc-row" data-year="2024">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Política Anti-Soborno</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Política Anti-Soborno (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Política Anti-Soborno</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+              <div class="doc-row" data-year="2024">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Manual de Prevención del Delito</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Manual de Prevención del Delito (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Manual de Prevención del Delito</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+            </div>
+          </div>
+          <div class="doc-year">
+            <button class="doc-year__head" type="button" aria-expanded="false" aria-controls="co-years-2021">
+              <span class="doc-year__title"><span class="doc-year__year t-figure-s">2021</span><span class="doc-year__count t-small">1 documento</span></span>
+              <svg class="icon icon--lg acc-icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+            </button>
+            <div class="acc-panel" id="co-years-2021" hidden>
+              <div class="doc-row" data-year="2021">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Manual de Gobierno Corporativo</span><span class="doc-row__meta">PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Manual de Gobierno Corporativo (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Manual de Gobierno Corporativo</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="empty-state" role="status" hidden>
+            <span class="empty-state__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-search"></use></svg></span>
+            <p class="t-h3">Sin resultados</p>
+            <p>Prueba con otra palabra o cambia los filtros.</p>
+            <button class="btn btn--secondary btn--sm hit" type="button" data-empty-clear>Limpiar filtros</button>
+          </div>
+        </div>
           <a class="btn btn--secondary" href="#">Ir al Canal de Denuncias<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
         </div>
       </div>

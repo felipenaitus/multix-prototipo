@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-09 · Compliance: documentos reales con buscador y filtro por año
+- Código ✓ · Documentos de compliance pasa a lista por año (2026, 2024 y 2021) con buscador y filtro por año, como Hechos Esenciales, con los 8 documentos publicados en el sitio actual de Multi X (Reglamento Especial de Empresas Contratistas y Subcontratistas, Código de Ética, Reglamento Interno, Código de Conducta de Proveedores, Política de Libre Competencia, Política Anti-Soborno, Manual de Prevención del Delito y Manual de Gobierno Corporativo). Se mantienen los tres pilares y el botón "Ir al Canal de Denuncias".
+
 ## 2026-11-09 · Junta de Accionistas: solo información real y filtro por tipo de junta
 - Código ✓ · La pestaña muestra solo los 25 documentos publicados en el sitio actual de Multi X (2020 a 2026); se quitan los de ejemplo (Aviso Reparto de Dividendos 2026 y los antecedentes 2026). Cada documento indica su tipo (Junta Ordinaria o Extraordinaria) y se agrega el filtro "Tipo de junta" junto al de año, como en el sitio actual. Los documentos sin tipo en el sitio actual se asignaron por su nombre (todos de juntas ordinarias).
 
