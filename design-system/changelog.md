@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-09 · Nuevas páginas de Inversionistas: Calendario, Acción y Contacto
+- Figma pendiente · Código ✓ · `calendario.html`, `accion.html` y `contacto-inversionistas.html`, con el encabezado crema con foto. Acción tiene cinco pestañas con enlace directo (Información bursátil, Principales 20 accionistas, Análisis de accionistas, Dividendos y Transacciones relacionadas). El sub-menú y el menú ya enlazan a las tres; "Ver calendario completo" de Inversionistas lleva a Calendario. Contenidos de ejemplo [contenido por definir].
+- Componente nuevo en el kit: tabla de datos (`.data-table`), según el patrón de tablas de responsive.md (con más de 3 columnas, en mobile cada fila pasa a tarjeta).
+
 ## 2026-11-09 · Destacados de Inversionistas sin bajada
 - Código ✓ · En los destacados de Inversionistas del home ("Conoce nuestro desempeño") y en el mismo módulo de la página de Inversionistas, cada documento o evento muestra solo la fecha, el título y la flecha (se quita la línea de detalle: tipo, peso del PDF u hora).
 

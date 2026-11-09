@@ -716,6 +716,21 @@
     });
   }
 
+  /* ---------- Formulario de contacto (.contact-form) ----------
+     Prototipo: no se envía. Valida los campos obligatorios y muestra el mensaje
+     de confirmación. */
+  function initContactForm() {
+    $all('.contact-form').forEach(function (form) {
+      var done = form.querySelector('.contact-form__done');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        if (done) done.hidden = false;
+        form.reset();
+      });
+    });
+  }
+
   /* ---------- Círculo con video ([data-media-circle]) ----------
      Al abrirse aparece el botón de la sección (.media-circle__cta). El play
      (.media-circle__hint) es un botón real para toque y teclado.
@@ -1192,6 +1207,7 @@
     initSteps();
     initChain();
     initJourney();
+    initContactForm();
     initRevealMore();
     initMediaCircle();
     initDocFilter();

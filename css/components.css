@@ -6784,6 +6784,158 @@ html:not(.js) .company-visual__tag {
   }
 }
 
+/* Tabla de datos (.data-table): sin caja, filas separadas por líneas delgadas.
+   Encabezados en Etiqueta gris; números alineados a la derecha y con cifras
+   tabulares (.is-num). Con más de 3 columnas (.data-table--cards), en mobile cada
+   fila pasa a una tarjeta con pares etiqueta–valor (data-label en cada celda);
+   con 3 o menos se mantiene la tabla (patrón de responsive.md). */
+.data-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.data-table__caption {
+  padding-bottom: var(--space-16);
+  text-align: left;
+  color: var(--color-text-secondary);
+  caption-side: top;
+}
+
+.data-table th,
+.data-table td {
+  padding: var(--space-16) var(--space-16) var(--space-16) 0;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: var(--border-thin) solid var(--color-border-default);
+}
+
+.data-table th:last-child,
+.data-table td:last-child {
+  padding-right: 0;
+}
+
+.data-table thead th {
+  padding-top: 0;
+  padding-bottom: var(--space-12);
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-lh);
+  font-weight: var(--text-label-weight);
+  letter-spacing: var(--text-label-ls);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.data-table tbody th {
+  font-weight: var(--text-ui-strong-weight);
+  color: var(--color-text-primary);
+}
+
+.data-table td {
+  color: var(--color-text-primary);
+}
+
+.data-table .is-num {
+  text-align: right;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .data-table--cards thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .data-table--cards,
+  .data-table--cards caption,
+  .data-table--cards tbody,
+  .data-table--cards tr {
+    display: block;
+  }
+
+  .data-table--cards tr {
+    display: grid;
+    gap: var(--space-8);
+    padding: var(--space-16) 0;
+    border-bottom: var(--border-thin) solid var(--color-border-default);
+  }
+
+  .data-table--cards th,
+  .data-table--cards td {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: var(--space-16);
+    padding: 0;
+    border: 0;
+    text-align: left;
+  }
+
+  .data-table--cards .is-num {
+    text-align: left;
+  }
+
+  .data-table--cards th::before,
+  .data-table--cards td::before {
+    content: attr(data-label);
+    font-size: var(--text-small-size);
+    line-height: var(--text-small-lh);
+    font-weight: var(--text-ui-strong-weight);
+    color: var(--color-text-secondary);
+  }
+}
+
+/* Páginas de Inversionistas (Calendario, Acción, Contacto): bloques de una misma
+   sección separados con aire; los componentes son los del kit */
+.page-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-24);
+}
+
+.page-group > * {
+  max-width: 100%;
+}
+
+.page-group .data-table-wrap,
+.page-group .doc-list,
+.page-group .date-list,
+.page-group .ir-event {
+  width: 100%;
+}
+
+.page-group + .page-group,
+.stats + .page-group,
+.doc-list + .page-group {
+  margin-top: var(--space-64);
+}
+
+/* Contacto de Inversionistas: ficha a la izquierda y formulario a la derecha */
+.contact-side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-20);
+}
+
+.contact-form .btn {
+  align-self: flex-start;
+}
+
 /* ==========================================================================
    Página Gobernanza (Inversionistas): solo espaciado entre bloques de cada
    pestaña; los componentes son los del kit

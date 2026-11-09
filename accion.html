@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acción · Multi X</title>
+  <meta name="description" content="Información bursátil, accionistas, dividendos y transacciones relacionadas de Multi X.">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@200;300;400;600&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script src="js/layout.js" defer></script>
+  <script src="js/components.js" defer></script>
+</head>
+<body>
+  <site-header current="inversionistas"></site-header>
+
+  <main id="main">
+    <!-- Páginas internas de Inversionistas: primero el sub-menú, luego el encabezado -->
+    <ir-subnav current="accion"></ir-subnav>
+
+    <!-- Encabezado en crema con foto (mismo patrón que Centro de Resultados) -->
+    <div class="section--subtle page-intro">
+      <div class="container page-intro__inner">
+        <div class="page-intro__text">
+    <header class="page-head">
+      <h1 class="t-h1">Acción</h1>
+      <p class="t-body-l page-head__lead">Información de la acción de Multi X: cotización, accionistas, dividendos y transacciones de personas relacionadas. [contenido por definir]</p>
+    </header>
+        </div>
+        <figure class="page-intro__media">
+          <img src="assets/img/inversionistas-hero.webp" alt="" width="504" height="372">
+        </figure>
+      </div>
+    </div>
+
+    <!-- Sub-menú de sección: pestañas con enlace directo (accion.html#...) -->
+    <div class="container page-tabs page-tabs--below">
+      <div class="tabs" data-tabs data-tabs-hash>
+        <div class="tabs__list" role="tablist" aria-label="Secciones de Acción">
+          <button class="tab" type="button" role="tab" id="tab-informacion-bursatil" aria-selected="true" aria-controls="panel-informacion-bursatil" data-hash="informacion-bursatil">Información bursátil</button>
+          <button class="tab" type="button" role="tab" id="tab-principales-accionistas" aria-selected="false" aria-controls="panel-principales-accionistas" data-hash="principales-accionistas">Principales 20 accionistas</button>
+          <button class="tab" type="button" role="tab" id="tab-analisis-de-accionistas" aria-selected="false" aria-controls="panel-analisis-de-accionistas" data-hash="analisis-de-accionistas">Análisis de accionistas</button>
+          <button class="tab" type="button" role="tab" id="tab-dividendos" aria-selected="false" aria-controls="panel-dividendos" data-hash="dividendos">Dividendos</button>
+          <button class="tab" type="button" role="tab" id="tab-transacciones-relacionadas" aria-selected="false" aria-controls="panel-transacciones-relacionadas" data-hash="transacciones-relacionadas">Transacciones relacionadas</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Información bursátil -->
+    <section class="section tab-panel" id="panel-informacion-bursatil" role="tabpanel" aria-labelledby="tab-informacion-bursatil">
+      <div class="container">
+        <div class="section-head section-head--compact">
+          <h2 class="t-h3" id="ib-title">Información bursátil</h2>
+          <p class="t-body section-head__lead">La acción de Multi X cotiza en la Bolsa de Santiago bajo el nemotécnico MULTI X. [contenido por definir]</p>
+        </div>
+        <ul class="stats" role="list">
+          <li class="stat"><span class="stat__value t-figure-l">$ 498,5</span><span class="stat__label t-small">precio de cierre (CLP)</span></li>
+          <li class="stat"><span class="stat__value t-figure-l">+1,2 %</span><span class="stat__label t-small">variación del día</span></li>
+          <li class="stat"><span class="stat__value t-figure-l">US$ 1.640 MM</span><span class="stat__label t-small">capitalización bursátil</span></li>
+          <li class="stat"><span class="stat__value t-figure-l">3.230 MM</span><span class="stat__label t-small">acciones suscritas y pagadas</span></li>
+        </ul>
+        <div class="page-group">
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <caption class="t-small data-table__caption">Datos de la acción al 6 de noviembre de 2026 · precios con 15 minutos de retraso [contenido por definir]</caption>
+            <thead>
+              <tr><th scope="col">Dato</th><th scope="col">Valor</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row" data-label="Dato">Nemotécnico</th><td data-label="Valor">MULTI X</td></tr>
+              <tr><th scope="row" data-label="Dato">Bolsa</th><td data-label="Valor">Bolsa de Santiago</td></tr>
+              <tr><th scope="row" data-label="Dato">ISIN</th><td data-label="Valor">CL0001234567</td></tr>
+              <tr><th scope="row" data-label="Dato">Moneda</th><td data-label="Valor">Peso chileno (CLP)</td></tr>
+              <tr><th scope="row" data-label="Dato">Máximo 52 semanas</th><td data-label="Valor">$ 541,0</td></tr>
+              <tr><th scope="row" data-label="Dato">Mínimo 52 semanas</th><td data-label="Valor">$ 402,3</td></tr>
+              <tr><th scope="row" data-label="Dato">Volumen promedio diario (30 días)</th><td data-label="Valor">1,8 MM de acciones</td></tr>
+            </tbody>
+          </table>
+        </div>
+          <a class="btn btn--tertiary hit" href="#" target="_blank" rel="noopener">Ver la acción en la Bolsa de Santiago<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Principales 20 accionistas -->
+    <section class="section tab-panel" id="panel-principales-accionistas" role="tabpanel" aria-labelledby="tab-principales-accionistas" hidden>
+      <div class="container">
+        <div class="section-head section-head--compact">
+          <h2 class="t-h3" id="pa-title">Principales 20 accionistas</h2>
+          <p class="t-body section-head__lead">Registro de los 20 mayores accionistas, actualizado cada trimestre. [contenido por definir]</p>
+        </div>
+        <div class="data-table-wrap">
+          <table class="data-table data-table--cards">
+            <caption class="t-small data-table__caption">Al 30 de septiembre de 2026 [contenido por definir]</caption>
+            <thead>
+              <tr><th scope="col">N°</th><th scope="col">Accionista</th><th scope="col" class="is-num">Acciones</th><th scope="col" class="is-num">% del capital</th></tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="N°">1</td><td data-label="Accionista">Inversiones Austral SpA</td><td data-label="Acciones" class="is-num">1.162.800.000</td><td data-label="% del capital" class="is-num">36,00 %</td></tr>
+              <tr><td data-label="N°">2</td><td data-label="Accionista">Sociedad de Inversiones Patagonia Ltda.</td><td data-label="Acciones" class="is-num">545.870.000</td><td data-label="% del capital" class="is-num">16,90 %</td></tr>
+              <tr><td data-label="N°">3</td><td data-label="Accionista">Inversiones Los Fiordos S.A.</td><td data-label="Acciones" class="is-num">248.710.000</td><td data-label="% del capital" class="is-num">7,70 %</td></tr>
+              <tr><td data-label="N°">4</td><td data-label="Accionista">Fondo de Pensiones A</td><td data-label="Acciones" class="is-num">113.050.000</td><td data-label="% del capital" class="is-num">3,50 %</td></tr>
+              <tr><td data-label="N°">5</td><td data-label="Accionista">Fondo de Pensiones C</td><td data-label="Acciones" class="is-num">96.900.000</td><td data-label="% del capital" class="is-num">3,00 %</td></tr>
+              <tr><td data-label="N°">6</td><td data-label="Accionista">Corredora de bolsa · cuenta de terceros</td><td data-label="Acciones" class="is-num">87.210.000</td><td data-label="% del capital" class="is-num">2,70 %</td></tr>
+              <tr><td data-label="N°">7</td><td data-label="Accionista">Fondo de Inversión Renta Sur</td><td data-label="Acciones" class="is-num">74.290.000</td><td data-label="% del capital" class="is-num">2,30 %</td></tr>
+              <tr><td data-label="N°">8</td><td data-label="Accionista">Fondo de Pensiones B</td><td data-label="Acciones" class="is-num">67.830.000</td><td data-label="% del capital" class="is-num">2,10 %</td></tr>
+              <tr><td data-label="N°">9</td><td data-label="Accionista">Banco custodio · cuenta extranjeros</td><td data-label="Acciones" class="is-num">61.370.000</td><td data-label="% del capital" class="is-num">1,90 %</td></tr>
+              <tr><td data-label="N°">10</td><td data-label="Accionista">Fondo de Pensiones D</td><td data-label="Acciones" class="is-num">54.910.000</td><td data-label="% del capital" class="is-num">1,70 %</td></tr>
+              <tr><td data-label="N°">11</td><td data-label="Accionista">Fondo Mutuo Acciones Chile</td><td data-label="Acciones" class="is-num">48.450.000</td><td data-label="% del capital" class="is-num">1,50 %</td></tr>
+              <tr><td data-label="N°">12</td><td data-label="Accionista">Inversiones Mar Interior SpA</td><td data-label="Acciones" class="is-num">41.990.000</td><td data-label="% del capital" class="is-num">1,30 %</td></tr>
+              <tr><td data-label="N°">13</td><td data-label="Accionista">Fondo de Pensiones E</td><td data-label="Acciones" class="is-num">35.530.000</td><td data-label="% del capital" class="is-num">1,10 %</td></tr>
+              <tr><td data-label="N°">14</td><td data-label="Accionista">Compañía de Seguros de Vida</td><td data-label="Acciones" class="is-num">32.300.000</td><td data-label="% del capital" class="is-num">1,00 %</td></tr>
+              <tr><td data-label="N°">15</td><td data-label="Accionista">Fondo de Inversión Pacífico</td><td data-label="Acciones" class="is-num">29.070.000</td><td data-label="% del capital" class="is-num">0,90 %</td></tr>
+              <tr><td data-label="N°">16</td><td data-label="Accionista">Corredora de bolsa · cuenta propia</td><td data-label="Acciones" class="is-num">25.840.000</td><td data-label="% del capital" class="is-num">0,80 %</td></tr>
+              <tr><td data-label="N°">17</td><td data-label="Accionista">Inversiones Seno de Reloncaví Ltda.</td><td data-label="Acciones" class="is-num">22.610.000</td><td data-label="% del capital" class="is-num">0,70 %</td></tr>
+              <tr><td data-label="N°">18</td><td data-label="Accionista">Fondo Mutuo Small Cap</td><td data-label="Acciones" class="is-num">19.380.000</td><td data-label="% del capital" class="is-num">0,60 %</td></tr>
+              <tr><td data-label="N°">19</td><td data-label="Accionista">Banco custodio · cuenta terceros</td><td data-label="Acciones" class="is-num">16.150.000</td><td data-label="% del capital" class="is-num">0,50 %</td></tr>
+              <tr><td data-label="N°">20</td><td data-label="Accionista">Inversiones Chiloé SpA</td><td data-label="Acciones" class="is-num">12.920.000</td><td data-label="% del capital" class="is-num">0,40 %</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="page-group">
+          <div class="doc-list">
+              <div class="doc-row">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Registro de accionistas al 30 de septiembre de 2026</span><span class="doc-row__meta">oct 2026 · PDF 220 KB</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Registro de accionistas al 30 de septiembre de 2026 (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Registro de accionistas al 30 de septiembre de 2026</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Análisis de accionistas -->
+    <section class="section tab-panel" id="panel-analisis-de-accionistas" role="tabpanel" aria-labelledby="tab-analisis-de-accionistas" hidden>
+      <div class="container">
+        <div class="section-head section-head--compact">
+          <h2 class="t-h3" id="aa-title">Análisis de accionistas</h2>
+          <p class="t-body section-head__lead">Cómo se distribuye la propiedad de Multi X por tipo de inversionista. [contenido por definir]</p>
+        </div>
+        <ul class="stats" role="list">
+          <li class="stat"><span class="stat__value t-figure-l">1.850</span><span class="stat__label t-small">accionistas</span></li>
+          <li class="stat"><span class="stat__value t-figure-l">32 %</span><span class="stat__label t-small">free float</span></li>
+          <li class="stat"><span class="stat__value t-figure-l">67,8 %</span><span class="stat__label t-small">grupo controlador</span></li>
+        </ul>
+        <div class="page-group">
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <caption class="t-small data-table__caption">Composición por tipo de inversionista al 30 de septiembre de 2026 [contenido por definir]</caption>
+            <thead>
+              <tr><th scope="col">Tipo de inversionista</th><th scope="col" class="is-num">% del capital</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row" data-label="Tipo de inversionista">Grupo controlador</th><td data-label="% del capital" class="is-num">67,8 %</td></tr>
+              <tr><th scope="row" data-label="Tipo de inversionista">Fondos de pensiones</th><td data-label="% del capital" class="is-num">9,4 %</td></tr>
+              <tr><th scope="row" data-label="Tipo de inversionista">Inversionistas extranjeros</th><td data-label="% del capital" class="is-num">8,1 %</td></tr>
+              <tr><th scope="row" data-label="Tipo de inversionista">Fondos de inversión y mutuos</th><td data-label="% del capital" class="is-num">6,2 %</td></tr>
+              <tr><th scope="row" data-label="Tipo de inversionista">Corredoras de bolsa</th><td data-label="% del capital" class="is-num">4,3 %</td></tr>
+              <tr><th scope="row" data-label="Tipo de inversionista">Personas naturales</th><td data-label="% del capital" class="is-num">3,0 %</td></tr>
+              <tr><th scope="row" data-label="Tipo de inversionista">Otros</th><td data-label="% del capital" class="is-num">1,2 %</td></tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dividendos -->
+    <section class="section tab-panel" id="panel-dividendos" role="tabpanel" aria-labelledby="tab-dividendos" hidden>
+      <div class="container">
+        <div class="section-head section-head--compact">
+          <h2 class="t-h3" id="div-title">Dividendos</h2>
+          <p class="t-body section-head__lead">Dividendos pagados por Multi X y la política que los define. [contenido por definir]</p>
+        </div>
+        <div class="doc-list">
+              <div class="doc-row">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Política de dividendos</span><span class="doc-row__meta">abr 2026 · PDF 120 KB</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Política de dividendos (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> Política de dividendos</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+        </div>
+        <div class="page-group">
+        <div class="data-table-wrap">
+          <table class="data-table data-table--cards">
+            <caption class="t-small data-table__caption">Dividendos pagados por acción [contenido por definir]</caption>
+            <thead>
+              <tr><th scope="col">N°</th><th scope="col">Tipo</th><th scope="col">Ejercicio</th><th scope="col">Fecha de pago</th><th scope="col" class="is-num">US$ por acción</th></tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="N°">24</td><td data-label="Tipo">Provisorio</td><td data-label="Ejercicio">2026</td><td data-label="Fecha de pago">18 sep 2026</td><td data-label="US$ por acción" class="is-num">0,0085</td></tr>
+              <tr><td data-label="N°">23</td><td data-label="Tipo">Definitivo</td><td data-label="Ejercicio">2025</td><td data-label="Fecha de pago">20 may 2026</td><td data-label="US$ por acción" class="is-num">0,0142</td></tr>
+              <tr><td data-label="N°">22</td><td data-label="Tipo">Provisorio</td><td data-label="Ejercicio">2025</td><td data-label="Fecha de pago">19 sep 2025</td><td data-label="US$ por acción" class="is-num">0,0071</td></tr>
+              <tr><td data-label="N°">21</td><td data-label="Tipo">Definitivo</td><td data-label="Ejercicio">2024</td><td data-label="Fecha de pago">21 may 2025</td><td data-label="US$ por acción" class="is-num">0,0118</td></tr>
+              <tr><td data-label="N°">20</td><td data-label="Tipo">Provisorio</td><td data-label="Ejercicio">2024</td><td data-label="Fecha de pago">20 sep 2024</td><td data-label="US$ por acción" class="is-num">0,0064</td></tr>
+              <tr><td data-label="N°">19</td><td data-label="Tipo">Definitivo</td><td data-label="Ejercicio">2023</td><td data-label="Fecha de pago">22 may 2024</td><td data-label="US$ por acción" class="is-num">0,0097</td></tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transacciones relacionadas -->
+    <section class="section tab-panel" id="panel-transacciones-relacionadas" role="tabpanel" aria-labelledby="tab-transacciones-relacionadas" hidden>
+      <div class="container">
+        <div class="section-head section-head--compact">
+          <h2 class="t-h3" id="tr-title">Transacciones relacionadas</h2>
+          <p class="t-body section-head__lead">Compras y ventas de acciones de Multi X por personas relacionadas, informadas a la Comisión para el Mercado Financiero (CMF). [contenido por definir]</p>
+        </div>
+        <div class="data-table-wrap">
+          <table class="data-table data-table--cards">
+            <caption class="t-small data-table__caption">Últimas transacciones informadas [contenido por definir]</caption>
+            <thead>
+              <tr><th scope="col">Fecha</th><th scope="col">Persona relacionada</th><th scope="col">Relación</th><th scope="col">Operación</th><th scope="col" class="is-num">Acciones</th><th scope="col" class="is-num">Precio (CLP)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="Fecha">3 nov 2026</td><td data-label="Persona relacionada">Inversiones Austral SpA</td><td data-label="Relación">Accionista controlador</td><td data-label="Operación">Compra</td><td data-label="Acciones" class="is-num">2.500.000</td><td data-label="Precio (CLP)" class="is-num">497,0</td></tr>
+              <tr><td data-label="Fecha">15 oct 2026</td><td data-label="Persona relacionada">[nombre por definir]</td><td data-label="Relación">Director</td><td data-label="Operación">Compra</td><td data-label="Acciones" class="is-num">120.000</td><td data-label="Precio (CLP)" class="is-num">488,5</td></tr>
+              <tr><td data-label="Fecha">2 sep 2026</td><td data-label="Persona relacionada">[nombre por definir]</td><td data-label="Relación">Gerente general</td><td data-label="Operación">Compra</td><td data-label="Acciones" class="is-num">80.000</td><td data-label="Precio (CLP)" class="is-num">472,0</td></tr>
+              <tr><td data-label="Fecha">21 ago 2026</td><td data-label="Persona relacionada">Inversiones Los Fiordos S.A.</td><td data-label="Relación">Sociedad relacionada</td><td data-label="Operación">Venta</td><td data-label="Acciones" class="is-num">1.000.000</td><td data-label="Precio (CLP)" class="is-num">465,3</td></tr>
+              <tr><td data-label="Fecha">10 jul 2026</td><td data-label="Persona relacionada">[nombre por definir]</td><td data-label="Relación">Ejecutivo principal</td><td data-label="Operación">Compra</td><td data-label="Acciones" class="is-num">45.000</td><td data-label="Precio (CLP)" class="is-num">451,8</td></tr>
+              <tr><td data-label="Fecha">5 jun 2026</td><td data-label="Persona relacionada">[nombre por definir]</td><td data-label="Relación">Director</td><td data-label="Operación">Venta</td><td data-label="Acciones" class="is-num">60.000</td><td data-label="Precio (CLP)" class="is-num">446,2</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>
