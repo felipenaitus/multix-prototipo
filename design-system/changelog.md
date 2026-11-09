@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-09 · Políticas y Reportes ESG con buscador, filtro por año y lista por años
+- Código ✓ · Ambas pestañas quedan con la misma definición que Hechos Esenciales y Compliance: título, buscador con filtro por año y lista desplegable por años. Políticas pasa de lista simple con "Ver más políticas" a lista por años (2026 y 2025, según la fecha de cada documento); Reportes ESG mantiene su lista por años (2025 a 2023) y suma los filtros. El contenido sigue siendo de ejemplo.
+
 ## 2026-11-09 · Compliance: documentos reales con buscador y filtro por año
 - Código ✓ · Documentos de compliance pasa a lista por año (2026, 2024 y 2021) con buscador y filtro por año, como Hechos Esenciales, con los 8 documentos publicados en el sitio actual de Multi X (Reglamento Especial de Empresas Contratistas y Subcontratistas, Código de Ética, Reglamento Interno, Código de Conducta de Proveedores, Política de Libre Competencia, Política Anti-Soborno, Manual de Prevención del Delito y Manual de Gobierno Corporativo). Se quitan los tres pilares de ejemplo (Modelo de Prevención de Delitos, Código de Ética y Canal de Denuncias), el subtítulo "Documentos de compliance" y el botón "Ir al Canal de Denuncias": la pestaña queda igual que Hechos Esenciales (título, filtros y lista por año).
 
