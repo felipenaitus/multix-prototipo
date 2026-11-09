@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-09 · Centro de Resultados con nombres y categorías reales
+- Código ✓ · Resultados trimestrales lista los 359 archivos publicados en el sitio actual de Multi X (2007 a 2026) con su nombre, trimestre y categoría real (Presentación Resultados, Hechos Relevantes, Estados Financieros, Análisis Razonado, Estados Financieros (Filiales), Memoria Anual, Reporte de Sustentabilidad y Reportes ESG); los filtros de año y tipo ofrecen esos valores. Los archivos sin categoría en el sitio actual se asignaron por su nombre (EEFF Filiales, Hechos Relevantes IFRS, huellas hídrica y de carbono → Reportes ESG); se dejó fuera "Política de Home Office". Memoria anual usa los nombres reales en español de 2025 a 2007 (con el año agregado cuando el nombre no lo trae). Solo nombres: Ver PDF y Descargar no llevan a ningún archivo en el prototipo.
+
 ## 2026-11-09 · Hechos Esenciales con nombres y años reales
 - Código ✓ · El listado de Hechos Esenciales usa los 57 nombres publicados en el sitio actual de Multi X, agrupados por año (2016 a 2026), y el filtro de año ofrece esos años. Solo nombres: Ver PDF y Descargar no llevan a ningún archivo en el prototipo.
 
