@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Calendario: eventos anteriores sin enlace
+- Código ✓ · Los eventos anteriores dejan de ser clickeables: cada fila muestra fecha, título y tipo, sin flecha ni enlace (`.date-item__row`, la misma fila de los próximos eventos, sin "Agendar").
+
 ## 2026-11-10 · Calendario: sin próximo evento destacado y próximos eventos para agendar
 - Figma pendiente · Código ✓ · Se quita el bloque "Próximo evento" destacado. Los próximos eventos pasan a la variante nueva `.date-item--agenda` (en el kit): cada evento lleva su tipo y los botones "Agendar" en Google y Outlook, que abren el evento ya armado. Tipos de evento según lo pedido: Publicación IFRS (fechas de publicación de estados financieros IFRS), Presentación de resultados y Otros; los eventos anteriores también muestran su tipo. Fechas y eventos de ejemplo [contenido por definir].
 
