@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Canal de Denuncias del menú como enlace externo
+- Código ✓ · Pedido de Felipe. En el menú (desktop y mobile), Canal de Denuncias lleva al canal externo (el mismo del Portal Proveedores), en pestaña nueva y con el ícono de enlace externo, como Diving X.
+
 ## 2026-11-10 · Botones del hero a ancho completo y documentos de proveedores en slider (mobile)
 - Código ✓ · Pedido de Felipe. En mobile, todo botón dentro del hero ocupa el ancho completo (regla general: Portal Proveedores y el botón comercial coral de Productos). Documentos y políticas del Portal Proveedores pasa a slider horizontal en mobile (`.doc-list--slider`, nuevo en kit.html).
 

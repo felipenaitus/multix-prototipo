@@ -206,10 +206,11 @@
     { label: 'Portal Proveedores', href: 'proveedores.html', internal: true },
     { label: 'Diving X', href: '#' }
   ];
+  // external: sitio externo (pestaña nueva e ícono de enlace externo, como en Portales)
   var MENU_RESOURCES = [
     { label: 'Contacto', href: '#' },
     { label: 'Preguntas Frecuentes', href: '#' },
-    { label: 'Canal de Denuncias', href: '#' }
+    { label: 'Canal de Denuncias', href: 'https://mef.integridadcorporativa.cl/', external: true }
   ];
 
   var LANGS = [
@@ -383,7 +384,11 @@
                   }).join('') +
                 '</ul></div>' +
                 '<div class="menu-foot-group"><p class="t-label menu-foot-group__title">Recursos</p><ul class="menu-foot-group__list" role="list">' +
-                  MENU_RESOURCES.map(function (l) { return '<li><a href="' + l.href + '">' + esc(l.label) + '</a></li>'; }).join('') +
+                  MENU_RESOURCES.map(function (l) {
+                    return l.external
+                      ? '<li><a href="' + l.href + '" target="_blank" rel="noopener">' + esc(l.label) + icon('external') + '<span class="visually-hidden"> (abre en una pestaña nueva)</span></a></li>'
+                      : '<li><a href="' + l.href + '">' + esc(l.label) + '</a></li>';
+                  }).join('') +
                 '</ul></div>' +
                 '<div class="menu-panel__extras">' + langSwitch('menu-panel__lang') + socialList('menu-panel__social') + '</div>' +
               '</div>' +
