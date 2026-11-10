@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Página Sustentabilidad
+- Figma pendiente · Código ✓ · Nueva `sustentabilidad.html` con la estructura definida por Felipe y contenido real del sitio actual (Estrategia ABC desde prensa, cifras por definir). Componentes nuevos en kit.html: Estrategia ABC (`.abc`, con la opción `data-tabs-static` de `initTabs` para que las pestañas no se cambien por un selector en mobile) y `.stats--three`. Header y menú: "Sustentabilidad" enlaza a la página nueva.
+
 ## 2026-11-10 · Hover del botón de acento sobre crema con contraste
 - Figma pendiente · Código ✓ · Sobre crema el hover del botón de acento (Navy 600) llevaba texto Ink 900 (2,2:1). Token nuevo aprobado por Felipe: `--color-text-on-accent-hover` (Ink 900 por defecto; blanco en secciones y bloques crema, 7,7:1). El botón de acento sobre blanco (coral) no cambia. Se ve en "Suscribir" de Alertas al inversionista y en cualquier botón de acento sobre crema.
 

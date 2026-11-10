@@ -7621,3 +7621,159 @@ html:not(.js) .company-visual__tag {
 .chain__seg[aria-current="step"] .chain__seg-year {
   color: var(--color-text-brand);
 }
+
+/* Cifras en tres (.stats--three): para bloques de tres cifras. En mobile, una
+   debajo de la otra; desde tablet, las tres en fila separadas por líneas.
+   Sustentabilidad › Proteína del futuro y Vinculación comunitaria. */
+.stats--three {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.stats--three .stat + .stat {
+  border-top: var(--border-thin) solid var(--color-border-default);
+}
+
+@media (min-width: 768px) {
+  .stats--three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .stats--three .stat {
+    padding: var(--space-32) var(--space-20);
+  }
+
+  .stats--three .stat:first-child {
+    padding-left: 0;
+  }
+
+  .stats--three .stat + .stat {
+    border-top: 0;
+    border-left: var(--border-thin) solid var(--color-border-default);
+  }
+}
+
+/* Estrategia ABC (.abc[data-tabs][data-tabs-static]): tres pestañas con la letra
+   grande y el nombre del pilar, siempre visibles (sin selector en mobile). La
+   activa en Navy con una línea bajo ella; las demás, tenues. Debajo, el panel del
+   pilar: descripción a la izquierda y sus metas (cifra + texto) separadas por
+   líneas delgadas a la derecha. Sin cajas. Sustentabilidad. */
+.abc__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-bottom: var(--border-thin) solid var(--color-border-default);
+}
+
+.abc__tab {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  min-height: var(--touch-target);
+  padding: 0 var(--space-12) var(--space-20) 0;
+  text-align: left;
+  color: var(--color-text-tertiary);
+  transition: color var(--duration-base) var(--easing-standard);
+}
+
+.abc__tab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--border-thin) * -1);
+  height: var(--border-indicator);
+  background: var(--color-bg-brand);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-base) var(--easing-out);
+}
+
+.abc__tab:hover {
+  color: var(--color-text-brand);
+}
+
+.abc__tab[aria-selected="true"] {
+  color: var(--color-text-primary);
+}
+
+.abc__tab[aria-selected="true"]::after {
+  transform: none;
+}
+
+.abc__letter {
+  font-family: var(--font-display);
+  font-size: var(--text-display-size);
+  font-weight: var(--text-display-light-weight);
+  line-height: var(--text-display-lh);
+  letter-spacing: var(--text-display-ls);
+}
+
+.abc__panel {
+  display: grid;
+  gap: var(--space-32);
+  padding-top: var(--space-40);
+}
+
+.abc__intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.abc__desc {
+  color: var(--color-text-secondary);
+}
+
+.abc__goals {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: var(--border-thin) solid var(--color-border-default);
+}
+
+.abc__goal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-block: var(--space-24);
+  border-bottom: var(--border-thin) solid var(--color-border-default);
+}
+
+.abc__value {
+  color: var(--color-text-brand);
+}
+
+.abc__goal-text {
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 768px) {
+  .abc__goal {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    align-items: baseline;
+    gap: var(--space-24);
+  }
+}
+
+@media (min-width: 1024px) {
+  .abc__panel {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: var(--space-80);
+    padding-top: var(--space-64);
+  }
+}
+
+/* Página Sustentabilidad: espaciados entre piezas del kit */
+.protein__caption {
+  margin-bottom: var(--space-16);
+}
+
+.community__stats {
+  margin-top: var(--space-64);
+}
+
+.cert-panel {
+  margin-top: var(--space-40);
+}

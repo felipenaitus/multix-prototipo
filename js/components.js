@@ -236,6 +236,9 @@
         strip.addEventListener('scroll', updateMore, { passive: true });
         bar.classList.add('is-bar');
         fit = updateMore;
+      } else if (strip.hasAttribute('data-tabs-static')) {
+        // Pestañas que siempre se ven (sin selector desplegable): Estrategia ABC
+        fit = function () {};
       } else {
         var pickerId = nextTabsId('tabs-select');
         var wrap = document.createElement('div');

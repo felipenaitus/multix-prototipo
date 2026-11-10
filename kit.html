@@ -403,6 +403,40 @@
       </div>
 
       <div class="kit-block">
+        <h3 class="t-label kit-block__title">Cifras en tres (<code>.stats--three</code>)</h3>
+        <ul class="stats stats--three" role="list">
+          <li class="stat reveal"><span class="stat__value t-figure-l t-figure-strong">2,9</span><span class="stat__label t-small">Salmón de cultivo</span></li>
+          <li class="stat reveal"><span class="stat__value t-figure-l">5,9</span><span class="stat__label t-small">Cerdo</span></li>
+          <li class="stat reveal"><span class="stat__value t-figure-l">30</span><span class="stat__label t-small">Vacuno</span></li>
+        </ul>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Estrategia ABC (<code>.abc</code> + <code>[data-tabs][data-tabs-static]</code>)</h3>
+        <div class="abc">
+          <div class="abc__strip" data-tabs data-tabs-static>
+            <div class="abc__list" role="tablist" aria-label="Pilares (ejemplo)">
+              <button class="abc__tab" type="button" role="tab" id="kit-abc-tab-a" aria-selected="true" aria-controls="kit-abc-a"><span class="abc__letter" aria-hidden="true">A</span><span class="t-ui-strong">Animal</span></button>
+              <button class="abc__tab" type="button" role="tab" id="kit-abc-tab-b" aria-selected="false" aria-controls="kit-abc-b"><span class="abc__letter" aria-hidden="true">B</span><span class="t-ui-strong">Biósfera</span></button>
+              <button class="abc__tab" type="button" role="tab" id="kit-abc-tab-c" aria-selected="false" aria-controls="kit-abc-c"><span class="abc__letter" aria-hidden="true">C</span><span class="t-ui-strong">Comunidades</span></button>
+            </div>
+          </div>
+          <div class="abc__panel tab-panel" role="tabpanel" id="kit-abc-a" aria-labelledby="kit-abc-tab-a">
+            <div class="abc__intro"><h4 class="t-h3">A · Animal</h4><p class="t-body-l abc__desc">Descripción del pilar. [contenido por definir]</p></div>
+            <ul class="abc__goals" role="list"><li class="abc__goal"><span class="t-figure-m abc__value">0</span><span class="t-body abc__goal-text">Meta con su cifra. [contenido por definir]</span></li><li class="abc__goal"><span class="t-figure-m abc__value">X %</span><span class="t-body abc__goal-text">Otra meta. [contenido por definir]</span></li></ul>
+          </div>
+          <div class="abc__panel tab-panel" role="tabpanel" id="kit-abc-b" aria-labelledby="kit-abc-tab-b" hidden>
+            <div class="abc__intro"><h4 class="t-h3">B · Biósfera</h4><p class="t-body-l abc__desc">Descripción del pilar. [contenido por definir]</p></div>
+            <ul class="abc__goals" role="list"><li class="abc__goal"><span class="t-figure-m abc__value">+10</span><span class="t-body abc__goal-text">Meta con su cifra. [contenido por definir]</span></li></ul>
+          </div>
+          <div class="abc__panel tab-panel" role="tabpanel" id="kit-abc-c" aria-labelledby="kit-abc-tab-c" hidden>
+            <div class="abc__intro"><h4 class="t-h3">C · Comunidades</h4><p class="t-body-l abc__desc">Descripción del pilar. [contenido por definir]</p></div>
+            <ul class="abc__goals" role="list"><li class="abc__goal"><span class="t-figure-m abc__value">160</span><span class="t-body abc__goal-text">Meta con su cifra. [contenido por definir]</span></li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="kit-block">
         <h3 class="t-label kit-block__title">Barra de filtros</h3>
         <div class="filters" data-filters>
           <div class="filters__bar">
