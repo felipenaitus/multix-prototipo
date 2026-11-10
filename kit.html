@@ -598,6 +598,26 @@
       </div>
 
       <div class="kit-block">
+        <h3 class="t-label kit-block__title">Lista con fecha para agendar (<code>.date-item--agenda</code>: próximos eventos; la fila no es enlace y lleva el tipo de evento y <code>.add-calendar</code>)</h3>
+        <ul class="date-list" role="list" aria-label="Ejemplo de próximos eventos">
+          <li class="date-item date-item--agenda">
+            <div class="date-item__row">
+              <time class="date-item__date" datetime="2026-11-12"><span class="t-figure-m date-item__day">12</span><span class="t-label date-item__month">Nov 2026</span></time>
+              <div class="date-item__body"><h4 class="t-h3">Publicación Estados Financieros IFRS Q3 2026</h4><p class="t-small date-item__meta">Publicación IFRS</p></div>
+              <div class="add-calendar" data-add-calendar>
+                <button class="btn btn--secondary btn--sm hit add-calendar__toggle" type="button" aria-expanded="false" aria-controls="cal-2026-11-12-publicacion-estados-financiero"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Agendar</button>
+                <ul class="add-calendar__options" id="cal-2026-11-12-publicacion-estados-financiero" role="list" aria-label="Agendar Publicación Estados Financieros IFRS Q3 2026 en">
+                  <li class="add-calendar__label t-ui-small-strong" aria-hidden="true">Agendar</li>
+                  <li><a class="btn btn--secondary btn--sm hit" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Publicaci%C3%B3n%20Estados%20Financieros%20IFRS%20Q3%202026%20%C2%B7%20Multi%20X&amp;dates=20261112/20261113" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Google<span class="visually-hidden"> Calendar: Publicación Estados Financieros IFRS Q3 2026 (abre en una pestaña nueva)</span></a></li>
+                  <li><a class="btn btn--secondary btn--sm hit" href="https://outlook.live.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;allday=true&amp;subject=Publicaci%C3%B3n%20Estados%20Financieros%20IFRS%20Q3%202026%20%C2%B7%20Multi%20X&amp;startdt=2026-11-12&amp;enddt=2026-11-13" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Outlook<span class="visually-hidden">: Publicación Estados Financieros IFRS Q3 2026 (abre en una pestaña nueva)</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="kit-block">
         <h3 class="t-label kit-block__title">Evento y agendar (<code>.ir-event</code> + <code>.add-calendar</code>: para la futura página de Calendario; los accesos de Inversionistas ya no lo usan)</h3>
         <div class="ir-event">
           <div class="event">

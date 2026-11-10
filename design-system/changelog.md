@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Calendario: sin próximo evento destacado y próximos eventos para agendar
+- Figma pendiente · Código ✓ · Se quita el bloque "Próximo evento" destacado. Los próximos eventos pasan a la variante nueva `.date-item--agenda` (en el kit): cada evento lleva su tipo y los botones "Agendar" en Google y Outlook, que abren el evento ya armado. Tipos de evento según lo pedido: Publicación IFRS (fechas de publicación de estados financieros IFRS), Presentación de resultados y Otros; los eventos anteriores también muestran su tipo. Fechas y eventos de ejemplo [contenido por definir].
+
 ## 2026-11-09 · Políticas y Reportes ESG con buscador, filtro por año y lista por años
 - Código ✓ · Ambas pestañas quedan con la misma definición que Hechos Esenciales y Compliance: título, buscador con filtro por año y lista desplegable por años. Políticas pasa de lista simple con "Ver más políticas" a lista por años (2026 y 2025, según la fecha de cada documento); Reportes ESG mantiene su lista por años (2025 a 2023) y suma los filtros. El contenido sigue siendo de ejemplo.
 

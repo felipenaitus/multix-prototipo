@@ -6377,6 +6377,41 @@ html:not(.js) .company-visual__tag {
   color: var(--color-text-secondary);
 }
 
+/* Variante para agendar (.date-item--agenda): próximos eventos del Calendario.
+   La fila no es enlace: fecha, título con el tipo de evento y "Agendar" con
+   Google y Outlook (.add-calendar). En mobile los botones bajan bajo el título. */
+.date-item__row {
+  display: grid;
+  grid-template-columns: var(--size-event-date) minmax(0, 1fr);
+  align-items: start;
+  gap: var(--space-16);
+  padding-block: var(--space-20);
+}
+
+.date-item__row .add-calendar {
+  grid-column: 2;
+}
+
+/* En mobile, sin la palabra "Agendar": Google y Outlook caben en una fila */
+.date-item__row .add-calendar__label {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .date-item__row .add-calendar__label {
+    display: inline-flex;
+  }
+
+  .date-item__row {
+    grid-template-columns: var(--size-event-date) minmax(0, 1fr) auto;
+    align-items: center;
+  }
+
+  .date-item__row .add-calendar {
+    grid-column: auto;
+  }
+}
+
 /* Círculo con video ([data-media-circle]): una foto (cuadro del mismo video)
    llena el círculo, con el indicador de video. Con hover (o toque / Enter) el
    círculo crece un 15 % y se abre como una ventana al video; la foto se desvanece.

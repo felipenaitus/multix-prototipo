@@ -36,6 +36,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Barra de filtros | Buscador + selects en una fila; chips activos debajo | Buscador visible + botón "Filtrar (n)" que abre un panel inferior con los filtros y "Aplicar"/"Limpiar"; chips activos con scroll horizontal |
 | Memoria anual | La más reciente a la izquierda (portada, datos y acciones) y las anteriores a la derecha, con "Ver más memorias" | Apiladas: la más reciente arriba (portada sobre su rectángulo a ancho completo) y debajo las anteriores con "Ver más memorias" |
 | Listado de documentos por año | Fila: ícono + título + metadatos + badge + "Descargar" | Título, metadatos y tipo apilados (el tipo como texto sin relleno, alineado con el título); "Ver PDF" y "Descargar" visibles debajo, en fila (zona táctil de 44 px) |
+| Lista con fecha para agendar (próximos eventos) | Fecha, título con tipo y, a la derecha, "Agendar" + Google + Outlook | Google y Outlook bajan bajo el título, en una fila y sin la palabra "Agendar" |
 | Matriz trimestre × tipo | Tabla completa | Scroll horizontal con la columna "Período" fija y un divisor (`--border-thin`) a su derecha que indica que hay más; sin sombra (la única sombra del sistema es `--shadow-card`). Alternativa: acordeón por trimestre con la lista de documentos |
 | Tablas en general (dividendos, etc.) | Tabla | Si tiene ≤ 3 columnas, se mantiene; si tiene más, cada fila pasa a tarjeta con pares etiqueta–valor |
 | Paginación | Números + flechas | Flechas + "Página 2 de 8" |
