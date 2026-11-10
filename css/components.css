@@ -7001,8 +7001,8 @@ html:not(.js) .company-visual__tag {
   text-underline-offset: var(--space-4);
 }
 
-/* Resultado de documento: el título y "Ver en su sección" llevan a la sección con
-   el documento localizado; "Ver PDF" y "Descargar" (enlaces de documento del kit)
+/* Resultado de documento: el título lleva a la sección con el documento
+   localizado; "Ver PDF" y "Descargar" (enlaces de documento del kit)
    abren el archivo directo. A la derecha desde tablet; debajo en mobile. */
 .search-hit__inner {
   display: grid;

@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Resultados de documentos sin "Ver en su sección"
+- Código ✓ · Pedido de Felipe. Los documentos de la búsqueda quedan con "Ver PDF" y "Descargar"; el título sigue llevando a su sección con el documento localizado.
+
 ## 2026-11-10 · Documentos en la búsqueda: PDF directo y sección con el documento localizado
 - Figma pendiente · Código ✓ · Decisión de Felipe. Los documentos de los resultados tienen "Ver PDF" y "Descargar" (archivo directo) y "Ver en su sección", que abre su pestaña con la lista filtrada por su nombre (o su año o grupo abierto) y el documento subrayado en coral (`?doc=`, `initDocTarget` en `js/components.js`; `.doc-row.is-target`, `.search-hit--doc` en el kit).
 

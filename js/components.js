@@ -1786,8 +1786,8 @@
       list.innerHTML = shown.slice((state.pagina - 1) * PER, state.pagina * PER).map(function (it) {
         var t = T[it.type];
         if (it.type === 'documentos') {
-          // Título y "Ver en su sección" llevan a la sección con el documento
-          // localizado (?doc=); "Ver PDF" y "Descargar" abren el archivo directo
+          // El título lleva a la sección con el documento localizado (?doc=);
+          // "Ver PDF" y "Descargar" abren el archivo directo
           var to = it.href.split('#');
           var sec = esc(to[0] + '?doc=' + encodeURIComponent(it.title) + (to[1] ? '#' + to[1] : ''));
           var name = esc(it.title);
@@ -1800,7 +1800,6 @@
             '<span class="doc-row__actions search-hit__actions">' +
               '<a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> ' + name + ' (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a>' +
               '<a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> ' + name + '</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>' +
-              '<a class="doc-link" href="' + sec + '">Ver en su sección<span class="visually-hidden">: ' + name + '</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>' +
             '</span>' +
           '</div></li>';
         }
