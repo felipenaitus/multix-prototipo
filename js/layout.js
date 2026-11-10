@@ -8,6 +8,7 @@
    <site-footer>                             Footer
    <season-strip label text href cta>        Franja temporal del hero
    <ir-contact name role-title phone email>  Contacto IR
+   <ir-alerts email>                         Alertas al inversionista (suscripción)
    <chat-launcher>                           Botón flotante del asistente (se agrega solo)
    <sales-contact product>                   Botón flotante + formulario comercial
    <ir-subnav current>                       Sub-menú fijo de las páginas de Inversionistas
@@ -674,32 +675,42 @@
   /* ======================================================================
      <ir-contact> · Contacto de Relación con Inversionistas.
      Teléfono y correo siempre como enlaces (tel: / mailto:).
-     Con el atributo `subscribe` suma, bajo una línea, "Alertas al inversionista"
-     (correo + Suscribir: abre un correo al mismo `email` del contacto, el Head of
-     Investor Relations, con la suscripción).
      ====================================================================== */
-  var irSubscribeCount = 0;
-  function irSubscribeHtml(el, email) {
-    irSubscribeCount += 1;
-    var id = 'ir-alert-' + irSubscribeCount;
-    return '<div class="ir-contact__extra">' +
-        '<div class="ir-contact__group">' +
-          '<p class="t-ui-strong">Alertas al inversionista</p>' +
-          '<p class="t-small c-secondary">Resultados, hechos esenciales y eventos.</p>' +
-          '<form class="subscribe__form ir-contact__form" novalidate data-alert-to="' + esc(email) + '">' +
+  /* <ir-alerts email> · Alertas al inversionista: bloque crema a todo el ancho
+     (composición .subscribe del kit), bajo el contacto IR en Inversionistas y
+     Contacto. "Suscribir" valida el correo y abre un correo al mismo `email` del
+     Head of Investor Relations con la suscripción (en el prototipo no se envía). */
+  var irAlertsCount = 0;
+  class IrAlerts extends HTMLElement {
+    connectedCallback() {
+      if (this._ready) return;
+      this._ready = true;
+      var email = this.getAttribute('email');
+      if (!email) { this.hidden = true; return; }
+      irAlertsCount += 1;
+      var id = 'ir-alert-' + irAlertsCount;
+      this.classList.add('ir-alerts');
+      this.innerHTML =
+        '<div class="subscribe">' +
+          '<div class="subscribe__text">' +
+            '<h3 class="t-h3" id="' + id + '-title">Alertas al inversionista</h3>' +
+            '<p class="t-body">Recibe en tu correo los resultados, hechos esenciales y eventos de Multi X.</p>' +
+            '<p class="t-small c-secondary ir-alerts__status" role="status" hidden></p>' +
+          '</div>' +
+          '<form class="subscribe__form" novalidate aria-labelledby="' + id + '-title" data-alert-to="' + esc(email) + '">' +
             '<div class="field"><label class="field__label" for="' + id + '">Correo electrónico</label>' +
               '<div class="control"><input class="control__input" id="' + id + '" name="correo" type="email" autocomplete="email" placeholder="nombre@empresa.com" required></div></div>' +
             '<button class="btn btn--accent" type="submit">Suscribir</button>' +
           '</form>' +
-          '<p class="t-small c-secondary ir-contact__status" role="status" hidden></p>' +
-        '</div>' +
-      '</div>';
+        '</div>';
+      bindIrSubscribe(this);
+    }
   }
   function bindIrSubscribe(el) {
-    var form = el.querySelector('.ir-contact__form');
+    var form = el.querySelector('.subscribe__form');
     if (!form) return;
     var input = form.querySelector('input');
-    var status = el.querySelector('.ir-contact__status');
+    var status = el.querySelector('.ir-alerts__status');
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var value = input.value.trim();
@@ -741,9 +752,7 @@
         '<ul class="ir-contact__links" role="list">' +
           (phone ? '<li><a class="ir-contact__link" href="' + telHref(phone) + '">' + icon('phone') + esc(phone) + '</a></li>' : '') +
           (email ? '<li><a class="ir-contact__link" href="mailto:' + esc(email) + '">' + icon('mail') + esc(email) + '</a></li>' : '') +
-        '</ul>' +
-        (this.hasAttribute('subscribe') && email ? irSubscribeHtml(this, email) : '');
-      bindIrSubscribe(this);
+        '</ul>';
     }
   }
 
@@ -990,6 +999,7 @@
   customElements.define('site-footer', SiteFooter);
   customElements.define('season-strip', SeasonStrip);
   customElements.define('ir-contact', IrContact);
+  customElements.define('ir-alerts', IrAlerts);
   customElements.define('chat-launcher', ChatLauncher);
   customElements.define('ir-subnav', IrSubnav);
   customElements.define('results-release', ResultsRelease);

@@ -192,7 +192,8 @@
    cifras) en Navy 600 y el botón de acento en Navy 300. */
 .section--subtle,
 .results-release__inner,
-.company-visual__tag {
+.company-visual__tag,
+.subscribe {
   --color-text-accent: var(--color-navy-600);
   --color-text-accent-on-dark: var(--color-navy-600);
   --color-border-accent: var(--color-navy-600);

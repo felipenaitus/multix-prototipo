@@ -1920,26 +1920,12 @@ a.pagination__item:hover,
   color: var(--color-text-brand-hover);
 }
 
-/* Con `subscribe`: alertas al inversionista bajo una línea delgada (sin caja) */
-.ir-contact__extra {
-  display: flex;
-  flex-direction: column;
-}
-
-.ir-contact__group {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-8);
-  padding-block: var(--space-24);
-  border-top: var(--border-thin) solid var(--color-border-default);
-}
-
-.ir-contact__group:last-child {
-  padding-bottom: 0;
-}
-
-.ir-contact__form {
-  margin-top: var(--space-8);
+/* Alertas al inversionista (<ir-alerts>): bloque crema (.subscribe) a todo el
+   ancho, bajo el título y el contacto IR. Pedido de Felipe: se diferencia con
+   fondo crema (excepción a "sin cajas"). */
+.ir-alerts {
+  display: block;
+  margin-top: var(--space-64);
 }
 
 
