@@ -7150,9 +7150,10 @@ html:not(.js) .company-visual__tag {
   outline: none;
 }
 
-/* Contactos directos en pestañas (Contacto): cada panel con el texto a la
-   izquierda y el módulo de contacto a la derecha desde 1024 px, como los
-   accesos del Portal Proveedores */
+/* Panel de pestañas con texto + contenido (.ct-panel): Contacto › Contactos
+   directos y Preguntas frecuentes. Título, texto y enlace a la izquierda y el
+   contenido (contacto o preguntas) a la derecha desde 1024 px, como los accesos
+   del Portal Proveedores */
 .ct-panel {
   padding-top: var(--space-48);
 }

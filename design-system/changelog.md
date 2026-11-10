@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Página Preguntas frecuentes
+- Código ✓ · Pedido de Felipe. Página nueva `preguntas-frecuentes.html` con las 19 preguntas frecuentes del sitio en cinco pestañas por tema (Inversionistas, Productos, Sustentabilidad, Proveedores y Canal de denuncias). Reutiliza las pestañas, `.ct-panel` y `.faq` del kit. "Preguntas Frecuentes" del footer y del menú enlaza a la página nueva. Las preguntas quedan copiadas (cada página mantiene las suyas).
+
 ## 2026-11-10 · Contacto sin encabezado de página
 - Código ✓ · Pedido de Felipe. Se quita el encabezado crema (migas, "Contacto" y bajada) por redundante; la página parte en Contactos directos y el Título 1 queda oculto para lectores de pantalla.
 

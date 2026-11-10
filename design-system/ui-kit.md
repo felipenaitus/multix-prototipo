@@ -217,6 +217,9 @@ Orden (definido por Felipe): hero · intro (relato + cifras destacadas) · Memor
 - **Documentos de sustentabilidad:** Memoria Integrada, Reportes ESG y Políticas propias de Sustentabilidad (distintas de las de Gobernanza), como acordeones con título (`.doc-years`, el primero abierto) y filas de documento con "Ver PDF" y "Descargar". Sin enlace a otra sección.
 - **Reutilizados:** `.value-list` (Operaciones sustentables y Vinculación comunitaria), `.cert-grid` en pestañas Certificaciones / Membresías (8 y 5), `.pillars` para los 4 proyectos y `.faq`.
 
+### Página Preguntas frecuentes (pendiente de llevar a Figma)
+`preguntas-frecuentes.html`, enlazada desde el footer (Información) y el menú (Recursos). Reúne las preguntas frecuentes del sitio (Inversionistas, Productos, Sustentabilidad y Portal Proveedores) en pestañas del kit por tema: Inversionistas · Productos · Sustentabilidad · Proveedores · Canal de denuncias (cada una con su enlace: `#inversionistas`, `#productos`…). Cada panel (`.ct-panel`) lleva el tema, una línea de qué cubre y el enlace a su sección a la izquierda y las preguntas (`.faq`, acordeón de una abierta) a la derecha. Sin encabezado crema: Título 1 y bajada sobre fondo blanco. Las preguntas están copiadas de cada página: si cambia una, hay que cambiarla en los dos lugares.
+
 ### Página Contacto (nuevos · pendientes de llevar a Figma)
 Diagrama de Felipe: reúne los contactos repartidos en el sitio y los accesos a formularios específicos (`contacto.html`; sin formulario general). Enlazada desde la barra utilitaria y el menú (Recursos › Contacto).
 - **Sin encabezado de página** (pedido de Felipe: redundante): la página parte en Contactos directos; el Título 1 "Contacto" queda solo para lectores de pantalla.

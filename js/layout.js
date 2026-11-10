@@ -212,7 +212,7 @@
   // external: sitio externo (pestaña nueva e ícono de enlace externo, como en Portales)
   var MENU_RESOURCES = [
     { label: 'Contacto', href: 'contacto.html' },
-    { label: 'Preguntas Frecuentes', href: '#' },
+    { label: 'Preguntas Frecuentes', href: 'preguntas-frecuentes.html' },
     { label: 'Canal de Denuncias', href: 'https://mef.integridadcorporativa.cl/', external: true }
   ];
 
@@ -604,7 +604,7 @@
      Mobile: columnas en acordeón; direcciones y teléfonos siempre visibles.
      ====================================================================== */
   var FOOTER_COLS = [
-    { title: 'Información', links: [{ label: 'Preguntas Frecuentes', href: '#' }, { label: 'Legislación', href: '#' }, { label: 'Canal de Denuncias', href: '#' }] },
+    { title: 'Información', links: [{ label: 'Preguntas Frecuentes', href: 'preguntas-frecuentes.html' }, { label: 'Legislación', href: '#' }, { label: 'Canal de Denuncias', href: '#' }] },
     { title: 'Personas y proveedores', links: [{ label: 'Trabaja con Nosotros', href: 'trabaja-con-nosotros.html' }, { label: 'Portal Proveedores', href: 'proveedores.html' }] }
   ];
 
