@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Botones del hero a ancho completo y documentos de proveedores en slider (mobile)
+- Código ✓ · Pedido de Felipe. En mobile, todo botón dentro del hero ocupa el ancho completo (regla general: Portal Proveedores y el botón comercial coral de Productos). Documentos y políticas del Portal Proveedores pasa a slider horizontal en mobile (`.doc-list--slider`, nuevo en kit.html).
+
 ## 2026-11-10 · Chips de un valor como selector desplegable en mobile
 - Código ✓ · Pedido de Felipe. En mobile, todo grupo `.job-chips` (regiones de Ofertas destacadas, tipo de contenido del buscador) pasa a un selector desplegable, el mismo de las pestañas (`initChipSelect` en `js/components.js`). Desde tablet siguen los chips. Se retira la fila deslizable de chips del buscador en mobile.
 

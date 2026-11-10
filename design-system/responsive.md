@@ -90,6 +90,8 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Lista con fecha | Fecha (día y mes) a la izquierda, título y dato a la derecha | Igual: la columna de la fecha se mantiene y el título baja de línea si no cabe |
 | Noticias | Tres notas en fila | Tablet: slider con casi dos notas a la vista. Mobile: slider con una nota y parte de la siguiente |
 | Portal Proveedores: accesos | Pestañas; en cada panel, texto a la izquierda y contenido a la derecha | Selector de pestañas del kit; texto arriba y contenido debajo |
+| Botones del hero (todos, también el comercial de Productos) | Tamaño de su texto | Ancho completo |
+| Documentos en slider (`.doc-list--slider`, Portal Proveedores) | Lista de filas | Slider horizontal: cada documento como pieza (ícono, título, detalle y acciones al pie) y parte del siguiente |
 | Portal Proveedores: hero | Texto a la izquierda y "Quiero ser proveedor" a la derecha | Botón bajo el texto, a todo el ancho (`.btn-group`) |
 | Formulario por pasos (`.form-steps`) | Número y nombre de los tres pasos unidos por una línea; campos en dos columnas; Zona de operación en cuatro columnas | Solo el nombre del paso actual (los otros, solo el número) y "Paso n de 3"; campos en una columna; Zona de operación en dos columnas |
 | Resultados de búsqueda | Campo de dos tercios con "Buscar" al lado; chips en fila; filas con "Ver…" (o, en documentos, "Ver PDF · Descargar") a la derecha | Campo a todo el ancho con "Buscar" al lado; chips como selector desplegable; "Ver…" o las acciones del documento bajo cada resultado |

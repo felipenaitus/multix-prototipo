@@ -173,6 +173,19 @@
   gap: var(--space-12);
 }
 
+/* Mobile: todo botón del hero (incluido el comercial de Productos) ocupa el
+   ancho completo */
+@media (max-width: 767px) {
+  .hero__content .btn,
+  .hero__content .sales-contact--inline {
+    width: 100%;
+  }
+
+  .hero__content .sales-contact--inline {
+    display: block;
+  }
+}
+
 @media (min-width: 768px) {
   .btn-group {
     flex-direction: row;
@@ -1352,6 +1365,49 @@ body:has(.site-header.is-hidden) .page-tabs.is-bar {
 
 /* Acciones del documento: "Ver PDF" (abre en una pestaña nueva) y "Descargar",
    siempre las dos y juntas */
+/* Documentos en slider en mobile (.doc-list--slider): cada documento es una
+   pieza (ícono, título, detalle y acciones al pie) con una línea arriba; se ve
+   parte de la siguiente. Desde tablet, la lista de siempre. Portal Proveedores ›
+   Documentos y políticas. */
+@media (max-width: 767px) {
+  /* relative: los textos ocultos (.visually-hidden) quedan dentro del slider */
+  .doc-list--slider {
+    position: relative;
+    display: flex;
+    gap: var(--space-24);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    margin-inline: calc(-1 * var(--layout-gutter));
+    padding-inline: var(--layout-gutter);
+    scroll-padding-inline: var(--layout-gutter);
+  }
+
+  .doc-list--slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  .doc-list--slider > .doc-row,
+  .doc-list--slider > .doc-row + .doc-row {
+    flex: 0 0 85%;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto 1fr;
+    row-gap: var(--space-16);
+    padding: var(--space-24) 0 0;
+    border-top: var(--border-thin) solid var(--color-border-default);
+    scroll-snap-align: start;
+  }
+
+  .doc-list--slider .doc-row__icon {
+    grid-row: auto;
+  }
+
+  .doc-list--slider .doc-row .doc-row__action {
+    grid-column: 1;
+    align-self: end;
+  }
+}
+
 .doc-row__actions {
   display: flex;
   flex-wrap: wrap;
@@ -7074,6 +7130,11 @@ html:not(.js) .company-visual__tag {
 
 .prov-panel .split__body {
   align-items: flex-start;
+}
+
+/* La columna no crece con el slider de documentos (mobile) */
+.prov-panel .split {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .prov-sent {
