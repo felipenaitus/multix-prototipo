@@ -445,3 +445,8 @@
   width: auto;
   margin-inline: 0;
 }
+
+/* Llamado con foto en el kit: aire alrededor sobre el fondo crema */
+.kit-cta-media {
+  padding: var(--space-40);
+}

@@ -89,6 +89,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Lista con fecha | Fecha (día y mes) a la izquierda, título y dato a la derecha | Igual: la columna de la fecha se mantiene y el título baja de línea si no cabe |
 | Noticias | Tres notas en fila | Tablet: slider con casi dos notas a la vista. Mobile: slider con una nota y parte de la siguiente |
 | Portal Proveedores: accesos | Pestañas; en cada panel, texto a la izquierda y contenido a la derecha | Selector de pestañas del kit; texto arriba y contenido debajo |
+| Llamado con foto (`.cta-media`) | Texto y botón a la izquierda, foto 4:3 a la derecha | Foto 3:2 arriba a todo el ancho; texto y botón debajo |
 | Portal Proveedores: hero | Texto a la izquierda y los dos botones a la derecha | Botones bajo el texto, apilados a todo el ancho (`.btn-group`) |
 | Formulario por pasos (`.form-steps`) | Número y nombre de los tres pasos unidos por una línea; campos en dos columnas; Zona de operación en cuatro columnas | Solo el nombre del paso actual (los otros, solo el número) y "Paso n de 3"; campos en una columna; Zona de operación en dos columnas |
 | Resultados de búsqueda | Campo de dos tercios con "Buscar" al lado; chips en fila; filas con "Ver…" (o, en documentos, "Ver PDF · Descargar") a la derecha | Campo a todo el ancho con "Buscar" al lado; chips en una fila que se desliza; "Ver…" o las acciones del documento bajo cada resultado |

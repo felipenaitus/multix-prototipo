@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Regístrate como proveedor con foto
+- Figma pendiente · Código ✓ · Pedido de Felipe. El módulo pasa a un llamado con foto (`.cta-media`, nuevo en kit.html): texto y botón a la izquierda y foto a la derecha desde 1024 px (arriba en mobile). Foto de ejemplo `foto-distribucion.jpg` [foto por definir].
+
 ## 2026-11-10 · Portal Proveedores y registro de proveedores
 - Figma pendiente · Código ✓ · Páginas nuevas `proveedores.html` (hero con Quiero ser proveedor e Ir al portal, accesos en pestañas, Regístrate como proveedor y contacto) y `proveedores-registro.html` (formulario de 3 pasos y éxito a pantalla completa), según el diagrama de Felipe y la información real del sitio actual. Nuevos en kit.html: `.form-steps`, `.form-step`, `.check-grid` y `.prov-sent`. Comportamiento nuevo `initProtoForms` (`js/components.js`). "Portal Proveedores" enlaza a la página nueva en la barra utilitaria, el menú y el footer; en el menú ya no abre en pestaña nueva. "Ir al portal" queda sin enlace (por definir). La regla de la columna centrada del detalle se acota a `.job-detail > .apply-form` (el formulario de contacto usa `.apply-form` a todo el ancho de su columna).
 
