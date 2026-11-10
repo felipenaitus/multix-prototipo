@@ -8515,9 +8515,9 @@ body:has(.site-header.is-hidden) .job-bar {
 }
 
 /* Lista de valores en fila (.value-list--row): las piezas una al lado de la otra
-   (dos desde tablet, cuatro desde 1024 px), cada una con una línea delgada arriba;
-   número sobre el título y el enlace al pie. Trabaja con Nosotros › Oportunidades
-   por área. */
+   (slider en mobile, dos desde tablet, cuatro desde 1024 px), cada una con una
+   línea delgada arriba; número sobre el título y el enlace al pie. Trabaja con
+   Nosotros › Oportunidades por área. */
 .value-list--row {
   display: grid;
   column-gap: var(--space-40);
@@ -8542,6 +8542,29 @@ body:has(.site-header.is-hidden) .job-bar {
 
 .value-list--row .value-item__body .btn {
   margin-top: auto;
+}
+
+/* Mobile: slider horizontal con scroll-snap; se ve parte de la pieza siguiente */
+@media (max-width: 767px) {
+  .value-list--row {
+    display: flex;
+    gap: var(--space-24);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    margin-inline: calc(-1 * var(--layout-gutter));
+    padding-inline: var(--layout-gutter);
+    scroll-padding-inline: var(--layout-gutter);
+  }
+
+  .value-list--row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .value-list--row .value-item {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+  }
 }
 
 @media (min-width: 768px) {

@@ -42,7 +42,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Estrategia ABC (`.abc`) | Tres letras en fila; panel con descripción a la izquierda y metas a la derecha | Las tres letras siguen en fila (sin selector); descripción arriba y metas apiladas debajo (cifra sobre el texto) |
 | Cifras en tres (`.stats--three`) | Tres en fila separadas por líneas verticales | Una debajo de otra, separadas por líneas |
 | Fila de oferta (`.job-row`) | Datos a la izquierda y "Ver oferta" a la derecha | "Ver oferta" debajo de los datos; el área y la ciudad pueden pasar a dos líneas |
-| Lista de valores en fila (`.value-list--row`) | Cuatro en fila desde 1024 px (dos en tablet) | Una debajo de otra, separadas por líneas |
+| Lista de valores en fila (`.value-list--row`) | Cuatro en fila (dos en tablet) | Slider horizontal con scroll-snap: una pieza y parte de la siguiente |
 | Detalle de oferta | Columna centrada (dos tercios del contenedor); franja "Volver al listado de ofertas" / "Postular" fija bajo el header | Columna a todo el ancho; la franja sigue fija y "Volver" pierde "al listado de ofertas" (menos de 768 px); datos en dos columnas sin líneas verticales |
 | Postulación enviada (`.apply-done`) | Alto de pantalla bajo el header, en la columna centrada | Igual, a todo el ancho; los botones se apilan si no caben |
 | Postulación (`.apply-form`) | Dos columnas | Una columna; "Adjuntar currículum" y el nombre del archivo se apilan si no caben |

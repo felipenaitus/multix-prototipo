@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Oportunidades por área en slider (mobile)
+- Código ✓ · Pedido de Felipe. En mobile, `.value-list--row` pasa de apilada a slider horizontal con scroll-snap (una pieza al 85 % y parte de la siguiente), como las noticias. Tablet y desktop sin cambios.
+
 ## 2026-11-10 · Enlace subrayado en las casillas (Políticas de Privacidad)
 - Figma pendiente · Código ✓ · Pedido de Felipe. Los enlaces dentro del texto de una casilla (`.checkbox a`) van subrayados, para que se entienda que se pueden abrir: "Políticas de Privacidad" en la postulación, el contacto de proveedores y el registro de proveedores. Ejemplo en kit.html.
 
