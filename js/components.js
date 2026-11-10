@@ -1525,7 +1525,7 @@
       else if (f.size > 2 * 1024 * 1024) file.setCustomValidity('El archivo supera los 2 MB.');
     }
     file.addEventListener('change', checkFile);
-    var done = form.querySelector('[data-apply-done]');
+    var done = document.querySelector('[data-apply-done]');
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       checkFile();
@@ -1537,8 +1537,12 @@
         form.reportValidity();
         return;
       }
+      // Éxito a pantalla completa: se ocultan cabecera, franja y formulario
+      $all('[data-apply-hide]').forEach(function (el) { el.hidden = true; });
       done.hidden = false;
-      form.querySelector('button[type="submit"]').disabled = true;
+      window.scrollTo(0, 0);
+      var title = done.querySelector('h1');
+      if (title) title.focus({ preventScroll: true });
     });
   }
 

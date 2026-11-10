@@ -20,7 +20,7 @@
   <site-header current="trabaja"></site-header>
 
   <main id="main" data-job-apply>
-    <div class="container">
+    <div class="container" data-apply-hide>
       <header class="job-head">
         <nav class="breadcrumb" aria-label="Migas de pan">
           <ol class="breadcrumb__list">
@@ -30,17 +30,26 @@
             <li class="breadcrumb__item"><a href="oferta.html" data-job-field="title" data-job-detail-link></a><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chev-right"></use></svg></li>
             <li class="breadcrumb__item"><span aria-current="page">Postular</span></li>
           </ol>
-          <a class="breadcrumb__back" href="oferta.html" data-job-detail-link><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>Volver a la oferta</a>
         </nav>
         <p class="t-label c-secondary">Postular a</p>
         <h1 class="t-h1" data-job-field="title"></h1>
-          <dl class="job-head__facts t-small">
-            <div><dt>Área</dt><dd data-job-field="area"></dd></div>
-            <div><dt>Ubicación</dt><dd data-job-field="place"></dd></div>
-            <div><dt>Código</dt><dd data-job-field="id"></dd></div>
-          </dl>
+        <dl class="job-head__facts t-small">
+          <div><dt>Área</dt><dd data-job-field="area"></dd></div>
+          <div><dt>Ubicación</dt><dd data-job-field="place"></dd></div>
+          <div><dt>Código</dt><dd data-job-field="id"></dd></div>
+        </dl>
       </header>
+    </div>
 
+    <div class="job-bar" data-apply-hide>
+      <div class="container">
+        <div class="job-bar__inner">
+          <a class="btn btn--tertiary hit job-bar__back" href="oferta.html" data-job-detail-link><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg><span>Volver a la oferta</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" data-apply-hide>
       <div class="job-detail">
         <form class="apply-form" action="#" novalidate aria-labelledby="apply-title">
           <h2 class="t-h3 apply-form__wide" id="apply-title">Tus datos</h2>
@@ -121,11 +130,22 @@
           </div>
           <div class="apply-form__actions apply-form__wide">
             <button class="btn btn--primary" type="submit">Enviar postulación</button>
-            <p class="t-small c-secondary" role="status" data-apply-done hidden>Recibimos tu postulación. Te contactaremos si tu perfil avanza en el proceso. [prototipo: no se envía]</p>
           </div>
         </form>
       </div>
     </div>
+
+    <section class="apply-done" aria-labelledby="done-title" data-apply-done hidden>
+      <div class="container apply-done__inner">
+        <p class="t-label c-accent">Postulación enviada</p>
+        <h1 class="t-h1" id="done-title" tabindex="-1">¡Gracias por postular!</h1>
+        <p class="t-body-l apply-done__text">Recibimos tu postulación a <strong data-job-field="title"></strong> (<span data-job-field="id"></span>). Te contactaremos si tu perfil avanza en el proceso de selección. [prototipo: no se envía]</p>
+        <div class="apply-done__actions">
+          <a class="btn btn--primary" href="oportunidades-laborales.html">Ver más ofertas</a>
+          <a class="btn btn--secondary" href="oferta.html" data-job-detail-link>Volver a la oferta</a>
+        </div>
+      </div>
+    </section>
 
   </main>
 

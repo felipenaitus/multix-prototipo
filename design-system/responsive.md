@@ -44,6 +44,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Fila de oferta (`.job-row`) | Datos a la izquierda y "Ver oferta" a la derecha | "Ver oferta" debajo de los datos; el área y la ciudad pueden pasar a dos líneas |
 | Lista de valores en fila (`.value-list--row`) | Cuatro en fila desde 1024 px (dos en tablet) | Una debajo de otra, separadas por líneas |
 | Detalle de oferta | Columna centrada (dos tercios del contenedor); franja "Volver al listado de ofertas" / "Postular" fija bajo el header | Columna a todo el ancho; la franja sigue fija y "Volver" pierde "al listado de ofertas" (menos de 768 px); datos en dos columnas sin líneas verticales |
+| Postulación enviada (`.apply-done`) | Alto de pantalla bajo el header, en la columna centrada | Igual, a todo el ancho; los botones se apilan si no caben |
 | Postulación (`.apply-form`) | Dos columnas | Una columna; "Adjuntar currículum" y el nombre del archivo se apilan si no caben |
 | Tabla de dividendos | Tabla de 6 columnas con nota al pie; el hecho esencial con "Ver PDF" y "Descargar" | Cada pago pasa a tarjeta con pares etiqueta–valor (`.data-table--cards`); el pie se apila |
 | Matriz trimestre × tipo | Tabla completa | Scroll horizontal con la columna "Período" fija y un divisor (`--border-thin`) a su derecha que indica que hay más; sin sombra (la única sombra del sistema es `--shadow-card`). Alternativa: acordeón por trimestre con la lista de documentos |

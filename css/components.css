@@ -7976,9 +7976,44 @@ body:has(.site-header.is-hidden) .job-bar {
   padding-top: var(--space-48);
 }
 
-/* Postulación: sin franja, una línea separa la cabecera del formulario */
-.job-head + .job-detail {
-  border-top: var(--border-thin) solid var(--color-border-default);
+/* Postulación enviada (.apply-done): reemplaza cabecera, franja y formulario y
+   ocupa el alto de la pantalla bajo el header; texto centrado en el eje
+   vertical, alineado a la izquierda en la columna del detalle. Sin cajas. */
+.apply-done {
+  display: flex;
+  align-items: center;
+  min-height: calc(100svh - var(--space-64));
+  padding-block: var(--space-64);
+}
+
+.apply-done[hidden] {
+  display: none;
+}
+
+.apply-done__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-24);
+}
+
+.apply-done__inner h1:focus {
+  outline: none;
+}
+
+.apply-done__text {
+  color: var(--color-text-secondary);
+}
+
+.apply-done__text strong {
+  color: var(--color-text-primary);
+}
+
+.apply-done__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-16);
+  padding-top: var(--space-16);
 }
 
 @media (min-width: 768px) {
@@ -8016,13 +8051,22 @@ body:has(.site-header.is-hidden) .job-bar {
   .job-head,
   .job-bar__inner,
   .job-detail__body,
-  .job-head + .job-detail {
+  .apply-form {
     width: calc(100% * 2 / 3);
     margin-inline: auto;
   }
 
   .job-detail {
     padding-top: var(--space-64);
+  }
+
+  .apply-done {
+    min-height: calc(100svh - var(--space-40) - var(--space-80));
+  }
+
+  .apply-done__inner > * {
+    width: calc(100% * 2 / 3);
+    margin-inline: auto;
   }
 }
 

@@ -434,3 +434,14 @@
     grid-column: auto;
   }
 }
+
+/* Postulación enviada en el kit: sin el alto de pantalla ni la columna centrada */
+.kit-block .apply-done {
+  min-height: 0;
+  padding-block: 0;
+}
+
+.kit-block .apply-done__inner > * {
+  width: auto;
+  margin-inline: 0;
+}

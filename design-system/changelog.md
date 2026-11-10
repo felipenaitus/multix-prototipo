@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Postulación: "Volver a la oferta" y mensaje de éxito a pantalla completa
+- Figma pendiente · Código ✓ · Pedido de Felipe. La postulación lleva la franja `.job-bar` solo con "Volver a la oferta" (reemplaza el "Volver" de las migas). Al enviar, el formulario desaparece y el mensaje pasa a un bloque nuevo a pantalla completa (`.apply-done`, en kit.html). Se quita la línea `.job-head + .job-detail` (la franja ya separa).
+
 ## 2026-11-10 · Detalle de oferta: columna centrada y franja de postulación fija
 - Figma pendiente · Código ✓ · Pedido de Felipe. El detalle de oferta va en una columna centrada desde 1024 px y "Postular" pasa de la columna lateral a una franja nueva (`.job-bar`) sobre la descripción, con "Volver al listado de ofertas" (flecha a la izquierda) a la izquierda; la franja queda fija bajo el header al hacer scroll (mismo comportamiento que el sub-menú de Inversionistas). Se quitan la columna lateral (`.job-detail__aside`, con "Ver todas las ofertas") y el enlace "Volver" de las migas de pan en esta página. Antes, en el mismo día: se quitó el dato "Área de trabajo" del detalle. Después: el formulario de postulación también va en la columna centrada, con la línea bajo la cabecera.
 
