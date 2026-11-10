@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Cursor claro con el menú abierto
+- Código ✓ · Pedido de Felipe. Con el menú hamburguesa abierto (tablet y desktop, fondo oscurecido) el cursor pasa a blanco: el detector de fondo (`MX.isDarkAt` en `js/layout.js`) reconoce la capa oscura del menú. En mobile el menú es blanco y el cursor sigue Navy.
+
 ## 2026-11-10 · Página Noticias y detalle de noticia
 - Figma pendiente · Código ✓ · Páginas nuevas `noticias.html` (listado paginado, 9 por página) y `noticia.html` (detalle), con las 54 noticias reales del sitio actual en `js/noticias.js` y las fotos de las 9 más recientes en `assets/img/noticias/`. La nota es la del home con la fecha sobre el título. Nuevos en kit.html: `.news-item__date`, `.news-item__media--empty`, `.news-list--grid`, `.news-pager` y `.pagination__arrow--prev` (la paginación no estaba en kit.html). El detalle reutiliza `.job-head`, `.job-bar` y `.job-detail`. Enlaces: "Noticias" del menú, "Ver todas las noticias" del home y la noticia destacada del menú (Taraba).
 

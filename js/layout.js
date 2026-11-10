@@ -101,6 +101,10 @@
       if (skip && (el === skip || skip.contains(el))) continue;
       var s = getComputedStyle(el);
       if (parseFloat(s.opacity) < 0.5 || s.visibility === 'hidden') continue;
+      // Menú abierto desde tablet: fondo oscurecido con una capa ::before (Navy 950).
+      // En mobile el menú es blanco a pantalla completa y se sigue de largo.
+      if (el.classList && el.classList.contains('menu-overlay__scrim') &&
+          window.matchMedia('(min-width: 768px)').matches) return true;
       // rgb()/rgba() vienen en 0–255; color(srgb …) (por ejemplo, de color-mix) en 0–1
       var bg = s.backgroundColor;
       var max = bg.indexOf('color(') === 0 ? 1 : 255;
