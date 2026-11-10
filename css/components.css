@@ -7976,6 +7976,11 @@ body:has(.site-header.is-hidden) .job-bar {
   padding-top: var(--space-48);
 }
 
+/* Postulación: sin franja, una línea separa la cabecera del formulario */
+.job-head + .job-detail {
+  border-top: var(--border-thin) solid var(--color-border-default);
+}
+
 @media (min-width: 768px) {
   .job-bar__more {
     display: inline;
@@ -8010,7 +8015,8 @@ body:has(.site-header.is-hidden) .job-bar {
 @media (min-width: 1024px) {
   .job-head,
   .job-bar__inner,
-  .job-detail__body {
+  .job-detail__body,
+  .job-head + .job-detail {
     width: calc(100% * 2 / 3);
     margin-inline: auto;
   }
