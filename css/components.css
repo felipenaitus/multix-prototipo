@@ -6980,7 +6980,7 @@ html:not(.js) .company-visual__tag {
 }
 
 /* Buscador del sitio (buscar.html): campo grande con "Buscar" en el encabezado;
-   resumen, chips de tipo con conteo (en fila deslizable en mobile) y resultados en filas .job-row con el término
+   resumen, chips de tipo con conteo (selector desplegable en mobile) y resultados en filas .job-row con el término
    subrayado en coral (Coral 500 como elemento gráfico, el texto no cambia de
    color). Paginación del kit al pie. */
 .search-form {
@@ -7055,24 +7055,6 @@ html:not(.js) .company-visual__tag {
   width: var(--space-24);
   height: var(--touch-target);
   color: var(--color-text-secondary);
-}
-
-@media (max-width: 767px) {
-  .job-chips.search-types {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-    margin-inline: calc(-1 * var(--layout-gutter));
-    padding-inline: var(--layout-gutter);
-  }
-
-  .search-types::-webkit-scrollbar {
-    display: none;
-  }
-
-  .search-types .chip {
-    flex: 0 0 auto;
-  }
 }
 
 @media (min-width: 1024px) {
@@ -8232,6 +8214,18 @@ html:not(.js) .company-visual__tag {
 
 .job-chips .chip {
   min-height: var(--touch-target);
+}
+
+/* En mobile los chips se muestran como selector desplegable (.chips-select, lo
+   crea components.js con el selector de las pestañas); desde tablet, los chips */
+.chips-select {
+  margin-bottom: var(--space-32);
+}
+
+@media (max-width: 767px) {
+  .job-chips.has-select {
+    display: none;
+  }
 }
 
 /* Pie de la lista destacada: "Ver todas las ofertas" (con el filtro aplicado) */

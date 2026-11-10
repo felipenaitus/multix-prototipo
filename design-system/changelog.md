@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Chips de un valor como selector desplegable en mobile
+- Código ✓ · Pedido de Felipe. En mobile, todo grupo `.job-chips` (regiones de Ofertas destacadas, tipo de contenido del buscador) pasa a un selector desplegable, el mismo de las pestañas (`initChipSelect` en `js/components.js`). Desde tablet siguen los chips. Se retira la fila deslizable de chips del buscador en mobile.
+
 ## 2026-11-10 · Oportunidades por área en slider (mobile)
 - Código ✓ · Pedido de Felipe. En mobile, `.value-list--row` pasa de apilada a slider horizontal con scroll-snap (una pieza al 85 % y parte de la siguiente), como las noticias. Tablet y desktop sin cambios.
 

@@ -42,6 +42,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Estrategia ABC (`.abc`) | Tres letras en fila; panel con descripción a la izquierda y metas a la derecha | Las tres letras siguen en fila (sin selector); descripción arriba y metas apiladas debajo (cifra sobre el texto) |
 | Cifras en tres (`.stats--three`) | Tres en fila separadas por líneas verticales | Una debajo de otra, separadas por líneas |
 | Fila de oferta (`.job-row`) | Datos a la izquierda y "Ver oferta" a la derecha | "Ver oferta" debajo de los datos; el área y la ciudad pueden pasar a dos líneas |
+| Chips de un valor (`.job-chips`: regiones, tipo de contenido) | Chips en fila | Siempre selector desplegable (el de las pestañas) |
 | Lista de valores en fila (`.value-list--row`) | Cuatro en fila (dos en tablet) | Slider horizontal con scroll-snap: una pieza y parte de la siguiente |
 | Detalle de oferta | Columna centrada (dos tercios del contenedor); franja "Volver al listado de ofertas" / "Postular" fija bajo el header | Columna a todo el ancho; la franja sigue fija y "Volver" pierde "al listado de ofertas" (menos de 768 px); datos en dos columnas sin líneas verticales |
 | Postulación enviada (`.apply-done`) | Alto de pantalla bajo el header, en la columna centrada | Igual, a todo el ancho; los botones se apilan si no caben |
@@ -91,7 +92,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Portal Proveedores: accesos | Pestañas; en cada panel, texto a la izquierda y contenido a la derecha | Selector de pestañas del kit; texto arriba y contenido debajo |
 | Portal Proveedores: hero | Texto a la izquierda y "Quiero ser proveedor" a la derecha | Botón bajo el texto, a todo el ancho (`.btn-group`) |
 | Formulario por pasos (`.form-steps`) | Número y nombre de los tres pasos unidos por una línea; campos en dos columnas; Zona de operación en cuatro columnas | Solo el nombre del paso actual (los otros, solo el número) y "Paso n de 3"; campos en una columna; Zona de operación en dos columnas |
-| Resultados de búsqueda | Campo de dos tercios con "Buscar" al lado; chips en fila; filas con "Ver…" (o, en documentos, "Ver PDF · Descargar") a la derecha | Campo a todo el ancho con "Buscar" al lado; chips en una fila que se desliza; "Ver…" o las acciones del documento bajo cada resultado |
+| Resultados de búsqueda | Campo de dos tercios con "Buscar" al lado; chips en fila; filas con "Ver…" (o, en documentos, "Ver PDF · Descargar") a la derecha | Campo a todo el ancho con "Buscar" al lado; chips como selector desplegable; "Ver…" o las acciones del documento bajo cada resultado |
 | Listado de noticias (`.news-list--grid`) | Tres notas por fila, 9 por página, paginación con números | Tablet: dos por fila. Mobile: una por fila (apiladas, no slider: es un listado para recorrer); paginación con flechas y "Página n de m" |
 | Detalle de noticia | Columna centrada; franja "Volver a noticias" / "Compartir" fija bajo el header | Columna a todo el ancho; "Volver" sin "a noticias" y "Compartir" solo con los íconos (menos de 768 px) |
 | Botón flotante del asistente | Fijo abajo a la derecha, 56 px, a `--space-32` del borde | Igual, a `--space-24` del borde |

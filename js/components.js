@@ -1962,6 +1962,45 @@
     });
   }
 
+  /* ---------- Chips de un valor en mobile (.job-chips) ----------
+     En mobile, cada grupo de chips se muestra como un selector desplegable (el
+     mismo de las pestañas, .tabs-select); desde tablet se ven los chips. Elegir
+     una opción hace clic en su chip, así el filtro sigue siendo el de los chips.
+     Las opciones se rehacen cuando los chips cambian (por ejemplo, los conteos
+     del buscador). */
+  function initChipSelect() {
+    $all('.job-chips').forEach(function (group) {
+      var id = nextTabsId('chips-select');
+      var wrap = document.createElement('div');
+      wrap.className = 'tabs-select chips-select';
+      wrap.innerHTML =
+        '<label class="visually-hidden" for="' + id + '">' + (group.getAttribute('aria-label') || 'Filtrar') + '</label>' +
+        '<div class="control control--select control--brand"><select class="control__input" id="' + id + '"></select>' +
+        '<svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg></div>';
+      var sel = wrap.querySelector('select');
+      group.parentNode.insertBefore(wrap, group);
+      group.classList.add('has-select');
+      function sync() {
+        var chips = $all('.chip', group);
+        sel.innerHTML = '';
+        chips.forEach(function (c, i) {
+          var o = document.createElement('option');
+          o.value = String(i);
+          o.textContent = c.textContent.trim();
+          if (c.getAttribute('aria-pressed') === 'true') o.selected = true;
+          sel.appendChild(o);
+        });
+        wrap.hidden = group.hidden || !chips.length;
+      }
+      sel.addEventListener('change', function () {
+        var c = $all('.chip', group)[parseInt(sel.value, 10)];
+        if (c) c.click();
+      });
+      new MutationObserver(sync).observe(group, { subtree: true, childList: true, attributes: true, attributeFilter: ['aria-pressed', 'hidden'] });
+      sync();
+    });
+  }
+
   function init() {
     initSearch();
     initProtoForms();
@@ -1992,6 +2031,7 @@
     initDocFilter();
     initInviewVideos();
     initDocTarget();
+    initChipSelect();
     initCursor();
   }
 
