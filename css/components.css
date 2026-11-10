@@ -7178,6 +7178,11 @@ html:not(.js) .company-visual__tag {
    de correo corporativo y "Acceder" a todo el ancho; al pie, la ayuda con el
    correo del equipo legal. Al enviar, el formulario se cambia por el mensaje
    del kit (.prov-sent). Sin cajas. */
+/* Menos aire arriba que una sección común: el ingreso queda cerca del header */
+.section.login {
+  padding-top: var(--space-48);
+}
+
 .login .container {
   display: flex;
   justify-content: center;
@@ -7189,7 +7194,6 @@ html:not(.js) .company-visual__tag {
   align-items: stretch;
   gap: var(--space-24);
   width: 100%;
-  padding-block: var(--space-48);
   text-align: center;
 }
 
