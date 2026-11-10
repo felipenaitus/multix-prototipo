@@ -6966,6 +6966,92 @@ html:not(.js) .company-visual__tag {
   }
 }
 
+/* Buscador del sitio (buscar.html): campo grande con "Buscar" en el encabezado;
+   resumen, chips de tipo con conteo (en fila deslizable en mobile), Año y
+   Sección solo con Documentos, y resultados en filas .job-row con el término
+   subrayado en coral (Coral 500 como elemento gráfico, el texto no cambia de
+   color). Paginación del kit al pie. */
+.search-form {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-12);
+  width: 100%;
+  margin-top: var(--space-8);
+}
+
+.search-form__field {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.search-summary {
+  margin-bottom: var(--space-24);
+  scroll-margin-top: var(--space-128);
+}
+
+.search-summary q {
+  quotes: "«" "»";
+}
+
+.search-doc-filters {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-16);
+  margin-bottom: var(--space-32);
+}
+
+.search-doc-filters[hidden] {
+  display: none;
+}
+
+.search-mark {
+  background: none;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--color-bg-accent-hover);
+  text-decoration-thickness: var(--border-medium);
+  text-underline-offset: var(--space-4);
+}
+
+.pagination__gap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-24);
+  height: var(--touch-target);
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 767px) {
+  .job-chips.search-types {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin-inline: calc(-1 * var(--layout-gutter));
+    padding-inline: var(--layout-gutter);
+  }
+
+  .search-types::-webkit-scrollbar {
+    display: none;
+  }
+
+  .search-types .chip {
+    flex: 0 0 auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .search-doc-filters {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .search-form {
+    width: calc(100% * 2 / 3);
+  }
+}
+
 /* Tabla de datos (.data-table): sin caja, filas separadas por líneas delgadas.
    Encabezados en Etiqueta gris; números alineados a la derecha y con cifras
    tabulares (.is-num). Con más de 3 columnas (.data-table--cards), en mobile cada

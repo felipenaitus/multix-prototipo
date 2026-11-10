@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Buscador del sitio y página de resultados
+- Figma pendiente · Código ✓ · Pedido de Felipe. El buscador del menú lleva a la página nueva `buscar.html` con resultados de páginas, noticias y documentos (494, de Centro de Resultados, Gobernanza y Sustentabilidad), chips de tipo con conteo, Año y Sección para documentos, 10 por página. Índice nuevo `js/busqueda.js` (los documentos se generaron desde el HTML de esas páginas: si cambian, hay que regenerarlo). Nuevos en kit.html: `.search-form`, `.search-types`, `.search-hit`, `.search-mark` y `.pagination__gap`; los resultados reutilizan `.job-row` y los chips `.job-chips`.
+
 ## 2026-11-10 · WhatsApp en Compartir (detalle de noticia)
 - Figma pendiente · Código ✓ · Pedido de Felipe. Ícono nuevo `i-whatsapp` (de línea, estilo de las otras redes, en `js/layout.js`) y botón "Compartir en WhatsApp" entre X y Facebook en el detalle de noticia. "Compartir" queda en kit.html (bloque de noticias).
 

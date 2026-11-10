@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resultados de búsqueda · Multi X</title>
+  <meta name="description" content="Buscador del sitio de Multi X: páginas, noticias y documentos.">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@200;300;400;600&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script src="js/layout.js" defer></script>
+  <script src="js/noticias.js" defer></script>
+  <script src="js/busqueda.js" defer></script>
+  <script src="js/components.js" defer></script>
+</head>
+<body>
+  <site-header></site-header>
+
+  <main id="main" data-search>
+    <div class="section--subtle page-intro">
+      <div class="container">
+        <header class="page-head">
+          <nav class="breadcrumb" aria-label="Migas de pan">
+            <ol class="breadcrumb__list">
+              <li class="breadcrumb__item"><a href="index.html">Inicio</a><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chev-right"></use></svg></li>
+              <li class="breadcrumb__item"><span aria-current="page">Resultados de búsqueda</span></li>
+            </ol>
+            <a class="breadcrumb__back" href="index.html"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>Volver al inicio</a>
+          </nav>
+          <h1 class="t-h1">Resultados de búsqueda</h1>
+          <form class="search-form" role="search" action="buscar.html" data-search-form>
+            <div class="field search-form__field">
+              <label class="visually-hidden" for="search-q">Buscar en el sitio</label>
+              <div class="control">
+                <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+                <input class="control__input" id="search-q" name="q" type="search" placeholder="Buscar páginas, noticias y documentos" autocomplete="off">
+              </div>
+            </div>
+            <button class="btn btn--primary" type="submit">Buscar</button>
+          </form>
+        </header>
+      </div>
+    </div>
+
+    <section class="section" aria-labelledby="results-title">
+      <div class="container">
+        <h2 class="t-h3 search-summary" id="results-title" aria-live="polite" data-search-summary></h2>
+        <div class="job-chips search-types" role="group" aria-label="Tipo de contenido" data-search-types hidden></div>
+        <div class="search-doc-filters" role="group" aria-label="Filtros de documentos" data-search-doc-filters hidden>
+            <div class="field field--year">
+              <label class="field__label" for="search-year">Año</label>
+              <div class="control control--select">
+                <select class="control__input" id="search-year" name="anio"><option value="">Todos</option></select>
+                <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+              </div>
+            </div>
+            <div class="field field--section">
+              <label class="field__label" for="search-section">Sección</label>
+              <div class="control control--select">
+                <select class="control__input" id="search-section" name="seccion"><option value="">Todos</option></select>
+                <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+              </div>
+            </div>
+        </div>
+        <ul class="job-list" role="list" aria-labelledby="results-title" data-search-results></ul>
+        <div class="empty-state" role="status" data-search-empty hidden>
+          <span class="empty-state__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-search"></use></svg></span>
+          <p class="t-h3" data-search-empty-title>Sin resultados</p>
+          <p data-search-empty-text>Prueba con otra palabra o revisa cómo está escrita.</p>
+        </div>
+        <nav class="news-pager" aria-label="Páginas de resultados" data-search-pager></nav>
+      </div>
+    </section>
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>

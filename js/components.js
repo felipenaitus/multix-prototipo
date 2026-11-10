@@ -1640,7 +1640,211 @@
     document.title = n.title + ' · Multi X';
   }
 
+  /* ---------- Buscador del sitio (buscar.html, índice en js/busqueda.js) ----------
+     Busca en páginas (MX_SEARCH.pages), noticias (MX_NEWS) y documentos
+     (MX_SEARCH.docs), sin mayúsculas ni tildes; todas las palabras deben estar.
+     Chips de tipo con conteo (se ocultan los que no tienen resultados); con
+     Documentos aparecen Año y Sección. Filas .job-row con el término resaltado,
+     10 por página con la paginación del kit. Todo queda en la URL:
+     ?q=&tipo=paginas|noticias|documentos&anio=&seccion=&pagina= */
+  function initSearch() {
+    var page = document.querySelector('[data-search]');
+    var S = window.MX_SEARCH;
+    if (!page || !S) return;
+    var PER = 10;
+    var TYPES = [
+      { id: '', label: 'Todos' },
+      { id: 'paginas', label: 'Páginas', one: 'Página', cta: 'Ver página' },
+      { id: 'noticias', label: 'Noticias', one: 'Noticia', cta: 'Ver noticia' },
+      { id: 'documentos', label: 'Documentos', one: 'Documento', cta: 'Ver en su sección' }
+    ];
+    var T = {};
+    TYPES.forEach(function (t) { T[t.id] = t; });
+    var MONTHS = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+    var secLabel = {};
+    S.sections.forEach(function (x) { secLabel[x.id] = x.label; });
+    function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
+    function norm(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); }
+    function newsDate(d) {
+      var m = MONTHS[parseInt(d.split('-')[1], 10) - 1];
+      return m.charAt(0).toUpperCase() + m.slice(1) + ' de ' + d.split('-')[0];
+    }
+
+    // Índice único: tipo, título, etiqueta, detalle, enlace, texto para buscar y orden
+    var items = [];
+    S.pages.forEach(function (x, i) {
+      items.push({ type: 'paginas', title: x[0], label: x[1], meta: x[2], href: x[3], text: norm(x[0] + ' ' + x[1] + ' ' + x[2] + ' ' + x[4]), order: i });
+    });
+    ((window.MX_NEWS && window.MX_NEWS.list) || []).forEach(function (x, i) {
+      items.push({ type: 'noticias', title: x[1], label: newsDate(x[2]), meta: '', href: 'noticia.html?id=' + x[0], text: norm(x[1]), order: i });
+    });
+    S.docs.forEach(function (x, i) {
+      items.push({ type: 'documentos', title: x[0], label: secLabel[x[3]] + ' › ' + x[4], meta: x[1], href: x[5], year: x[2], section: x[3], text: norm(x[0] + ' ' + x[1] + ' ' + secLabel[x[3]] + ' ' + x[4]), order: -parseInt(x[2], 10) * 10000 + i });
+    });
+
+    var params = new URLSearchParams(location.search);
+    var state = { q: (params.get('q') || '').trim(), tipo: params.get('tipo') || '', anio: params.get('anio') || '', seccion: params.get('seccion') || '', pagina: parseInt(params.get('pagina'), 10) || 1 };
+
+    var input = page.querySelector('#search-q');
+    var summary = page.querySelector('[data-search-summary]');
+    var chips = page.querySelector('[data-search-types]');
+    var docFilters = page.querySelector('[data-search-doc-filters]');
+    var yearSel = page.querySelector('#search-year');
+    var secSel = page.querySelector('#search-section');
+    var list = page.querySelector('[data-search-results]');
+    var empty = page.querySelector('[data-search-empty]');
+    var pager = page.querySelector('[data-search-pager]');
+    input.value = state.q;
+
+    // Resalta cada palabra buscada en el título (sin tildes ni mayúsculas)
+    function mark(title, words) {
+      var plain = '', map = [];
+      for (var i = 0; i < title.length; i++) {
+        var c = norm(title[i]);
+        for (var k = 0; k < c.length; k++) { plain += c[k]; map.push(i); }
+      }
+      var hit = [];
+      words.forEach(function (w) {
+        var at = plain.indexOf(w);
+        while (at > -1) {
+          for (var j = at; j < at + w.length; j++) hit[map[j]] = true;
+          at = plain.indexOf(w, at + w.length);
+        }
+      });
+      var out = '', open = false;
+      for (var n = 0; n < title.length; n++) {
+        if (hit[n] && !open) { out += '<mark class="search-mark">'; open = true; }
+        if (!hit[n] && open) { out += '</mark>'; open = false; }
+        out += esc(title[n]);
+      }
+      return out + (open ? '</mark>' : '');
+    }
+
+    function url(over) {
+      var st = Object.assign({}, state, over || {});
+      var u = new URLSearchParams();
+      if (st.q) u.set('q', st.q);
+      if (st.tipo) u.set('tipo', st.tipo);
+      if (st.tipo === 'documentos' && st.anio) u.set('anio', st.anio);
+      if (st.tipo === 'documentos' && st.seccion) u.set('seccion', st.seccion);
+      if (st.pagina > 1) u.set('pagina', st.pagina);
+      var qs = u.toString();
+      return 'buscar.html' + (qs ? '?' + qs : '');
+    }
+
+    function fill(sel, values, current) {
+      sel.innerHTML = '<option value="">Todos</option>' + values.map(function (v) {
+        return '<option value="' + esc(v[0]) + '"' + (v[0] === current ? ' selected' : '') + '>' + esc(v[1]) + '</option>';
+      }).join('');
+    }
+
+    function pagerHtml(pages) {
+      var arrow = function (k, cls, label) {
+        var off = k < 1 || k > pages;
+        return '<a class="pagination__arrow ' + cls + '" href="' + (off ? '#' : esc(url({ pagina: k }))) + '" aria-label="' + label + '"' + (off ? ' aria-disabled="true" tabindex="-1"' : ' data-page="' + k + '"') + '><svg class="icon" aria-hidden="true"><use href="#i-chev-right"></use></svg></a>';
+      };
+      // Números: primera, última y las vecinas de la actual (… entre medio)
+      var nums = '', last = 0;
+      for (var k = 1; k <= pages; k++) {
+        if (k !== 1 && k !== pages && Math.abs(k - state.pagina) > 1) continue;
+        if (k - last > 1) nums += '<li><span class="pagination__gap" aria-hidden="true">…</span></li>';
+        nums += '<li>' + (k === state.pagina
+          ? '<span class="pagination__item" aria-current="page">' + k + '</span>'
+          : '<a class="pagination__item" href="' + esc(url({ pagina: k })) + '" aria-label="Página ' + k + '" data-page="' + k + '">' + k + '</a>') + '</li>';
+        last = k;
+      }
+      return '<div class="pagination">' + arrow(state.pagina - 1, 'pagination__arrow--prev', 'Página anterior') +
+        '<ol class="pagination__list">' + nums + '</ol>' +
+        '<span class="pagination__status">Página ' + state.pagina + ' de ' + pages + '</span>' +
+        arrow(state.pagina + 1, '', 'Página siguiente') + '</div>';
+    }
+
+    function render() {
+      var words = norm(state.q).split(/\s+/).filter(Boolean);
+      if (!words.length) {
+        summary.textContent = 'Escribe qué buscas: páginas, noticias o documentos del sitio.';
+        chips.hidden = docFilters.hidden = empty.hidden = true;
+        list.innerHTML = pager.innerHTML = '';
+        return;
+      }
+      var nq = norm(state.q);
+      var found = items.filter(function (it) {
+        return words.every(function (w) { return it.text.indexOf(w) > -1; });
+      });
+      found.forEach(function (it) {
+        var t = norm(it.title);
+        it.score = (t.indexOf(nq) > -1 ? 4 : 0) + words.filter(function (w) { return t.indexOf(w) > -1; }).length;
+      });
+      var count = { '': found.length, paginas: 0, noticias: 0, documentos: 0 };
+      found.forEach(function (it) { count[it.type]++; });
+      if (state.tipo && !count[state.tipo]) state.tipo = '';
+
+      chips.hidden = !found.length;
+      chips.innerHTML = TYPES.filter(function (t) { return !t.id || count[t.id]; }).map(function (t) {
+        return '<button class="chip" type="button" aria-pressed="' + (state.tipo === t.id) + '" data-type="' + t.id + '">' + t.label + ' (' + count[t.id] + ')</button>';
+      }).join('');
+
+      var shown = found.filter(function (it) { return !state.tipo || it.type === state.tipo; });
+      docFilters.hidden = state.tipo !== 'documentos';
+      if (state.tipo === 'documentos') {
+        var years = {}, secs = {};
+        shown.forEach(function (it) { years[it.year] = 1; secs[it.section] = 1; });
+        if (state.anio && !years[state.anio]) state.anio = '';
+        if (state.seccion && !secs[state.seccion]) state.seccion = '';
+        fill(yearSel, Object.keys(years).sort().reverse().map(function (y) { return [y, y]; }), state.anio);
+        fill(secSel, S.sections.filter(function (x) { return secs[x.id]; }).map(function (x) { return [x.id, x.label]; }), state.seccion);
+        shown = shown.filter(function (it) {
+          return (!state.anio || it.year === state.anio) && (!state.seccion || it.section === state.seccion);
+        });
+      }
+      var rank = { paginas: 0, noticias: 1, documentos: 2 };
+      shown.sort(function (a, b) { return b.score - a.score || rank[a.type] - rank[b.type] || a.order - b.order; });
+
+      var total = shown.length;
+      var pages = Math.max(1, Math.ceil(total / PER));
+      state.pagina = Math.min(Math.max(state.pagina, 1), pages);
+      summary.innerHTML = found.length
+        ? (total === 1 ? '1 resultado' : total + ' resultados') + ' para <q>' + esc(state.q) + '</q>'
+        : 'Sin resultados para <q>' + esc(state.q) + '</q>';
+      empty.hidden = total > 0;
+      list.innerHTML = shown.slice((state.pagina - 1) * PER, state.pagina * PER).map(function (it) {
+        var t = T[it.type];
+        return '<li class="job-row search-hit"><a class="job-row__link" href="' + esc(it.href) + '">' +
+          '<span class="job-row__body">' +
+            '<span class="t-label job-row__id">' + t.one + ' · ' + esc(it.label) + '</span>' +
+            '<span class="t-h3 job-row__title">' + mark(it.title, words) + '</span>' +
+            (it.meta ? '<span class="job-row__meta t-small"><span>' + esc(it.meta) + '</span></span>' : '') +
+          '</span>' +
+          '<span class="job-row__more t-ui-button-sm">' + t.cta + '<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>' +
+        '</a></li>';
+      }).join('');
+      pager.innerHTML = pages > 1 ? pagerHtml(pages) : '';
+      history.replaceState(null, '', url());
+    }
+
+    chips.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-type]');
+      if (!b) return;
+      state.tipo = b.getAttribute('data-type');
+      state.anio = state.seccion = '';
+      state.pagina = 1;
+      render();
+    });
+    yearSel.addEventListener('change', function () { state.anio = yearSel.value; state.pagina = 1; render(); });
+    secSel.addEventListener('change', function () { state.seccion = secSel.value; state.pagina = 1; render(); });
+    pager.addEventListener('click', function (e) {
+      var a = e.target.closest('[data-page]');
+      if (!a) return;
+      e.preventDefault();
+      state.pagina = parseInt(a.getAttribute('data-page'), 10);
+      render();
+      summary.scrollIntoView({ block: 'start' });
+    });
+    render();
+  }
+
   function init() {
+    initSearch();
     initNews();
     initJobs();
     initReveal();

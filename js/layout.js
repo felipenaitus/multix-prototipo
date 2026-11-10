@@ -350,10 +350,10 @@
           '<div class="container menu-overlay__wrap">' +
             '<div class="menu-panel" role="dialog" aria-modal="true" aria-label="Menú">' +
               '<div class="menu-panel__search">' +
-                '<form class="menu-search" role="search" action="#" onsubmit="return false">' +
+                '<form class="menu-search" role="search" action="' + url('buscar.html') + '">' +
                   '<label class="visually-hidden" for="' + searchId + '">Buscar en el sitio</label>' +
                   icon('search', 'lg') +
-                  '<input class="menu-search__input" id="' + searchId + '" type="search" placeholder="Buscar en el sitio" autocomplete="off">' +
+                  '<input class="menu-search__input" id="' + searchId + '" name="q" type="search" placeholder="Buscar en el sitio" autocomplete="off" required>' +
                   // Borrar búsqueda: misma X que cierra el menú (hamburguesa abierta)
                   '<button type="button" class="menu-search__clear" aria-label="Borrar búsqueda" hidden>' +
                     '<span class="burger burger--x" aria-hidden="true"><span></span><span></span><span></span></span>' +
