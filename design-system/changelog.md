@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Preguntas frecuentes en una sola fuente
+- Código ✓ · Decisión de Felipe. Las 19 preguntas del sitio pasan a `js/faqs.js` (`window.MX_FAQS`, por tema) y se arman con `initFaqs` (`js/components.js`) en Preguntas frecuentes, Inversionistas, Productos, Sustentabilidad y Portal Proveedores (`data-faq="tema"`). Ya no hay preguntas copiadas en el HTML. Sustentabilidad: "En esta página" pasa a "En Sustentabilidad" (mismo texto en ambos lugares).
+
 ## 2026-11-10 · Página Preguntas frecuentes
 - Código ✓ · Pedido de Felipe. Página nueva `preguntas-frecuentes.html` con las 19 preguntas frecuentes del sitio en cinco pestañas por tema (Inversionistas, Productos, Sustentabilidad, Proveedores y Canal de denuncias). Reutiliza las pestañas, `.ct-panel` y `.faq` del kit. "Preguntas Frecuentes" del footer y del menú enlaza a la página nueva. Las preguntas quedan copiadas (cada página mantiene las suyas).
 

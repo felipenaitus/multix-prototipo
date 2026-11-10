@@ -2001,7 +2001,31 @@
     });
   }
 
+  /* ---------- Preguntas frecuentes (window.MX_FAQS, js/faqs.js) ----------
+     Arma cada lista [data-faq="tema"] (.faq) con sus preguntas. Va antes de
+     initAccordions para que el acordeón las tome. Si el tema no tiene
+     preguntas, la lista no se muestra. */
+  function initFaqs() {
+    var F = window.MX_FAQS;
+    $all('[data-faq]').forEach(function (list) {
+      var topic = list.getAttribute('data-faq');
+      var items = (F && F[topic]) || [];
+      if (!items.length) { list.hidden = true; return; }
+      var base = (list.id || 'faq-' + topic) + '-';
+      list.innerHTML = items.map(function (it, n) {
+        var id = base + (n + 1);
+        return '<li class="faq__item">' +
+          '<button class="faq__question" type="button" aria-expanded="false" aria-controls="' + id + '">' + it[0] +
+            '<span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span>' +
+          '</button>' +
+          '<div class="faq__answer acc-panel" id="' + id + '" hidden><p>' + it[1] + '</p></div>' +
+        '</li>';
+      }).join('');
+    });
+  }
+
   function init() {
+    initFaqs();
     initSearch();
     initProtoForms();
     initNews();
