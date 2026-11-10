@@ -8072,3 +8072,50 @@ html:not(.js) .company-visual__tag {
     order: -1;
   }
 }
+
+/* Lista de valores en fila (.value-list--row): las piezas una al lado de la otra
+   (dos desde tablet, cuatro desde 1024 px), cada una con una línea delgada arriba;
+   número sobre el título y el enlace al pie. Trabaja con Nosotros › Oportunidades
+   por área. */
+.value-list--row {
+  display: grid;
+  column-gap: var(--space-40);
+  border-top: 0;
+}
+
+.value-list--row .value-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  border-top: var(--border-thin) solid var(--color-border-default);
+  border-bottom: 0;
+}
+
+.value-list--row .value-item__num {
+  padding-top: 0;
+}
+
+.value-list--row .value-item__body {
+  flex: 1;
+}
+
+.value-list--row .value-item__body .btn {
+  margin-top: auto;
+}
+
+@media (min-width: 768px) {
+  .value-list--row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: var(--space-16);
+  }
+}
+
+@media (min-width: 1024px) {
+  .value-list--row {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .value-list--row .value-item {
+    padding-top: var(--space-32);
+  }
+}

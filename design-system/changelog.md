@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Oportunidades por área en fila
+- Figma pendiente · Código ✓ · Variante `.value-list--row` (pedido de Felipe, para que el módulo no quede tan alto): el encabezado pasa arriba y las 4 áreas quedan en fila (cuatro desde 1024 px, dos en tablet, apiladas en mobile).
+
 ## 2026-11-10 · Trabaja con Nosotros, Oportunidades laborales, Detalle de oferta y Postular
 - Figma pendiente · Código ✓ · Páginas nuevas `trabaja-con-nosotros.html`, `oportunidades-laborales.html`, `oferta.html` y `postulacion.html` según el flujo de Felipe, con las 37 ofertas reales del sitio actual en `js/ofertas.js` (archivo de datos nuevo, se carga antes de components.js). Componentes nuevos en kit.html: `.job-row`, `.job-chips`, `.job-head__facts` y `.file-field`. Header, menú y footer: "Trabaja con Nosotros" enlaza a la página nueva.
 
