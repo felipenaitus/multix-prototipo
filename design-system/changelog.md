@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Dividendos: Ver PDF y Descargar, sin historial Excel
+- Código ✓ · El hecho esencial de cada pago usa "Ver PDF" y "Descargar", como el resto de los documentos (antes un enlace "PDF"). Se quita "Descargar historial (Excel)"; el pie de la tabla queda solo con la nota.
+
 ## 2026-11-10 · Acción: dos secciones, Acción y Dividendos
 - Figma pendiente · Código ✓ · La página Acción pasa a un sub-menú de 2 pestañas según la definición del cliente: Acción (detalle del precio y gráfico de la acción MULTIX vs. IPSA base 100, con períodos 1M, 6M, YTD, 1A y 5A, y rango de 52 semanas) y Dividendos (pagos por ejercicio: ejercicio, tipo, CLP por acción, fecha límite de registro, fecha de pago y enlace al hecho esencial; "Próximo" en el pago que viene; "Descargar historial (Excel)"). Se quitan Información bursátil, Principales 20 accionistas, Análisis de accionistas, Transacciones relacionadas y la Política de dividendos. Datos de ejemplo [contenido por definir].
 - Decisión de Felipe: el detalle del precio va sin caja (la referencia lo mostraba en una caja azul), separado del gráfico por una línea delgada.
