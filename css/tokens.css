@@ -54,6 +54,7 @@
   --color-text-accent: var(--color-coral-600);
   --color-text-accent-on-dark: var(--color-coral-500);
   --color-text-on-accent: var(--color-ink-900);
+  --color-text-on-accent-hover: var(--color-ink-900); /* pendiente de llevar a Figma: sobre crema pasa a blanco */
   --color-text-inverse: var(--color-neutral-0);
   --color-text-inverse-muted: var(--color-navy-300);
   --color-text-success: var(--color-green-600);
@@ -189,7 +190,8 @@
    (.section--subtle) y bloques crema (presentación del trimestre, etiquetas de
    regiones), los acentos pasan a tonos azules de la paleta: textos y bordes en
    Navy 600 (azul grisáceo, 7:1 sobre crema), elementos gráficos (líneas, puntos,
-   cifras) en Navy 600 y el botón de acento en Navy 300. */
+   cifras) en Navy 600 y el botón de acento en Navy 300 (hover Navy 600 con texto
+   blanco, 7,7:1). */
 .section--subtle,
 .results-release__inner,
 .company-visual__tag,
@@ -200,6 +202,7 @@
   --color-border-accent-on-dark: var(--color-navy-600);
   --color-bg-accent: var(--color-navy-300);
   --color-bg-accent-hover: var(--color-navy-600);
+  --color-text-on-accent-hover: var(--color-neutral-0);
 }
 
 /* Menú hamburguesa desde tablet: el panel es transparente sobre el sitio oscurecido,

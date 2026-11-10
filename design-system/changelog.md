@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Hover del botón de acento sobre crema con contraste
+- Figma pendiente · Código ✓ · Sobre crema el hover del botón de acento (Navy 600) llevaba texto Ink 900 (2,2:1). Token nuevo aprobado por Felipe: `--color-text-on-accent-hover` (Ink 900 por defecto; blanco en secciones y bloques crema, 7,7:1). El botón de acento sobre blanco (coral) no cambia. Se ve en "Suscribir" de Alertas al inversionista y en cualquier botón de acento sobre crema.
+
 ## 2026-11-10 · Alertas al inversionista a todo el ancho con fondo crema
 - Código ✓ · La suscripción deja de estar dentro del contacto IR y pasa a un bloque propio, `<ir-alerts>` (en `js/layout.js`), a todo el ancho bajo el título y el contacto, en Inversionistas y Contacto. Usa la composición `.subscribe` del kit (fondo crema): excepción a "sin cajas" pedida por Felipe. `.subscribe` se suma a los bloques crema de tokens.css, así que su botón de acento pasa a Navy 300 (sin coral sobre crema). Se quita el atributo `subscribe` de `<ir-contact>`.
 

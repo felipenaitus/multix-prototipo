@@ -84,7 +84,7 @@
 .btn--accent:hover,
 .btn--accent.is-hover {
   background: var(--color-bg-accent-hover);
-  color: var(--color-text-on-accent);
+  color: var(--color-text-on-accent-hover);
 }
 
 /* Terciario / enlace */
