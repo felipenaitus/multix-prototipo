@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Contacto: Inversionistas y Comercial en pestañas
+- Código ✓ · Pedido de Felipe. Los dos contactos directos pasan a una sola sección "Contactos directos" con pestañas del kit (`.ct-panel`).
+
 ## 2026-11-10 · Página Contacto
 - Figma pendiente · Código ✓ · Página nueva `contacto.html` según el diagrama de Felipe: contactos de Inversionistas y Comercial (`<ir-contact>`), accesos a formularios y canales (`.value-list--row` con cuatro íconos de línea; tres nuevos: `i-mensaje`, `i-registro`, `i-escudo`) y oficinas con los datos del footer (Web Component nuevo `<site-offices>` en `js/layout.js`, en kit.html). "Contacto" de la barra utilitaria y del menú enlaza a la página nueva.
 

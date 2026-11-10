@@ -89,6 +89,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Ancla a Inversionistas (home) | Dos mitades: texto y acceso a la izquierda; último reporte y próximo evento a la derecha | Apilados: texto y acceso; debajo, último reporte y próximo evento |
 | Lista con fecha | Fecha (día y mes) a la izquierda, título y dato a la derecha | Igual: la columna de la fecha se mantiene y el título baja de línea si no cabe |
 | Noticias | Tres notas en fila | Tablet: slider con casi dos notas a la vista. Mobile: slider con una nota y parte de la siguiente |
+| Contacto: contactos directos | Pestañas; en cada panel, texto a la izquierda y contacto a la derecha | Selector desplegable; texto arriba y contacto debajo |
 | Oficinas (`<site-offices>`) | Tres en fila | Apiladas, cada una con su línea arriba |
 | Portal Proveedores: accesos | Pestañas; en cada panel, texto a la izquierda y contenido a la derecha | Selector de pestañas del kit; texto arriba y contenido debajo |
 | Botones del hero (todos, también el comercial de Productos) | Tamaño de su texto | Ancho completo |

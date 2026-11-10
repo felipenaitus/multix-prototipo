@@ -7150,6 +7150,28 @@ html:not(.js) .company-visual__tag {
   outline: none;
 }
 
+/* Contactos directos en pestañas (Contacto): cada panel con el texto a la
+   izquierda y el módulo de contacto a la derecha desde 1024 px, como los
+   accesos del Portal Proveedores */
+.ct-panel {
+  padding-top: var(--space-48);
+}
+
+.ct-panel .split {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.ct-panel .split__body {
+  align-items: flex-start;
+}
+
+@media (min-width: 1024px) {
+  .ct-panel .split {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+    gap: var(--space-96);
+  }
+}
+
 /* Oficinas (<site-offices>, Contacto): tres piezas con una línea arriba (ciudad,
    dirección y teléfono), en fila desde 1024 px y apiladas en mobile; al pie, el
    correo general. Mismos datos que el footer. Sin cajas. */
