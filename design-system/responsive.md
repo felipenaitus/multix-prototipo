@@ -88,7 +88,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Ancla a Inversionistas (home) | Dos mitades: texto y acceso a la izquierda; último reporte y próximo evento a la derecha | Apilados: texto y acceso; debajo, último reporte y próximo evento |
 | Lista con fecha | Fecha (día y mes) a la izquierda, título y dato a la derecha | Igual: la columna de la fecha se mantiene y el título baja de línea si no cabe |
 | Noticias | Tres notas en fila | Tablet: slider con casi dos notas a la vista. Mobile: slider con una nota y parte de la siguiente |
-| Resultados de búsqueda | Campo de dos tercios con "Buscar" al lado; chips en fila; filas con "Ver…" a la derecha | Campo a todo el ancho con "Buscar" al lado; chips en una fila que se desliza; "Ver…" bajo cada resultado |
+| Resultados de búsqueda | Campo de dos tercios con "Buscar" al lado; chips en fila; filas con "Ver…" (o, en documentos, "Ver PDF · Descargar · Ver en su sección") a la derecha | Campo a todo el ancho con "Buscar" al lado; chips en una fila que se desliza; "Ver…" o las acciones del documento bajo cada resultado |
 | Listado de noticias (`.news-list--grid`) | Tres notas por fila, 9 por página, paginación con números | Tablet: dos por fila. Mobile: una por fila (apiladas, no slider: es un listado para recorrer); paginación con flechas y "Página n de m" |
 | Detalle de noticia | Columna centrada; franja "Volver a noticias" / "Compartir" fija bajo el header | Columna a todo el ancho; "Volver" sin "a noticias" y "Compartir" solo con los íconos (menos de 768 px) |
 | Botón flotante del asistente | Fijo abajo a la derecha, 56 px, a `--space-32` del borde | Igual, a `--space-24` del borde |

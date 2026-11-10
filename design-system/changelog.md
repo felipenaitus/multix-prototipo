@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Documentos en la búsqueda: PDF directo y sección con el documento localizado
+- Figma pendiente · Código ✓ · Decisión de Felipe. Los documentos de los resultados tienen "Ver PDF" y "Descargar" (archivo directo) y "Ver en su sección", que abre su pestaña con la lista filtrada por su nombre (o su año o grupo abierto) y el documento subrayado en coral (`?doc=`, `initDocTarget` en `js/components.js`; `.doc-row.is-target`, `.search-hit--doc` en el kit).
+
 ## 2026-11-10 · Resultados de búsqueda sin filtros de documentos
 - Código ✓ · Pedido de Felipe. Se quitan Año y Sección de la página de resultados: los documentos se filtran solo con el chip de tipo y la búsqueda.
 

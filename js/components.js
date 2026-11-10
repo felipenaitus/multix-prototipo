@@ -1655,7 +1655,7 @@
       { id: '', label: 'Todos' },
       { id: 'paginas', label: 'Páginas', one: 'Página', cta: 'Ver página' },
       { id: 'noticias', label: 'Noticias', one: 'Noticia', cta: 'Ver noticia' },
-      { id: 'documentos', label: 'Documentos', one: 'Documento', cta: 'Ver en su sección' }
+      { id: 'documentos', label: 'Documentos', one: 'Documento' }
     ];
     var T = {};
     TYPES.forEach(function (t) { T[t.id] = t; });
@@ -1785,6 +1785,25 @@
       empty.hidden = total > 0;
       list.innerHTML = shown.slice((state.pagina - 1) * PER, state.pagina * PER).map(function (it) {
         var t = T[it.type];
+        if (it.type === 'documentos') {
+          // Título y "Ver en su sección" llevan a la sección con el documento
+          // localizado (?doc=); "Ver PDF" y "Descargar" abren el archivo directo
+          var to = it.href.split('#');
+          var sec = esc(to[0] + '?doc=' + encodeURIComponent(it.title) + (to[1] ? '#' + to[1] : ''));
+          var name = esc(it.title);
+          return '<li class="job-row search-hit search-hit--doc"><div class="search-hit__inner">' +
+            '<span class="job-row__body">' +
+              '<span class="t-label job-row__id">' + t.one + ' · ' + esc(it.label) + '</span>' +
+              '<a class="t-h3 job-row__title search-hit__title" href="' + sec + '">' + mark(it.title, words) + '</a>' +
+              (it.meta ? '<span class="job-row__meta t-small"><span>' + esc(it.meta) + '</span></span>' : '') +
+            '</span>' +
+            '<span class="doc-row__actions search-hit__actions">' +
+              '<a class="doc-link doc-link--view" href="#" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> ' + name + ' (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a>' +
+              '<a class="doc-link" href="#" download>Descargar<span class="visually-hidden"> ' + name + '</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a>' +
+              '<a class="doc-link" href="' + sec + '">Ver en su sección<span class="visually-hidden">: ' + name + '</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>' +
+            '</span>' +
+          '</div></li>';
+        }
         return '<li class="job-row search-hit"><a class="job-row__link" href="' + esc(it.href) + '">' +
           '<span class="job-row__body">' +
             '<span class="t-label job-row__id">' + t.one + ' · ' + esc(it.label) + '</span>' +
@@ -1816,6 +1835,47 @@
     render();
   }
 
+  /* ---------- Documento buscado (?doc=título, desde el buscador) ----------
+     Abre la pestaña donde está el documento, lo deja solo en su lista (con la
+     búsqueda de su barra de filtros o, si no tiene, abriendo su año o grupo y
+     los años anteriores), lo subraya en coral (.is-target) y baja hasta él. */
+  function initDocTarget() {
+    var title = new URLSearchParams(window.location.search).get('doc');
+    if (!title) return;
+    var rows = $all('.doc-row').filter(function (r) {
+      var t = r.querySelector('.doc-row__title');
+      return t && t.textContent.trim() === title;
+    });
+    if (!rows.length) return;
+    var row = rows.filter(function (r) { return !r.closest('[role="tabpanel"][hidden]'); })[0] || rows[0];
+    var panel = row.closest('[role="tabpanel"]');
+    if (panel && panel.hidden) {
+      var tab = document.getElementById(panel.getAttribute('aria-labelledby'));
+      if (tab) tab.click();
+    }
+    var box = $all('[data-doc-filter]').filter(function (b) {
+      var l = document.querySelector(b.getAttribute('data-doc-filter'));
+      return l && l.contains(row);
+    })[0];
+    var search = box && box.querySelector('input[type="search"]');
+    if (search) {
+      search.value = title;
+      search.dispatchEvent(new Event('input'));
+    } else {
+      var extra = row.closest('[data-years-extra]');
+      var list = extra && extra.parentElement;
+      var more = list && list.id && document.querySelector('[aria-controls="' + list.id + '"][aria-expanded="false"]');
+      if (more) more.click();
+    }
+    var acc = row.closest('.acc-panel');
+    var head = acc && acc.id && document.querySelector('[aria-controls="' + acc.id + '"]');
+    if (head && head.getAttribute('aria-expanded') !== 'true') head.click();
+    row.classList.add('is-target');
+    window.requestAnimationFrame(function () {
+      setTimeout(function () { row.scrollIntoView({ block: 'center' }); }, 100);
+    });
+  }
+
   function init() {
     initSearch();
     initNews();
@@ -1844,6 +1904,7 @@
     initDocYearsLimit();
     initDocFilter();
     initInviewVideos();
+    initDocTarget();
     initCursor();
   }
 
