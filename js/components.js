@@ -1630,6 +1630,7 @@
     var share = {
       linkedin: 'https://www.linkedin.com/sharing/share-offsite/?url=' + here,
       x: 'https://x.com/intent/post?url=' + here + '&text=' + t,
+      whatsapp: 'https://wa.me/?text=' + t + '%20' + here,
       facebook: 'https://www.facebook.com/sharer/sharer.php?u=' + here,
       mail: 'mailto:?subject=' + t + '&body=' + here
     };

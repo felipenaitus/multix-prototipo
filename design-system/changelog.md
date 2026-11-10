@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · WhatsApp en Compartir (detalle de noticia)
+- Figma pendiente · Código ✓ · Pedido de Felipe. Ícono nuevo `i-whatsapp` (de línea, estilo de las otras redes, en `js/layout.js`) y botón "Compartir en WhatsApp" entre X y Facebook en el detalle de noticia. "Compartir" queda en kit.html (bloque de noticias).
+
 ## 2026-11-10 · Cursor claro con el menú abierto
 - Código ✓ · Pedido de Felipe. Con el menú hamburguesa abierto (tablet y desktop, fondo oscurecido) el cursor pasa a blanco: el detector de fondo (`MX.isDarkAt` en `js/layout.js`) reconoce la capa oscura del menú. En mobile el menú es blanco y el cursor sigue Navy.
 
