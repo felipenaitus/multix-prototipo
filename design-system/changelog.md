@@ -4,6 +4,12 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Acción: dos secciones, Acción y Dividendos
+- Figma pendiente · Código ✓ · La página Acción pasa a un sub-menú de 2 pestañas según la definición del cliente: Acción (detalle del precio y gráfico de la acción MULTIX vs. IPSA base 100, con períodos 1M, 6M, YTD, 1A y 5A, y rango de 52 semanas) y Dividendos (pagos por ejercicio: ejercicio, tipo, CLP por acción, fecha límite de registro, fecha de pago y enlace al hecho esencial; "Próximo" en el pago que viene; "Descargar historial (Excel)"). Se quitan Información bursátil, Principales 20 accionistas, Análisis de accionistas, Transacciones relacionadas y la Política de dividendos. Datos de ejemplo [contenido por definir].
+- Decisión de Felipe: el detalle del precio va sin caja (la referencia lo mostraba en una caja azul), separado del gráfico por una línea delgada.
+- Componentes nuevos en el kit: precio de la acción (`.stock`), variación (`.change--up` / `.change--down`) y pie de tabla (`.table-foot`).
+- Tokens nuevos (pendientes de llevar a Figma), aprobados por Felipe: primitivos Green 700 (#256B4D), Green 100 (#E6F2EB), Red 600 (#B3261E) y Red 100 (#FBE9E7); semánticos `--color-text-positive`, `--color-bg-positive-soft`, `--color-text-negative` y `--color-bg-negative-soft` (texto 5,6:1 sobre su fondo suave, AA).
+
 ## 2026-11-10 · Calendario con eventos reales y "Ver más eventos"
 - Código ✓ · El Calendario usa los eventos publicados en el Calendario Financiero del sitio actual de Multi X (2021 a 2026), con su fecha, ubicación y hora cuando las tiene. Próximos eventos: los de hoy en adelante (hoy, 1: Publicación de Resultados Tercer Trimestre 2026), con Agendar. Eventos anteriores: 46, del más reciente al más antiguo. Tipos: "Publicación de Resultados" → Publicación IFRS; "Presentación de Resultados" → Presentación de resultados; Capital Markets Day, Investor Day y Andean E-Conference → Otros. Se dejó fuera un evento sin fecha en el sitio actual (Presentación de Resultados Q1). Bajadas de ambas secciones ajustadas.
 - Regla nueva en el kit: "Ver más" por tramos (`[data-show-more]`). Eventos anteriores muestra 6 y "Ver más eventos" agrega 6 más cada vez.

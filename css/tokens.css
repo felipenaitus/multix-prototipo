@@ -27,6 +27,10 @@
   --color-ink-600: #48606B;
   --color-ink-900: #0B1F2B;
   --color-green-600: #2E7D5B;
+  --color-green-700: #256B4D; /* pendiente de llevar a Figma: alza (6,4:1 sobre blanco; 5,6:1 sobre Green 100) */
+  --color-green-100: #E6F2EB; /* pendiente de llevar a Figma */
+  --color-red-600: #B3261E;   /* pendiente de llevar a Figma: baja (6,5:1 sobre blanco; 5,6:1 sobre Red 100) */
+  --color-red-100: #FBE9E7;   /* pendiente de llevar a Figma */
 
   /* ---------- Color semántico (usar estos en componentes) ---------- */
   /* Fondos */
@@ -53,6 +57,11 @@
   --color-text-inverse: var(--color-neutral-0);
   --color-text-inverse-muted: var(--color-navy-300);
   --color-text-success: var(--color-green-600);
+  /* Variación de precio (alza / baja): texto y fondo suave. Solo sobre fondos claros. Pendiente de llevar a Figma */
+  --color-text-positive: var(--color-green-700);
+  --color-bg-positive-soft: var(--color-green-100);
+  --color-text-negative: var(--color-red-600);
+  --color-bg-negative-soft: var(--color-red-100);
   /* Bordes */
   --color-border-default: var(--color-neutral-200);
   --color-border-strong: var(--color-ink-600);

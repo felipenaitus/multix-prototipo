@@ -6983,6 +6983,227 @@ html:not(.js) .company-visual__tag {
   }
 }
 
+/* Fecha con etiqueta al lado (ej.: "Próximo") dentro de una celda */
+.data-table__with-badge {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+/* Pie de tabla (.table-foot): nota a la izquierda y acción a la derecha, bajo la tabla */
+.table-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16) var(--space-32);
+  margin-top: var(--space-24);
+}
+
+.table-foot__note {
+  max-width: 60ch;
+  color: var(--color-text-secondary);
+}
+
+/* Variación de precio (.change--up / .change--down): flecha y porcentaje sobre
+   fondo suave verde o rojo (tokens --color-*-positive / -negative, AA) */
+.change {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.change--up {
+  background: var(--color-bg-positive-soft);
+  color: var(--color-text-positive);
+}
+
+.change--down {
+  background: var(--color-bg-negative-soft);
+  color: var(--color-text-negative);
+}
+
+/* Precio de la acción (.stock): detalle del precio sin caja y gráfico MULTIX vs.
+   IPSA (base 100) con períodos en chips. Mobile: el detalle arriba y una línea lo
+   separa del gráfico. Desde 1024 px, el detalle a la izquierda (1/3) con una línea
+   vertical y el gráfico a la derecha (2/3). Acción › Acción. */
+.stock {
+  display: grid;
+  gap: var(--space-32);
+}
+
+.stock__quote {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  padding-bottom: var(--space-32);
+  border-bottom: var(--border-thin) solid var(--color-border-default);
+}
+
+.stock__market,
+.stock__unit {
+  color: var(--color-text-secondary);
+}
+
+.stock__price {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin: 0;
+  color: var(--color-text-brand);
+}
+
+.stock__changes {
+  display: grid;
+  gap: var(--space-12);
+  margin: 0;
+  padding-top: var(--space-16);
+  border-top: var(--border-thin) solid var(--color-border-default);
+}
+
+.stock__change {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+}
+
+.stock__change dt {
+  color: var(--color-text-secondary);
+}
+
+.stock__change dd {
+  margin: 0;
+}
+
+.stock__note {
+  color: var(--color-text-tertiary);
+}
+
+.stock__chart {
+  min-width: 0;
+}
+
+.stock__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+}
+
+.stock__periods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+.stock__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8) var(--space-16);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--color-text-secondary);
+}
+
+.stock__legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.stock__key {
+  display: inline-block;
+  width: var(--space-24);
+  border-top: var(--border-indicator) solid var(--color-border-brand);
+}
+
+.stock__key--index {
+  border-top: var(--border-thin) dashed var(--color-border-strong);
+}
+
+.stock__plot {
+  aspect-ratio: 2 / 1;
+  margin-top: var(--space-24);
+}
+
+.stock__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.stock__grid {
+  stroke: var(--color-border-default);
+  stroke-width: var(--border-thin);
+  vector-effect: non-scaling-stroke;
+}
+
+.stock__line {
+  fill: none;
+  stroke: var(--color-border-brand);
+  stroke-width: var(--border-indicator);
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.stock__line--index {
+  stroke: var(--color-border-strong);
+  stroke-width: var(--border-thin);
+  stroke-dasharray: var(--space-4) var(--space-4);
+}
+
+.stock__axis {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-8);
+  margin: var(--space-8) 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--color-text-tertiary);
+}
+
+.stock__range {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin: var(--space-24) 0 0;
+  padding-top: var(--space-16);
+  border-top: var(--border-thin) solid var(--color-border-default);
+}
+
+.stock__range .t-small {
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 768px) {
+  .stock__plot {
+    aspect-ratio: 3 / 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .stock {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: var(--space-48);
+  }
+
+  .stock__quote {
+    padding-bottom: 0;
+    padding-right: var(--space-48);
+    border-bottom: 0;
+    border-right: var(--border-thin) solid var(--color-border-default);
+  }
+}
+
 /* Personas (.people + .person): grilla sin cajas de foto (4:5, esquinas suaves),
    nombre, cargo y, si tiene perfil, "Ver perfil". Toda la tarjeta es un botón que
    abre el perfil completo (.person-dialog, <dialog> nativo): foto, cargo, nombre,

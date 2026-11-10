@@ -37,6 +37,8 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Memoria anual | La más reciente a la izquierda (portada, datos y acciones) y las anteriores a la derecha, con "Ver más memorias" | Apiladas: la más reciente arriba (portada sobre su rectángulo a ancho completo) y debajo las anteriores con "Ver más memorias" |
 | Listado de documentos por año | Fila: ícono + título + metadatos + badge + "Descargar" | Título, metadatos y tipo apilados (el tipo como texto sin relleno, alineado con el título); "Ver PDF" y "Descargar" visibles debajo, en fila (zona táctil de 44 px) |
 | Lista con fecha para agendar (próximos eventos) | Fecha, título con tipo y, a la derecha, "Agendar" + Google + Outlook | Google y Outlook bajan bajo el título, en una fila y sin la palabra "Agendar" |
+| Precio de la acción (detalle + gráfico) | Detalle a la izquierda (1/3) con línea vertical; gráfico a la derecha (2/3), proporción 3:1 | Detalle arriba y gráfico abajo, separados por una línea; chips en una fila; gráfico en proporción 2:1 (3:1 desde 768 px) |
+| Tabla de dividendos | Tabla de 6 columnas con pie (nota + "Descargar historial") | Cada pago pasa a tarjeta con pares etiqueta–valor (`.data-table--cards`); el pie se apila |
 | Matriz trimestre × tipo | Tabla completa | Scroll horizontal con la columna "Período" fija y un divisor (`--border-thin`) a su derecha que indica que hay más; sin sombra (la única sombra del sistema es `--shadow-card`). Alternativa: acordeón por trimestre con la lista de documentos |
 | Tablas en general (dividendos, etc.) | Tabla | Si tiene ≤ 3 columnas, se mantiene; si tiene más, cada fila pasa a tarjeta con pares etiqueta–valor |
 | Paginación | Números + flechas | Flechas + "Página 2 de 8" |

@@ -568,6 +568,55 @@
     });
   }
 
+  /* ---------- Precio de la acción ([data-stock-chart]) ----------
+     Dibuja MULTIX y el IPSA (ambos en base 100 al inicio del período) desde el JSON
+     de .stock__data. Los chips cambian el período; el texto oculto resume la
+     variación para lectores de pantalla. */
+  function initStockChart() {
+    $all('[data-stock-chart]').forEach(function (box) {
+      var dataEl = box.querySelector('.stock__data');
+      if (!dataEl) return;
+      var data = JSON.parse(dataEl.textContent);
+      var lines = $all('.stock__line', box);
+      var idxLine = box.querySelector('.stock__line--index');
+      var mainLine = lines.filter(function (l) { return l !== idxLine; })[0];
+      var axis = box.querySelector('.stock__axis');
+      var desc = box.querySelector('[aria-live]');
+      var chips = $all('[data-period]', box);
+      var W = 600, H = 200, PAD = 12;
+      function pts(values, min, max) {
+        return values.map(function (v, i) {
+          var x = values.length > 1 ? i * W / (values.length - 1) : 0;
+          var y = PAD + (max - v) / (max - min) * (H - 2 * PAD);
+          return x.toFixed(1) + ',' + y.toFixed(1);
+        }).join(' ');
+      }
+      function pct(values) {
+        var c = values[values.length - 1] - 100;
+        return (c >= 0 ? '+' : '−') + Math.abs(c).toFixed(2).replace('.', ',') + ' %';
+      }
+      function draw(period) {
+        var d = data[period];
+        if (!d) return;
+        var all = d.multix.concat(d.ipsa);
+        var min = Math.min.apply(null, all), max = Math.max.apply(null, all);
+        if (max === min) max = min + 1;
+        mainLine.setAttribute('points', pts(d.multix, min, max));
+        idxLine.setAttribute('points', pts(d.ipsa, min, max));
+        axis.innerHTML = d.ticks.map(function (t) { return '<li>' + t + '</li>'; }).join('');
+        desc.textContent = 'Período ' + period + ': MULTIX ' + pct(d.multix) + '; IPSA ' + pct(d.ipsa) + '.';
+      }
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c === chip)); });
+          draw(chip.getAttribute('data-period'));
+        });
+      });
+      var start = chips.filter(function (c) { return c.getAttribute('aria-pressed') === 'true'; })[0] || chips[0];
+      draw(start.getAttribute('data-period'));
+    });
+  }
+
   /* ---------- Lista con "Ver más" por tramos ([data-show-more="6"]) ----------
      Muestra los primeros N elementos de la lista; el botón (texto en
      data-label-more, por defecto "Ver más") agrega los N siguientes y desaparece
@@ -1298,6 +1347,7 @@
     initRevealMore();
     initMediaCircle();
     initShowMore();
+    initStockChart();
     initDocYearsLimit();
     initDocFilter();
     initInviewVideos();
