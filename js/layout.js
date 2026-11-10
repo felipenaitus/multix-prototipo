@@ -167,7 +167,7 @@
       title: 'La compañía',
       items: [
         { id: 'nosotros', label: 'Nosotros', href: 'nosotros.html' },
-        { id: 'trabaja', label: 'Trabaja con Nosotros', href: '#' },
+        { id: 'trabaja', label: 'Trabaja con Nosotros', href: 'trabaja-con-nosotros.html' },
         { id: 'noticias', label: 'Noticias', href: '#' }
       ]
     },
@@ -581,7 +581,7 @@
      ====================================================================== */
   var FOOTER_COLS = [
     { title: 'Información', links: [{ label: 'Preguntas Frecuentes', href: '#' }, { label: 'Legislación', href: '#' }, { label: 'Canal de Denuncias', href: '#' }] },
-    { title: 'Personas y proveedores', links: [{ label: 'Trabaja con Nosotros', href: '#' }, { label: 'Portal Proveedores', href: '#' }] }
+    { title: 'Personas y proveedores', links: [{ label: 'Trabaja con Nosotros', href: 'trabaja-con-nosotros.html' }, { label: 'Portal Proveedores', href: '#' }] }
   ];
 
   class SiteFooter extends HTMLElement {

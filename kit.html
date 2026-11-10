@@ -437,6 +437,37 @@
       </div>
 
       <div class="kit-block">
+        <h3 class="t-label kit-block__title">Ofertas laborales: chips de un valor (<code>.job-chips</code>), fila de oferta (<code>.job-row</code>) y datos de la oferta (<code>.job-head__facts</code>)</h3>
+        <div class="job-chips" role="group" aria-label="Filtrar por región (ejemplo)">
+          <button class="chip" type="button" aria-pressed="true">Todas las regiones</button>
+          <button class="chip" type="button" aria-pressed="false">Los Lagos</button>
+          <button class="chip" type="button" aria-pressed="false">Aysén</button>
+        </div>
+        <ul class="job-list" role="list">
+          <li class="job-row"><a class="job-row__link" href="oferta.html?id=11452"><span class="job-row__body"><span class="t-label job-row__id">ID 11452</span><span class="t-h3 job-row__title">Técnico de Mantención Agua Dulce</span><span class="job-row__meta t-small"><span>Farming · Agua Dulce</span><span>Puerto Montt, Los Lagos</span></span></span><span class="job-row__more t-ui-button-sm">Ver oferta<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span></a></li>
+          <li class="job-row"><a class="job-row__link" href="oferta.html?id=11353"><span class="job-row__body"><span class="t-label job-row__id">ID 11353</span><span class="t-h3 job-row__title">Jefe de Mantención Piscicultura</span><span class="job-row__meta t-small"><span>Piscicultura El Negro · Agua Dulce</span></span></span><span class="job-row__more t-ui-button-sm">Ver oferta<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span></a></li>
+        </ul>
+        <dl class="job-head__facts t-small">
+          <div><dt>Área</dt><dd>Farming</dd></div>
+          <div><dt>Área de trabajo</dt><dd>Agua Dulce</dd></div>
+          <div><dt>Ubicación</dt><dd>Puerto Montt, Los Lagos</dd></div>
+          <div><dt>Código</dt><dd>ID 11452</dd></div>
+        </dl>
+      </div>
+
+      <div class="kit-block">
+        <h3 class="t-label kit-block__title">Adjuntar archivo (<code>.file-field</code>)</h3>
+        <div class="field">
+          <span class="field__label" id="kit-cv-label">Currículum</span>
+          <div class="file-field">
+            <input class="file-field__input" id="kit-cv" type="file" accept="application/pdf,.pdf" aria-labelledby="kit-cv-label kit-cv-btn" aria-describedby="kit-cv-name">
+            <label class="btn btn--secondary" id="kit-cv-btn" for="kit-cv">Adjuntar currículum</label>
+            <span class="t-small file-field__name" id="kit-cv-name">Formato PDF, máximo 2 MB.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="kit-block">
         <h3 class="t-label kit-block__title">Barra de filtros</h3>
         <div class="filters" data-filters>
           <div class="filters__bar">

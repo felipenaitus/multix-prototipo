@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trabaja con Nosotros · Multi X</title>
+  <meta name="description" content="Oportunidades laborales en Multi X: áreas de trabajo, ofertas destacadas por región y postulación.">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@200;300;400;600&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script src="js/layout.js" defer></script>
+  <script src="js/ofertas.js" defer></script>
+  <script src="js/components.js" defer></script>
+</head>
+<body>
+  <site-header variant="overlay" current="trabaja"></site-header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero hero--page on-dark" aria-labelledby="work-title">
+      <div class="hero__media" aria-hidden="true">
+        <video data-hero-video autoplay muted loop playsinline preload="metadata" poster="assets/video/inversionistas-poster.jpg">
+          <source src="assets/video/inversionistas.mp4" type="video/mp4">
+        </video>
+      </div>
+      <span class="hero__placeholder t-small">[video por definir]</span>
+      <div class="container hero__content">
+        <h1 class="t-display hero__title" id="work-title"><span class="hero__title-line t-display-light">Trabaja con nosotros</span> <span class="hero__title-line t-display-strong">crece en el sur de Chile</span></h1>
+        <p class="t-body-l hero__lead hero__lead--inverse">Buscamos personas con ganas de trabajar en equipo, aprender, proponer y brillar. [contenido por definir]</p>
+      </div>
+    </section>
+
+    <!-- Intro: áreas de trabajo; cada una abre el listado filtrado por esa área -->
+    <section class="section" aria-labelledby="areas-title">
+      <div class="container split">
+        <div class="section-head reveal">
+          <h2 class="t-h2" id="areas-title">Oportunidades por área</h2>
+          <p class="t-body-l section-head__lead">Multi X sigue creciendo. Conoce nuestras áreas de trabajo, desde las pisciculturas hasta los equipos de gestión, y encuentra la tuya. [contenido por definir]</p>
+        </div>
+        <ol class="value-list reveal" role="list" aria-label="Áreas de trabajo">
+          <li class="value-item">
+            <span class="t-label value-item__num">01</span>
+            <div class="value-item__body">
+              <h3 class="t-h3">Agua Dulce</h3>
+              <p class="t-body value-item__text">Las primeras fases de la vida del salmón transcurren en pisciculturas de agua dulce en tierra, donde se realizan procesos que van desde la incubación hasta el alevinaje y la esmoltificación.</p>
+              <a class="btn btn--tertiary hit" href="oportunidades-laborales.html?grupo=agua-dulce">Ver ofertas<span class="visually-hidden"> de Agua Dulce</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            </div>
+          </li>
+          <li class="value-item">
+            <span class="t-label value-item__num">02</span>
+            <div class="value-item__body">
+              <h3 class="t-h3">Agua Mar</h3>
+              <p class="t-body value-item__text">Nuestros centros de cultivo se encuentran desde la Región de Los Lagos hasta la Región de Magallanes, donde los salmones se desarrollan hasta su peso de cosecha.</p>
+              <a class="btn btn--tertiary hit" href="oportunidades-laborales.html?grupo=agua-mar">Ver ofertas<span class="visually-hidden"> de Agua Mar</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            </div>
+          </li>
+          <li class="value-item">
+            <span class="t-label value-item__num">03</span>
+            <div class="value-item__body">
+              <h3 class="t-h3">Plantas de Proceso</h3>
+              <p class="t-body value-item__text">El salmón se transforma en un producto listo para llegar a la mesa de millones de personas en el mundo, con los máximos estándares de calidad y seguridad alimentaria.</p>
+              <a class="btn btn--tertiary hit" href="oportunidades-laborales.html?grupo=plantas">Ver ofertas<span class="visually-hidden"> de Plantas de Proceso</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            </div>
+          </li>
+          <li class="value-item">
+            <span class="t-label value-item__num">04</span>
+            <div class="value-item__body">
+              <h3 class="t-h3">Gestión y Soporte</h3>
+              <p class="t-body value-item__text">Equipos especialistas en diferentes áreas que habilitan y acompañan al negocio para un crecimiento sustentable.</p>
+              <a class="btn btn--tertiary hit" href="oportunidades-laborales.html?grupo=gestion">Ver ofertas<span class="visually-hidden"> de Gestión y Soporte</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Ofertas destacadas por región: los chips filtran la lista (6 a la vista) y
+         "Ver todas las ofertas" abre el listado con el mismo filtro -->
+    <section class="section section--subtle section--open-in section--curve-bottom" aria-labelledby="featured-title" data-section-open data-section-curve>
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="t-h2" id="featured-title">Ofertas destacadas</h2>
+          <p class="t-body-l section-head__lead">Las últimas oportunidades publicadas en cada región donde operamos.</p>
+        </div>
+        <div class="job-chips reveal" role="group" aria-label="Filtrar por región" data-job-filter="#featured-jobs">
+          <button class="chip" type="button" aria-pressed="true" data-job-chip data-name="region" data-value="">Todas las regiones</button>
+          <button class="chip" type="button" aria-pressed="false" data-job-chip data-name="region" data-value="los-lagos">Los Lagos</button>
+          <button class="chip" type="button" aria-pressed="false" data-job-chip data-name="region" data-value="aysen">Aysén</button>
+          <button class="chip" type="button" aria-pressed="false" data-job-chip data-name="region" data-value="magallanes">Magallanes</button>
+        </div>
+        <div class="reveal">
+          <ul class="job-list" id="featured-jobs" role="list" aria-label="Ofertas destacadas" data-job-list data-job-limit="6" aria-live="polite"></ul>
+          <div class="job-list__foot">
+            <a class="btn btn--secondary hit" href="oportunidades-laborales.html" data-job-all="oportunidades-laborales.html">Ver todas las ofertas <span data-job-all-count></span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>

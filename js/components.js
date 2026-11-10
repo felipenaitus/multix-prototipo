@@ -1329,7 +1329,221 @@
     });
   }
 
+  /* ---------- Ofertas laborales (datos en js/ofertas.js) ----------
+     - [data-job-list]: lista de ofertas (.job-row) armada desde los datos;
+       data-job-limit muestra solo las primeras N que cumplen el filtro (destacadas).
+     - [data-job-filter="#lista"]: filtra la lista con selects (name = region |
+       ciudad | grupo), búsqueda y chips [data-job-chip] de un solo valor. Lee los
+       filtros de la URL (?region=aysen&grupo=agua-mar&q=texto) y, con
+       data-job-url, la mantiene al día; [data-job-all] lleva al listado completo
+       con los filtros aplicados. Los selects con data-job-options se llenan solo
+       con valores que tienen ofertas.
+     - [data-job-detail] y [data-job-apply]: detalle y postulación de la oferta
+       ?id=; [data-job-field] recibe cada dato y [data-job-apply-link] el enlace. */
+  function initJobs() {
+    var J = window.MX_JOBS;
+    if (!J) return;
+    function label(list, id) {
+      var f = list.filter(function (x) { return x.id === id; })[0];
+      return f ? f.label : '';
+    }
+    var jobs = J.list.map(function (r) {
+      return { id: r[0], title: r[1], area: r[2], group: r[3], city: r[4], region: r[5],
+               groupLabel: label(J.groups, r[3]), regionLabel: label(J.regions, r[5]) };
+    });
+    function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
+    function place(j) { return j.city ? j.city + (j.regionLabel ? ', ' + j.regionLabel : '') : ''; }
+
+    function row(j) {
+      return '<li class="job-row" data-region="' + j.region + '" data-ciudad="' + esc(j.city) + '" data-grupo="' + j.group + '">' +
+        '<a class="job-row__link" href="oferta.html?id=' + j.id + '">' +
+          '<span class="job-row__body">' +
+            '<span class="t-label job-row__id">ID ' + j.id + '</span>' +
+            '<h3 class="t-h3 job-row__title">' + esc(j.title) + '</h3>' +
+            '<span class="job-row__meta t-small">' +
+              '<span>' + esc(j.area) + ' · ' + esc(j.groupLabel) + '</span>' +
+              (j.city ? '<span>' + esc(place(j)) + '</span>' : '') +
+            '</span>' +
+          '</span>' +
+          '<span class="job-row__more t-ui-button-sm">Ver oferta<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span>' +
+        '</a></li>';
+    }
+    $all('[data-job-list]').forEach(function (list) {
+      list.innerHTML = jobs.map(row).join('');
+    });
+
+    $all('[data-job-filter]').forEach(function (box) {
+      var list = document.querySelector(box.getAttribute('data-job-filter'));
+      if (!list) return;
+      var rows = $all('.job-row', list);
+      var limit = parseInt(list.getAttribute('data-job-limit'), 10) || 0;
+      var selects = $all('select[name]', box);
+      var chips = $all('[data-job-chip]', box);
+      var search = box.querySelector('input[type="search"]');
+      var countEl = box.querySelector('[data-job-count]');
+      var toggleCount = box.querySelector('[data-filter-count]');
+      var clearBtns = $all('[data-filter-clear]', box);
+      var empty = list.parentElement.querySelector('.empty-state');
+      var allLinks = $all('[data-job-all]');
+
+      // Opciones de los selects: solo valores con ofertas publicadas
+      selects.forEach(function (s) {
+        var kind = s.getAttribute('data-job-options');
+        if (!kind) return;
+        var opts = [];
+        if (kind === 'region') opts = J.regions.filter(function (r) { return jobs.some(function (j) { return j.region === r.id; }); }).map(function (r) { return [r.id, r.label]; });
+        if (kind === 'grupo') opts = J.groups.filter(function (g) { return jobs.some(function (j) { return j.group === g.id; }); }).map(function (g) { return [g.id, g.label]; });
+        if (kind === 'ciudad') opts = jobs.map(function (j) { return j.city; }).filter(function (c, i, a) { return c && a.indexOf(c) === i; }).sort().map(function (c) { return [c, c]; });
+        opts.forEach(function (o) {
+          var el = document.createElement('option');
+          el.value = o[0];
+          el.textContent = o[1];
+          s.appendChild(el);
+        });
+      });
+
+      function values() {
+        var f = {};
+        selects.forEach(function (s) { if (s.value) f[s.name] = s.value; });
+        chips.forEach(function (c) { if (c.getAttribute('aria-pressed') === 'true' && c.dataset.value) f[c.dataset.name] = c.dataset.value; });
+        return f;
+      }
+      function apply() {
+        var f = values();
+        var q = search ? fold(search.value.trim()) : '';
+        var words = q ? q.split(/\s+/) : [];
+        var shown = 0, total = 0;
+        rows.forEach(function (r) {
+          var ok = Object.keys(f).every(function (k) { return r.dataset[k] === f[k]; }) &&
+                   words.every(function (wd) { return fold(r.textContent).indexOf(wd) > -1; });
+          if (ok) total++;
+          var show = ok && (!limit || shown < limit);
+          if (show) shown++;
+          r.hidden = !show;
+        });
+        var active = Object.keys(f).length;
+        if (empty) empty.hidden = total > 0;
+        if (countEl) countEl.textContent = total + (total === 1 ? ' oferta' : ' ofertas');
+        if (toggleCount) toggleCount.textContent = active ? '(' + active + ')' : '';
+        clearBtns.forEach(function (b) { b.hidden = !(active || q); });
+        var params = new URLSearchParams();
+        Object.keys(f).forEach(function (k) { params.set(k, f[k]); });
+        if (q) params.set('q', search.value.trim());
+        var qs = params.toString();
+        allLinks.forEach(function (a) {
+          a.href = a.getAttribute('data-job-all') + (qs ? '?' + qs : '');
+          var n = a.querySelector('[data-job-all-count]');
+          if (n) n.textContent = '(' + total + ')';
+        });
+        if (box.hasAttribute('data-job-url')) history.replaceState(null, '', location.pathname + (qs ? '?' + qs : ''));
+      }
+
+      // Filtros desde la URL (los accesos de Trabaja con Nosotros llegan filtrados)
+      var params = new URLSearchParams(location.search);
+      var fromUrl = false;
+      selects.forEach(function (s) {
+        var v = params.get(s.name);
+        if (v && $all('option', s).some(function (o) { return o.value === v; })) { s.value = v; fromUrl = true; }
+      });
+      if (search && params.get('q')) { search.value = params.get('q'); fromUrl = true; }
+
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c === chip)); });
+          apply();
+        });
+      });
+      selects.forEach(function (s) { s.addEventListener('change', apply); });
+      if (search) search.addEventListener('input', apply);
+      clearBtns.forEach(function (b) {
+        b.addEventListener('click', function () {
+          if (search) search.value = '';
+          setTimeout(apply, 0); // initFilters reinicia los selects
+        });
+      });
+      var emptyClear = empty && empty.querySelector('[data-empty-clear]');
+      if (emptyClear) emptyClear.addEventListener('click', function () {
+        selects.forEach(function (s) { s.selectedIndex = 0; });
+        if (search) search.value = '';
+        apply();
+      });
+      apply();
+      setTimeout(apply, 0); // después de initFilters, que reinicia el contador del botón "Filtrar"
+      if (fromUrl && !limit) {
+        var sec = box.closest('section') || box;
+        window.requestAnimationFrame(function () { sec.scrollIntoView({ block: 'start' }); });
+      }
+    });
+
+    // Detalle y postulación de una oferta (?id=)
+    var page = document.querySelector('[data-job-detail], [data-job-apply]');
+    if (!page) return;
+    var id = parseInt(new URLSearchParams(location.search).get('id'), 10);
+    var job = jobs.filter(function (j) { return j.id === id; })[0] || jobs[0];
+    var detail = J.details[job.id] || {};
+    var data = { title: job.title, id: 'ID ' + job.id, area: job.area, group: job.groupLabel,
+                 place: place(job) || '[ubicación por definir]', about: J.about,
+                 challenge: detail.challenge || '[contenido por definir]' };
+    $all('[data-job-field]').forEach(function (el) {
+      var k = el.getAttribute('data-job-field');
+      if (k === 'requirements') {
+        el.innerHTML = (detail.requirements || ['[contenido por definir]']).map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('');
+      } else if (data[k] != null) {
+        el.textContent = data[k];
+      }
+    });
+    $all('[data-job-apply-link]').forEach(function (a) { a.href = 'postulacion.html?id=' + job.id; });
+    $all('[data-job-detail-link]').forEach(function (a) { a.href = 'oferta.html?id=' + job.id; });
+    document.title = (page.hasAttribute('data-job-apply') ? 'Postular · ' : '') + job.title + ' · Multi X';
+
+    // Postulación: comunas según la región, CV en PDF de hasta 2 MB y envío de prototipo
+    var form = document.querySelector('[data-job-apply] form');
+    if (!form) return;
+    var region = form.querySelector('[name="region"]');
+    var commune = form.querySelector('[name="comuna"]');
+    (J.formRegions || []).forEach(function (r) {
+      var o = document.createElement('option');
+      o.value = r[0];
+      o.textContent = r[1];
+      region.appendChild(o);
+    });
+    region.addEventListener('change', function () {
+      var list = (J.communes || {})[region.value] || [];
+      commune.innerHTML = '<option value="">Seleccionar comuna</option>' + list.map(function (c) { return '<option>' + esc(c) + '</option>'; }).join('') +
+        (region.value ? '<option>Otra comuna [por definir]</option>' : '');
+      commune.disabled = !region.value;
+    });
+    var file = form.querySelector('input[type="file"]');
+    var fileName = form.querySelector('[data-file-name]');
+    var fileHelp = fileName ? fileName.textContent : '';
+    function checkFile() {
+      var f = file.files && file.files[0];
+      file.setCustomValidity('');
+      if (!f) { fileName.textContent = fileHelp; return; }
+      fileName.textContent = f.name;
+      if (!/\.pdf$/i.test(f.name)) file.setCustomValidity('Adjunta tu currículum en formato PDF.');
+      else if (f.size > 2 * 1024 * 1024) file.setCustomValidity('El archivo supera los 2 MB.');
+    }
+    file.addEventListener('change', checkFile);
+    var done = form.querySelector('[data-apply-done]');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      checkFile();
+      var fields = $all('input, select, textarea', form);
+      fields.forEach(function (el) { el.removeAttribute('aria-invalid'); });
+      var bad = fields.filter(function (el) { return !el.checkValidity(); });
+      if (bad.length) {
+        bad.forEach(function (el) { el.setAttribute('aria-invalid', 'true'); });
+        form.reportValidity();
+        return;
+      }
+      done.hidden = false;
+      form.querySelector('button[type="submit"]').disabled = true;
+    });
+  }
+
   function init() {
+    initJobs();
     initReveal();
     watchCounters(document);
     initAccordions();

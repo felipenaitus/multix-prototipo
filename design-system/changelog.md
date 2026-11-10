@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Trabaja con Nosotros, Oportunidades laborales, Detalle de oferta y Postular
+- Figma pendiente · Código ✓ · Páginas nuevas `trabaja-con-nosotros.html`, `oportunidades-laborales.html`, `oferta.html` y `postulacion.html` según el flujo de Felipe, con las 37 ofertas reales del sitio actual en `js/ofertas.js` (archivo de datos nuevo, se carga antes de components.js). Componentes nuevos en kit.html: `.job-row`, `.job-chips`, `.job-head__facts` y `.file-field`. Header, menú y footer: "Trabaja con Nosotros" enlaza a la página nueva.
+
 ## 2026-11-10 · Página Sustentabilidad
 - Figma pendiente · Código ✓ · Nueva `sustentabilidad.html` con la estructura definida por Felipe y contenido real del sitio actual (Estrategia ABC desde prensa, cifras por definir). Componentes nuevos en kit.html: Estrategia ABC (`.abc`, con la opción `data-tabs-static` de `initTabs` para que las pestañas no se cambien por un selector en mobile) y `.stats--three`. Header y menú: "Sustentabilidad" enlaza a la página nueva.
 

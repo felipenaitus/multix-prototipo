@@ -7777,3 +7777,298 @@ html:not(.js) .company-visual__tag {
 .cert-panel {
   margin-top: var(--space-40);
 }
+
+/* ==========================================================================
+   Trabaja con Nosotros (nuevos · pendientes de llevar a Figma)
+   ========================================================================== */
+
+/* Fila de oferta (.job-row): lista abierta separada por líneas delgadas. ID
+   (Etiqueta), cargo (Título 3) y área · ciudad (Pequeño, gris); "Ver oferta" con
+   flecha a la derecha desde tablet. Toda la fila es el enlace. */
+.job-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: var(--border-thin) solid var(--color-border-default);
+}
+
+.job-row {
+  border-bottom: var(--border-thin) solid var(--color-border-default);
+}
+
+.job-row__link {
+  display: grid;
+  gap: var(--space-12);
+  padding-block: var(--space-24);
+  color: var(--color-text-primary);
+}
+
+.job-row__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-width: 0;
+}
+
+.job-row__id {
+  color: var(--color-text-tertiary);
+}
+
+.job-row__title {
+  margin: 0;
+  transition: color var(--duration-fast) var(--easing-standard);
+}
+
+.job-row__link:hover .job-row__title {
+  color: var(--color-text-brand-hover);
+}
+
+.job-row__meta {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--space-16);
+  row-gap: var(--space-4);
+  color: var(--color-text-secondary);
+}
+
+.job-row__meta > span + span {
+  padding-left: var(--space-16);
+  border-left: var(--border-thin) solid var(--color-border-default);
+}
+
+.job-row__more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  color: var(--color-text-brand);
+}
+
+.job-row__more .icon {
+  transition: transform var(--duration-base) var(--easing-standard);
+}
+
+.job-row__link:hover .job-row__more .icon {
+  transform: translateX(var(--space-4));
+}
+
+@media (min-width: 768px) {
+  .job-row__link {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: var(--space-32);
+  }
+}
+
+/* Chips de un solo valor para filtrar (.job-chips): Ofertas destacadas por región */
+.job-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  margin-bottom: var(--space-32);
+}
+
+.job-chips .chip {
+  min-height: var(--touch-target);
+}
+
+/* Pie de la lista destacada: "Ver todas las ofertas" (con el filtro aplicado) */
+.job-list + .job-list__foot,
+.job-list__foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-16);
+  margin-top: var(--space-40);
+}
+
+/* Áreas de trabajo como filtro: la lista de valores con "Ver ofertas" */
+.value-item__body .btn {
+  align-self: flex-start;
+}
+
+/* Filtros del listado de ofertas: selects de ancho fijo en desktop */
+@media (min-width: 1024px) {
+  .filters__panel .field--region { flex: 0 0 18%; }
+  .filters__panel .field--city { flex: 0 0 18%; }
+  .filters__panel .field--group { flex: 0 0 20%; }
+}
+
+/* Detalle de oferta (.job-detail): ruta, cargo (Título 1) y datos (área, ciudad,
+   ID) separados por líneas; debajo, la descripción a la izquierda y, a la
+   derecha desde 1024 px, "Postular" fijo al hacer scroll. Sin cajas. */
+.job-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-24);
+  padding-top: var(--space-32);
+  padding-bottom: var(--space-48);
+}
+
+.job-head__facts {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--space-24);
+  row-gap: var(--space-8);
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.job-head__facts > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.job-head__facts > div + div {
+  padding-left: var(--space-24);
+  border-left: var(--border-thin) solid var(--color-border-default);
+}
+
+.job-head__facts dt {
+  color: var(--color-text-tertiary);
+}
+
+.job-head__facts dd {
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+.job-detail {
+  display: grid;
+  gap: var(--space-48);
+  padding-top: var(--space-48);
+  border-top: var(--border-thin) solid var(--color-border-default);
+}
+
+.job-detail__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-40);
+}
+
+.job-detail__block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.job-detail__block p,
+.job-detail__block li {
+  color: var(--color-text-secondary);
+}
+
+.job-detail__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  margin: 0;
+  padding-left: var(--space-20);
+}
+
+.job-detail__aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+}
+
+@media (min-width: 1024px) {
+  .job-detail {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+    gap: var(--space-96);
+    padding-top: var(--space-64);
+  }
+
+  .job-detail__aside {
+    position: sticky;
+    top: var(--space-128);
+    align-self: start;
+  }
+}
+
+/* Formulario de postulación (.apply-form): una columna en mobile, dos desde
+   tablet; el correo, el CV, la aceptación y el envío a todo el ancho. */
+.apply-form {
+  display: grid;
+  gap: var(--space-24);
+}
+
+.apply-form__note {
+  color: var(--color-text-secondary);
+}
+
+.apply-form__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+  padding-top: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .apply-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--space-24);
+  }
+
+  .apply-form__wide {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Adjuntar archivo (.file-field): botón secundario de línea que abre el selector
+   (el input nativo queda oculto pero accesible) y el nombre del archivo al lado. */
+.file-field {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.file-field__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.file-field__input:focus-visible + .btn {
+  outline: var(--border-focus) solid var(--color-border-brand);
+  outline-offset: var(--space-2);
+}
+
+.file-field__name {
+  color: var(--color-text-secondary);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.file-field__input[aria-invalid="true"] ~ .file-field__name {
+  color: var(--color-text-negative);
+}
+
+.job-detail {
+  padding-bottom: var(--layout-section-gap);
+}
+
+/* Datos de la oferta en mobile: dos columnas sin líneas verticales (al cortar
+   la fila, la línea quedaría al inicio); las líneas vuelven desde tablet.
+   "Postular" va antes de la descripción en mobile y tablet. */
+@media (max-width: 767px) {
+  .job-head__facts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: var(--space-16);
+  }
+
+  .job-head__facts > div + div {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+@media (max-width: 1023px) {
+  .job-detail__aside {
+    order: -1;
+  }
+}

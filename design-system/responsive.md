@@ -41,6 +41,9 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Contacto IR y alertas al inversionista | Título a la izquierda y contacto a la derecha; debajo, bloque crema a todo el ancho con texto a la izquierda y correo + "Suscribir" a la derecha | Todo apilado; en el bloque crema, el texto arriba y "Suscribir" a todo el ancho bajo el campo |
 | Estrategia ABC (`.abc`) | Tres letras en fila; panel con descripción a la izquierda y metas a la derecha | Las tres letras siguen en fila (sin selector); descripción arriba y metas apiladas debajo (cifra sobre el texto) |
 | Cifras en tres (`.stats--three`) | Tres en fila separadas por líneas verticales | Una debajo de otra, separadas por líneas |
+| Fila de oferta (`.job-row`) | Datos a la izquierda y "Ver oferta" a la derecha | "Ver oferta" debajo de los datos; el área y la ciudad pueden pasar a dos líneas |
+| Detalle de oferta | Descripción a la izquierda y "Postular" a la derecha, fijo al hacer scroll | "Postular" bajo los datos, antes de la descripción; datos en dos columnas sin líneas verticales |
+| Postulación (`.apply-form`) | Dos columnas | Una columna; "Adjuntar currículum" y el nombre del archivo se apilan si no caben |
 | Tabla de dividendos | Tabla de 6 columnas con nota al pie; el hecho esencial con "Ver PDF" y "Descargar" | Cada pago pasa a tarjeta con pares etiqueta–valor (`.data-table--cards`); el pie se apila |
 | Matriz trimestre × tipo | Tabla completa | Scroll horizontal con la columna "Período" fija y un divisor (`--border-thin`) a su derecha que indica que hay más; sin sombra (la única sombra del sistema es `--shadow-card`). Alternativa: acordeón por trimestre con la lista de documentos |
 | Tablas en general (dividendos, etc.) | Tabla | Si tiene ≤ 3 columnas, se mantiene; si tiene más, cada fila pasa a tarjeta con pares etiqueta–valor |

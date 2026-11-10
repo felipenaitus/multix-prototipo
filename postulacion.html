@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Postular · Multi X</title>
+  <meta name="description" content="Formulario de postulación a una oferta laboral de Multi X.">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@200;300;400;600&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script src="js/layout.js" defer></script>
+  <script src="js/ofertas.js" defer></script>
+  <script src="js/components.js" defer></script>
+</head>
+<body>
+  <site-header current="trabaja"></site-header>
+
+  <main id="main" data-job-apply>
+    <div class="container">
+      <header class="job-head">
+        <nav class="breadcrumb" aria-label="Migas de pan">
+          <ol class="breadcrumb__list">
+            <li class="breadcrumb__item"><a href="index.html">Inicio</a><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chev-right"></use></svg></li>
+            <li class="breadcrumb__item"><a href="trabaja-con-nosotros.html">Trabaja con Nosotros</a><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chev-right"></use></svg></li>
+            <li class="breadcrumb__item"><a href="oportunidades-laborales.html">Oportunidades laborales</a><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chev-right"></use></svg></li>
+            <li class="breadcrumb__item"><a href="oferta.html" data-job-field="title" data-job-detail-link></a><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chev-right"></use></svg></li>
+            <li class="breadcrumb__item"><span aria-current="page">Postular</span></li>
+          </ol>
+          <a class="breadcrumb__back" href="oferta.html" data-job-detail-link><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>Volver a la oferta</a>
+        </nav>
+        <p class="t-label c-secondary">Postular a</p>
+        <h1 class="t-h1" data-job-field="title"></h1>
+          <dl class="job-head__facts t-small">
+            <div><dt>Área</dt><dd data-job-field="area"></dd></div>
+            <div><dt>Área de trabajo</dt><dd data-job-field="group"></dd></div>
+            <div><dt>Ubicación</dt><dd data-job-field="place"></dd></div>
+            <div><dt>Código</dt><dd data-job-field="id"></dd></div>
+          </dl>
+      </header>
+
+      <div class="job-detail">
+        <form class="apply-form" action="#" novalidate aria-labelledby="apply-title">
+          <h2 class="t-h3 apply-form__wide" id="apply-title">Tus datos</h2>
+          <p class="t-small apply-form__note apply-form__wide">Si tu correo ya está registrado, tus datos se actualizarán en nuestra plataforma de selección.</p>
+          <div class="field apply-form__wide">
+            <label class="field__label" for="ap-email">Correo electrónico</label>
+            <div class="control"><input class="control__input" id="ap-email" name="email" type="email" autocomplete="email" placeholder="nombre@correo.com" required></div>
+          </div>
+          <div class="field">
+            <label class="field__label" for="ap-name">Nombre</label>
+            <div class="control"><input class="control__input" id="ap-name" name="nombre" type="text" autocomplete="given-name" required></div>
+          </div>
+          <div class="field">
+            <label class="field__label" for="ap-last">Primer apellido</label>
+            <div class="control"><input class="control__input" id="ap-last" name="apellido" type="text" autocomplete="family-name" required></div>
+          </div>
+          <div class="field">
+            <label class="field__label" for="ap-last2">Segundo apellido</label>
+            <div class="control"><input class="control__input" id="ap-last2" name="segundo_apellido" type="text" required></div>
+          </div>
+          <div class="field">
+            <label class="field__label" for="ap-rut">RUT</label>
+            <div class="control"><input class="control__input" id="ap-rut" name="rut" type="text" placeholder="12.345.678-9" inputmode="text" required></div>
+          </div>
+          <div class="field">
+            <label class="field__label" for="ap-phone">Teléfono</label>
+            <div class="control"><input class="control__input" id="ap-phone" name="telefono" type="tel" autocomplete="tel" placeholder="+56 9 1234 5678" required></div>
+          </div>
+          <div class="field">
+            <label class="field__label" for="ap-address">Dirección</label>
+            <div class="control"><input class="control__input" id="ap-address" name="direccion" type="text" autocomplete="street-address" required></div>
+          </div>
+          <div class="field">
+            <label class="field__label" for="ap-region">Región</label>
+            <div class="control control--select">
+              <select class="control__input" id="ap-region" name="region" required>
+                <option value="">Seleccionar región</option>
+              </select>
+              <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field__label" for="ap-commune">Comuna</label>
+            <div class="control control--select">
+              <select class="control__input" id="ap-commune" name="comuna" required disabled>
+                <option value="">Seleccionar comuna</option>
+              </select>
+              <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field__label" for="ap-studies">Nivel de estudios</label>
+            <div class="control control--select">
+              <select class="control__input" id="ap-studies" name="estudios" required>
+                <option value="">Seleccionar nivel de estudios</option><option>Básica</option><option>Media</option><option>Técnico medio / Colegio técnico</option><option>Técnico profesional superior</option><option>Universitaria</option><option>Postgrado</option><option>Magíster</option><option>Doctorado</option>
+              </select>
+              <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field__label" for="ap-salary">Expectativa salarial (líquida, en pesos)</label>
+            <div class="control"><input class="control__input" id="ap-salary" name="expectativa" type="text" inputmode="numeric" placeholder="Ej: 1.200.000" required></div>
+          </div>
+          <div class="field apply-form__wide">
+            <span class="field__label" id="ap-cv-label">Currículum</span>
+            <div class="file-field">
+              <input class="file-field__input" id="ap-cv" name="cv" type="file" accept="application/pdf,.pdf" required aria-labelledby="ap-cv-label ap-cv-btn" aria-describedby="ap-cv-name">
+              <label class="btn btn--secondary" id="ap-cv-btn" for="ap-cv">Adjuntar currículum</label>
+              <span class="t-small file-field__name" id="ap-cv-name" data-file-name>Formato PDF, máximo 2 MB.</span>
+            </div>
+          </div>
+          <div class="apply-form__wide">
+            <label class="checkbox">
+              <input class="checkbox__input" type="checkbox" name="privacidad" required>
+              <span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span>
+              <span>He leído y acepto las <a href="#">Políticas de Privacidad</a>.</span>
+            </label>
+          </div>
+          <div class="apply-form__actions apply-form__wide">
+            <button class="btn btn--primary" type="submit">Enviar postulación</button>
+            <p class="t-small c-secondary" role="status" data-apply-done hidden>Recibimos tu postulación. Te contactaremos si tu perfil avanza en el proceso. [prototipo: no se envía]</p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>

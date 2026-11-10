@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oportunidades laborales · Multi X</title>
+  <meta name="description" content="Todas las ofertas laborales de Multi X, con filtros por región, ciudad y área de trabajo.">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@200;300;400;600&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script src="js/layout.js" defer></script>
+  <script src="js/ofertas.js" defer></script>
+  <script src="js/components.js" defer></script>
+</head>
+<body>
+  <site-header current="trabaja"></site-header>
+
+  <main id="main">
+    <div class="section--subtle page-intro">
+      <div class="container">
+        <header class="page-head">
+        <nav class="breadcrumb" aria-label="Migas de pan">
+          <ol class="breadcrumb__list">
+            <li class="breadcrumb__item"><a href="index.html">Inicio</a><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chev-right"></use></svg></li>
+            <li class="breadcrumb__item"><a href="trabaja-con-nosotros.html">Trabaja con Nosotros</a><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chev-right"></use></svg></li>
+            <li class="breadcrumb__item"><span aria-current="page">Oportunidades laborales</span></li>
+          </ol>
+          <a class="breadcrumb__back" href="trabaja-con-nosotros.html"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>Volver a Trabaja con Nosotros</a>
+        </nav>
+          <h1 class="t-h1">Oportunidades laborales</h1>
+          <p class="t-body-l page-head__lead">Encuentra tu lugar en Multi X: filtra por región, ciudad o área de trabajo y postula en línea.</p>
+        </header>
+      </div>
+    </div>
+
+    <section class="section" aria-labelledby="jobs-title">
+      <div class="container">
+        <h2 class="visually-hidden" id="jobs-title">Ofertas</h2>
+        <div class="filters" data-filters data-job-filter="#jobs" data-job-url>
+          <div class="filters__bar">
+            <div class="field filters__search">
+              <label class="field__label" for="job-search">Buscar</label>
+              <div class="control">
+                <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+                <input class="control__input" id="job-search" type="search" placeholder="Ej: supervisor">
+              </div>
+            </div>
+            <button class="btn btn--secondary filters__toggle" type="button" aria-expanded="false" aria-controls="job-filters">Filtrar <span data-filter-count></span></button>
+
+            <div class="filters__panel" id="job-filters" role="group" aria-label="Filtros">
+              <div class="filters__panel-head">
+                <p class="t-h3">Filtros</p>
+                <button class="header__icon-btn" type="button" data-filter-close aria-label="Cerrar filtros"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-close"></use></svg></button>
+              </div>
+              <div class="field field--region">
+                <label class="field__label" for="job-region">Región</label>
+                <div class="control control--select">
+                  <select class="control__input" id="job-region" name="region" data-job-options="region">
+                    <option value="">Todas las regiones</option>
+                  </select>
+                  <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+                </div>
+              </div>
+              <div class="field field--city">
+                <label class="field__label" for="job-city">Ciudad</label>
+                <div class="control control--select">
+                  <select class="control__input" id="job-city" name="ciudad" data-job-options="ciudad">
+                    <option value="">Todas las ciudades</option>
+                  </select>
+                  <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+                </div>
+              </div>
+              <div class="field field--group">
+                <label class="field__label" for="job-group">Área de trabajo</label>
+                <div class="control control--select">
+                  <select class="control__input" id="job-group" name="grupo" data-job-options="grupo">
+                    <option value="">Todas las áreas</option>
+                  </select>
+                  <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+                </div>
+              </div>
+              <div class="filters__panel-actions">
+                <button class="btn btn--secondary" type="button" data-filter-clear>Limpiar</button>
+                <button class="btn btn--primary" type="button" data-filter-close>Ver resultados</button>
+              </div>
+            </div>
+            <div class="filters__scrim" aria-hidden="true"></div>
+          </div>
+          <div class="filters__meta">
+            <p class="t-small c-secondary" aria-live="polite" data-job-count></p>
+            <button class="btn btn--tertiary hit filters__clear" type="button" data-filter-clear><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>Limpiar filtros</button>
+          </div>
+        </div>
+
+        <div class="doc-results">
+          <ul class="job-list" id="jobs" role="list" aria-label="Ofertas laborales" data-job-list></ul>
+          <div class="empty-state" role="status" hidden>
+            <span class="empty-state__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-search"></use></svg></span>
+            <p class="t-h3">Sin ofertas</p>
+            <p>Prueba con otra palabra o cambia los filtros.</p>
+            <button class="btn btn--secondary btn--sm hit" type="button" data-empty-clear>Limpiar filtros</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>
