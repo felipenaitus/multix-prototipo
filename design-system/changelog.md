@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Contacto sin encabezado de página
+- Código ✓ · Pedido de Felipe. Se quita el encabezado crema (migas, "Contacto" y bajada) por redundante; la página parte en Contactos directos y el Título 1 queda oculto para lectores de pantalla.
+
 ## 2026-11-10 · Correo general: fuera del footer, en Contacto
 - Código ✓ · Pedido de Felipe. Se quita contacto@multi-x.cl del footer (todas las páginas) y del pie de Oficinas. Pasa a la pestaña "Contacto general", la primera de Contacto › Contactos directos (`<ir-contact label="Contacto general">`).
 
