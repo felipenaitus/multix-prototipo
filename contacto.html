@@ -40,16 +40,26 @@
       <div class="container">
         <div class="section-head reveal">
           <h2 class="t-h2" id="ct-direct-title">Contactos directos</h2>
-          <p class="t-body-l section-head__lead">Habla directamente con el equipo de Relación con Inversionistas, con nuestro equipo comercial o escríbenos al contacto general.</p>
+          <p class="t-body-l section-head__lead">Escríbenos al contacto general o habla directamente con el equipo de Relación con Inversionistas o con nuestro equipo comercial.</p>
         </div>
         <div class="tabs reveal" data-tabs>
           <div class="tabs__list" role="tablist" aria-label="Contactos directos">
-            <button class="tab" type="button" role="tab" id="tab-ct-ir" aria-selected="true" aria-controls="panel-ct-ir">Inversionistas</button>
+            <button class="tab" type="button" role="tab" id="tab-ct-general" aria-selected="true" aria-controls="panel-ct-general">Contacto general</button>
+            <button class="tab" type="button" role="tab" id="tab-ct-ir" aria-selected="false" aria-controls="panel-ct-ir">Inversionistas</button>
             <button class="tab" type="button" role="tab" id="tab-ct-sales" aria-selected="false" aria-controls="panel-ct-sales">Comercial</button>
-            <button class="tab" type="button" role="tab" id="tab-ct-general" aria-selected="false" aria-controls="panel-ct-general">Contacto general</button>
           </div>
         </div>
-        <div class="tab-panel ct-panel" role="tabpanel" id="panel-ct-ir" aria-labelledby="tab-ct-ir">
+        <div class="tab-panel ct-panel" role="tabpanel" id="panel-ct-general" aria-labelledby="tab-ct-general">
+          <div class="split">
+            <div class="split__body">
+              <h3 class="t-h3">Contacto general</h3>
+              <p class="t-body c-secondary">Para consultas generales sobre Multi X que no correspondan a los otros equipos. Si tu consulta es de proveedores, ofertas laborales o una denuncia, usa sus canales en Formularios y canales. [contenido por definir]</p>
+              <a class="btn btn--tertiary hit" href="#ct-access-title">Ver formularios y canales<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            </div>
+            <ir-contact label="Contacto general" name="Multi X" phone="+56 65 248 3700" email="contacto@multi-x.cl"></ir-contact>
+          </div>
+        </div>
+        <div class="tab-panel ct-panel" role="tabpanel" id="panel-ct-ir" aria-labelledby="tab-ct-ir" hidden>
           <div class="split">
             <div class="split__body">
               <h3 class="t-h3">Inversionistas</h3>
@@ -67,16 +77,6 @@
               <a class="btn btn--tertiary hit" href="productos.html">Ir a Productos<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
             </div>
             <ir-contact label="Equipo comercial" name="Nombre Apellido" role-title="Gerente comercial [contenido por definir]" phone="+56 2 2430 1200" email="ventas@multi-x.cl"></ir-contact>
-          </div>
-        </div>
-        <div class="tab-panel ct-panel" role="tabpanel" id="panel-ct-general" aria-labelledby="tab-ct-general" hidden>
-          <div class="split">
-            <div class="split__body">
-              <h3 class="t-h3">Contacto general</h3>
-              <p class="t-body c-secondary">Para consultas generales sobre Multi X que no correspondan a los otros equipos. Si tu consulta es de proveedores, ofertas laborales o una denuncia, usa sus canales en Formularios y canales. [contenido por definir]</p>
-              <a class="btn btn--tertiary hit" href="#ct-access-title">Ver formularios y canales<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-            </div>
-            <ir-contact label="Contacto general" name="Multi X" phone="+56 65 248 3700" email="contacto@multi-x.cl"></ir-contact>
           </div>
         </div>
       </div>
