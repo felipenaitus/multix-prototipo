@@ -174,7 +174,7 @@
       items: [
         { id: 'nosotros', label: 'Nosotros', href: 'nosotros.html' },
         { id: 'trabaja', label: 'Trabaja con Nosotros', href: 'trabaja-con-nosotros.html' },
-        { id: 'noticias', label: 'Noticias', href: '#' }
+        { id: 'noticias', label: 'Noticias', href: 'noticias.html' }
       ]
     },
     {
@@ -193,7 +193,7 @@
     label: 'Multi X informa término de contingencia en centros Taraba 7 y 8, en la Región de Magallanes',
     image: 'assets/img/noticia-destacada.jpg',
     cta: 'Leer noticia',
-    href: '#'
+    href: 'noticia.html?id=taraba'
   };
 
   var MENU_PORTALS = [

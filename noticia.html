@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Noticia · Multi X</title>
+  <meta name="description" content="Noticia de Multi X.">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@200;300;400;600&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script src="js/layout.js" defer></script>
+  <script src="js/noticias.js" defer></script>
+  <script src="js/components.js" defer></script>
+</head>
+<body>
+  <site-header current="noticias"></site-header>
+
+  <main id="main" data-news-detail>
+    <div class="container">
+      <header class="job-head">
+        <nav class="breadcrumb" aria-label="Migas de pan">
+          <ol class="breadcrumb__list">
+            <li class="breadcrumb__item"><a href="index.html">Inicio</a><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chev-right"></use></svg></li>
+            <li class="breadcrumb__item"><a href="noticias.html">Noticias</a><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chev-right"></use></svg></li>
+            <li class="breadcrumb__item"><span aria-current="page" data-news-field="title"></span></li>
+          </ol>
+        </nav>
+        <p class="t-label news-item__date" data-news-field="date"></p>
+        <h1 class="t-h1" data-news-field="title"></h1>
+        <p class="t-body-l news-detail__lead" data-news-field="lead"></p>
+      </header>
+    </div>
+
+    <div class="job-bar">
+      <div class="container">
+        <div class="job-bar__inner">
+          <a class="btn btn--tertiary hit job-bar__back" href="noticias.html"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg><span>Volver<span class="job-bar__more"> a noticias</span></span></a>
+          <div class="news-share">
+            <span class="t-ui-small-strong news-share__label">Compartir</span>
+            <ul class="social" role="list" data-news-share>
+              <li><a class="social__link" data-share="linkedin" href="#" target="_blank" rel="noopener" aria-label="Compartir en LinkedIn (abre en una pestaña nueva)"><svg class="icon icon--linkedin" aria-hidden="true"><use href="#i-linkedin"></use></svg></a></li>
+              <li><a class="social__link" data-share="x" href="#" target="_blank" rel="noopener" aria-label="Compartir en X (abre en una pestaña nueva)"><svg class="icon icon--x" aria-hidden="true"><use href="#i-x"></use></svg></a></li>
+              <li><a class="social__link" data-share="facebook" href="#" target="_blank" rel="noopener" aria-label="Compartir en Facebook (abre en una pestaña nueva)"><svg class="icon icon--facebook" aria-hidden="true"><use href="#i-facebook"></use></svg></a></li>
+              <li><a class="social__link" data-share="mail" href="#" aria-label="Compartir por correo"><svg class="icon icon--mail" aria-hidden="true"><use href="#i-mail"></use></svg></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="job-detail">
+        <article class="job-detail__body news-detail__body" aria-labelledby="news-detail-title">
+          <h2 class="visually-hidden" id="news-detail-title">Contenido de la noticia</h2>
+          <div class="news-item__media news-detail__media" data-news-media></div>
+          <div class="job-detail__block" data-news-field="body"></div>
+        </article>
+      </div>
+    </div>
+
+    <section class="section section--subtle" aria-labelledby="related-title">
+      <div class="container">
+        <div class="news-head">
+          <h2 class="t-h2" id="related-title">Más noticias</h2>
+          <a class="btn btn--tertiary hit" href="noticias.html">Ver todas las noticias<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+        </div>
+        <ul class="news-list" role="list" data-news-related></ul>
+      </div>
+    </section>
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>

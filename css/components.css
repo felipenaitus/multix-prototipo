@@ -1591,6 +1591,11 @@ a.pagination__item:hover,
   color: var(--color-text-inverse);
 }
 
+/* Flecha "anterior": el mismo chevrón, invertido */
+.pagination__arrow--prev .icon {
+  transform: scaleX(-1);
+}
+
 .pagination__arrow[aria-disabled="true"] {
   opacity: .4;
   pointer-events: none;
@@ -6880,6 +6885,84 @@ html:not(.js) .company-visual__tag {
 @media (min-width: 1280px) {
   .news-list {
     gap: var(--space-96);
+  }
+}
+
+/* Página Noticias: la misma nota del home con la fecha (Etiqueta, gris) sobre el
+   título. Listado en grilla (.news-list--grid): una columna en mobile, dos en
+   tablet, tres desde 1024 px, con la paginación del kit centrada al pie. */
+.news-item__date {
+  color: var(--color-text-secondary);
+}
+
+.news-item__media--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+}
+
+.news-list--grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-48);
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+  scroll-snap-type: none;
+}
+
+.news-pager {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-64);
+}
+
+@media (min-width: 768px) {
+  .news-list--grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .news-list--grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    row-gap: var(--space-80);
+  }
+
+  .news-pager {
+    margin-top: var(--space-96);
+  }
+}
+
+/* Detalle de noticia: el patrón del detalle de oferta (.job-head + .job-bar +
+   .job-detail, columna centrada); en la franja, "Volver a noticias" a la
+   izquierda y "Compartir" (redes del kit) a la derecha; foto 2:1 sobre el cuerpo.
+   Al pie, "Más noticias" con el bloque de noticias del home. */
+.news-detail__lead {
+  color: var(--color-text-secondary);
+}
+
+.news-share {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.news-share__label {
+  display: none;
+  color: var(--color-text-secondary);
+}
+
+.news-detail__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .news-share__label {
+    display: inline;
   }
 }
 

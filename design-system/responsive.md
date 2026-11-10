@@ -88,6 +88,8 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Ancla a Inversionistas (home) | Dos mitades: texto y acceso a la izquierda; último reporte y próximo evento a la derecha | Apilados: texto y acceso; debajo, último reporte y próximo evento |
 | Lista con fecha | Fecha (día y mes) a la izquierda, título y dato a la derecha | Igual: la columna de la fecha se mantiene y el título baja de línea si no cabe |
 | Noticias | Tres notas en fila | Tablet: slider con casi dos notas a la vista. Mobile: slider con una nota y parte de la siguiente |
+| Listado de noticias (`.news-list--grid`) | Tres notas por fila, 9 por página, paginación con números | Tablet: dos por fila. Mobile: una por fila (apiladas, no slider: es un listado para recorrer); paginación con flechas y "Página n de m" |
+| Detalle de noticia | Columna centrada; franja "Volver a noticias" / "Compartir" fija bajo el header | Columna a todo el ancho; "Volver" sin "a noticias" y "Compartir" solo con los íconos (menos de 768 px) |
 | Botón flotante del asistente | Fijo abajo a la derecha, 56 px, a `--space-32` del borde | Igual, a `--space-24` del borde |
 | Footer | Logo arriba; Direcciones · Información · Personas y proveedores en una fila con los títulos alineados; redes y copyright abajo. Tablet: direcciones arriba (en dos columnas) y enlaces debajo | Mobile: Información y Personas y proveedores en acordeón; direcciones y teléfonos siempre visibles; Canal de Denuncias como enlace dentro de Información |
 | Teléfonos y correos | Enlace | Enlace (marca o abre el correo con un toque) |

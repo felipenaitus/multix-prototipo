@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Página Noticias y detalle de noticia
+- Figma pendiente · Código ✓ · Páginas nuevas `noticias.html` (listado paginado, 9 por página) y `noticia.html` (detalle), con las 54 noticias reales del sitio actual en `js/noticias.js` y las fotos de las 9 más recientes en `assets/img/noticias/`. La nota es la del home con la fecha sobre el título. Nuevos en kit.html: `.news-item__date`, `.news-item__media--empty`, `.news-list--grid`, `.news-pager` y `.pagination__arrow--prev` (la paginación no estaba en kit.html). El detalle reutiliza `.job-head`, `.job-bar` y `.job-detail`. Enlaces: "Noticias" del menú, "Ver todas las noticias" del home y la noticia destacada del menú (Taraba).
+
 ## 2026-11-10 · Postulación: "Volver a la oferta" y mensaje de éxito a pantalla completa
 - Figma pendiente · Código ✓ · Pedido de Felipe. La postulación lleva la franja `.job-bar` solo con "Volver a la oferta" (reemplaza el "Volver" de las migas). Al enviar, el formulario desaparece y el mensaje pasa a un bloque nuevo a pantalla completa (`.apply-done`, en kit.html). Se quita la línea `.job-head + .job-detail` (la franja ya separa).
 
