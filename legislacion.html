@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Legislación · Multi X</title>
+  <meta name="description" content="Acceso exclusivo a Legislación para el equipo de Multi X.">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@200;300;400;600&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script src="js/layout.js" defer></script>
+  <script src="js/components.js" defer></script>
+</head>
+<body>
+  <site-header></site-header>
+
+  <main id="main">
+    <!-- Legislación: acceso exclusivo con correo corporativo (prototipo: no se envía) -->
+    <section class="section login" aria-labelledby="login-title">
+      <div class="container">
+        <div class="login__inner">
+          <p class="t-label c-accent">Legislación</p>
+          <h1 class="t-h1" id="login-title">Acceso exclusivo</h1>
+          <p class="t-body-l login__lead">Ingresa tu <strong>correo corporativo</strong> para verificar tu identidad. Lo validaremos para confirmar que eres parte del equipo de Multi X; no se almacenará ni usará con otros fines.</p>
+          <form class="login__form" action="#" novalidate aria-labelledby="login-title" data-proto-form>
+            <div class="field">
+              <label class="field__label" for="login-email">Correo corporativo</label>
+              <div class="control">
+                <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
+                <input class="control__input" id="login-email" name="email" type="email" autocomplete="email" placeholder="nombre@multi-x.cl" required pattern="[^@\s]+@(multi-x\.cl|multi-xsalmon\.com)" title="Usa tu correo corporativo (@multi-x.cl o @multi-xsalmon.com).">
+              </div>
+            </div>
+            <button class="btn btn--primary login__submit" type="submit">Acceder</button>
+          </form>
+          <div class="prov-sent login__sent" role="status" tabindex="-1" data-form-done hidden>
+            <p class="t-label c-accent">Revisa tu correo</p>
+            <p class="t-h3">Te enviamos un enlace de acceso</p>
+            <p class="t-body c-secondary">Ábrelo desde el mismo equipo para entrar a Legislación. [prototipo: no se envía]</p>
+          </div>
+          <p class="t-small c-secondary login__help">¿Problemas para acceder? Escribe al equipo legal: <a href="mailto:legislacion@multi-xsalmon.com">legislacion@multi-xsalmon.com</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>

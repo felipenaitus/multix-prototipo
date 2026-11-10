@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Legislación: acceso exclusivo
+- Figma pendiente · Código ✓ · Pedido de Felipe. Página nueva `legislacion.html` (solo el ingreso, `.login`, nuevo en kit.html) con correo corporativo, "Acceder" y ayuda del equipo legal. "Legislación" del footer enlaza a la página nueva.
+
 ## 2026-11-10 · Preguntas frecuentes en una sola fuente
 - Código ✓ · Decisión de Felipe. Las 19 preguntas del sitio pasan a `js/faqs.js` (`window.MX_FAQS`, por tema) y se arman con `initFaqs` (`js/components.js`) en Preguntas frecuentes, Inversionistas, Productos, Sustentabilidad y Portal Proveedores (`data-faq="tema"`). Ya no hay preguntas copiadas en el HTML. Sustentabilidad: "En esta página" pasa a "En Sustentabilidad" (mismo texto en ambos lugares).
 

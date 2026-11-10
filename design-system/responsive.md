@@ -55,6 +55,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Metas con avance | Selector de año en fila; barras con meta y cifra a la derecha | Selector con scroll horizontal; meta arriba, barra y cifra debajo |
 | Certificaciones (tabs + desplegables) | Tabs + tarjetas desplegables en grilla | Tabs en tira; tarjetas en lista de 1 columna |
 | Nuestras marcas | Dos círculos con contorno lado a lado; con hover el video rellena el círculo y el logo pasa a blanco | Tablet: dos círculos lado a lado. Mobile: círculos apilados (85 % del ancho). Sin hover en pantallas táctiles: queda el contorno con el logo en color |
+| Legislación: acceso (`.login`) | Columna centrada de cinco doceavos (dos tercios en tablet) | Columna a todo el ancho; "Acceder" a todo el ancho |
 | Preguntas frecuentes | Acordeón | Acordeón (igual), zona táctil completa en la pregunta |
 | Composición con ilustración | Texto a la izquierda, ilustración a la derecha | Ilustración arriba (más chica), texto debajo; cifras en 2 × 2 |
 | Formularios | Campos en 2-3 columnas cuando son cortos | 1 columna; teclado según el tipo de campo (`type="email"`, `tel`, etc.) |
