@@ -29,16 +29,26 @@
             <li class="breadcrumb__item"><a href="oportunidades-laborales.html">Oportunidades laborales</a><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chev-right"></use></svg></li>
             <li class="breadcrumb__item"><span aria-current="page" data-job-field="title"></span></li>
           </ol>
-          <a class="breadcrumb__back" href="oportunidades-laborales.html"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>Volver al listado de ofertas</a>
         </nav>
         <h1 class="t-h1" data-job-field="title"></h1>
-          <dl class="job-head__facts t-small">
-            <div><dt>Área</dt><dd data-job-field="area"></dd></div>
-            <div><dt>Ubicación</dt><dd data-job-field="place"></dd></div>
-            <div><dt>Código</dt><dd data-job-field="id"></dd></div>
-          </dl>
+        <dl class="job-head__facts t-small">
+          <div><dt>Área</dt><dd data-job-field="area"></dd></div>
+          <div><dt>Ubicación</dt><dd data-job-field="place"></dd></div>
+          <div><dt>Código</dt><dd data-job-field="id"></dd></div>
+        </dl>
       </header>
+    </div>
 
+    <div class="job-bar">
+      <div class="container">
+        <div class="job-bar__inner">
+          <a class="btn btn--tertiary hit job-bar__back" href="oportunidades-laborales.html"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg><span>Volver<span class="job-bar__more"> al listado de ofertas</span></span></a>
+          <a class="btn btn--primary" href="postulacion.html" data-job-apply-link>Postular a esta oferta</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
       <div class="job-detail">
         <div class="job-detail__body">
           <section class="job-detail__block" aria-labelledby="about-title">
@@ -54,10 +64,6 @@
             <ul class="job-detail__list t-body" data-job-field="requirements"></ul>
           </section>
         </div>
-        <aside class="job-detail__aside" aria-label="Postulación">
-          <a class="btn btn--primary" href="postulacion.html" data-job-apply-link>Postular a esta oferta</a>
-          <a class="btn btn--tertiary hit" href="oportunidades-laborales.html">Ver todas las ofertas<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
-        </aside>
       </div>
     </div>
 

@@ -7892,9 +7892,11 @@ html:not(.js) .company-visual__tag {
   .filters__panel .field--group { flex: 0 0 20%; }
 }
 
-/* Detalle de oferta (.job-detail): ruta, cargo (Título 1) y datos (área, ciudad,
-   ID) separados por líneas; debajo, la descripción a la izquierda y, a la
-   derecha desde 1024 px, "Postular" fijo al hacer scroll. Sin cajas. */
+/* Detalle de oferta (.job-head + .job-bar + .job-detail): ruta, cargo (Título 1)
+   y datos (área, ubicación, ID) separados por líneas; debajo, la franja con
+   "Volver" a la izquierda y "Postular" a la derecha, fija bajo el header al hacer
+   scroll (como el sub-menú de Inversionistas); luego la descripción. Desde
+   1024 px todo va en una columna centrada (dos tercios del contenedor). */
 .job-head {
   display: flex;
   flex-direction: column;
@@ -7933,11 +7935,51 @@ html:not(.js) .company-visual__tag {
   color: var(--color-text-primary);
 }
 
+.job-bar {
+  position: sticky;
+  top: var(--space-64);
+  z-index: 40;
+  background: var(--color-bg-page);
+  border-top: var(--border-thin) solid var(--color-border-default);
+  border-bottom: var(--border-thin) solid var(--color-border-default);
+  transition: top var(--duration-slow) var(--easing-standard);
+}
+
+body:has(.site-header.is-hidden) .job-bar {
+  top: 0;
+}
+
+.job-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+  padding-block: var(--space-12);
+}
+
+.job-bar__back .icon {
+  transform: scaleX(-1);
+  transition: transform var(--duration-fast) var(--easing-standard);
+}
+
+.job-bar__back:hover .icon {
+  transform: scaleX(-1) translateX(var(--space-4));
+}
+
+.job-bar__more {
+  display: none;
+}
+
 .job-detail {
   display: grid;
   gap: var(--space-48);
   padding-top: var(--space-48);
-  border-top: var(--border-thin) solid var(--color-border-default);
+}
+
+@media (min-width: 768px) {
+  .job-bar__more {
+    display: inline;
+  }
 }
 
 .job-detail__body {
@@ -7965,24 +8007,16 @@ html:not(.js) .company-visual__tag {
   padding-left: var(--space-20);
 }
 
-.job-detail__aside {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-16);
-}
-
 @media (min-width: 1024px) {
-  .job-detail {
-    grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
-    gap: var(--space-96);
-    padding-top: var(--space-64);
+  .job-head,
+  .job-bar__inner,
+  .job-detail__body {
+    width: calc(100% * 2 / 3);
+    margin-inline: auto;
   }
 
-  .job-detail__aside {
-    position: sticky;
-    top: var(--space-128);
-    align-self: start;
+  .job-detail {
+    padding-top: var(--space-64);
   }
 }
 
@@ -8052,8 +8086,7 @@ html:not(.js) .company-visual__tag {
 }
 
 /* Datos de la oferta en mobile: dos columnas sin líneas verticales (al cortar
-   la fila, la línea quedaría al inicio); las líneas vuelven desde tablet.
-   "Postular" va antes de la descripción en mobile y tablet. */
+   la fila, la línea quedaría al inicio); las líneas vuelven desde tablet. */
 @media (max-width: 767px) {
   .job-head__facts {
     display: grid;
@@ -8064,12 +8097,6 @@ html:not(.js) .company-visual__tag {
   .job-head__facts > div + div {
     padding-left: 0;
     border-left: 0;
-  }
-}
-
-@media (max-width: 1023px) {
-  .job-detail__aside {
-    order: -1;
   }
 }
 
