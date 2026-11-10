@@ -8119,3 +8119,20 @@ html:not(.js) .company-visual__tag {
     padding-top: var(--space-32);
   }
 }
+
+/* Ícono representativo de cada pieza en fila (.value-item__icon): Navy, 40 px */
+.value-item__icon {
+  color: var(--color-text-brand);
+}
+
+/* Encabezado con acción a la derecha: encabezado de sección + botón */
+.news-head > .section-head {
+  margin-bottom: 0;
+}
+
+@media (min-width: 1024px) {
+  .news-head > .section-head {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}

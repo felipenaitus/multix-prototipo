@@ -264,6 +264,7 @@ a:hover {
 
 .icon--sm { width: var(--icon-sm); height: var(--icon-sm); }
 .icon--lg { width: var(--icon-lg); height: var(--icon-lg); }
+.icon--xl { width: var(--icon-xl); height: var(--icon-xl); }
 
 /* ---------- Utilidades ---------- */
 .visually-hidden {

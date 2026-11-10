@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Íconos de áreas de trabajo y "Ver todas las ofertas"
+- Figma pendiente · Código ✓ · Token nuevo aprobado por Felipe: `--icon-xl` (40 px) y clase `.icon--xl`. Cuatro íconos de línea nuevos (gota, olas, planta industrial, maletín) en el sprite de `js/layout.js`, sobre el número de cada área en Trabaja con Nosotros. El encabezado de Oportunidades por área lleva "Ver todas las ofertas" (secundario) a la derecha.
+
 ## 2026-11-10 · Oportunidades por área en fila
 - Figma pendiente · Código ✓ · Variante `.value-list--row` (pedido de Felipe, para que el módulo no quede tan alto): el encabezado pasa arriba y las 4 áreas quedan en fila (cuatro desde 1024 px, dos en tablet, apiladas en mobile).
 

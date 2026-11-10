@@ -116,6 +116,7 @@
   --icon-sm: 12px;          /* chevrons del menú y migas de pan */
   --icon-md: 16px;          /* íconos de botones, campos y enlaces */
   --icon-lg: 20px;          /* íconos de filas de documento, acordeones y FAQ */
+  --icon-xl: 40px;          /* íconos representativos (áreas de trabajo) · pendiente de llevar a Figma */
   --size-cert-logo: 52px;   /* logo circular de certificación */
   --size-event-date: 88px;  /* bloque de fecha del próximo evento */
   --size-progress: 10px;    /* alto de la barra de avance de metas */
