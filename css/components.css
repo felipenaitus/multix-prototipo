@@ -7150,6 +7150,68 @@ html:not(.js) .company-visual__tag {
   outline: none;
 }
 
+/* Oficinas (<site-offices>, Contacto): tres piezas con una línea arriba (ciudad,
+   dirección y teléfono), en fila desde 1024 px y apiladas en mobile; al pie, el
+   correo general. Mismos datos que el footer. Sin cajas. */
+.offices {
+  display: block;
+}
+
+.offices__list {
+  display: grid;
+  gap: var(--space-32);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.offices__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-12);
+  padding-top: var(--space-24);
+  border-top: var(--border-thin) solid var(--color-border-default);
+}
+
+.offices__address {
+  font-style: normal;
+  color: var(--color-text-secondary);
+}
+
+.offices__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  min-height: var(--touch-target);
+  font-size: var(--text-ui-strong-size);
+  line-height: var(--text-ui-strong-lh);
+  font-weight: var(--text-ui-strong-weight);
+  color: var(--color-text-brand);
+}
+
+.offices__link:hover {
+  color: var(--color-text-brand-hover);
+}
+
+.offices__mail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: var(--space-12);
+  margin-top: var(--space-40);
+  padding-top: var(--space-24);
+  border-top: var(--border-thin) solid var(--color-border-default);
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 1024px) {
+  .offices__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-40);
+  }
+}
+
 /* Registro de proveedor (proveedores-registro.html): formulario por pasos.
    Indicador .form-steps: número en círculo y nombre de cada paso, unidos por una
    línea; el actual en Navy, los completos con contorno Navy. En mobile solo se

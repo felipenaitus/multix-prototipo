@@ -54,6 +54,9 @@
     'agua-dulce': ['0 0 32 32', '0 0', 1.5, ['M16 4C16 4 7 14.5 7 20A9 9 0 0 0 25 20C25 14.5 16 4 16 4Z', 'M11.5 20.5A4.5 4.5 0 0 0 16 25']],
     'agua-mar': ['0 0 32 32', '0 0', 1.5, ['M3 11Q7 7 11 11T19 11T27 11', 'M3 17Q7 13 11 17T19 17T27 17', 'M3 23Q7 19 11 23T19 23T27 23']],
     planta: ['0 0 32 32', '0 0', 1.5, ['M4 27V15L11 19V15L18 19V5H23V27Z', 'M23 13H28V27H23', 'M3 27H29', 'M8 23H10M13 23H15M18 23H19']],
+    mensaje: ['0 0 32 32', '0 0', 1.5, ['M5 7H27A1 1 0 0 1 28 8V21A1 1 0 0 1 27 22H13L7 27V22H5A1 1 0 0 1 4 21V8A1 1 0 0 1 5 7Z', 'M10 13H22', 'M10 17H18']],
+    registro: ['0 0 32 32', '0 0', 1.5, ['M9 6H23A1 1 0 0 1 24 7V27A1 1 0 0 1 23 28H9A1 1 0 0 1 8 27V7A1 1 0 0 1 9 6Z', 'M12 4H20V8H12Z', 'M12 17L15 20L21 14']],
+    escudo: ['0 0 32 32', '0 0', 1.5, ['M16 4L26 8V15C26 21 21.5 25.5 16 28C10.5 25.5 6 21 6 15V8Z', 'M12 16L15 19L20.5 13']],
     gestion: ['0 0 32 32', '0 0', 1.5, ['M5 11H27A1 1 0 0 1 28 12V25A1 1 0 0 1 27 26H5A1 1 0 0 1 4 25V12A1 1 0 0 1 5 11Z', 'M12 11V8A1 1 0 0 1 13 7H19A1 1 0 0 1 20 8V11', 'M4 17H28', 'M16 15.5V18.5']],
     // Redes sociales: dibujadas en el estilo del kit (no vienen de Figma)
     linkedin: ['0 0 16 16', '0 0', 1.5, ['M4 2.5H12A1.5 1.5 0 0 1 13.5 4V12A1.5 1.5 0 0 1 12 13.5H4A1.5 1.5 0 0 1 2.5 12V4A1.5 1.5 0 0 1 4 2.5Z', 'M5.5 7V11M5.5 5V5.01M8 11V7M8 9C8 7.9 8.9 7 10 7S11.5 7.6 11.5 8.5V11']],
@@ -168,7 +171,7 @@
   var UTILITY = [
     { label: 'Portal Proveedores', href: 'proveedores.html' },
     { label: 'Diving X', href: '#' },
-    { label: 'Contacto', href: '#' }
+    { label: 'Contacto', href: 'contacto.html' }
   ];
 
   /* Panel del menú hamburguesa (según el prototipo de venta aprobado:
@@ -208,7 +211,7 @@
   ];
   // external: sitio externo (pestaña nueva e ícono de enlace externo, como en Portales)
   var MENU_RESOURCES = [
-    { label: 'Contacto', href: '#' },
+    { label: 'Contacto', href: 'contacto.html' },
     { label: 'Preguntas Frecuentes', href: '#' },
     { label: 'Canal de Denuncias', href: 'https://mef.integridadcorporativa.cl/', external: true }
   ];
@@ -1010,6 +1013,30 @@
     }
   }
 
+  /* <site-offices> · Oficinas (Contacto): los mismos datos del footer (OFFICES y
+     CONTACT.email), en piezas con una línea arriba: ciudad (Título 3), dirección y
+     teléfono (tel:); al pie, el correo general (mailto:). Tres en fila desde
+     1024 px, apiladas en mobile. */
+  class SiteOffices extends HTMLElement {
+    connectedCallback() {
+      if (this._ready) return;
+      this._ready = true;
+      injectSprite();
+      this.classList.add('offices');
+      this.innerHTML =
+        '<ul class="offices__list" role="list">' +
+          OFFICES.map(function (o) {
+            return '<li class="offices__item">' +
+              '<h3 class="t-h3">' + esc(o.name) + '</h3>' +
+              '<address class="t-body offices__address">' + esc(o.address) + '</address>' +
+              '<a class="offices__link" href="' + telHref(o.phone) + '">' + icon('phone') + esc(o.phone) + '</a>' +
+            '</li>';
+          }).join('') +
+        '</ul>' +
+        '<p class="t-body offices__mail">Correo general: <a class="offices__link" href="mailto:' + esc(CONTACT.email) + '">' + icon('mail') + esc(CONTACT.email) + '</a></p>';
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     if (!document.querySelector('chat-launcher:not([demo])')) {
       document.body.appendChild(document.createElement('chat-launcher'));
@@ -1018,6 +1045,7 @@
 
   customElements.define('site-header', SiteHeader);
   customElements.define('site-footer', SiteFooter);
+  customElements.define('site-offices', SiteOffices);
   customElements.define('season-strip', SeasonStrip);
   customElements.define('ir-contact', IrContact);
   customElements.define('ir-alerts', IrAlerts);

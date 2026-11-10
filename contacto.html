@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto · Multi X</title>
+  <meta name="description" content="Contacto de Multi X: inversionistas, equipo comercial, proveedores, ofertas laborales, canal de denuncias y oficinas.">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@200;300;400;600&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script src="js/layout.js" defer></script>
+  <script src="js/components.js" defer></script>
+</head>
+<body>
+  <site-header></site-header>
+
+  <main id="main">
+    <div class="section--subtle page-intro">
+      <div class="container">
+        <header class="page-head">
+          <nav class="breadcrumb" aria-label="Migas de pan">
+            <ol class="breadcrumb__list">
+              <li class="breadcrumb__item"><a href="index.html">Inicio</a><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chev-right"></use></svg></li>
+              <li class="breadcrumb__item"><span aria-current="page">Contacto</span></li>
+            </ol>
+            <a class="breadcrumb__back" href="index.html"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>Volver al inicio</a>
+          </nav>
+          <h1 class="t-h1">Contacto</h1>
+          <p class="t-body-l page-head__lead">Encuentra el contacto o el formulario que necesitas: inversionistas, equipo comercial, proveedores, ofertas laborales, canal de denuncias y nuestras oficinas.</p>
+        </header>
+      </div>
+    </div>
+
+    <!-- Contactos directos: los mismos módulos de Inversionistas y Productos -->
+    <section class="section" aria-labelledby="ct-ir-title">
+      <div class="container split">
+        <div class="section-head reveal">
+          <h2 class="t-h2" id="ct-ir-title">Inversionistas</h2>
+          <p class="t-body-l section-head__lead">Para consultas de accionistas, analistas e inversionistas. [contenido por definir]</p>
+          <a class="btn btn--tertiary hit" href="inversionistas.html">Ir a Inversionistas<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+        </div>
+        <ir-contact class="reveal" name="Nombre Apellido" role-title="Head of Investor Relations" phone="+56 65 248 3700" email="inversionistas@multi-x.cl"></ir-contact>
+      </div>
+    </section>
+
+    <section class="section section--continued" aria-labelledby="ct-sales-title">
+      <div class="container split">
+        <div class="section-head reveal">
+          <h2 class="t-h2" id="ct-sales-title">Comercial</h2>
+          <p class="t-body-l section-head__lead">Para clientes y distribuidores interesados en nuestros productos de salmón fresco, congelado y ahumado. [contenido por definir]</p>
+          <a class="btn btn--tertiary hit" href="productos.html">Ir a Productos<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+        </div>
+        <ir-contact class="reveal" label="Equipo comercial" name="Nombre Apellido" role-title="Gerente comercial [contenido por definir]" phone="+56 2 2430 1200" email="ventas@multi-x.cl"></ir-contact>
+      </div>
+    </section>
+
+    <!-- Accesos a formularios y canales específicos -->
+    <section class="section section--subtle" aria-labelledby="ct-access-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="t-h2" id="ct-access-title">Formularios y canales</h2>
+          <p class="t-body-l section-head__lead">Cada tema tiene su propio canal, para que tu consulta llegue directo al equipo que corresponde.</p>
+        </div>
+        <ol class="value-list value-list--row reveal" role="list" aria-label="Formularios y canales">
+          <li class="value-item">
+            <svg class="icon icon--xl value-item__icon" aria-hidden="true"><use href="#i-mensaje"></use></svg>
+            <span class="t-label value-item__num">01</span>
+            <div class="value-item__body">
+              <h3 class="t-h3">Contacto de proveedores</h3>
+              <p class="t-body value-item__text">Consultas sobre órdenes de compra, licitaciones o actualización de datos de proveedor.</p>
+              <a class="btn btn--tertiary hit" href="proveedores.html#prov-contact-title">Ir al formulario<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            </div>
+          </li>
+          <li class="value-item">
+            <svg class="icon icon--xl value-item__icon" aria-hidden="true"><use href="#i-registro"></use></svg>
+            <span class="t-label value-item__num">02</span>
+            <div class="value-item__body">
+              <h3 class="t-h3">Quiero ser proveedor</h3>
+              <p class="t-body value-item__text">Registra tu empresa, la persona de contacto y los servicios que ofreces.</p>
+              <a class="btn btn--tertiary hit" href="proveedores-registro.html">Registrar mi empresa<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            </div>
+          </li>
+          <li class="value-item">
+            <svg class="icon icon--xl value-item__icon" aria-hidden="true"><use href="#i-gestion"></use></svg>
+            <span class="t-label value-item__num">03</span>
+            <div class="value-item__body">
+              <h3 class="t-h3">Ofertas laborales</h3>
+              <p class="t-body value-item__text">Revisa las oportunidades abiertas en Multi X y postula en línea.</p>
+              <a class="btn btn--tertiary hit" href="oportunidades-laborales.html">Ver ofertas<svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            </div>
+          </li>
+          <li class="value-item">
+            <svg class="icon icon--xl value-item__icon" aria-hidden="true"><use href="#i-escudo"></use></svg>
+            <span class="t-label value-item__num">04</span>
+            <div class="value-item__body">
+              <h3 class="t-h3">Canal de denuncias</h3>
+              <p class="t-body value-item__text">Canal confidencial para reportar conductas contrarias a la ética y al cumplimiento.</p>
+              <a class="btn btn--tertiary hit" href="https://mef.integridadcorporativa.cl/" target="_blank" rel="noopener">Ir al canal<svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg><span class="visually-hidden"> (abre en una pestaña nueva)</span></a>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Oficinas: los mismos datos del footer (<site-offices>, js/layout.js) -->
+    <section class="section" aria-labelledby="ct-offices-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="t-h2" id="ct-offices-title">Oficinas</h2>
+        </div>
+        <site-offices class="reveal"></site-offices>
+      </div>
+    </section>
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>

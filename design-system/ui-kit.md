@@ -217,6 +217,13 @@ Orden (definido por Felipe): hero · intro (relato + cifras destacadas) · Memor
 - **Documentos de sustentabilidad:** Memoria Integrada, Reportes ESG y Políticas propias de Sustentabilidad (distintas de las de Gobernanza), como acordeones con título (`.doc-years`, el primero abierto) y filas de documento con "Ver PDF" y "Descargar". Sin enlace a otra sección.
 - **Reutilizados:** `.value-list` (Operaciones sustentables y Vinculación comunitaria), `.cert-grid` en pestañas Certificaciones / Membresías (8 y 5), `.pillars` para los 4 proyectos y `.faq`.
 
+### Página Contacto (nuevos · pendientes de llevar a Figma)
+Diagrama de Felipe: reúne los contactos repartidos en el sitio y los accesos a formularios específicos (`contacto.html`; sin formulario general). Enlazada desde la barra utilitaria y el menú (Recursos › Contacto).
+- **Encabezado:** `.page-intro` crema con migas, "Contacto" (Título 1) y bajada.
+- **Inversionistas y Comercial:** el patrón de Contacto de Inversionistas (`.split`: título, bajada y enlace a su sección a la izquierda; `<ir-contact>` a la derecha), uno por equipo.
+- **Formularios y canales:** `.value-list--row` en crema con cuatro accesos, cada uno con ícono de línea Navy de 40 px (`i-mensaje`, `i-registro`, `i-gestion`, `i-escudo`): Contacto de proveedores (formulario del Portal Proveedores), Quiero ser proveedor (registro), Ofertas laborales y Canal de denuncias (externo, pestaña nueva y flecha de enlace externo). En mobile, slider.
+- **Oficinas (`<site-offices>` en `js/layout.js`):** los mismos datos del footer (`OFFICES`, `CONTACT.email`): ciudad (Título 3), dirección y teléfono (`tel:`) en tres piezas con una línea arriba (en fila desde 1024 px, apiladas en mobile) y, al pie, el correo general (`mailto:`).
+
 ### Portal Proveedores (nuevos · pendientes de llevar a Figma)
 Diagrama de Felipe con la información real de multi-xsalmon.com/proveedores. Dos páginas: `proveedores.html` y `proveedores-registro.html` (página propia del registro). Comportamiento en `initProtoForms` (`js/components.js`). Enlazado desde la barra utilitaria, el menú (Portales, sin ícono de enlace externo: es una página del sitio) y el footer.
 - **Hero:** foto o video de fondo con "Quiero ser proveedor" (`.btn--light`, abre el registro) a la derecha desde 1024 px (`.hero__content--split` + `.btn-group`).
