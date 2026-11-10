@@ -676,19 +676,12 @@
      Teléfono y correo siempre como enlaces (tel: / mailto:).
      Con el atributo `subscribe` suma, bajo una línea, "Alertas al inversionista"
      (correo + Suscribir: abre un correo al mismo `email` del contacto, el Head of
-     Investor Relations, con la suscripción) y "Servicio al accionista"
-     (atributos opcionales shareholder-service y shareholder-phone).
+     Investor Relations, con la suscripción).
      ====================================================================== */
   var irSubscribeCount = 0;
   function irSubscribeHtml(el, email) {
     irSubscribeCount += 1;
     var id = 'ir-alert-' + irSubscribeCount;
-    var agent = el.getAttribute('shareholder-service');
-    var agentPhone = el.getAttribute('shareholder-phone');
-    var service = agent || agentPhone
-      ? (agent ? esc(agent) : '') + (agent && agentPhone ? ' · ' : '') +
-        (agentPhone ? '<a class="ir-contact__inline-link" href="' + telHref(agentPhone) + '">' + esc(agentPhone) + '</a>' : '')
-      : '[Agente / DCV] · [teléfono] [contenido por definir]';
     return '<div class="ir-contact__extra">' +
         '<div class="ir-contact__group">' +
           '<p class="t-ui-strong">Alertas al inversionista</p>' +
@@ -699,11 +692,6 @@
             '<button class="btn btn--accent" type="submit">Suscribir</button>' +
           '</form>' +
           '<p class="t-small c-secondary ir-contact__status" role="status" hidden></p>' +
-        '</div>' +
-        '<div class="ir-contact__group">' +
-          '<p class="t-ui-strong">Servicio al accionista</p>' +
-          '<p class="t-small c-secondary">Traspasos, custodia y pago de dividendos.</p>' +
-          '<p class="t-ui-small-strong">' + service + '</p>' +
         '</div>' +
       '</div>';
   }

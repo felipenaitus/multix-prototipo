@@ -1920,8 +1920,7 @@ a.pagination__item:hover,
   color: var(--color-text-brand-hover);
 }
 
-/* Con `subscribe`: alertas al inversionista y servicio al accionista, cada uno
-   bajo una línea delgada (sin caja) */
+/* Con `subscribe`: alertas al inversionista bajo una línea delgada (sin caja) */
 .ir-contact__extra {
   display: flex;
   flex-direction: column;
@@ -1941,14 +1940,6 @@ a.pagination__item:hover,
 
 .ir-contact__form {
   margin-top: var(--space-8);
-}
-
-.ir-contact__inline-link {
-  color: var(--color-text-brand);
-}
-
-.ir-contact__inline-link:hover {
-  color: var(--color-text-brand-hover);
 }
 
 
