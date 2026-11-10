@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Portal Proveedores: sin "Ir al portal" y preguntas del canal de denuncias
+- Código ✓ · Pedido de Felipe. Se quita "Ir al portal" del hero. La pestaña Canal de denuncias suma cuatro preguntas frecuentes a la derecha (`.faq`) [contenido por definir].
+
 ## 2026-11-10 · Regístrate como proveedor con foto
 - Figma pendiente · Código ✓ · Pedido de Felipe. El módulo pasa a un llamado con foto (`.cta-media`, nuevo en kit.html): texto y botón a la izquierda y foto a la derecha desde 1024 px (arriba en mobile). Foto de ejemplo `foto-distribucion.jpg` [foto por definir].
 
