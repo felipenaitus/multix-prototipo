@@ -283,6 +283,19 @@
   color: var(--color-text-primary);
 }
 
+/* Enlace dentro del texto de la casilla (por ejemplo, "Políticas de Privacidad"):
+   subrayado para que se entienda que se puede abrir */
+.checkbox a {
+  color: var(--color-text-brand);
+  text-decoration: underline;
+  text-decoration-thickness: var(--border-thin);
+  text-underline-offset: var(--space-4);
+}
+
+.checkbox a:hover {
+  color: var(--color-text-brand-hover);
+}
+
 .checkbox__input {
   position: absolute;
   opacity: 0;

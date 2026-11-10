@@ -96,7 +96,7 @@ Alto 50px, padding 16/24, radio full, texto UI/Botón.
 | Deshabilitado | Fondo atenuado, texto secundario. | — |
 
 ### Formularios (node 75-244)
-Etiqueta siempre visible (no solo placeholder), alto mínimo 44px, foco con borde Navy 900. Incluye: campo de texto, campo con foco, select, buscador con ícono, checkbox, composición de suscripción (texto + campo con etiqueta visible + botón alineado abajo con el input).
+Etiqueta siempre visible (no solo placeholder), alto mínimo 44px, foco con borde Navy 900. Incluye: campo de texto, campo con foco, select, buscador con ícono, checkbox (si su texto lleva un enlace, como "Políticas de Privacidad", va subrayado), composición de suscripción (texto + campo con etiqueta visible + botón alineado abajo con el input).
 
 ### Navegación (Etapa 1 · definida por Felipe; el header del Figma node 75-353 queda desactualizado)
 Header, menú hamburguesa y footer viven solo en `js/layout.js` (ver CLAUDE.md 2.3). Tabs de sección y breadcrumb siguen según Figma. El menú hamburguesa toma la estructura y el comportamiento del prototipo de venta aprobado por el cliente (`.nav-overlay`, `.mega--preview`), construido con tokens y componentes del kit.

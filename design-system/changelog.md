@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Enlace subrayado en las casillas (Políticas de Privacidad)
+- Figma pendiente · Código ✓ · Pedido de Felipe. Los enlaces dentro del texto de una casilla (`.checkbox a`) van subrayados, para que se entienda que se pueden abrir: "Políticas de Privacidad" en la postulación, el contacto de proveedores y el registro de proveedores. Ejemplo en kit.html.
+
 ## 2026-11-10 · Regístrate como proveedor con la composición de video de Inversionistas
 - Código ✓ · Pedido de Felipe. El módulo usa la composición de Compañía integrada (`.company` + `.company-visual`: círculo con video y regiones de operación) en lugar de la foto. Se retira `.cta-media` del kit y de components.css (ya no lo usa ninguna página).
 
