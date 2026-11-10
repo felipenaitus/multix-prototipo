@@ -1875,8 +1875,96 @@
     });
   }
 
+  /* ---------- Formularios de prototipo (no se envían) ----------
+     - [data-proto-form]: valida en el navegador (aria-invalid + aviso nativo) y,
+       al enviar, cambia el formulario por el mensaje [data-form-done] que lo sigue.
+     - [data-steps-form]: formulario por pasos (fieldset[data-step]). "Siguiente"
+       valida solo el paso actual; "Atrás" vuelve. El indicador .form-steps marca
+       el paso actual (aria-current) y los completos (.is-done). Al enviar, éxito a
+       pantalla completa (como la postulación: [data-apply-hide] / [data-apply-done]).
+     - Archivos (.file-field__input): solo PDF de hasta 2 MB. */
+  function initProtoForms() {
+    function checkFile(input) {
+      var name = input.closest('.file-field').querySelector('[data-file-name]');
+      if (!name.dataset.help) name.dataset.help = name.textContent;
+      var f = input.files && input.files[0];
+      input.setCustomValidity('');
+      if (!f) { name.textContent = name.dataset.help; return; }
+      name.textContent = f.name;
+      if (!/\.pdf$/i.test(f.name)) input.setCustomValidity('Adjunta el archivo en formato PDF.');
+      else if (f.size > 2 * 1024 * 1024) input.setCustomValidity('El archivo supera los 2 MB.');
+    }
+    function valid(scope) {
+      var fields = $all('input, select, textarea', scope);
+      fields.forEach(function (el) {
+        if (el.classList.contains('file-field__input')) checkFile(el);
+        el.removeAttribute('aria-invalid');
+      });
+      var bad = fields.filter(function (el) { return !el.checkValidity(); });
+      bad.forEach(function (el) { el.setAttribute('aria-invalid', 'true'); });
+      if (bad.length) { bad[0].focus(); bad[0].reportValidity(); }
+      return !bad.length;
+    }
+    function bindFiles(form) {
+      $all('.file-field__input', form).forEach(function (input) {
+        if (input.closest('[data-job-apply]')) return; // la postulación tiene su propio manejo
+        input.addEventListener('change', function () { checkFile(input); });
+      });
+    }
+
+    $all('[data-proto-form]').forEach(function (form) {
+      bindFiles(form);
+      var done = form.parentElement.querySelector('[data-form-done]');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!valid(form)) return;
+        form.hidden = true;
+        if (done) { done.hidden = false; done.focus(); }
+      });
+    });
+
+    $all('[data-steps-form]').forEach(function (form) {
+      bindFiles(form);
+      var steps = $all('[data-step]', form);
+      var marks = $all('.form-steps__item', form);
+      var status = form.querySelector('[data-steps-status]');
+      var cur = 0;
+      function show(i) {
+        cur = i;
+        steps.forEach(function (s, n) { s.hidden = n !== i; });
+        marks.forEach(function (m, n) {
+          m.classList.toggle('is-done', n < i);
+          if (n === i) m.setAttribute('aria-current', 'step'); else m.removeAttribute('aria-current');
+        });
+        if (status) status.textContent = 'Paso ' + (i + 1) + ' de ' + steps.length + ' · ' + marks[i].textContent.replace(/^\d+/, '');
+        var t = steps[i].querySelector('h2');
+        if (t) t.focus({ preventScroll: true });
+        form.scrollIntoView({ block: 'start' });
+      }
+      form.addEventListener('click', function (e) {
+        if (e.target.closest('[data-step-next]') && valid(steps[cur])) show(cur + 1);
+        if (e.target.closest('[data-step-prev]')) show(cur - 1);
+      });
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!valid(steps[cur])) return;
+        var company = form.querySelector('[name="razon_social"]');
+        var slot = document.querySelector('[data-done-company]');
+        if (company && slot && company.value.trim()) slot.textContent = company.value.trim();
+        $all('[data-apply-hide]').forEach(function (el) { el.hidden = true; });
+        var done = document.querySelector('[data-apply-done]');
+        done.hidden = false;
+        window.scrollTo(0, 0);
+        var title = done.querySelector('h1');
+        if (title) title.focus({ preventScroll: true });
+      });
+      if (status) status.textContent = 'Paso 1 de ' + steps.length + ' · ' + marks[0].textContent.replace(/^\d+/, '');
+    });
+  }
+
   function init() {
     initSearch();
+    initProtoForms();
     initNews();
     initJobs();
     initReveal();

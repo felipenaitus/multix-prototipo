@@ -166,7 +166,7 @@
 
   // Barra utilitaria (desktop)
   var UTILITY = [
-    { label: 'Portal Proveedores', href: '#' },
+    { label: 'Portal Proveedores', href: 'proveedores.html' },
     { label: 'Diving X', href: '#' },
     { label: 'Contacto', href: '#' }
   ];
@@ -201,8 +201,9 @@
     href: 'noticia.html?id=taraba'
   };
 
+  // internal: página del sitio (sin pestaña nueva ni ícono de enlace externo)
   var MENU_PORTALS = [
-    { label: 'Portal Proveedores', href: '#' },
+    { label: 'Portal Proveedores', href: 'proveedores.html', internal: true },
     { label: 'Diving X', href: '#' }
   ];
   var MENU_RESOURCES = [
@@ -375,7 +376,11 @@
               '</div>' +
               '<div class="menu-panel__foot">' +
                 '<div class="menu-foot-group"><p class="t-label menu-foot-group__title">Portales</p><ul class="menu-foot-group__list" role="list">' +
-                  MENU_PORTALS.map(function (l) { return '<li><a href="' + l.href + '" target="_blank" rel="noopener">' + esc(l.label) + icon('external') + '<span class="visually-hidden"> (abre en una pestaña nueva)</span></a></li>'; }).join('') +
+                  MENU_PORTALS.map(function (l) {
+                    return l.internal
+                      ? '<li><a href="' + l.href + '">' + esc(l.label) + '</a></li>'
+                      : '<li><a href="' + l.href + '" target="_blank" rel="noopener">' + esc(l.label) + icon('external') + '<span class="visually-hidden"> (abre en una pestaña nueva)</span></a></li>';
+                  }).join('') +
                 '</ul></div>' +
                 '<div class="menu-foot-group"><p class="t-label menu-foot-group__title">Recursos</p><ul class="menu-foot-group__list" role="list">' +
                   MENU_RESOURCES.map(function (l) { return '<li><a href="' + l.href + '">' + esc(l.label) + '</a></li>'; }).join('') +
@@ -592,7 +597,7 @@
      ====================================================================== */
   var FOOTER_COLS = [
     { title: 'Información', links: [{ label: 'Preguntas Frecuentes', href: '#' }, { label: 'Legislación', href: '#' }, { label: 'Canal de Denuncias', href: '#' }] },
-    { title: 'Personas y proveedores', links: [{ label: 'Trabaja con Nosotros', href: 'trabaja-con-nosotros.html' }, { label: 'Portal Proveedores', href: '#' }] }
+    { title: 'Personas y proveedores', links: [{ label: 'Trabaja con Nosotros', href: 'trabaja-con-nosotros.html' }, { label: 'Portal Proveedores', href: 'proveedores.html' }] }
   ];
 
   class SiteFooter extends HTMLElement {

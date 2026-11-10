@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiero ser proveedor · Multi X</title>
+  <meta name="description" content="Registro de proveedores de Multi X: datos de la empresa, persona de contacto y servicios.">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@200;300;400;600&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script src="js/layout.js" defer></script>
+  <script src="js/components.js" defer></script>
+</head>
+<body>
+  <site-header></site-header>
+
+  <main id="main" data-steps-page>
+    <div class="container" data-apply-hide>
+      <header class="job-head">
+        <nav class="breadcrumb" aria-label="Migas de pan">
+          <ol class="breadcrumb__list">
+            <li class="breadcrumb__item"><a href="index.html">Inicio</a><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chev-right"></use></svg></li>
+            <li class="breadcrumb__item"><a href="proveedores.html">Portal Proveedores</a><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chev-right"></use></svg></li>
+            <li class="breadcrumb__item"><span aria-current="page">Quiero ser proveedor</span></li>
+          </ol>
+        </nav>
+        <h1 class="t-h1">Quiero ser proveedor</h1>
+        <p class="t-body-l news-detail__lead">En Multi X buscamos relaciones colaborativas con proveedores que compartan nuestros estándares de calidad, seguridad y compromiso operativo. Completa el formulario y nuestro equipo de Abastecimiento revisará tu postulación.</p>
+        <p class="t-small c-secondary">¿Dudas con el registro? Escríbenos a <a href="mailto:portalproveedores@multi-xsalmon.com">portalproveedores@multi-xsalmon.com</a></p>
+      </header>
+    </div>
+
+    <div class="job-bar" data-apply-hide>
+      <div class="container">
+        <div class="job-bar__inner">
+          <a class="btn btn--tertiary hit job-bar__back" href="proveedores.html"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg><span>Volver<span class="job-bar__more"> al Portal Proveedores</span></span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" data-apply-hide>
+      <div class="job-detail">
+        <form class="supplier-form" action="#" novalidate aria-label="Registro de proveedor" data-steps-form>
+          <ol class="form-steps" role="list" aria-label="Pasos del registro">
+            <li class="form-steps__item" aria-current="step"><span class="form-steps__num">1</span><span class="form-steps__label">Tu empresa</span></li>
+            <li class="form-steps__item"><span class="form-steps__num">2</span><span class="form-steps__label">Persona de contacto</span></li>
+            <li class="form-steps__item"><span class="form-steps__num">3</span><span class="form-steps__label">Servicios y capacidades</span></li>
+          </ol>
+          <p class="t-small c-secondary form-steps__status" aria-live="polite" data-steps-status>Paso 1 de 3</p>
+          <fieldset class="apply-form form-step" data-step="1" aria-labelledby="step-1-title">
+            <div class="apply-form__wide form-step__head">
+              <h2 class="t-h3" id="step-1-title" tabindex="-1">Cuéntanos sobre tu empresa</h2>
+              <p class="t-small c-secondary">Identifica a tu organización y su contexto de operación.</p>
+            </div>
+            <div class="field apply-form__wide">
+              <label class="field__label" for="pr-razon">Razón social</label>
+              <div class="control"><input class="control__input" id="pr-razon" name="razon_social" type="text" autocomplete="organization" required></div>
+            </div>
+            <div class="field">
+              <label class="field__label" for="pr-fantasia">Nombre de fantasía (opcional)</label>
+              <div class="control"><input class="control__input" id="pr-fantasia" name="nombre_fantasia" type="text"></div>
+            </div>
+            <div class="field">
+              <label class="field__label" for="pr-rut">RUT</label>
+              <div class="control"><input class="control__input" id="pr-rut" name="rut" type="text" placeholder="76.123.456-7" required></div>
+            </div>
+            <div class="field">
+              <label class="field__label" for="pr-size">Tamaño de la empresa</label>
+              <div class="control control--select">
+                <select class="control__input" id="pr-size" name="tamano" required>
+                  <option value="">Selecciona</option>
+                  <option>Micro, pequeña o mediana</option>
+                  <option>Gran empresa</option>
+                  <option>Persona natural</option>
+                </select>
+                <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+              </div>
+            </div>
+            <div class="field">
+              <label class="field__label" for="pr-country">País</label>
+              <div class="control control--select">
+                <select class="control__input" id="pr-country" name="pais" required>
+                  <option value="">Selecciona</option>
+                  <option>Chile</option>
+                  <option>Otro país</option>
+                </select>
+                <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+              </div>
+            </div>
+            <div class="field">
+              <label class="field__label" for="pr-region">Región</label>
+              <div class="control control--select">
+                <select class="control__input" id="pr-region" name="region" required>
+                  <option value="">Selecciona</option>
+                  <option>XV: de Arica y Parinacota</option>
+                  <option>I: de Tarapacá</option>
+                  <option>II: de Antofagasta</option>
+                  <option>III: de Atacama</option>
+                  <option>IV: de Coquimbo</option>
+                  <option>V: de Valparaíso</option>
+                  <option>RM: Metropolitana de Santiago</option>
+                  <option>VI: del Libertador Gral. Bernardo O'Higgins</option>
+                  <option>VII: del Maule</option>
+                  <option>XVI: de Ñuble</option>
+                  <option>VIII: del Biobío</option>
+                  <option>IX: de la Araucanía</option>
+                  <option>XIV: de Los Ríos</option>
+                  <option>X: de Los Lagos</option>
+                  <option>XI: de Aysén</option>
+                  <option>XII: de Magallanes</option>
+                </select>
+                <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+              </div>
+            </div>
+            <div class="field">
+              <label class="field__label" for="pr-city">Ciudad</label>
+              <div class="control"><input class="control__input" id="pr-city" name="ciudad" type="text" autocomplete="address-level2" required></div>
+            </div>
+            <div class="field apply-form__wide">
+              <label class="field__label" for="pr-web">Sitio web (opcional)</label>
+              <div class="control"><input class="control__input" id="pr-web" name="sitio_web" type="url" placeholder="https://" autocomplete="url"></div>
+            </div>
+            <div class="apply-form__actions apply-form__wide form-step__actions">
+              <button class="btn btn--primary" type="button" data-step-next>Siguiente</button>
+            </div>
+          </fieldset>
+          <fieldset class="apply-form form-step" data-step="2" hidden aria-labelledby="step-2-title">
+            <div class="apply-form__wide form-step__head">
+              <h2 class="t-h3" id="step-2-title" tabindex="-1">Persona de contacto</h2>
+              <p class="t-small c-secondary">Usaremos estos datos solo para comunicarnos sobre tu postulación.</p>
+            </div>
+            <div class="field">
+              <label class="field__label" for="pr-name">Nombre</label>
+              <div class="control"><input class="control__input" id="pr-name" name="nombre" type="text" autocomplete="given-name" required></div>
+            </div>
+            <div class="field">
+              <label class="field__label" for="pr-last">Apellido</label>
+              <div class="control"><input class="control__input" id="pr-last" name="apellido" type="text" autocomplete="family-name" required></div>
+            </div>
+            <div class="field">
+              <label class="field__label" for="pr-phone">Teléfono</label>
+              <div class="control"><input class="control__input" id="pr-phone" name="telefono" type="tel" autocomplete="tel" placeholder="+56 9 1234 5678" required></div>
+            </div>
+            <div class="field">
+              <label class="field__label" for="pr-email">Correo electrónico</label>
+              <div class="control"><input class="control__input" id="pr-email" name="email" type="email" autocomplete="email" placeholder="nombre@empresa.cl" required></div>
+            </div>
+            <div class="field apply-form__wide">
+              <label class="field__label" for="pr-role">Cargo en la empresa (opcional)</label>
+              <div class="control"><input class="control__input" id="pr-role" name="cargo" type="text" autocomplete="organization-title"></div>
+            </div>
+            <div class="apply-form__actions apply-form__wide form-step__actions">
+              <button class="btn btn--secondary" type="button" data-step-prev>Atrás</button>
+              <button class="btn btn--primary" type="button" data-step-next>Siguiente</button>
+            </div>
+          </fieldset>
+          <fieldset class="apply-form form-step" data-step="3" hidden aria-labelledby="step-3-title">
+            <div class="apply-form__wide form-step__head">
+              <h2 class="t-h3" id="step-3-title" tabindex="-1">Servicios y capacidades</h2>
+              <p class="t-small c-secondary">Describe lo que ofrece tu empresa, sus categorías y su alcance de operación.</p>
+            </div>
+            <div class="field">
+              <label class="field__label" for="pr-offer">Tipo de oferta</label>
+              <div class="control control--select">
+                <select class="control__input" id="pr-offer" name="tipo_oferta" required>
+                  <option value="">Selecciona</option>
+                  <option>Bienes</option>
+                  <option>Servicios</option>
+                  <option>Bienes y servicios</option>
+                </select>
+                <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+              </div>
+            </div>
+            <div class="field">
+              <label class="field__label" for="pr-cat">Categoría</label>
+              <div class="control control--select">
+                <select class="control__input" id="pr-cat" name="categoria" required>
+                  <option value="">Selecciona</option>
+                  <option>Faenas y transportes</option>
+                  <option>Mecánica eléctrica</option>
+                  <option>Industrial y sistemas</option>
+                  <option>Materiales industriales</option>
+                  <option>Repuestos de mecánica eléctrica</option>
+                  <option>Materiales de empaque e insumos</option>
+                </select>
+                <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+              </div>
+            </div>
+            <fieldset class="field apply-form__wide check-grid-field">
+              <legend class="field__label">Zona de operación</legend>
+              <div class="check-grid">
+                <label class="checkbox"><input class="checkbox__input" type="checkbox" name="zona" value="XV"><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>XV</span></label>
+                <label class="checkbox"><input class="checkbox__input" type="checkbox" name="zona" value="I"><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>I</span></label>
+                <label class="checkbox"><input class="checkbox__input" type="checkbox" name="zona" value="II"><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>II</span></label>
+                <label class="checkbox"><input class="checkbox__input" type="checkbox" name="zona" value="III"><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>III</span></label>
+                <label class="checkbox"><input class="checkbox__input" type="checkbox" name="zona" value="IV"><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>IV</span></label>
+                <label class="checkbox"><input class="checkbox__input" type="checkbox" name="zona" value="V"><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>V</span></label>
+                <label class="checkbox"><input class="checkbox__input" type="checkbox" name="zona" value="RM"><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>RM</span></label>
+                <label class="checkbox"><input class="checkbox__input" type="checkbox" name="zona" value="VI"><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>VI</span></label>
+                <label class="checkbox"><input class="checkbox__input" type="checkbox" name="zona" value="VII"><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>VII</span></label>
+                <label class="checkbox"><input class="checkbox__input" type="checkbox" name="zona" value="XVI"><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>XVI</span></label>
+                <label class="checkbox"><input class="checkbox__input" type="checkbox" name="zona" value="VIII"><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>VIII</span></label>
+                <label class="checkbox"><input class="checkbox__input" type="checkbox" name="zona" value="IX"><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>IX</span></label>
+                <label class="checkbox"><input class="checkbox__input" type="checkbox" name="zona" value="XIV"><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>XIV</span></label>
+                <label class="checkbox"><input class="checkbox__input" type="checkbox" name="zona" value="X"><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>X</span></label>
+                <label class="checkbox"><input class="checkbox__input" type="checkbox" name="zona" value="XI"><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>XI</span></label>
+                <label class="checkbox"><input class="checkbox__input" type="checkbox" name="zona" value="XII"><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>XII</span></label>
+              </div>
+            </fieldset>
+            <div class="field apply-form__wide">
+              <label class="field__label" for="pr-desc">Descripción breve de lo que ofreces</label>
+              <div class="control control--textarea"><textarea class="control__input" id="pr-desc" name="descripcion" rows="5" required></textarea></div>
+            </div>
+            <div class="field apply-form__wide">
+              <span class="field__label" id="pr-file-label">Información de la empresa (opcional)</span>
+              <div class="file-field">
+                <input class="file-field__input" id="pr-file" name="archivo" type="file" accept="application/pdf,.pdf" aria-labelledby="pr-file-label pr-file-btn" aria-describedby="pr-file-name">
+                <label class="btn btn--secondary" id="pr-file-btn" for="pr-file">Adjuntar archivo</label>
+                <span class="t-small file-field__name" id="pr-file-name" data-file-name>Formato PDF, máximo 2 MB.</span>
+              </div>
+            </div>
+            <div class="apply-form__wide">
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="privacidad" required>
+                <span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span>
+                <span>He leído y acepto las <a href="#">Políticas de Privacidad</a>.</span>
+              </label>
+            </div>
+            <div class="apply-form__actions apply-form__wide form-step__actions">
+              <button class="btn btn--secondary" type="button" data-step-prev>Atrás</button>
+              <button class="btn btn--primary" type="submit">Enviar</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+
+    <section class="apply-done" aria-labelledby="done-title" data-apply-done hidden>
+      <div class="container apply-done__inner">
+        <p class="t-label c-accent">Registro enviado</p>
+        <h1 class="t-h1" id="done-title" tabindex="-1">¡Gracias por tu interés!</h1>
+        <p class="t-body-l apply-done__text">Recibimos los datos de <strong data-done-company>tu empresa</strong>. Nuestro equipo de Abastecimiento revisará tu postulación y te contactará al correo que indicaste. [prototipo: no se envía]</p>
+        <div class="apply-done__actions">
+          <a class="btn btn--primary" href="proveedores.html">Volver al Portal Proveedores</a>
+          <a class="btn btn--secondary" href="index.html">Ir al inicio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>

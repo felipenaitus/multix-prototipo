@@ -7068,6 +7068,171 @@ html:not(.js) .company-visual__tag {
   }
 }
 
+/* Portal Proveedores (proveedores.html): accesos en pestañas (cada panel con el
+   texto a la izquierda y su contenido a la derecha desde 1024 px: documentos,
+   preguntas frecuentes, portales o el botón al canal), "Regístrate como
+   proveedor" en fondo crema y el formulario de contacto, que al enviarse se
+   cambia por un mensaje (.prov-sent). Sin cajas. */
+.prov-panel {
+  padding-top: var(--space-48);
+}
+
+.prov-panel .split__body {
+  align-items: flex-start;
+}
+
+.prov-sent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  padding-block: var(--space-32);
+  border-top: var(--border-thin) solid var(--color-border-default);
+  border-bottom: var(--border-thin) solid var(--color-border-default);
+}
+
+.prov-sent:focus {
+  outline: none;
+}
+
+/* Registro de proveedor (proveedores-registro.html): formulario por pasos.
+   Indicador .form-steps: número en círculo y nombre de cada paso, unidos por una
+   línea; el actual en Navy, los completos con contorno Navy. En mobile solo se
+   ve el nombre del paso actual. Cada paso es un fieldset con la grilla de
+   .apply-form; Zona de operación en .check-grid. */
+.supplier-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.form-steps {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.form-steps__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  color: var(--color-text-secondary);
+}
+
+.form-steps__item + .form-steps__item::before {
+  content: "";
+  width: var(--space-24);
+  border-top: var(--border-thin) solid var(--color-border-default);
+}
+
+.form-steps__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: var(--space-40);
+  height: var(--space-40);
+  border: var(--border-thin) solid var(--color-border-default);
+  border-radius: var(--radius-full);
+  font-size: var(--text-ui-strong-size);
+  line-height: var(--text-ui-strong-lh);
+  font-weight: var(--text-ui-strong-weight);
+}
+
+.form-steps__label {
+  display: none;
+  font-size: var(--text-ui-strong-size);
+  line-height: var(--text-ui-strong-lh);
+  font-weight: var(--text-ui-strong-weight);
+}
+
+.form-steps__item[aria-current="step"] {
+  color: var(--color-text-primary);
+}
+
+.form-steps__item[aria-current="step"] .form-steps__num {
+  background: var(--color-bg-brand);
+  border-color: var(--color-border-brand);
+  color: var(--color-text-inverse);
+}
+
+.form-steps__item[aria-current="step"] .form-steps__label {
+  display: inline;
+}
+
+.form-steps__item.is-done .form-steps__num {
+  border-color: var(--color-border-brand);
+  color: var(--color-text-brand);
+}
+
+.form-steps__status {
+  margin-top: calc(-1 * var(--space-16));
+}
+
+.form-step,
+.check-grid-field {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.form-step[hidden] {
+  display: none;
+}
+
+.form-step__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.apply-form__actions.form-step__actions {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.form-step__head h2:focus {
+  outline: none;
+}
+
+.check-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--space-16);
+}
+
+@media (min-width: 768px) {
+  .form-steps {
+    gap: var(--space-16);
+  }
+
+  .form-steps__item + .form-steps__item::before {
+    width: var(--space-40);
+  }
+
+  .form-steps__label {
+    display: inline;
+  }
+
+  .form-steps__status {
+    display: none;
+  }
+
+  .check-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .prov-panel .split {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+    gap: var(--space-96);
+  }
+}
+
 /* Tabla de datos (.data-table): sin caja, filas separadas por líneas delgadas.
    Encabezados en Etiqueta gris; números alineados a la derecha y con cifras
    tabulares (.is-num). Con más de 3 columnas (.data-table--cards), en mobile cada
@@ -8236,7 +8401,8 @@ body:has(.site-header.is-hidden) .job-bar {
   .job-head,
   .job-bar__inner,
   .job-detail__body,
-  .apply-form {
+  .job-detail > .apply-form,
+  .supplier-form {
     width: calc(100% * 2 / 3);
     margin-inline: auto;
   }

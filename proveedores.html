@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portal Proveedores · Multi X</title>
+  <meta name="description" content="Portal Proveedores de Multi X: documentos y políticas, consulta de facturas, subcontratación, canal de denuncias y registro de proveedores.">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@200;300;400;600&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script src="js/layout.js" defer></script>
+  <script src="js/components.js" defer></script>
+</head>
+<body>
+  <site-header variant="overlay"></site-header>
+
+  <main id="main">
+
+    <!-- Hero: Quiero ser proveedor · Ir al portal -->
+    <section class="hero hero--page on-dark" aria-labelledby="prov-title">
+      <div class="hero__media" aria-hidden="true">
+        <video data-hero-video autoplay muted loop playsinline preload="metadata" poster="assets/video/hero-poster.jpg">
+          <source src="assets/video/hero.mp4" type="video/mp4">
+        </video>
+      </div>
+      <span class="hero__placeholder t-small">[video por definir]</span>
+      <div class="container hero__content hero__content--split">
+        <div class="hero__text">
+          <h1 class="t-display hero__title" id="prov-title"><span class="hero__title-line t-display-light">Portal Proveedores</span> <span class="hero__title-line t-display-strong">trabajemos juntos</span></h1>
+          <p class="t-body-l hero__lead hero__lead--inverse">Información clave y accesos para trabajar de forma eficiente con Multi X.</p>
+        </div>
+        <div class="btn-group">
+          <a class="btn btn--light" href="proveedores-registro.html">Quiero ser proveedor</a>
+          <a class="btn btn--ghost-light" href="#" aria-disabled="true">Ir al portal<svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg><span class="visually-hidden"> (enlace por definir)</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accesos: documentos, facturas, subcontratación y canal de denuncias -->
+    <section class="section" aria-labelledby="access-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="t-h2" id="access-title">Accesos para proveedores</h2>
+          <p class="t-body-l section-head__lead">Documentos, consulta de facturas, subcontratación y canal de denuncias, en un solo lugar.</p>
+        </div>
+        <div class="tabs reveal" data-tabs>
+          <div class="tabs__list" role="tablist" aria-label="Accesos para proveedores">
+            <button class="tab" type="button" role="tab" id="tab-docs" aria-selected="true" aria-controls="panel-docs">Documentos y políticas</button>
+            <button class="tab" type="button" role="tab" id="tab-facturas" aria-selected="false" aria-controls="panel-facturas">Consulta de facturas</button>
+            <button class="tab" type="button" role="tab" id="tab-sub" aria-selected="false" aria-controls="panel-sub">Portal de subcontratación</button>
+            <button class="tab" type="button" role="tab" id="tab-denuncias" aria-selected="false" aria-controls="panel-denuncias">Canal de denuncias</button>
+          </div>
+        </div>
+
+        <div class="tab-panel prov-panel" role="tabpanel" id="panel-docs" aria-labelledby="tab-docs">
+          <div class="split">
+            <div class="split__body">
+              <h3 class="t-h3">Documentos y políticas</h3>
+              <p class="t-body c-secondary">Los documentos que rigen la relación entre Multi X y sus proveedores. Conocerlos y cumplirlos es clave para trabajar con nosotros de manera transparente y responsable.</p>
+            </div>
+            <div class="doc-list">
+              <div class="doc-row">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Código de conducta para proveedores</span><span class="doc-row__meta">Principios éticos, estándares de comportamiento y buenas prácticas para proveedores · PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="https://www.multi-xsalmon.com/wp-content/uploads/2026/05/PS-AB-CO01-Codigo-de-Conducta-de-Proveedores.pdf" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Código de conducta para proveedores (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="https://www.multi-xsalmon.com/wp-content/uploads/2026/05/PS-AB-CO01-Codigo-de-Conducta-de-Proveedores.pdf" download>Descargar<span class="visually-hidden"> Código de conducta para proveedores</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+              <div class="doc-row">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Código de ética</span><span class="doc-row__meta">Valores, normas de integridad y lineamientos éticos de Multi X · PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="https://www.multi-xsalmon.com/wp-content/uploads/2026/05/PE-GC-MA02-Codigo-de-Etica.pdf" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Código de ética (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="https://www.multi-xsalmon.com/wp-content/uploads/2026/05/PE-GC-MA02-Codigo-de-Etica.pdf" download>Descargar<span class="visually-hidden"> Código de ética</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+              <div class="doc-row">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Reglamento especial de empresas contratistas y subcontratistas</span><span class="doc-row__meta">Requisitos operativos, legales y administrativos para contratistas · PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="https://www.multi-xsalmon.com/wp-content/uploads/2026/05/REGLAMENTO-ESPECIAL-EMPRESAS-CONTRATISTAS-Y-SUBCONT.pdf" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Reglamento especial de empresas contratistas y subcontratistas (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="https://www.multi-xsalmon.com/wp-content/uploads/2026/05/REGLAMENTO-ESPECIAL-EMPRESAS-CONTRATISTAS-Y-SUBCONT.pdf" download>Descargar<span class="visually-hidden"> Reglamento especial de empresas contratistas y subcontratistas</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+              <div class="doc-row">
+                <span class="doc-row__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc"></use></svg></span>
+                <span class="doc-row__body"><span class="doc-row__title">Manual de prevención del delito</span><span class="doc-row__meta">Obligaciones y estándares de integridad, transparencia y cumplimiento legal · PDF</span></span>
+                <span class="doc-row__action doc-row__actions"><a class="doc-link doc-link--view" href="https://www.multi-xsalmon.com/wp-content/uploads/2026/05/PE-GC-MA03-Manual-de-Prevencion-de-Delitos.pdf" target="_blank" rel="noopener">Ver PDF<span class="visually-hidden"> Manual de prevención del delito (abre en una pestaña nueva)</span><svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a><a class="doc-link" href="https://www.multi-xsalmon.com/wp-content/uploads/2026/05/PE-GC-MA03-Manual-de-Prevencion-de-Delitos.pdf" download>Descargar<span class="visually-hidden"> Manual de prevención del delito</span><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg></a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel prov-panel" role="tabpanel" id="panel-facturas" aria-labelledby="tab-facturas" hidden>
+          <div class="split">
+            <div class="split__body">
+              <h3 class="t-h3">Consulta el estado de tus facturas</h3>
+              <p class="t-body c-secondary">Accede al portal en línea para proveedores (Infopag) y revisa el estado de tus facturas de forma rápida y sencilla.</p>
+              <a class="btn btn--primary" href="https://infopag.multi-xsalmon.com/public/login" target="_blank" rel="noopener">Acceder al portal de facturas<svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg><span class="visually-hidden"> (abre en una pestaña nueva)</span></a>
+            </div>
+            <ul class="faq" role="list" data-accordion="single">
+          <li class="faq__item">
+            <button class="faq__question" type="button" aria-expanded="false" aria-controls="prov-faq-1">¿Qué es el portal de facturas Infopag?<span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span></button>
+            <div class="faq__answer acc-panel" id="prov-faq-1" hidden><p>Muestra el detalle de tu cuenta corriente con el grupo Multi X, incluidas las fechas en que se pagaron tus facturas. No entrega información de pagos futuros: solo muestra los pagos ya realizados.</p></div>
+          </li>
+          <li class="faq__item">
+            <button class="faq__question" type="button" aria-expanded="false" aria-controls="prov-faq-2">¿Qué puedo hacer en el portal?<span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span></button>
+            <div class="faq__answer acc-panel" id="prov-faq-2" hidden><p>Revisar el historial de tus facturas y la fecha en que se pagó cada una. Si es tu primera vez, revisa la guía de primeros pasos. [video por definir]</p></div>
+          </li>
+          <li class="faq__item">
+            <button class="faq__question" type="button" aria-expanded="false" aria-controls="prov-faq-3">¿Cómo desbloqueo mi clave?<span class="toggle-icon"><svg class="icon icon--plus" aria-hidden="true"><use href="#i-plus"></use></svg><svg class="icon icon--minus" aria-hidden="true"><use href="#i-minus"></use></svg></span></button>
+            <div class="faq__answer acc-panel" id="prov-faq-3" hidden><p>[contenido por definir] En el sitio actual esta respuesta es un video.</p></div>
+          </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tab-panel prov-panel" role="tabpanel" id="panel-sub" aria-labelledby="tab-sub" hidden>
+          <div class="split">
+            <div class="split__body">
+              <h3 class="t-h3">Portal de subcontratación</h3>
+              <p class="t-body c-secondary">Selecciona tu tipo de subcontratación para ingresar al portal correspondiente y consultar su información.</p>
+            </div>
+            <ul class="value-list" role="list" aria-label="Portales de subcontratación">
+              <li class="value-item">
+                <div class="value-item__body">
+                  <h4 class="t-h3">AMSA</h4>
+                  <p class="t-body value-item__text">Para proveedores vinculados a procesos productivos y de alimentos.</p>
+                  <a class="btn btn--tertiary hit" href="https://hpos2.cl/ac_amsa/" target="_blank" rel="noopener">Ir al portal AMSA<svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg><span class="visually-hidden"> (abre en una pestaña nueva)</span></a>
+                </div>
+              </li>
+              <li class="value-item">
+                <div class="value-item__body">
+                  <h4 class="t-h3">Salmex</h4>
+                  <p class="t-body value-item__text">Para proveedores de servicios generales, técnicos o especializados.</p>
+                  <a class="btn btn--tertiary hit" href="https://hpos2.cl/ac_salmex/" target="_blank" rel="noopener">Ir al portal Salmex<svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg><span class="visually-hidden"> (abre en una pestaña nueva)</span></a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tab-panel prov-panel" role="tabpanel" id="panel-denuncias" aria-labelledby="tab-denuncias" hidden>
+          <div class="split">
+            <div class="split__body">
+              <h3 class="t-h3">Canal de denuncias</h3>
+              <p class="t-body c-secondary">Canal confidencial para reportar conductas contrarias a la ética y al cumplimiento. Es administrado por una empresa externa y puedes usarlo de forma anónima. [contenido por definir]</p>
+              <a class="btn btn--primary" href="https://mef.integridadcorporativa.cl/" target="_blank" rel="noopener">Ir al canal de denuncias<svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg><span class="visually-hidden"> (abre en una pestaña nueva)</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Regístrate como proveedor -->
+    <section class="section section--subtle" aria-labelledby="register-title">
+      <div class="container">
+        <div class="news-head prov-register reveal">
+          <div class="section-head">
+            <h2 class="t-h2" id="register-title">Regístrate como proveedor</h2>
+            <p class="t-body-l section-head__lead">Ingresa los datos de tu empresa, de la persona de contacto y de los servicios que ofreces para iniciar tu postulación como proveedor de Multi X.</p>
+          </div>
+          <a class="btn btn--primary hit" href="proveedores-registro.html">Quiero ser proveedor</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="section" aria-labelledby="prov-contact-title">
+      <div class="container split">
+        <div class="section-head reveal">
+          <h2 class="t-h2" id="prov-contact-title">Ponte en contacto con nosotros</h2>
+          <p class="t-body-l section-head__lead">¿Tienes dudas sobre procesos, documentación o soporte a proveedores? Escríbenos o envíanos el formulario.</p>
+          <p class="t-body"><a href="mailto:portalproveedores@multi-xsalmon.com">portalproveedores@multi-xsalmon.com</a></p>
+        </div>
+        <div>
+          <form class="apply-form" action="#" novalidate aria-labelledby="prov-contact-title" data-proto-form>
+            <div class="field">
+              <label class="field__label" for="pc-name">Nombre</label>
+              <div class="control"><input class="control__input" id="pc-name" name="nombre" type="text" autocomplete="given-name" required></div>
+            </div>
+            <div class="field">
+              <label class="field__label" for="pc-last">Apellido</label>
+              <div class="control"><input class="control__input" id="pc-last" name="apellido" type="text" autocomplete="family-name" required></div>
+            </div>
+            <div class="field">
+              <label class="field__label" for="pc-company">Empresa</label>
+              <div class="control"><input class="control__input" id="pc-company" name="empresa" type="text" autocomplete="organization" required></div>
+            </div>
+            <div class="field">
+              <label class="field__label" for="pc-rut">RUT de la empresa</label>
+              <div class="control"><input class="control__input" id="pc-rut" name="rut" type="text" placeholder="76.123.456-7" required></div>
+            </div>
+            <div class="field">
+              <label class="field__label" for="pc-phone">Teléfono (opcional)</label>
+              <div class="control"><input class="control__input" id="pc-phone" name="telefono" type="tel" autocomplete="tel" placeholder="+56 9 1234 5678"></div>
+            </div>
+            <div class="field">
+              <label class="field__label" for="pc-email">Correo electrónico</label>
+              <div class="control"><input class="control__input" id="pc-email" name="email" type="email" autocomplete="email" placeholder="nombre@empresa.cl" required></div>
+            </div>
+            <div class="field apply-form__wide">
+              <label class="field__label" for="pc-reason">Motivo de contacto</label>
+              <div class="control control--select">
+                <select class="control__input" id="pc-reason" name="motivo" required>
+                  <option value="">Selecciona</option>
+                  <option>Quiero ofrecer mis productos o servicios</option>
+                  <option>Consultas sobre órdenes de compra o licitaciones</option>
+                  <option>Actualización de datos de proveedor</option>
+                </select>
+                <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
+              </div>
+            </div>
+            <div class="field apply-form__wide">
+              <label class="field__label" for="pc-msg">Mensaje</label>
+              <div class="control control--textarea"><textarea class="control__input" id="pc-msg" name="mensaje" rows="5" required></textarea></div>
+            </div>
+            <div class="apply-form__wide">
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="privacidad" required>
+                <span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span>
+                <span>He leído y acepto las <a href="#">Políticas de Privacidad</a>.</span>
+              </label>
+            </div>
+            <div class="apply-form__actions apply-form__wide">
+              <button class="btn btn--primary" type="submit">Enviar</button>
+            </div>
+          </form>
+          <div class="prov-sent" role="status" tabindex="-1" data-form-done hidden>
+            <p class="t-label c-accent">Mensaje enviado</p>
+            <p class="t-h3">Gracias por escribirnos</p>
+            <p class="t-body c-secondary">Te responderemos al correo que indicaste. [prototipo: no se envía]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>

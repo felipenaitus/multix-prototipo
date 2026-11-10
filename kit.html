@@ -437,6 +437,38 @@
       </div>
 
       <div class="kit-block">
+        <h3 class="t-label kit-block__title">Formulario por pasos (<code>.form-steps</code>, <code>.form-step</code>), casillas en grilla (<code>.check-grid</code>) y mensaje enviado (<code>.prov-sent</code>): Portal Proveedores</h3>
+        <ol class="form-steps" role="list" aria-label="Pasos (ejemplo)">
+          <li class="form-steps__item is-done"><span class="form-steps__num">1</span><span class="form-steps__label">Tu empresa</span></li>
+          <li class="form-steps__item" aria-current="step"><span class="form-steps__num">2</span><span class="form-steps__label">Persona de contacto</span></li>
+          <li class="form-steps__item"><span class="form-steps__num">3</span><span class="form-steps__label">Servicios y capacidades</span></li>
+        </ol>
+        <p class="t-small c-secondary form-steps__status">Paso 2 de 3 · Persona de contacto</p>
+        <fieldset class="check-grid-field">
+          <legend class="field__label">Zona de operación</legend>
+          <div class="check-grid">
+            <label class="checkbox"><input class="checkbox__input" type="checkbox"><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>XV</span></label>
+            <label class="checkbox"><input class="checkbox__input" type="checkbox"><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>I</span></label>
+            <label class="checkbox"><input class="checkbox__input" type="checkbox"><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>II</span></label>
+            <label class="checkbox"><input class="checkbox__input" type="checkbox"><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>III</span></label>
+            <label class="checkbox"><input class="checkbox__input" type="checkbox"><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>IV</span></label>
+            <label class="checkbox"><input class="checkbox__input" type="checkbox"><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>V</span></label>
+            <label class="checkbox"><input class="checkbox__input" type="checkbox" checked><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>RM</span></label>
+            <label class="checkbox"><input class="checkbox__input" type="checkbox"><span class="checkbox__box"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></span><span>VI</span></label>
+          </div>
+        </fieldset>
+        <div class="apply-form__actions form-step__actions">
+          <button class="btn btn--secondary" type="button">Atrás</button>
+          <button class="btn btn--primary" type="button">Siguiente</button>
+        </div>
+        <div class="prov-sent" role="status">
+          <p class="t-label c-accent">Mensaje enviado</p>
+          <p class="t-h3">Gracias por escribirnos</p>
+          <p class="t-body c-secondary">Te responderemos al correo que indicaste.</p>
+        </div>
+      </div>
+
+      <div class="kit-block">
         <h3 class="t-label kit-block__title">Buscador del sitio: campo (<code>.search-form</code>), chips de tipo (<code>.search-types</code>), resultados (<code>.job-row.search-hit</code> con <code>.search-mark</code>; documento: <code>.search-hit--doc</code>) y paginación con salto (<code>.pagination__gap</code>)</h3>
         <form class="search-form" role="search" action="buscar.html">
           <div class="field search-form__field">
