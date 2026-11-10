@@ -7094,55 +7094,6 @@ html:not(.js) .company-visual__tag {
   outline: none;
 }
 
-/* Llamado con foto (.cta-media): sobre fondo crema, título, bajada y botón a la
-   izquierda y una foto con esquinas suaves a la derecha desde 1024 px (foto
-   arriba en mobile y tablet). Sin caja: el fondo es el de la sección.
-   Portal Proveedores › Regístrate como proveedor. [foto por definir] */
-.cta-media {
-  display: grid;
-  gap: var(--space-40);
-  align-items: center;
-}
-
-.cta-media__text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-32);
-}
-
-.cta-media__text .section-head {
-  margin-bottom: 0;
-}
-
-.cta-media__media {
-  order: -1;
-  overflow: hidden;
-  margin: 0;
-  aspect-ratio: 3 / 2;
-  border-radius: var(--radius-lg);
-  background: var(--color-bg-muted);
-}
-
-.cta-media__media img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-@media (min-width: 1024px) {
-  .cta-media {
-    grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
-    gap: var(--space-96);
-  }
-
-  .cta-media__media {
-    order: 0;
-    aspect-ratio: 4 / 3;
-  }
-}
-
 /* Registro de proveedor (proveedores-registro.html): formulario por pasos.
    Indicador .form-steps: número en círculo y nombre de cada paso, unidos por una
    línea; el actual en Navy, los completos con contorno Navy. En mobile solo se

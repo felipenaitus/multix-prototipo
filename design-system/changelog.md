@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Regístrate como proveedor con la composición de video de Inversionistas
+- Código ✓ · Pedido de Felipe. El módulo usa la composición de Compañía integrada (`.company` + `.company-visual`: círculo con video y regiones de operación) en lugar de la foto. Se retira `.cta-media` del kit y de components.css (ya no lo usa ninguna página).
+
 ## 2026-11-10 · Portal Proveedores: sin "Ir al portal" y preguntas del canal de denuncias
 - Código ✓ · Pedido de Felipe. Se quita "Ir al portal" del hero. La pestaña Canal de denuncias suma cuatro preguntas frecuentes a la derecha (`.faq`) [contenido por definir].
 
