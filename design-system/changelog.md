@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Resultados de búsqueda sin filtros de documentos
+- Código ✓ · Pedido de Felipe. Se quitan Año y Sección de la página de resultados: los documentos se filtran solo con el chip de tipo y la búsqueda.
+
 ## 2026-11-10 · Buscador del sitio y página de resultados
 - Figma pendiente · Código ✓ · Pedido de Felipe. El buscador del menú lleva a la página nueva `buscar.html` con resultados de páginas, noticias y documentos (494, de Centro de Resultados, Gobernanza y Sustentabilidad), chips de tipo con conteo, Año y Sección para documentos, 10 por página. Índice nuevo `js/busqueda.js` (los documentos se generaron desde el HTML de esas páginas: si cambian, hay que regenerarlo). Nuevos en kit.html: `.search-form`, `.search-types`, `.search-hit`, `.search-mark` y `.pagination__gap`; los resultados reutilizan `.job-row` y los chips `.job-chips`.
 

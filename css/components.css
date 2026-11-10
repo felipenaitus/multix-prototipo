@@ -6967,8 +6967,7 @@ html:not(.js) .company-visual__tag {
 }
 
 /* Buscador del sitio (buscar.html): campo grande con "Buscar" en el encabezado;
-   resumen, chips de tipo con conteo (en fila deslizable en mobile), Año y
-   Sección solo con Documentos, y resultados en filas .job-row con el término
+   resumen, chips de tipo con conteo (en fila deslizable en mobile) y resultados en filas .job-row con el término
    subrayado en coral (Coral 500 como elemento gráfico, el texto no cambia de
    color). Paginación del kit al pie. */
 .search-form {
@@ -6991,17 +6990,6 @@ html:not(.js) .company-visual__tag {
 
 .search-summary q {
   quotes: "«" "»";
-}
-
-.search-doc-filters {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-16);
-  margin-bottom: var(--space-32);
-}
-
-.search-doc-filters[hidden] {
-  display: none;
 }
 
 .search-mark {
@@ -7037,12 +7025,6 @@ html:not(.js) .company-visual__tag {
 
   .search-types .chip {
     flex: 0 0 auto;
-  }
-}
-
-@media (min-width: 768px) {
-  .search-doc-filters {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 

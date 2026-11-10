@@ -1643,10 +1643,9 @@
   /* ---------- Buscador del sitio (buscar.html, índice en js/busqueda.js) ----------
      Busca en páginas (MX_SEARCH.pages), noticias (MX_NEWS) y documentos
      (MX_SEARCH.docs), sin mayúsculas ni tildes; todas las palabras deben estar.
-     Chips de tipo con conteo (se ocultan los que no tienen resultados); con
-     Documentos aparecen Año y Sección. Filas .job-row con el término resaltado,
+     Chips de tipo con conteo (se ocultan los que no tienen resultados). Filas .job-row con el término resaltado,
      10 por página con la paginación del kit. Todo queda en la URL:
-     ?q=&tipo=paginas|noticias|documentos&anio=&seccion=&pagina= */
+     ?q=&tipo=paginas|noticias|documentos&pagina= */
   function initSearch() {
     var page = document.querySelector('[data-search]');
     var S = window.MX_SEARCH;
@@ -1683,14 +1682,11 @@
     });
 
     var params = new URLSearchParams(location.search);
-    var state = { q: (params.get('q') || '').trim(), tipo: params.get('tipo') || '', anio: params.get('anio') || '', seccion: params.get('seccion') || '', pagina: parseInt(params.get('pagina'), 10) || 1 };
+    var state = { q: (params.get('q') || '').trim(), tipo: params.get('tipo') || '', pagina: parseInt(params.get('pagina'), 10) || 1 };
 
     var input = page.querySelector('#search-q');
     var summary = page.querySelector('[data-search-summary]');
     var chips = page.querySelector('[data-search-types]');
-    var docFilters = page.querySelector('[data-search-doc-filters]');
-    var yearSel = page.querySelector('#search-year');
-    var secSel = page.querySelector('#search-section');
     var list = page.querySelector('[data-search-results]');
     var empty = page.querySelector('[data-search-empty]');
     var pager = page.querySelector('[data-search-pager]');
@@ -1725,17 +1721,9 @@
       var u = new URLSearchParams();
       if (st.q) u.set('q', st.q);
       if (st.tipo) u.set('tipo', st.tipo);
-      if (st.tipo === 'documentos' && st.anio) u.set('anio', st.anio);
-      if (st.tipo === 'documentos' && st.seccion) u.set('seccion', st.seccion);
       if (st.pagina > 1) u.set('pagina', st.pagina);
       var qs = u.toString();
       return 'buscar.html' + (qs ? '?' + qs : '');
-    }
-
-    function fill(sel, values, current) {
-      sel.innerHTML = '<option value="">Todos</option>' + values.map(function (v) {
-        return '<option value="' + esc(v[0]) + '"' + (v[0] === current ? ' selected' : '') + '>' + esc(v[1]) + '</option>';
-      }).join('');
     }
 
     function pagerHtml(pages) {
@@ -1763,7 +1751,7 @@
       var words = norm(state.q).split(/\s+/).filter(Boolean);
       if (!words.length) {
         summary.textContent = 'Escribe qué buscas: páginas, noticias o documentos del sitio.';
-        chips.hidden = docFilters.hidden = empty.hidden = true;
+        chips.hidden = empty.hidden = true;
         list.innerHTML = pager.innerHTML = '';
         return;
       }
@@ -1785,18 +1773,6 @@
       }).join('');
 
       var shown = found.filter(function (it) { return !state.tipo || it.type === state.tipo; });
-      docFilters.hidden = state.tipo !== 'documentos';
-      if (state.tipo === 'documentos') {
-        var years = {}, secs = {};
-        shown.forEach(function (it) { years[it.year] = 1; secs[it.section] = 1; });
-        if (state.anio && !years[state.anio]) state.anio = '';
-        if (state.seccion && !secs[state.seccion]) state.seccion = '';
-        fill(yearSel, Object.keys(years).sort().reverse().map(function (y) { return [y, y]; }), state.anio);
-        fill(secSel, S.sections.filter(function (x) { return secs[x.id]; }).map(function (x) { return [x.id, x.label]; }), state.seccion);
-        shown = shown.filter(function (it) {
-          return (!state.anio || it.year === state.anio) && (!state.seccion || it.section === state.seccion);
-        });
-      }
       var rank = { paginas: 0, noticias: 1, documentos: 2 };
       shown.sort(function (a, b) { return b.score - a.score || rank[a.type] - rank[b.type] || a.order - b.order; });
 
@@ -1826,12 +1802,9 @@
       var b = e.target.closest('[data-type]');
       if (!b) return;
       state.tipo = b.getAttribute('data-type');
-      state.anio = state.seccion = '';
       state.pagina = 1;
       render();
     });
-    yearSel.addEventListener('change', function () { state.anio = yearSel.value; state.pagina = 1; render(); });
-    secSel.addEventListener('change', function () { state.seccion = secSel.value; state.pagina = 1; render(); });
     pager.addEventListener('click', function (e) {
       var a = e.target.closest('[data-page]');
       if (!a) return;
