@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Contacto IR con suscripción; Contacto sin formulario
+- Código ✓ · `<ir-contact>` suma, con el atributo `subscribe`, "Alertas al inversionista" (correo + "Suscribir", que abre un correo al mismo correo del Head of Investor Relations con la suscripción) y "Servicio al accionista" ([Agente / DCV] · [teléfono] [contenido por definir]). Se usa en Inversionistas › Contacto de Inversionistas y en la página Contacto. La página Contacto deja el formulario y muestra el mismo módulo que Inversionistas. Productos (Equipo comercial) no cambia.
+
 ## 2026-11-10 · Dividendos: Ver PDF y Descargar, sin historial Excel
 - Código ✓ · El hecho esencial de cada pago usa "Ver PDF" y "Descargar", como el resto de los documentos (antes un enlace "PDF"). Se quita "Descargar historial (Excel)"; el pie de la tabla queda solo con la nota.
 

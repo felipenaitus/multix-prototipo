@@ -1920,6 +1920,37 @@ a.pagination__item:hover,
   color: var(--color-text-brand-hover);
 }
 
+/* Con `subscribe`: alertas al inversionista y servicio al accionista, cada uno
+   bajo una línea delgada (sin caja) */
+.ir-contact__extra {
+  display: flex;
+  flex-direction: column;
+}
+
+.ir-contact__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding-block: var(--space-24);
+  border-top: var(--border-thin) solid var(--color-border-default);
+}
+
+.ir-contact__group:last-child {
+  padding-bottom: 0;
+}
+
+.ir-contact__form {
+  margin-top: var(--space-8);
+}
+
+.ir-contact__inline-link {
+  color: var(--color-text-brand);
+}
+
+.ir-contact__inline-link:hover {
+  color: var(--color-text-brand-hover);
+}
+
 
 /* ==========================================================================
    08 · Sustentabilidad y Productos (node 75-902)

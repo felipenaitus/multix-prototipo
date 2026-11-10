@@ -674,7 +674,63 @@
   /* ======================================================================
      <ir-contact> · Contacto de Relación con Inversionistas.
      Teléfono y correo siempre como enlaces (tel: / mailto:).
+     Con el atributo `subscribe` suma, bajo una línea, "Alertas al inversionista"
+     (correo + Suscribir: abre un correo al mismo `email` del contacto, el Head of
+     Investor Relations, con la suscripción) y "Servicio al accionista"
+     (atributos opcionales shareholder-service y shareholder-phone).
      ====================================================================== */
+  var irSubscribeCount = 0;
+  function irSubscribeHtml(el, email) {
+    irSubscribeCount += 1;
+    var id = 'ir-alert-' + irSubscribeCount;
+    var agent = el.getAttribute('shareholder-service');
+    var agentPhone = el.getAttribute('shareholder-phone');
+    var service = agent || agentPhone
+      ? (agent ? esc(agent) : '') + (agent && agentPhone ? ' · ' : '') +
+        (agentPhone ? '<a class="ir-contact__inline-link" href="' + telHref(agentPhone) + '">' + esc(agentPhone) + '</a>' : '')
+      : '[Agente / DCV] · [teléfono] [contenido por definir]';
+    return '<div class="ir-contact__extra">' +
+        '<div class="ir-contact__group">' +
+          '<p class="t-ui-strong">Alertas al inversionista</p>' +
+          '<p class="t-small c-secondary">Resultados, hechos esenciales y eventos.</p>' +
+          '<form class="subscribe__form ir-contact__form" novalidate data-alert-to="' + esc(email) + '">' +
+            '<div class="field"><label class="field__label" for="' + id + '">Correo electrónico</label>' +
+              '<div class="control"><input class="control__input" id="' + id + '" name="correo" type="email" autocomplete="email" placeholder="nombre@empresa.com" required></div></div>' +
+            '<button class="btn btn--accent" type="submit">Suscribir</button>' +
+          '</form>' +
+          '<p class="t-small c-secondary ir-contact__status" role="status" hidden></p>' +
+        '</div>' +
+        '<div class="ir-contact__group">' +
+          '<p class="t-ui-strong">Servicio al accionista</p>' +
+          '<p class="t-small c-secondary">Traspasos, custodia y pago de dividendos.</p>' +
+          '<p class="t-ui-small-strong">' + service + '</p>' +
+        '</div>' +
+      '</div>';
+  }
+  function bindIrSubscribe(el) {
+    var form = el.querySelector('.ir-contact__form');
+    if (!form) return;
+    var input = form.querySelector('input');
+    var status = el.querySelector('.ir-contact__status');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var value = input.value.trim();
+      status.hidden = false;
+      if (!value || !input.checkValidity()) {
+        status.textContent = 'Ingresa un correo válido para suscribirte.';
+        input.setAttribute('aria-invalid', 'true');
+        input.focus();
+        return;
+      }
+      input.removeAttribute('aria-invalid');
+      var to = form.getAttribute('data-alert-to');
+      var subject = 'Suscripción a alertas al inversionista';
+      var body = 'Quiero recibir alertas de resultados, hechos esenciales y eventos de Multi X en: ' + value;
+      status.textContent = 'Se abrirá tu correo para enviar la suscripción a ' + to + '.';
+      window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
+  }
+
   class IrContact extends HTMLElement {
     connectedCallback() {
       if (this._ready) return;
@@ -697,7 +753,9 @@
         '<ul class="ir-contact__links" role="list">' +
           (phone ? '<li><a class="ir-contact__link" href="' + telHref(phone) + '">' + icon('phone') + esc(phone) + '</a></li>' : '') +
           (email ? '<li><a class="ir-contact__link" href="mailto:' + esc(email) + '">' + icon('mail') + esc(email) + '</a></li>' : '') +
-        '</ul>';
+        '</ul>' +
+        (this.hasAttribute('subscribe') && email ? irSubscribeHtml(this, email) : '');
+      bindIrSubscribe(this);
     }
   }
 

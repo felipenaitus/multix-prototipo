@@ -28,7 +28,7 @@
         <div class="page-intro__text">
     <header class="page-head">
       <h1 class="t-h1">Contacto</h1>
-      <p class="t-body-l page-head__lead">Escríbele al equipo de Relación con Inversionistas de Multi X. [contenido por definir]</p>
+      <p class="t-body-l page-head__lead">Contacta al equipo de Relación con Inversionistas de Multi X y suscríbete a las alertas al inversionista. [contenido por definir]</p>
     </header>
         </div>
         <figure class="page-intro__media">
@@ -37,45 +37,14 @@
       </div>
     </div>
 
-    <section class="section">
+    <!-- Contacto: el mismo módulo de Inversionistas -->
+    <section class="section" aria-labelledby="ir-contact-title">
       <div class="container split">
-        <div class="contact-side">
-        <div class="section-head section-head--compact">
-          <h2 class="t-h3" id="contact-title">Relación con Inversionistas</h2>
-          <p class="t-body section-head__lead">Para consultas de accionistas, analistas e inversionistas. Respondemos dentro de dos días hábiles. [contenido por definir]</p>
+        <div class="section-head reveal">
+          <h2 class="t-h2" id="ir-contact-title">Contacto de Inversionistas</h2>
+          <p class="t-body-l section-head__lead">Para consultas de accionistas, analistas e inversionistas. [contenido por definir]</p>
         </div>
-          <ir-contact name="Nombre Apellido" role-title="Head of Investor Relations" phone="+56 65 248 3700" email="inversionistas@multi-x.cl"></ir-contact>
-        </div>
-        <form class="contact-form" action="#" novalidate aria-labelledby="form-title">
-          <h2 class="t-h3" id="form-title">Escríbenos</h2>
-          <div class="field">
-            <label class="field__label" for="ir-name">Nombre</label>
-            <div class="control"><input class="control__input" id="ir-name" name="nombre" autocomplete="name" required></div>
-          </div>
-          <div class="field">
-            <label class="field__label" for="ir-email">Correo electrónico</label>
-            <div class="control"><input class="control__input" id="ir-email" name="correo" type="email" autocomplete="email" placeholder="nombre@empresa.com" required></div>
-          </div>
-          <div class="field">
-            <label class="field__label" for="ir-company">Empresa o institución</label>
-            <div class="control"><input class="control__input" id="ir-company" name="empresa" autocomplete="organization"></div>
-          </div>
-          <div class="field">
-            <label class="field__label" for="ir-topic">Tipo de consulta</label>
-            <div class="control control--select">
-              <select class="control__input" id="ir-topic" name="tipo">
-                <option value="">Seleccionar</option><option>Resultados y estados financieros</option><option>Acción y dividendos</option><option>Junta de accionistas</option><option>Gobierno corporativo</option><option>Otra consulta</option>
-              </select>
-              <svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>
-            </div>
-          </div>
-          <div class="field">
-            <label class="field__label" for="ir-msg">Mensaje</label>
-            <div class="control control--textarea"><textarea class="control__input" id="ir-msg" name="mensaje" rows="4"></textarea></div>
-          </div>
-          <button class="btn btn--primary" type="submit">Enviar consulta</button>
-          <p class="t-small c-secondary contact-form__done" role="status" hidden>Gracias. Te responderemos dentro de dos días hábiles. [prototipo: no se envía]</p>
-        </form>
+        <ir-contact class="reveal" name="Nombre Apellido" role-title="Head of Investor Relations" phone="+56 65 248 3700" email="inversionistas@multi-x.cl" subscribe></ir-contact>
       </div>
     </section>
 
