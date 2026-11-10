@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Correo general: fuera del footer, en Contacto
+- Código ✓ · Pedido de Felipe. Se quita contacto@multi-x.cl del footer (todas las páginas) y del pie de Oficinas. Pasa a una tercera pestaña "Contacto general" en Contacto › Contactos directos (`<ir-contact label="Contacto general">`).
+
 ## 2026-11-10 · Contacto: Inversionistas y Comercial en pestañas
 - Código ✓ · Pedido de Felipe. Los dos contactos directos pasan a una sola sección "Contactos directos" con pestañas del kit (`.ct-panel`).
 

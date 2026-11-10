@@ -647,7 +647,6 @@
             '<div class="footer__brand">' +
               '<p class="t-label footer__col-title">Direcciones</p>' +
               '<ul class="footer__offices" role="list">' + offices + '</ul>' +
-              '<a class="t-small footer__contact-link" href="mailto:' + esc(CONTACT.email) + '">' + esc(CONTACT.email) + '</a>' +
             '</div>' +
             '<div class="footer__cols">' + cols + '</div>' +
           '</div>' +
@@ -1013,9 +1012,9 @@
     }
   }
 
-  /* <site-offices> · Oficinas (Contacto): los mismos datos del footer (OFFICES y
-     CONTACT.email), en piezas con una línea arriba: ciudad (Título 3), dirección y
-     teléfono (tel:); al pie, el correo general (mailto:). Tres en fila desde
+  /* <site-offices> · Oficinas (Contacto): los mismos datos del footer (OFFICES;
+     el correo general va en Contacto › Contactos directos), en piezas con una línea
+     arriba: ciudad (Título 3), dirección y teléfono (tel:). Tres en fila desde
      1024 px, apiladas en mobile. */
   class SiteOffices extends HTMLElement {
     connectedCallback() {
@@ -1032,8 +1031,7 @@
               '<a class="offices__link" href="' + telHref(o.phone) + '">' + icon('phone') + esc(o.phone) + '</a>' +
             '</li>';
           }).join('') +
-        '</ul>' +
-        '<p class="t-body offices__mail">Correo general: <a class="offices__link" href="mailto:' + esc(CONTACT.email) + '">' + icon('mail') + esc(CONTACT.email) + '</a></p>';
+        '</ul>';
     }
   }
 

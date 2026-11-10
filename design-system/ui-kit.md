@@ -220,9 +220,9 @@ Orden (definido por Felipe): hero · intro (relato + cifras destacadas) · Memor
 ### Página Contacto (nuevos · pendientes de llevar a Figma)
 Diagrama de Felipe: reúne los contactos repartidos en el sitio y los accesos a formularios específicos (`contacto.html`; sin formulario general). Enlazada desde la barra utilitaria y el menú (Recursos › Contacto).
 - **Encabezado:** `.page-intro` crema con migas, "Contacto" (Título 1) y bajada.
-- **Contactos directos:** pestañas del kit (Inversionistas · Comercial; en mobile, el selector desplegable). Cada panel (`.ct-panel`) lleva el título, la bajada y el enlace a su sección a la izquierda y `<ir-contact>` a la derecha desde 1024 px.
+- **Contactos directos:** pestañas del kit (Inversionistas · Comercial · Contacto general, con el correo general contacto@multi-x.cl, que ya no va en el footer; en mobile, el selector desplegable). Cada panel (`.ct-panel`) lleva el título, la bajada y el enlace a su sección a la izquierda y `<ir-contact>` a la derecha desde 1024 px.
 - **Formularios y canales:** `.value-list--row` en crema con cuatro accesos, cada uno con ícono de línea Navy de 40 px (`i-mensaje`, `i-registro`, `i-gestion`, `i-escudo`): Contacto de proveedores (formulario del Portal Proveedores), Quiero ser proveedor (registro), Ofertas laborales y Canal de denuncias (externo, pestaña nueva y flecha de enlace externo). En mobile, slider.
-- **Oficinas (`<site-offices>` en `js/layout.js`):** los mismos datos del footer (`OFFICES`, `CONTACT.email`): ciudad (Título 3), dirección y teléfono (`tel:`) en tres piezas con una línea arriba (en fila desde 1024 px, apiladas en mobile) y, al pie, el correo general (`mailto:`).
+- **Oficinas (`<site-offices>` en `js/layout.js`):** los mismos datos del footer (`OFFICES`): ciudad (Título 3), dirección y teléfono (`tel:`) en tres piezas con una línea arriba (en fila desde 1024 px, apiladas en mobile).
 
 ### Portal Proveedores (nuevos · pendientes de llevar a Figma)
 Diagrama de Felipe con la información real de multi-xsalmon.com/proveedores. Dos páginas: `proveedores.html` y `proveedores-registro.html` (página propia del registro). Comportamiento en `initProtoForms` (`js/components.js`). Enlazado desde la barra utilitaria, el menú (Portales, sin ícono de enlace externo: es una página del sitio) y el footer.
