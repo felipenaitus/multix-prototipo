@@ -6377,6 +6377,19 @@ html:not(.js) .company-visual__tag {
   color: var(--color-text-secondary);
 }
 
+/* Lista con "Ver más" por tramos ([data-show-more]): los nuevos aparecen con fundido */
+.date-list > .is-revealed {
+  animation: fade-up var(--duration-base) var(--easing-out);
+}
+
+.date-list > .is-revealed:focus {
+  outline: none;
+}
+
+.date-list + .show-more {
+  margin-top: var(--space-24);
+}
+
 /* Variante para agendar (.date-item--agenda): próximos eventos del Calendario.
    La fila no es enlace: fecha, título con el tipo de evento y "Agendar" con
    Google y Outlook (.add-calendar). En mobile los botones bajan bajo el título. */

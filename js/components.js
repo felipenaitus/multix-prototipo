@@ -568,6 +568,37 @@
     });
   }
 
+  /* ---------- Lista con "Ver más" por tramos ([data-show-more="6"]) ----------
+     Muestra los primeros N elementos de la lista; el botón (texto en
+     data-label-more, por defecto "Ver más") agrega los N siguientes y desaparece
+     cuando ya se ven todos. El foco pasa al primer elemento nuevo. Ej.: Calendario
+     › Eventos anteriores. */
+  function initShowMore() {
+    $all('[data-show-more]').forEach(function (list) {
+      var step = parseInt(list.getAttribute('data-show-more'), 10) || 6;
+      var items = $all(':scope > li', list);
+      if (items.length <= step) return;
+      var shown = step;
+      items.forEach(function (li, i) { if (i >= shown) li.hidden = true; });
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'btn btn--tertiary hit reveal-more show-more';
+      btn.innerHTML = '<span class="reveal-more__label">' + (list.getAttribute('data-label-more') || 'Ver más') + '</span><svg class="icon" aria-hidden="true"><use href="#i-chev-down"></use></svg>';
+      list.insertAdjacentElement('afterend', btn);
+      btn.addEventListener('click', function () {
+        var first = null;
+        items.slice(shown, shown + step).forEach(function (li) {
+          li.hidden = false;
+          li.classList.add('is-revealed');
+          if (!first) first = li;
+        });
+        shown += step;
+        if (first) { first.setAttribute('tabindex', '-1'); first.focus({ preventScroll: true }); }
+        if (shown >= items.length) btn.remove();
+      });
+    });
+  }
+
   /* ---------- Ver más ([data-reveal-more]) ----------
      Botón que muestra u oculta un grupo de elementos (aria-controls) y cambia su
      texto entre data-label-more y data-label-less. Ej.: memorias anteriores. */
@@ -1266,6 +1297,7 @@
     initPeople();
     initRevealMore();
     initMediaCircle();
+    initShowMore();
     initDocYearsLimit();
     initDocFilter();
     initInviewVideos();

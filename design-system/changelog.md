@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-10 · Calendario con eventos reales y "Ver más eventos"
+- Código ✓ · El Calendario usa los eventos publicados en el Calendario Financiero del sitio actual de Multi X (2021 a 2026), con su fecha, ubicación y hora cuando las tiene. Próximos eventos: los de hoy en adelante (hoy, 1: Publicación de Resultados Tercer Trimestre 2026), con Agendar. Eventos anteriores: 46, del más reciente al más antiguo. Tipos: "Publicación de Resultados" → Publicación IFRS; "Presentación de Resultados" → Presentación de resultados; Capital Markets Day, Investor Day y Andean E-Conference → Otros. Se dejó fuera un evento sin fecha en el sitio actual (Presentación de Resultados Q1). Bajadas de ambas secciones ajustadas.
+- Regla nueva en el kit: "Ver más" por tramos (`[data-show-more]`). Eventos anteriores muestra 6 y "Ver más eventos" agrega 6 más cada vez.
+
 ## 2026-11-10 · Calendario: eventos anteriores sin enlace
 - Código ✓ · Los eventos anteriores dejan de ser clickeables: cada fila muestra fecha, título y tipo, sin flecha ni enlace (`.date-item__row`, la misma fila de los próximos eventos, sin "Agendar").
 
