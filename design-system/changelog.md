@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-12 · Íconos en La proteína del futuro
+- Figma pendiente · Código ✓ · Pedido de Felipe. Tres íconos de línea nuevos (`i-salmon`, `i-cerdo`, `i-vacuno`, en `js/layout.js`) sobre las cifras de huella de carbono de Sustentabilidad, con la clase nueva `.stat__icon` (Navy, 40 px). En kit.html, junto a los demás íconos representativos.
+
 ## 2026-11-10 · Legislación: acceso exclusivo
 - Figma pendiente · Código ✓ · Pedido de Felipe. Página nueva `legislacion.html` (solo el ingreso, `.login`, nuevo en kit.html) con correo corporativo, "Acceder" y ayuda del equipo legal. "Legislación" del footer enlaza a la página nueva. Ajuste por pedido de Felipe: menos aire sobre el ingreso (sin relleno propio y la sección parte con `--space-48` arriba).
 
