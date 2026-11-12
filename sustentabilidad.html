@@ -434,35 +434,90 @@
       </div>
     </section>
 
-    <!-- Proyectos de alto estándar -->
+    <!-- Proyectos de alto estándar ([data-journey], el componente de Del cultivo a la mesa
+         de Productos, en su variante de cuatro pasos). [fotos y videos por definir] -->
     <section class="section" aria-labelledby="projects-title">
       <div class="container">
-        <div class="section-head reveal">
-          <h2 class="t-h2" id="projects-title">Proyectos de alto estándar</h2>
-          <p class="t-body-l section-head__lead">La economía circular, el cambio climático y el uso consciente de materias primas son parte de nuestros motores de alto rendimiento.</p>
+        <div class="journey journey--four" data-journey>
+          <div class="section-head reveal">
+            <h2 class="t-h2" id="projects-title">Proyectos de alto estándar</h2>
+            <p class="t-body-l section-head__lead">La economía circular, el cambio climático y el uso consciente de materias primas son parte de nuestros motores de alto rendimiento.</p>
+          </div>
+          <ol class="journey__steps reveal" role="list">
+            <li class="journey__step is-active">
+              <button class="journey__trigger" type="button" aria-controls="project-1" aria-expanded="true">
+                <span class="journey__media" aria-hidden="true">
+                  <img class="journey__photo" src="assets/img/foto-proceso.jpg" alt="" width="720" height="720" loading="lazy">
+                  <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=12" poster="assets/img/foto-proceso.jpg"></video>
+                </span>
+                <span class="t-label journey__num">01</span>
+                <span class="t-ui-strong journey__name">Modelo de economía circular</span>
+                <span class="t-body journey__desc">Evitamos el envío de desechos a rellenos sanitarios y valorizamos los residuos por medio de la reutilización o el reciclaje, conscientes de los beneficios ambientales y sociales de la economía circular.</span>
+                <span class="journey__progress" aria-hidden="true"></span>
+              </button>
+            </li>
+            <li class="journey__step">
+              <button class="journey__trigger" type="button" aria-controls="project-2" aria-expanded="false">
+                <span class="journey__media" aria-hidden="true">
+                  <img class="journey__photo" src="assets/img/foto-centros-mar.jpg" alt="" width="720" height="720" loading="lazy">
+                  <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=7" poster="assets/img/foto-centros-mar.jpg"></video>
+                </span>
+                <span class="t-label journey__num">02</span>
+                <span class="t-ui-strong journey__name">Estrategia de cambio climático</span>
+                <span class="t-body journey__desc">Con el programa “Multi X Climate Action Strategy” impulsamos el uso de energías renovables, la reducción de emisiones y del uso de petróleo, y tecnología de mejora continua.</span>
+                <span class="journey__progress" aria-hidden="true"></span>
+              </button>
+            </li>
+            <li class="journey__step">
+              <button class="journey__trigger" type="button" aria-controls="project-3" aria-expanded="false">
+                <span class="journey__media" aria-hidden="true">
+                  <img class="journey__photo" src="assets/img/foto-cosecha.jpg" alt="" width="720" height="720" loading="lazy">
+                  <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=18" poster="assets/img/foto-cosecha.jpg"></video>
+                </span>
+                <span class="t-label journey__num">03</span>
+                <span class="t-ui-strong journey__name">Uso consciente de materias primas</span>
+                <span class="t-body journey__desc">Promovemos materias primas sustentables y de alta calidad en la alimentación de nuestros peces: aceite y harina de pescado, con seguimiento de la relación Fish In / Fish Out.</span>
+                <span class="journey__progress" aria-hidden="true"></span>
+              </button>
+            </li>
+            <li class="journey__step">
+              <button class="journey__trigger" type="button" aria-controls="project-4" aria-expanded="false">
+                <span class="journey__media" aria-hidden="true">
+                  <img class="journey__photo" src="assets/img/foto-agua-dulce.jpg" alt="" width="720" height="720" loading="lazy">
+                  <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=27" poster="assets/img/foto-agua-dulce.jpg"></video>
+                </span>
+                <span class="t-label journey__num">04</span>
+                <span class="t-ui-strong journey__name">Desarrollo sostenible</span>
+                <span class="t-body journey__desc">Asumimos nuestra responsabilidad con los Objetivos de Desarrollo Sostenible de las Naciones Unidas; nuestras operaciones están en línea con varios de ellos.</span>
+                <span class="journey__progress" aria-hidden="true"></span>
+              </button>
+            </li>
+          </ol>
+          <div class="journey__foot reveal">
+            <div class="journey__detail" aria-live="polite">
+              <div class="journey__panel" id="project-1">
+                <p class="t-h3 journey__title">01. Modelo de economía circular</p>
+                <p class="t-body-l journey__text">Evitamos el envío de desechos a rellenos sanitarios y valorizamos los residuos por medio de la reutilización o el reciclaje, conscientes de los beneficios ambientales y sociales de la economía circular.</p>
+              </div>
+              <div class="journey__panel" id="project-2" hidden>
+                <p class="t-h3 journey__title">02. Estrategia de cambio climático</p>
+                <p class="t-body-l journey__text">Con el programa “Multi X Climate Action Strategy” impulsamos el uso de energías renovables, la reducción de emisiones y del uso de petróleo, y tecnología de mejora continua.</p>
+              </div>
+              <div class="journey__panel" id="project-3" hidden>
+                <p class="t-h3 journey__title">03. Uso consciente de materias primas</p>
+                <p class="t-body-l journey__text">Promovemos materias primas sustentables y de alta calidad en la alimentación de nuestros peces: aceite y harina de pescado, con seguimiento de la relación Fish In / Fish Out.</p>
+              </div>
+              <div class="journey__panel" id="project-4" hidden>
+                <p class="t-h3 journey__title">04. Desarrollo sostenible</p>
+                <p class="t-body-l journey__text">Asumimos nuestra responsabilidad con los Objetivos de Desarrollo Sostenible de las Naciones Unidas; nuestras operaciones están en línea con varios de ellos.</p>
+              </div>
+            </div>
+            <div class="chain__arrows">
+              <button class="chain__arrow chain__arrow--prev" type="button" aria-label="Proyecto anterior"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+              <button class="chain__arrow" type="button" aria-label="Proyecto siguiente"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+            </div>
+          </div>
         </div>
-        <ul class="pillars" role="list">
-          <li class="pillar reveal" style="--reveal-step: 0">
-            <div class="pillar__media"><span class="t-small">[foto por definir]</span></div>
-            <h3 class="t-h3">Modelo de economía circular</h3>
-            <p class="t-body pillar__text">Evitamos el envío de desechos a rellenos sanitarios y valorizamos los residuos por medio de la reutilización o el reciclaje, conscientes de los beneficios ambientales y sociales de la economía circular.</p>
-          </li>
-          <li class="pillar reveal" style="--reveal-step: 1">
-            <div class="pillar__media"><span class="t-small">[foto por definir]</span></div>
-            <h3 class="t-h3">Estrategia de cambio climático</h3>
-            <p class="t-body pillar__text">Con el programa “Multi X Climate Action Strategy” impulsamos el uso de energías renovables, la reducción de emisiones y del uso de petróleo, y tecnología de mejora continua.</p>
-          </li>
-          <li class="pillar reveal" style="--reveal-step: 0">
-            <div class="pillar__media"><span class="t-small">[foto por definir]</span></div>
-            <h3 class="t-h3">Uso consciente de materias primas</h3>
-            <p class="t-body pillar__text">Promovemos materias primas sustentables y de alta calidad en la alimentación de nuestros peces: aceite y harina de pescado, con seguimiento de la relación Fish In / Fish Out.</p>
-          </li>
-          <li class="pillar reveal" style="--reveal-step: 1">
-            <div class="pillar__media"><span class="t-small">[foto por definir]</span></div>
-            <h3 class="t-h3">Desarrollo sostenible</h3>
-            <p class="t-body pillar__text">Asumimos nuestra responsabilidad con los Objetivos de Desarrollo Sostenible de las Naciones Unidas; nuestras operaciones están en línea con varios de ellos.</p>
-          </li>
-        </ul>
       </div>
     </section>
 

@@ -5535,6 +5535,14 @@ a.pagination__item:hover,
   }
 }
 
+/* Variante de cuatro pasos (.journey--four): Sustentabilidad › Proyectos de
+   alto estándar */
+@media (min-width: 768px) {
+  .journey--four .journey__steps {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 @media (min-width: 1024px) {
   .journey__steps {
     gap: var(--space-32);

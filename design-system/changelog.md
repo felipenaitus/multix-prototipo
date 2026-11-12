@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-12 · Proyectos de alto estándar con el componente de Del cultivo a la mesa
+- Código ✓ · Pedido de Felipe. En Sustentabilidad, Proyectos de alto estándar deja los pilares con foto y pasa al componente `[data-journey]` de Productos (círculos con foto que reproducen video en el activo, avance automático, flechas y texto debajo), con la variante nueva `.journey--four` (cuatro columnas desde tablet). Fotos y videos de ejemplo [por definir].
+
 ## 2026-11-12 · Íconos en La proteína del futuro
 - Figma pendiente · Código ✓ · Pedido de Felipe. Tres íconos de línea nuevos (`i-salmon`, `i-cerdo`, `i-vacuno`, en `js/layout.js`) sobre las cifras de huella de carbono de Sustentabilidad, con la clase nueva `.stat__icon` (40 px). Ajuste de Felipe: siluetas de perfil sin caras (menos infantiles) y en coral (Coral 500, elemento gráfico). En kit.html, junto a los demás íconos representativos.
 
