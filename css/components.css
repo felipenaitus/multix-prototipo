@@ -5535,6 +5535,36 @@ a.pagination__item:hover,
   }
 }
 
+/* Variante de ocho pasos (.journey--eight): Nosotros › Nuestra historia (un hito
+   por año). Entre tablet y 1279 px sigue como carrusel (tres a la vista en
+   tablet, cinco desde 1024 px) con el detalle debajo; desde 1280 px, los ocho
+   en fila (antes no caben los títulos). */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .journey--eight .journey__steps {
+    display: flex;
+    overflow-x: auto;
+    margin: 0 calc(-1 * var(--layout-gutter));
+    padding: 0 var(--layout-gutter);
+  }
+
+  .journey--eight .journey__steps > .journey__step {
+    flex: 0 0 30%;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .journey--eight .journey__steps > .journey__step {
+    flex-basis: 18%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .journey--eight .journey__steps {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: var(--space-24);
+  }
+}
+
 /* Variante de cuatro pasos (.journey--four): Sustentabilidad › Proyectos de
    alto estándar */
 @media (min-width: 768px) {

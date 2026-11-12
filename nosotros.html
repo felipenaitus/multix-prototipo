@@ -127,66 +127,147 @@
       </div>
     </section>
 
-    <!-- Historia: línea de tiempo (relato vertical con años) -->
-    <section class="section section--subtle section--open-in section--curve-bottom section--chain" aria-labelledby="history-title" data-section-open data-section-curve>
+    <!-- Historia: el componente de Del cultivo a la mesa ([data-journey]) con un hito
+         por año, en su variante de ocho pasos. [fotos y videos por definir] -->
+    <section class="section section--subtle section--open-in section--curve-bottom" aria-labelledby="history-title" data-section-open data-section-curve>
       <div class="container">
-        <div class="chain chain--timeline reveal" data-chain>
-          <h2 class="t-h2 chain__title" id="history-title">Nuestra historia</h2>
-          <figure class="chain__stage" aria-hidden="true"></figure>
-          <ol class="chain__steps" role="list">
-            <li class="chain__step is-active" role="listitem" id="hito-1">
-              <h3 class="t-h2 chain__sub">Nace Multi X en Puerto Montt</h3>
-              <p class="chain__year t-display">1988</p>
-              <p class="t-body chain__text">Un pequeño grupo de emprendedores inicia el cultivo de salmón en la Región de Los Lagos. [contenido por definir]</p>
+        <div class="journey journey--eight" data-journey>
+          <div class="section-head reveal">
+            <h2 class="t-h2" id="history-title">Nuestra historia</h2>
+          </div>
+          <ol class="journey__steps reveal" role="list">
+            <li class="journey__step is-active">
+              <button class="journey__trigger" type="button" aria-controls="hito-1" aria-expanded="true">
+                <span class="journey__media" aria-hidden="true">
+                  <img class="journey__photo" src="assets/img/foto-genetica.jpg" alt="" width="720" height="720" loading="lazy">
+                  <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=2.3" poster="assets/img/foto-genetica.jpg"></video>
+                </span>
+                <span class="t-label journey__num">1988</span>
+                <span class="t-ui-strong journey__name">Nace Multi X en Puerto Montt</span>
+                <span class="t-body journey__desc">Un pequeño grupo de emprendedores inicia el cultivo de salmón en la Región de Los Lagos. [contenido por definir]</span>
+                <span class="journey__progress" aria-hidden="true"></span>
+              </button>
             </li>
-            <li class="chain__step" role="listitem" id="hito-2" aria-hidden="true">
-              <h3 class="t-h2 chain__sub">Primeras exportaciones</h3>
-              <p class="chain__year t-display">1994</p>
-              <p class="t-body chain__text">Llegan los primeros embarques a Estados Unidos y Japón. [contenido por definir]</p>
+            <li class="journey__step">
+              <button class="journey__trigger" type="button" aria-controls="hito-2" aria-expanded="false">
+                <span class="journey__media" aria-hidden="true">
+                  <img class="journey__photo" src="assets/img/foto-distribucion.jpg" alt="" width="720" height="720" loading="lazy">
+                  <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=40" poster="assets/img/foto-distribucion.jpg"></video>
+                </span>
+                <span class="t-label journey__num">1994</span>
+                <span class="t-ui-strong journey__name">Primeras exportaciones</span>
+                <span class="t-body journey__desc">Llegan los primeros embarques a Estados Unidos y Japón. [contenido por definir]</span>
+                <span class="journey__progress" aria-hidden="true"></span>
+              </button>
             </li>
-            <li class="chain__step" role="listitem" id="hito-3" aria-hidden="true">
-              <h3 class="t-h2 chain__sub">Llegamos a Aysén</h3>
-              <p class="chain__year t-display">2001</p>
-              <p class="t-body chain__text">Abrimos centros de cultivo en la Región de Aysén y crecemos hacia el sur. [contenido por definir]</p>
+            <li class="journey__step">
+              <button class="journey__trigger" type="button" aria-controls="hito-3" aria-expanded="false">
+                <span class="journey__media" aria-hidden="true">
+                  <img class="journey__photo" src="assets/img/foto-centros-mar.jpg" alt="" width="720" height="720" loading="lazy">
+                  <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=7" poster="assets/img/foto-centros-mar.jpg"></video>
+                </span>
+                <span class="t-label journey__num">2001</span>
+                <span class="t-ui-strong journey__name">Llegamos a Aysén</span>
+                <span class="t-body journey__desc">Abrimos centros de cultivo en la Región de Aysén y crecemos hacia el sur. [contenido por definir]</span>
+                <span class="journey__progress" aria-hidden="true"></span>
+              </button>
             </li>
-            <li class="chain__step" role="listitem" id="hito-4" aria-hidden="true">
-              <h3 class="t-h2 chain__sub">Integración vertical</h3>
-              <p class="chain__year t-display">2006</p>
-              <p class="t-body chain__text">Sumamos pisciculturas y plantas de proceso propias: de la ova al cliente. [contenido por definir]</p>
+            <li class="journey__step">
+              <button class="journey__trigger" type="button" aria-controls="hito-4" aria-expanded="false">
+                <span class="journey__media" aria-hidden="true">
+                  <img class="journey__photo" src="assets/img/foto-agua-dulce.jpg" alt="" width="720" height="720" loading="lazy">
+                  <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=27" poster="assets/img/foto-agua-dulce.jpg"></video>
+                </span>
+                <span class="t-label journey__num">2006</span>
+                <span class="t-ui-strong journey__name">Integración vertical</span>
+                <span class="t-body journey__desc">Sumamos pisciculturas y plantas de proceso propias: de la ova al cliente. [contenido por definir]</span>
+                <span class="journey__progress" aria-hidden="true"></span>
+              </button>
             </li>
-            <li class="chain__step" role="listitem" id="hito-5" aria-hidden="true">
-              <h3 class="t-h2 chain__sub">Apertura en bolsa</h3>
-              <p class="chain__year t-display">2011</p>
-              <p class="t-body chain__text">Multi X comienza a cotizar en la Bolsa de Santiago. [contenido por definir]</p>
+            <li class="journey__step">
+              <button class="journey__trigger" type="button" aria-controls="hito-5" aria-expanded="false">
+                <span class="journey__media" aria-hidden="true">
+                  <img class="journey__photo" src="assets/img/foto-proceso.jpg" alt="" width="720" height="720" loading="lazy">
+                  <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=33" poster="assets/img/foto-proceso.jpg"></video>
+                </span>
+                <span class="t-label journey__num">2011</span>
+                <span class="t-ui-strong journey__name">Apertura en bolsa</span>
+                <span class="t-body journey__desc">Multi X comienza a cotizar en la Bolsa de Santiago. [contenido por definir]</span>
+                <span class="journey__progress" aria-hidden="true"></span>
+              </button>
             </li>
-            <li class="chain__step" role="listitem" id="hito-6" aria-hidden="true">
-              <h3 class="t-h2 chain__sub">Llegamos a Magallanes</h3>
-              <p class="chain__year t-display">2016</p>
-              <p class="t-body chain__text">Iniciamos operaciones en la Región de Magallanes. [contenido por definir]</p>
+            <li class="journey__step">
+              <button class="journey__trigger" type="button" aria-controls="hito-6" aria-expanded="false">
+                <span class="journey__media" aria-hidden="true">
+                  <img class="journey__photo" src="assets/img/foto-cosecha.jpg" alt="" width="720" height="720" loading="lazy">
+                  <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=18" poster="assets/img/foto-cosecha.jpg"></video>
+                </span>
+                <span class="t-label journey__num">2016</span>
+                <span class="t-ui-strong journey__name">Llegamos a Magallanes</span>
+                <span class="t-body journey__desc">Iniciamos operaciones en la Región de Magallanes. [contenido por definir]</span>
+                <span class="journey__progress" aria-hidden="true"></span>
+              </button>
             </li>
-            <li class="chain__step" role="listitem" id="hito-7" aria-hidden="true">
-              <h3 class="t-h2 chain__sub">Oficina en Miami</h3>
-              <p class="chain__year t-display">2019</p>
-              <p class="t-body chain__text">Abrimos una oficina comercial para estar más cerca de nuestros clientes en Norteamérica. [contenido por definir]</p>
+            <li class="journey__step">
+              <button class="journey__trigger" type="button" aria-controls="hito-7" aria-expanded="false">
+                <span class="journey__media" aria-hidden="true">
+                  <img class="journey__photo" src="assets/img/foto-fresco.jpg" alt="" width="720" height="720" loading="lazy">
+                  <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=12" poster="assets/img/foto-fresco.jpg"></video>
+                </span>
+                <span class="t-label journey__num">2019</span>
+                <span class="t-ui-strong journey__name">Oficina en Miami</span>
+                <span class="t-body journey__desc">Abrimos una oficina comercial para estar más cerca de nuestros clientes en Norteamérica. [contenido por definir]</span>
+                <span class="journey__progress" aria-hidden="true"></span>
+              </button>
             </li>
-            <li class="chain__step" role="listitem" id="hito-8" aria-hidden="true">
-              <h3 class="t-h2 chain__sub">Certificación ASC</h3>
-              <p class="chain__year t-display">2024</p>
-              <p class="t-body chain__text">Todos nuestros centros de mar obtienen la certificación ASC. [contenido por definir]</p>
+            <li class="journey__step">
+              <button class="journey__trigger" type="button" aria-controls="hito-8" aria-expanded="false">
+                <span class="journey__media" aria-hidden="true">
+                  <img class="journey__photo" src="assets/img/foto-ahumado.jpg" alt="" width="720" height="720" loading="lazy">
+                  <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=50" poster="assets/img/foto-ahumado.jpg"></video>
+                </span>
+                <span class="t-label journey__num">2024</span>
+                <span class="t-ui-strong journey__name">Certificación ASC</span>
+                <span class="t-body journey__desc">Todos nuestros centros de mar obtienen la certificación ASC. [contenido por definir]</span>
+                <span class="journey__progress" aria-hidden="true"></span>
+              </button>
             </li>
           </ol>
-          <div class="chain__nav" role="group" aria-label="Hitos de la historia">
-            <div class="chain__segs">
-              <button class="chain__seg" type="button" aria-controls="hito-1" aria-label="1988: Nace Multi X en Puerto Montt" aria-current="step"><span class="chain__seg-line"></span><span class="t-small chain__seg-year" aria-hidden="true">1988</span></button>
-              <button class="chain__seg" type="button" aria-controls="hito-2" aria-label="1994: Primeras exportaciones"><span class="chain__seg-line"></span><span class="t-small chain__seg-year" aria-hidden="true">1994</span></button>
-              <button class="chain__seg" type="button" aria-controls="hito-3" aria-label="2001: Llegamos a Aysén"><span class="chain__seg-line"></span><span class="t-small chain__seg-year" aria-hidden="true">2001</span></button>
-              <button class="chain__seg" type="button" aria-controls="hito-4" aria-label="2006: Integración vertical"><span class="chain__seg-line"></span><span class="t-small chain__seg-year" aria-hidden="true">2006</span></button>
-              <button class="chain__seg" type="button" aria-controls="hito-5" aria-label="2011: Apertura en bolsa"><span class="chain__seg-line"></span><span class="t-small chain__seg-year" aria-hidden="true">2011</span></button>
-              <button class="chain__seg" type="button" aria-controls="hito-6" aria-label="2016: Llegamos a Magallanes"><span class="chain__seg-line"></span><span class="t-small chain__seg-year" aria-hidden="true">2016</span></button>
-              <button class="chain__seg" type="button" aria-controls="hito-7" aria-label="2019: Oficina en Miami"><span class="chain__seg-line"></span><span class="t-small chain__seg-year" aria-hidden="true">2019</span></button>
-              <button class="chain__seg" type="button" aria-controls="hito-8" aria-label="2024: Certificación ASC"><span class="chain__seg-line"></span><span class="t-small chain__seg-year" aria-hidden="true">2024</span></button>
+          <div class="journey__foot reveal">
+            <div class="journey__detail" aria-live="polite">
+              <div class="journey__panel" id="hito-1">
+                <p class="t-h3 journey__title">1988. Nace Multi X en Puerto Montt</p>
+                <p class="t-body-l journey__text">Un pequeño grupo de emprendedores inicia el cultivo de salmón en la Región de Los Lagos. [contenido por definir]</p>
+              </div>
+              <div class="journey__panel" id="hito-2" hidden>
+                <p class="t-h3 journey__title">1994. Primeras exportaciones</p>
+                <p class="t-body-l journey__text">Llegan los primeros embarques a Estados Unidos y Japón. [contenido por definir]</p>
+              </div>
+              <div class="journey__panel" id="hito-3" hidden>
+                <p class="t-h3 journey__title">2001. Llegamos a Aysén</p>
+                <p class="t-body-l journey__text">Abrimos centros de cultivo en la Región de Aysén y crecemos hacia el sur. [contenido por definir]</p>
+              </div>
+              <div class="journey__panel" id="hito-4" hidden>
+                <p class="t-h3 journey__title">2006. Integración vertical</p>
+                <p class="t-body-l journey__text">Sumamos pisciculturas y plantas de proceso propias: de la ova al cliente. [contenido por definir]</p>
+              </div>
+              <div class="journey__panel" id="hito-5" hidden>
+                <p class="t-h3 journey__title">2011. Apertura en bolsa</p>
+                <p class="t-body-l journey__text">Multi X comienza a cotizar en la Bolsa de Santiago. [contenido por definir]</p>
+              </div>
+              <div class="journey__panel" id="hito-6" hidden>
+                <p class="t-h3 journey__title">2016. Llegamos a Magallanes</p>
+                <p class="t-body-l journey__text">Iniciamos operaciones en la Región de Magallanes. [contenido por definir]</p>
+              </div>
+              <div class="journey__panel" id="hito-7" hidden>
+                <p class="t-h3 journey__title">2019. Oficina en Miami</p>
+                <p class="t-body-l journey__text">Abrimos una oficina comercial para estar más cerca de nuestros clientes en Norteamérica. [contenido por definir]</p>
+              </div>
+              <div class="journey__panel" id="hito-8" hidden>
+                <p class="t-h3 journey__title">2024. Certificación ASC</p>
+                <p class="t-body-l journey__text">Todos nuestros centros de mar obtienen la certificación ASC. [contenido por definir]</p>
+              </div>
             </div>
-            <p class="t-small chain__count" aria-live="polite"><span class="chain__current">01</span> / 08</p>
             <div class="chain__arrows">
               <button class="chain__arrow chain__arrow--prev" type="button" aria-label="Hito anterior"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
               <button class="chain__arrow" type="button" aria-label="Hito siguiente"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>

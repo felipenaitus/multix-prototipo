@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-12 · Nuestra historia con el componente de Del cultivo a la mesa
+- Código ✓ · Pedido de Felipe. En Nosotros, la línea de tiempo (`.chain--timeline`) pasa al componente `[data-journey]` con un hito por año (el número es el año), en la variante nueva `.journey--eight`: carrusel hasta 1279 px y ocho en fila desde 1280 px (antes los títulos no caben). Fotos y videos de ejemplo [por definir]. La línea de tiempo `.chain--timeline` ya no se usa en ninguna página.
+
 ## 2026-11-12 · Sustentabilidad: certificaciones y membresías con logos y textos reales
 - Código ✓ · Pedido de Felipe. Las ocho certificaciones y las cinco membresías (DJSI, Salmonicultores Magallanes, SalmonChile, GSI y FAIRR) de Sustentabilidad llevan los logos originales (`assets/certs/`) y los textos del modal "Ver detalle" del sitio actual, igual que en Productos. Ya no queda ningún `logo-prueba.png` en esas páginas.
 
