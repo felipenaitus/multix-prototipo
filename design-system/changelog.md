@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-12 · Productos: certificaciones con logos y textos reales
+- Código ✓ · Pedido de Felipe. Las certificaciones de Productos pasan a las ocho del sitio actual (BAP, ASC, MSC, ISO 9001/14001/45001, GLOBALG.A.P., IFS, BRCGS y Kosher), con sus logos originales (`assets/certs/`) y los textos del modal "Ver detalle" de multi-xsalmon.com/sustentabilidad. Salen HACCP y Halal, que no están en el sitio actual.
+
 ## 2026-11-12 · Proyectos de alto estándar con el componente de Del cultivo a la mesa
 - Código ✓ · Pedido de Felipe. En Sustentabilidad, Proyectos de alto estándar deja los pilares con foto y pasa al componente `[data-journey]` de Productos (círculos con foto que reproducen video en el activo, avance automático, flechas y texto debajo), con la variante nueva `.journey--four` (cuatro columnas desde tablet). Fotos y videos de ejemplo [por definir].
 
