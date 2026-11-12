@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-12 · Sustentabilidad: certificaciones y membresías con logos y textos reales
+- Código ✓ · Pedido de Felipe. Las ocho certificaciones y las cinco membresías (DJSI, Salmonicultores Magallanes, SalmonChile, GSI y FAIRR) de Sustentabilidad llevan los logos originales (`assets/certs/`) y los textos del modal "Ver detalle" del sitio actual, igual que en Productos. Ya no queda ningún `logo-prueba.png` en esas páginas.
+
 ## 2026-11-12 · Productos: certificaciones con logos y textos reales
 - Código ✓ · Pedido de Felipe. Las certificaciones de Productos pasan a las ocho del sitio actual (BAP, ASC, MSC, ISO 9001/14001/45001, GLOBALG.A.P., IFS, BRCGS y Kosher), con sus logos originales (`assets/certs/`) y los textos del modal "Ver detalle" de multi-xsalmon.com/sustentabilidad. Salen HACCP y Halal, que no están en el sitio actual.
 
