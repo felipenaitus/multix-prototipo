@@ -5,7 +5,7 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
 ## 2026-11-20 · Botón terciario: hover más evidente
-- Figma pendiente · Código ✓ · Decisión de Felipe. Sobre fondos claros, el hover del botón terciario pasa de cambiar a Navy 600 (casi imperceptible) a mostrar un subrayado delgado bajo el texto, que se mantiene en Navy 900; la flecha sigue pasando a coral y avanzando. Igual en "Ver noticia" de las notas. En fondos oscuros no cambia.
+- Figma pendiente · Código ✓ · Decisión de Felipe. Sobre fondos claros, el hover del botón terciario pasa de cambiar a Navy 600 (casi imperceptible) a mostrar un subrayado delgado bajo el texto, que se mantiene en Navy 900; la flecha sigue pasando a coral y avanzando. Igual en "Ver noticia" de las notas. Ajuste de Felipe: el subrayado también en fondos oscuros (el texto mantiene su color), incluido el terciario blanco.
 
 ## 2026-11-20 · Hero del inicio: salmón completo junto a la frase
 - Código ✓ · Pedido del cliente vía Felipe. En "Alimentando el futuro / Cuidando el mundo", el ícono pasa de la cabeza sola (chevrón con ojo) al salmón completo de la marca: la "X›" del logo, con la X en coral y la cabeza en el color del texto, con los trazados del logo oficial. Alto igual al de la letra más alta de la frase (0,74 em). Ajuste de Felipe: el salmón va sobre la frase, al centro, y queda fijo mientras cambia la frase (`css/pruebas.css`).

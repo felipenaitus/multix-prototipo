@@ -95,7 +95,7 @@
   color: var(--color-text-brand);
 }
 /* Hover: subrayado delgado bajo el texto (el color se mantiene) y la flecha en
-   coral que avanza. En fondos oscuros, sin subrayado (cambia a Navy 300). */
+   coral que avanza (sobre azul, en Navy 100). Igual en fondos claros y oscuros. */
 .btn--tertiary:hover,
 .btn--tertiary.is-hover {
   color: var(--color-text-brand);
@@ -109,11 +109,6 @@
 .btn--tertiary.is-hover .icon:has(use[href="#i-arrow"]) {
   color: var(--color-bg-accent-hover);
   transform: translateX(var(--space-4));
-}
-:where(.on-dark, .section--inverse) .btn--tertiary:hover,
-:where(.on-dark, .section--inverse) .btn--tertiary.is-hover {
-  text-decoration: none;
-  color: var(--color-text-brand-hover);
 }
 
 /* Pequeño */
@@ -170,9 +165,12 @@
   color: var(--color-text-inverse);
 }
 .btn--tertiary-light:hover {
-  color: var(--color-text-inverse-muted);
+  text-decoration: underline;
+  text-decoration-thickness: var(--border-thin);
+  text-underline-offset: var(--space-4);
 }
-.btn--tertiary-light:hover .icon--arrow {
+.btn--tertiary-light:hover .icon--arrow,
+.btn--tertiary-light:hover .icon:has(use[href="#i-arrow"]) {
   color: var(--color-text-accent-on-dark);
   transform: translateX(var(--space-4));
 }

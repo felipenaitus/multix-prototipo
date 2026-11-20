@@ -89,7 +89,7 @@ Alto 50px, padding 16/24, radio full, texto UI/Botón.
 | Primario | Acción principal de una sección (Navy 900). | hover Navy 600 · foco · deshabilitado |
 | Secundario | Acción alternativa (contorno Navy). | hover fondo Navy 100 |
 | Acento | Conversión: contacto comercial, suscripción. Máximo uno por vista. | Coral 400 + Ink 900 → hover Coral 500. Sobre crema: Navy 300 + Ink 900 → hover Navy 600 con texto blanco (`--color-text-on-accent-hover`) |
-| Terciario / enlace | Acciones de lectura ("Ver todos los informes"). Texto sin subrayado + flecha. | hover: subrayado delgado (el texto sigue Navy 900) + flecha en Coral 500 que se desplaza; en fondos oscuros, sin subrayado (pasa a Navy 300) |
+| Terciario / enlace | Acciones de lectura ("Ver todos los informes"). Texto sin subrayado + flecha. | hover: subrayado delgado (el texto mantiene su color) + flecha que se desplaza (Coral 500; Navy 100 sobre azul). Igual en fondos claros y oscuros, también en el terciario blanco (`.btn--tertiary-light`) |
 | Con ícono | Descarga (ícono a la izquierda), enlace externo (flecha diagonal a la derecha). | — |
 | Pequeño | Acciones dentro de tarjetas (Agregar al calendario). Texto UI/Botón pequeño. | — |
 | Sobre fondo oscuro | Claro (blanco + texto Navy), acento oscuro (Coral 400 + Ink 900), contorno coral (Coral 500), fantasma blanco, terciario blanco. | — |
