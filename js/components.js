@@ -1079,7 +1079,34 @@
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
     var RAD = Math.PI / 180;
 
-    // Puntos de tierra: lat y lon precalculadas (seno y coseno)
+    // Regiones de destino (data-region en los pines): cajas de lat/lon
+    // aproximadas; la primera que calza gana (Centroamérica antes que
+    // Norteamérica). Sus puntos de tierra se pintan con --globe-region.
+    var REGION_BOXES = {
+      centroamerica: [[7, 18.5, -93, -77]],
+      norteamerica: [[14, 72, -170, -52]],
+      sudamerica: [[-56, 13, -82, -34]],
+      europa: [[35, 72, -25, 45]],
+      asia: [[-11, 78, 45, 180], [5, 46, 125, 146]],
+      oceania: [[-48, -8, 110, 180]]
+    };
+    var REGION_ORDER = ['centroamerica', 'norteamerica', 'sudamerica', 'europa', 'asia', 'oceania'];
+    var marked = {};
+    $all('.globe__pins > li[data-region]', box).forEach(function (li) { marked[li.getAttribute('data-region')] = true; });
+    function regionOf(latDeg, lonDeg) {
+      if (latDeg > 58 && lonDeg > -75 && lonDeg < -10) return null; // Groenlandia
+      for (var r = 0; r < REGION_ORDER.length; r++) {
+        var boxes = REGION_BOXES[REGION_ORDER[r]];
+        for (var k = 0; k < boxes.length; k++) {
+          var bx = boxes[k];
+          if (latDeg >= bx[0] && latDeg <= bx[1] && lonDeg >= bx[2] && lonDeg <= bx[3]) return REGION_ORDER[r];
+        }
+      }
+      return null;
+    }
+
+    // Puntos de tierra: lat y lon precalculadas (seno y coseno) y si es de una
+    // región marcada
     var dots = [];
     GLOBE_LAND.split(';').forEach(function (row) {
       var parts = row.split(':');
@@ -1088,8 +1115,9 @@
       parts[2].split(',').forEach(function (run) {
         var se = run.split('-');
         for (var i = +se[0]; i <= +(se[1] || se[0]); i++) {
-          var lon = (-180 + (i + 0.5) * 360 / n) * RAD;
-          dots.push([Math.sin(lat), Math.cos(lat), lon]);
+          var lonDeg = -180 + (i + 0.5) * 360 / n;
+          var reg = regionOf(+parts[0], lonDeg);
+          dots.push([Math.sin(lat), Math.cos(lat), lonDeg * RAD, !!(reg && marked[reg])]);
         }
       });
     });
@@ -1114,6 +1142,7 @@
     function readColors() {
       var css = getComputedStyle(box);
       colors.land = css.getPropertyValue('--globe-land').trim();
+      colors.region = css.getPropertyValue('--globe-region').trim() || colors.land;
       colors.sphere = css.getPropertyValue('--globe-sphere').trim();
       colors.edge = css.getPropertyValue('--globe-edge').trim();
     }
@@ -1146,7 +1175,6 @@
 
       // Tierra: puntos más tenues hacia el borde
       var dotR = Math.max(R * 0.0072, 0.9);
-      ctx.fillStyle = colors.land;
       for (var i = 0; i < dots.length; i++) {
         var d = dots[i];
         var dl = d[2] - view.lon;
@@ -1155,6 +1183,7 @@
         if (z <= 0) continue;
         var x = c + R * d[1] * Math.sin(dl);
         var y = c - R * (cos0 * d[0] - sin0 * d[1] * cosDl);
+        ctx.fillStyle = d[3] ? colors.region : colors.land;
         ctx.globalAlpha = 0.2 + 0.7 * z;
         ctx.beginPath();
         ctx.arc(x, y, dotR, 0, Math.PI * 2);

@@ -4707,12 +4707,20 @@ a.pagination__item:hover,
   }
 }
 
+/* Mercados: la bajada ocupa el mismo ancho que el título */
+.markets .section-head__lead {
+  max-width: none;
+}
+
 /* Globo de mercados ([data-globe], js/components.js) · patrón Firma de Productos.
    Sobrio: esfera del color de fondo de su sección (solo el contorno), continentes
    en puntos Navy 300 y pines solo en Navy 900: mercados como punto lleno y
-   oficinas comerciales como anillo. El nombre aparece con hover, foco o clic. */
+   oficinas comerciales como anillo. Con data-region, el pin marca una región de
+   destino y sus puntos de tierra pasan a Navy 900. El nombre aparece con hover,
+   foco o clic. */
 .globe {
   --globe-land: var(--color-border-inverse-muted);
+  --globe-region: var(--color-text-brand); /* regiones de destino (data-region) */
   --globe-sphere: transparent; /* toma el fondo de la sección */
   --globe-edge: var(--color-border-default);
   position: relative;
@@ -4833,6 +4841,14 @@ a.pagination__item:hover,
   height: var(--space-8);
   border-radius: var(--radius-full);
   background: var(--color-bg-brand);
+}
+
+/* Región de destino: un grupo de puntos, como se ve en el globo */
+.globe__legend .is-region::before {
+  width: var(--space-12);
+  height: var(--space-8);
+  border-radius: 0;
+  background: radial-gradient(circle, var(--color-bg-brand) 40%, transparent 45%) 0 0 / var(--space-4) var(--space-4);
 }
 
 .globe__legend .is-office::before {
