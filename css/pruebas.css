@@ -85,10 +85,13 @@
   transform: translateY(calc(-1 * var(--motion-reveal-distance)));
 }
 
-/* "el futuro / el mundo" con el ícono de la marca (assets/brand/icon-chevron.svg) */
+/* "el futuro / el mundo" con el salmón completo de la marca (la "X›" del logo:
+   cola coral y cabeza en el color del texto). Su alto es el de la letra más
+   alta de la frase (l, f, d, A: 0,74 em en Sora) y se apoya en la línea base,
+   así queda centrado con las letras. */
 .word-swap__b {
   display: inline-flex;
-  align-items: center;
+  align-items: baseline;
   gap: .3em;
   font-weight: var(--text-display-strong-weight); /* Display destacado: Semibold */
 }
@@ -96,7 +99,7 @@
 .word-swap__icon {
   flex-shrink: 0;
   width: auto;
-  height: .62em;
+  height: .74em;
 }
 
 /* Una línea solo en desktop; en mobile y tablet, cada frase en dos líneas */

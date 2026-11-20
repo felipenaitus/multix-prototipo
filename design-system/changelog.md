@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-20 · Hero del inicio: salmón completo junto a la frase
+- Código ✓ · Pedido del cliente vía Felipe. En "Alimentando el futuro / Cuidando el mundo", el ícono pasa de la cabeza sola (chevrón con ojo) al salmón completo de la marca: la "X›" del logo, con la X en coral y la cabeza en el color del texto, con los trazados del logo oficial. Alto igual al de la letra más alta de la frase (0,74 em) y apoyado en la línea base, centrado con las letras (`css/pruebas.css`).
+
 ## 2026-11-20 · Menú: sin línea junto a la noticia destacada
 - Figma pendiente · Código ✓ · Pedido de Felipe. Se quita la línea vertical que separaba la noticia destacada de los accesos en el menú abierto; queda solo el aire.
 
