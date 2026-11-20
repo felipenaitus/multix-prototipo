@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-20 · Menú: sin línea junto a la noticia destacada
+- Figma pendiente · Código ✓ · Pedido de Felipe. Se quita la línea vertical que separaba la noticia destacada de los accesos en el menú abierto; queda solo el aire.
+
 ## 2026-11-20 · Títulos y bajadas siempre a la izquierda
 - Código ✓ · Decisión de Felipe (pedido del cliente). Se retira la variante centrada del encabezado de sección (`.section-head--center`); los cuatro encabezados que la usaban (Inicio › Producir cuidando el sur de Chile; Nosotros › Nuestra gente y Directorio y equipo ejecutivo; Productos › Nuestras marcas) quedan alineados a la izquierda. Los elementos propios de cada sección no cambian. También Legislación: título y textos del ingreso a la izquierda dentro de su columna centrada.
 

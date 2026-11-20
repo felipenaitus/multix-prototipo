@@ -3390,15 +3390,14 @@ a.pagination__item:hover,
 }
 
 /* Noticia destacada, compacta y sin caja: foto con esquinas suaves y debajo
-   etiqueta, título y "Leer noticia". Una línea delgada la separa de los
-   accesos. */
+   etiqueta, título y "Leer noticia". La separa de los accesos solo el aire
+   (sin línea, pedido de Felipe). */
 .menu-preview {
   position: relative;
   display: none;
   flex-direction: column;
   align-self: start;
   padding-left: var(--space-40);
-  border-left: var(--border-thin) solid var(--color-border-default);
   color: var(--color-text-inverse);
 }
 
