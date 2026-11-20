@@ -4843,14 +4843,6 @@ a.pagination__item:hover,
   background: var(--color-bg-brand);
 }
 
-/* Región de destino: un grupo de puntos, como se ve en el globo */
-.globe__legend .is-region::before {
-  width: var(--space-12);
-  height: var(--space-8);
-  border-radius: 0;
-  background: radial-gradient(circle, var(--color-bg-brand) 40%, transparent 45%) 0 0 / var(--space-4) var(--space-4);
-}
-
 .globe__legend .is-office::before {
   width: var(--space-12);
   height: var(--space-12);
