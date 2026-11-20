@@ -4206,12 +4206,6 @@ a.pagination__item:hover,
   background: var(--color-border-default);
 }
 
-/* Variante centrada: para bloques de composición simétrica (por ejemplo, las marcas) */
-.section-head--center {
-  align-items: center;
-  text-align: center;
-}
-
 @media (min-width: 1024px) {
   .section-head {
     margin-bottom: var(--space-48);
