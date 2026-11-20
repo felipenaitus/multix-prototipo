@@ -1997,6 +1997,11 @@ a.pagination__item:hover,
   overflow-wrap: anywhere;
 }
 
+/* Dirección (opcional, address): mismo renglón que teléfono y correo, sin enlace */
+.ir-contact__address {
+  color: var(--color-text-secondary);
+}
+
 .ir-contact__link:hover {
   color: var(--color-text-brand-hover);
 }

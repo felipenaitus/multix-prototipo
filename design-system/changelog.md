@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-20 · Productos: contenido final del cliente
+- Código ✓ · Documento "Contenido Página Productos". Aplicado tal cual: hero ("Tu socio estratégico / en salmón" y texto), Soluciones (título, nombres y textos), Mercados (título y texto; oficinas: Puerto Montt y Miami, sale Santiago del módulo y del globo), descripción del catálogo, título e introducción del relato (los capítulos siguen [por definir]), textos de certificaciones (también en Sustentabilidad; GLOBALG.A.P. mantiene su texto por decisión de Felipe; MSC pasa a "Cadena de custodia"), contacto comercial (Fernando Pérez, también en Contacto › Comercial) y las 8 preguntas frecuentes (`js/faqs.js`). Se mantienen marcadas las cifras de Mercados (no vienen en el documento). `<ir-contact>` suma la dirección opcional (`address`, ícono nuevo `i-pin`).
+
 ## 2026-11-12 · Nuestra historia con el componente de Del cultivo a la mesa
 - Código ✓ · Pedido de Felipe. En Nosotros, la línea de tiempo (`.chain--timeline`) pasa al componente `[data-journey]` con un hito por año (el número es el año), en la variante nueva `.journey--eight`: carrusel hasta 1279 px y ocho en fila desde 1280 px (antes los títulos no caben). Fotos y videos de ejemplo [por definir]. La línea de tiempo `.chain--timeline` ya no se usa en ninguna página.
 
