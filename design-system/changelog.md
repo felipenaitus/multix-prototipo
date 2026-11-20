@@ -5,7 +5,7 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
 ## 2026-11-20 · Títulos y bajadas siempre a la izquierda
-- Código ✓ · Decisión de Felipe (pedido del cliente). Se retira la variante centrada del encabezado de sección (`.section-head--center`); los cuatro encabezados que la usaban (Inicio › Producir cuidando el sur de Chile; Nosotros › Nuestra gente y Directorio y equipo ejecutivo; Productos › Nuestras marcas) quedan alineados a la izquierda. Los elementos propios de cada sección no cambian.
+- Código ✓ · Decisión de Felipe (pedido del cliente). Se retira la variante centrada del encabezado de sección (`.section-head--center`); los cuatro encabezados que la usaban (Inicio › Producir cuidando el sur de Chile; Nosotros › Nuestra gente y Directorio y equipo ejecutivo; Productos › Nuestras marcas) quedan alineados a la izquierda. Los elementos propios de cada sección no cambian. También Legislación: título y textos del ingreso a la izquierda dentro de su columna centrada.
 
 ## 2026-11-20 · Mercados por región en el globo
 - Código ✓ · Pedido de Felipe. El globo de Productos deja los mercados por país y marca las seis regiones del documento del cliente (Norteamérica, Centroamérica, Sudamérica, Europa, Asia y Oceanía): sus puntos de tierra pasan a Navy 900 y cada una tiene un pin con su nombre. Leyenda: "Mercados de destino", con el punto Navy lleno (pedido de Felipe). La bajada de Mercados ocupa el mismo ancho que el título.

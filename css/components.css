@@ -7226,7 +7226,8 @@ html:not(.js) .company-visual__tag {
 }
 
 /* Acceso exclusivo (.login, Legislación): columna centrada (dos tercios en
-   tablet, cinco doceavos desde 1024 px) con etiqueta, Título 1, bajada, el campo
+   tablet, cinco doceavos desde 1024 px), con todo el texto a la izquierda:
+   etiqueta, Título 1, bajada, el campo
    de correo corporativo y "Acceder" a todo el ancho; al pie, la ayuda con el
    correo del equipo legal. Al enviar, el formulario se cambia por el mensaje
    del kit (.prov-sent). Sin cajas. */
@@ -7246,7 +7247,6 @@ html:not(.js) .company-visual__tag {
   align-items: stretch;
   gap: var(--space-24);
   width: 100%;
-  text-align: center;
 }
 
 .login__lead {
@@ -7262,7 +7262,6 @@ html:not(.js) .company-visual__tag {
   flex-direction: column;
   gap: var(--space-24);
   margin-top: var(--space-16);
-  text-align: left;
 }
 
 .login__submit {
@@ -7271,7 +7270,6 @@ html:not(.js) .company-visual__tag {
 
 .login__sent {
   margin-top: var(--space-16);
-  text-align: left;
 }
 
 .login__help {
