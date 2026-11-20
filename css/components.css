@@ -94,14 +94,26 @@
   border-radius: var(--radius-full);
   color: var(--color-text-brand);
 }
+/* Hover: subrayado delgado bajo el texto (el color se mantiene) y la flecha en
+   coral que avanza. En fondos oscuros, sin subrayado (cambia a Navy 300). */
 .btn--tertiary:hover,
 .btn--tertiary.is-hover {
-  color: var(--color-text-brand-hover);
+  color: var(--color-text-brand);
+  text-decoration: underline;
+  text-decoration-thickness: var(--border-thin);
+  text-underline-offset: var(--space-4);
 }
 .btn--tertiary:hover .icon--arrow,
-.btn--tertiary.is-hover .icon--arrow {
+.btn--tertiary.is-hover .icon--arrow,
+.btn--tertiary:hover .icon:has(use[href="#i-arrow"]),
+.btn--tertiary.is-hover .icon:has(use[href="#i-arrow"]) {
   color: var(--color-bg-accent-hover);
   transform: translateX(var(--space-4));
+}
+:where(.on-dark, .section--inverse) .btn--tertiary:hover,
+:where(.on-dark, .section--inverse) .btn--tertiary.is-hover {
+  text-decoration: none;
+  color: var(--color-text-brand-hover);
 }
 
 /* Pequeño */
@@ -6972,7 +6984,9 @@ html:not(.js) .company-visual__tag {
 }
 
 .news-item__link:hover .news-item__cta {
-  color: var(--color-text-brand-hover);
+  text-decoration: underline;
+  text-decoration-thickness: var(--border-thin);
+  text-underline-offset: var(--space-4);
 }
 
 .news-item__link:hover .news-item__cta .icon--arrow {
