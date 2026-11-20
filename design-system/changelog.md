@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-20 · Productos: sin GLOBALG.A.P.
+- Código ✓ · Pedido de Felipe. Se quita la certificación GLOBALG.A.P. de Productos: no venía en el documento de contenidos porque ya no va. Quedan siete. (Sustentabilidad y la pregunta frecuente 5 aún la nombran.)
+
 ## 2026-11-20 · Botón terciario: hover más evidente
 - Figma pendiente · Código ✓ · Decisión de Felipe. Sobre fondos claros, el hover del botón terciario pasa de cambiar a Navy 600 (casi imperceptible) a mostrar un subrayado delgado bajo el texto, que se mantiene en Navy 900; la flecha sigue pasando a coral y avanzando. Igual en "Ver noticia" de las notas. Ajuste de Felipe: el subrayado también en fondos oscuros (el texto mantiene su color), incluido el terciario blanco.
 
