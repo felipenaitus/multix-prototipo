@@ -4393,9 +4393,9 @@ a.pagination__item:hover,
     padding-left: 0;
   }
 
+  /* En fila, sin líneas verticales entre cifras (decisión de Felipe, 2026-11-23) */
   .markets__stat + .markets__stat {
     border-top: 0;
-    border-left: var(--border-thin) solid var(--color-border-default);
   }
 }
 
