@@ -1721,7 +1721,9 @@ a.pagination__item:hover,
   }
 }
 
-/* En una mirada: 2 × 2 con divisores horizontales en mobile; 4 columnas en desktop */
+/* En una mirada: 2 × 2 con divisores horizontales en mobile; 4 columnas en desktop.
+   Solo líneas horizontales (arriba y abajo), sin divisores verticales entre cifras
+   (decisión de Felipe, 2026-11-23) */
 .stats {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1775,10 +1777,6 @@ a.pagination__item:hover,
 
   .stat:nth-child(n + 3) {
     border-top: 0;
-  }
-
-  .stat + .stat {
-    border-left: var(--border-thin) solid var(--color-border-default);
   }
 }
 
@@ -8248,7 +8246,8 @@ html:not(.js) .company-visual__tag {
 }
 
 /* Cifras en tres (.stats--three): para bloques de tres cifras. En mobile, una
-   debajo de la otra; desde tablet, las tres en fila separadas por líneas.
+   debajo de la otra (separadas por líneas horizontales); desde tablet, las tres
+   en fila, sin líneas verticales.
    Sustentabilidad › Proteína del futuro y Vinculación comunitaria. */
 .stats--three {
   grid-template-columns: minmax(0, 1fr);
@@ -8273,7 +8272,6 @@ html:not(.js) .company-visual__tag {
 
   .stats--three .stat + .stat {
     border-top: 0;
-    border-left: var(--border-thin) solid var(--color-border-default);
   }
 }
 

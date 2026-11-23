@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-23 · Cifras sin líneas verticales
+- Código ✓ · Pedido de Felipe. En los bloques de cifras (`.stats`, `.stats--accent` y `.stats--three`: inicio, Inversionistas, Nosotros y Sustentabilidad) se quitan los divisores verticales entre cifras; quedan solo las líneas horizontales. Las cifras de Mercados (`.markets__stat`) no cambian.
+
 ## 2026-11-23 · Círculo con video: mano en lugar de play y acceso fuera del círculo
 - Código ✓ · Pedido de Felipe. En el círculo con video (home › Productos), el indicador deja el play y pasa a una mano tipo cursor (ícono nuevo `i-hand`, dibujado en el estilo del kit y pendiente de Figma), para indicar que hay que pasar el mouse para ver el video. Se quita el botón "Ver productos" que aparecía dentro del círculo (`.media-circle__cta`) y queda fuera, como botón terciario bajo la descripción, igual que en el resto de las secciones. Kit actualizado.
 
