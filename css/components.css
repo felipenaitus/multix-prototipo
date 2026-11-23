@@ -4215,6 +4215,13 @@ a.pagination__item:hover,
   background: var(--color-border-default);
 }
 
+/* Variante centrada: ÚNICA excepción a los títulos a la izquierda (decisión de
+   Felipe, 2026-11-23), solo para Nuestras marcas en Productos */
+.section-head--center {
+  align-items: center;
+  text-align: center;
+}
+
 @media (min-width: 1024px) {
   .section-head {
     margin-bottom: var(--space-48);

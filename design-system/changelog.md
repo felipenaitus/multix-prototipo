@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-23 · Nuestras marcas: título centrado (única excepción)
+- Código ✓ · Pedido de Felipe. Vuelve la variante `.section-head--center`, solo para el título "Nuestras marcas" de Productos, sobre los dos círculos. El resto de los títulos sigue a la izquierda.
+
 ## 2026-11-23 · Accesos al final de sección a la izquierda
 - Código ✓ · Pedido de Felipe (todo alineado a la izquierda). `.home-cta` deja de centrar su botón: "Ir a Sustentabilidad" en el inicio e "Ir a Directorio y Ejecutivos" en Nosotros quedan a la izquierda.
 
