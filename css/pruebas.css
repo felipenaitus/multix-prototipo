@@ -42,10 +42,6 @@
 /* Texto del hero por sobre el video y su velo (.hero__media) */
 .test-hero__title {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-16);
   font-weight: var(--text-display-light-weight); /* Display destacado: Extra Light */
   padding-inline: var(--layout-gutter);
   text-align: center;
@@ -89,19 +85,26 @@
   transform: translateY(calc(-1 * var(--motion-reveal-distance)));
 }
 
-/* "el futuro / el mundo" en Display destacado (Sora 600) */
+/* "el futuro / el mundo" con el salmón completo de la marca (la "X›" del logo),
+   todo en blanco como el texto, a la derecha de la frase. Su alto es el de la letra más
+   alta de la frase (l, f, d, A: 0,74 em en Sora) y se apoya en la línea base,
+   así queda centrado con las letras. */
 .word-swap__b {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .3em;
   font-weight: var(--text-display-strong-weight); /* Display destacado: Semibold */
 }
-
-/* El salmón completo de la marca (la "X›" del logo: cola coral y cabeza en el
-   color del texto) va sobre la frase, al centro, y no cambia con ella. Su alto
-   es el de la letra más alta de la frase (l, f, d, A: 0,74 em en Sora). */
 
 .word-swap__icon {
   flex-shrink: 0;
   width: auto;
   height: .74em;
+}
+
+/* La cola (X) deja el coral del logo y toma el blanco del texto */
+.word-swap__icon .logo__accent {
+  fill: currentColor;
 }
 
 /* Una línea solo en desktop; en mobile y tablet, cada frase en dos líneas */
@@ -110,5 +113,9 @@
     flex-direction: row;
     align-items: baseline;
     gap: .3em;
+  }
+
+  .word-swap__b {
+    align-self: center;
   }
 }

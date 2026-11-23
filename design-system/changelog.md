@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-23 · Hero del inicio: salmón a la derecha y en blanco
+- Código ✓ · Pedido de Felipe. El salmón vuelve a la derecha de "el futuro / el mundo" (como antes de ir sobre la frase) y queda todo en blanco: la cola deja el coral (`css/pruebas.css`, `index.html`).
+
 ## 2026-11-20 · Productos: sin GLOBALG.A.P.
 - Código ✓ · Pedido de Felipe. Se quita la certificación GLOBALG.A.P. de Productos: no venía en el documento de contenidos porque ya no va. Quedan siete. También sale de Sustentabilidad (Certificaciones) y de las preguntas frecuentes de Productos (5) y Sustentabilidad, para que las certificaciones coincidan en todo el sitio.
 
