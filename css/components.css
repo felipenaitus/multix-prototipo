@@ -6689,8 +6689,13 @@ html:not(.js) .company-visual__tag {
   pointer-events: none;
 }
 
-/* Play: botón real (toque y teclado abren y cierran el video) */
+/* Indicador con mano tipo cursor (invita a pasar el mouse para ver el video):
+   botón real (toque y teclado abren y cierran el video) */
 .media-circle__hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-brand);
   position: absolute;
   z-index: 2;
   top: 85.4%;
@@ -6706,18 +6711,6 @@ html:not(.js) .company-visual__tag {
   transition:
     opacity var(--duration-slow) var(--easing-standard),
     scale var(--duration-slow) var(--easing-standard);
-}
-
-.media-circle__hint::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  width: var(--space-12);
-  height: var(--space-12);
-  margin: auto;
-  translate: 10% 0;
-  background: var(--color-bg-brand);
-  clip-path: polygon(15% 5%, 95% 50%, 15% 95%);
 }
 
 .media-circle__hint::after {
@@ -6748,33 +6741,7 @@ html:not(.js) .company-visual__tag {
   transform: scale(1.15);
 }
 
-/* Botón de la sección ("Ver productos"): sutil (contorno y texto blancos, sin
-   relleno, tamaño chico) en la parte inferior del círculo; aparece al abrir el
-   video */
-.media-circle__cta {
-  position: absolute;
-  z-index: 3;
-  top: 80%;
-  left: 50%;
-  white-space: nowrap;
-  translate: -50% -50%;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(var(--space-8));
-  transition:
-    opacity var(--duration-slow) var(--easing-standard),
-    transform var(--duration-slow) var(--easing-out),
-    visibility 0s linear var(--duration-slow);
-}
-
-.media-circle.is-open .media-circle__cta {
-  opacity: 1;
-  visibility: visible;
-  transform: none;
-  transition-delay: var(--duration-fast), var(--duration-fast), 0s;
-}
-
-/* Con teclado, el play sigue visible al tener el foco aunque el video esté abierto */
+/* Con teclado, la mano sigue visible al tener el foco aunque el video esté abierto */
 .media-circle.is-open .media-circle__hint:focus-visible {
   opacity: 1;
   scale: 1;

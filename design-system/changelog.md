@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-23 · Círculo con video: mano en lugar de play y acceso fuera del círculo
+- Código ✓ · Pedido de Felipe. En el círculo con video (home › Productos), el indicador deja el play y pasa a una mano tipo cursor (ícono nuevo `i-hand`, dibujado en el estilo del kit y pendiente de Figma), para indicar que hay que pasar el mouse para ver el video. Se quita el botón "Ver productos" que aparecía dentro del círculo (`.media-circle__cta`) y queda fuera, como botón terciario bajo la descripción, igual que en el resto de las secciones. Kit actualizado.
+
 ## 2026-11-23 · Botón terciario: hover todo en coral
 - Código ✓ · Pedido de Felipe. En el hover del botón terciario, el texto y el subrayado pasan al color de la flecha: Coral 500 sobre fondos claros (Navy 600 sobre crema y Navy 100 sobre azul, por las reglas sin coral sobre crema ni sobre azul). Excepción a AA aprobada por Felipe: Coral 500 como texto sobre blanco da 3,1:1, solo en este estado hover. El terciario blanco sobre oscuro no cambia.
 
