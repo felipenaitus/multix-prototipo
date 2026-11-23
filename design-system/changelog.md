@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-23 · Etiquetas de regiones con contorno
+- Código ✓ · Pedido de Felipe. Las etiquetas de regiones de la compañía integrada (`.company-visual__tag`) llevan un contorno delgado (`--border-thin`, `--color-border-default`) para separarse del fondo blanco cuando quedan fuera del rectángulo de la foto.
+
 ## 2026-11-23 · Fotos y videos: de círculo a rectángulo 16:9 redondeado
 - Código ✓ · Pedido de Felipe. Todas las formas redondas con foto o video pasan a un rectángulo horizontal 16:9 con bordes `--radius-xl`: foto con video del home (Your salmon solution partner), compañía integrada (home, Inversionistas, Nosotros, Proveedores; las regiones se reubican sobre los bordes), soluciones en pasos (Productos), integración vertical (Productos, Nosotros › Historia, Sustentabilidad › Proyectos), Nuestras marcas (Productos, con contorno) y relato vertical (kit). Al abrir el video el rectángulo crece un 5 % (antes 15 %) y el video se abre del centro a los bordes (clip-path `inset`). El indicador con la mano va en la esquina inferior derecha.
 - Código ✓ · Nueva foto recortada del home (`assets/img/home-productos.webp`, entregada por Felipe): rectángulo recortado a 16:9 (502 × 282) con la figura que sobresale por arriba. El archivo original mide 514 px de ancho: se ve blando en pantallas retina; conviene pedirlo al doble.
