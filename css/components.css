@@ -4159,6 +4159,13 @@ a.pagination__item:hover,
   }
 }
 
+/* Sección con más aire (.section--spacious): 1,5 veces el aire de sección arriba y
+   abajo, para bloques que quedan entre secciones con Horizonte y Apertura (el arco
+   de la anterior se monta sobre su borde superior). Ej.: Productos › Nuestras marcas. */
+.section--spacious {
+  padding-block: calc(var(--layout-section-gap) * 1.5);
+}
+
 /* Sección que continúa a la anterior (mismo fondo): sin espacio arriba propio; el
    contenido parte con una línea delgada y el aire de sección. Ej.: Preguntas
    frecuentes después de Contacto. */

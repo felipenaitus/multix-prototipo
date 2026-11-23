@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-23 · Nuestras marcas: más aire arriba y abajo
+- Código ✓ · Pedido de Felipe. Nueva variante `.section--spacious` (1,5 × `--layout-section-gap` arriba y abajo) aplicada a Nuestras marcas, que quedaba pegada al arco de Mercados y al catálogo.
+
 ## 2026-11-23 · Nuestras marcas: video siempre visible y título a la izquierda
 - Código ✓ · Pedido de Felipe. En Nuestras marcas (Productos) el video de cada marca se ve de inmediato, sin el estado previo con contorno y logo en color: llena el rectángulo y se reproduce en loop mientras el bloque está a la vista (`[data-inview-video]`), con velo Navy 950 y logo e "Ir al sitio" en blanco. Hover o foco: subrayado en "Ir al sitio" y leve acercamiento del video. Sin contorno.
 - Código ✓ · El título "Nuestras marcas" vuelve a la izquierda; se retira la variante `.section-head--center` (ya no tiene usos).
