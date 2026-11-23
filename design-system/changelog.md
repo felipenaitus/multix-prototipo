@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-23 · Home › Productos (mobile): foto junto al texto
+- Código ✓ · Pedido de Felipe, solo mobile. En "Your salmon solution partner", la foto con video queda más cerca del texto: margen superior de 80 a 48 px (lo justo para la figura que sobresale) y sin el margen inferior del encabezado. Tablet y desktop no cambian.
+
 ## 2026-11-23 · Sub-menú de sección: activa en negrita, inactivas más claras
 - Figma pendiente · Código ✓ · Pedido de Felipe. En el sub-menú de pestañas de las páginas de Inversionistas (`.page-tabs.is-bar`: Centro de Resultados, Gobernanza, Acción), la pestaña activa pasa a Manrope 700 (token nuevo `--text-ui-tab-selected-weight`) y las inactivas de Ink 600 a Ink 500 (`--color-text-tertiary`, 4,6:1, pasa AA). Para que no salten al cambiar, cada pestaña reserva el ancho de su texto en negrita (`data-text`, lo agrega components.js).
 

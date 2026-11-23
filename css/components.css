@@ -6630,8 +6630,18 @@ html:not(.js) .company-visual__tag {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  margin: var(--space-80) auto var(--space-48);
+  /* Mobile: arriba solo el aire que necesita la figura que sobresale (24 % del
+     alto), para que la foto quede junto al texto */
+  margin: var(--space-48) auto var(--space-48);
   cursor: pointer;
+}
+
+/* Mobile: el texto y la foto se leen como un solo bloque (sin el margen inferior
+   del encabezado; queda el espacio de la grilla) */
+@media (max-width: 767px) {
+  .split:has(.media-circle) .section-head {
+    margin-bottom: 0;
+  }
 }
 
 .media-circle:focus-visible {
@@ -6762,6 +6772,7 @@ html:not(.js) .company-visual__tag {
 @media (min-width: 768px) {
   .media-circle {
     width: 80%;
+    margin-top: var(--space-80);
   }
 }
 
