@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-23 · Integración vertical: fotos en vertical 4:5
+- Código ✓ · Pedido de Felipe. En el recorrido (`.journey`: Productos, Nosotros › Historia, Sustentabilidad › Proyectos) las fotos de los pasos pasan de 16:9 a vertical 4:5, porque quedaban muy pequeñas. Alternativa a probar: cuadrado (1:1).
+
 ## 2026-11-23 · Home › Productos (mobile): foto junto al texto
 - Código ✓ · Pedido de Felipe, solo mobile. En "Your salmon solution partner", la foto con video queda más cerca del texto: margen superior de 80 a 48 px (lo justo para la figura que sobresale) y sin el margen inferior del encabezado. Tablet y desktop no cambian.
 

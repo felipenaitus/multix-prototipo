@@ -5438,14 +5438,15 @@ a.pagination__item:hover,
   opacity: 1;
 }
 
-/* Rectángulo 16:9 con bordes redondeados (antes círculo; decisión de Felipe,
-   2026-11-23) con la foto; el video del paso activo aparece encima */
+/* Rectángulo vertical 4:5 con bordes redondeados (antes círculo y luego 16:9;
+   decisión de Felipe, 2026-11-23: más alto que ancho para que la foto se vea
+   más grande) con la foto; el video del paso activo aparece encima */
 .journey__media {
   position: relative;
   display: block;
   overflow: hidden;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 5;
   margin-bottom: var(--space-24);
   border-radius: var(--radius-xl);
   background: var(--color-bg-muted);
