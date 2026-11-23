@@ -6330,9 +6330,10 @@ html:not(.js) .company-visual__tag {
   margin-top: var(--space-64);
 }
 
+/* Acceso al final de la sección: alineado a la izquierda, como títulos y textos */
 .home-cta {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: var(--space-48);
 }
 

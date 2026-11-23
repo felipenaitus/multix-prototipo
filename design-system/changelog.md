@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-23 · Accesos al final de sección a la izquierda
+- Código ✓ · Pedido de Felipe (todo alineado a la izquierda). `.home-cta` deja de centrar su botón: "Ir a Sustentabilidad" en el inicio e "Ir a Directorio y Ejecutivos" en Nosotros quedan a la izquierda.
+
 ## 2026-11-23 · Sin Coral 600: el acento sobre claro pasa a Navy 600
 - Figma pendiente · Código ✓ · Pedido de Felipe. Se retira el Coral 600 (#C44545) del kit. `--color-text-accent` y `--color-border-accent` pasan a Navy 600 (#245684; 7,7:1 sobre blanco, 7,1:1 sobre Offwhite, 6,5:1 sobre Navy 100): etiquetas de Inversionistas (destacados, comunicados, memoria anual), mes de las fechas, número activo de las etapas, números de la lista de valores, cargo en la ficha de persona, badge de acento y `.c-accent`. El coral corporativo (Coral 500) y el Coral 400 del botón de acento no cambian. CLAUDE.md §4, `ui-kit.md` y `kit.html` actualizados.
 
