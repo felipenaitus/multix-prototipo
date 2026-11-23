@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-23 · Botón terciario: hover todo en coral
+- Código ✓ · Pedido de Felipe. En el hover del botón terciario, el texto y el subrayado pasan al color de la flecha: Coral 500 sobre fondos claros (Navy 600 sobre crema y Navy 100 sobre azul, por las reglas sin coral sobre crema ni sobre azul). Excepción a AA aprobada por Felipe: Coral 500 como texto sobre blanco da 3,1:1, solo en este estado hover. El terciario blanco sobre oscuro no cambia.
+
 ## 2026-11-23 · Recorrido: pasos inactivos con tinte azul
 - Código ✓ · Pedido de Felipe. En el componente de recorrido (`.journey`: Del cultivo a la mesa en Productos, Nuestra historia en Nosotros y Proyectos en Sustentabilidad) las fotos de los pasos inactivos dejan el blanco y negro: llevan un tinte azul suave (capa Navy 900 en modo color al 50 % sobre la foto en gris y al 50 %). Con el hover o al activarse vuelven al color.
 

@@ -94,11 +94,13 @@
   border-radius: var(--radius-full);
   color: var(--color-text-brand);
 }
-/* Hover: subrayado delgado bajo el texto (el color se mantiene) y la flecha en
-   coral que avanza (sobre azul, en Navy 100). Igual en fondos claros y oscuros. */
+/* Hover: texto, subrayado delgado y flecha (que avanza) en Coral 500, el mismo
+   tono de la flecha en cada contexto (sobre crema Navy 600, sobre azul Navy 100).
+   EXCEPCIÓN a AA aprobada por Felipe (2026-11-23): Coral 500 como texto sobre
+   claro solo en este hover (3,1:1 sobre blanco). */
 .btn--tertiary:hover,
 .btn--tertiary.is-hover {
-  color: var(--color-text-brand);
+  color: var(--color-bg-accent-hover);
   text-decoration: underline;
   text-decoration-thickness: var(--border-thin);
   text-underline-offset: var(--space-4);
