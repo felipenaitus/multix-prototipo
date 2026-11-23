@@ -2308,8 +2308,9 @@ a.pagination__item:hover,
 }
 
 /* Nuestras marcas: slider con scroll-snap en mobile, fila en desktop */
-/* Nuestras marcas: cada marca en un círculo con contorno delgado, sin líneas ni
-   cajas alrededor. Dos círculos lado a lado desde tablet; apilados en mobile. */
+/* Nuestras marcas: cada marca en un rectángulo horizontal 16:9 con bordes
+   redondeados y contorno delgado (antes círculo; decisión de Felipe, 2026-11-23).
+   Dos lado a lado desde tablet; apilados en mobile. */
 .brands {
   display: grid;
   gap: var(--space-40);
@@ -2334,21 +2335,21 @@ a.pagination__item:hover,
   align-items: center;
   justify-content: center;
   gap: var(--space-20);
-  width: 85%;
-  aspect-ratio: 1;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   padding: var(--space-32);
   overflow: hidden;
   text-align: center;
   color: var(--color-text-brand);
   border: var(--border-thin) solid var(--color-border-default);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-xl);
   transition: border-color var(--duration-slow) var(--easing-standard);
 }
 
 .brand-card__media {
   position: absolute;
   inset: 0;
-  clip-path: circle(0% at 50% 50%);
+  clip-path: inset(50% round var(--radius-xl));
   transition: clip-path var(--duration-reveal) var(--easing-out);
 }
 
@@ -2404,7 +2405,7 @@ a.pagination__item:hover,
 
 .brand-card:hover .brand-card__media,
 .brand-card:focus-visible .brand-card__media {
-  clip-path: circle(50% at 50% 50%);
+  clip-path: inset(0 round var(--radius-xl));
 }
 
 .brand-card:hover .brand-card__media video,
@@ -2440,7 +2441,7 @@ a.pagination__item:hover,
 
 @media (min-width: 1024px) {
   .brand-card {
-    width: 75%;
+    width: 100%;
   }
 
   .brand-card__logo img {
@@ -5263,17 +5264,18 @@ a.pagination__item:hover,
   animation: fade-up var(--duration-slow) var(--easing-out);
 }
 
-/* Video en el círculo. El círculo queda fijo en el mismo lugar para los tres
+/* Video en un rectángulo 16:9 con bordes redondeados (antes círculo; decisión de
+   Felipe, 2026-11-23). Queda fijo en el mismo lugar para los tres
    pasos (centrado en el cuadro, así queda centrado en vertical con el texto); al cambiar de paso solo cambia el video, con
    un fundido. Posición = centro, en % del cuadro. */
 .steps__stage {
   --circle-x: 50%;
   --circle-y: 50%;
-  --circle-size: 78%;
+  --circle-size: 100%;
   position: relative;
   width: 100%;
   justify-self: center;
-  aspect-ratio: 1;
+  aspect-ratio: 16 / 9;
   margin: 0;
 }
 
@@ -5283,8 +5285,8 @@ a.pagination__item:hover,
   top: var(--circle-y);
   left: var(--circle-x);
   width: var(--circle-size);
-  aspect-ratio: 1;
-  border-radius: var(--radius-full);
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-xl);
   background: var(--color-bg-subtle);
   translate: -50% -50%;
   transition:
@@ -5301,9 +5303,9 @@ a.pagination__item:hover,
   left: var(--circle-x);
   width: var(--circle-size);
   height: auto;
-  aspect-ratio: 1;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-xl);
   translate: -50% -50%;
   opacity: 0;
   transition: opacity var(--duration-reveal) var(--easing-out);
@@ -5434,15 +5436,16 @@ a.pagination__item:hover,
   opacity: 1;
 }
 
-/* Círculo con la foto; el video del paso activo aparece encima */
+/* Rectángulo 16:9 con bordes redondeados (antes círculo; decisión de Felipe,
+   2026-11-23) con la foto; el video del paso activo aparece encima */
 .journey__media {
   position: relative;
   display: block;
   overflow: hidden;
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 16 / 9;
   margin-bottom: var(--space-24);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-xl);
   background: var(--color-bg-muted);
   transform: scale(.9);
   transition: transform var(--duration-reveal) var(--easing-out);
@@ -5680,17 +5683,18 @@ a.pagination__item:hover,
   color: var(--color-text-accent-on-dark);
 }
 
-/* Composición: la foto del paso llena el círculo Offwhite. Con hover (o toque /
+/* Composición: la foto del paso llena un rectángulo 16:9 Offwhite con bordes
+   redondeados (antes círculo; decisión de Felipe, 2026-11-23). Con hover (o toque /
    Enter) sobre la composición, el círculo crece y se abre como una ventana al
    video del paso (.is-open en el bloque, components.js); la foto se desvanece. */
 .chain__stage {
   grid-area: stage;
   justify-self: center;
   position: relative;
-  width: 66%;
-  aspect-ratio: 1;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   margin: var(--space-48) 0;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-xl);
   background: var(--color-bg-subtle);
 }
 
@@ -5700,7 +5704,7 @@ a.pagination__item:hover,
 }
 
 .chain.is-open .chain__stage {
-  scale: 1.15;
+  scale: 1.05;
 }
 
 .chain__stage:focus-visible {
@@ -5711,8 +5715,8 @@ a.pagination__item:hover,
   position: absolute;
   inset: 0;
   overflow: hidden;
-  border-radius: var(--radius-full);
-  clip-path: circle(0% at 50% 50%);
+  border-radius: var(--radius-xl);
+  clip-path: inset(50% round var(--radius-xl));
   transition: clip-path var(--duration-reveal) var(--easing-out);
 }
 
@@ -5781,7 +5785,7 @@ a.pagination__item:hover,
 }
 
 .chain.is-open .chain__mask {
-  clip-path: circle(50% at 50% 50%);
+  clip-path: inset(0 round var(--radius-xl));
   background: var(--color-bg-inverse); /* el cursor lo lee como fondo oscuro y pasa a blanco */
 }
 
@@ -5801,12 +5805,12 @@ a.pagination__item:hover,
   grid-area: stage;
   justify-self: center;
   position: relative;
-  width: 66%;
+  width: 100%;
   height: auto;
-  aspect-ratio: 1;
+  aspect-ratio: 16 / 9;
   margin: var(--space-48) 0;
   object-fit: cover;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-xl);
 }
 
 .chain__text {
@@ -5972,11 +5976,11 @@ a.pagination__item:hover,
   }
 
   .chain__stage {
-    width: 46%;
+    width: 70%;
   }
 
   .chain__img {
-    width: 46%;
+    width: 70%;
   }
 
   .chain__text {
@@ -5997,12 +6001,12 @@ a.pagination__item:hover,
   }
 
   .chain__stage {
-    width: 32%;
+    width: 50%;
     margin: var(--space-32) 0;
   }
 
   .chain__img {
-    width: 32%;
+    width: 50%;
     margin: var(--space-32) 0;
   }
 
@@ -6270,11 +6274,13 @@ body:has(.site-header.is-hidden) .subnav {
   color: var(--color-text-primary);
 }
 
+/* Rectángulo horizontal 16:9 con bordes redondeados (antes círculo; decisión de
+   Felipe, 2026-11-23) */
 .company-visual {
   position: relative;
-  width: 86%;
+  width: 90%;
   justify-self: center;
-  aspect-ratio: 1;
+  aspect-ratio: 16 / 9;
   margin: 0;
 }
 
@@ -6282,7 +6288,7 @@ body:has(.site-header.is-hidden) .subnav {
   position: absolute;
   inset: 0;
   overflow: hidden;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-xl);
   background: var(--color-bg-inverse);
 }
 
@@ -6325,11 +6331,11 @@ body:has(.site-header.is-hidden) .subnav {
   background: var(--color-bg-accent-hover);
 }
 
-/* Ubicación de cada región alrededor del círculo (de norte a sur) */
-.company-visual__tag:nth-child(1) { top: 8%; left: -2%; }
-.company-visual__tag:nth-child(2) { top: 34%; right: -8%; transition-delay: calc(var(--duration-stagger) * 2); }
-.company-visual__tag:nth-child(3) { bottom: 30%; left: -6%; transition-delay: calc(var(--duration-stagger) * 4); }
-.company-visual__tag:nth-child(4) { bottom: 6%; right: 4%; transition-delay: calc(var(--duration-stagger) * 6); }
+/* Ubicación de cada región sobre los bordes del rectángulo (de norte a sur) */
+.company-visual__tag:nth-child(1) { top: 10%; left: -5%; }
+.company-visual__tag:nth-child(2) { top: 30%; right: -5%; transition-delay: calc(var(--duration-stagger) * 2); }
+.company-visual__tag:nth-child(3) { bottom: 22%; left: -5%; transition-delay: calc(var(--duration-stagger) * 4); }
+.company-visual__tag:nth-child(4) { bottom: -5%; right: 10%; transition-delay: calc(var(--duration-stagger) * 6); }
 
 /* Sobre fondo crema (regla de contenedores sobre crema), las etiquetas van en blanco */
 .section--subtle .company-visual__tag {
@@ -6349,7 +6355,7 @@ html:not(.js) .company-visual__tag {
 
 @media (min-width: 768px) {
   .company-visual {
-    width: 60%;
+    width: 80%;
   }
 }
 
@@ -6360,7 +6366,7 @@ html:not(.js) .company-visual__tag {
   }
 
   .company-visual {
-    width: 88%;
+    width: 92%;
   }
 }
 
@@ -6612,15 +6618,15 @@ html:not(.js) .company-visual__tag {
   }
 }
 
-/* Círculo con video ([data-media-circle]): una foto (cuadro del mismo video)
-   llena el círculo, con el indicador de video. Con hover (o toque / Enter) el
-   círculo crece un 15 % y se abre como una ventana al video; la foto se desvanece.
-   Mismo comportamiento que la composición del relato vertical. */
+/* Foto con video ([data-media-circle]): rectángulo horizontal 16:9 con bordes
+   redondeados (antes círculo; decisión de Felipe, 2026-11-23). Una foto llena el
+   rectángulo, con el indicador. Con hover (o toque / Enter) crece un poco y se
+   abre como una ventana al video; la foto se desvanece. */
 .media-circle {
   position: relative;
-  width: 80%;
-  aspect-ratio: 1;
-  margin: var(--space-48) auto;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: var(--space-80) auto var(--space-48);
   cursor: pointer;
 }
 
@@ -6631,7 +6637,7 @@ html:not(.js) .company-visual__tag {
 .media-circle__disc {
   position: absolute;
   inset: 0;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-xl);
   background: var(--color-bg-page);
   transition: scale var(--duration-reveal) var(--easing-out);
 }
@@ -6640,8 +6646,8 @@ html:not(.js) .company-visual__tag {
   position: absolute;
   inset: 0;
   overflow: hidden;
-  border-radius: var(--radius-full);
-  clip-path: circle(0% at 50% 50%);
+  border-radius: var(--radius-xl);
+  clip-path: inset(50% round var(--radius-xl));
   transition: clip-path var(--duration-reveal) var(--easing-out);
 }
 
@@ -6654,36 +6660,36 @@ html:not(.js) .company-visual__tag {
   transition: transform var(--duration-reveal) var(--easing-out);
 }
 
-/* La foto llena el círculo */
+/* La foto llena el rectángulo */
 .media-circle__img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-xl);
   transition:
     opacity var(--duration-slow) var(--easing-standard),
     transform var(--duration-reveal) var(--easing-out);
 }
 
-/* Variante con foto recortada (PNG/WebP con transparencia): el círculo de la foto
-   calza con el del componente y la figura sobresale por arriba y los costados.
-   Las proporciones salen del archivo assets/img/home-productos.webp (756 × 862,
-   círculo de 703 px de diámetro con su borde izquierdo en x = 0 y su borde
-   superior en y = 159): ancho 107,6 % del círculo y desplazada 22,6 % hacia
-   arriba. Con hover crece desde el centro del círculo. */
+/* Variante con foto recortada (WebP con transparencia): el rectángulo de la foto
+   calza con el del componente y la figura sobresale por arriba. Las proporciones
+   salen de assets/img/home-productos.webp (502 × 351: rectángulo 16:9 de 502 ×
+   282 con su borde superior en y = 69): mismo ancho que el componente y
+   desplazada 24,47 % de su alto hacia arriba. Con hover crece desde el centro
+   del rectángulo. */
 .media-circle__img--cutout {
   z-index: 1;
   inset: auto;
-  top: -22.6%;
+  top: -24.47%;
   left: 0;
-  width: 107.6%;
+  width: 100%;
   max-width: none; /* base.css limita las imágenes al 100 % */
   height: auto;
   object-fit: fill;
   border-radius: 0;
-  transform-origin: 46.5% 59.2%;
+  transform-origin: 50% 59.8%;
   pointer-events: none;
 }
 
@@ -6696,15 +6702,14 @@ html:not(.js) .company-visual__tag {
   color: var(--color-text-brand);
   position: absolute;
   z-index: 2;
-  top: 85.4%;
-  left: 85.4%;
+  right: var(--space-16);
+  bottom: var(--space-16);
   width: var(--touch-target);
   height: var(--touch-target);
   padding: 0;
   border: var(--border-thin) solid var(--color-border-brand);
   border-radius: var(--radius-full);
   background: var(--color-bg-page);
-  translate: -50% -50%;
   cursor: pointer;
   transition:
     opacity var(--duration-slow) var(--easing-standard),
@@ -6722,11 +6727,11 @@ html:not(.js) .company-visual__tag {
 }
 
 .media-circle.is-open .media-circle__disc {
-  scale: 1.15;
+  scale: 1.05;
 }
 
 .media-circle.is-open .media-circle__mask {
-  clip-path: circle(50% at 50% 50%);
+  clip-path: inset(0 round var(--radius-xl));
   background: var(--color-bg-inverse); /* el cursor lo lee como fondo oscuro y pasa a blanco */
 }
 
@@ -6736,7 +6741,7 @@ html:not(.js) .company-visual__tag {
 
 .media-circle.is-open .media-circle__img {
   opacity: 0;
-  transform: scale(1.15);
+  transform: scale(1.05);
 }
 
 /* Con teclado, la mano sigue visible al tener el foco aunque el video esté abierto */
@@ -6752,14 +6757,14 @@ html:not(.js) .company-visual__tag {
 
 @media (min-width: 768px) {
   .media-circle {
-    width: 60%;
+    width: 80%;
   }
 }
 
 @media (min-width: 1024px) {
   .media-circle {
-    width: 66%;
-    margin-block: var(--space-64);
+    width: 100%;
+    margin-block: var(--space-80) var(--space-64);
   }
 }
 

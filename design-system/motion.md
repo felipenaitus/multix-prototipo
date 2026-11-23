@@ -55,7 +55,7 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 
 ## Base · Integración vertical (Productos › Del cultivo a la mesa)
 - Mismo patrón de avance automático que Soluciones: cada 8 × `--duration-reveal` pasa al paso siguiente mientras la sección está a la vista, con una línea Coral 500 que se llena bajo el paso activo (lineal). Se pausa con el mouse o el foco dentro y se detiene al elegir un paso.
-- Al activarse un paso, su círculo pasa de 0,9 a 1 (`--duration-reveal`, salida suave) y su video aparece sobre la foto con un fundido (`--duration-slow`) y se reproduce en loop; el paso anterior vuelve a la foto, que pasa a blanco y negro con transparencia (`--duration-slow`). El texto del paso entra con `fade-up`.
+- Al activarse un paso, su rectángulo pasa de 0,9 a 1 (`--duration-reveal`, salida suave) y su video aparece sobre la foto con un fundido (`--duration-slow`) y se reproduce en loop; el paso anterior vuelve a la foto, que pasa a blanco y negro con transparencia (`--duration-slow`). El texto del paso entra con `fade-up`.
 - Con movimiento reducido no avanza solo ni reproduce video (queda la foto).
 
 ## Firma · Globo de mercados (solo Productos › Mercado y oficinas comerciales)
@@ -64,7 +64,7 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 - Con `prefers-reduced-motion`: sin giro automático y el centrado es instantáneo.
 
 ## Firma · Hover de marcas (solo Productos › Nuestras marcas)
-- Con hover o foco en una marca, el video de esa marca rellena el círculo desde el centro (clip-path de 0 % a 50 %, `--duration-reveal`), se acerca levemente (escala 1,1 → 1) y se reproduce en loop mientras dura el hover; el contorno desaparece; el logo en color cambia al logo en blanco y "Ir al sitio" pasa a blanco (`--duration-slow`).
+- Con hover o foco en una marca, el video de esa marca rellena el rectángulo desde el centro (clip-path inset del centro a los bordes, `--duration-reveal`), se acerca levemente (escala 1,1 → 1) y se reproduce en loop mientras dura el hover; el contorno desaparece; el logo en color cambia al logo en blanco y "Ir al sitio" pasa a blanco (`--duration-slow`).
 - Con movimiento reducido el cambio es instantáneo (las duraciones quedan en 0) y el video no se reproduce: queda su primer cuadro.
 
 ## Firma · Entrada del catálogo (solo Productos › Descarga del catálogo)
@@ -84,12 +84,12 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 ## Firma · Relato vertical (solo Productos › Del cultivo a la mesa)
 - Sin avance automático: el paso lo cambia la persona con las flechas o los tramos.
 - Al cambiar de paso, el título del paso, la foto y la descripción hacen un fundido (`--duration-slow`) y la foto entra con un leve acercamiento (0,94 → 1, `--duration-reveal`).
-- Video en hover: el círculo crece un 15 % (`--duration-reveal`) y el video se abre dentro de él desde el centro (clip-path de 0 % a 50 %, con leve acercamiento 1,12 → 1, `--duration-reveal`) y la foto crece con el círculo (1 → 1,15) y se desvanece. Al salir se cierra. Indicador de video: anillo que late cada 3 × `--duration-reveal` (2,4 s; se expande a 1,8 y se desvanece); al abrir el video el indicador se achica y desaparece (`--duration-slow`). Con movimiento reducido no late. Con el video aparecen 4 datos del paso en secuencia (fundido y desplazamiento de 8 px, `--duration-slow`, desfase `--duration-stagger`). Con movimiento reducido el cambio es instantáneo y el video no se reproduce.
+- Video en hover: el rectángulo crece un 5 % (`--duration-reveal`) y el video se abre dentro de él desde el centro (clip-path inset del centro a los bordes, con leve acercamiento 1,12 → 1, `--duration-reveal`) y la foto crece con el rectángulo (1 → 1,05) y se desvanece. Al salir se cierra. Indicador de video: anillo que late cada 3 × `--duration-reveal` (2,4 s; se expande a 1,8 y se desvanece); al abrir el video el indicador se achica y desaparece (`--duration-slow`). Con movimiento reducido no late. Con el video aparecen 4 datos del paso en secuencia (fundido y desplazamiento de 8 px, `--duration-slow`, desfase `--duration-stagger`). Con movimiento reducido el cambio es instantáneo y el video no se reproduce.
 - Descartado antes: segunda instancia por paso con video en el círculo, alternando sola.
 - Variante línea de tiempo (Nosotros › Historia, `.chain--timeline`): mismo fundido al cambiar de hito (el año entra con el leve acercamiento); sin video, la composición no reacciona al hover.
 
 ## Firma · Círculo con video (solo home › Productos)
-- Mismo comportamiento que el video en hover del relato vertical: el círculo crece un 15 % y el video se abre desde el centro (clip-path 0 % → 50 %, `--duration-reveal`); la foto crece con el círculo (1 → 1,15) y se desvanece; el botón de la sección aparece en la parte inferior del círculo con fundido y un leve ascenso de 8 px (`--duration-slow`, tras `--duration-fast`); el indicador de play late y desaparece al abrir. Con movimiento reducido no late y el video no se reproduce.
+- Mismo comportamiento que el video en hover del relato vertical: el rectángulo crece un 5 % y el video se abre desde el centro (clip-path inset del centro a los bordes, `--duration-reveal`); la foto crece con el rectángulo (1 → 1,05) y se desvanece; el botón de la sección aparece en la parte inferior del rectángulo con fundido y un leve ascenso de 8 px (`--duration-slow`, tras `--duration-fast`); el indicador de play late y desaparece al abrir. Con movimiento reducido no late y el video no se reproduce.
 
 ## Firma · Transiciones entre secciones (PRUEBA en Productos, pendiente de confirmar como criterio)
 - Hero → primer contenido: recto.
@@ -101,6 +101,6 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 - Con movimiento reducido: todos los cortes rectos.
 
 ## Firma · Compañía integrada (solo Inversionistas)
-- El círculo con video tiene tamaño fijo (ya no crece con el scroll) y el video se reproduce solo mientras el bloque está a la vista (`[data-inview-video]`).
+- El rectángulo con video tiene tamaño fijo (ya no crece con el scroll) y el video se reproduce solo mientras el bloque está a la vista (`[data-inview-video]`).
 - Las tres regiones (Los Lagos, Aysén, Magallanes) aparecen en secuencia al entrar el bloque (`--duration-reveal`, desfase 3 × `--duration-stagger`).
 - Con movimiento reducido: sin crecimiento, sin video (queda el poster) y las etiquetas aparecen sin desplazamiento.
