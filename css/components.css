@@ -4406,6 +4406,12 @@ a.pagination__item:hover,
   gap: var(--space-12);
 }
 
+/* Acceso a las oficinas en Contacto (contacto.html#oficinas), bajo la lista */
+.markets__group .btn {
+  align-self: flex-start;
+  margin-top: var(--space-8);
+}
+
 .markets__offices {
   display: flex;
   flex-wrap: wrap;
