@@ -54,7 +54,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Gráfico de la acción | Gráfico con ejes y tooltip al hover | Gráfico simplificado; tooltip al tocar; selector de período en tira con scroll |
 | Metas con avance | Selector de año en fila; barras con meta y cifra a la derecha | Selector con scroll horizontal; meta arriba, barra y cifra debajo |
 | Certificaciones (tabs + desplegables) | Tabs + tarjetas desplegables en grilla | Tabs en tira; tarjetas en lista de 1 columna |
-| Nuestras marcas | Dos rectángulos con contorno lado a lado; con hover el video rellena el rectángulo y el logo pasa a blanco | Tablet: dos rectángulos lado a lado. Mobile: rectángulos apilados (ancho completo). Sin hover en pantallas táctiles: queda el contorno con el logo en color |
+| Nuestras marcas | Dos rectángulos lado a lado con el video de cada marca siempre visible, logo y "Ir al sitio" en blanco | Tablet: dos rectángulos lado a lado. Mobile: rectángulos apilados (ancho completo). Igual en pantallas táctiles (el video no depende del hover) |
 | Legislación: acceso (`.login`) | Columna centrada de cinco doceavos (dos tercios en tablet) | Columna a todo el ancho; "Acceder" a todo el ancho |
 | Preguntas frecuentes | Acordeón | Acordeón (igual), zona táctil completa en la pregunta |
 | Composición con ilustración | Texto a la izquierda, ilustración a la derecha | Ilustración arriba (más chica), texto debajo; cifras en 2 × 2 |

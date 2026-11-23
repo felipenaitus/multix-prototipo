@@ -63,9 +63,8 @@ Si una sección necesita un movimiento que no está en este catálogo: proponerl
 - Arrastrar gira el globo. Con foco o clic en un pin, el globo gira hasta centrarlo (3 × `--duration-slow`, salida suave) y muestra su nombre (`--duration-fast`).
 - Con `prefers-reduced-motion`: sin giro automático y el centrado es instantáneo.
 
-## Firma · Hover de marcas (solo Productos › Nuestras marcas)
-- Con hover o foco en una marca, el video de esa marca rellena el rectángulo desde el centro (clip-path inset del centro a los bordes, `--duration-reveal`), se acerca levemente (escala 1,1 → 1) y se reproduce en loop mientras dura el hover; el contorno desaparece; el logo en color cambia al logo en blanco y "Ir al sitio" pasa a blanco (`--duration-slow`).
-- Con movimiento reducido el cambio es instantáneo (las duraciones quedan en 0) y el video no se reproduce: queda su primer cuadro.
+## Firma · Video de marcas (solo Productos › Nuestras marcas)
+- El video de cada marca llena su rectángulo siempre y se reproduce en loop mientras el bloque está a la vista (`[data-inview-video]`); antes aparecía solo con hover (retirado por decisión de Felipe, 2026-11-23). Con hover o foco, el video se acerca levemente (1 → 1,05, `--duration-reveal`) e "Ir al sitio" se subraya. Con movimiento reducido no se reproduce (queda el poster).
 
 ## Firma · Entrada del catálogo (solo Productos › Descarga del catálogo)
 - Al entrar en pantalla (IntersectionObserver de `.reveal`): etiqueta, título, bajada y botón aparecen en secuencia (`--duration-reveal`, desfase `--duration-stagger`) y al final el flipbook. Solo opacidad y transform; con movimiento reducido todo aparece en su lugar.

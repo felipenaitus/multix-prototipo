@@ -2324,10 +2324,11 @@ a.pagination__item:hover,
   justify-content: center;
 }
 
-/* Cada círculo es un enlace a su sitio. En reposo: contorno y logo en su color
-   original. Con hover o foco: el video de la marca rellena el círculo desde el
-   centro (se reproduce solo mientras dura el hover, [data-hover-video]) con velo
-   Navy 950, y el logo y el texto pasan a blanco (patrón Firma, motion.md). */
+/* Cada rectángulo es un enlace a su sitio. El video de la marca lo llena siempre
+   (sin estado previo; decisión de Felipe, 2026-11-23), en loop mientras el bloque
+   está a la vista ([data-inview-video]), con velo Navy 950; logo y "Ir al sitio"
+   en blanco. Con hover o foco, "Ir al sitio" se subraya y el video se acerca
+   levemente. */
 .brand-card {
   position: relative;
   display: flex;
@@ -2340,17 +2341,14 @@ a.pagination__item:hover,
   padding: var(--space-32);
   overflow: hidden;
   text-align: center;
-  color: var(--color-text-brand);
-  border: var(--border-thin) solid var(--color-border-default);
+  color: var(--color-text-inverse);
   border-radius: var(--radius-xl);
-  transition: border-color var(--duration-slow) var(--easing-standard);
+  background: var(--color-bg-inverse);
 }
 
 .brand-card__media {
   position: absolute;
   inset: 0;
-  clip-path: inset(50% round var(--radius-xl));
-  transition: clip-path var(--duration-reveal) var(--easing-out);
 }
 
 .brand-card__media video {
@@ -2358,7 +2356,6 @@ a.pagination__item:hover,
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.1);
   transition: transform var(--duration-reveal) var(--easing-out);
 }
 
@@ -2378,16 +2375,10 @@ a.pagination__item:hover,
 }
 
 .brand-card__logo img {
-  grid-area: 1 / 1;
   width: auto;
   height: var(--space-48);
   max-width: 100%;
   object-fit: contain;
-  transition: opacity var(--duration-slow) var(--easing-standard);
-}
-
-.brand-card__logo-white {
-  opacity: 0;
 }
 
 .brand-card__cta {
@@ -2395,37 +2386,19 @@ a.pagination__item:hover,
   display: inline-flex;
   align-items: center;
   gap: var(--space-8);
-  transition: color var(--duration-slow) var(--easing-standard);
-}
-
-.brand-card:hover,
-.brand-card:focus-visible {
-  border-color: transparent;
-}
-
-.brand-card:hover .brand-card__media,
-.brand-card:focus-visible .brand-card__media {
-  clip-path: inset(0 round var(--radius-xl));
+  color: var(--color-text-inverse);
 }
 
 .brand-card:hover .brand-card__media video,
 .brand-card:focus-visible .brand-card__media video {
-  transform: scale(1);
-}
-
-.brand-card:hover .brand-card__logo-color,
-.brand-card:focus-visible .brand-card__logo-color {
-  opacity: 0;
-}
-
-.brand-card:hover .brand-card__logo-white,
-.brand-card:focus-visible .brand-card__logo-white {
-  opacity: 1;
+  transform: scale(1.05);
 }
 
 .brand-card:hover .brand-card__cta,
 .brand-card:focus-visible .brand-card__cta {
-  color: var(--color-text-inverse);
+  text-decoration: underline;
+  text-decoration-thickness: var(--border-thin);
+  text-underline-offset: var(--space-4);
 }
 
 @media (min-width: 768px) {
@@ -4214,13 +4187,6 @@ a.pagination__item:hover,
   right: var(--layout-gutter);
   height: var(--border-thin);
   background: var(--color-border-default);
-}
-
-/* Variante centrada: ÚNICA excepción a los títulos a la izquierda (decisión de
-   Felipe, 2026-11-23), solo para Nuestras marcas en Productos */
-.section-head--center {
-  align-items: center;
-  text-align: center;
 }
 
 @media (min-width: 1024px) {

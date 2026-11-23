@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-23 · Nuestras marcas: video siempre visible y título a la izquierda
+- Código ✓ · Pedido de Felipe. En Nuestras marcas (Productos) el video de cada marca se ve de inmediato, sin el estado previo con contorno y logo en color: llena el rectángulo y se reproduce en loop mientras el bloque está a la vista (`[data-inview-video]`), con velo Navy 950 y logo e "Ir al sitio" en blanco. Hover o foco: subrayado en "Ir al sitio" y leve acercamiento del video. Sin contorno.
+- Código ✓ · El título "Nuestras marcas" vuelve a la izquierda; se retira la variante `.section-head--center` (ya no tiene usos).
+
 ## 2026-11-23 · Productos: acceso a las oficinas en Contacto
 - Código ✓ · Pedido de Felipe. En Mercados y oficinas (Productos), bajo "Oficinas comerciales", se agrega el botón terciario "Contacto", a la derecha de las oficinas y con su mismo tamaño de texto (Pequeño), que lleva a `contacto.html#oficinas` (la sección de oficinas de Contacto recibe el ancla `id="oficinas"`).
 
