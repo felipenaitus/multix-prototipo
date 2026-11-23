@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-23 · Acordeón de años: año más grueso y en coral
+- Figma pendiente · Código ✓ · Pedido de Felipe. En el acordeón de documentos por año (`.doc-years`: Centro de Resultados, Gobernanza y Sustentabilidad), el año pasa a Sora 500 (`--text-figure-regular-weight` de 400 a 500) y a coral corporativo (Coral 500, misma excepción a AA que las cifras destacadas; sobre crema y azul, Navy por las reglas sin coral). Abierto o cerrado, mismo color.
+
 ## 2026-11-23 · Nuestras marcas: más aire arriba y abajo
 - Código ✓ · Pedido de Felipe. Nueva variante `.section--spacious` (1,5 × `--layout-section-gap` arriba y abajo) aplicada a Nuestras marcas, que quedaba pegada al arco de Mercados y al catálogo.
 

@@ -1128,13 +1128,13 @@ body:has(.site-header.is-hidden) .page-tabs.is-bar {
   gap: var(--space-16);
 }
 
-/* Año del acordeón: Cifra S un paso más gruesa (Sora 400) */
-.doc-year__year {
-  font-weight: var(--text-figure-regular-weight);
-}
-
+/* Año del acordeón: Cifra S más gruesa (Sora 500) y en coral corporativo, como
+   las cifras destacadas (Coral 500, misma excepción aprobada; sobre crema y azul
+   el token pasa a Navy). Decisión de Felipe, 2026-11-23. */
+.doc-year__year,
 .doc-year__head[aria-expanded="true"] .doc-year__year {
-  color: var(--color-text-brand);
+  font-weight: var(--text-figure-regular-weight);
+  color: var(--color-text-accent-on-dark);
 }
 
 .doc-year__count {
