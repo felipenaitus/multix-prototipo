@@ -584,7 +584,9 @@
 
 /* Sub-menú de sección (pestañas de página, .page-tabs.is-bar: Centro de
    Resultados, Gobernanza). Franja blanca a todo el ancho, en todos los anchos:
-   texto gris, la activa en Navy 900 con indicador Navy y una línea fina abajo.
+   texto gris claro (Ink 500), la activa en Navy 900 y en negrita (Manrope 700)
+   con indicador Navy y una línea fina abajo. El ancho de cada pestaña reserva el
+   de su texto en negrita (::after con data-text), así no se mueven al cambiar.
    En los extremos, fundido blanco con flecha cuando hay más pestañas hacia ese
    lado. Al bajar queda fija justo bajo el sub-menú de Inversionistas. */
 .page-tabs.is-bar {
@@ -617,12 +619,23 @@ body:has(.site-header.is-hidden) .page-tabs.is-bar {
 
 .page-tabs.is-bar .tab {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   min-height: calc(var(--touch-target) + var(--space-12));
   padding: 0;
   border-bottom: var(--border-indicator) solid transparent;
   border-radius: 0;
-  color: var(--color-text-secondary);
+  color: var(--color-text-tertiary);
+}
+
+/* Reserva el ancho del texto en negrita (invisible y sin alto) */
+.page-tabs.is-bar .tab::after {
+  content: attr(data-text);
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  font-weight: var(--text-ui-tab-selected-weight);
+  pointer-events: none;
 }
 
 .page-tabs.is-bar .tab:hover {
@@ -632,6 +645,7 @@ body:has(.site-header.is-hidden) .page-tabs.is-bar {
 .page-tabs.is-bar .tab[aria-selected="true"] {
   background: none;
   color: var(--color-text-brand);
+  font-weight: var(--text-ui-tab-selected-weight);
   border-bottom-color: var(--color-border-brand);
 }
 

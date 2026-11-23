@@ -101,6 +101,7 @@
   --text-ui-strong-size: 16px;       --text-ui-strong-lh: 1.40;       --text-ui-strong-weight: 600;       /* UI/Destacado */
   --text-ui-button-size: 15px;       --text-ui-button-lh: 1.20;       --text-ui-button-weight: 600;       /* UI/Botón */
   --text-ui-button-sm-size: 14px;    --text-ui-button-sm-lh: 1.20;    --text-ui-button-sm-weight: 600;    /* UI/Botón pequeño */
+  --text-ui-tab-selected-weight: 700;  /* Pestaña activa del sub-menú de sección: Manrope Bold (pendiente de Figma) */
   --text-ui-nav-size: 14px;          --text-ui-nav-lh: 1.40;          --text-ui-nav-weight: 600;          /* UI/Navegación */
   --text-ui-small-strong-size: 13px; --text-ui-small-strong-lh: 1.40; --text-ui-small-strong-weight: 600; /* UI/Pequeño destacado */
 

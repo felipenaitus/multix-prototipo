@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-23 · Sub-menú de sección: activa en negrita, inactivas más claras
+- Figma pendiente · Código ✓ · Pedido de Felipe. En el sub-menú de pestañas de las páginas de Inversionistas (`.page-tabs.is-bar`: Centro de Resultados, Gobernanza, Acción), la pestaña activa pasa a Manrope 700 (token nuevo `--text-ui-tab-selected-weight`) y las inactivas de Ink 600 a Ink 500 (`--color-text-tertiary`, 4,6:1, pasa AA). Para que no salten al cambiar, cada pestaña reserva el ancho de su texto en negrita (`data-text`, lo agrega components.js).
+
 ## 2026-11-23 · Acordeón de años: año más grueso y en coral
 - Figma pendiente · Código ✓ · Pedido de Felipe. En el acordeón de documentos por año (`.doc-years`: Centro de Resultados, Gobernanza y Sustentabilidad), el año pasa a Sora 500 (`--text-figure-regular-weight` de 400 a 500) y a coral corporativo (Coral 500, misma excepción a AA que las cifras destacadas; sobre crema y azul, Navy por las reglas sin coral). Abierto o cerrado, mismo color.
 

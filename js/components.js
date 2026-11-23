@@ -234,6 +234,8 @@
           next.hidden = strip.scrollLeft + strip.clientWidth >= strip.scrollWidth - 2;
         };
         strip.addEventListener('scroll', updateMore, { passive: true });
+        // Texto de cada pestaña en data-text: el CSS reserva su ancho en negrita
+        list.querySelectorAll('[role="tab"]').forEach(function (t) { t.setAttribute('data-text', t.textContent.trim()); });
         bar.classList.add('is-bar');
         fit = updateMore;
       } else if (strip.hasAttribute('data-tabs-static')) {
