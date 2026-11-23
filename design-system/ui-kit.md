@@ -26,18 +26,18 @@ Este archivo dice **qué** componentes existen y **cómo se usan**. Las medidas 
 | Texto terciario (etiquetas de menor jerarquía) | `--color-text-tertiary` | Ink 500 #66787F (4,6:1 sobre blanco) |
 | Texto atenuado (solo "Ver PDF") | `--color-text-quiet` | Ink 400 #7A8B91 (3,5:1 sobre blanco). **Excepción a AA** aprobada por Felipe; pendiente de Figma |
 | Texto de marca y enlaces | `--color-text-brand` | Navy 900 |
-| Etiquetas y badges en coral | `--color-text-accent` | Coral 600 #C44545 |
+| Etiquetas, badges y destacados (acento) | `--color-text-accent` | Navy 600 #245684 (7,7:1 sobre blanco). Antes Coral 600, retirado del kit; pendiente de Figma |
 | Variación positiva (acción, metas) | `--color-text-success` | Verde 600 |
 | Bordes y divisores | `--color-border-default` | #DCD8CD |
 
 Regla del coral:
-- **Coral 600:** todo texto coral sobre fondos claros (etiquetas, badges, palabra destacada en títulos).
+- **Sin texto coral sobre claro:** etiquetas, badges y destacados van en Navy 600 (`--color-text-accent`). El Coral 600 se retiró del kit (pedido de Felipe, 2026-11-23).
 - **Coral 500 (marca):** rellenos y elementos gráficos sobre fondos claros (hover del botón de acento, líneas, barras, marcadores). No se usa como texto sobre claro. Excepciones aprobadas por Felipe: las cifras en coral del sitio (Cifra L en Cifra destacada, Sora 400; sobre Offwhite 2,86:1 y sobre blanco 3,08:1, aceptado por tamaño) y el paso actual de "Del cultivo a la mesa" (Título 2, 26–32 px), que como texto grande pasa AA (3,1:1 sobre blanco; mínimo 3:1).
 - **Coral 400:** relleno del botón de acento.
-- **Sobre fondos oscuros:** texto y contorno coral en Coral 500 (excepción: el 600 no pasa ahí).
+- **Sobre fondos oscuros:** texto y contorno coral en Coral 500.
 
 Reglas de contraste verificadas (WCAG 2.1 AA):
-- Coral 600 como texto: blanco 4,9:1 · Offwhite 4,6:1. No usar sobre Navy 100 (4,2:1) ni crema.
+- Navy 600 como acento: blanco 7,7:1 · Offwhite 7,1:1 · Navy 100 6,5:1.
 - Coral 400 + texto Ink 900: 6,7:1 (botón de acento). Coral 500 + Ink 900: 5,5:1 (hover).
 - **Sin coral sobre crema** (pedido de Felipe, 2026-10-30): sobre fondo crema (`section--subtle` y bloques crema como la presentación del trimestre y las etiquetas de regiones) todo va en tonos azules: textos y bordes de acento en Navy 600 (azul grisáceo, 7,1:1), elementos gráficos (líneas, puntos, cifras) en Navy 600 y botón de acento en Navy 300. Se resuelve en `tokens.css` reasignando los tokens de acento. El punto de las etiquetas de regiones va en Navy 600 en todas las páginas.
 - **Sin coral sobre azul** (pedido de Felipe, 2026-10-29): en fondos azules (`section--inverse`, menú oscuro desde tablet, tarjeta de noticia del menú) los acentos usan Navy 300 (10,2:1 sobre Navy 950): etiquetas, contornos, botón de acento (hover Navy 100) y elementos gráficos. Se resuelve en `tokens.css` reasignando los tokens de acento en esos contextos. Excepciones vigentes: la X del logo y el botón comercial sobre el video del hero de Productos.
@@ -285,7 +285,7 @@ Flujo (diagrama de Felipe): Trabaja con Nosotros (hero · Oportunidades por áre
 
 ### Página Nosotros (nuevos · pendientes de llevar a Figma)
 Orden: hero con video · Quiénes somos (propósito y valores) · Cifras clave (crema) · Personas · Historia (crema) · acceso a Directorio y Ejecutivos. Fondos alternados con Apertura / Horizonte.
-- **Lista de valores (`.value-list` + `.value-item`):** filas abiertas separadas por líneas: número (Etiqueta, Coral 600), nombre (Título 3) y descripción. Va a la derecha del propósito en un `.split`.
+- **Lista de valores (`.value-list` + `.value-item`):** filas abiertas separadas por líneas: número (Etiqueta, acento Navy 600), nombre (Título 3) y descripción. Va a la derecha del propósito en un `.split`.
 - **Cifras clave:** reutiliza la compañía integrada (`.company`: texto + círculo con video y regiones) y `.stats--accent` con regiones, comunas, localidades y centros.
 - **Pilares con foto (`.pillars` + `.pillar`):** foto 4:3 con esquinas redondeadas (sin texto encima), Título 3 y texto. Dos en fila desde tablet. Reformula "Excelencia" e "Innovación" del sitio actual en una sola sección "Personas", con encabezado centrado.
 - **Cifra total (`.figure-total`):** una sola cifra grande en Coral 500 (excepción de las cifras destacadas) con su etiqueta, centrada bajo una línea. Personas › total de colaboradores.
@@ -299,4 +299,4 @@ Hero con video o foto de fondo y overlay oscuro, Display en blanco. Franja infer
 Texto (Título 1 con palabra destacada en coral) + ilustración en línea Navy sobre círculo `--color-bg-illustration`, con fila de cifras debajo (Etiqueta + Cifra + línea coral). Se repetirá en varias secciones del sitio.
 Pendientes de definir con Felipe antes de construirla:
 - Sora no tiene cursiva: la cursiva del prototipo de venta (Montserrat) no se puede replicar sin que el navegador la simule. Definir si el destacado va solo en color, en otro peso o con otra familia.
-- La palabra destacada va en Coral 600 (regla del coral), no en Coral 500 como en el prototipo de venta.
+- La palabra destacada va en el acento sobre claro (Navy 600), no en coral como en el prototipo de venta.

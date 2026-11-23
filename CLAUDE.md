@@ -63,9 +63,9 @@ Si hay conflicto entre el código y el Figma, manda el Figma. Si hay conflicto e
 - Respetar `prefers-reduced-motion` (los tokens de duración ya se anulan; los videos de scroll-scrubbing se reemplazan por imagen).
 
 ## 4. Accesibilidad mínima (AA)
-- Texto coral sobre fondos claros (etiquetas, badges, destacados en títulos, cualquier tamaño): siempre `--color-text-accent` (Coral 600), sobre blanco u Offwhite. No sobre Navy 100 ni crema.
+- Sin texto coral sobre fondos claros: etiquetas, badges y destacados usan `--color-text-accent`, que sobre claro es Navy 600 (7,7:1 sobre blanco). El Coral 600 se retiró del kit.
 - Coral 500 sobre fondos claros: solo rellenos y elementos gráficos (hover del botón de acento, líneas bajo cifras, barras, marcadores, cursor ripple). Nunca como texto.
-- Única excepción: sobre fondos oscuros (Navy 950) el texto y contorno coral usan Coral 500 (`--color-text-accent-on-dark`, 5,6:1), porque el Coral 600 no pasa ahí (3,5:1).
+- Única excepción: sobre fondos oscuros (Navy 950) el texto y contorno coral usan Coral 500 (`--color-text-accent-on-dark`, 5,6:1).
 - Botón de acento: fondo Coral 400, texto Ink 900; hover Coral 500. Nunca texto blanco sobre coral.
 - `--color-bg-illustration` (Coral 100) es solo para figuras detrás de ilustraciones, no para fondos de bloques con texto.
 - Teléfonos y correos siempre como enlaces (`tel:` / `mailto:`).

@@ -17,7 +17,6 @@
   --color-coral-100: #EBE2DC;
   --color-coral-400: #FF7A7A;
   --color-coral-500: #FF5959;
-  --color-coral-600: #C44545;
   --color-neutral-0: #FFFFFF;
   --color-neutral-50: #F7F7F2;
   --color-neutral-150: #ECE9E1;
@@ -51,7 +50,7 @@
   --color-text-quiet: var(--color-ink-400);      /* 3,5:1 sobre blanco: EXCEPCIÓN a AA aprobada por Felipe, solo "Ver PDF" */
   --color-text-brand: var(--color-navy-900);
   --color-text-brand-hover: var(--color-navy-600);
-  --color-text-accent: var(--color-coral-600);
+  --color-text-accent: var(--color-navy-600);   /* acento sobre claro: azul, sin coral (antes Coral 600; pendiente de Figma) */
   --color-text-accent-on-dark: var(--color-coral-500);
   --color-text-on-accent: var(--color-ink-900);
   --color-text-on-accent-hover: var(--color-ink-900); /* pendiente de llevar a Figma: sobre crema pasa a blanco */
@@ -69,7 +68,7 @@
   --color-border-primary: var(--color-ink-900);
   --color-border-brand: var(--color-navy-900);
   --color-border-brand-hover: var(--color-navy-600);
-  --color-border-accent: var(--color-coral-600);
+  --color-border-accent: var(--color-navy-600); /* antes Coral 600; pendiente de Figma */
   --color-border-accent-on-dark: var(--color-coral-500);
   --color-border-inverse: var(--color-neutral-0);
   --color-border-inverse-muted: var(--color-navy-300);
