@@ -5,7 +5,7 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
 ## 2026-11-23 · Productos: acceso a las oficinas en Contacto
-- Código ✓ · Pedido de Felipe. En Mercados y oficinas (Productos), bajo "Oficinas comerciales", se agrega el botón terciario "Ver oficinas" que lleva a `contacto.html#oficinas` (la sección de oficinas de Contacto recibe el ancla `id="oficinas"`).
+- Código ✓ · Pedido de Felipe. En Mercados y oficinas (Productos), bajo "Oficinas comerciales", se agrega el botón terciario "Contacto", a la derecha de las oficinas y con su mismo tamaño de texto (Pequeño), que lleva a `contacto.html#oficinas` (la sección de oficinas de Contacto recibe el ancla `id="oficinas"`).
 
 ## 2026-11-23 · Etiquetas de regiones con contorno
 - Código ✓ · Pedido de Felipe. Las etiquetas de regiones de la compañía integrada (`.company-visual__tag`) llevan un contorno delgado (`--border-thin`, `--color-border-default`) para separarse del fondo blanco cuando quedan fuera del rectángulo de la foto.
