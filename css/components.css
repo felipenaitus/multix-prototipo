@@ -5462,8 +5462,9 @@ a.pagination__item:hover,
   object-fit: cover;
 }
 
-/* Foto de los pasos inactivos en blanco y negro y con transparencia; vuelve al
-   color con el hover o al activarse */
+/* Foto de los pasos inactivos con transparencia y un tinte azul suave (gris +
+   capa Navy 900 en modo color, decisión de Felipe 2026-11-23: no en blanco y
+   negro); vuelve al color con el hover o al activarse */
 .journey__photo {
   opacity: .5;
   filter: grayscale(1);
@@ -5485,6 +5486,23 @@ a.pagination__item:hover,
 
 .journey__step.is-active .journey__video {
   opacity: 1;
+}
+
+/* Tinte azul de los pasos inactivos: tiñe la foto en gris con el azul de marca */
+.journey__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-bg-brand);
+  mix-blend-mode: color;
+  opacity: .5;
+  pointer-events: none;
+  transition: opacity var(--duration-slow) var(--easing-standard);
+}
+
+.journey__step.is-active .journey__media::after,
+.journey__trigger:hover .journey__media::after {
+  opacity: 0;
 }
 
 /* Línea de tiempo del paso activo, sobre la línea inferior */

@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-23 · Recorrido: pasos inactivos con tinte azul
+- Código ✓ · Pedido de Felipe. En el componente de recorrido (`.journey`: Del cultivo a la mesa en Productos, Nuestra historia en Nosotros y Proyectos en Sustentabilidad) las fotos de los pasos inactivos dejan el blanco y negro: llevan un tinte azul suave (capa Navy 900 en modo color al 50 % sobre la foto en gris y al 50 %). Con el hover o al activarse vuelven al color.
+
 ## 2026-11-23 · Botón de acento sobre oscuro: blanco
 - Figma pendiente · Código ✓ · Pedido de Felipe. Sobre fondos oscuros, foto o video (hero y `.on-dark`), el botón de acento deja el coral y pasa a blanco con texto Navy 900; hover Navy 100, igual que el botón claro. Afecta al botón comercial "Contactar al equipo comercial" del hero de Productos. Tokens nuevos `--color-bg-accent-on-dark`, `--color-bg-accent-on-dark-hover` y `--color-text-on-accent-dark`. Sobre fondos claros el botón de acento sigue en coral.
 
