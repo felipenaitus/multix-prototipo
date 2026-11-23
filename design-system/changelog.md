@@ -4,6 +4,10 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-23 · Título 2 y Título 3 un nivel más gruesos
+- Figma pendiente · Código ✓ · Pedido de Felipe. `--text-h2-weight` pasa de 300 a 400 y `--text-h3-weight` de 400 a 500, en todos los títulos del sitio que usan esos estilos.
+- Código ✓ · Se carga Sora 500 en todas las páginas para el Título 3. CLAUDE.md 2.6 y la ficha de tipografía de `ui-kit.md` actualizados por decisión de Felipe.
+
 ## 2026-11-23 · Hero del inicio: salmón a la derecha y en blanco
 - Código ✓ · Pedido de Felipe. El salmón vuelve a la derecha de "el futuro / el mundo" (como antes de ir sobre la frase) y queda todo en blanco: la cola deja el coral (`css/pruebas.css`, `index.html`).
 
