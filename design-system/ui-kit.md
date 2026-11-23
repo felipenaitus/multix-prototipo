@@ -21,6 +21,7 @@ Este archivo dice **qué** componentes existen y **cómo se usan**. Las medidas 
 | Fondo de marca (botón primario, tarjeta de último resultado) | `--color-bg-brand` | Navy 900 |
 | Fondo suave de marca (íconos de documento, fecha de evento, hover secundario) | `--color-bg-brand-soft` | Navy 100 |
 | Botón de acento / hover | `--color-bg-accent` / `--color-bg-accent-hover` | Coral 400 / Coral 500 |
+| Botón de acento sobre oscuro, foto o video / hover | `--color-bg-accent-on-dark` / `--color-bg-accent-on-dark-hover` + texto `--color-text-on-accent-dark` | Blanco / Navy 100, texto Navy 900. Pendiente de Figma |
 | Figura detrás de ilustraciones | `--color-bg-illustration` | Coral 100 #EBE2DC |
 | Texto principal / secundario | `--color-text-primary` / `--color-text-secondary` | Navy 900 (títulos y textos sobre fondos claros: azul oscuro, no negro; antes Ink 900) / Ink 600 |
 | Texto terciario (etiquetas de menor jerarquía) | `--color-text-tertiary` | Ink 500 #66787F (4,6:1 sobre blanco) |
@@ -40,7 +41,7 @@ Reglas de contraste verificadas (WCAG 2.1 AA):
 - Navy 600 como acento: blanco 7,7:1 · Offwhite 7,1:1 · Navy 100 6,5:1.
 - Coral 400 + texto Ink 900: 6,7:1 (botón de acento). Coral 500 + Ink 900: 5,5:1 (hover).
 - **Sin coral sobre crema** (pedido de Felipe, 2026-10-30): sobre fondo crema (`section--subtle` y bloques crema como la presentación del trimestre y las etiquetas de regiones) todo va en tonos azules: textos y bordes de acento en Navy 600 (azul grisáceo, 7,1:1), elementos gráficos (líneas, puntos, cifras) en Navy 600 y botón de acento en Navy 300. Se resuelve en `tokens.css` reasignando los tokens de acento. El punto de las etiquetas de regiones va en Navy 600 en todas las páginas.
-- **Sin coral sobre azul** (pedido de Felipe, 2026-10-29): en fondos azules (`section--inverse`, menú oscuro desde tablet, tarjeta de noticia del menú) los acentos usan Navy 300 (10,2:1 sobre Navy 950): etiquetas, contornos, botón de acento (hover Navy 100) y elementos gráficos. Se resuelve en `tokens.css` reasignando los tokens de acento en esos contextos. Excepciones vigentes: la X del logo y el botón comercial sobre el video del hero de Productos.
+- **Sin coral sobre azul** (pedido de Felipe, 2026-10-29): en fondos azules (`section--inverse`, menú oscuro desde tablet, tarjeta de noticia del menú) los acentos usan Navy 300 (10,2:1 sobre Navy 950): etiquetas, contornos y elementos gráficos. Se resuelve en `tokens.css` reasignando los tokens de acento en esos contextos. El botón de acento sobre oscuro, foto o video (hero, `.on-dark`) va en blanco con texto Navy 900 y hover Navy 100, incluido el botón comercial del hero de Productos (decisión de Felipe, 2026-11-23). Excepción vigente: la X del logo.
 - Coral 400/500 con texto blanco: no se usa.
 - Coral 100: Navy 900 encima 8,9:1. No lleva texto coral ni bordes visibles contra el fondo (1,2:1).
 

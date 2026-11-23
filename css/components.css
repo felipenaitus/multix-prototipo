@@ -4569,6 +4569,24 @@ a.pagination__item:hover,
   background: var(--color-bg-accent);
 }
 
+/* Botón de acento sobre fondos oscuros, foto o video (hero, secciones azules):
+   neutro, en blanco con texto Navy 900; hover Navy 100, como el botón claro.
+   Incluye el botón comercial del hero de Productos (decisión de Felipe, 2026-11-23). */
+.on-dark .btn--accent,
+.hero .btn--accent,
+.hero .sales-contact__toggle.btn--accent {
+  background: var(--color-bg-accent-on-dark);
+  color: var(--color-text-on-accent-dark);
+}
+
+.on-dark .btn--accent:hover,
+.on-dark .btn--accent.is-hover,
+.hero .btn--accent:hover,
+.hero .sales-contact__toggle.btn--accent:hover {
+  background: var(--color-bg-accent-on-dark-hover);
+  color: var(--color-text-on-accent-dark);
+}
+
 .sales-contact {
   position: fixed;
   left: var(--layout-gutter);

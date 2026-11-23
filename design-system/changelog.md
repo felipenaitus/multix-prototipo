@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-23 · Botón de acento sobre oscuro: blanco
+- Figma pendiente · Código ✓ · Pedido de Felipe. Sobre fondos oscuros, foto o video (hero y `.on-dark`), el botón de acento deja el coral y pasa a blanco con texto Navy 900; hover Navy 100, igual que el botón claro. Afecta al botón comercial "Contactar al equipo comercial" del hero de Productos. Tokens nuevos `--color-bg-accent-on-dark`, `--color-bg-accent-on-dark-hover` y `--color-text-on-accent-dark`. Sobre fondos claros el botón de acento sigue en coral.
+
 ## 2026-11-23 · Nuestras marcas: título centrado (única excepción)
 - Código ✓ · Pedido de Felipe. Vuelve la variante `.section-head--center`, solo para el título "Nuestras marcas" de Productos, sobre los dos círculos. El resto de los títulos sigue a la izquierda.
 

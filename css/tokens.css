@@ -42,6 +42,9 @@
   --color-bg-brand-soft: var(--color-navy-100);
   --color-bg-accent: var(--color-coral-400);
   --color-bg-accent-hover: var(--color-coral-500);
+  --color-bg-accent-on-dark: var(--color-neutral-0);        /* botón de acento sobre oscuro o video: blanco (pendiente de Figma) */
+  --color-bg-accent-on-dark-hover: var(--color-navy-100);   /* su hover, como el botón claro (pendiente de Figma) */
+  --color-text-on-accent-dark: var(--color-navy-900);       /* texto del botón de acento sobre oscuro: 11,4:1 sobre blanco (pendiente de Figma) */
   --color-bg-illustration: var(--color-coral-100);
   /* Texto */
   --color-text-primary: var(--color-navy-900);   /* títulos y textos sobre claro: azul oscuro, no negro (antes Ink 900) */
