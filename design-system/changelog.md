@@ -4,9 +4,6 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
-## 2026-11-23 · Nuestra historia: año con más peso y hito más chico
-- Código ✓ · Pedido de Felipe. En la línea de tiempo de Nosotros (`.journey--eight`), el año pasa de Etiqueta (11 px) a Título 3 (Sora 500) y el enunciado del hito de UI/Destacado (16 px) a UI/Pequeño destacado (13 px). Productos y Sustentabilidad no cambian.
-
 ## 2026-11-23 · Etiquetas de regiones con contorno
 - Código ✓ · Pedido de Felipe. Las etiquetas de regiones de la compañía integrada (`.company-visual__tag`) llevan un contorno delgado (`--border-thin`, `--color-border-default`) para separarse del fondo blanco cuando quedan fuera del rectángulo de la foto.
 
