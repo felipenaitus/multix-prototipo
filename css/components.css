@@ -4362,9 +4362,11 @@ a.pagination__item:hover,
   border-top: var(--border-thin) solid var(--color-border-default);
 }
 
-/* Cifras en Navy 900 y peso regular: el bloque es más sobrio (sin coral) */
+/* Cifras en coral corporativo (Coral 500), también sobre el fondo crema de la
+   sección: excepción a "sin coral sobre crema" y a AA (2,86:1 sobre Offwhite),
+   aprobada por Felipe (2026-11-23), como el resto de las cifras destacadas */
 .markets__stat .t-figure-l {
-  color: var(--color-text-brand);
+  color: var(--color-text-figure-accent);
   white-space: nowrap;
 }
 

@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-23 · Mercados: cifras en coral
+- Figma pendiente · Código ✓ · Pedido de Felipe. Las cifras de Mercados y oficinas (Productos: 30+, +400, 90 mil) pasan de Navy 900 a coral corporativo (Coral 500), aunque la sección es crema: excepción a "sin coral sobre crema" y a AA (2,86:1), como las demás cifras destacadas. Token nuevo `--color-text-figure-accent` (Coral 500, no se reasigna en crema ni en azul).
+
 ## 2026-11-23 · Integración vertical (mobile): sin flechas
 - Código ✓ · Pedido de Felipe, solo mobile. En el recorrido (`.journey`: Productos, Nosotros › Historia, Sustentabilidad › Proyectos) se quitan las flechas bajo el carrusel: se recorre con swipe. Tablet y desktop las mantienen.
 
