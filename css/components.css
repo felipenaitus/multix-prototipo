@@ -5548,7 +5548,15 @@ a.pagination__item:hover,
 
 .journey__foot .chain__arrows {
   flex-shrink: 0;
-  margin-left: auto; /* siempre al extremo derecho, también en mobile sin texto */
+  margin-left: auto; /* siempre al extremo derecho */
+}
+
+/* Mobile: sin flechas (el carrusel se recorre con swipe) y el detalle ya va en
+   cada paso, así que el pie no se muestra (decisión de Felipe, 2026-11-23) */
+@media (max-width: 767px) {
+  .journey__foot {
+    display: none;
+  }
 }
 
 .journey__panel {

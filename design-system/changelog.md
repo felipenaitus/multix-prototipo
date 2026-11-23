@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-23 · Integración vertical (mobile): sin flechas
+- Código ✓ · Pedido de Felipe, solo mobile. En el recorrido (`.journey`: Productos, Nosotros › Historia, Sustentabilidad › Proyectos) se quitan las flechas bajo el carrusel: se recorre con swipe. Tablet y desktop las mantienen.
+
 ## 2026-11-23 · Integración vertical: fotos en vertical 4:5
 - Código ✓ · Pedido de Felipe. En el recorrido (`.journey`: Productos, Nosotros › Historia, Sustentabilidad › Proyectos) las fotos de los pasos pasan de 16:9 a vertical 4:5, porque quedaban muy pequeñas. Alternativa a probar: cuadrado (1:1).
 
