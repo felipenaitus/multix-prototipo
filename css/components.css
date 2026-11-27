@@ -5454,6 +5454,13 @@ a.pagination__item:hover,
   color: var(--color-text-brand);
 }
 
+/* Número o año de cada paso en coral corporativo (Coral 500), en todas las
+   instancias del componente y también sobre crema: excepción a AA aprobada por
+   Felipe (2026-11-27), como las cifras */
+.journey__num {
+  color: var(--color-text-figure-accent);
+}
+
 /* Pasos inactivos: número y nombre más tenues */
 .journey__num,
 .journey__name {
