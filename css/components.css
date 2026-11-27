@@ -4438,21 +4438,6 @@ a.pagination__item:hover,
   gap: var(--space-12);
 }
 
-/* Oficinas y, a su derecha, el acceso a Contacto (contacto.html#oficinas), con el
-   mismo tamaño de texto que las oficinas (Pequeño) */
-.markets__offices-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-8) var(--space-24);
-}
-
-.markets__offices-row .btn {
-  padding-block: 0;
-  font-size: var(--text-small-size);
-  line-height: var(--text-small-lh);
-}
-
 .markets__offices {
   display: flex;
   flex-wrap: wrap;

@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-27 · Mercados: sin botón Contacto y oficina en Shanghái
+- Código ✓ · Pedido de Felipe. En Mercados y oficinas (Productos) se quita el botón "Contacto" junto a las oficinas y se agrega la oficina comercial de Shanghái, China, en la lista y como punto de oficina en el globo. El ancla `#oficinas` de Contacto se mantiene.
+
 ## 2026-11-27 · Nuestras marcas: vuelve la interacción de hover
 - Código ✓ · Pedido de Felipe. Se deja la forma rectangular, pero vuelve la interacción anterior: en reposo solo el contorno y el logo en color, centrado; con hover o foco, el video rellena el rectángulo desde el centro, el logo pasa a blanco y aparece "Ir al sitio" bajo el logo. Reemplaza al video siempre visible del 2026-11-23. Título a la izquierda y `.section--spacious` se mantienen.
 
