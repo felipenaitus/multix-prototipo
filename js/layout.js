@@ -168,6 +168,7 @@
 
   // Accesos visibles en la fila principal del header (desktop), centrados
   var HEADER_MAIN = [
+    { id: 'nosotros', label: 'Nosotros', href: 'nosotros.html' },
     { id: 'productos', label: 'Productos', href: 'productos.html' },
     { id: 'sustentabilidad', label: 'Sustentabilidad', href: 'sustentabilidad.html' },
     { id: 'inversionistas', label: 'Inversionistas', href: 'inversionistas.html', children: INVESTOR_PAGES }
@@ -273,7 +274,7 @@
        buscador · ES/EN) y fila principal (logo · accesos centrados · hamburguesa).
        variant="overlay"   Transparente sobre el hero; pasa a sólido al hacer scroll.
        (sin variant)       Sólido desde el inicio (páginas interiores).
-       current="..."       Acceso activo (productos | sustentabilidad | inversionistas).
+       current="..."       Acceso activo (nosotros | productos | sustentabilidad | inversionistas).
        demo + demo-state   Solo kit.html: estado fijo (transparent | light | compact).
      Al hacer scroll la barra utilitaria se oculta y la fila principal se compacta.
      Fuera del hero (o en páginas sin hero) el header es siempre blanco.

@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-27 · Menú principal: acceso a Nosotros
+- Código ✓ · Pedido de Felipe. En la fila principal del header (desktop, `js/layout.js`) se agrega "Nosotros" antes de Productos. En nosotros.html queda marcado como activo (`current="nosotros"`). En mobile y tablet sigue en el menú hamburguesa, como antes.
+
 ## 2026-11-27 · Integración vertical: número o año en coral
 - Código ✓ · Pedido de Felipe. En el componente de recorrido (`.journey`), el número o año bajo cada foto pasa a coral corporativo (Coral 500, `--color-text-figure-accent`) en todas sus instancias: años de Nuestra historia (Nosotros), pasos 01–06 de Productos y Proyectos de Sustentabilidad. Se mantiene el atenuado de los pasos inactivos. Excepción a AA (Etiqueta de 11 px en coral: 3,1:1 sobre blanco, 2,86:1 sobre crema), aprobada por Felipe.
 
