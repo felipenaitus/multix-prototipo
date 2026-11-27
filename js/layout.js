@@ -1059,8 +1059,8 @@
     <li class="journey__step is-active">
       <button class="journey__trigger" type="button" aria-controls="journey-1" aria-expanded="true">
         <span class="journey__media" aria-hidden="true">
-          <img class="journey__photo" src="assets/img/foto-genetica.jpg" alt="" width="720" height="720" loading="lazy">
-          <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=2.3" poster="assets/img/foto-genetica.jpg"></video>
+          <img class="journey__photo" src="assets/img/paso-01-genetica.webp" alt="" width="800" height="800" loading="lazy">
+          <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=2.3" poster="assets/img/paso-01-genetica.webp"></video>
         </span>
         <span class="t-label journey__num">01</span>
         <span class="t-ui-strong journey__name">Genética y ovas</span>
@@ -1071,8 +1071,8 @@
     <li class="journey__step">
       <button class="journey__trigger" type="button" aria-controls="journey-2" aria-expanded="false">
         <span class="journey__media" aria-hidden="true">
-          <img class="journey__photo" src="assets/img/foto-agua-dulce.jpg" alt="" width="720" height="720" loading="lazy">
-          <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=27" poster="assets/img/foto-agua-dulce.jpg"></video>
+          <img class="journey__photo" src="assets/img/paso-02-agua-dulce.webp" alt="" width="800" height="800" loading="lazy">
+          <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=27" poster="assets/img/paso-02-agua-dulce.webp"></video>
         </span>
         <span class="t-label journey__num">02</span>
         <span class="t-ui-strong journey__name">Agua dulce</span>
@@ -1083,8 +1083,8 @@
     <li class="journey__step">
       <button class="journey__trigger" type="button" aria-controls="journey-3" aria-expanded="false">
         <span class="journey__media" aria-hidden="true">
-          <img class="journey__photo" src="assets/img/foto-centros-mar.jpg" alt="" width="720" height="720" loading="lazy">
-          <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=7" poster="assets/img/foto-centros-mar.jpg"></video>
+          <img class="journey__photo" src="assets/img/paso-03-centros-mar.webp" alt="" width="800" height="800" loading="lazy">
+          <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=7" poster="assets/img/paso-03-centros-mar.webp"></video>
         </span>
         <span class="t-label journey__num">03</span>
         <span class="t-ui-strong journey__name">Centros de mar</span>
@@ -1095,8 +1095,8 @@
     <li class="journey__step">
       <button class="journey__trigger" type="button" aria-controls="journey-4" aria-expanded="false">
         <span class="journey__media" aria-hidden="true">
-          <img class="journey__photo" src="assets/img/foto-cosecha.jpg" alt="" width="720" height="720" loading="lazy">
-          <video class="journey__video" muted loop playsinline preload="none" src="assets/video/inversionistas.mp4#t=14" poster="assets/img/foto-cosecha.jpg"></video>
+          <img class="journey__photo" src="assets/img/paso-04-cosecha.webp" alt="" width="800" height="800" loading="lazy">
+          <video class="journey__video" muted loop playsinline preload="none" src="assets/video/inversionistas.mp4#t=14" poster="assets/img/paso-04-cosecha.webp"></video>
         </span>
         <span class="t-label journey__num">04</span>
         <span class="t-ui-strong journey__name">Cosecha</span>
@@ -1107,8 +1107,8 @@
     <li class="journey__step">
       <button class="journey__trigger" type="button" aria-controls="journey-5" aria-expanded="false">
         <span class="journey__media" aria-hidden="true">
-          <img class="journey__photo" src="assets/img/foto-proceso.jpg" alt="" width="720" height="720" loading="lazy">
-          <video class="journey__video" muted loop playsinline preload="none" src="assets/video/inversionistas.mp4#t=30" poster="assets/img/foto-proceso.jpg"></video>
+          <img class="journey__photo" src="assets/img/paso-05-proceso.webp" alt="" width="800" height="800" loading="lazy">
+          <video class="journey__video" muted loop playsinline preload="none" src="assets/video/inversionistas.mp4#t=30" poster="assets/img/paso-05-proceso.webp"></video>
         </span>
         <span class="t-label journey__num">05</span>
         <span class="t-ui-strong journey__name">Proceso</span>
@@ -1119,8 +1119,8 @@
     <li class="journey__step">
       <button class="journey__trigger" type="button" aria-controls="journey-6" aria-expanded="false">
         <span class="journey__media" aria-hidden="true">
-          <img class="journey__photo" src="assets/img/foto-distribucion.jpg" alt="" width="720" height="720" loading="lazy">
-          <video class="journey__video" muted loop playsinline preload="none" src="assets/video/inversionistas.mp4#t=11" poster="assets/img/foto-distribucion.jpg"></video>
+          <img class="journey__photo" src="assets/img/paso-06-distribucion.webp" alt="" width="800" height="800" loading="lazy">
+          <video class="journey__video" muted loop playsinline preload="none" src="assets/video/inversionistas.mp4#t=11" poster="assets/img/paso-06-distribucion.webp"></video>
         </span>
         <span class="t-label journey__num">06</span>
         <span class="t-ui-strong journey__name">Distribución</span>
