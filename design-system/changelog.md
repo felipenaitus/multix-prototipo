@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-27 · Inicio: integración vertical después de "Conoce Multi X"
+- Código ✓ · Pedido de Felipe. El módulo de integración vertical de Productos ("Control en cada etapa, calidad en cada producto", seis pasos) se agrega al inicio, después de la sección "Una salmonera del sur de Chile". Como ahora se repite en dos páginas, pasa a ser el Web Component `<vertical-integration>` en `js/layout.js` (regla de bloques repetidos); Productos usa el mismo componente, sin cambios visibles.
+
 ## 2026-11-27 · Estrategia ABC: foto en lugar de cifras
 - Código ✓ · Pedido de Felipe. En la Estrategia ABC (Sustentabilidad) se quitan las metas con cifras de cada pilar y en su lugar va una foto en rectángulo 16:9 con bordes redondeados (`.abc__media`), a la derecha en desktop y bajo el texto en mobile. Fotos provisorias del sitio [foto por definir]: centros de mar (Animal), agua dulce (Biósfera) y planta de proceso (Comunidades). Kit actualizado.
 

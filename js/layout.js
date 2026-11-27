@@ -13,6 +13,7 @@
    <sales-contact product>                   Botón flotante + formulario comercial
    <ir-subnav current>                       Sub-menú fijo de las páginas de Inversionistas
    <results-release label title meta href>   Presentación del último trimestre (temporal; inactive la oculta)
+   <vertical-integration>                    Integración vertical (Del cultivo a la mesa): Productos e inicio
 
    Estilos en css/components.css. Íconos: sprite de Figma (UI Kit), salvo las
    redes sociales (linkedin, x, facebook, instagram), dibujadas en el mismo estilo
@@ -1044,6 +1045,134 @@
     }
   }
 
+  /* <vertical-integration> · Integración vertical "Control en cada etapa, calidad
+     en cada producto" (Del cultivo a la mesa): título, bajada y los seis pasos del
+     recorrido ([data-journey], comportamiento en components.js). Una sola
+     definición para Productos y el inicio. Cada página pone su <section> y su
+     .container alrededor. [fotos y videos por definir] */
+  var VERTICAL_INTEGRATION = `<div class="journey" data-journey>
+  <div class="section-head reveal">
+    <h2 class="t-h2" id="chain-title">Control en cada etapa, calidad en cada producto</h2>
+    <p class="t-body-l section-head__lead">Nuestra integración vertical abarca desde la ova hasta el producto final. El control de cada etapa permite asegurar la trazabilidad y mantener estándares de calidad e inocuidad, para entregar productos consistentes a nuestros clientes.</p>
+  </div>
+  <ol class="journey__steps reveal" role="list">
+    <li class="journey__step is-active">
+      <button class="journey__trigger" type="button" aria-controls="journey-1" aria-expanded="true">
+        <span class="journey__media" aria-hidden="true">
+          <img class="journey__photo" src="assets/img/foto-genetica.jpg" alt="" width="720" height="720" loading="lazy">
+          <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=2.3" poster="assets/img/foto-genetica.jpg"></video>
+        </span>
+        <span class="t-label journey__num">01</span>
+        <span class="t-ui-strong journey__name">Genética y ovas</span>
+        <span class="t-body journey__desc">Programa genético propio para peces sanos y de crecimiento eficiente. [contenido por definir]</span>
+        <span class="journey__progress" aria-hidden="true"></span>
+      </button>
+    </li>
+    <li class="journey__step">
+      <button class="journey__trigger" type="button" aria-controls="journey-2" aria-expanded="false">
+        <span class="journey__media" aria-hidden="true">
+          <img class="journey__photo" src="assets/img/foto-agua-dulce.jpg" alt="" width="720" height="720" loading="lazy">
+          <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=27" poster="assets/img/foto-agua-dulce.jpg"></video>
+        </span>
+        <span class="t-label journey__num">02</span>
+        <span class="t-ui-strong journey__name">Agua dulce</span>
+        <span class="t-body journey__desc">Pisciculturas con recirculación donde crecen alevines y smolts. [contenido por definir]</span>
+        <span class="journey__progress" aria-hidden="true"></span>
+      </button>
+    </li>
+    <li class="journey__step">
+      <button class="journey__trigger" type="button" aria-controls="journey-3" aria-expanded="false">
+        <span class="journey__media" aria-hidden="true">
+          <img class="journey__photo" src="assets/img/foto-centros-mar.jpg" alt="" width="720" height="720" loading="lazy">
+          <video class="journey__video" muted loop playsinline preload="none" src="assets/video/hero.mp4#t=7" poster="assets/img/foto-centros-mar.jpg"></video>
+        </span>
+        <span class="t-label journey__num">03</span>
+        <span class="t-ui-strong journey__name">Centros de mar</span>
+        <span class="t-body journey__desc">Engorda en las regiones de Los Lagos, Aysén y Magallanes. [contenido por definir]</span>
+        <span class="journey__progress" aria-hidden="true"></span>
+      </button>
+    </li>
+    <li class="journey__step">
+      <button class="journey__trigger" type="button" aria-controls="journey-4" aria-expanded="false">
+        <span class="journey__media" aria-hidden="true">
+          <img class="journey__photo" src="assets/img/foto-cosecha.jpg" alt="" width="720" height="720" loading="lazy">
+          <video class="journey__video" muted loop playsinline preload="none" src="assets/video/inversionistas.mp4#t=14" poster="assets/img/foto-cosecha.jpg"></video>
+        </span>
+        <span class="t-label journey__num">04</span>
+        <span class="t-ui-strong journey__name">Cosecha</span>
+        <span class="t-body journey__desc">Cosecha planificada según la demanda de cada mercado. [contenido por definir]</span>
+        <span class="journey__progress" aria-hidden="true"></span>
+      </button>
+    </li>
+    <li class="journey__step">
+      <button class="journey__trigger" type="button" aria-controls="journey-5" aria-expanded="false">
+        <span class="journey__media" aria-hidden="true">
+          <img class="journey__photo" src="assets/img/foto-proceso.jpg" alt="" width="720" height="720" loading="lazy">
+          <video class="journey__video" muted loop playsinline preload="none" src="assets/video/inversionistas.mp4#t=30" poster="assets/img/foto-proceso.jpg"></video>
+        </span>
+        <span class="t-label journey__num">05</span>
+        <span class="t-ui-strong journey__name">Proceso</span>
+        <span class="t-body journey__desc">Plantas propias de proceso primario, secundario y ahumado. [contenido por definir]</span>
+        <span class="journey__progress" aria-hidden="true"></span>
+      </button>
+    </li>
+    <li class="journey__step">
+      <button class="journey__trigger" type="button" aria-controls="journey-6" aria-expanded="false">
+        <span class="journey__media" aria-hidden="true">
+          <img class="journey__photo" src="assets/img/foto-distribucion.jpg" alt="" width="720" height="720" loading="lazy">
+          <video class="journey__video" muted loop playsinline preload="none" src="assets/video/inversionistas.mp4#t=11" poster="assets/img/foto-distribucion.jpg"></video>
+        </span>
+        <span class="t-label journey__num">06</span>
+        <span class="t-ui-strong journey__name">Distribución</span>
+        <span class="t-body journey__desc">Despacho aéreo y marítimo a clientes en más de 30 países. [contenido por definir]</span>
+        <span class="journey__progress" aria-hidden="true"></span>
+      </button>
+    </li>
+  </ol>
+  <div class="journey__foot reveal">
+    <div class="journey__detail" aria-live="polite">
+      <div class="journey__panel" id="journey-1">
+        <p class="t-h3 journey__title">01. Genética y ovas</p>
+        <p class="t-body-l journey__text">Programa genético propio para peces sanos y de crecimiento eficiente. [contenido por definir]</p>
+      </div>
+      <div class="journey__panel" id="journey-2" hidden>
+        <p class="t-h3 journey__title">02. Agua dulce</p>
+        <p class="t-body-l journey__text">Pisciculturas con recirculación donde crecen alevines y smolts. [contenido por definir]</p>
+      </div>
+      <div class="journey__panel" id="journey-3" hidden>
+        <p class="t-h3 journey__title">03. Centros de mar</p>
+        <p class="t-body-l journey__text">Engorda en las regiones de Los Lagos, Aysén y Magallanes. [contenido por definir]</p>
+      </div>
+      <div class="journey__panel" id="journey-4" hidden>
+        <p class="t-h3 journey__title">04. Cosecha</p>
+        <p class="t-body-l journey__text">Cosecha planificada según la demanda de cada mercado. [contenido por definir]</p>
+      </div>
+      <div class="journey__panel" id="journey-5" hidden>
+        <p class="t-h3 journey__title">05. Proceso</p>
+        <p class="t-body-l journey__text">Plantas propias de proceso primario, secundario y ahumado. [contenido por definir]</p>
+      </div>
+      <div class="journey__panel" id="journey-6" hidden>
+        <p class="t-h3 journey__title">06. Distribución</p>
+        <p class="t-body-l journey__text">Despacho aéreo y marítimo a clientes en más de 30 países. [contenido por definir]</p>
+      </div>
+    </div>
+    <div class="chain__arrows">
+      <button class="chain__arrow chain__arrow--prev" type="button" aria-label="Paso anterior"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+      <button class="chain__arrow" type="button" aria-label="Paso siguiente"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+    </div>
+  </div>
+</div>
+`;
+
+  class VerticalIntegration extends HTMLElement {
+    connectedCallback() {
+      if (this._ready) return;
+      this._ready = true;
+      injectSprite();
+      this.innerHTML = VERTICAL_INTEGRATION;
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     if (!document.querySelector('chat-launcher:not([demo])')) {
       document.body.appendChild(document.createElement('chat-launcher'));
@@ -1053,6 +1182,7 @@
   customElements.define('site-header', SiteHeader);
   customElements.define('site-footer', SiteFooter);
   customElements.define('site-offices', SiteOffices);
+  customElements.define('vertical-integration', VerticalIntegration);
   customElements.define('season-strip', SeasonStrip);
   customElements.define('ir-contact', IrContact);
   customElements.define('ir-alerts', IrAlerts);
