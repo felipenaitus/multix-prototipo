@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-27 · Nuestras marcas: vuelve la interacción de hover
+- Código ✓ · Pedido de Felipe. Se deja la forma rectangular, pero vuelve la interacción anterior: en reposo solo el contorno y el logo en color, centrado; con hover o foco, el video rellena el rectángulo desde el centro, el logo pasa a blanco y aparece "Ir al sitio" bajo el logo. Reemplaza al video siempre visible del 2026-11-23. Título a la izquierda y `.section--spacious` se mantienen.
+
 ## 2026-11-23 · Mercados: cifras en coral
 - Figma pendiente · Código ✓ · Pedido de Felipe. Las cifras de Mercados y oficinas (Productos: 30+, +400, 90 mil) pasan de Navy 900 a coral corporativo (Coral 500), aunque la sección es crema: excepción a "sin coral sobre crema" y a AA (2,86:1), como las demás cifras destacadas. Token nuevo `--color-text-figure-accent` (Coral 500, no se reasigna en crema ni en azul).
 

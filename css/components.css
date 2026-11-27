@@ -2338,31 +2338,33 @@ a.pagination__item:hover,
   justify-content: center;
 }
 
-/* Cada rectángulo es un enlace a su sitio. El video de la marca lo llena siempre
-   (sin estado previo; decisión de Felipe, 2026-11-23), en loop mientras el bloque
-   está a la vista ([data-inview-video]), con velo Navy 950; logo y "Ir al sitio"
-   en blanco. Con hover o foco, "Ir al sitio" se subraya y el video se acerca
-   levemente. */
+/* Cada rectángulo es un enlace a su sitio. En reposo: solo el contorno delgado y
+   el logo en su color original. Con hover o foco: el video de la marca rellena el
+   rectángulo desde el centro (se reproduce solo mientras dura el hover,
+   [data-hover-video]) con velo Navy 950, el logo pasa a blanco y aparece "Ir al
+   sitio" (patrón Firma, motion.md). Decisión de Felipe, 2026-11-27. */
 .brand-card {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--space-20);
   width: 100%;
   aspect-ratio: 16 / 9;
   padding: var(--space-32);
   overflow: hidden;
   text-align: center;
-  color: var(--color-text-inverse);
+  color: var(--color-text-brand);
+  border: var(--border-thin) solid var(--color-border-default);
   border-radius: var(--radius-xl);
-  background: var(--color-bg-inverse);
+  transition: border-color var(--duration-slow) var(--easing-standard);
 }
 
 .brand-card__media {
   position: absolute;
   inset: 0;
+  clip-path: inset(50% round var(--radius-xl));
+  transition: clip-path var(--duration-reveal) var(--easing-out);
 }
 
 .brand-card__media video {
@@ -2370,6 +2372,7 @@ a.pagination__item:hover,
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1.1);
   transition: transform var(--duration-reveal) var(--easing-out);
 }
 
@@ -2389,30 +2392,66 @@ a.pagination__item:hover,
 }
 
 .brand-card__logo img {
+  grid-area: 1 / 1;
   width: auto;
   height: var(--space-48);
   max-width: 100%;
   object-fit: contain;
+  transition: opacity var(--duration-slow) var(--easing-standard);
 }
 
+.brand-card__logo-white {
+  opacity: 0;
+}
+
+/* "Ir al sitio": fuera del flujo, bajo el logo, para que en reposo el logo quede
+   centrado; aparece con el hover */
 .brand-card__cta {
-  position: relative;
+  position: absolute;
+  top: calc(50% + var(--space-24) + var(--space-20));
+  left: 50%;
   display: inline-flex;
   align-items: center;
   gap: var(--space-8);
   color: var(--color-text-inverse);
+  white-space: nowrap;
+  opacity: 0;
+  translate: -50% var(--space-8);
+  transition:
+    opacity var(--duration-slow) var(--easing-standard),
+    translate var(--duration-slow) var(--easing-out);
+}
+
+.brand-card:hover,
+.brand-card:focus-visible {
+  border-color: transparent;
+}
+
+.brand-card:hover .brand-card__media,
+.brand-card:focus-visible .brand-card__media {
+  clip-path: inset(0 round var(--radius-xl));
 }
 
 .brand-card:hover .brand-card__media video,
 .brand-card:focus-visible .brand-card__media video {
-  transform: scale(1.05);
+  transform: scale(1);
+}
+
+.brand-card:hover .brand-card__logo-color,
+.brand-card:focus-visible .brand-card__logo-color {
+  opacity: 0;
+}
+
+.brand-card:hover .brand-card__logo-white,
+.brand-card:focus-visible .brand-card__logo-white {
+  opacity: 1;
 }
 
 .brand-card:hover .brand-card__cta,
 .brand-card:focus-visible .brand-card__cta {
-  text-decoration: underline;
-  text-decoration-thickness: var(--border-thin);
-  text-underline-offset: var(--space-4);
+  opacity: 1;
+  translate: -50% 0;
+  transition-delay: var(--duration-fast);
 }
 
 @media (min-width: 768px) {
@@ -2433,6 +2472,10 @@ a.pagination__item:hover,
 
   .brand-card__logo img {
     height: var(--space-64);
+  }
+
+  .brand-card__cta {
+    top: calc(50% + var(--space-32) + var(--space-20));
   }
 }
 
