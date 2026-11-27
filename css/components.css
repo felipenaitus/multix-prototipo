@@ -4223,6 +4223,21 @@ a.pagination__item:hover,
   padding-block: calc(var(--layout-section-gap) * 1.5);
 }
 
+/* Sección oscura con textura de agua (.section--water, sobre .section--inverse):
+   foto de agua en vez del Navy 950 liso. Abajo se funde con el Navy 950, que es
+   el color del arco del Horizonte (.section--curve-bottom), así no se ve corte.
+   Home › Inversionistas (decisión de Felipe, 2026-11-27). [foto entregada por Felipe] */
+.section--water {
+  background:
+    linear-gradient(to bottom, transparent 60%, var(--color-bg-inverse)),
+    url("../assets/img/fondo-conoce.jpg") center / cover no-repeat,
+    var(--color-bg-inverse);
+}
+
+.section--water.section--curve-bottom::after {
+  background: var(--color-bg-inverse);
+}
+
 /* Sección que continúa a la anterior (mismo fondo): sin espacio arriba propio; el
    contenido parte con una línea delgada y el aire de sección. Ej.: Preguntas
    frecuentes después de Contacto. */

@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-27 · Inicio › Inversionistas: fondo con textura de agua
+- Código ✓ · Pedido de Felipe. La sección "Conoce nuestro desempeño" del inicio cambia el Navy 950 liso por la foto de agua entregada por Felipe (`assets/img/fondo-conoce.jpg`), con la nueva variante `.section--water`. Abajo se funde con el Navy 950 para que el arco que la cierra no muestre corte.
+
 ## 2026-11-27 · Inicio: integración vertical después de "Conoce Multi X"
 - Código ✓ · Pedido de Felipe. El módulo de integración vertical de Productos ("Control en cada etapa, calidad en cada producto", seis pasos) se agrega al inicio, después de la sección "Una salmonera del sur de Chile". Como ahora se repite en dos páginas, pasa a ser el Web Component `<vertical-integration>` en `js/layout.js` (regla de bloques repetidos); Productos usa el mismo componente, sin cambios visibles.
 
