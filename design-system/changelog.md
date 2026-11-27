@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-27 · Home › Your salmon solution partner: plato en lugar de foto con video
+- Código ✓ · Pedido de Felipe. La foto del trabajador con el salmón y su video en hover se reemplazan por la imagen del plato entregada por Felipe (`plato-2.png`, recortada y pasada a `assets/img/plato.webp`, 1200 px). Va sola, sin rectángulo ni mano, con la nueva pieza `.cutout-photo` (también en el kit). La foto con video queda en el kit, sin uso en páginas.
+
 ## 2026-11-27 · Inicio › Inversionistas: fondo con textura de agua
 - Código ✓ · Pedido de Felipe. La sección "Conoce nuestro desempeño" del inicio cambia el Navy 950 liso por la foto de agua entregada por Felipe (`assets/img/fondo-conoce.jpg`), con la nueva variante `.section--water`. Abajo se funde con el Navy 950 para que el arco que la cierra no muestre corte.
 

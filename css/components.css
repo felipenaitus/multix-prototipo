@@ -6683,6 +6683,33 @@ html:not(.js) .company-visual__tag {
   }
 }
 
+/* Foto recortada (.cutout-photo): imagen con fondo transparente (por ejemplo, un
+   plato visto desde arriba) sin marco ni caja, centrada en su columna. Home ›
+   Your salmon solution partner (decisión de Felipe, 2026-11-27: reemplaza a la
+   foto con video). */
+.cutout-photo {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.cutout-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .cutout-photo {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cutout-photo {
+    width: 80%;
+  }
+}
+
 /* Foto con video ([data-media-circle]): rectángulo horizontal 16:9 con bordes
    redondeados (antes círculo; decisión de Felipe, 2026-11-23). Una foto llena el
    rectángulo, con el indicador. Con hover (o toque / Enter) crece un poco y se
