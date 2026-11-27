@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-27 · Nosotros: etiqueta "Valores" en coral
+- Código ✓ · Pedido de Felipe. Sobre la lista de valores de Nosotros se agrega la etiqueta "Valores" (Etiqueta, Coral 500 con `--color-text-figure-accent`; nueva pieza `.value-group__label`, también en el kit). Excepción a "sin texto coral sobre claro" y a AA (3,1:1 sobre blanco), aprobada por Felipe.
+
 ## 2026-11-27 · Menú principal: acceso a Nosotros
 - Código ✓ · Pedido de Felipe. En la fila principal del header (desktop, `js/layout.js`) se agrega "Nosotros" antes de Productos. En nosotros.html queda marcado como activo (`current="nosotros"`). En mobile y tablet sigue en el menú hamburguesa, como antes.
 

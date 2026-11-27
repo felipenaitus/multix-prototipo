@@ -288,7 +288,7 @@ Flujo (diagrama de Felipe): Trabaja con Nosotros (hero · Oportunidades por áre
 
 ### Página Nosotros (nuevos · pendientes de llevar a Figma)
 Orden: hero con video · Quiénes somos (propósito y valores) · Cifras clave (crema) · Personas · Historia (crema) · acceso a Directorio y Ejecutivos. Fondos alternados con Apertura / Horizonte.
-- **Lista de valores (`.value-list` + `.value-item`):** filas abiertas separadas por líneas: número (Etiqueta, acento Navy 600), nombre (Título 3) y descripción. Va a la derecha del propósito en un `.split`.
+- **Lista de valores (`.value-list` + `.value-item`):** puede llevar arriba una etiqueta (`.value-group` + `.value-group__label`, Etiqueta en coral corporativo; en Nosotros dice "Valores"; excepción a AA aprobada por Felipe, 2026-11-27). filas abiertas separadas por líneas: número (Etiqueta, acento Navy 600), nombre (Título 3) y descripción. Va a la derecha del propósito en un `.split`.
 - **Cifras clave:** reutiliza la compañía integrada (`.company`: texto + rectángulo con video y regiones) y `.stats--accent` con regiones, comunas, localidades y centros.
 - **Pilares con foto (`.pillars` + `.pillar`):** foto 4:3 con esquinas redondeadas (sin texto encima), Título 3 y texto. Dos en fila desde tablet. Reformula "Excelencia" e "Innovación" del sitio actual en una sola sección "Personas", con encabezado centrado.
 - **Cifra total (`.figure-total`):** una sola cifra grande en Coral 500 (excepción de las cifras destacadas) con su etiqueta, centrada bajo una línea. Personas › total de colaboradores.

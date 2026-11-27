@@ -8154,6 +8154,14 @@ html:not(.js) .company-visual__tag {
   border-top: var(--border-thin) solid var(--color-border-default);
 }
 
+/* Etiqueta sobre la lista de valores (Nosotros): Etiqueta en coral corporativo
+   (Coral 500). Excepción a "sin texto coral sobre claro" y a AA (3,1:1 sobre
+   blanco), aprobada por Felipe (2026-11-27) */
+.value-group__label {
+  margin: 0 0 var(--space-16);
+  color: var(--color-text-figure-accent);
+}
+
 .value-item {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
