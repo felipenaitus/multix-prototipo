@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-27 · Gobernanza: sin sección Políticas
+- Código ✓ · Pedido de Felipe. Se elimina la sección Políticas de Gobernanza (pestaña y panel). También salen del buscador del sitio la página y sus 9 documentos (`js/busqueda.js`), y se quita la mención a las políticas en la descripción y la bajada de la página. El ejemplo de resultado del buscador en el kit pasa a "Políticas de sustentabilidad". Las políticas de Sustentabilidad no cambian.
+
 ## 2026-11-27 · Nosotros: etiqueta "Valores" en coral
 - Código ✓ · Pedido de Felipe. Sobre la lista de valores de Nosotros se agrega la etiqueta "Valores" (Etiqueta, Coral 500 con `--color-text-figure-accent`; nueva pieza `.value-group__label`, también en el kit). Excepción a "sin texto coral sobre claro" y a AA (3,1:1 sobre blanco), aprobada por Felipe.
 
