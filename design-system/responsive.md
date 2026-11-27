@@ -39,7 +39,7 @@ Regla general: cada funcionalidad se construye para desktop y mobile en la misma
 | Lista con fecha para agendar (próximos eventos) | Fecha, título con tipo y, a la derecha, "Agendar" + Google + Outlook | Google y Outlook bajan bajo el título, en una fila y sin la palabra "Agendar" |
 | Precio de la acción (detalle + gráfico) | Detalle a la izquierda (1/3) con línea vertical; gráfico a la derecha (2/3), proporción 3:1 | Detalle arriba y gráfico abajo, separados por una línea; chips en una fila; gráfico en proporción 2:1 (3:1 desde 768 px) |
 | Contacto IR y alertas al inversionista | Título a la izquierda y contacto a la derecha; debajo, bloque crema a todo el ancho con texto a la izquierda y correo + "Suscribir" a la derecha | Todo apilado; en el bloque crema, el texto arriba y "Suscribir" a todo el ancho bajo el campo |
-| Estrategia ABC (`.abc`) | Tres letras en fila; panel con descripción a la izquierda y metas a la derecha | Las tres letras siguen en fila (sin selector); descripción arriba y metas apiladas debajo (cifra sobre el texto) |
+| Estrategia ABC (`.abc`) | Tres letras en fila; panel con descripción a la izquierda y foto 16:9 a la derecha | Las tres letras siguen en fila (sin selector); descripción arriba y la foto debajo, a ancho completo |
 | Cifras en tres (`.stats--three`) | Tres en fila separadas por líneas verticales | Una debajo de otra, separadas por líneas |
 | Fila de oferta (`.job-row`) | Datos a la izquierda y "Ver oferta" a la derecha | "Ver oferta" debajo de los datos; el área y la ciudad pueden pasar a dos líneas |
 | Chips de un valor (`.job-chips`: regiones, tipo de contenido) | Chips en fila | Siempre selector desplegable (el de las pestañas) |

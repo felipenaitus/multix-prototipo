@@ -8422,36 +8422,22 @@ html:not(.js) .company-visual__tag {
   color: var(--color-text-secondary);
 }
 
-.abc__goals {
+/* Foto del pilar (a la derecha en desktop, bajo el texto en mobile): rectángulo
+   16:9 con bordes redondeados, como el resto de las fotos del sitio. Reemplaza a
+   las metas con cifras (decisión de Felipe, 2026-11-27) */
+.abc__media {
   margin: 0;
-  padding: 0;
-  list-style: none;
-  border-top: var(--border-thin) solid var(--color-border-default);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-xl);
+  background: var(--color-bg-muted);
 }
 
-.abc__goal {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
-  padding-block: var(--space-24);
-  border-bottom: var(--border-thin) solid var(--color-border-default);
-}
-
-.abc__value {
-  color: var(--color-text-brand);
-}
-
-.abc__goal-text {
-  color: var(--color-text-secondary);
-}
-
-@media (min-width: 768px) {
-  .abc__goal {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-    align-items: baseline;
-    gap: var(--space-24);
-  }
+.abc__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (min-width: 1024px) {

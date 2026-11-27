@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-27 · Estrategia ABC: foto en lugar de cifras
+- Código ✓ · Pedido de Felipe. En la Estrategia ABC (Sustentabilidad) se quitan las metas con cifras de cada pilar y en su lugar va una foto en rectángulo 16:9 con bordes redondeados (`.abc__media`), a la derecha en desktop y bajo el texto en mobile. Fotos provisorias del sitio [foto por definir]: centros de mar (Animal), agua dulce (Biósfera) y planta de proceso (Comunidades). Kit actualizado.
+
 ## 2026-11-27 · Gobernanza: sin sección Políticas
 - Código ✓ · Pedido de Felipe. Se elimina la sección Políticas de Gobernanza (pestaña y panel). También salen del buscador del sitio la página y sus 9 documentos (`js/busqueda.js`), y se quita la mención a las políticas en la descripción y la bajada de la página. El ejemplo de resultado del buscador en el kit pasa a "Políticas de sustentabilidad". Las políticas de Sustentabilidad no cambian.
 
