@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-27 · Productos › Catálogo: mesa de fondo y plato a la derecha
+- Código ✓ · Pedido de Felipe, con las imágenes entregadas por separado (`fondo-mesa.jpg` y `plato-tataki.png`, pasadas a WebP). La sección del catálogo cambia el fondo azul liso por la mesa de madera (`.section--table`, con velo Navy 950 desde el lado del texto para la lectura) y la imagen del catálogo sobre el círculo por el plato recortado a la derecha (vista `data-variant="plate"`, `.catalog-cta__plate`). Texto y botón "Descargar catálogo" se mantienen. Se quita el arco del Horizonte de esta sección: con la foto de fondo, termina en recto.
+
 ## 2026-11-27 · Accesos de tarjetas y filas: hover en coral
 - Código ✓ · Pedido de Felipe, como estándar sobre fondos claros. Los accesos con flecha que se activan con el hover de toda una tarjeta o fila pasan, como el botón terciario, a texto, subrayado y flecha en Coral 500, también sobre crema (token nuevo `--color-text-link-hover`: Coral 500 sobre blanco y crema, Navy 100 sobre azul; el terciario también lo usa, así que su hover sobre crema deja de ser Navy 600): "Ver noticia" (inicio y Noticias), el acceso de las filas de ofertas y del buscador (`.job-row__more`) y "Ver perfil" de personas (`.person__more`). Misma excepción a AA del terciario.
 

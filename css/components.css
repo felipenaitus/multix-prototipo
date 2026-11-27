@@ -4238,6 +4238,26 @@ a.pagination__item:hover,
   background: var(--color-bg-inverse);
 }
 
+/* Sección oscura con foto de mesa (.section--table, sobre .section--inverse): la
+   mesa de madera llena la sección y un velo Navy 950 desde el lado del texto
+   asegura la lectura (en mobile, desde arriba). Productos › Catálogo (decisión de
+   Felipe, 2026-11-27). Sin arco del Horizonte: la foto termina en recto. */
+.section--table {
+  background:
+    linear-gradient(to bottom, color-mix(in srgb, var(--color-bg-inverse) 85%, transparent) 0%, color-mix(in srgb, var(--color-bg-inverse) 40%, transparent) 55%, transparent 100%),
+    url("../assets/img/catalogo-mesa.webp") center / cover no-repeat,
+    var(--color-bg-inverse);
+}
+
+@media (min-width: 768px) {
+  .section--table {
+    background:
+      linear-gradient(to right, color-mix(in srgb, var(--color-bg-inverse) 85%, transparent) 0%, color-mix(in srgb, var(--color-bg-inverse) 40%, transparent) 50%, transparent 75%),
+      url("../assets/img/catalogo-mesa.webp") center / cover no-repeat,
+      var(--color-bg-inverse);
+  }
+}
+
 /* Sección que continúa a la anterior (mismo fondo): sin espacio arriba propio; el
    contenido parte con una línea delgada y el aire de sección. Ej.: Preguntas
    frecuentes después de Contacto. */
@@ -4965,6 +4985,33 @@ a.pagination__item:hover,
   display: none;
 }
 
+/* Vista "plate": el plato recortado (fondo transparente) a la derecha, sobre la
+   mesa de la sección (.section--table). Entra con un fundido y un leve giro. */
+.catalog-cta__plate {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.catalog-cta__plate img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.js .catalog-cta__plate img {
+  opacity: 0;
+  transform: rotate(-8deg) scale(.96);
+  transition:
+    opacity var(--duration-reveal) var(--easing-out),
+    transform var(--duration-reveal) var(--easing-out);
+  transition-delay: calc(var(--duration-stagger) * 3);
+}
+
+.js .catalog-cta.is-visible .catalog-cta__plate img {
+  opacity: 1;
+  transform: none;
+}
+
 /* Vista "flipbook": ancho de la columna, proporción de pliego abierto */
 .catalog-cta__flipbook {
   width: 100%;
@@ -5096,9 +5143,14 @@ a.pagination__item:hover,
     gap: var(--space-64);
   }
 
-  /* Imagen: texto e imagen en mitades iguales ya desde tablet */
-  .catalog-cta[data-variant="image"] {
+  /* Imagen y plato: texto e imagen en mitades iguales ya desde tablet */
+  .catalog-cta[data-variant="image"],
+  .catalog-cta[data-variant="plate"] {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .catalog-cta__plate {
+    width: 100%;
   }
 
   .catalog-cta__cover {
