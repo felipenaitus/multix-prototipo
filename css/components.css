@@ -94,13 +94,13 @@
   border-radius: var(--radius-full);
   color: var(--color-text-brand);
 }
-/* Hover: texto, subrayado delgado y flecha (que avanza) en Coral 500, el mismo
-   tono de la flecha en cada contexto (sobre crema Navy 600, sobre azul Navy 100).
+/* Hover: texto, subrayado delgado y flecha (que avanza) en Coral 500 sobre todo
+   fondo claro, también crema (--color-text-link-hover; sobre azul, Navy 100).
    EXCEPCIÓN a AA aprobada por Felipe (2026-11-23): Coral 500 como texto sobre
    claro solo en este hover (3,1:1 sobre blanco). */
 .btn--tertiary:hover,
 .btn--tertiary.is-hover {
-  color: var(--color-bg-accent-hover);
+  color: var(--color-text-link-hover);
   text-decoration: underline;
   text-decoration-thickness: var(--border-thin);
   text-underline-offset: var(--space-4);
@@ -109,7 +109,7 @@
 .btn--tertiary.is-hover .icon--arrow,
 .btn--tertiary:hover .icon:has(use[href="#i-arrow"]),
 .btn--tertiary.is-hover .icon:has(use[href="#i-arrow"]) {
-  color: var(--color-bg-accent-hover);
+  color: var(--color-text-link-hover);
   transform: translateX(var(--space-4));
 }
 
@@ -7093,7 +7093,8 @@ html:not(.js) .company-visual__tag {
 }
 
 /* "Ver noticia": botón terciario con flecha, como el resto del sitio, al pie.
-   El hover de toda la nota activa el hover del botón */
+   El hover de toda la nota activa el hover del botón: texto, subrayado y flecha
+   en coral (Coral 500, también sobre crema; Navy 100 sobre azul), igual que el terciario */
 .news-item__cta {
   align-self: flex-start;
   min-height: var(--touch-target);
@@ -7101,13 +7102,14 @@ html:not(.js) .company-visual__tag {
 }
 
 .news-item__link:hover .news-item__cta {
+  color: var(--color-text-link-hover);
   text-decoration: underline;
   text-decoration-thickness: var(--border-thin);
   text-underline-offset: var(--space-4);
 }
 
 .news-item__link:hover .news-item__cta .icon--arrow {
-  color: var(--color-bg-accent-hover);
+  color: var(--color-text-link-hover);
   transform: translateX(var(--space-4));
 }
 
@@ -8024,6 +8026,14 @@ html:not(.js) .company-visual__tag {
   transition: transform var(--duration-fast) var(--easing-standard);
 }
 
+/* Hover de la persona: el acceso pasa a coral con subrayado, como el terciario */
+.person__trigger:hover .person__more {
+  color: var(--color-text-link-hover);
+  text-decoration: underline;
+  text-decoration-thickness: var(--border-thin);
+  text-underline-offset: var(--space-4);
+}
+
 .person__trigger:hover .person__more .icon {
   transform: translateX(var(--space-4));
 }
@@ -8570,6 +8580,14 @@ html:not(.js) .company-visual__tag {
 
 .job-row__more .icon {
   transition: transform var(--duration-base) var(--easing-standard);
+}
+
+/* Hover de la fila: el acceso pasa a coral con subrayado, como el terciario */
+.job-row__link:hover .job-row__more {
+  color: var(--color-text-link-hover);
+  text-decoration: underline;
+  text-decoration-thickness: var(--border-thin);
+  text-underline-offset: var(--space-4);
 }
 
 .job-row__link:hover .job-row__more .icon {

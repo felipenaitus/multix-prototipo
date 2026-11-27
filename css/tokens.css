@@ -55,6 +55,7 @@
   --color-text-brand-hover: var(--color-navy-600);
   --color-text-accent: var(--color-navy-600);   /* acento sobre claro: azul, sin coral (antes Coral 600; pendiente de Figma) */
   --color-text-accent-on-dark: var(--color-coral-500);
+  --color-text-link-hover: var(--color-coral-500);   /* hover de terciarios y accesos de tarjetas: coral sobre todo fondo claro, también crema (excepción a AA aprobada por Felipe; pendiente de Figma) */
   --color-text-figure-accent: var(--color-coral-500); /* cifras en coral que se mantienen también sobre crema (Mercados, Productos); excepción a AA aprobada por Felipe (pendiente de Figma) */
   --color-text-on-accent: var(--color-ink-900);
   --color-text-on-accent-hover: var(--color-ink-900); /* pendiente de llevar a Figma: sobre crema pasa a blanco */
@@ -169,6 +170,7 @@
    contornos, botón de acento, elementos gráficos) pasan a Navy 300 (hover Navy 100). */
 .section--inverse,
 .menu-preview {
+  --color-text-link-hover: var(--color-navy-100);
   --color-text-accent: var(--color-navy-300);
   --color-text-accent-on-dark: var(--color-navy-300);
   --color-border-accent: var(--color-navy-300);
@@ -216,6 +218,7 @@
    etiquetas "La compañía" y "Negocio" en Navy 300. En mobile el menú sigue blanco. */
 @media (min-width: 768px) {
   .menu-panel {
+    --color-text-link-hover: var(--color-navy-100);
     --color-text-accent: var(--color-navy-300);
     --color-text-accent-on-dark: var(--color-navy-300);
     --color-border-accent-on-dark: var(--color-navy-300);

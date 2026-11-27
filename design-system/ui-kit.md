@@ -33,7 +33,7 @@ Este archivo dice **qué** componentes existen y **cómo se usan**. Las medidas 
 
 Regla del coral:
 - **Sin texto coral sobre claro:** etiquetas, badges y destacados van en Navy 600 (`--color-text-accent`). El Coral 600 se retiró del kit (pedido de Felipe, 2026-11-23).
-- **Coral 500 (marca):** rellenos y elementos gráficos sobre fondos claros (hover del botón de acento, líneas, barras, marcadores). No se usa como texto sobre claro. Excepciones aprobadas por Felipe: el hover del botón terciario (texto, subrayado y flecha en Coral 500, 3,1:1 sobre blanco; 2026-11-23), las cifras en coral del sitio (Cifra L en Cifra destacada, Sora 400; sobre Offwhite 2,86:1 y sobre blanco 3,08:1, aceptado por tamaño) y el paso actual de "Del cultivo a la mesa" (Título 2, 26–32 px), que como texto grande pasa AA (3,1:1 sobre blanco; mínimo 3:1).
+- **Coral 500 (marca):** rellenos y elementos gráficos sobre fondos claros (hover del botón de acento, líneas, barras, marcadores). No se usa como texto sobre claro. Excepciones aprobadas por Felipe: el hover del botón terciario (texto, subrayado y flecha en Coral 500, 3,1:1 sobre blanco; 2026-11-23), sobre todo fondo claro, crema incluido (token `--color-text-link-hover`; Navy 100 sobre azul), también cuando lo activa el hover de toda una tarjeta o fila: "Ver noticia", accesos de filas de ofertas y resultados, "Ver perfil" (2026-11-27), las cifras en coral del sitio (Cifra L en Cifra destacada, Sora 400; sobre Offwhite 2,86:1 y sobre blanco 3,08:1, aceptado por tamaño) y el paso actual de "Del cultivo a la mesa" (Título 2, 26–32 px), que como texto grande pasa AA (3,1:1 sobre blanco; mínimo 3:1).
 - **Coral 400:** relleno del botón de acento.
 - **Sobre fondos oscuros:** texto y contorno coral en Coral 500.
 

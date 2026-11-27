@@ -4,6 +4,9 @@ Registro de cambios del kit (tokens, estilos de texto y componentes). Cada entra
 
 Formato: `AAAA-MM-DD · [Figma ✓/pendiente] [Código ✓/pendiente] · descripción`
 
+## 2026-11-27 · Accesos de tarjetas y filas: hover en coral
+- Código ✓ · Pedido de Felipe, como estándar sobre fondos claros. Los accesos con flecha que se activan con el hover de toda una tarjeta o fila pasan, como el botón terciario, a texto, subrayado y flecha en Coral 500, también sobre crema (token nuevo `--color-text-link-hover`: Coral 500 sobre blanco y crema, Navy 100 sobre azul; el terciario también lo usa, así que su hover sobre crema deja de ser Navy 600): "Ver noticia" (inicio y Noticias), el acceso de las filas de ofertas y del buscador (`.job-row__more`) y "Ver perfil" de personas (`.person__more`). Misma excepción a AA del terciario.
+
 ## 2026-11-27 · Integración vertical (inicio y Productos): fotos definitivas de los pasos
 - Código ✓ · Fotos entregadas por Felipe para los seis pasos de `<vertical-integration>` (genética, agua dulce, centros de mar, cosecha, proceso, venta y distribución), pasadas a WebP de 800 × 800 (`assets/img/paso-01-genetica.webp` … `paso-06-distribucion.webp`). Se ven en el inicio y en Productos. Los recorridos de Nosotros y Sustentabilidad no cambian. Se quitan los videos provisorios de este bloque: el paso activo muestra su foto en color (los inactivos, con el tinte azul).
 
